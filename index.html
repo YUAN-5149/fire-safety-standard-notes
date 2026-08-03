@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>各類場所消防安全設備設置標準 — 學習筆記</title>
+<meta name="description" content="台灣「各類場所消防安全設備設置標準」（民國113年4月24日修正）結構化學習筆記、泡沫設備計算圖解與 126 題互動題庫。">
+<style>
+:root{
+  --bg:#fbfaf7;--fg:#1c1b19;--muted:#6b6862;--line:#d9d5cc;--card:#fff;
+  --accent:#b03a2e;--accent2:#1d6fa5;--accent3:#2e7d4f;--warn:#a86b00;
+  --f1:#f4e7e4;--f2:#e3eff7;--f3:#e5f1ea;--f4:#faf1dc;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#16161a;--fg:#e8e6e1;--muted:#9b968c;--line:#3a3a40;--card:#1e1e23;
+  --accent:#e8705f;--accent2:#5aa8d8;--accent3:#5fbb87;--warn:#d9a441;
+  --f1:#3a2622;--f2:#1e3341;--f3:#1f3a2c;--f4:#3a3120;}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);line-height:1.75;
+  font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  -webkit-text-size-adjust:100%}
+.wrap{max-width:880px;margin:0 auto;padding:34px 18px 72px}
+header{border-bottom:2px solid var(--fg);padding-bottom:20px}
+h1{font-size:clamp(1.4rem,4.5vw,2.1rem);margin:0 0 8px;letter-spacing:-.01em}
+.sub{color:var(--muted);font-size:.9rem;margin:0}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.badge{font-size:.76rem;padding:3px 10px;border-radius:99px;
+  border:1px solid var(--line);background:var(--card);color:var(--muted)}
+.badge.hot{border-color:var(--accent);color:var(--accent);font-weight:600}
+h2{font-size:1.12rem;margin:44px 0 6px;padding-top:16px;border-top:1px solid var(--line)}
+h2 .no{color:var(--accent);margin-right:.5em}
+.lede{color:var(--muted);font-size:.9rem;margin:.2em 0 18px}
+
+.grid{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:640px){.grid.two{grid-template-columns:1fr 1fr}}
+a.card{display:block;text-decoration:none;color:inherit;background:var(--card);
+  border:1px solid var(--line);border-radius:12px;padding:16px 18px;transition:.14s}
+a.card:hover{border-color:var(--accent);transform:translateY(-2px);
+  box-shadow:0 6px 18px rgba(0,0,0,.07)}
+a.card .k{font-size:.74rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+a.card .t{font-weight:700;font-size:1.02rem;margin:3px 0 5px;display:flex;
+  align-items:center;gap:8px;flex-wrap:wrap}
+a.card .d{color:var(--muted);font-size:.87rem;line-height:1.65}
+a.card .m{margin-top:9px;font-size:.76rem;color:var(--muted)}
+.pill{font-size:.7rem;font-weight:600;padding:2px 8px;border-radius:99px;flex:none}
+.pill.web{background:var(--f1);color:var(--accent);border:1px solid var(--accent)}
+.pill.doc{background:var(--f2);color:var(--accent2);border:1px solid var(--accent2)}
+.hero{background:linear-gradient(135deg,var(--f1),var(--f2));border:1px solid var(--line);
+  border-radius:14px;padding:20px 22px;margin:22px 0 0}
+.hero .t{font-weight:700;font-size:1.06rem;margin-bottom:4px}
+.hero .d{color:var(--muted);font-size:.88rem;margin-bottom:14px}
+.btns{display:flex;flex-wrap:wrap;gap:9px}
+.btn{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:.88rem;
+  padding:9px 17px;border-radius:9px;border:1px solid var(--line);background:var(--card);
+  color:var(--fg);transition:.12s;font-weight:600}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn.go{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn.go:hover{filter:brightness(1.1);color:#fff}
+ol.path{counter-reset:s;list-style:none;padding:0;margin:14px 0}
+ol.path li{counter-increment:s;position:relative;padding:9px 0 9px 42px;
+  border-bottom:1px dashed var(--line);font-size:.92rem}
+ol.path li:last-child{border-bottom:0}
+ol.path li::before{content:counter(s);position:absolute;left:0;top:9px;width:26px;height:26px;
+  border-radius:50%;background:var(--accent);color:#fff;font-size:.78rem;font-weight:700;
+  display:flex;align-items:center;justify-content:center}
+ol.path b{color:var(--fg)}
+ol.path span{color:var(--muted)}
+.note{border-left:3px solid var(--warn);background:var(--f4);padding:11px 15px;
+  border-radius:0 7px 7px 0;font-size:.87rem;margin:16px 0}
+.note b{color:var(--warn)}
+table{border-collapse:collapse;width:100%;font-size:.86rem;margin:12px 0;display:block;
+  overflow-x:auto;white-space:nowrap}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+th{background:var(--f2)}
+code{background:var(--f2);padding:1px 6px;border-radius:4px;font-size:.86em}
+footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--line);
+  color:var(--muted);font-size:.8rem}
+footer a{color:var(--accent2)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>各類場所消防安全設備設置標準</h1>
+  <p class="sub">結構化學習筆記　·　泡沫設備計算圖解　·　126 題互動題庫</p>
+  <div class="badges">
+    <span class="badge hot">民國 113 年 4 月 24 日修正版</span>
+    <span class="badge">全國法規資料庫 pcode D0120029</span>
+    <span class="badge">條文於 2026-08-03 擷取核對</span>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="t">第一次來？從這裡開始</div>
+  <div class="d">先用圖解建立觀念，再用題庫驗收。答錯時題庫會直接把你帶到對應的那張圖。</div>
+  <div class="btns">
+    <a class="btn go" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 開始做題（126 題）</a>
+    <a class="btn" href="04a-%E6%B3%A1%E6%B2%AB%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html">📐 泡沫設備圖解</a>
+  </div>
+</div>
+
+<h2><span class="no">01</span>互動工具</h2>
+<p class="lede">直接在瀏覽器開啟，手機也能用。</p>
+<div class="grid two">
+
+  <a class="card" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">
+    <div class="k">Quiz</div>
+    <div class="t">互動題庫 <span class="pill web">網頁</span></div>
+    <div class="d">126 題，分四個章節可自由勾選。單選、複選、計算填空三種題型，答完立刻顯示解析與條號，結算後可只重做錯題。</div>
+    <div class="m">第二編 25 題　·　滅火設備 28 題　·　警報避難 39 題　·　泡沫 34 題（含 9 題計算）</div>
+  </a>
+
+  <a class="card" href="04a-%E6%B3%A1%E6%B2%AB%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html">
+    <div class="k">Diagrams</div>
+    <div class="t">泡沫滅火設備 圖解 <span class="pill web">網頁</span></div>
+    <div class="d">8 張 SVG 圖：四條計算路徑決策樹、冠泡體積剖面、局部放射防護面積外推、放射區域劃分、移動式配置、計算流程、系統組成、速查數字卡。</div>
+    <div class="m">§69～§81　·　可從題庫直接跳轉到指定段落</div>
+  </a>
+
+</div>
+
+<h2><span class="no">02</span>閱讀筆記</h2>
+<p class="lede">以下連結開啟 GitHub 的 Markdown 檢視——表格、流程圖與計算式都會正常呈現。</p>
+<div class="grid">
+
+  <a class="card" href="https://github.com/YUAN-5149/fire-safety-standard-notes/blob/main/00-%E7%B8%BD%E8%A6%BD%E8%88%87%E6%9F%A5%E6%B3%95SOP.md">
+    <div class="k">Note 00</div>
+    <div class="t">總覽與查法 SOP <span class="pill doc">筆記</span></div>
+    <div class="d">五編結構、消防安全設備四大種類、§4 用語定義（無開口樓層、危險工作場所分級）、§5 視為另一場所、§13 從舊從新原則、查法小抄。</div>
+    <div class="m">先讀這篇建立地圖，再往下走</div>
+  </a>
+
+  <a class="card" href="https://github.com/YUAN-5149/fire-safety-standard-notes/blob/main/01-%E7%AC%AC%E4%BA%8C%E7%B7%A8-%E6%B6%88%E9%98%B2%E8%A8%AD%E8%A8%88-%E6%87%89%E8%A8%AD%E5%A0%B4%E6%89%80%E9%80%9F%E6%9F%A5.md">
+    <div class="k">Note 01</div>
+    <div class="t">第二編 消防設計 — 應設場所速查 <span class="pill doc">筆記</span></div>
+    <div class="d">§12 甲乙丙丁戊分類全表、各項設備的應設門檻總表、§18 附表（網頁版看不到的那張）、設備間的免設抵免關係圖、自我檢測。</div>
+    <div class="m">實務與考試的核心：判斷「這個場所該不該設」</div>
+  </a>
+
+  <a class="card" href="https://github.com/YUAN-5149/fire-safety-standard-notes/blob/main/02-%E6%BB%85%E7%81%AB%E8%A8%AD%E5%82%99-%E9%97%9C%E9%8D%B5%E6%95%B8%E5%AD%97.md">
+    <div class="k">Note 02</div>
+    <div class="t">滅火設備 — 關鍵數字 <span class="pill doc">筆記</span></div>
+    <div class="d">滅火器效能值、第一種／第二種室內消防栓對照、室外消防栓、自動撒水（含 §57 撒水頭數量表）、水霧。四種水系設備的揚程常數規律。</div>
+    <div class="m">§31～§68</div>
+  </a>
+
+  <a class="card" href="https://github.com/YUAN-5149/fire-safety-standard-notes/blob/main/03-%E8%AD%A6%E5%A0%B1%E8%88%87%E9%81%BF%E9%9B%A3%E9%80%83%E7%94%9F-%E9%97%9C%E9%8D%B5%E6%95%B8%E5%AD%97.md">
+    <div class="k">Note 03</div>
+    <div class="t">警報＋避難逃生 — 關鍵數字 <span class="pill doc">筆記</span></div>
+    <div class="d">火警分區與鳴動、探測器選用與有效探測範圍、緊急廣播、瓦斯漏氣檢知器、標示設備有效範圍、避難器具與收容人員計算、緊急照明。</div>
+    <div class="m">§112～§179　·　附緊急電源時間總表與「0.8～1.5 m 俱樂部」</div>
+  </a>
+
+  <a class="card" href="https://github.com/YUAN-5149/fire-safety-standard-notes/blob/main/04-%E6%B3%A1%E6%B2%AB%E6%BB%85%E7%81%AB%E8%A8%AD%E5%82%99-%E5%85%AC%E5%BC%8F%E8%88%87%E5%AF%A6%E4%BE%8B.md">
+    <div class="k">Note 04</div>
+    <div class="t">泡沫滅火設備 — 公式與實例 <span class="pill doc">筆記</span></div>
+    <div class="d">四條計算路徑的完整公式、五個逐步演算實例（室內停車空間、高發泡全區、移動式、局部放射、飛機庫泡水噴頭）、15 項易錯點清單、條文原文對照索引。</div>
+    <div class="m">§69～§81　·　搭配「泡沫設備圖解」一起看</div>
+  </a>
+
+</div>
+
+<h2><span class="no">03</span>建議學習順序</h2>
+<ol class="path">
+  <li><b>總覽（Note 00）</b> — <span>先掌握五編結構與查法路徑，不要一開始就背條號</span></li>
+  <li><b>應設場所（Note 01）</b> — <span>練「場所類別 × 樓層 × 樓地板面積」的判斷邏輯</span></li>
+  <li><b>做題驗收</b> — <span>題庫只勾「第二編 消防設計」，20 題</span></li>
+  <li><b>設備細節（Note 02、03）</b> — <span>把關鍵數字掛到已經建立的架構上</span></li>
+  <li><b>泡沫深入（Note 04 ＋ 圖解）</b> — <span>四條計算路徑是分水嶺，先看圖再讀公式</span></li>
+  <li><b>計算實戰</b> — <span>題庫只勾「泡沫滅火設備」，答錯就點解析裡的圖解連結</span></li>
+</ol>
+
+<h2><span class="no">04</span>兩個要留意的法規細節</h2>
+<div class="note">
+  <b>§73 有殘留引用。</b>現行 §18 附表只剩一～七項（舊第八項「引擎試驗室、石油試驗室、印刷機房」已刪除），
+  但 §73 高發泡放射量表仍保留「第十八條表第八項之場所」一列（第一種 1.25／第二種 0.31／第三種 0.18）。
+  這是修法後未同步更新的引用，實務上已無對應場所。
+</div>
+<div class="note">
+  <b>§76 第 2 項的 20% 加算文義不明確。</b>「加算總泡沫水溶液量之百分之二十」中的「總泡沫水溶液量」
+  究竟指放射所需量、含配管量的小計、還是最終總量，條文沒有寫死。本站全部採實務通行的
+  <code>V = (V₀ + V_配管) × 1.2</code>。設計送審前建議向當地消防機關確認採用哪一種。
+</div>
+
+<h2><span class="no">05</span>本站涵蓋範圍</h2>
+<table>
+<thead><tr><th>編</th><th>內容</th><th>筆記涵蓋</th></tr></thead>
+<tbody>
+<tr><td>第一編 總則</td><td>法源、認可制度（§1～§3）</td><td>Note 00</td></tr>
+<tr><td>第二編 消防設計</td><td>用語定義、場所分類、應設場所門檻（§4～§30-1）</td><td>Note 00、01</td></tr>
+<tr><td>第三編 消防安全設計</td><td>各設備配置、水量、壓力、間距（§31～§192）</td><td>Note 02、03、04</td></tr>
+<tr><td>第四編 公共危險物品等場所</td><td>危險物品與可燃性高壓氣體場所（§193～§239）</td><td>尚未涵蓋</td></tr>
+<tr><td>第五編 附則</td><td>施行日期（§240）</td><td>—</td></tr>
+</tbody>
+</table>
+
+<footer>
+  <p>本站內容依據
+  <a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0120029" target="_blank" rel="noopener">全國法規資料庫「各類場所消防安全設備設置標準」</a>
+  民國 113 年 4 月 24 日修正版原文編寫，於 2026-08-03 擷取核對。</p>
+  <p><b>法規以主管機關公布文字為準。</b>本站為個人學習筆記，不構成法律意見；實際設計、審查或送審前，請回查現行條文並洽詢主管機關。</p>
+  <p>§18、§47、§57、§83、§117、§133、§163～§165、§183、§191 等條的表格在法規資料庫網頁版被省略，須查各該條的「完整條文」PDF；本站已補齊其中的重點表。</p>
+</footer>
+
+</div>
+</body>
+</html>

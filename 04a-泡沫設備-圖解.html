@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>泡沫滅火設備 圖解 — 各類場所消防安全設備設置標準 §69～§81</title>
+<style>
+  :root{
+    --bg:#fbfaf7; --fg:#1c1b19; --muted:#6b6862; --line:#d8d4cb;
+    --card:#ffffff; --accent:#b03a2e; --accent2:#1d6fa5; --accent3:#2e7d4f;
+    --warn:#a86b00; --fill1:#f2e4e1; --fill2:#e0edf6; --fill3:#e3f0e8; --fill4:#f7efd9;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#16161a; --fg:#e8e6e1; --muted:#9b968c; --line:#3a3a40;
+      --card:#1e1e23; --accent:#e8705f; --accent2:#5aa8d8; --accent3:#5fbb87;
+      --warn:#d9a441; --fill1:#3a2622; --fill2:#1e3341; --fill3:#1f3a2c; --fill4:#3a3120;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+    line-height:1.75;-webkit-text-size-adjust:100%}
+  .wrap{max-width:960px;margin:0 auto;padding:32px 20px 80px}
+  header{border-bottom:2px solid var(--fg);padding-bottom:18px;margin-bottom:8px}
+  h1{font-size:clamp(1.4rem,4vw,2rem);margin:0 0 6px;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:.9rem;margin:0}
+  h2{font-size:1.15rem;margin:48px 0 4px;padding-top:14px;border-top:1px solid var(--line)}
+  h2 .no{color:var(--accent);font-variant-numeric:tabular-nums;margin-right:.5em}
+  .lede{color:var(--muted);font-size:.92rem;margin:.2em 0 18px}
+  figure{margin:0 0 10px;background:var(--card);border:1px solid var(--line);
+    border-radius:10px;padding:18px 14px;overflow-x:auto}
+  svg{display:block;margin:0 auto;max-width:100%;height:auto}
+  figcaption{color:var(--muted);font-size:.84rem;margin-top:10px;text-align:center}
+  .note{border-left:3px solid var(--warn);background:var(--fill4);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .note b{color:var(--warn)}
+  table{border-collapse:collapse;width:100%;font-size:.88rem;margin:14px 0}
+  th,td{border:1px solid var(--line);padding:6px 9px;text-align:left}
+  th{background:var(--fill2);font-weight:600}
+  td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+  code{background:var(--fill2);padding:1px 5px;border-radius:4px;font-size:.88em}
+  .formula{background:var(--fill3);border:1px solid var(--line);border-radius:8px;
+    padding:12px 16px;margin:14px 0;font-size:1rem;text-align:center}
+  footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:.82rem}
+  a{color:var(--accent2)}
+  .navbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+  .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;
+    font-size:.86rem;padding:7px 14px;border-radius:8px;border:1px solid var(--line);
+    background:var(--card);color:var(--fg);transition:.12s}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.go{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+  .btn.go:hover{filter:brightness(1.1);color:#fff}
+  .toc{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 4px}
+  .toc a{font-size:.8rem;text-decoration:none;padding:4px 10px;border-radius:99px;
+    border:1px solid var(--line);background:var(--card);color:var(--muted)}
+  .toc a:hover{border-color:var(--accent);color:var(--accent)}
+  h2{scroll-margin-top:16px}
+  h2:target{background:linear-gradient(transparent 62%,var(--fill4) 62%)}
+  .backtop{display:block;text-align:right;font-size:.8rem;margin-top:8px}
+  /* SVG shared */
+  .s-line{stroke:var(--fg);stroke-width:1.4;fill:none}
+  .s-thin{stroke:var(--muted);stroke-width:1;fill:none}
+  .s-dash{stroke:var(--accent);stroke-width:1.4;fill:none;stroke-dasharray:6 4}
+  .s-txt{fill:var(--fg);font-size:13px;font-family:inherit}
+  .s-sm{fill:var(--muted);font-size:11px;font-family:inherit}
+  .s-key{fill:var(--accent);font-size:13px;font-weight:700;font-family:inherit}
+  .s-dim{stroke:var(--accent2);stroke-width:1;fill:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>泡沫滅火設備 圖解</h1>
+  <p class="sub">各類場所消防安全設備設置標準 §69～§81　|　民國 113 年 4 月 24 日修正版　|　搭配 <code>04-泡沫滅火設備-公式與實例.md</code></p>
+  <div class="navbar">
+    <a class="btn go" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 前往互動題庫驗收</a>
+    <span class="sub">看完圖解就去做題，回饋最快</span>
+  </div>
+</header>
+
+<nav class="toc" aria-label="章節目錄">
+  <a href="#paths">01 四條路徑</a>
+  <a href="#volume">02 冠泡體積</a>
+  <a href="#area">03 防護面積</a>
+  <a href="#zone">04 放射區域</a>
+  <a href="#mobile">05 移動式</a>
+  <a href="#calc">06 計算流程</a>
+  <a href="#system">07 系統組成</a>
+  <a href="#card">08 速查數字卡</a>
+</nav>
+
+<!-- ============ 1 ============ -->
+<h2 id="paths"><span class="no">01</span>四條計算路徑：分岔點只有兩個</h2>
+<p class="lede">選錯路徑，後面每個數字都是錯的。先確認「膨脹比」與「放射方式」。</p>
+<figure>
+<svg viewBox="0 0 900 430" role="img" aria-label="泡沫滅火設備四條計算路徑決策樹">
+  <rect x="360" y="10" width="180" height="40" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text class="s-txt" x="450" y="28" text-anchor="middle" font-weight="700">泡沫滅火設備</text>
+  <text class="s-sm" x="450" y="43" text-anchor="middle">§69 放射方式擇一</text>
+
+  <path class="s-line" d="M450 50 L450 72"/>
+  <path class="s-line" d="M215 72 L735 72"/>
+  <path class="s-line" d="M215 72 L215 94"/>
+  <path class="s-line" d="M735 72 L735 94"/>
+
+  <!-- 固定式 -->
+  <rect x="140" y="94" width="150" height="36" rx="6" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-txt" x="215" y="117" text-anchor="middle">固定式</text>
+  <!-- 移動式 -->
+  <rect x="645" y="94" width="180" height="46" rx="6" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-txt" x="735" y="113" text-anchor="middle">移動式</text>
+  <text class="s-sm" x="735" y="130" text-anchor="middle">水平距離 ≤ 15 m</text>
+
+  <!-- 膨脹比判斷 -->
+  <path class="s-line" d="M215 130 L215 152"/>
+  <rect x="130" y="152" width="170" height="36" rx="18" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-txt" x="215" y="175" text-anchor="middle">§70 膨脹比？</text>
+
+  <path class="s-line" d="M215 188 L215 206"/>
+  <path class="s-line" d="M95 206 L335 206"/>
+  <path class="s-line" d="M95 206 L95 228"/>
+  <path class="s-line" d="M335 206 L335 228"/>
+
+  <text class="s-key" x="95" y="222" text-anchor="middle">≤ 20</text>
+  <text class="s-key" x="335" y="222" text-anchor="middle">80～1000</text>
+
+  <rect x="20" y="228" width="150" height="44" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-txt" x="95" y="248" text-anchor="middle">低發泡</text>
+  <text class="s-sm" x="95" y="264" text-anchor="middle">泡沫噴頭／泡水噴頭</text>
+
+  <rect x="255" y="228" width="160" height="44" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-txt" x="335" y="248" text-anchor="middle">高發泡</text>
+  <text class="s-sm" x="335" y="264" text-anchor="middle">高發泡放出口</text>
+
+  <path class="s-line" d="M335 272 L335 288"/>
+  <path class="s-line" d="M265 288 L410 288"/>
+  <path class="s-line" d="M265 288 L265 306"/>
+  <path class="s-line" d="M410 288 L410 306"/>
+
+  <!-- 結果盒 -->
+  <rect x="15" y="330" width="160" height="76" rx="6" fill="var(--card)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-key" x="95" y="350" text-anchor="middle">路徑一</text>
+  <text class="s-sm" x="95" y="368" text-anchor="middle">面積 × 單位放射量</text>
+  <text class="s-sm" x="95" y="383" text-anchor="middle">× 20 min</text>
+  <text class="s-sm" x="95" y="398" text-anchor="middle">§76Ⅰ①</text>
+  <path class="s-line" d="M95 272 L95 330"/>
+
+  <rect x="190" y="330" width="160" height="76" rx="6" fill="var(--card)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-key" x="270" y="350" text-anchor="middle">路徑二 全區</text>
+  <text class="s-sm" x="270" y="368" text-anchor="middle">冠泡體積 × 單位</text>
+  <text class="s-sm" x="270" y="383" text-anchor="middle">水溶液量（不乘時間）</text>
+  <text class="s-sm" x="270" y="398" text-anchor="middle">§76Ⅰ②(1)</text>
+  <path class="s-line" d="M265 306 L265 330"/>
+
+  <rect x="365" y="330" width="160" height="76" rx="6" fill="var(--card)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-key" x="445" y="350" text-anchor="middle">路徑三 局部</text>
+  <text class="s-sm" x="445" y="368" text-anchor="middle">防護面積 × 2 L/min·m²</text>
+  <text class="s-sm" x="445" y="383" text-anchor="middle">× 20 min</text>
+  <text class="s-sm" x="445" y="398" text-anchor="middle">§76Ⅰ②(2)</text>
+  <path class="s-line" d="M410 306 L410 330"/>
+
+  <rect x="655" y="330" width="170" height="76" rx="6" fill="var(--card)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-key" x="740" y="350" text-anchor="middle">路徑四</text>
+  <text class="s-sm" x="740" y="368" text-anchor="middle">2 具瞄子 × 100 L/min</text>
+  <text class="s-sm" x="740" y="383" text-anchor="middle">× 15 min</text>
+  <text class="s-sm" x="740" y="398" text-anchor="middle">§76Ⅰ③</text>
+  <path class="s-line" d="M735 140 L735 330"/>
+</svg>
+<figcaption>圖 1　§69～§76 的四條計算路徑</figcaption>
+</figure>
+
+<div class="note"><b>法規空白區：</b>膨脹比 <b>20～80</b> 之間，§70 沒有對應的放出口種類。看到「膨脹比 50」這種數字，那是命題陷阱。</div>
+
+<!-- ============ 2 ============ -->
+<h2 id="volume"><span class="no">02</span>冠泡體積：高度不是天花板，是「防護對象 + 0.5 m」</h2>
+<p class="lede">§73 第 1 款第 2 目。高發泡全區放射的一切計算都從這個體積出發，算錯高度就全盤皆錯。</p>
+
+<div class="formula"><b>V<sub>c</sub> = A × (h + 0.5)</b>　　A：防護區域樓地板面積　h：防護對象<b>最高點</b>高度</div>
+
+<figure>
+<svg viewBox="0 0 780 330" role="img" aria-label="冠泡體積剖面示意圖">
+  <!-- 天花板 -->
+  <path class="s-line" d="M80 40 L700 40"/>
+  <text class="s-sm" x="708" y="44">天花板 4.0 m</text>
+  <!-- 樓地板 -->
+  <path class="s-line" stroke-width="2.5" d="M80 250 L700 250"/>
+  <text class="s-sm" x="708" y="254">樓地板 0 m</text>
+  <!-- 側牆 -->
+  <path class="s-thin" d="M80 40 L80 250 M700 40 L700 250"/>
+
+  <!-- 冠泡區域填色 -->
+  <rect x="80" y="130" width="620" height="120" fill="var(--fill1)" opacity="0.75"/>
+  <path class="s-dash" d="M80 130 L700 130"/>
+  <text class="s-key" x="360" y="122">冠泡上緣　h + 0.5 = 2.3 m</text>
+
+  <!-- 車輛 -->
+  <g fill="var(--fill2)" stroke="var(--fg)" stroke-width="1.3">
+    <path d="M160 250 L160 200 L185 178 L265 178 L290 200 L290 250 Z"/>
+    <path d="M420 250 L420 200 L445 178 L525 178 L550 200 L550 250 Z"/>
+  </g>
+  <circle cx="188" cy="250" r="9" fill="var(--fg)"/><circle cx="262" cy="250" r="9" fill="var(--fg)"/>
+  <circle cx="448" cy="250" r="9" fill="var(--fg)"/><circle cx="522" cy="250" r="9" fill="var(--fg)"/>
+  <text class="s-sm" x="225" y="222" text-anchor="middle">防護對象</text>
+  <text class="s-sm" x="485" y="222" text-anchor="middle">防護對象</text>
+
+  <!-- 防護對象最高點線 -->
+  <path class="s-thin" stroke-dasharray="4 3" d="M80 178 L700 178"/>
+  <text class="s-sm" x="600" y="173">防護對象最高點 h = 1.8 m</text>
+
+  <!-- 0.5m 尺寸標註 -->
+  <path class="s-dim" d="M340 130 L340 178"/>
+  <path class="s-dim" d="M334 130 L346 130 M334 178 L346 178"/>
+  <text class="s-key" x="352" y="158">0.5 m</text>
+  <text class="s-sm" x="352" y="172">法定加高</text>
+
+  <!-- 高度標註 -->
+  <path class="s-dim" d="M110 130 L110 250"/>
+  <path class="s-dim" d="M104 130 L116 130 M104 250 L116 250"/>
+  <text class="s-key" x="120" y="196">2.3 m</text>
+
+  <!-- 放出口 -->
+  <g stroke="var(--accent3)" stroke-width="1.6" fill="var(--fill3)">
+    <rect x="240" y="40" width="46" height="20" rx="3"/>
+    <rect x="500" y="40" width="46" height="20" rx="3"/>
+  </g>
+  <path class="s-thin" stroke="var(--accent3)" d="M255 60 L245 78 M263 60 L263 78 M271 60 L281 78"/>
+  <path class="s-thin" stroke="var(--accent3)" d="M515 60 L505 78 M523 60 L523 78 M531 60 L541 78"/>
+  <text class="s-sm" x="263" y="34" text-anchor="middle" fill="var(--accent3)">高發泡放出口</text>
+  <text class="s-sm" x="523" y="34" text-anchor="middle" fill="var(--accent3)">高發泡放出口</text>
+
+  <!-- 底部寬度 -->
+  <path class="s-dim" d="M80 285 L700 285"/>
+  <path class="s-dim" d="M80 279 L80 291 M700 279 L700 291"/>
+  <text class="s-key" x="390" y="305" text-anchor="middle">A = 600 m²</text>
+  <text class="s-sm" x="390" y="320" text-anchor="middle">冠泡體積 V<tspan baseline-shift="sub" font-size="9">c</tspan> = 600 × 2.3 = 1,380 m³</text>
+</svg>
+<figcaption>圖 2　冠泡體積剖面（例二條件：A = 600 m²、h = 1.8 m）</figcaption>
+</figure>
+
+<div class="note"><b>三個常犯的錯：</b>① 用天花板高度 4.0 m 當 h（錯，要用防護對象最高點 1.8 m）　② 忘記 +0.5 m　③ 算完後乘 20 分鐘（錯，<b>全區放射的水源是體積比，不乘時間</b>）。</div>
+
+<table>
+<thead><tr><th>膨脹比種類</th><th class="n">放射量 q<sub>高</sub><br>(L/min·m³)<br>室內停車空間</th><th class="n">單位水溶液量 k<br>(m³/m³)</th><th class="n">本例 V<sub>0</sub> = 1380 × k</th></tr></thead>
+<tbody>
+<tr><td>第一種（80 以上 250 未滿）</td><td class="n">1.11</td><td class="n">0.04</td><td class="n">55.20 m³</td></tr>
+<tr><td>第二種（250 以上 500 未滿）</td><td class="n">0.28</td><td class="n">0.013</td><td class="n">17.94 m³</td></tr>
+<tr><td>第三種（500 以上 1000 未滿）</td><td class="n">0.16</td><td class="n">0.008</td><td class="n">11.04 m³</td></tr>
+</tbody>
+</table>
+<p class="lede">膨脹比從第一種提高到第三種，水量降到約 <b>1/5</b>——這就是高發泡的價值。</p>
+
+<!-- ============ 3 ============ -->
+<h2 id="area"><span class="no">03</span>局部放射的防護面積：外推 3H，但不得小於 1 m</h2>
+<p class="lede">§73 第 2 款第 3 目。「防護對象外周線以高出防護對象物高度<b>三倍</b>數值所包圍之面積」。</p>
+
+<div class="formula"><b>d = max(3H, 1)</b>　→　<b>A<sub>p</sub> = (L + 2d) × (W + 2d)</b>　→　<b>Q = A<sub>p</sub> × 2 L/min·m²</b></div>
+
+<figure>
+<svg viewBox="0 0 780 340" role="img" aria-label="局部放射防護面積平面示意圖">
+  <!-- 左：H=0.8 -->
+  <text class="s-txt" x="190" y="24" text-anchor="middle" font-weight="700">H = 0.8 m　→　3H = 2.4 m ≥ 1</text>
+  <rect x="45" y="45" width="290" height="236" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6" stroke-dasharray="7 4"/>
+  <rect x="110" y="110" width="160" height="107" fill="var(--fill2)" stroke="var(--fg)" stroke-width="1.6"/>
+  <text class="s-txt" x="190" y="156" text-anchor="middle">防護對象</text>
+  <text class="s-sm" x="190" y="174" text-anchor="middle">6 m × 4 m</text>
+  <text class="s-sm" x="190" y="190" text-anchor="middle">H = 0.8 m</text>
+
+  <path class="s-dim" d="M45 92 L110 92"/><path class="s-dim" d="M45 86 L45 98 M110 86 L110 98"/>
+  <text class="s-key" x="77" y="82" text-anchor="middle">2.4</text>
+  <path class="s-dim" d="M270 92 L335 92"/><path class="s-dim" d="M270 86 L270 98 M335 86 L335 98"/>
+  <text class="s-key" x="303" y="82" text-anchor="middle">2.4</text>
+
+  <path class="s-dim" d="M45 300 L335 300"/><path class="s-dim" d="M45 294 L45 306 M335 294 L335 306"/>
+  <text class="s-key" x="190" y="319" text-anchor="middle">10.8 m</text>
+  <path class="s-dim" d="M22 45 L22 281"/><path class="s-dim" d="M16 45 L28 45 M16 281 L28 281"/>
+  <text class="s-key" x="14" y="167" text-anchor="middle" transform="rotate(-90 14 167)">8.8 m</text>
+  <text class="s-key" x="190" y="336" text-anchor="middle">A_p = 95.04 m²　Q = 190.08 L/min</text>
+
+  <!-- 右：H=0.3 -->
+  <text class="s-txt" x="580" y="24" text-anchor="middle" font-weight="700">H = 0.3 m　→　3H = 0.9 &lt; 1　取 1 m</text>
+  <rect x="470" y="75" width="220" height="176" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.6" stroke-dasharray="7 4"/>
+  <rect x="497" y="119" width="165" height="88" fill="var(--fill2)" stroke="var(--fg)" stroke-width="1.6"/>
+  <text class="s-txt" x="580" y="158" text-anchor="middle">防護對象</text>
+  <text class="s-sm" x="580" y="176" text-anchor="middle">6 m × 4 m　H = 0.3 m</text>
+
+  <path class="s-dim" d="M470 104 L497 104"/><path class="s-dim" d="M470 98 L470 110 M497 98 L497 110"/>
+  <text class="s-key" x="483" y="94" text-anchor="middle">1.0</text>
+  <path class="s-dim" d="M662 104 L690 104"/><path class="s-dim" d="M662 98 L662 110 M690 98 L690 110"/>
+  <text class="s-key" x="676" y="94" text-anchor="middle">1.0</text>
+
+  <path class="s-dim" d="M470 270 L690 270"/><path class="s-dim" d="M470 264 L470 276 M690 264 L690 276"/>
+  <text class="s-key" x="580" y="289" text-anchor="middle">8 m</text>
+  <text class="s-key" x="580" y="312" text-anchor="middle">A_p = 8 × 6 = 48 m²</text>
+  <text class="s-key" x="580" y="330" text-anchor="middle">Q = 96 L/min</text>
+</svg>
+<figcaption>圖 3　防護面積的外推規則（左：3H 適用；右：觸及 1 m 下限）</figcaption>
+</figure>
+
+<div class="note"><b>1 m 下限的用意：</b>矮的防護對象若照 3H 計算會得到極小的防護面積（例如 H = 0.1 m 只外推 0.3 m），泡沫根本蓋不住。所以法規設了地板。</div>
+
+<!-- ============ 4 ============ -->
+<h2 id="zone"><span class="no">04</span>放射區域劃分：系統規模的真正決定因素</h2>
+<p class="lede">§75。泡沫噴頭與泡水噴頭的劃分邏輯完全不同，直接決定水源要多大。</p>
+
+<figure>
+<svg viewBox="0 0 800 300" role="img" aria-label="放射區域劃分比較">
+  <!-- 左：泡沫噴頭 -->
+  <text class="s-txt" x="185" y="22" text-anchor="middle" font-weight="700">泡沫噴頭　§75①</text>
+  <text class="s-sm" x="185" y="40" text-anchor="middle">每區 50 m² 以上 100 m² 以下</text>
+  <g stroke="var(--fg)" stroke-width="1.4" fill="none">
+    <rect x="50" y="55" width="270" height="180"/>
+  </g>
+  <g stroke="var(--accent)" stroke-width="1.1" fill="var(--fill1)" opacity="0.55">
+    <rect x="50" y="55" width="67.5" height="45"/><rect x="117.5" y="55" width="67.5" height="45"/>
+    <rect x="185" y="55" width="67.5" height="45"/><rect x="252.5" y="55" width="67.5" height="45"/>
+    <rect x="50" y="100" width="67.5" height="45"/><rect x="117.5" y="100" width="67.5" height="45"/>
+    <rect x="185" y="100" width="67.5" height="45"/><rect x="252.5" y="100" width="67.5" height="45"/>
+    <rect x="50" y="145" width="67.5" height="45"/><rect x="117.5" y="145" width="67.5" height="45"/>
+    <rect x="185" y="145" width="67.5" height="45"/><rect x="252.5" y="145" width="67.5" height="45"/>
+  </g>
+  <text class="s-key" x="83" y="82" text-anchor="middle">100</text>
+  <text class="s-key" x="151" y="82" text-anchor="middle">100</text>
+  <text class="s-key" x="218" y="82" text-anchor="middle">100</text>
+  <text class="s-key" x="286" y="82" text-anchor="middle">100</text>
+  <text class="s-sm" x="185" y="212" text-anchor="middle">…共 12 區（每區 100 m²）</text>
+  <text class="s-txt" x="185" y="255" text-anchor="middle">A = 1,200 m² 停車空間</text>
+  <text class="s-key" x="185" y="275" text-anchor="middle">水源只算「最大一個」放射區域</text>
+  <text class="s-sm" x="185" y="292" text-anchor="middle">Q = 100 × 3.7 = 370 L/min（水成膜）</text>
+
+  <!-- 右：泡水噴頭 -->
+  <text class="s-txt" x="600" y="22" text-anchor="middle" font-weight="700">泡水噴頭　§75②</text>
+  <text class="s-sm" x="600" y="40" text-anchor="middle">≥ 樓地板面積 1/3，且至少 200 m²</text>
+  <g stroke="var(--fg)" stroke-width="1.4" fill="none">
+    <rect x="465" y="55" width="270" height="180"/>
+  </g>
+  <g stroke="var(--accent3)" stroke-width="1.3" fill="var(--fill3)" opacity="0.6">
+    <rect x="465" y="55" width="90" height="180"/>
+    <rect x="555" y="55" width="90" height="180"/>
+    <rect x="645" y="55" width="90" height="180"/>
+  </g>
+  <text class="s-key" x="510" y="150" text-anchor="middle">300 m²</text>
+  <text class="s-key" x="600" y="150" text-anchor="middle">300 m²</text>
+  <text class="s-key" x="690" y="150" text-anchor="middle">300 m²</text>
+  <text class="s-txt" x="600" y="255" text-anchor="middle">A = 900 m² 飛機庫</text>
+  <text class="s-key" x="600" y="275" text-anchor="middle">900 ÷ 3 = 300 m²（≥ 200 ✓）</text>
+  <text class="s-sm" x="600" y="292" text-anchor="middle">Q = 38 個 × 75 = 2,850 L/min</text>
+</svg>
+<figcaption>圖 4　兩種噴頭的放射區域劃分（例一 vs 例五）</figcaption>
+</figure>
+
+<table>
+<thead><tr><th></th><th>泡沫噴頭</th><th>泡水噴頭</th></tr></thead>
+<tbody>
+<tr><td>設置密度（§71）</td><td>每 <b>9 m²</b> 一個（室內停車空間、汽車修理廠）</td><td>每 <b>8 m²</b> 一個（飛機庫）</td></tr>
+<tr><td>放射量（§72）</td><td><b>面積 × q</b>（蛋白質 6.5／合成 8／水成膜 3.7 L/min·m²）</td><td><b>個數 × 75 L/min</b></td></tr>
+<tr><td>放射區域（§75）</td><td><b>50～100 m²</b></td><td><b>≥ 1/3 樓地板面積，且至少 200 m²</b></td></tr>
+</tbody>
+</table>
+
+<div class="note"><b>最常見的混淆：</b>§72 那張「6.5／8／3.7」的表<b>只適用泡沫噴頭</b>。泡水噴頭一律用「每個 75 L/min」。</div>
+
+<!-- ============ 5 ============ -->
+<h2 id="mobile"><span class="no">05</span>移動式配置：兩個距離、一組箱體規格</h2>
+<p class="lede">§69②、§80。移動式是唯一用「15 分鐘」的路徑，也是唯一限定低發泡的路徑。</p>
+
+<figure>
+<svg viewBox="0 0 800 300" role="img" aria-label="移動式泡沫滅火設備配置示意圖">
+  <rect x="40" y="40" width="720" height="200" fill="none" stroke="var(--fg)" stroke-width="1.6"/>
+  <text class="s-sm" x="50" y="60">汽車修理廠（外牆常時開放開口 ≥ 該層樓地板面積 15% → §18Ⅰ但書得採移動式）</text>
+
+  <!-- 水帶接頭 -->
+  <circle cx="200" cy="150" r="8" fill="var(--accent)"/>
+  <text class="s-sm" x="200" y="176" text-anchor="middle">水帶接頭</text>
+
+  <!-- 15m 半徑 -->
+  <circle cx="200" cy="150" r="115" fill="var(--fill1)" opacity="0.4" stroke="var(--accent)" stroke-width="1.4" stroke-dasharray="7 4"/>
+  <path class="s-dim" d="M200 150 L315 150"/>
+  <path class="s-dim" d="M315 144 L315 156"/>
+  <text class="s-key" x="258" y="143" text-anchor="middle">≤ 15 m</text>
+  <text class="s-sm" x="258" y="127" text-anchor="middle">§69② 至防護對象任一點</text>
+
+  <!-- 3m 箱體 -->
+  <circle cx="200" cy="150" r="28" fill="none" stroke="var(--accent3)" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <rect x="212" y="188" width="34" height="26" rx="3" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.5"/>
+  <circle cx="229" cy="182" r="4" fill="var(--accent)"/>
+  <text class="s-sm" x="229" y="228" text-anchor="middle" fill="var(--accent3)">泡沫消防栓箱</text>
+  <path class="s-dim" d="M200 150 L212 178"/>
+  <text class="s-key" x="168" y="196" text-anchor="middle">≤ 3 m</text>
+
+  <!-- 說明欄 -->
+  <rect x="420" y="70" width="320" height="152" rx="8" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-txt" x="440" y="94" font-weight="700">§80 泡沫消防栓箱規格</text>
+  <text class="s-sm" x="440" y="116">・箱內：長 20 m 以上水帶 + 泡沫瞄子 1 具</text>
+  <text class="s-sm" x="440" y="136">・箱面表面積 ≥ 0.8 m²</text>
+  <text class="s-sm" x="440" y="156">・標明「移動式泡沫滅火設備」字樣</text>
+  <text class="s-sm" x="440" y="176">・箱上方設紅色幫浦啟動表示燈</text>
+  <text class="s-sm" x="440" y="196">・瞄子放射量 ≥ 100 L/min</text>
+  <text class="s-sm" x="440" y="212">・放射壓力 ≥ 3.5 kgf/cm²（0.35 MPa）</text>
+
+  <text class="s-key" x="400" y="270" text-anchor="middle">水源 = min(箱數, 2) × 100 L/min × 15 min　　幫浦出水量：1 箱 ≥ 130 L/min／2 箱以上 ≥ 260 L/min</text>
+  <text class="s-sm" x="400" y="290" text-anchor="middle">100 L/min 算水源、130／260 L/min 算幫浦——兩組數字不可互換</text>
+</svg>
+<figcaption>圖 5　移動式泡沫滅火設備的兩個距離限制</figcaption>
+</figure>
+
+<!-- ============ 6 ============ -->
+<h2 id="calc"><span class="no">06</span>計算流程：從放射量到原液量</h2>
+<p class="lede">§76Ⅱ 的兩次加算最容易漏掉，而 §78 的原液量要乘的是<b>加算後</b>的總量。</p>
+
+<figure>
+<svg viewBox="0 0 800 350" role="img" aria-label="泡沫設備水量與原液量計算流程">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="var(--accent)"/>
+    </marker>
+  </defs>
+
+  <rect x="250" y="15" width="300" height="42" rx="6" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.5"/>
+  <text class="s-txt" x="400" y="34" text-anchor="middle" font-weight="700">① 依四條路徑求「放射所需水溶液量」</text>
+  <text class="s-sm" x="400" y="50" text-anchor="middle">V₀　（§76 第 1 項）</text>
+
+  <path class="s-line" stroke="var(--accent)" marker-end="url(#ar)" d="M400 57 L400 82"/>
+
+  <rect x="250" y="85" width="300" height="42" rx="6" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <text class="s-txt" x="400" y="104" text-anchor="middle" font-weight="700">② 加算「充滿配管所需水溶液量」</text>
+  <text class="s-sm" x="400" y="120" text-anchor="middle">V₀ + V_配管　（§76 第 2 項前段）</text>
+
+  <path class="s-line" stroke="var(--accent)" marker-end="url(#ar)" d="M400 127 L400 152"/>
+
+  <rect x="250" y="155" width="300" height="42" rx="6" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <text class="s-txt" x="400" y="174" text-anchor="middle" font-weight="700">③ 再加算 20%</text>
+  <text class="s-sm" x="400" y="190" text-anchor="middle">V = (V₀ + V_配管) × 1.2　（§76 第 2 項後段）</text>
+
+  <path class="s-line" stroke="var(--accent)" marker-end="url(#ar)" d="M400 197 L400 222"/>
+
+  <rect x="215" y="225" width="370" height="42" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.8"/>
+  <text class="s-txt" x="400" y="244" text-anchor="middle" font-weight="700">總泡沫水溶液量 V　→　水源容量</text>
+  <text class="s-sm" x="400" y="260" text-anchor="middle">連結加壓送水裝置（§77）</text>
+
+  <path class="s-line" stroke="var(--accent)" marker-end="url(#ar)" d="M400 267 L400 292"/>
+
+  <rect x="250" y="295" width="300" height="42" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.6"/>
+  <text class="s-txt" x="400" y="314" text-anchor="middle" font-weight="700">④ 原液儲存量 W = V × C</text>
+  <text class="s-sm" x="400" y="330" text-anchor="middle">§78、§79　蛋白質 3/6%・合成界面活性 1/3%・水成膜 3/6%</text>
+
+  <!-- 側邊警語 -->
+  <rect x="600" y="150" width="185" height="105" rx="6" fill="var(--card)" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="5 3"/>
+  <text class="s-key" x="612" y="172">⚠ 兩個高頻失分點</text>
+  <text class="s-sm" x="612" y="194">1. 漏掉 ×1.2</text>
+  <text class="s-sm" x="612" y="214">2. 原液量誤用 V₀ 乘</text>
+  <text class="s-sm" x="612" y="230">　 濃度（應用 V）</text>
+  <text class="s-sm" x="612" y="248">　 差距達 20%</text>
+</svg>
+<figcaption>圖 6　§76 → §78 的計算順序</figcaption>
+</figure>
+
+<div class="note"><b>條文用語的模糊點：</b>§76 第 2 項「加算<b>總泡沫水溶液量</b>之百分之二十」中，「總泡沫水溶液量」指 V₀、V₀+V<sub>配管</sub>、還是最終總量，文義上不明確。實務與多數教材採 <code>(V₀ + V_配管) × 1.2</code>。若解為「20% 是最終總量的兩成」則應為 <code>÷ 0.8 = × 1.25</code>，數字會偏大。<b>送審前建議向當地消防機關確認。</b></div>
+
+<!-- ============ 7 ============ -->
+<h2 id="system"><span class="no">07</span>系統組成與 §74 準用關係</h2>
+<p class="lede">§74 一次把 6 條規定拉進來，記住這條可以省下大量記憶量。</p>
+
+<figure>
+<svg viewBox="0 0 820 320" role="img" aria-label="泡沫滅火設備系統組成圖">
+  <!-- 水源 -->
+  <rect x="20" y="120" width="90" height="60" rx="5" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.5"/>
+  <text class="s-txt" x="65" y="146" text-anchor="middle">水源</text>
+  <text class="s-sm" x="65" y="164" text-anchor="middle">§76</text>
+
+  <!-- 幫浦 -->
+  <circle cx="180" cy="150" r="34" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-txt" x="180" y="148" text-anchor="middle">幫浦</text>
+  <text class="s-sm" x="180" y="164" text-anchor="middle">§77</text>
+  <path class="s-line" d="M110 150 L146 150"/>
+
+  <!-- 原液儲槽 -->
+  <rect x="130" y="20" width="100" height="58" rx="5" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.5"/>
+  <text class="s-txt" x="180" y="44" text-anchor="middle">原液儲槽</text>
+  <text class="s-sm" x="180" y="60" text-anchor="middle">§81　§78 §79</text>
+  <path class="s-line" d="M180 78 L180 116"/>
+
+  <!-- 混合 -->
+  <rect x="250" y="128" width="76" height="44" rx="5" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <text class="s-txt" x="288" y="148" text-anchor="middle">混合裝置</text>
+  <text class="s-sm" x="288" y="164" text-anchor="middle">比例混合</text>
+  <path class="s-line" d="M214 150 L246 150"/>
+
+  <!-- 流水檢知 -->
+  <rect x="350" y="128" width="92" height="44" rx="5" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.5"/>
+  <text class="s-txt" x="396" y="148" text-anchor="middle">流水檢知裝置</text>
+  <text class="s-sm" x="396" y="164" text-anchor="middle">§74→§51</text>
+  <path class="s-line" d="M326 150 L346 150"/>
+
+  <!-- 一齊開放閥 -->
+  <rect x="466" y="128" width="92" height="44" rx="5" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.5"/>
+  <text class="s-txt" x="512" y="148" text-anchor="middle">一齊開放閥</text>
+  <text class="s-sm" x="512" y="164" text-anchor="middle">§74→§53</text>
+  <path class="s-line" d="M442 150 L462 150"/>
+
+  <!-- 啟動裝置 -->
+  <rect x="440" y="42" width="144" height="44" rx="5" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-txt" x="512" y="62" text-anchor="middle">啟動裝置　§74→§52</text>
+  <text class="s-sm" x="512" y="78" text-anchor="middle">感知撒水頭 ≤79°C／每 20 m²</text>
+  <path class="s-line" stroke-dasharray="5 3" d="M512 86 L512 124"/>
+
+  <!-- 出口 -->
+  <rect x="610" y="70" width="180" height="46" rx="5" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text class="s-txt" x="700" y="90" text-anchor="middle">泡沫噴頭／泡水噴頭</text>
+  <text class="s-sm" x="700" y="106" text-anchor="middle">§71　§72　低發泡</text>
+
+  <rect x="610" y="130" width="180" height="46" rx="5" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text class="s-txt" x="700" y="150" text-anchor="middle">高發泡放出口</text>
+  <text class="s-sm" x="700" y="166" text-anchor="middle">§73　全區／局部</text>
+
+  <rect x="610" y="190" width="180" height="46" rx="5" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.5"/>
+  <text class="s-txt" x="700" y="210" text-anchor="middle">泡沫消防栓箱</text>
+  <text class="s-sm" x="700" y="226" text-anchor="middle">§80　移動式</text>
+
+  <path class="s-line" d="M558 150 L580 150 L580 93 L606 93"/>
+  <path class="s-line" d="M580 150 L606 150"/>
+  <path class="s-line" d="M180 184 L180 213 L580 213 L580 213 L606 213"/>
+  <text class="s-sm" x="360" y="228" text-anchor="middle">移動式直接由幫浦供水（§77Ⅲ）</text>
+
+  <!-- 緊急電源 -->
+  <rect x="120" y="250" width="130" height="42" rx="5" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-txt" x="185" y="269" text-anchor="middle">緊急電源</text>
+  <text class="s-sm" x="185" y="285" text-anchor="middle">§74→§38　30 分鐘</text>
+  <path class="s-line" stroke-dasharray="5 3" d="M185 250 L185 184"/>
+
+  <text class="s-sm" x="470" y="272">§74 準用：§38（緊急電源）・§44（配管配件屋頂水箱）・§45（加壓試驗）</text>
+  <text class="s-sm" x="470" y="290">　　　　　　§51（流水檢知）・§52（啟動裝置）・§53（一齊開放閥）</text>
+  <text class="s-key" x="470" y="310">§74 沒有準用 §58——泡沫的加壓送水裝置在 §77 自己規定</text>
+</svg>
+<figcaption>圖 7　系統組成與準用關係</figcaption>
+</figure>
+
+<!-- ============ 8 ============ -->
+<h2 id="card"><span class="no">08</span>速查數字卡</h2>
+<table>
+<thead><tr><th>項目</th><th>數值</th><th>條</th></tr></thead>
+<tbody>
+<tr><td>移動式水平距離（水帶接頭至防護對象任一點）</td><td>≤ 15 m</td><td>§69②</td></tr>
+<tr><td>低發泡 / 高發泡 膨脹比</td><td>≤ 20 ／ 80～1000</td><td>§70</td></tr>
+<tr><td>泡水噴頭密度（飛機庫）</td><td>每 8 m² 一個</td><td>§71①</td></tr>
+<tr><td>泡沫噴頭密度（室內停車空間、汽車修理廠）</td><td>每 9 m² 一個</td><td>§71②</td></tr>
+<tr><td>任一點至泡沫噴頭水平距離</td><td>≤ 2.1 m</td><td>§71③</td></tr>
+<tr><td>泡水噴頭放射量</td><td>≥ 75 L/min（每個）</td><td>§72①</td></tr>
+<tr><td>泡沫噴頭放射量（蛋白質／合成界面活性／水成膜）</td><td>6.5 ／ 8 ／ 3.7 L/min·m²</td><td>§72②</td></tr>
+<tr><td>冠泡體積高度</td><td>防護對象最高點 + 0.5 m</td><td>§73Ⅰ①(二)</td></tr>
+<tr><td>高發泡放出口密度</td><td>每 500 m² 至少 1 個</td><td>§73Ⅰ①(三)</td></tr>
+<tr><td>強制全區放射之條件</td><td>防護對象距樓地板高度 &gt; 5 m 且用高發泡</td><td>§73Ⅰ①(五)</td></tr>
+<tr><td>局部放射單位放射量</td><td>2 L/min·m²</td><td>§73Ⅱ②</td></tr>
+<tr><td>局部放射外推距離</td><td>3H，但 &lt; 1 m 時以 1 m 計</td><td>§73Ⅱ③</td></tr>
+<tr><td>放射區域（泡沫噴頭）</td><td>50 m² 以上 100 m² 以下</td><td>§75①</td></tr>
+<tr><td>放射區域（泡水噴頭）</td><td>≥ 1/3 樓地板面積，且至少 200 m²</td><td>§75②</td></tr>
+<tr><td>水源放射時間（泡沫頭／高發泡局部）</td><td>20 分鐘</td><td>§76Ⅰ①②(2)</td></tr>
+<tr><td>水源（高發泡全區）單位水溶液量</td><td>第一種 0.04／第二種 0.013／第三種 0.008 m³/m³</td><td>§76Ⅰ②(1)</td></tr>
+<tr><td>水源放射時間（移動式）</td><td><b>15 分鐘</b>，2 具瞄子</td><td>§76Ⅰ③</td></tr>
+<tr><td>加算規則</td><td>+ 配管量，再 + 20%</td><td>§76Ⅱ</td></tr>
+<tr><td>幫浦出水量（固定式，放射區域 ≥ 2）</td><td>最大一區最低出水量 × 2</td><td>§77Ⅱ①</td></tr>
+<tr><td>幫浦出水壓力（固定式）</td><td>≥ 1 kgf/cm²（0.1 MPa）</td><td>§77Ⅱ②</td></tr>
+<tr><td>幫浦出水量（移動式，1 箱／2 箱以上）</td><td>≥ 130 ／ ≥ 260 L/min</td><td>§77Ⅲ①</td></tr>
+<tr><td>幫浦出水壓力（移動式）</td><td>≥ 3.5 kgf/cm²（0.35 MPa）</td><td>§77Ⅲ②</td></tr>
+<tr><td>共用配管取值</td><td>出水量、揚程、原液量取<b>較大者</b></td><td>§77Ⅳ</td></tr>
+<tr><td>原液濃度</td><td>蛋白質 3/6%・合成界面活性 1/3%・水成膜 3/6%</td><td>§79</td></tr>
+<tr><td>移動式瞄子放射量／壓力</td><td>≥ 100 L/min ／ ≥ 3.5 kgf/cm²</td><td>§80①②</td></tr>
+<tr><td>泡沫消防栓箱：水帶長／表面積／位置</td><td>≥ 20 m ／ ≥ 0.8 m² ／ 水帶接頭 3 m 內</td><td>§80④</td></tr>
+<tr><td>原液儲槽環境</td><td>≤ 40°C 且無日光曝曬，採防震措施</td><td>§81③④</td></tr>
+</tbody>
+</table>
+
+<div class="navbar" style="margin-top:32px">
+  <a class="btn go" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 前往互動題庫（泡沫 34 題，含 9 題計算）</a>
+  <a class="btn" href="#paths">↑ 回到最上方</a>
+</div>
+
+<footer>
+  <p>本頁數據取自全國法規資料庫「各類場所消防安全設備設置標準」（pcode D0120029）民國 113 年 4 月 24 日修正版原文，於 2026-08-03 擷取核對。</p>
+  <p>法規以主管機關公布文字為準。設計送審前請回查現行條文：<code>https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0120029</code></p>
+  <p>※ §73 放射量表中「第十八條表第八項之場所」一列，因現行 §18 附表僅列一～七項，屬修法後殘留之引用，實務上已無對應場所。</p>
+</footer>
+
+</div>
+
+<script>
+/* 由題庫跳轉過來時定位到指定段落。
+   同時支援 #id 與 ?s=id 兩種寫法——某些檢視環境（如內嵌預覽窗）會剝掉 fragment，
+   此時 query 參數仍可正確定位。 */
+(function(){
+  function target(){
+    var h = (location.hash||'').replace('#','');
+    if(!h){
+      var m = /[?&]s=([\w-]+)/.exec(location.search||'');
+      h = m ? m[1] : '';
+    }
+    return h ? document.getElementById(h) : null;
+  }
+  function go(smooth){
+    var el = target();
+    if(!el) return;
+    el.scrollIntoView({behavior: smooth?'smooth':'auto', block:'start'});
+    el.style.transition = 'background-color .4s';
+    var old = el.style.backgroundColor;
+    el.style.backgroundColor = 'var(--fill4)';
+    setTimeout(function(){ el.style.backgroundColor = old || ''; }, 1600);
+  }
+  if(document.readyState === 'loading')
+    document.addEventListener('DOMContentLoaded', function(){ setTimeout(go, 60); });
+  else setTimeout(go, 60);
+  window.addEventListener('hashchange', function(){ go(true); });
+})();
+</script>
+</body>
+</html>
