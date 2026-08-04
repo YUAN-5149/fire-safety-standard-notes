@@ -20,7 +20,7 @@
 | [03-警報與避難逃生-關鍵數字.md](03-警報與避難逃生-關鍵數字.md) | 火警、廣播、瓦斯漏氣、標示設備、避難器具、緊急照明 | §112～§179 |
 | [04-泡沫滅火設備-公式與實例.md](04-泡沫滅火設備-公式與實例.md) | **四條計算路徑公式 + 五個演算實例 + 15 項易錯點** | §69～§81 |
 | [04a-泡沫設備-圖解.html](https://yuan-5149.github.io/fire-safety-standard-notes/04a-泡沫設備-圖解.html) | 8 張 SVG 圖解，可從題庫深連結跳轉 | §69～§81 |
-| [05-互動題庫.html](https://yuan-5149.github.io/fire-safety-standard-notes/05-互動題庫.html) | **178 題**，五章節可選，含 14 題計算題 | 全部 |
+| [05-互動題庫.html](https://yuan-5149.github.io/fire-safety-standard-notes/05-互動題庫.html) | **224 題**，六章節可選，含 23 題計算題 | 全部 |
 | [06-二氧化碳設備-圖解.html](https://yuan-5149.github.io/fire-safety-standard-notes/06-二氧化碳設備-圖解.html) | **7 張 SVG 圖解 + 5 個計算實例**，含惰性氣體 | §82～§97 |
 
 ## 特色
