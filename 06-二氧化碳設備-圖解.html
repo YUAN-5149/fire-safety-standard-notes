@@ -1,0 +1,843 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>二氧化碳滅火設備 圖解 — 各類場所消防安全設備設置標準 §82～§97</title>
+<meta name="description" content="二氧化碳及惰性氣體滅火設備（§82～§97）的藥劑量計算式、開口部規定、放射時序與系統組成圖解。">
+<style>
+  :root{
+    --bg:#fbfaf7; --fg:#1c1b19; --muted:#6b6862; --line:#d8d4cb;
+    --card:#ffffff; --accent:#b03a2e; --accent2:#1d6fa5; --accent3:#2e7d4f;
+    --warn:#a86b00; --danger:#8e1b0f;
+    --fill1:#f2e4e1; --fill2:#e0edf6; --fill3:#e3f0e8; --fill4:#f7efd9;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#16161a; --fg:#e8e6e1; --muted:#9b968c; --line:#3a3a40;
+      --card:#1e1e23; --accent:#e8705f; --accent2:#5aa8d8; --accent3:#5fbb87;
+      --warn:#d9a441; --danger:#f08070;
+      --fill1:#3a2622; --fill2:#1e3341; --fill3:#1f3a2c; --fill4:#3a3120;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+    line-height:1.75;-webkit-text-size-adjust:100%}
+  .wrap{max-width:960px;margin:0 auto;padding:32px 20px 80px}
+  header{border-bottom:2px solid var(--fg);padding-bottom:18px;margin-bottom:8px}
+  h1{font-size:clamp(1.4rem,4vw,2rem);margin:0 0 6px;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:.9rem;margin:0}
+  h2{font-size:1.15rem;margin:48px 0 4px;padding-top:14px;border-top:1px solid var(--line);
+    scroll-margin-top:16px}
+  h2 .no{color:var(--accent);font-variant-numeric:tabular-nums;margin-right:.5em}
+  h2:target{background:linear-gradient(transparent 62%,var(--fill4) 62%)}
+  h3{font-size:1rem;margin:26px 0 6px}
+  .lede{color:var(--muted);font-size:.92rem;margin:.2em 0 18px}
+  figure{margin:0 0 10px;background:var(--card);border:1px solid var(--line);
+    border-radius:10px;padding:18px 14px;overflow-x:auto}
+  svg{display:block;margin:0 auto;max-width:100%;height:auto}
+  figcaption{color:var(--muted);font-size:.84rem;margin-top:10px;text-align:center}
+  .note{border-left:3px solid var(--warn);background:var(--fill4);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .note b{color:var(--warn)}
+  .danger{border-left:3px solid var(--danger);background:var(--fill1);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .danger b{color:var(--danger)}
+  table{border-collapse:collapse;width:100%;font-size:.88rem;margin:14px 0}
+  th,td{border:1px solid var(--line);padding:6px 9px;text-align:left}
+  th{background:var(--fill2);font-weight:600}
+  td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+  code{background:var(--fill2);padding:1px 5px;border-radius:4px;font-size:.88em}
+  .formula{background:var(--fill3);border:1px solid var(--line);border-radius:8px;
+    padding:12px 16px;margin:14px 0;font-size:1rem;text-align:center}
+  .ex{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent2);
+    border-radius:0 10px 10px 0;padding:14px 18px;margin:18px 0}
+  .ex .t{font-weight:700;margin-bottom:6px;color:var(--accent2)}
+  .ex .given{font-size:.88rem;color:var(--muted);border-left:3px solid var(--line);
+    padding-left:12px;margin-bottom:10px}
+  .ex .step{font-size:.92rem;margin:8px 0}
+  .ex .step b{color:var(--fg)}
+  .ex .ans{background:var(--fill3);border-radius:7px;padding:9px 13px;margin-top:10px;
+    font-weight:700;font-size:.94rem}
+  footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:.82rem}
+  a{color:var(--accent2)}
+  .navbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+  .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;
+    font-size:.86rem;padding:7px 14px;border-radius:8px;border:1px solid var(--line);
+    background:var(--card);color:var(--fg);transition:.12s}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.go{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+  .btn.go:hover{filter:brightness(1.1);color:#fff}
+  .toc{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 4px}
+  .toc a{font-size:.8rem;text-decoration:none;padding:4px 10px;border-radius:99px;
+    border:1px solid var(--line);background:var(--card);color:var(--muted)}
+  .toc a:hover{border-color:var(--accent);color:var(--accent)}
+  .s-line{stroke:var(--fg);stroke-width:1.4;fill:none}
+  .s-thin{stroke:var(--muted);stroke-width:1;fill:none}
+  .s-dash{stroke:var(--accent);stroke-width:1.4;fill:none;stroke-dasharray:6 4}
+  .s-txt{fill:var(--fg);font-size:13px;font-family:inherit}
+  .s-sm{fill:var(--muted);font-size:11px;font-family:inherit}
+  .s-key{fill:var(--accent);font-size:13px;font-weight:700;font-family:inherit}
+  .s-dim{stroke:var(--accent2);stroke-width:1;fill:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>二氧化碳滅火設備 圖解</h1>
+  <p class="sub">各類場所消防安全設備設置標準 §82～§97（含惰性氣體滅火設備）　|　民國 113 年 4 月 24 日修正版</p>
+  <div class="navbar">
+    <a class="btn go" href="index.html">🏠 回學習首頁</a>
+    <a class="btn" href="04a-%E6%B3%A1%E6%B2%AB%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html">📐 泡沫設備圖解</a>
+    <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+  </div>
+</header>
+
+<nav class="toc" aria-label="章節目錄">
+  <a href="#modes">01 三種放射方式</a>
+  <a href="#agent">02 全區藥劑量</a>
+  <a href="#opening">03 開口部</a>
+  <a href="#local">04 局部放射</a>
+  <a href="#inert">05 惰性氣體</a>
+  <a href="#timing">06 放射時序與安全</a>
+  <a href="#system">07 系統組成</a>
+  <a href="#card">08 速查數字卡</a>
+</nav>
+
+<div class="danger" style="margin-top:24px">
+  <b>先講最重要的一件事。</b>二氧化碳是<b>窒息式</b>滅火——它靠降低氧濃度滅火，對人同樣致命。
+  所以整部條文有大量篇幅在處理「怎麼讓人先離開」：§93 的 20 秒遲延裝置、§92 的人語警報、
+  §91 手動啟動裝置必須設在「能看清區域內部且操作後能容易退避」的防護區域外、§94 的排放規定。
+  <b>§18 附表註五更直接禁止</b>在平時有特定或不特定人員使用之中央管理室、防災中心設置二氧化碳滅火設備。
+  讀這一節時，把這些安全條文當主線，比背數字更重要。
+</div>
+
+<!-- ============ 1 ============ -->
+<h2 id="modes"><span class="no">01</span>三種放射方式：先分岔，再算量</h2>
+<p class="lede">§82。放射方式決定用哪一條藥劑量公式（§83），三條路徑完全不同。惰性氣體則<b>只准全區放射</b>。</p>
+
+<figure>
+<svg viewBox="0 0 900 400" role="img" aria-label="二氧化碳滅火設備三種放射方式決策樹">
+  <rect x="330" y="10" width="240" height="42" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text class="s-txt" x="450" y="29" text-anchor="middle" font-weight="700">二氧化碳滅火設備</text>
+  <text class="s-sm" x="450" y="45" text-anchor="middle">§82 放射方式擇一裝置</text>
+
+  <path class="s-line" d="M450 52 L450 74"/>
+  <path class="s-line" d="M150 74 L750 74"/>
+  <path class="s-line" d="M150 74 L150 96 M450 74 L450 96 M750 74 L750 96"/>
+
+  <rect x="40" y="96" width="220" height="54" rx="6" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-txt" x="150" y="116" text-anchor="middle" font-weight="700">全區放射方式</text>
+  <text class="s-sm" x="150" y="132" text-anchor="middle">不燃材料區劃、開口部</text>
+  <text class="s-sm" x="150" y="145" text-anchor="middle">設自動關閉裝置</text>
+
+  <rect x="340" y="96" width="220" height="54" rx="6" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-txt" x="450" y="116" text-anchor="middle" font-weight="700">局部放射方式</text>
+  <text class="s-sm" x="450" y="132" text-anchor="middle">視防護對象形狀、構造、</text>
+  <text class="s-sm" x="450" y="145" text-anchor="middle">數量及性質配置噴頭</text>
+
+  <rect x="640" y="96" width="220" height="54" rx="6" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-txt" x="750" y="116" text-anchor="middle" font-weight="700">移動放射方式</text>
+  <text class="s-sm" x="750" y="132" text-anchor="middle">皮管接頭至防護對象</text>
+  <text class="s-sm" x="750" y="145" text-anchor="middle">任一部分水平距離 ≤ 15 m</text>
+
+  <path class="s-line" d="M150 150 L150 186 M450 150 L450 186 M750 150 L750 186"/>
+
+  <rect x="30" y="186" width="240" height="80" rx="6" fill="var(--card)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-key" x="150" y="206" text-anchor="middle">§83 第 1 款</text>
+  <text class="s-sm" x="150" y="226" text-anchor="middle">W = V × q + A開口 × k</text>
+  <text class="s-sm" x="150" y="243" text-anchor="middle">且不得低於「基本需要量」</text>
+  <text class="s-sm" x="150" y="259" text-anchor="middle">查表：7 種場所條件</text>
+
+  <rect x="330" y="186" width="240" height="80" rx="6" fill="var(--card)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-key" x="450" y="206" text-anchor="middle">§83 第 2 款</text>
+  <text class="s-sm" x="450" y="226" text-anchor="middle">面積式：表面積 × 13 kg/m²</text>
+  <text class="s-sm" x="450" y="243" text-anchor="middle">體積式：Q = 8 − 6a/A</text>
+  <text class="s-sm" x="450" y="259" text-anchor="middle">再乘追加倍數（1.4／1.1）</text>
+
+  <rect x="630" y="186" width="240" height="80" rx="6" fill="var(--card)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-key" x="750" y="206" text-anchor="middle">§83 第 3 款</text>
+  <text class="s-sm" x="750" y="226" text-anchor="middle">每一具噴射瞄子</text>
+  <text class="s-sm" x="750" y="246" text-anchor="middle" font-weight="700" fill="var(--fg)">≥ 90 kg</text>
+  <text class="s-sm" x="750" y="262" text-anchor="middle">放射量 ≥ 60 kg/min（20°C）</text>
+
+  <!-- 惰性氣體 -->
+  <rect x="120" y="300" width="660" height="66" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.5"/>
+  <text class="s-txt" x="450" y="322" text-anchor="middle" font-weight="700" fill="var(--accent3)">惰性氣體滅火設備：放射方式以「全區放射」為限（§82Ⅲ）</text>
+  <text class="s-sm" x="450" y="341" text-anchor="middle">IG-100 氮氣　·　IG-01 氬氣　·　IG-55 氮:氬 = 50:50　·　IG-541 氮:氬:CO₂ = 52:40:8</text>
+  <text class="s-sm" x="450" y="358" text-anchor="middle">開口部應設自動關閉裝置，並於滅火藥劑放射前自動關閉（無「得免設」但書）</text>
+  <path class="s-line" stroke="var(--accent3)" stroke-dasharray="5 3" d="M150 266 L150 284 L450 284 L450 300"/>
+</svg>
+<figcaption>圖 1　§82～§83 三條路徑與惰性氣體的限制</figcaption>
+</figure>
+
+<div class="note">
+  <b>兩個「得免設」的差別：</b>二氧化碳全區放射，開口部原則要設自動關閉裝置，
+  <b>但「能有效補充開口部洩漏量者，得免設」</b>（§82Ⅰ①但書）。
+  惰性氣體<b>沒有這個但書</b>——開口部一律要在放射前自動關閉（§82Ⅲ）。
+</div>
+
+<!-- ============ 2 ============ -->
+<h2 id="agent"><span class="no">02</span>全區放射藥劑量：查表 → 算式 → 比基本需要量</h2>
+<p class="lede">§83 第 1 款。這張表在法規資料庫網頁版被省略，須查該條完整條文 PDF。</p>
+
+<div class="formula">
+  <b>W = V × q + A<sub>開口</sub> × k</b>　　然後　<b>W<sub>設計</sub> = max(W, 基本需要量)</b>
+</div>
+<p class="lede" style="text-align:center;margin-top:-6px">
+  V：防護區域體積（m³）　q：每 m³ 所需藥劑量　A<sub>開口</sub>：未設自動關閉裝置之開口部面積（m²）　k：每 m² 追加量
+</p>
+
+<h3>§83 第 1 款附表（7 種條件）</h3>
+<table>
+<thead>
+<tr><th rowspan="2">設置場所</th><th class="n" rowspan="2">每 m³ 防護區域<br>所需滅火藥劑量 q<br>(kg/m³)</th><th class="n" rowspan="2">每 m² 開口部<br>所需追加量 k<br>(kg/m²)</th><th class="n" rowspan="2">滅火藥劑之<br>基本需要量<br>(kg)</th></tr>
+</thead>
+<tbody>
+<tr><td><b>乾式電器設備室</b>（油浸機器除外）　未滿 50 m³</td><td class="n">1.6</td><td class="n">20</td><td class="n">—</td></tr>
+<tr><td><b>乾式電器設備室</b>（油浸機器除外）　50 m³ 以上</td><td class="n">1.33</td><td class="n">20</td><td class="n">—</td></tr>
+<tr><td><b>電信機械室、總機室</b></td><td class="n">1.2</td><td class="n">10</td><td class="n">—</td></tr>
+<tr><td>其他　未滿 50 m³</td><td class="n">1.0</td><td class="n">5</td><td class="n">—</td></tr>
+<tr><td>其他　50 m³ 以上未滿 150 m³</td><td class="n">0.9</td><td class="n">5</td><td class="n">50</td></tr>
+<tr><td>其他　150 m³ 以上未滿 1,500 m³</td><td class="n">0.8</td><td class="n">5</td><td class="n">135</td></tr>
+<tr><td>其他　1,500 m³ 以上</td><td class="n">0.75</td><td class="n">5</td><td class="n">1,200</td></tr>
+</tbody>
+</table>
+
+<h3>「基本需要量」在做什麼？</h3>
+<p class="lede">很多人把這欄當成硬背的數字。其實它有明確的功能：<b>補平跨級距時的斷崖</b>。</p>
+
+<figure>
+<svg viewBox="0 0 660 380" role="img" aria-label="防護區域體積與所需藥劑量關係圖">
+  <!-- 座標軸 -->
+  <path class="s-line" d="M60 320 L620 320"/>
+  <path class="s-line" d="M60 320 L60 40"/>
+  <text class="s-sm" x="620" y="342" text-anchor="end">防護區域體積 V（m³）</text>
+  <text class="s-sm" x="52" y="46" text-anchor="end">藥劑量 W（kg）</text>
+
+  <!-- 刻度 -->
+  <g class="s-thin">
+    <path d="M147.5 320 L147.5 326 M322.5 320 L322.5 326 M585 320 L585 326"/>
+    <path d="M60 265 L54 265 M60 171.5 L54 171.5"/>
+  </g>
+  <text class="s-sm" x="147.5" y="340" text-anchor="middle">50</text>
+  <text class="s-sm" x="322.5" y="340" text-anchor="middle">150</text>
+  <text class="s-sm" x="585" y="340" text-anchor="middle">300</text>
+  <text class="s-sm" x="50" y="269" text-anchor="end">50</text>
+  <text class="s-sm" x="50" y="176" text-anchor="end">135</text>
+
+  <!-- 級距分隔 -->
+  <path class="s-thin" stroke-dasharray="3 3" d="M147.5 320 L147.5 60 M322.5 320 L322.5 60"/>
+  <text class="s-sm" x="103" y="72" text-anchor="middle">q = 1.0</text>
+  <text class="s-sm" x="235" y="72" text-anchor="middle">q = 0.9</text>
+  <text class="s-sm" x="455" y="72" text-anchor="middle">q = 0.8</text>
+
+  <!-- 沒有基本需要量時的「斷崖」 -->
+  <path class="s-dash" stroke="var(--muted)" d="M147.5 265 L147.5 270.5"/>
+  <path class="s-dash" stroke="var(--muted)" d="M147.5 270.5 L157.3 265"/>
+  <path class="s-dash" stroke="var(--muted)" d="M322.5 171.5 L322.5 188"/>
+  <path class="s-dash" stroke="var(--muted)" d="M322.5 188 L355.3 171.5"/>
+  <circle cx="147.5" cy="270.5" r="3.5" fill="none" stroke="var(--muted)" stroke-width="1.4"/>
+  <circle cx="322.5" cy="188" r="3.5" fill="none" stroke="var(--muted)" stroke-width="1.4"/>
+  <text class="s-sm" x="336" y="203">0.8 × 150 = 120 kg</text>
+  <text class="s-sm" x="336" y="217">← 若無基本需要量，體積變大</text>
+  <text class="s-sm" x="336" y="230">　 藥劑量反而變少</text>
+
+  <!-- 實際曲線（取 max） -->
+  <path d="M60 320 L147.5 265 L157.3 265 L322.5 171.5 L355.3 171.5 L585 56"
+        fill="none" stroke="var(--accent)" stroke-width="2.6"/>
+
+  <!-- 基本需要量水平段標註 -->
+  <path class="s-dim" d="M147.5 258 L157.3 258"/>
+  <text class="s-key" x="152" y="250" text-anchor="middle" style="font-size:11px">50 kg</text>
+  <path class="s-dim" d="M322.5 164 L355.3 164"/>
+  <text class="s-key" x="339" y="156" text-anchor="middle" style="font-size:11px">135 kg</text>
+
+  <rect x="390" y="255" width="230" height="58" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.2"/>
+  <text class="s-sm" x="402" y="274" fill="var(--accent3)" font-weight="700">基本需要量 = 前一級距的邊界值</text>
+  <text class="s-sm" x="402" y="291">50 = 1.0 × 50　　135 = 0.9 × 150</text>
+  <text class="s-sm" x="402" y="306">1,200 = 0.8 × 1,500</text>
+</svg>
+<figcaption>圖 2　基本需要量把跨級距的下降補平，使 W 隨 V 單調遞增</figcaption>
+</figure>
+
+<div class="note">
+  <b>三個基本需要量都是「前一級距的費率 × 該級距下界」：</b>
+  50 = 1.0 × 50、135 = 0.9 × 150、1,200 = 0.8 × 1,500。
+  記住這條規律，就不必硬背 50／135／1200 三個數字。
+</div>
+
+<div class="ex">
+  <div class="t">例一｜電信機械室・全區放射</div>
+  <div class="given">電信機械室 10 m × 8 m × 高 3 m；開口部 2 m²（未設自動關閉裝置）；高壓式。</div>
+  <div class="step"><b>Step 1　體積</b>　V = 10 × 8 × 3 = <b>240 m³</b></div>
+  <div class="step"><b>Step 2　查表</b>　電信機械室 → q = 1.2 kg/m³、k = 10 kg/m²、基本需要量 —</div>
+  <div class="step"><b>Step 3　藥劑量</b>　W = 240 × 1.2 + 2 × 10 = 288 + 20 = <b>308 kg</b></div>
+  <div class="step"><b>Step 4　開口部檢核（§86③）</b>　電信機械室之未設自動關閉開口部總面積應 ≤ 圍壁面積 1%<br>
+    圍壁面積 = 2(10×8) + 2(10×3) + 2(8×3) = 160 + 60 + 48 = 268 m²　→　1% = 2.68 m² ≥ 2 m² ✓</div>
+  <div class="step"><b>Step 5　放射時間（§84）</b>　電信機械室 → <b>3.5 分鐘</b>內全部放射完畢</div>
+  <div class="step"><b>Step 6　容器（§87）</b>　高壓式充填比 1.5～1.9。取 1.5 → 所需容器內容積 = 308 × 1.5 = <b>462 L</b></div>
+  <div class="ans">藥劑量 308 kg　·　放射時間 3.5 分　·　噴頭放射壓力 ≥ 14 kgf/cm²（高壓式）</div>
+</div>
+
+<div class="ex">
+  <div class="t">例二｜一般場所・基本需要量發生作用</div>
+  <div class="given">某倉庫（非電器設備室、非電信機械室）防護區域體積 150 m³；開口部全部設有自動關閉裝置。</div>
+  <div class="step"><b>Step 1　查表</b>　其他，150 m³ 以上未滿 1,500 m³ → q = 0.8 kg/m³、基本需要量 135 kg</div>
+  <div class="step"><b>Step 2　算式</b>　W = 150 × 0.8 = 120 kg（開口部已設自動關閉，不必追加）</div>
+  <div class="step"><b>Step 3　比基本需要量</b>　120 kg &lt; 135 kg　→　<b>取 135 kg</b></div>
+  <div class="ans">設計藥劑量 135 kg　·　放射時間 1 分鐘（其他場所）</div>
+  <div class="step" style="margin-top:10px;color:var(--muted)">
+    對照：若體積是 149 m³，落在前一級距 → W = 149 × 0.9 = 134.1 kg。
+    可見在 150 m³ 這個邊界上，基本需要量剛好把數值接起來。
+  </div>
+</div>
+
+<!-- ============ 3 ============ -->
+<h2 id="opening"><span class="no">03</span>開口部：三分之二高度是分水嶺</h2>
+<p class="lede">§86。二氧化碳比空氣重，會往下沉積；所以法規管的是<b>低處</b>的開口。</p>
+
+<figure>
+<svg viewBox="0 0 780 330" role="img" aria-label="全區放射防護區域開口部規定剖面圖">
+  <!-- 房間 -->
+  <path class="s-line" stroke-width="2" d="M90 60 L640 60 L640 270 L90 270 Z"/>
+  <text class="s-sm" x="365" y="48" text-anchor="middle">防護區域（不燃材料建造之牆、柱、樓地板、天花板區劃）</text>
+
+  <!-- 2/3 分界線 -->
+  <path class="s-dash" d="M90 200 L640 200"/>
+  <text class="s-key" x="650" y="197">樓地板起 2/3 高度</text>
+
+  <!-- 下部區域填色 -->
+  <rect x="90" y="200" width="550" height="70" fill="var(--fill1)" opacity="0.6"/>
+  <text class="s-sm" x="365" y="228" text-anchor="middle" fill="var(--accent)" font-weight="700">此範圍內之開口部，應在滅火藥劑放射前自動關閉（§86②）</text>
+  <text class="s-sm" x="365" y="246" text-anchor="middle">CO₂ 比空氣重，會沉積在下部；低處漏氣＝藥劑直接流失</text>
+
+  <!-- 上部 -->
+  <text class="s-sm" x="365" y="130" text-anchor="middle">2/3 以上部分之開口，條文未強制自動關閉</text>
+  <text class="s-sm" x="365" y="148" text-anchor="middle">但仍受第 3 款「不設自動關閉裝置之開口部總面積」上限規範</text>
+
+  <!-- 開口示意 -->
+  <rect x="130" y="205" width="46" height="46" fill="var(--card)" stroke="var(--accent)" stroke-width="1.8"/>
+  <text class="s-sm" x="153" y="233" text-anchor="middle">開口</text>
+  <rect x="560" y="90" width="46" height="40" fill="var(--card)" stroke="var(--muted)" stroke-width="1.6"/>
+  <text class="s-sm" x="583" y="115" text-anchor="middle">開口</text>
+
+  <!-- 高度標註 -->
+  <path class="s-dim" d="M70 60 L70 270"/>
+  <path class="s-dim" d="M64 60 L76 60 M64 270 L76 270"/>
+  <text class="s-key" x="58" y="170" text-anchor="middle" transform="rotate(-90 58 170)">H</text>
+  <path class="s-dim" d="M108 200 L108 270"/>
+  <path class="s-dim" d="M102 200 L114 200 M102 270 L114 270"/>
+  <text class="s-key" x="120" y="240" style="font-size:11px">2/3 H</text>
+
+  <!-- 禁止 -->
+  <rect x="90" y="290" width="600" height="30" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.3"/>
+  <text class="s-sm" x="104" y="309" fill="var(--accent)" font-weight="700">§86①　開口部不得設於面對安全梯間、特別安全梯間、緊急昇降機間或其他類似場所</text>
+</svg>
+<figcaption>圖 3　§86 開口部規定（剖面）</figcaption>
+</figure>
+
+<h3>不設自動關閉裝置之開口部總面積上限（§86③）</h3>
+<table>
+<thead><tr><th>場所</th><th>上限</th></tr></thead>
+<tbody>
+<tr><td><b>電信機械室</b></td><td>圍壁面積之 <b>1%</b> 以下</td></tr>
+<tr><td><b>其他處所</b></td><td>「防護區域<b>體積值</b>」與「<b>圍壁面積值</b>」<b>二者中較小的數值</b>之 <b>10%</b> 以下</td></tr>
+</tbody>
+</table>
+<p class="lede"><b>圍壁面積</b>＝防護區域內<b>牆壁 ＋ 樓地板 ＋ 天花板</b>面積之合計（§86Ⅱ）。</p>
+
+<div class="note">
+  <b>「體積值與面積值取較小者」是條文的原文寫法。</b>兩者單位不同（m³ 與 m²），
+  法規是直接比較兩個<b>數值</b>大小，不是比較物理量。
+  以例一的房間尺寸為例，<b>若該場所屬「其他」</b>：體積值 240、圍壁面積值 268
+  → 取較小的 240 → 上限為 24 m²。（例一本身是電信機械室，適用的是圍壁面積 1% = 2.68 m² 那一條。）
+  這種數值直接比大小的寫法在實務上偶有爭議，計算時照條文字面執行即可。
+</div>
+
+<!-- ============ 4 ============ -->
+<h2 id="local"><span class="no">04</span>局部放射：兩種算法，看可燃物會不會飛散</h2>
+<p class="lede">§83 第 2 款。判斷條件很具體——<b>是不是上方開放式容器、燃燒是否限於一面、可燃物有無向外飛散之虞</b>。</p>
+
+<h3>（一）面積式</h3>
+<div class="formula">
+  <b>W = 防護對象表面積 (m²) × 13 kg/m² × 追加倍數</b>
+</div>
+<p class="lede" style="text-align:center;margin-top:-6px">
+  適用：可燃性固體或易燃性液體存放於<b>上方開放式容器</b>，火災時<b>燃燒限於一面</b>且<b>可燃物無向外飛散之虞</b>者<br>
+  ⚠️ 表面積核算時，<b>防護對象邊長小於 0.6 m 者，以 0.6 m 計</b>
+</p>
+
+<h3>（二）體積式</h3>
+<div class="formula">
+  <b>Q = 8 − 6 × (a / A)</b>　（kg/m³）　→　<b>W = Q × 假想防護空間體積 × 追加倍數</b>
+</div>
+<p class="lede" style="text-align:center;margin-top:-6px">
+  <b>假想防護空間</b>：距防護對象任一點 <b>0.6 m</b> 範圍之空間<br>
+  <b>a</b>：防護對象周圍<b>實存牆壁</b>面積之合計（m²）　　<b>A</b>：假想防護空間<b>牆壁</b>面積之合計（m²）
+</p>
+
+<figure>
+<svg viewBox="0 0 780 340" role="img" aria-label="局部放射假想防護空間與Q值關係">
+  <!-- 左：假想防護空間 -->
+  <text class="s-txt" x="200" y="24" text-anchor="middle" font-weight="700">假想防護空間＝各邊外推 0.6 m</text>
+  <rect x="55" y="50" width="290" height="200" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6" stroke-dasharray="7 4"/>
+  <rect x="115" y="95" width="170" height="110" fill="var(--fill2)" stroke="var(--fg)" stroke-width="1.8"/>
+  <text class="s-txt" x="200" y="143" text-anchor="middle">防護對象</text>
+  <text class="s-sm" x="200" y="162" text-anchor="middle">2.0 m × 1.0 m × 高 1.0 m</text>
+
+  <path class="s-dim" d="M55 78 L115 78"/><path class="s-dim" d="M55 72 L55 84 M115 72 L115 84"/>
+  <text class="s-key" x="85" y="68" text-anchor="middle" style="font-size:11px">0.6</text>
+  <path class="s-dim" d="M285 78 L345 78"/><path class="s-dim" d="M285 72 L285 84 M345 72 L345 84"/>
+  <text class="s-key" x="315" y="68" text-anchor="middle" style="font-size:11px">0.6</text>
+
+  <!-- 實存牆壁 -->
+  <path d="M55 50 L55 250" stroke="var(--accent3)" stroke-width="6" fill="none"/>
+  <text class="s-sm" x="46" y="150" text-anchor="middle" transform="rotate(-90 46 150)" fill="var(--accent3)" font-weight="700">實存牆壁 a</text>
+
+  <text class="s-sm" x="200" y="275" text-anchor="middle">假想空間 3.2 × 2.2 × 1.6 = 11.264 m³</text>
+  <text class="s-sm" x="200" y="292" text-anchor="middle">牆壁面積合計 A = 2(3.2×1.6) + 2(2.2×1.6) = 17.28 m²</text>
+  <text class="s-sm" x="200" y="309" text-anchor="middle">實存牆壁 a = 3.2 × 1.6 = 5.12 m²</text>
+
+  <!-- 右：Q 值範圍 -->
+  <text class="s-txt" x="580" y="24" text-anchor="middle" font-weight="700">Q = 8 − 6(a/A) 的物理意義</text>
+  <path class="s-line" d="M430 250 L730 250"/>
+  <path class="s-line" d="M430 250 L430 70"/>
+  <text class="s-sm" x="730" y="272" text-anchor="end">a / A（牆壁包圍比例）</text>
+  <text class="s-sm" x="422" y="76" text-anchor="end">Q</text>
+  <text class="s-sm" x="430" y="272" text-anchor="middle">0</text>
+  <text class="s-sm" x="730" y="272" text-anchor="middle">1</text>
+
+  <path d="M430 90 L730 210" stroke="var(--accent)" stroke-width="2.6" fill="none"/>
+  <circle cx="430" cy="90" r="4" fill="var(--accent)"/>
+  <circle cx="730" cy="210" r="4" fill="var(--accent)"/>
+  <text class="s-key" x="440" y="84">Q = 8</text>
+  <text class="s-sm" x="440" y="100">完全無牆　藥劑最容易散失</text>
+  <text class="s-key" x="722" y="228" text-anchor="end">Q = 2</text>
+  <text class="s-sm" x="722" y="244" text-anchor="end">四周皆牆　等同封閉空間</text>
+
+  <path class="s-thin" stroke-dasharray="3 3" d="M519 250 L519 125 M430 125 L519 125"/>
+  <circle cx="519" cy="125" r="4" fill="none" stroke="var(--accent2)" stroke-width="1.8"/>
+  <text class="s-sm" x="527" y="120" fill="var(--accent2)">本例 a/A = 0.296 → Q = 6.22</text>
+</svg>
+<figcaption>圖 4　假想防護空間的界定與 Q 值的物理意義</figcaption>
+</figure>
+
+<div class="note">
+  <b>Q 的範圍必定落在 2～8 kg/m³。</b>牆壁包得越滿（a/A 越大），藥劑越不容易散失，
+  單位體積需要量越少。a = 0 時 Q = 8（最大）；a = A 時 Q = 2（最小）。
+  算出來若不在這個區間，一定是 a 或 A 取錯了。
+</div>
+
+<h3>追加倍數（兩種算法共用）</h3>
+<table>
+<thead><tr><th>型式</th><th class="n">追加倍數</th><th>儲存溫度</th><th class="n">噴頭放射壓力</th></tr></thead>
+<tbody>
+<tr><td><b>高壓式</b>（常溫儲存）</td><td class="n">× 1.4</td><td>常溫</td><td class="n">≥ 14 kgf/cm²（1.4 MPa）</td></tr>
+<tr><td><b>低壓式</b></td><td class="n">× 1.1</td><td>−18°C 以下</td><td class="n">≥ 9 kgf/cm²（0.9 MPa）</td></tr>
+</tbody>
+</table>
+
+<div class="ex">
+  <div class="t">例三｜局部放射・面積式</div>
+  <div class="given">上方開放式油槽，液面 1.2 m × 0.4 m，燃燒限於一面且無飛散之虞；高壓式。</div>
+  <div class="step"><b>Step 1　邊長修正</b>　短邊 0.4 m &lt; 0.6 m　→　<b>以 0.6 m 計</b></div>
+  <div class="step"><b>Step 2　表面積</b>　1.2 × 0.6 = <b>0.72 m²</b></div>
+  <div class="step"><b>Step 3　藥劑量</b>　W = 0.72 × 13 × 1.4 = <b>13.1 kg</b></div>
+  <div class="ans">藥劑量約 13.1 kg　·　應於 <b>30 秒</b>內全部放射完畢（§84Ⅱ③）</div>
+</div>
+
+<div class="ex">
+  <div class="t">例四｜局部放射・體積式</div>
+  <div class="given">防護對象 2.0 m × 1.0 m × 高 1.0 m，置於地面，一側緊靠實存牆壁；高壓式。</div>
+  <div class="step"><b>Step 1　假想防護空間</b>　各邊外推 0.6 m　→　3.2 × 2.2 × 1.6 = <b>11.264 m³</b></div>
+  <div class="step"><b>Step 2　A（假想空間牆壁面積合計）</b>　2(3.2 × 1.6) + 2(2.2 × 1.6) = 10.24 + 7.04 = <b>17.28 m²</b></div>
+  <div class="step"><b>Step 3　a（實存牆壁面積）</b>　3.2 × 1.6 = <b>5.12 m²</b></div>
+  <div class="step"><b>Step 4　Q 值</b>　Q = 8 − 6 × (5.12 / 17.28) = 8 − 1.778 = <b>6.22 kg/m³</b>（落在 2～8 ✓）</div>
+  <div class="step"><b>Step 5　藥劑量</b>　W = 6.22 × 11.264 × 1.4 = <b>98.1 kg</b></div>
+  <div class="ans">藥劑量約 98.1 kg　·　30 秒內放射完畢</div>
+</div>
+
+<!-- ============ 5 ============ -->
+<h2 id="inert"><span class="no">05</span>惰性氣體：對數公式與安全係數</h2>
+<p class="lede">§83-1、§83-2。惰性氣體不像 CO₂ 用查表，而是用<b>設計濃度</b>推回藥劑量。</p>
+
+<div class="formula" style="font-size:1.05rem">
+  <b>W = (V / S) × ln[ 100 / (100 − C) ]</b>
+</div>
+<table>
+<tbody>
+<tr><td><b>W</b></td><td>防護空間所需藥劑量（kg）</td></tr>
+<tr><td><b>V</b></td><td>防護空間<b>淨體積</b>（m³，得扣除不滲透且不可移動固體之體積）</td></tr>
+<tr><td><b>S</b></td><td>防護空間<b>最低溫度</b>（t°C）、<b>一大氣壓</b>下之<b>比容積</b>（m³/kg）</td></tr>
+<tr><td><b>C</b></td><td>設計濃度百分比（%，<b>體積百分比</b>）</td></tr>
+</tbody>
+</table>
+
+<h3>設計濃度的安全係數（§83-1）</h3>
+<figure>
+<svg viewBox="0 0 760 250" role="img" aria-label="惰性氣體設計濃度安全係數">
+  <rect x="30" y="90" width="150" height="56" rx="6" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.5"/>
+  <text class="s-txt" x="105" y="112" text-anchor="middle" font-weight="700">理論滅火濃度</text>
+  <text class="s-sm" x="105" y="130" text-anchor="middle">應經測試決定</text>
+
+  <path class="s-line" d="M180 118 L225 118"/>
+  <path d="M225 113 L235 118 L225 123 z" fill="var(--fg)"/>
+
+  <g>
+    <rect x="245" y="20" width="230" height="46" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+    <text class="s-txt" x="360" y="40" text-anchor="middle">一般場所　<tspan class="s-key">× 1.2</tspan></text>
+    <text class="s-sm" x="360" y="57" text-anchor="middle">安全係數以上</text>
+
+    <rect x="245" y="76" width="230" height="46" rx="6" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+    <text class="s-txt" x="360" y="96" text-anchor="middle">含<b>易燃液體</b>之場所　<tspan class="s-key">× 1.3</tspan></text>
+    <text class="s-sm" x="360" y="113" text-anchor="middle">安全係數以上</text>
+
+    <rect x="245" y="132" width="230" height="60" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.4"/>
+    <text class="s-txt" x="360" y="152" text-anchor="middle">含<b>通電中電氣設備</b>之場所　<tspan class="s-key">× 1.35</tspan></text>
+    <text class="s-sm" x="360" y="169" text-anchor="middle">持續通電 &gt; 480 V 者，</text>
+    <text class="s-sm" x="360" y="184" text-anchor="middle">依中央主管機關認可之值核算</text>
+  </g>
+
+  <path class="s-thin" d="M235 118 L245 43 M235 118 L245 99 M235 118 L245 160"/>
+
+  <path class="s-line" d="M475 106 L520 106"/>
+  <path d="M520 101 L530 106 L520 111 z" fill="var(--fg)"/>
+
+  <rect x="540" y="60" width="200" height="92" rx="6" fill="var(--card)" stroke="var(--accent)" stroke-width="1.8"/>
+  <text class="s-key" x="640" y="82" text-anchor="middle">設計濃度 C</text>
+  <text class="s-sm" x="640" y="103" text-anchor="middle">代入 §83-2 公式求 W</text>
+  <path class="s-thin" d="M556 114 L724 114"/>
+  <text class="s-sm" x="640" y="132" text-anchor="middle" fill="var(--accent)" font-weight="700">常時有人之場所</text>
+  <text class="s-sm" x="640" y="147" text-anchor="middle" fill="var(--accent)" font-weight="700">C 最高以 52% 為限</text>
+</svg>
+<figcaption>圖 5　§83-1 設計濃度的三段安全係數與 52% 上限</figcaption>
+</figure>
+
+<div class="ex">
+  <div class="t">例五｜惰性氣體 IG-541 全區放射</div>
+  <div class="given">防護空間淨體積 V = 200 m³；設計濃度 C = 40%；該溫度下比容積 S = 0.65 m³/kg。</div>
+  <div class="step"><b>Step 1　檢核濃度上限</b>　若為常時有人之場所，C = 40% ≤ 52% ✓（§83-1①（二））</div>
+  <div class="step"><b>Step 2　代入公式</b>　W = (200 / 0.65) × ln[100 / (100 − 40)]</div>
+  <div class="step">　　= 307.69 × ln(1.6667) = 307.69 × 0.5108 = <b>157.2 kg</b></div>
+  <div class="step"><b>Step 3　放射時間（§84Ⅰ③（二））</b>　非含易燃液體場所 → <b>2 分鐘</b>內放射 90% 以上<br>
+    （含易燃液體之場所則為 <b>1 分鐘</b>內放射 90% 以上）</div>
+  <div class="step"><b>Step 4　噴頭放射壓力</b>　惰性氣體 ≥ <b>19 kgf/cm²（1.9 MPa）</b></div>
+  <div class="ans">藥劑量約 157.2 kg　·　2 分鐘內放射 90% 以上　·　放射壓力 ≥ 19 kgf/cm²</div>
+</div>
+
+<div class="note">
+  <b>竣工要做防護區域完整性測試（§96-1）。</b>
+  惰性氣體滅火設備之防護區域竣工時，應做完整性測試，
+  <b>10 分鐘內之氣體洩漏量，使滅火藥劑維持在設計濃度 85% 以上者為合格。</b>
+  這是二氧化碳設備沒有的要求。
+</div>
+
+<!-- ============ 6 ============ -->
+<h2 id="timing"><span class="no">06</span>放射時序與安全裝置：20 秒是給人逃的</h2>
+<p class="lede">§91～§95。這一段是二氧化碳設備的靈魂，也是最常出現在事故檢討報告裡的條文。</p>
+
+<figure>
+<svg viewBox="0 0 900 330" role="img" aria-label="二氧化碳滅火設備動作時序圖">
+  <defs>
+    <marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="var(--accent)"/>
+    </marker>
+  </defs>
+
+  <!-- 時間軸 -->
+  <path class="s-line" stroke-width="2" marker-end="url(#a2)" d="M50 190 L860 190"/>
+  <text class="s-sm" x="855" y="212" text-anchor="end">時間</text>
+
+  <!-- 節點 -->
+  <g>
+    <circle cx="110" cy="190" r="7" fill="var(--accent2)"/>
+    <path class="s-thin" d="M110 183 L110 120"/>
+    <rect x="45" y="72" width="132" height="48" rx="5" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.3"/>
+    <text class="s-sm" x="111" y="91" text-anchor="middle" font-weight="700">火警探測器動作</text>
+    <text class="s-sm" x="111" y="108" text-anchor="middle">§91Ⅰ② 二回路以上</text>
+    <text class="s-sm" x="111" y="140" text-anchor="middle">自動啟動</text>
+  </g>
+
+  <g>
+    <circle cx="255" cy="190" r="7" fill="var(--warn)"/>
+    <path class="s-thin" d="M255 197 L255 250"/>
+    <rect x="180" y="250" width="150" height="52" rx="5" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.3"/>
+    <text class="s-sm" x="255" y="269" text-anchor="middle" font-weight="700">音響警報（§92）</text>
+    <text class="s-sm" x="255" y="285" text-anchor="middle">全區放射採<b>人語發音</b></text>
+    <text class="s-sm" x="255" y="299" text-anchor="middle">藥劑未全部放射前不得中斷</text>
+  </g>
+
+  <!-- 遲延區間 -->
+  <rect x="255" y="160" width="215" height="60" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6" stroke-dasharray="6 3"/>
+  <text class="s-key" x="362" y="150" text-anchor="middle">遲延裝置 ≥ 20 秒（§93Ⅰ①）</text>
+  <text class="s-sm" x="362" y="185" text-anchor="middle" font-weight="700">人員退避時間</text>
+  <text class="s-sm" x="362" y="205" text-anchor="middle">採手動啟動時，此期間內</text>
+  <text class="s-sm" x="362" y="217" text-anchor="middle">滅火藥劑不得放射（§93Ⅰ②）</text>
+
+  <g>
+    <circle cx="470" cy="190" r="7" fill="var(--accent)"/>
+    <path class="s-thin" d="M470 183 L470 120"/>
+    <rect x="400" y="76" width="150" height="44" rx="5" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.3"/>
+    <text class="s-sm" x="475" y="95" text-anchor="middle" font-weight="700">容器閥開啟</text>
+    <text class="s-sm" x="475" y="111" text-anchor="middle">通風換氣裝置已停止（§85）</text>
+  </g>
+
+  <!-- 放射區間 -->
+  <rect x="470" y="163" width="230" height="54" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.6"/>
+  <text class="s-sm" x="585" y="152" text-anchor="middle" fill="var(--accent3)" font-weight="700">放射（§84 規定時間內全部放射完畢）</text>
+  <text class="s-sm" x="585" y="183" text-anchor="middle">乾式電器設備室 7 分（2 分內 ≥ 30%）</text>
+  <text class="s-sm" x="585" y="199" text-anchor="middle">電信機械室、總機室 3.5 分　·　其他 1 分</text>
+  <text class="s-sm" x="585" y="213" text-anchor="middle">局部放射 30 秒</text>
+
+  <g>
+    <circle cx="700" cy="190" r="7" fill="var(--accent)"/>
+    <path class="s-thin" d="M700 197 L700 250"/>
+    <rect x="620" y="250" width="160" height="36" rx="5" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.3"/>
+    <text class="s-sm" x="700" y="273" text-anchor="middle" font-weight="700">放射表示燈（§93Ⅰ③）</text>
+  </g>
+
+  <g>
+    <circle cx="820" cy="190" r="7" fill="var(--accent3)"/>
+    <path class="s-thin" d="M820 183 L820 120"/>
+    <rect x="740" y="70" width="155" height="50" rx="5" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.3"/>
+    <text class="s-sm" x="818" y="89" text-anchor="middle" font-weight="700">排放（§94）</text>
+    <text class="s-sm" x="818" y="105" text-anchor="middle">1 小時內排至安全地方</text>
+    <text class="s-sm" x="818" y="118" text-anchor="middle">機械排放：每小時 5 次換氣</text>
+  </g>
+</svg>
+<figcaption>圖 6　從探測器動作到藥劑排放的完整時序</figcaption>
+</figure>
+
+<h3>手動啟動裝置（§91Ⅰ①）— 七項要求</h3>
+<table>
+<tbody>
+<tr><td>①</td><td>設於<b>能看清區域內部</b>且<b>操作後能容易退避</b>之<b>防護區域外</b></td></tr>
+<tr><td>②</td><td>每一防護區域或防護對象裝設<b>一套</b></td></tr>
+<tr><td>③</td><td>操作部設在距樓地板面高度 <b>0.8 m 以上 1.5 m 以下</b></td></tr>
+<tr><td>④</td><td>外殼漆<b>紅色</b>或足以辨識之顏色</td></tr>
+<tr><td>⑤</td><td>以電力啟動者，裝置<b>電源表示燈</b></td></tr>
+<tr><td>⑥</td><td>操作開關或拉桿，操作時<b>同時發出警報音響</b>，且設有<b>透明材質</b>之有效保護裝置</td></tr>
+<tr><td>⑦</td><td>在其近旁標示<b>所防護區域名稱、操作方法及安全上應注意事項</b></td></tr>
+</tbody>
+</table>
+<p class="lede"><b>自動／手動切換裝置</b>（§91Ⅱ）：設於易於操作處、設自動及手動表示燈、
+必須以<b>鑰匙或拉桿</b>操作始能切換、切換裝置近旁標明操作方法。</p>
+
+<h3>排放規定（§94）</h3>
+<table>
+<thead><tr><th>方式</th><th>要求</th></tr></thead>
+<tbody>
+<tr><td><b>機械排放</b></td><td>排風機為<b>專用</b>，具有<b>每小時 5 次</b>之換氣量<br>（與其他設備排氣裝置共用而無排放障礙者，得共用）</td></tr>
+<tr><td><b>自然排放</b></td><td>設有能開啟之開口部，其<b>面向外氣</b>部分（限樓地板面起高度 <b>2/3 以下</b>部分）之大小，占防護區域<b>樓地板面積 10% 以上</b>，且容易擴散滅火藥劑</td></tr>
+</tbody>
+</table>
+<p class="lede">兩者皆須<b>於 1 小時內將藥劑排出</b>；操作開關設於防護區域外便於操作處並設標示；排放至室外之藥劑不得有局部滯留現象。</p>
+
+<div class="danger">
+  <b>緊急電源是 1 小時，不是 30 分鐘。</b>§95 規定全區及局部放射方式之緊急電源，
+  應採自用發電設備或蓄電池設備，容量能使該設備<b>有效動作一小時以上</b>。
+  這是全部滅火設備裡最長的——水系設備（室內外消防栓、自動撒水、水霧、泡沫）都是 30 分鐘。
+</div>
+
+<!-- ============ 7 ============ -->
+<h2 id="system"><span class="no">07</span>系統組成：高壓式 vs 低壓式</h2>
+
+<figure>
+<svg viewBox="0 0 880 340" role="img" aria-label="二氧化碳滅火設備系統組成圖">
+  <!-- 儲存容器 -->
+  <rect x="30" y="120" width="120" height="110" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.6"/>
+  <text class="s-txt" x="90" y="145" text-anchor="middle" font-weight="700">儲存容器</text>
+  <text class="s-sm" x="90" y="163" text-anchor="middle">§87　防護區域外</text>
+  <text class="s-sm" x="90" y="179" text-anchor="middle">40°C 以下</text>
+  <text class="s-sm" x="90" y="195" text-anchor="middle">無日曬雨淋</text>
+  <text class="s-sm" x="90" y="213" text-anchor="middle">充填比 高1.5~1.9</text>
+  <text class="s-sm" x="90" y="226" text-anchor="middle">低1.1~1.4</text>
+
+  <!-- 啟動用氣體容器 -->
+  <rect x="30" y="20" width="120" height="80" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <text class="s-txt" x="90" y="42" text-anchor="middle" font-weight="700">啟動用氣體容器</text>
+  <text class="s-sm" x="90" y="60" text-anchor="middle">§88　耐 250 kgf/cm²</text>
+  <text class="s-sm" x="90" y="76" text-anchor="middle">內容積 ≥ 1 L</text>
+  <text class="s-sm" x="90" y="92" text-anchor="middle">CO₂ ≥ 0.6 kg，充填比 ≥ 1.5</text>
+  <path class="s-thin" stroke-dasharray="4 3" d="M90 100 L90 118"/>
+
+  <!-- 容器閥開放裝置 -->
+  <rect x="175" y="150" width="110" height="52" rx="6" fill="var(--card)" stroke="var(--fg)" stroke-width="1.3"/>
+  <text class="s-sm" x="230" y="170" text-anchor="middle" font-weight="700">容器閥開放裝置</text>
+  <text class="s-sm" x="230" y="186" text-anchor="middle">§87Ⅰ⑦　可手動開啟</text>
+  <path class="s-line" d="M150 176 L172 176"/>
+
+  <!-- 選擇閥 -->
+  <rect x="315" y="150" width="110" height="66" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.5"/>
+  <text class="s-sm" x="370" y="170" text-anchor="middle" font-weight="700">選擇閥　§90</text>
+  <text class="s-sm" x="370" y="186" text-anchor="middle">二區域以上共用</text>
+  <text class="s-sm" x="370" y="200" text-anchor="middle">儲存容器時每區設置</text>
+  <text class="s-sm" x="370" y="213" text-anchor="middle">設於防護區域外</text>
+  <path class="s-line" d="M285 176 L312 176"/>
+
+  <!-- 配管 -->
+  <rect x="455" y="150" width="110" height="66" rx="6" fill="var(--card)" stroke="var(--fg)" stroke-width="1.3"/>
+  <text class="s-sm" x="510" y="170" text-anchor="middle" font-weight="700">配管　§89</text>
+  <text class="s-sm" x="510" y="186" text-anchor="middle">應為專用</text>
+  <text class="s-sm" x="510" y="201" text-anchor="middle">最低與最高配管</text>
+  <text class="s-sm" x="510" y="214" text-anchor="middle">落差 ≤ 50 m</text>
+  <path class="s-line" d="M425 176 L452 176"/>
+
+  <!-- 噴頭 -->
+  <rect x="600" y="120" width="120" height="60" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-sm" x="660" y="141" text-anchor="middle" font-weight="700">噴頭　§84</text>
+  <text class="s-sm" x="660" y="157" text-anchor="middle">高壓式 ≥ 14 kgf/cm²</text>
+  <text class="s-sm" x="660" y="172" text-anchor="middle">低壓式 ≥ 9 kgf/cm²</text>
+  <path class="s-line" d="M565 176 L582 176 L582 150 L597 150"/>
+
+  <!-- 移動式 -->
+  <rect x="600" y="196" width="120" height="60" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.5"/>
+  <text class="s-sm" x="660" y="217" text-anchor="middle" font-weight="700">皮管・噴射瞄子</text>
+  <text class="s-sm" x="660" y="233" text-anchor="middle">§96　移動放射</text>
+  <text class="s-sm" x="660" y="248" text-anchor="middle">≥ 60 kg/min（20°C）</text>
+  <path class="s-line" d="M582 176 L582 226 L597 226"/>
+
+  <!-- 防護區域 -->
+  <rect x="755" y="110" width="105" height="150" rx="6" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.8" stroke-dasharray="6 4"/>
+  <text class="s-sm" x="808" y="134" text-anchor="middle" font-weight="700">防護區域</text>
+  <text class="s-sm" x="808" y="154" text-anchor="middle">開口部 §86</text>
+  <text class="s-sm" x="808" y="172" text-anchor="middle">放射表示燈 §93</text>
+  <text class="s-sm" x="808" y="190" text-anchor="middle">音響警報 §92</text>
+  <text class="s-sm" x="808" y="208" text-anchor="middle">通風停止 §85</text>
+  <text class="s-sm" x="808" y="226" text-anchor="middle">排放裝置 §94</text>
+  <path class="s-line" d="M720 150 L752 150"/>
+  <path class="s-line" d="M720 226 L752 226"/>
+
+  <!-- 啟動裝置 -->
+  <rect x="315" y="252" width="250" height="60" rx="6" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-sm" x="440" y="272" text-anchor="middle" font-weight="700">啟動裝置　§91（手動 ＋ 自動）</text>
+  <text class="s-sm" x="440" y="289" text-anchor="middle">手動：防護區域外、操作部 0.8～1.5 m、外殼紅色</text>
+  <text class="s-sm" x="440" y="304" text-anchor="middle">自動：與二回路以上火警探測器連動</text>
+  <path class="s-thin" stroke-dasharray="4 3" d="M370 250 L370 216"/>
+
+  <!-- 緊急電源 -->
+  <rect x="30" y="252" width="250" height="46" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text class="s-sm" x="155" y="272" text-anchor="middle" font-weight="700">緊急電源　§95</text>
+  <text class="s-sm" x="155" y="289" text-anchor="middle">自用發電設備或蓄電池設備　·　<tspan fill="var(--accent)" font-weight="700">1 小時以上</tspan></text>
+  <path class="s-thin" stroke-dasharray="4 3" d="M90 250 L90 232"/>
+</svg>
+<figcaption>圖 7　系統組成與各條文的對應位置</figcaption>
+</figure>
+
+<h3>高壓式 vs 低壓式 完整對照</h3>
+<table>
+<thead><tr><th>項目</th><th>高壓式（常溫儲存）</th><th>低壓式</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td>儲存溫度</td><td>常溫</td><td><b>−18°C 以下</b></td><td class="n">§84Ⅰ②（一）</td></tr>
+<tr><td><b>充填比</b></td><td><b>1.5 以上 1.9 以下</b></td><td><b>1.1 以上 1.4 以下</b></td><td class="n">§87Ⅰ①（一）</td></tr>
+<tr><td><b>噴頭放射壓力</b></td><td>≥ 14 kgf/cm²（1.4 MPa）</td><td>≥ 9 kgf/cm²（0.9 MPa）</td><td class="n">§84Ⅰ②（一）</td></tr>
+<tr><td><b>局部放射追加倍數</b></td><td>× 1.4</td><td>× 1.1</td><td class="n">§83②</td></tr>
+<tr><td>無縫鋼管管號</td><td>Sch 80 以上</td><td>Sch 40 以上</td><td class="n">§89Ⅱ①</td></tr>
+<tr><td>銅管耐壓</td><td>≥ 165 kgf/cm²（16.5 MPa）</td><td>≥ 37.5 kgf/cm²（3.75 MPa）</td><td class="n">§89Ⅱ②</td></tr>
+<tr><td>配管接頭及閥類耐壓</td><td>≥ 165 kgf/cm²</td><td>≥ 37.5 kgf/cm²</td><td class="n">§89Ⅱ③</td></tr>
+<tr><td>液面計、壓力表、壓力警報裝置</td><td>—</td><td><b>應設</b>；壓力 ≥ 23 kgf/cm² 或 ≤ 19 kgf/cm² 時發出警報</td><td class="n">§87Ⅰ⑤</td></tr>
+<tr><td>自動冷凍機</td><td>—</td><td><b>應設</b>；維持容器內部 <b>−20°C 以上 −18°C 以下</b></td><td class="n">§87Ⅰ⑥</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <b>充填比的定義（§87Ⅱ）：</b>容器<b>內容積（公升）</b>與<b>液化氣體重量（公斤）</b>之比值。
+  也就是 <code>充填比 = 容器內容積 (L) ÷ 藥劑重量 (kg)</code>。
+  比值越小代表裝得越滿——所以低壓式（1.1～1.4）比高壓式（1.5～1.9）裝得更密實，
+  因為它靠低溫維持液態，不需要那麼大的氣相空間。
+</div>
+
+<div class="note">
+  <b>電磁閥的「七支規則」（§87Ⅰ⑦（二））：</b>容器閥使用電磁閥<b>直接開啟</b>時，
+  同時開啟之儲存容器數在 <b>7 支以上</b>者，該儲存容器應設 <b>2 個以上</b>之電磁閥。
+</div>
+
+<!-- ============ 8 ============ -->
+<h2 id="card"><span class="no">08</span>速查數字卡</h2>
+<table>
+<thead><tr><th>項目</th><th>數值</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td>移動放射方式水平距離（皮管接頭至防護對象任一部分）</td><td>≤ 15 m</td><td class="n">§82Ⅰ③</td></tr>
+<tr><td>惰性氣體種類</td><td>IG-100（N₂）／IG-01（Ar）／IG-55（50:50）／IG-541（52:40:8）</td><td class="n">§82Ⅱ</td></tr>
+<tr><td>惰性氣體放射方式</td><td><b>以全區放射為限</b></td><td class="n">§82Ⅲ</td></tr>
+<tr><td>全區藥劑量 — 乾式電器設備室</td><td>&lt;50 m³：1.6 kg/m³　·　≥50 m³：1.33 kg/m³　·　開口追加 20 kg/m²</td><td class="n">§83①</td></tr>
+<tr><td>全區藥劑量 — 電信機械室、總機室</td><td>1.2 kg/m³　·　開口追加 10 kg/m²</td><td class="n">§83①</td></tr>
+<tr><td>全區藥劑量 — 其他</td><td>&lt;50：1.0　·　50–150：0.9　·　150–1500：0.8　·　≥1500：0.75 kg/m³　·　開口追加 5 kg/m²</td><td class="n">§83①</td></tr>
+<tr><td>基本需要量</td><td>50 ／ 135 ／ 1,200 kg（對應其他場所後三個級距）</td><td class="n">§83①</td></tr>
+<tr><td>局部放射 — 面積式</td><td>表面積 × <b>13 kg/m²</b>；邊長 &lt; 0.6 m 以 <b>0.6 m</b> 計</td><td class="n">§83②（一）</td></tr>
+<tr><td>局部放射 — 體積式</td><td><b>Q = 8 − 6a/A</b>；假想防護空間為距防護對象任一點 <b>0.6 m</b> 範圍</td><td class="n">§83②（二）</td></tr>
+<tr><td>局部放射追加倍數</td><td>高壓式 <b>1.4</b>／低壓式 <b>1.1</b></td><td class="n">§83②</td></tr>
+<tr><td>移動放射每一具噴射瞄子藥劑量</td><td>≥ <b>90 kg</b></td><td class="n">§83③</td></tr>
+<tr><td>多區域時</td><td>取<b>最大量</b>者</td><td class="n">§83④</td></tr>
+<tr><td>惰性氣體設計濃度安全係數</td><td>一般 ×1.2／易燃液體 ×1.3／通電電氣設備 ×1.35</td><td class="n">§83-1</td></tr>
+<tr><td>惰性氣體常時有人場所濃度上限</td><td><b>52%</b></td><td class="n">§83-1①（二）</td></tr>
+<tr><td>惰性氣體藥劑量公式</td><td><b>W = (V/S)·ln[100/(100−C)]</b></td><td class="n">§83-2</td></tr>
+<tr><td>噴頭放射壓力</td><td>CO₂ 高壓 ≥14／低壓 ≥9／惰性氣體 ≥19 kgf/cm²</td><td class="n">§84Ⅰ②</td></tr>
+<tr><td><b>放射時間（CO₂ 全區）</b></td><td>乾式電器設備室 <b>7 分</b>（2 分內 ≥30%）／電信機械室、總機室 <b>3.5 分</b>／其他 <b>1 分</b></td><td class="n">§84Ⅰ③</td></tr>
+<tr><td>放射時間（惰性氣體）</td><td>含易燃液體場所 1 分內 ≥90%；其他 2 分內 ≥90%</td><td class="n">§84Ⅰ③（二）</td></tr>
+<tr><td>放射時間（CO₂ 局部）</td><td><b>30 秒</b>內全部放射完畢</td><td class="n">§84Ⅱ③</td></tr>
+<tr><td>通風換氣裝置</td><td>應在滅火藥劑<b>放射前停止</b>運轉</td><td class="n">§85</td></tr>
+<tr><td>開口部自動關閉範圍</td><td>距樓地板面高度 <b>2/3 以下</b>部分</td><td class="n">§86②</td></tr>
+<tr><td>免設自動關閉開口部面積上限</td><td>電信機械室：圍壁面積 <b>1%</b>／其他：體積值與圍壁面積值<b>較小者</b>的 <b>10%</b></td><td class="n">§86③</td></tr>
+<tr><td>充填比</td><td>高壓式 <b>1.5～1.9</b>／低壓式 <b>1.1～1.4</b>／惰性氣體充填壓力 15°C 時 ≤300 kgf/cm²</td><td class="n">§87Ⅰ①</td></tr>
+<tr><td>儲存容器場所</td><td>防護區域<b>外</b>、<b>40°C 以下</b>、溫度變化少、無日曬雨淋</td><td class="n">§87Ⅰ②</td></tr>
+<tr><td>低壓式壓力警報</td><td>≥ 23 kgf/cm² 或 ≤ 19 kgf/cm² 時發出警報</td><td class="n">§87Ⅰ⑤</td></tr>
+<tr><td>低壓式自動冷凍機</td><td>維持 <b>−20°C 以上 −18°C 以下</b></td><td class="n">§87Ⅰ⑥</td></tr>
+<tr><td>電磁閥數量</td><td>同時開啟容器數 ≥ <b>7 支</b>者，應設 <b>2 個以上</b>電磁閥</td><td class="n">§87Ⅰ⑦（二）</td></tr>
+<tr><td>啟動用氣體容器</td><td>耐 <b>250 kgf/cm²</b>；內容積 ≥ <b>1 L</b>；CO₂ ≥ <b>0.6 kg</b>；充填比 ≥ <b>1.5</b></td><td class="n">§88</td></tr>
+<tr><td>配管落差</td><td>最低與最高配管間 ≤ <b>50 m</b></td><td class="n">§89Ⅰ②</td></tr>
+<tr><td>手動啟動裝置操作部高度</td><td><b>0.8 m 以上 1.5 m 以下</b>；外殼漆<b>紅色</b></td><td class="n">§91Ⅰ①</td></tr>
+<tr><td>自動啟動裝置</td><td>與<b>二回路以上</b>火警探測器感應連動</td><td class="n">§91Ⅰ②</td></tr>
+<tr><td>自動／手動切換</td><td>須以<b>鑰匙或拉桿</b>操作始能切換</td><td class="n">§91Ⅱ③</td></tr>
+<tr><td>音響警報</td><td>全區放射採<b>人語發音</b>（平時無人駐守者除外）；藥劑未全部放射前不得中斷</td><td class="n">§92</td></tr>
+<tr><td><b>遲延裝置</b></td><td>啟動裝置動作至容器閥開啟，設 <b>20 秒以上</b>遲延</td><td class="n">§93Ⅰ①</td></tr>
+<tr><td>排放</td><td><b>1 小時內</b>排出；機械排放每小時 <b>5 次</b>換氣量；自然排放開口 ≥ 樓地板面積 <b>10%</b></td><td class="n">§94</td></tr>
+<tr><td><b>緊急電源</b></td><td>自用發電設備或蓄電池設備，<b>1 小時以上</b>（全法最長）</td><td class="n">§95</td></tr>
+<tr><td>移動式瞄子放射量</td><td>20°C 時 ≥ <b>60 kg/min</b></td><td class="n">§96⑤</td></tr>
+<tr><td>惰性氣體完整性測試</td><td>竣工時測試，<b>10 分鐘</b>內洩漏量使藥劑維持設計濃度 <b>85% 以上</b>合格</td><td class="n">§96-1</td></tr>
+</tbody>
+</table>
+
+<div class="navbar" style="margin-top:32px">
+  <a class="btn go" href="index.html">🏠 回學習首頁</a>
+  <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+  <a class="btn" href="#modes">↑ 回到最上方</a>
+</div>
+
+<footer>
+  <p>本頁數據取自全國法規資料庫「各類場所消防安全設備設置標準」（pcode D0120029）民國 113 年 4 月 24 日修正版原文，於 2026-08-04 擷取核對。</p>
+  <p>§83 第 1 款附表與 §84 第 1 項第 3 款附表在法規資料庫網頁版被省略（顯示「因條文排版無法完整呈現內容」），本頁數值取自各該條之「完整條文」PDF。</p>
+  <p><b>法規以主管機關公布文字為準。</b>本頁為個人學習筆記，不構成法律意見；設計送審前請回查現行條文：
+  <code>https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0120029</code></p>
+</footer>
+
+</div>
+
+<script>
+/* 支援 #id 與 ?s=id 兩種定位寫法 */
+(function(){
+  function target(){
+    var h=(location.hash||'').replace('#','');
+    if(!h){ var m=/[?&]s=([\w-]+)/.exec(location.search||''); h=m?m[1]:''; }
+    return h?document.getElementById(h):null;
+  }
+  function go(smooth){
+    var el=target(); if(!el) return;
+    el.scrollIntoView({behavior:smooth?'smooth':'auto',block:'start'});
+    el.style.transition='background-color .4s';
+    var old=el.style.backgroundColor;
+    el.style.backgroundColor='var(--fill4)';
+    setTimeout(function(){ el.style.backgroundColor=old||''; },1600);
+  }
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){ setTimeout(go,60); });
+  else setTimeout(go,60);
+  window.addEventListener('hashchange',function(){ go(true); });
+})();
+</script>
+</body>
+</html>
