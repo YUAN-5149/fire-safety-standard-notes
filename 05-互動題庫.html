@@ -126,6 +126,7 @@ code{background:var(--f2);padding:1px 5px;border-radius:4px;font-size:.88em}
     <a class="btn" href="index.html">🏠 學習首頁</a>
     <a class="btn" href="04a-%E6%B3%A1%E6%B2%AB%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html" target="_blank" rel="noopener">📐 泡沫設備圖解</a>
     <a class="btn" href="06-%E4%BA%8C%E6%B0%A7%E5%8C%96%E7%A2%B3%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html" target="_blank" rel="noopener">📐 二氧化碳設備圖解</a>
+    <a class="btn" href="07-%E4%B9%BE%E7%B2%89%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html" target="_blank" rel="noopener">📐 乾粉設備圖解</a>
   </div>
   <p class="sub" style="margin-top:8px">答錯時解析會直接帶你到對應的那張圖</p>
 </header>
@@ -935,7 +936,12 @@ const DOCS = {
        secs:{ modes:'01 三種放射方式', agent:'02 全區放射藥劑量',
               opening:'03 開口部規定', local:'04 局部放射',
               inert:'05 惰性氣體', timing:'06 放射時序與安全',
-              system:'07 系統組成' } }
+              system:'07 系統組成' } },
+  F: { file:'07-%E4%B9%BE%E7%B2%89%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html',
+       name:'乾粉設備圖解',
+       secs:{ modes:'01 放射方式與準用', agent:'02 全區藥劑量',
+              local:'03 局部放射', gas:'04 加壓／蓄壓用氣體',
+              system:'05 系統組成', simple:'06 簡易自動滅火設備' } }
 };
 const DGRULES = {
   D: [
@@ -956,6 +962,14 @@ const DGRULES = {
     [/§84Ⅰ③|§84Ⅱ③|§85|§91|§92|§93|§94|§95/,  'timing'],
     [/§84Ⅰ②|§87|§88|§89|§90/,                 'system'],
     [/§82|§83③|§96/,                           'modes']
+  ],
+  F: [
+    [/§111-1/,                                 'simple'],
+    [/§99②/,                                   'local'],
+    [/§99①|§99④/,                              'agent'],
+    [/§103|§104/,                              'gas'],
+    [/§102|§105|§106|§107|§108|§109|§110|§111/, 'system'],
+    [/§98|§99③|§100|§101/,                     'modes']
   ]
 };
 Q.forEach(q=>{

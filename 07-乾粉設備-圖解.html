@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>乾粉滅火設備 圖解 — 各類場所消防安全設備設置標準 §98～§111-1</title>
+<meta name="description" content="乾粉滅火設備及簡易自動滅火設備（§98～§111-1）的藥劑量計算式、加壓式與蓄壓式對照、系統組成圖解。">
+<style>
+  :root{
+    --bg:#fbfaf7; --fg:#1c1b19; --muted:#6b6862; --line:#d8d4cb;
+    --card:#ffffff; --accent:#b03a2e; --accent2:#1d6fa5; --accent3:#2e7d4f;
+    --warn:#a86b00; --danger:#8e1b0f;
+    --fill1:#f2e4e1; --fill2:#e0edf6; --fill3:#e3f0e8; --fill4:#f7efd9;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#16161a; --fg:#e8e6e1; --muted:#9b968c; --line:#3a3a40;
+      --card:#1e1e23; --accent:#e8705f; --accent2:#5aa8d8; --accent3:#5fbb87;
+      --warn:#d9a441; --danger:#f08070;
+      --fill1:#3a2622; --fill2:#1e3341; --fill3:#1f3a2c; --fill4:#3a3120;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+    line-height:1.75;-webkit-text-size-adjust:100%}
+  .wrap{max-width:960px;margin:0 auto;padding:32px 20px 80px}
+  header{border-bottom:2px solid var(--fg);padding-bottom:18px;margin-bottom:8px}
+  h1{font-size:clamp(1.4rem,4vw,2rem);margin:0 0 6px;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:.9rem;margin:0}
+  h2{font-size:1.15rem;margin:48px 0 4px;padding-top:14px;border-top:1px solid var(--line);
+    scroll-margin-top:16px}
+  h2 .no{color:var(--accent);font-variant-numeric:tabular-nums;margin-right:.5em}
+  h2:target{background:linear-gradient(transparent 62%,var(--fill4) 62%)}
+  h3{font-size:1rem;margin:26px 0 6px}
+  .lede{color:var(--muted);font-size:.92rem;margin:.2em 0 18px}
+  figure{margin:0 0 10px;background:var(--card);border:1px solid var(--line);
+    border-radius:10px;padding:18px 14px;overflow-x:auto}
+  svg{display:block;margin:0 auto;max-width:100%;height:auto}
+  figcaption{color:var(--muted);font-size:.84rem;margin-top:10px;text-align:center}
+  .note{border-left:3px solid var(--warn);background:var(--fill4);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .note b{color:var(--warn)}
+  .cmp{border-left:3px solid var(--accent2);background:var(--fill2);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .cmp b{color:var(--accent2)}
+  table{border-collapse:collapse;width:100%;font-size:.88rem;margin:14px 0}
+  th,td{border:1px solid var(--line);padding:6px 9px;text-align:left}
+  th{background:var(--fill2);font-weight:600}
+  td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+  code{background:var(--fill2);padding:1px 5px;border-radius:4px;font-size:.88em}
+  .formula{background:var(--fill3);border:1px solid var(--line);border-radius:8px;
+    padding:12px 16px;margin:14px 0;font-size:1rem;text-align:center}
+  .ex{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent2);
+    border-radius:0 10px 10px 0;padding:14px 18px;margin:18px 0}
+  .ex .t{font-weight:700;margin-bottom:6px;color:var(--accent2)}
+  .ex .given{font-size:.88rem;color:var(--muted);border-left:3px solid var(--line);
+    padding-left:12px;margin-bottom:10px}
+  .ex .step{font-size:.92rem;margin:8px 0}
+  .ex .ans{background:var(--fill3);border-radius:7px;padding:9px 13px;margin-top:10px;
+    font-weight:700;font-size:.94rem}
+  footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:.82rem}
+  a{color:var(--accent2)}
+  .navbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+  .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;
+    font-size:.86rem;padding:7px 14px;border-radius:8px;border:1px solid var(--line);
+    background:var(--card);color:var(--fg);transition:.12s}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.go{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+  .btn.go:hover{filter:brightness(1.1);color:#fff}
+  .toc{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 4px}
+  .toc a{font-size:.8rem;text-decoration:none;padding:4px 10px;border-radius:99px;
+    border:1px solid var(--line);background:var(--card);color:var(--muted)}
+  .toc a:hover{border-color:var(--accent);color:var(--accent)}
+  .s-line{stroke:var(--fg);stroke-width:1.4;fill:none}
+  .s-thin{stroke:var(--muted);stroke-width:1;fill:none}
+  .s-txt{fill:var(--fg);font-size:13px;font-family:inherit}
+  .s-sm{fill:var(--muted);font-size:11px;font-family:inherit}
+  .s-key{fill:var(--accent);font-size:13px;font-weight:700;font-family:inherit}
+  .s-dim{stroke:var(--accent2);stroke-width:1;fill:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>乾粉滅火設備 圖解</h1>
+  <p class="sub">各類場所消防安全設備設置標準 §98～§111-1（含簡易自動滅火設備）　|　民國 113 年 4 月 24 日修正版</p>
+  <div class="navbar">
+    <a class="btn go" href="index.html">🏠 回學習首頁</a>
+    <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫（乾粉 46 題）</a>
+    <a class="btn" href="06-%E4%BA%8C%E6%B0%A7%E5%8C%96%E7%A2%B3%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html">📐 二氧化碳設備圖解</a>
+  </div>
+</header>
+
+<nav class="toc" aria-label="章節目錄">
+  <a href="#modes">01 放射方式與準用</a>
+  <a href="#agent">02 全區藥劑量</a>
+  <a href="#local">03 局部放射</a>
+  <a href="#gas">04 加壓／蓄壓用氣體</a>
+  <a href="#system">05 系統組成</a>
+  <a href="#simple">06 簡易自動滅火設備</a>
+  <a href="#card">07 速查數字卡</a>
+</nav>
+
+<div class="cmp" style="margin-top:24px">
+  <b>讀乾粉最有效率的方式，是拿二氧化碳來對照。</b>
+  兩者的條文結構幾乎平行——放射方式、藥劑量、局部放射兩種算法、儲存容器、啟動用氣體、移動式——
+  但<b>數字幾乎都不一樣</b>，而且乾粉多了「四種藥劑」這個維度。
+  本頁凡是與 CO₂ 有差異之處都會用藍色框標出來，那些就是最容易失分的地方。
+</div>
+
+<!-- ============ 1 ============ -->
+<h2 id="modes"><span class="no">01</span>放射方式、準用關係與噴頭</h2>
+<p class="lede">§98 一口氣把 9 件事準用到二氧化碳的條文，但<b>沒有全部準用</b>——沒準用的那幾條才是重點。</p>
+
+<figure>
+<svg viewBox="0 0 900 400" role="img" aria-label="乾粉滅火設備放射方式與準用關係">
+  <rect x="335" y="10" width="230" height="42" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text class="s-txt" x="450" y="29" text-anchor="middle" font-weight="700">乾粉滅火設備</text>
+  <text class="s-sm" x="450" y="45" text-anchor="middle">§98 放射方式準用 §82</text>
+
+  <path class="s-line" d="M450 52 L450 74"/>
+  <path class="s-line" d="M150 74 L750 74"/>
+  <path class="s-line" d="M150 74 L150 96 M450 74 L450 96 M750 74 L750 96"/>
+
+  <rect x="45" y="96" width="210" height="46" rx="6" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-txt" x="150" y="116" text-anchor="middle" font-weight="700">全區放射方式</text>
+  <text class="s-sm" x="150" y="133" text-anchor="middle">§99① 表　體積 ＋ 開口部</text>
+
+  <rect x="345" y="96" width="210" height="46" rx="6" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-txt" x="450" y="116" text-anchor="middle" font-weight="700">局部放射方式</text>
+  <text class="s-sm" x="450" y="133" text-anchor="middle">§99② 面積式／體積式</text>
+
+  <rect x="645" y="96" width="210" height="46" rx="6" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-txt" x="750" y="116" text-anchor="middle" font-weight="700">移動放射方式</text>
+  <text class="s-sm" x="750" y="133" text-anchor="middle">§99③ 每具瞄子 50／30／20 kg</text>
+
+  <!-- 30 秒 -->
+  <path class="s-line" d="M150 142 L150 168 L450 168 M450 142 L450 168"/>
+  <rect x="290" y="168" width="320" height="40" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-txt" x="450" y="186" text-anchor="middle" font-weight="700">§100③　全區與局部「都」於 30 秒內全部放射完畢</text>
+  <text class="s-sm" x="450" y="202" text-anchor="middle">噴頭放射壓力 ≥ 1 kgf/cm²（0.1 MPa）（§100②）</text>
+
+  <!-- §101 -->
+  <rect x="620" y="168" width="250" height="40" rx="6" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <text class="s-sm" x="745" y="186" text-anchor="middle" font-weight="700" fill="var(--warn)">§101　供室內停車空間使用者</text>
+  <text class="s-sm" x="745" y="201" text-anchor="middle" fill="var(--warn)">滅火藥劑以「第三種乾粉」為限</text>
+
+  <!-- 準用 -->
+  <rect x="45" y="234" width="390" height="150" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.5"/>
+  <text class="s-txt" x="240" y="256" text-anchor="middle" font-weight="700" fill="var(--accent3)">§98 準用二氧化碳之規定（9 項）</text>
+  <text class="s-sm" x="62" y="278">§82　放射方式　　　　　§85　通風換氣裝置</text>
+  <text class="s-sm" x="62" y="298">§86　防護區域之開口部　§90　選擇閥</text>
+  <text class="s-sm" x="62" y="318">§91　啟動裝置　　　　　§92　音響警報裝置</text>
+  <text class="s-sm" x="62" y="338">§93　安全裝置（含 20 秒遲延）</text>
+  <text class="s-sm" x="62" y="358">§95　緊急電源（1 小時）　§97　各種標示規格</text>
+
+  <rect x="465" y="234" width="390" height="150" rx="8" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text class="s-txt" x="660" y="256" text-anchor="middle" font-weight="700" fill="var(--accent)">「沒有」準用的條文</text>
+  <text class="s-sm" x="482" y="278">§84　噴頭　　　→ 乾粉自己有 §100</text>
+  <text class="s-sm" x="482" y="298">§87　儲存容器　→ 乾粉自己有 §102</text>
+  <text class="s-sm" x="482" y="318">§88　啟動用氣體→ 乾粉自己有 §110</text>
+  <text class="s-sm" x="482" y="338">§89　配管　　　→ 乾粉自己有 §105</text>
+  <text class="s-sm" x="482" y="360" font-weight="700" fill="var(--accent)">§94　滅火藥劑之排放 → 完全沒有對應條文</text>
+</svg>
+<figcaption>圖 1　§98 準用關係與三種放射方式</figcaption>
+</figure>
+
+<div class="cmp">
+  <b>為什麼乾粉沒有「排放」規定？</b>二氧化碳是窒息性氣體，放射後會滯留在防護區域內，
+  所以 §94 要求 1 小時內排出、機械排放每小時 5 次換氣。乾粉是固體粉末，會沉降堆積而不是滯留成致命氣層，
+  所以 §98 的準用清單刻意跳過 §94。<b>但 §93（20 秒遲延裝置）有準用</b>——乾粉噴出時同樣會造成能見度歸零與呼吸困難。
+</div>
+
+<div class="cmp">
+  <b>放射時間是最容易混的一組。</b>
+  乾粉：全區、局部<b>都是 30 秒</b>（§100③）。
+  二氧化碳：全區依場所 <b>7／3.5／1 分鐘</b>，局部才 30 秒（§84）。
+</div>
+
+<!-- ============ 2 ============ -->
+<h2 id="agent"><span class="no">02</span>全區放射藥劑量：四種乾粉，兩個係數</h2>
+
+<div class="formula"><b>W = V × q ＋ A<sub>開口</sub> × k</b></div>
+<p class="lede" style="text-align:center;margin-top:-6px">
+  V：防護區域體積（m³）　q：每 m³ 所需藥劑量　A<sub>開口</sub>：未設自動關閉裝置之開口部面積（m²）　k：每 m² 追加量
+</p>
+
+<table>
+<thead><tr><th>乾粉藥劑種類</th><th>主成份</th><th class="n">每 m³ 藥劑量 q<br>(kg/m³)</th><th class="n">每 m² 開口部追加 k<br>(kg/m²)</th></tr></thead>
+<tbody>
+<tr><td><b>第一種乾粉</b></td><td>碳酸氫鈉（NaHCO₃）</td><td class="n">0.6</td><td class="n">4.5</td></tr>
+<tr><td><b>第二種乾粉</b></td><td>碳酸氫鉀（KHCO₃）</td><td class="n">0.36</td><td class="n">2.7</td></tr>
+<tr><td><b>第三種乾粉</b></td><td>磷酸二氫銨（NH₄H₂PO₄，即 ABC 乾粉）</td><td class="n">0.36</td><td class="n">2.7</td></tr>
+<tr><td><b>第四種乾粉</b></td><td>碳酸氫鉀及尿素化合物</td><td class="n">0.24</td><td class="n">1.8</td></tr>
+</tbody>
+</table>
+
+<figure>
+<svg viewBox="0 0 720 300" role="img" aria-label="四種乾粉全區藥劑量比較長條圖">
+  <path class="s-line" d="M70 250 L680 250"/>
+  <path class="s-line" d="M70 250 L70 40"/>
+  <text class="s-sm" x="82" y="34">kg/m³</text>
+
+  <g class="s-thin">
+    <path d="M70 250 L64 250 M70 180 L64 180 M70 110 L64 110 M70 40 L64 40"/>
+  </g>
+  <text class="s-sm" x="60" y="254" text-anchor="end">0</text>
+  <text class="s-sm" x="60" y="184" text-anchor="end">0.2</text>
+  <text class="s-sm" x="60" y="114" text-anchor="end">0.4</text>
+  <text class="s-sm" x="60" y="44" text-anchor="end">0.6</text>
+
+  <!-- 長條：0.6 / 0.36 / 0.36 / 0.24 ; y = 250 - q*350 -->
+  <g stroke="var(--accent)" stroke-width="1.5">
+    <rect x="110" y="40"  width="72" height="210" fill="var(--fill1)"/>
+    <rect x="250" y="124" width="72" height="126" fill="var(--fill1)"/>
+    <rect x="390" y="124" width="72" height="126" fill="var(--fill1)"/>
+    <rect x="530" y="166" width="72" height="84"  fill="var(--fill1)"/>
+  </g>
+  <text class="s-key" x="146" y="32" text-anchor="middle">0.6</text>
+  <text class="s-key" x="286" y="116" text-anchor="middle">0.36</text>
+  <text class="s-key" x="426" y="116" text-anchor="middle">0.36</text>
+  <text class="s-key" x="566" y="158" text-anchor="middle">0.24</text>
+
+  <text class="s-sm" x="146" y="268" text-anchor="middle">第一種</text>
+  <text class="s-sm" x="146" y="283" text-anchor="middle">碳酸氫鈉</text>
+  <text class="s-sm" x="286" y="268" text-anchor="middle">第二種</text>
+  <text class="s-sm" x="286" y="283" text-anchor="middle">碳酸氫鉀</text>
+  <text class="s-sm" x="426" y="268" text-anchor="middle">第三種</text>
+  <text class="s-sm" x="426" y="283" text-anchor="middle">磷酸二氫銨</text>
+  <text class="s-sm" x="566" y="268" text-anchor="middle">第四種</text>
+  <text class="s-sm" x="566" y="283" text-anchor="middle">碳酸氫鉀＋尿素</text>
+
+  <!-- 開口部倍率標註 -->
+  <rect x="360" y="46" width="310" height="52" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.3"/>
+  <text class="s-sm" x="374" y="66" fill="var(--accent3)" font-weight="700">開口部追加量 k ＝ q × 7.5（四種皆同）</text>
+  <text class="s-sm" x="374" y="84">0.6→4.5　0.36→2.7　0.24→1.8</text>
+</svg>
+<figcaption>圖 2　四種乾粉的單位體積藥劑量（開口部追加量恰為其 7.5 倍）</figcaption>
+</figure>
+
+<div class="note">
+  <b>不必分開記兩排數字。</b>開口部追加量 k 恰好是每 m³ 藥劑量 q 的 <b>7.5 倍</b>：
+  0.6 × 7.5 = 4.5、0.36 × 7.5 = 2.7、0.24 × 7.5 = 1.8。記住 q 那一排就夠了。
+</div>
+
+<div class="cmp">
+  <b>乾粉沒有「基本需要量」。</b>二氧化碳的 §83 附表有 50／135／1,200 kg 的下限要比對，
+  乾粉的 §99 附表只有「每 m³」與「每 m² 開口部」兩列——算完就是答案，不必再比。
+</div>
+
+<p class="lede"><b>§99④</b>：全區及局部放射方式，同一建築物內有二個以上防護區域或防護對象時，所需滅火藥劑量<b>取其最大量者</b>（與 CO₂ §83④ 相同）。</p>
+
+<div class="ex">
+  <div class="t">例一｜室內停車空間・全區放射</div>
+  <div class="given">室內停車空間防護區域體積 500 m³；開口部 3 m² 未設自動關閉裝置。</div>
+  <div class="step"><b>Step 1　選藥劑</b>　§101：供室內停車空間使用者，<b>以第三種乾粉為限</b> → q = 0.36、k = 2.7</div>
+  <div class="step"><b>Step 2　藥劑量</b>　W = 500 × 0.36 + 3 × 2.7 = 180 + 8.1 = <b>188.1 kg</b></div>
+  <div class="step"><b>Step 3　放射時間</b>　§100③：<b>30 秒</b>內全部放射完畢</div>
+  <div class="step"><b>Step 4　噴頭放射壓力</b>　§100②：≥ 1 kgf/cm²（0.1 MPa）</div>
+  <div class="ans">藥劑量 188.1 kg　·　30 秒內放射完畢　·　乾粉無基本需要量，不必再比下限</div>
+</div>
+
+<!-- ============ 3 ============ -->
+<h2 id="local"><span class="no">03</span>局部放射：兩種算法，追加倍數一律 1.1</h2>
+<p class="lede">判斷條件與二氧化碳完全相同——<b>是不是上方開放式容器、燃燒是否限於一面、可燃物有無向外飛散之虞</b>。</p>
+
+<h3>（一）面積式</h3>
+<div class="formula"><b>W = 防護對象表面積 (m²) × 單位藥劑量 × 1.1</b></div>
+<table>
+<thead><tr><th>滅火藥劑種類</th><th class="n">每 m² 表面積所需藥劑量 (kg/m²)</th><th class="n">追加倍數</th></tr></thead>
+<tbody>
+<tr><td>第一種乾粉</td><td class="n">8.8</td><td class="n">1.1</td></tr>
+<tr><td>第二種或第三種乾粉</td><td class="n">5.2</td><td class="n">1.1</td></tr>
+<tr><td>第四種乾粉</td><td class="n">3.6</td><td class="n">1.1</td></tr>
+</tbody>
+</table>
+<p class="lede"><b>備考</b>：防護對象物之邊長在 <b>0.6 m 以下</b>時，以 0.6 m 計。</p>
+
+<div class="cmp">
+  <b>兩個與 CO₂ 的差異：</b>
+  ① 單位藥劑量 CO₂ 是固定的 <b>13 kg/m²</b>，乾粉則依藥劑種類 8.8／5.2／3.6。
+  ② 追加倍數 CO₂ 是<b>高壓式 1.4／低壓式 1.1</b>（看儲存方式），乾粉<b>一律 1.1</b>（不看任何條件）。
+</div>
+
+<h3>（二）體積式</h3>
+<div class="formula"><b>Q = X − Y × (a / A)</b>　→　<b>W = Q × 假想防護空間體積 × 1.1</b></div>
+<p class="lede" style="text-align:center;margin-top:-6px">
+  <b>a</b>：防護對象周圍實存牆壁面積之合計（m²）　　<b>A</b>：假想防護空間牆壁面積之合計（m²）<br>
+  <b>但供電信機器室使用者，所核算出之滅火藥劑量須乘以 0.7</b>
+</p>
+
+<figure>
+<svg viewBox="0 0 760 330" role="img" aria-label="乾粉局部放射體積式 Q 值折線圖">
+  <path class="s-line" d="M80 270 L620 270"/>
+  <path class="s-line" d="M80 270 L80 40"/>
+  <text class="s-sm" x="88" y="56" text-anchor="start">Q（kg/m³）</text>
+  <text class="s-sm" x="350" y="312" text-anchor="middle">a / A（牆壁包圍比例）</text>
+
+  <g class="s-thin"><path d="M80 270 L74 270 M80 224 L74 224 M80 178 L74 178 M80 132 L74 132 M80 86 L74 86"/></g>
+  <text class="s-sm" x="70" y="274" text-anchor="end">0</text>
+  <text class="s-sm" x="70" y="182" text-anchor="end">2</text>
+  <text class="s-sm" x="70" y="136" text-anchor="end">3</text>
+  <text class="s-sm" x="70" y="90" text-anchor="end">4</text>
+  <text class="s-sm" x="80" y="288" text-anchor="middle">0</text>
+  <text class="s-sm" x="620" y="288" text-anchor="middle">1</text>
+
+  <!-- y = 270 - Q*46 ; x = 80 + (a/A)*540 -->
+  <!-- 第一種 5.2 → 1.3 -->
+  <path d="M80 30.8 L620 210.2" stroke="var(--accent)" stroke-width="2.4" fill="none"/>
+  <circle cx="80" cy="30.8" r="4" fill="var(--accent)"/>
+  <circle cx="620" cy="210.2" r="4" fill="var(--accent)"/>
+  <text class="s-key" x="92" y="26">第一種　X = 5.2</text>
+  <text class="s-key" x="612" y="204" text-anchor="end" style="font-size:11px">1.3</text>
+
+  <!-- 第二/三種 3.2 → 0.8 -->
+  <path d="M80 122.8 L620 233.2" stroke="var(--accent2)" stroke-width="2.4" fill="none"/>
+  <circle cx="80" cy="122.8" r="4" fill="var(--accent2)"/>
+  <circle cx="620" cy="233.2" r="4" fill="var(--accent2)"/>
+  <text class="s-sm" x="92" y="118" fill="var(--accent2)" font-weight="700">第二種或第三種　X = 3.2</text>
+  <text class="s-sm" x="612" y="228" text-anchor="end" fill="var(--accent2)" font-weight="700">0.8</text>
+
+  <!-- 第四種 2.0 → 0.5 -->
+  <path d="M80 178 L620 247" stroke="var(--accent3)" stroke-width="2.4" fill="none"/>
+  <circle cx="80" cy="178" r="4" fill="var(--accent3)"/>
+  <circle cx="620" cy="247" r="4" fill="var(--accent3)"/>
+  <text class="s-sm" x="92" y="196" fill="var(--accent3)" font-weight="700">第四種　X = 2.0</text>
+  <text class="s-sm" x="612" y="262" text-anchor="end" fill="var(--accent3)" font-weight="700">0.5</text>
+
+  <rect x="330" y="46" width="290" height="70" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.3"/>
+  <text class="s-sm" x="344" y="66" fill="var(--accent3)" font-weight="700">三條線的斜率都是 X 的 75%</text>
+  <text class="s-sm" x="344" y="84">Y / X ＝ 3.9/5.2 ＝ 2.4/3.2 ＝ 1.5/2.0 ＝ 0.75</text>
+  <text class="s-sm" x="344" y="102">→ a/A = 1 時，Q 一律降到 X 的 1/4</text>
+</svg>
+<figcaption>圖 3　三組 X、Y 值的 Q 值變化（a/A 從 0 到 1）</figcaption>
+</figure>
+
+<table>
+<thead><tr><th>滅火藥劑種類</th><th class="n">X 值</th><th class="n">Y 值</th><th class="n">Y / X</th><th class="n">a/A = 1 時之 Q</th></tr></thead>
+<tbody>
+<tr><td>第一種乾粉</td><td class="n">5.2</td><td class="n">3.9</td><td class="n">0.75</td><td class="n">1.3</td></tr>
+<tr><td>第二種或第三種乾粉</td><td class="n">3.2</td><td class="n">2.4</td><td class="n">0.75</td><td class="n">0.8</td></tr>
+<tr><td>第四種乾粉</td><td class="n">2.0</td><td class="n">1.5</td><td class="n">0.75</td><td class="n">0.5</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <b>Y 值不必另外背。</b>三種藥劑的 <b>Y ＝ 0.75 X</b>，所以公式可以改寫成
+  <code>Q = X × (1 − 0.75 × a/A)</code>。只要記住 X = 5.2／3.2／2.0，Y 就推得出來。
+</div>
+
+<div class="cmp">
+  <b>與 CO₂ 體積式的差異：</b>CO₂ 是固定的 <b>Q = 8 − 6a/A</b>（不分型式），
+  乾粉是 <b>Q = X − Y·a/A</b>（X、Y 隨藥劑種類變）。
+  另外乾粉多了一條 CO₂ 沒有的規定：<b>供電信機器室使用者，核算出的藥劑量要再乘 0.7</b>。
+</div>
+
+<div class="ex">
+  <div class="t">例二｜局部放射・面積式</div>
+  <div class="given">上方開放式容器液面 1.0 m × 0.5 m，燃燒限於一面且無飛散之虞；採第一種乾粉。</div>
+  <div class="step"><b>Step 1　邊長修正</b>　短邊 0.5 m ≤ 0.6 m　→　<b>以 0.6 m 計</b></div>
+  <div class="step"><b>Step 2　表面積</b>　1.0 × 0.6 = <b>0.6 m²</b></div>
+  <div class="step"><b>Step 3　藥劑量</b>　W = 0.6 × 8.8 × 1.1 = <b>5.81 kg</b></div>
+  <div class="ans">藥劑量約 5.81 kg　·　30 秒內全部放射完畢　·　忘記邊長修正會算成 4.84 kg</div>
+</div>
+
+<div class="ex">
+  <div class="t">例三｜電信機器室・體積式（含 0.7 折減）</div>
+  <div class="given">電信機器室內某設備採第二種乾粉局部放射；a/A = 0.25；假想防護空間體積 60 m³。</div>
+  <div class="step"><b>Step 1　Q 值</b>　第二種乾粉 X = 3.2、Y = 2.4　→　Q = 3.2 − 2.4 × 0.25 = <b>2.6 kg/m³</b></div>
+  <div class="step"><b>Step 2　乘體積與追加倍數</b>　2.6 × 60 × 1.1 = <b>171.6 kg</b></div>
+  <div class="step"><b>Step 3　電信機器室折減</b>　§99②（二）但書 → 171.6 × <b>0.7</b> = <b>120.12 kg</b></div>
+  <div class="ans">最終藥劑量約 120.1 kg</div>
+  <div class="step" style="margin-top:10px;color:var(--muted)">
+    注意順序：<b>先算完（含追加倍數 1.1），最後才乘 0.7</b>。
+    1.1 是「追加」、0.7 是「折減」，方向相反，別互相抵銷或漏乘。
+  </div>
+</div>
+
+<!-- ============ 4 ============ -->
+<h2 id="gas"><span class="no">04</span>加壓用與蓄壓用氣體：4 倍的差距</h2>
+<p class="lede">§104。乾粉本身不會自己跑出來，要靠氣體推——這是它與氣體系統最根本的不同。</p>
+
+<figure>
+<svg viewBox="0 0 820 300" role="img" aria-label="加壓式與蓄壓式所需氣體量比較">
+  <!-- 加壓式 -->
+  <rect x="30" y="30" width="360" height="240" rx="10" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-txt" x="210" y="56" text-anchor="middle" font-weight="700" fill="var(--accent)">加壓式</text>
+  <text class="s-sm" x="210" y="74" text-anchor="middle">平時儲存容器內「不加壓」，動作時才由氣體容器灌入</text>
+
+  <g stroke="var(--fg)" stroke-width="1.5" fill="var(--card)">
+    <rect x="60" y="96" width="86" height="96" rx="6"/>
+    <rect x="196" y="96" width="86" height="96" rx="6"/>
+  </g>
+  <text class="s-sm" x="103" y="130" text-anchor="middle">加壓用</text>
+  <text class="s-sm" x="103" y="146" text-anchor="middle">氣體容器</text>
+  <text class="s-sm" x="103" y="168" text-anchor="middle" fill="var(--accent)" font-weight="700">§103</text>
+  <text class="s-sm" x="239" y="130" text-anchor="middle">乾粉</text>
+  <text class="s-sm" x="239" y="146" text-anchor="middle">儲存容器</text>
+  <path class="s-line" stroke="var(--accent)" d="M146 144 L192 144"/>
+  <path d="M192 139 L202 144 L192 149 z" fill="var(--accent)"/>
+
+  <rect x="300" y="96" width="76" height="96" rx="6" fill="var(--card)" stroke="var(--fg)" stroke-width="1.5"/>
+  <text class="s-sm" x="338" y="134" text-anchor="middle">噴頭</text>
+  <text class="s-sm" x="338" y="152" text-anchor="middle">§100</text>
+  <path class="s-line" d="M282 144 L296 144"/>
+
+  <text class="s-key" x="210" y="218" text-anchor="middle">氮氣：每 1 kg 乾粉需 40 公升以上</text>
+  <text class="s-sm" x="210" y="238" text-anchor="middle">（35°C、表壓力 0 kgf/cm² 狀態下）</text>
+  <text class="s-sm" x="210" y="256" text-anchor="middle">另設 §107 壓力調整裝置、§108 定壓動作裝置</text>
+
+  <!-- 蓄壓式 -->
+  <rect x="430" y="30" width="360" height="240" rx="10" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.6"/>
+  <text class="s-txt" x="610" y="56" text-anchor="middle" font-weight="700" fill="var(--accent2)">蓄壓式</text>
+  <text class="s-sm" x="610" y="74" text-anchor="middle">平時儲存容器內「已加壓」，藥劑與氣體同容器</text>
+
+  <rect x="500" y="96" width="130" height="96" rx="6" fill="var(--card)" stroke="var(--fg)" stroke-width="1.5"/>
+  <text class="s-sm" x="565" y="128" text-anchor="middle">乾粉儲存容器</text>
+  <text class="s-sm" x="565" y="146" text-anchor="middle">（內已充壓）</text>
+  <text class="s-sm" x="565" y="168" text-anchor="middle" fill="var(--accent2)" font-weight="700">§109 綠色指示壓力表</text>
+
+  <rect x="680" y="96" width="76" height="96" rx="6" fill="var(--card)" stroke="var(--fg)" stroke-width="1.5"/>
+  <text class="s-sm" x="718" y="134" text-anchor="middle">噴頭</text>
+  <text class="s-sm" x="718" y="152" text-anchor="middle">§100</text>
+  <path class="s-line" d="M630 144 L676 144"/>
+
+  <text class="s-key" x="610" y="218" text-anchor="middle" fill="var(--accent2)">氮氣：每 1 kg 乾粉需 10 公升以上</text>
+  <text class="s-sm" x="610" y="238" text-anchor="middle">並加算清洗配管所需要量</text>
+  <text class="s-sm" x="610" y="256" text-anchor="middle">內壓 ≥ 10 kgf/cm² 者應設容器閥（§102⑤）</text>
+</svg>
+<figcaption>圖 4　加壓式與蓄壓式的氣體需求與專屬裝置</figcaption>
+</figure>
+
+<table>
+<thead><tr><th>用途</th><th>使用氮氣</th><th>使用二氧化碳</th></tr></thead>
+<tbody>
+<tr><td><b>加壓用</b></td><td>每 1 kg 乾粉需 <b>40 公升</b>以上<br>（35°C、表壓力 0 kgf/cm²）</td><td rowspan="2">每 1 kg 乾粉需 <b>20 公克</b><br>並加算清洗配管所需要量<br><b>（加壓、蓄壓皆同）</b></td></tr>
+<tr><td><b>蓄壓用</b></td><td>每 1 kg 乾粉需 <b>10 公升</b>以上<br>並加算清洗配管所需要量</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <b>三個容易錯的點：</b>
+  ① 氣體<b>只能用氮氣或二氧化碳</b>（§104①）——不能用空氣，因為含氧助燃且水分會使乾粉結塊。
+  ② 氮氣才有 40／10 的差別；<b>用 CO₂ 時加壓、蓄壓都是 20 g</b>。
+  ③ <b>清洗配管用氣體應另以容器儲存</b>（§104④），不能跟推動用氣體共用。
+</div>
+
+<div class="ex">
+  <div class="t">例四｜加壓用氮氣量</div>
+  <div class="given">加壓式乾粉滅火設備，使用第三種乾粉 150 公斤，加壓用氣體採氮氣。</div>
+  <div class="step"><b>計算</b>　150 kg × 40 L/kg = <b>6,000 公升</b>（不計清洗配管所需量）</div>
+  <div class="step" style="color:var(--muted)">若改為蓄壓式：150 × 10 = 1,500 公升，並另加算清洗配管所需要量。</div>
+  <div class="ans">加壓式需 6,000 L 氮氣　·　蓄壓式只需 1,500 L　·　差距 4 倍</div>
+</div>
+
+<!-- ============ 5 ============ -->
+<h2 id="system"><span class="no">05</span>系統組成：加壓式與蓄壓式的專屬裝置</h2>
+
+<figure>
+<svg viewBox="0 0 880 330" role="img" aria-label="乾粉滅火設備系統組成圖">
+  <rect x="25" y="118" width="112" height="92" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <text class="s-sm" x="81" y="140" text-anchor="middle" font-weight="700">加壓用氣體容器</text>
+  <text class="s-sm" x="81" y="158" text-anchor="middle">§103 設於儲存</text>
+  <text class="s-sm" x="81" y="172" text-anchor="middle">容器近旁並確實接連</text>
+  <text class="s-sm" x="81" y="192" text-anchor="middle">§104 氮氣或 CO₂</text>
+
+  <rect x="25" y="18" width="112" height="80" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-sm" x="81" y="40" text-anchor="middle" font-weight="700">啟動用氣體容器</text>
+  <text class="s-sm" x="81" y="58" text-anchor="middle">§110　耐 250 kgf/cm²</text>
+  <text class="s-sm" x="81" y="73" text-anchor="middle">≥ 0.27 L／145 g</text>
+  <text class="s-sm" x="81" y="88" text-anchor="middle">充填比 ≥ 1.5</text>
+  <path class="s-thin" stroke-dasharray="4 3" d="M81 98 L81 116"/>
+
+  <rect x="172" y="128" width="104" height="72" rx="6" fill="var(--card)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-sm" x="224" y="150" text-anchor="middle" font-weight="700">壓力調整裝置</text>
+  <text class="s-sm" x="224" y="167" text-anchor="middle">§107　加壓式</text>
+  <text class="s-sm" x="224" y="184" text-anchor="middle">≤ 25 kgf/cm²</text>
+  <path class="s-line" d="M137 164 L169 164"/>
+
+  <rect x="310" y="112" width="118" height="104" rx="6" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.6"/>
+  <text class="s-sm" x="369" y="134" text-anchor="middle" font-weight="700">乾粉儲存容器</text>
+  <text class="s-sm" x="369" y="152" text-anchor="middle">§102　防護區域外</text>
+  <text class="s-sm" x="369" y="167" text-anchor="middle">40°C 以下・無日曬</text>
+  <text class="s-sm" x="369" y="184" text-anchor="middle">充填比依藥劑種類</text>
+  <text class="s-sm" x="369" y="201" text-anchor="middle">排出裝置＋清洗裝置</text>
+  <path class="s-line" d="M276 164 L306 164"/>
+
+  <rect x="310" y="238" width="118" height="58" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.4"/>
+  <text class="s-sm" x="369" y="258" text-anchor="middle" font-weight="700">定壓動作裝置</text>
+  <text class="s-sm" x="369" y="274" text-anchor="middle">§108　加壓式</text>
+  <text class="s-sm" x="369" y="289" text-anchor="middle">設於「各」儲存容器</text>
+  <path class="s-thin" stroke-dasharray="4 3" d="M369 236 L369 218"/>
+
+  <rect x="310" y="20" width="118" height="56" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-sm" x="369" y="40" text-anchor="middle" font-weight="700">指示壓力表</text>
+  <text class="s-sm" x="369" y="56" text-anchor="middle">§109　蓄壓式</text>
+  <text class="s-sm" x="369" y="70" text-anchor="middle">以綠色表示使用壓力範圍</text>
+  <path class="s-thin" stroke-dasharray="4 3" d="M369 78 L369 110"/>
+
+  <rect x="462" y="128" width="100" height="72" rx="6" fill="var(--card)" stroke="var(--fg)" stroke-width="1.4"/>
+  <text class="s-sm" x="512" y="150" text-anchor="middle" font-weight="700">放出閥</text>
+  <text class="s-sm" x="512" y="167" text-anchor="middle">§105②（三）</text>
+  <text class="s-sm" x="512" y="184" text-anchor="middle">手動操作部設於安全處</text>
+  <path class="s-line" d="M428 164 L458 164"/>
+
+  <rect x="596" y="120" width="112" height="88" rx="6" fill="var(--card)" stroke="var(--fg)" stroke-width="1.4"/>
+  <text class="s-sm" x="652" y="142" text-anchor="middle" font-weight="700">配管　§105・§106</text>
+  <text class="s-sm" x="652" y="159" text-anchor="middle">應為專用・採均分</text>
+  <text class="s-sm" x="652" y="175" text-anchor="middle">落差 ≤ 50 m</text>
+  <text class="s-sm" x="652" y="192" text-anchor="middle" fill="var(--accent)" font-weight="700">彎曲部距離 ≥ 管徑 20 倍</text>
+  <path class="s-line" d="M562 164 L592 164"/>
+
+  <rect x="742" y="120" width="112" height="88" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-sm" x="798" y="146" text-anchor="middle" font-weight="700">噴頭　§100</text>
+  <text class="s-sm" x="798" y="164" text-anchor="middle">放射壓力 ≥ 1 kgf/cm²</text>
+  <text class="s-sm" x="798" y="182" text-anchor="middle" fill="var(--accent)" font-weight="700">30 秒內全部放射</text>
+  <path class="s-line" d="M708 164 L738 164"/>
+
+  <rect x="596" y="238" width="258" height="58" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-sm" x="725" y="258" text-anchor="middle" font-weight="700">移動式　§111</text>
+  <text class="s-sm" x="725" y="274" text-anchor="middle">容器分設於各皮管處・紅色標示燈</text>
+  <text class="s-sm" x="725" y="289" text-anchor="middle">放射量 45／27／18 kg/min・濃煙不易籠罩處</text>
+  <path class="s-thin" stroke-dasharray="4 3" d="M652 236 L652 210"/>
+</svg>
+<figcaption>圖 5　系統組成與各條文的對應位置（加壓式紅框、蓄壓式綠框）</figcaption>
+</figure>
+
+<h3>加壓式 vs 蓄壓式 對照</h3>
+<table>
+<thead><tr><th>項目</th><th>加壓式</th><th>蓄壓式</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td>平時容器內壓力</td><td>不加壓</td><td>已加壓</td><td class="n">—</td></tr>
+<tr><td><b>氮氣需求量</b></td><td>每 kg 乾粉 <b>40 L</b></td><td>每 kg 乾粉 <b>10 L</b>＋清洗量</td><td class="n">§104②③</td></tr>
+<tr><td><b>專屬裝置</b></td><td><b>壓力調整裝置</b>（≤ 25 kgf/cm²）<br><b>定壓動作裝置</b>（設於各儲存容器）</td><td><b>以綠色表示使用壓力範圍之指示壓力表</b></td><td class="n">§107・§108・§109</td></tr>
+<tr><td>容器閥</td><td>—</td><td>內壓 ≥ 10 kgf/cm²（1 MPa）者應設</td><td class="n">§102⑤</td></tr>
+<tr><td>容器標示</td><td>含「最高使用壓力」</td><td>不含</td><td class="n">§102③</td></tr>
+<tr><td>配管材質</td><td colspan="2">CNS 6445 鍍鋅鋼管；蓄壓式壓力 25～42 kgf/cm² 時用 CNS 4626 無縫鋼管 Sch 40 以上</td><td class="n">§105①</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <b>「定壓動作裝置」到底在做什麼？</b>加壓式在動作瞬間，容器內壓力是從零開始建立的。
+  若壓力還沒到設定值就打開放出閥，噴出來的會是稀薄的粉氣混合物，滅不了火。
+  §108 因此規定：<b>啟動裝置動作後，儲存容器壓力達設定壓力時，才使放出閥開啟</b>，且應<b>設於各儲存容器</b>。
+  蓄壓式平時就有壓力，不需要這個裝置，改用綠色指示壓力表讓人一眼確認壓力正常。
+</div>
+
+<h3>充填比（依藥劑種類，不是依儲存方式）</h3>
+<table>
+<thead><tr><th>滅火藥劑種類</th><th class="n">充填比</th></tr></thead>
+<tbody>
+<tr><td>第一種乾粉</td><td class="n">0.85 以上 1.45 以下</td></tr>
+<tr><td>第二種或第三種乾粉</td><td class="n">1.05 以上 1.75 以下</td></tr>
+<tr><td>第四種乾粉</td><td class="n">1.5 以上 2.5 以下</td></tr>
+</tbody>
+</table>
+<div class="cmp">
+  <b>乾粉的充填比看「藥劑種類」，二氧化碳的充填比看「高壓式／低壓式」（1.5～1.9／1.1～1.4）。</b>
+  乾粉第四種（碳酸氫鉀＋尿素化合物）鬆密度最低，所以每公斤需要的容器容積最大，充填比也最高。
+</div>
+
+<h3>移動式（§111）</h3>
+<table>
+<thead><tr><th>滅火藥劑種類</th><th class="n">每具瞄子所需藥劑量<br>（§99③）</th><th class="n">每具瞄子每分鐘放射量<br>（§111⑤）</th><th class="n">可放射時間</th></tr></thead>
+<tbody>
+<tr><td>第一種乾粉</td><td class="n">50 kg</td><td class="n">45 kg/min</td><td class="n">≈ 1.11 分</td></tr>
+<tr><td>第二種或第三種乾粉</td><td class="n">30 kg</td><td class="n">27 kg/min</td><td class="n">≈ 1.11 分</td></tr>
+<tr><td>第四種乾粉</td><td class="n">20 kg</td><td class="n">18 kg/min</td><td class="n">≈ 1.11 分</td></tr>
+</tbody>
+</table>
+<div class="note">
+  <b>兩排數字的關係是固定的：</b>放射量 ＝ 藥劑量 × 0.9，所以三種藥劑的可放射時間<b>都是約 1 分 7 秒</b>。
+  記住 50／30／20 之後，45／27／18 就推得出來。
+  另外 §111④ 規定移動式應設於<b>火災時濃煙不易籠罩之場所</b>——要靠人接近操作，看不見就沒有意義。
+</div>
+
+<!-- ============ 6 ============ -->
+<h2 id="simple"><span class="no">06</span>簡易自動滅火設備：廚房排油煙管那一套</h2>
+<p class="lede">§111-1。應設場所在 §18 第 2 項——樓地板面積 300 m² 以上之餐廳，或甲六目所定長照等機構且合計 500 m² 以上者，其廚房排油煙管及煙罩。</p>
+
+<figure>
+<svg viewBox="0 0 800 320" role="img" aria-label="簡易自動滅火設備警戒長度示意圖">
+  <!-- 煙罩 -->
+  <path class="s-line" stroke-width="2" d="M60 120 L60 60 L300 60 L300 120"/>
+  <path class="s-line" stroke-width="2" d="M60 120 L300 120"/>
+  <text class="s-sm" x="180" y="96" text-anchor="middle" font-weight="700">煙罩</text>
+
+  <!-- 爐具 -->
+  <rect x="100" y="200" width="160" height="46" fill="var(--fill2)" stroke="var(--fg)" stroke-width="1.5"/>
+  <text class="s-sm" x="180" y="228" text-anchor="middle">爐具</text>
+  <path class="s-thin" d="M130 200 L130 186 M155 200 L155 180 M180 200 L180 188 M205 200 L205 182 M230 200 L230 190"
+        stroke="var(--accent)" stroke-width="1.6"/>
+
+  <!-- 排油煙管 -->
+  <path class="s-line" stroke-width="2" d="M300 60 L700 60 M300 120 L700 120"/>
+  <text class="s-sm" x="500" y="46" text-anchor="middle">排油煙管</text>
+
+  <!-- 接合處 -->
+  <path class="s-line" stroke="var(--accent)" stroke-width="2.4" d="M300 60 L300 120"/>
+  <text class="s-key" x="300" y="142" text-anchor="middle" style="font-size:11px">接合處</text>
+
+  <!-- 警戒長度 5m -->
+  <rect x="300" y="60" width="150" height="60" fill="var(--fill1)" opacity="0.7"/>
+  <path class="s-dim" d="M300 154 L450 154"/>
+  <path class="s-dim" d="M300 148 L300 160 M450 148 L450 160"/>
+  <text class="s-key" x="375" y="174" text-anchor="middle">警戒長度 5 m</text>
+  <text class="s-sm" x="375" y="190" text-anchor="middle">煙罩與排油煙管接合處「往內」5 公尺（§111-1Ⅱ）</text>
+
+  <!-- 噴頭 -->
+  <g fill="var(--accent)">
+    <circle cx="120" cy="72" r="5"/><circle cx="180" cy="72" r="5"/><circle cx="240" cy="72" r="5"/>
+    <circle cx="340" cy="72" r="5"/><circle cx="410" cy="72" r="5"/>
+  </g>
+  <text class="s-sm" x="130" y="112" fill="var(--accent)">噴頭（有效射程涵蓋煙罩及排油煙管）</text>
+
+  <!-- 風速與閘門 -->
+  <path class="s-line" stroke="var(--accent2)" stroke-width="2" d="M470 90 L620 90"/>
+  <path d="M620 84 L634 90 L620 96 z" fill="var(--accent2)"/>
+  <text class="s-sm" x="545" y="82" text-anchor="middle" fill="var(--accent2)" font-weight="700">管內風速</text>
+
+  <path class="s-line" stroke="var(--warn)" stroke-width="2.6" d="M470 60 L470 120"/>
+  <text class="s-sm" x="478" y="140" fill="var(--warn)" font-weight="700">連動閉鎖閘門</text>
+  <text class="s-sm" x="478" y="156" fill="var(--warn)">＋放出藥劑之啟動裝置</text>
+  <text class="s-sm" x="478" y="172">設於警戒長度「外側」</text>
+
+  <rect x="500" y="196" width="290" height="62" rx="6" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-sm" x="514" y="216" fill="var(--warn)" font-weight="700">§111-1②　風速 &gt; 每秒 5 公尺時</text>
+  <text class="s-sm" x="514" y="234">應在警戒長度外側設啟動裝置及連動閉鎖閘門</text>
+  <text class="s-sm" x="514" y="250">但不設置閘門能有效滅火時，不在此限</text>
+
+  <rect x="60" y="270" width="730" height="34" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.3"/>
+  <text class="s-sm" x="425" y="291" text-anchor="middle" fill="var(--accent3)" font-weight="700">§111-1④ 防護範圍內之噴頭應「一齊」放射　·　§111-1⑤ 儲存鋼瓶及加壓氣體鋼瓶設於 40°C 以下之位置</text>
+</svg>
+<figcaption>圖 6　簡易自動滅火設備的警戒長度與閘門位置</figcaption>
+</figure>
+
+<table>
+<tbody>
+<tr><td>①</td><td>視<b>排油煙管之斷面積、警戒長度及風速</b>，配置感知元件及噴頭，其設置數量、位置及放射量應能有效滅火</td></tr>
+<tr><td>②</td><td>排油煙管內風速<b>超過每秒 5 公尺</b>，應在<b>警戒長度外側</b>設置放出藥劑之啟動裝置及連動閉鎖閘門。但不設置閘門能有效滅火時，不在此限</td></tr>
+<tr><td>③</td><td>噴頭之有效射程內應<b>涵蓋煙罩及排油煙管</b>，且所設位置不得因藥劑之放射使可燃物有飛散之虞</td></tr>
+<tr><td>④</td><td>防護範圍內之噴頭應<b>一齊放射</b></td></tr>
+<tr><td>⑤</td><td>儲存鋼瓶及加壓氣體鋼瓶設置於<b>攝氏 40 度以下</b>之位置</td></tr>
+<tr><td>Ⅱ</td><td><b>警戒長度</b>：指煙罩與排油煙管接合處<b>往內 5 公尺</b></td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <b>「40°C 以下」是全法反覆出現的數字。</b>
+  簡易自動滅火設備鋼瓶（§111-1⑤）、乾粉儲存容器（§102②）、
+  二氧化碳及惰性氣體儲存容器（§87Ⅰ②）、泡沫原液儲槽（§81③）——四處完全一致。
+</div>
+
+<!-- ============ 7 ============ -->
+<h2 id="card"><span class="no">07</span>速查數字卡</h2>
+<table>
+<thead><tr><th>項目</th><th>數值</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td>§98 準用之條文</td><td>§82、§85、§86、§90～§93、§95、§97（<b>不含 §84、§87～§89、§94</b>）</td><td class="n">§98</td></tr>
+<tr><td>緊急電源</td><td><b>1 小時</b>以上（準用 §95）</td><td class="n">§98</td></tr>
+<tr><td><b>全區藥劑量 q</b></td><td>第一種 0.6／第二種 0.36／第三種 0.36／第四種 0.24 kg/m³</td><td class="n">§99①</td></tr>
+<tr><td><b>開口部追加量 k</b></td><td>4.5／2.7／2.7／1.8 kg/m²（<b>＝ q × 7.5</b>）</td><td class="n">§99①</td></tr>
+<tr><td>基本需要量</td><td><b>無此規定</b>（與 CO₂ 不同）</td><td class="n">§99①</td></tr>
+<tr><td>局部放射・面積式</td><td>第一種 8.8／第二種或第三種 5.2／第四種 3.6 kg/m²</td><td class="n">§99②（一）</td></tr>
+<tr><td><b>追加倍數</b></td><td>不分藥劑種類<b>一律 1.1</b></td><td class="n">§99②</td></tr>
+<tr><td>邊長修正</td><td>邊長在 <b>0.6 m 以下</b>時以 0.6 m 計</td><td class="n">§99②（一）</td></tr>
+<tr><td>局部放射・體積式</td><td><b>Q = X − Y × a/A</b>；X = 5.2／3.2／2.0，Y = 3.9／2.4／1.5（<b>Y = 0.75X</b>）</td><td class="n">§99②（二）</td></tr>
+<tr><td><b>電信機器室折減</b></td><td>核算出之藥劑量須乘以 <b>0.7</b></td><td class="n">§99②（二）</td></tr>
+<tr><td>移動放射每具瞄子藥劑量</td><td>第一種 50／第二種或第三種 30／第四種 20 kg</td><td class="n">§99③</td></tr>
+<tr><td>多區域時</td><td>取<b>最大量</b>者</td><td class="n">§99④</td></tr>
+<tr><td>噴頭放射壓力</td><td>≥ <b>1 kgf/cm²</b>（0.1 MPa）</td><td class="n">§100②</td></tr>
+<tr><td><b>放射時間</b></td><td>全區與局部<b>都是 30 秒</b>內全部放射完畢</td><td class="n">§100③</td></tr>
+<tr><td><b>室內停車空間</b></td><td>滅火藥劑以<b>第三種乾粉</b>為限</td><td class="n">§101</td></tr>
+<tr><td><b>充填比</b></td><td>第一種 0.85～1.45／第二種或第三種 1.05～1.75／第四種 1.5～2.5</td><td class="n">§102①</td></tr>
+<tr><td>儲存容器場所</td><td>防護區域<b>外</b>、<b>40°C 以下</b>、溫度變化少、無日曬雨淋</td><td class="n">§102②</td></tr>
+<tr><td>容器標示</td><td>充填藥劑量、藥劑種類、<b>最高使用壓力（限加壓式）</b>、製造年限、製造廠商</td><td class="n">§102③</td></tr>
+<tr><td>蓄壓式容器閥</td><td>內壓 ≥ <b>10 kgf/cm²</b>（1 MPa）者應設</td><td class="n">§102⑤</td></tr>
+<tr><td>排出／清洗裝置</td><td>排除殘留氣體設<b>排出裝置</b>，處理配管殘留藥劑設<b>清洗裝置</b></td><td class="n">§102⑥</td></tr>
+<tr><td>加壓／蓄壓用氣體種類</td><td><b>氮氣或二氧化碳</b>（不得用空氣）</td><td class="n">§104①</td></tr>
+<tr><td><b>加壓用氮氣</b></td><td>每 1 kg 乾粉需 <b>40 公升</b>以上（35°C、表壓力 0）</td><td class="n">§104②</td></tr>
+<tr><td><b>蓄壓用氮氣</b></td><td>每 1 kg 乾粉需 <b>10 公升</b>以上＋清洗配管所需量</td><td class="n">§104③</td></tr>
+<tr><td>使用二氧化碳時</td><td>加壓、蓄壓皆為每 1 kg 乾粉 <b>20 公克</b>＋清洗配管所需量</td><td class="n">§104②③</td></tr>
+<tr><td>清洗配管用氣體</td><td><b>另以容器儲存</b></td><td class="n">§104④</td></tr>
+<tr><td>配管落差</td><td>最低與最高配管間 ≤ <b>50 m</b></td><td class="n">§105①</td></tr>
+<tr><td>配管配置</td><td>應為<b>專用</b>；<b>採均分為原則</b>，使噴頭同時放射時放射壓力均等</td><td class="n">§105①</td></tr>
+<tr><td><b>彎曲部分距離</b></td><td>自儲存容器起，配管任一部分與彎曲部分之距離 ≥ <b>管徑 20 倍</b></td><td class="n">§106</td></tr>
+<tr><td>加壓式壓力調整裝置</td><td>可調整壓力至 <b>25 kgf/cm²</b>（2.5 MPa）以下</td><td class="n">§107</td></tr>
+<tr><td>加壓式定壓動作裝置</td><td>壓力達設定值時使放出閥開啟；<b>設於各儲存容器</b></td><td class="n">§108</td></tr>
+<tr><td>蓄壓式指示壓力表</td><td>以<b>綠色</b>表示使用壓力範圍</td><td class="n">§109</td></tr>
+<tr><td>啟動用氣體容器</td><td>耐 <b>250 kgf/cm²</b>；內容積 ≥ <b>0.27 L</b>；氣體量 ≥ <b>145 g</b>；充填比 ≥ <b>1.5</b>；<b>不得兼供自動關閉裝置</b></td><td class="n">§110</td></tr>
+<tr><td>移動式放射量</td><td>第一種 <b>45</b>／第二種或第三種 <b>27</b>／第四種 <b>18</b> kg/min</td><td class="n">§111⑤</td></tr>
+<tr><td>移動式設置場所</td><td>火災時<b>濃煙不易籠罩</b>之場所；近旁設紅色標示燈及標明字樣</td><td class="n">§111</td></tr>
+<tr><td>簡易自動滅火設備・風速</td><td>排油煙管內風速 &gt; <b>每秒 5 公尺</b>時設啟動裝置及連動閉鎖閘門</td><td class="n">§111-1②</td></tr>
+<tr><td>簡易自動滅火設備・警戒長度</td><td>煙罩與排油煙管接合處<b>往內 5 公尺</b></td><td class="n">§111-1Ⅱ</td></tr>
+<tr><td>簡易自動滅火設備・放射</td><td>防護範圍內之噴頭應<b>一齊放射</b>；鋼瓶設於 <b>40°C 以下</b></td><td class="n">§111-1④⑤</td></tr>
+</tbody>
+</table>
+
+<h3>乾粉 vs 二氧化碳 差異總表</h3>
+<table>
+<thead><tr><th>項目</th><th>乾粉</th><th>二氧化碳</th></tr></thead>
+<tbody>
+<tr><td><b>放射時間</b></td><td>全區、局部<b>都 30 秒</b></td><td>全區 7／3.5／1 分，局部 30 秒</td></tr>
+<tr><td><b>基本需要量</b></td><td><b>無</b></td><td>有（50／135／1,200 kg）</td></tr>
+<tr><td><b>局部追加倍數</b></td><td>一律 <b>1.1</b></td><td>高壓式 1.4／低壓式 1.1</td></tr>
+<tr><td><b>局部面積式</b></td><td>8.8／5.2／3.6 kg/m²（依藥劑）</td><td>固定 13 kg/m²</td></tr>
+<tr><td><b>局部體積式</b></td><td>Q = X − Y·a/A（X、Y 依藥劑）</td><td>Q = 8 − 6a/A（固定）</td></tr>
+<tr><td><b>電信機器（械）室</b></td><td>體積式藥劑量 <b>× 0.7 折減</b></td><td>無折減；但開口部上限為圍壁面積 1%</td></tr>
+<tr><td><b>充填比依據</b></td><td>依<b>藥劑種類</b>（0.85～2.5）</td><td>依<b>高壓／低壓式</b>（1.1～1.9）</td></tr>
+<tr><td><b>啟動用氣體容器</b></td><td>≥ 0.27 L／145 g</td><td>≥ 1 L／CO₂ 0.6 kg</td></tr>
+<tr><td><b>噴頭放射壓力</b></td><td>≥ 1 kgf/cm²</td><td>高壓 ≥ 14／低壓 ≥ 9 kgf/cm²</td></tr>
+<tr><td><b>移動式放射量</b></td><td>45／27／18 kg/min</td><td>60 kg/min（20°C）</td></tr>
+<tr><td><b>藥劑排放（§94）</b></td><td><b>不準用，無規定</b></td><td>1 小時內排出、每小時 5 次換氣</td></tr>
+<tr><td>緊急電源</td><td colspan="2" style="text-align:center">兩者<b>都是 1 小時</b>（§95）</td></tr>
+<tr><td>配管落差</td><td colspan="2" style="text-align:center">兩者<b>都是 ≤ 50 m</b></td></tr>
+<tr><td>儲存容器環境</td><td colspan="2" style="text-align:center">兩者<b>都是防護區域外、40°C 以下、無日曬雨淋</b></td></tr>
+</tbody>
+</table>
+
+<div class="navbar" style="margin-top:32px">
+  <a class="btn go" href="index.html">🏠 回學習首頁</a>
+  <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫（乾粉 46 題）</a>
+  <a class="btn" href="#modes">↑ 回到最上方</a>
+</div>
+
+<footer>
+  <p>本頁數據取自全國法規資料庫「各類場所消防安全設備設置標準」（pcode D0120029）民國 113 年 4 月 24 日修正版原文，於 2026-08-04 擷取核對。</p>
+  <p><b>法規以主管機關公布文字為準。</b>本頁為個人學習筆記，不構成法律意見；設計送審前請回查現行條文：
+  <code>https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0120029</code></p>
+</footer>
+
+</div>
+
+<script>
+/* 支援 #id 與 ?s=id 兩種定位寫法 */
+(function(){
+  function target(){
+    var h=(location.hash||'').replace('#','');
+    if(!h){ var m=/[?&]s=([\w-]+)/.exec(location.search||''); h=m?m[1]:''; }
+    return h?document.getElementById(h):null;
+  }
+  function go(smooth){
+    var el=target(); if(!el) return;
+    el.scrollIntoView({behavior:smooth?'smooth':'auto',block:'start'});
+    el.style.transition='background-color .4s';
+    var old=el.style.backgroundColor;
+    el.style.backgroundColor='var(--fill4)';
+    setTimeout(function(){ el.style.backgroundColor=old||''; },1600);
+  }
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){ setTimeout(go,60); });
+  else setTimeout(go,60);
+  window.addEventListener('hashchange',function(){ go(true); });
+})();
+</script>
+</body>
+</html>
