@@ -215,8 +215,8 @@
   <!-- 座標軸 -->
   <path class="s-line" d="M60 320 L620 320"/>
   <path class="s-line" d="M60 320 L60 40"/>
-  <text class="s-sm" x="620" y="342" text-anchor="end">防護區域體積 V（m³）</text>
-  <text class="s-sm" x="52" y="46" text-anchor="end">藥劑量 W（kg）</text>
+  <text class="s-sm" x="340" y="364" text-anchor="middle">防護區域體積 V（m³）</text>
+  <text class="s-sm" x="66" y="34">藥劑量 W（kg）</text>
 
   <!-- 刻度 -->
   <g class="s-thin">
@@ -301,41 +301,44 @@
 <p class="lede">§86。二氧化碳比空氣重，會往下沉積；所以法規管的是<b>低處</b>的開口。</p>
 
 <figure>
-<svg viewBox="0 0 780 330" role="img" aria-label="全區放射防護區域開口部規定剖面圖">
-  <!-- 房間 -->
-  <path class="s-line" stroke-width="2" d="M90 60 L640 60 L640 270 L90 270 Z"/>
-  <text class="s-sm" x="365" y="48" text-anchor="middle">防護區域（不燃材料建造之牆、柱、樓地板、天花板區劃）</text>
-
-  <!-- 2/3 分界線 -->
-  <path class="s-dash" d="M90 200 L640 200"/>
-  <text class="s-key" x="650" y="197">樓地板起 2/3 高度</text>
+<svg viewBox="0 0 780 340" role="img" aria-label="全區放射防護區域開口部規定剖面圖">
+  <text class="s-sm" x="380" y="44" text-anchor="middle">防護區域（以不燃材料建造之牆、柱、樓地板、天花板區劃）</text>
 
   <!-- 下部區域填色 -->
-  <rect x="90" y="200" width="550" height="70" fill="var(--fill1)" opacity="0.6"/>
-  <text class="s-sm" x="365" y="228" text-anchor="middle" fill="var(--accent)" font-weight="700">此範圍內之開口部，應在滅火藥劑放射前自動關閉（§86②）</text>
-  <text class="s-sm" x="365" y="246" text-anchor="middle">CO₂ 比空氣重，會沉積在下部；低處漏氣＝藥劑直接流失</text>
+  <rect x="120" y="200" width="520" height="70" fill="var(--fill1)" opacity="0.65"/>
+  <!-- 房間外框 -->
+  <path class="s-line" stroke-width="2" d="M120 60 L640 60 L640 270 L120 270 Z"/>
 
-  <!-- 上部 -->
-  <text class="s-sm" x="365" y="130" text-anchor="middle">2/3 以上部分之開口，條文未強制自動關閉</text>
-  <text class="s-sm" x="365" y="148" text-anchor="middle">但仍受第 3 款「不設自動關閉裝置之開口部總面積」上限規範</text>
+  <!-- 2/3 分界線 -->
+  <path class="s-dash" d="M120 200 L640 200"/>
+  <text class="s-key" x="652" y="197">樓地板起 2/3 高度</text>
+  <text class="s-sm" x="652" y="213">↓ 以下為法規列管範圍</text>
 
-  <!-- 開口示意 -->
-  <rect x="130" y="205" width="46" height="46" fill="var(--card)" stroke="var(--accent)" stroke-width="1.8"/>
-  <text class="s-sm" x="153" y="233" text-anchor="middle">開口</text>
-  <rect x="560" y="90" width="46" height="40" fill="var(--card)" stroke="var(--muted)" stroke-width="1.6"/>
-  <text class="s-sm" x="583" y="115" text-anchor="middle">開口</text>
+  <!-- 上部說明 -->
+  <text class="s-sm" x="392" y="126" text-anchor="middle">2/3 以上之開口，條文未強制自動關閉</text>
+  <text class="s-sm" x="392" y="146" text-anchor="middle">但仍受 §86③ 開口部總面積上限規範</text>
+
+  <!-- 下部說明 -->
+  <text class="s-sm" x="392" y="228" text-anchor="middle" fill="var(--accent)" font-weight="700">此範圍之開口部，應在放射前自動關閉（§86②）</text>
+  <text class="s-sm" x="392" y="248" text-anchor="middle">CO₂ 比空氣重會沉積下部，低處漏氣＝藥劑直接流失</text>
+
+  <!-- 開口（設在左牆上，避開文字） -->
+  <rect x="108" y="95" width="24" height="40" fill="var(--card)" stroke="var(--muted)" stroke-width="1.6"/>
+  <text class="s-sm" x="120" y="88" text-anchor="middle">開口</text>
+  <rect x="108" y="205" width="24" height="40" fill="var(--card)" stroke="var(--accent)" stroke-width="2"/>
+  <text class="s-sm" x="120" y="262" text-anchor="middle" fill="var(--accent)" font-weight="700">開口</text>
 
   <!-- 高度標註 -->
-  <path class="s-dim" d="M70 60 L70 270"/>
-  <path class="s-dim" d="M64 60 L76 60 M64 270 L76 270"/>
-  <text class="s-key" x="58" y="170" text-anchor="middle" transform="rotate(-90 58 170)">H</text>
-  <path class="s-dim" d="M108 200 L108 270"/>
-  <path class="s-dim" d="M102 200 L114 200 M102 270 L114 270"/>
-  <text class="s-key" x="120" y="240" style="font-size:11px">2/3 H</text>
+  <path class="s-dim" d="M78 200 L78 270"/>
+  <path class="s-dim" d="M72 200 L84 200 M72 270 L84 270"/>
+  <text class="s-key" x="68" y="240" text-anchor="end" style="font-size:11px">2/3 H</text>
+  <path class="s-dim" d="M78 60 L78 196"/>
+  <path class="s-dim" d="M72 60 L84 60"/>
+  <text class="s-key" x="68" y="130" text-anchor="end" style="font-size:11px">H</text>
 
   <!-- 禁止 -->
-  <rect x="90" y="290" width="600" height="30" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.3"/>
-  <text class="s-sm" x="104" y="309" fill="var(--accent)" font-weight="700">§86①　開口部不得設於面對安全梯間、特別安全梯間、緊急昇降機間或其他類似場所</text>
+  <rect x="60" y="296" width="660" height="32" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.3"/>
+  <text class="s-sm" x="390" y="317" text-anchor="middle" fill="var(--accent)" font-weight="700">§86①　開口部不得設於面對安全梯間、特別安全梯間、緊急昇降機間或其他類似場所</text>
 </svg>
 <figcaption>圖 3　§86 開口部規定（剖面）</figcaption>
 </figure>
@@ -406,7 +409,7 @@
   <text class="s-txt" x="580" y="24" text-anchor="middle" font-weight="700">Q = 8 − 6(a/A) 的物理意義</text>
   <path class="s-line" d="M430 250 L730 250"/>
   <path class="s-line" d="M430 250 L430 70"/>
-  <text class="s-sm" x="730" y="272" text-anchor="end">a / A（牆壁包圍比例）</text>
+  <text class="s-sm" x="580" y="294" text-anchor="middle">a / A（牆壁包圍比例）</text>
   <text class="s-sm" x="422" y="76" text-anchor="end">Q</text>
   <text class="s-sm" x="430" y="272" text-anchor="middle">0</text>
   <text class="s-sm" x="730" y="272" text-anchor="middle">1</text>
