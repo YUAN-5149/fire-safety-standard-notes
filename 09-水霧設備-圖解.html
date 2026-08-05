@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>水霧滅火設備 圖解 — 各類場所消防安全設備設置標準 §61～§68</title>
+<meta name="description" content="水霧滅火設備（§61～§68）的放水量、放射區域、固定值水源、與高壓電器設備距離及室內停車空間排水設備圖解。">
+<style>
+  :root{
+    --bg:#fbfaf7; --fg:#1c1b19; --muted:#6b6862; --line:#d8d4cb;
+    --card:#ffffff; --accent:#b03a2e; --accent2:#1d6fa5; --accent3:#2e7d4f;
+    --warn:#a86b00; --danger:#8e1b0f;
+    --fill1:#f2e4e1; --fill2:#e0edf6; --fill3:#e3f0e8; --fill4:#f7efd9;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#16161a; --fg:#e8e6e1; --muted:#9b968c; --line:#3a3a40;
+      --card:#1e1e23; --accent:#e8705f; --accent2:#5aa8d8; --accent3:#5fbb87;
+      --warn:#d9a441; --danger:#f08070;
+      --fill1:#3a2622; --fill2:#1e3341; --fill3:#1f3a2c; --fill4:#3a3120;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+    line-height:1.75;-webkit-text-size-adjust:100%}
+  .wrap{max-width:960px;margin:0 auto;padding:32px 20px 80px}
+  header{border-bottom:2px solid var(--fg);padding-bottom:18px;margin-bottom:8px}
+  h1{font-size:clamp(1.4rem,4vw,2rem);margin:0 0 6px;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:.9rem;margin:0}
+  h2{font-size:1.15rem;margin:48px 0 4px;padding-top:14px;border-top:1px solid var(--line);
+    scroll-margin-top:16px}
+  h2 .no{color:var(--accent);font-variant-numeric:tabular-nums;margin-right:.5em}
+  h2:target{background:linear-gradient(transparent 62%,var(--fill4) 62%)}
+  h3{font-size:1rem;margin:26px 0 6px}
+  .lede{color:var(--muted);font-size:.92rem;margin:.2em 0 18px}
+  figure{margin:0 0 10px;background:var(--card);border:1px solid var(--line);
+    border-radius:10px;padding:18px 14px;overflow-x:auto}
+  svg{display:block;margin:0 auto;max-width:100%;height:auto}
+  figcaption{color:var(--muted);font-size:.84rem;margin-top:10px;text-align:center}
+  .note{border-left:3px solid var(--warn);background:var(--fill4);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .note b{color:var(--warn)}
+  .cmp{border-left:3px solid var(--accent2);background:var(--fill2);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .cmp b{color:var(--accent2)}
+  table{border-collapse:collapse;width:100%;font-size:.88rem;margin:14px 0}
+  th,td{border:1px solid var(--line);padding:6px 9px;text-align:left}
+  th{background:var(--fill2);font-weight:600}
+  td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+  code{background:var(--fill2);padding:1px 5px;border-radius:4px;font-size:.88em}
+  .formula{background:var(--fill3);border:1px solid var(--line);border-radius:8px;
+    padding:12px 16px;margin:14px 0;font-size:1rem;text-align:center}
+  .ex{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent2);
+    border-radius:0 10px 10px 0;padding:14px 18px;margin:18px 0}
+  .ex .t{font-weight:700;margin-bottom:6px;color:var(--accent2)}
+  .ex .given{font-size:.88rem;color:var(--muted);border-left:3px solid var(--line);
+    padding-left:12px;margin-bottom:10px}
+  .ex .step{font-size:.92rem;margin:8px 0}
+  .ex .ans{background:var(--fill3);border-radius:7px;padding:9px 13px;margin-top:10px;
+    font-weight:700;font-size:.94rem}
+  footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:.82rem}
+  a{color:var(--accent2)}
+  .navbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+  .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;
+    font-size:.86rem;padding:7px 14px;border-radius:8px;border:1px solid var(--line);
+    background:var(--card);color:var(--fg);transition:.12s}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.go{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+  .btn.go:hover{filter:brightness(1.1);color:#fff}
+  .toc{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 4px}
+  .toc a{font-size:.8rem;text-decoration:none;padding:4px 10px;border-radius:99px;
+    border:1px solid var(--line);background:var(--card);color:var(--muted)}
+  .toc a:hover{border-color:var(--accent);color:var(--accent)}
+  .s-line{stroke:var(--fg);stroke-width:1.4;fill:none}
+  .s-thin{stroke:var(--muted);stroke-width:1;fill:none}
+  .s-txt{fill:var(--fg);font-size:13px;font-family:inherit}
+  .s-sm{fill:var(--muted);font-size:11px;font-family:inherit}
+  .s-key{fill:var(--accent);font-size:13px;font-weight:700;font-family:inherit}
+  .s-dim{stroke:var(--accent2);stroke-width:1;fill:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>水霧滅火設備 圖解</h1>
+  <p class="sub">各類場所消防安全設備設置標準 §61～§68　|　民國 113 年 4 月 24 日修正版</p>
+  <div class="navbar">
+    <a class="btn go" href="index.html">🏠 回學習首頁</a>
+    <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+    <a class="btn" href="04a-%E6%B3%A1%E6%B2%AB%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html">📐 泡沫設備圖解</a>
+  </div>
+</header>
+
+<nav class="toc" aria-label="章節目錄">
+  <a href="#apply">01 應設場所與放水量</a>
+  <a href="#layout">02 噴頭配置與放射區域</a>
+  <a href="#water">03 水源與加壓送水裝置</a>
+  <a href="#elec">04 與高壓電器設備距離</a>
+  <a href="#drain">05 室內停車空間排水設備</a>
+  <a href="#refs">06 準用關係</a>
+  <a href="#card">07 速查數字卡</a>
+</nav>
+
+<div class="cmp" style="margin-top:24px">
+  <b>水霧是水系設備裡最「特別」的一個。</b>它用水，卻常設在有電、有油的地方——
+  因為水霧粒徑細、導電性低，能同時對付 B 類（油）與 C 類（電）火災。
+  這個特性造成兩個和其他水系設備完全不同的地方：
+  <b>水源是固定值（20／40 m³），不隨面積變動</b>；而且整節有兩條專門處理「電」與「油」的條文
+  （§66 與高壓電器設備距離、§68 停車空間排水設備）。
+</div>
+
+<!-- ============ 1 ============ -->
+<h2 id="apply"><span class="no">01</span>應設場所與每平方公尺放水量</h2>
+<p class="lede">水霧在 §18 附表七個項目中<b>只出現三次</b>，而放水量就照這三個項目切成兩級。</p>
+
+<figure>
+<svg viewBox="0 0 880 360" role="img" aria-label="水霧滅火設備應設場所與放水量">
+  <text class="s-txt" x="440" y="26" text-anchor="middle" font-weight="700">§18 附表中「水霧」欄有○的項目</text>
+
+  <!-- 項目三 -->
+  <rect x="30" y="46" width="255" height="132" rx="8" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-txt" x="157" y="70" text-anchor="middle" font-weight="700">項目三</text>
+  <text class="s-sm" x="157" y="90" text-anchor="middle">汽車修理廠</text>
+  <text class="s-sm" x="157" y="106" text-anchor="middle">室內停車空間</text>
+  <text class="s-sm" x="157" y="126" text-anchor="middle">1F ≥500 m²／地下層或 2F 以上 ≥200 m²</text>
+  <text class="s-sm" x="157" y="142" text-anchor="middle">屋頂停車場 ≥300 m²</text>
+  <text class="s-key" x="157" y="166" text-anchor="middle">每 m² 放水量 ≥ 20 L/min</text>
+
+  <!-- 項目四 -->
+  <rect x="305" y="46" width="255" height="132" rx="8" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-txt" x="432" y="70" text-anchor="middle" font-weight="700">項目四</text>
+  <text class="s-sm" x="432" y="90" text-anchor="middle">昇降機械式停車場</text>
+  <text class="s-sm" x="432" y="110" text-anchor="middle">可容納 10 輛以上者</text>
+  <text class="s-key" x="432" y="166" text-anchor="middle">每 m² 放水量 ≥ 20 L/min</text>
+
+  <!-- 項目五 -->
+  <rect x="580" y="46" width="270" height="132" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.6"/>
+  <text class="s-txt" x="715" y="70" text-anchor="middle" font-weight="700">項目五</text>
+  <text class="s-sm" x="715" y="90" text-anchor="middle">發電機室、變壓器室</text>
+  <text class="s-sm" x="715" y="106" text-anchor="middle">及其他類似之電器設備場所</text>
+  <text class="s-sm" x="715" y="126" text-anchor="middle">樓地板面積 ≥ 200 m²</text>
+  <text class="s-key" x="715" y="166" text-anchor="middle" fill="var(--accent2)">每 m² 放水量 ≥ 10 L/min</text>
+
+  <path class="s-line" d="M157 178 L157 202 M432 178 L432 202"/>
+  <path class="s-line" d="M157 202 L432 202"/>
+  <path class="s-line" d="M295 202 L295 224"/>
+  <path class="s-line" stroke="var(--accent2)" d="M715 178 L715 224"/>
+
+  <rect x="120" y="224" width="350" height="52" rx="6" fill="var(--card)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-sm" x="295" y="245" text-anchor="middle" font-weight="700">§61③　「第十八條附表第三項、第四項」</text>
+  <text class="s-key" x="295" y="264" text-anchor="middle">20 L/min·m²　車輛（油類火災）</text>
+
+  <rect x="545" y="224" width="340" height="52" rx="6" fill="var(--card)" stroke="var(--accent2)" stroke-width="1.6"/>
+  <text class="s-sm" x="715" y="245" text-anchor="middle" font-weight="700">§61③　「同條附表其他場所」</text>
+  <text class="s-key" x="715" y="264" text-anchor="middle" fill="var(--accent2)">10 L/min·m²　電氣設備</text>
+
+  <rect x="120" y="298" width="765" height="46" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-sm" x="502" y="318" text-anchor="middle" font-weight="700" fill="var(--accent3)">放水量低、放水壓力反而高</text>
+  <text class="s-sm" x="502" y="335" text-anchor="middle">§65② 防護電氣設備者出水壓力 ≥ 3.5 kgf/cm²（其他 2.7）——壓力高則水霧更細、導電性更低</text>
+</svg>
+<figcaption>圖 1　水霧的三個應設項目與兩級放水量</figcaption>
+</figure>
+
+<div class="note">
+  <b>兩級放水量的邏輯：</b>項目三、四是<b>車輛</b>（有汽油、機油，屬 B 類火災，需要較大水量形成覆蓋），
+  所以 20 L/min·m²；項目五是<b>電器設備</b>（B/C 類，重點在冷卻與隔絕而非沖刷），
+  所以只要 10 L/min·m²，但 §65 反過來要求<b>更高的放水壓力</b>（3.5 vs 2.7 kgf/cm²）把水滴打得更細。
+</div>
+
+<div class="cmp">
+  <b>水霧沒有出現在 §18 附表的項目一、二、六、七。</b>
+  屋頂直昇機停機場（一）、飛機修理廠與飛機庫（二）只能選泡沫或乾粉；
+  鍋爐房廚房（六）、電信機械室電腦室（七）只能選 CO₂、惰性氣體、鹵化烴或乾粉。
+  <b>會噴水的東西不會被放到「絕對不能碰水」的地方。</b>
+</div>
+
+<!-- ============ 2 ============ -->
+<h2 id="layout"><span class="no">02</span>噴頭配置與放射區域</h2>
+
+<figure>
+<svg viewBox="0 0 800 320" role="img" aria-label="水霧噴頭有效半徑與放射區域">
+  <!-- 左：有效半徑 -->
+  <text class="s-txt" x="190" y="26" text-anchor="middle" font-weight="700">§61②　每一水霧噴頭之有效半徑</text>
+  <rect x="40" y="46" width="300" height="200" fill="none" stroke="var(--fg)" stroke-width="1.5"/>
+  <circle cx="190" cy="146" r="76" fill="var(--fill1)" opacity="0.6" stroke="var(--accent)" stroke-width="1.6" stroke-dasharray="7 4"/>
+  <circle cx="190" cy="146" r="6" fill="var(--accent)"/>
+  <path class="s-dim" d="M190 146 L266 146"/>
+  <path class="s-dim" d="M266 140 L266 152"/>
+  <text class="s-key" x="228" y="138" text-anchor="middle">≤ 2.1 m</text>
+  <text class="s-sm" x="190" y="176" text-anchor="middle">水霧噴頭</text>
+  <text class="s-sm" x="190" y="268" text-anchor="middle">§61① 防護對象之總面積應在各水霧噴頭</text>
+  <text class="s-sm" x="190" y="284" text-anchor="middle">放水之有效防護範圍內</text>
+  <text class="s-sm" x="190" y="304" text-anchor="middle">§61③ 配置數量依放水角度、放水量及防護區域面積核算</text>
+
+  <!-- 右：放射區域 -->
+  <text class="s-txt" x="590" y="26" text-anchor="middle" font-weight="700">§63　放射區域</text>
+  <g stroke="var(--fg)" stroke-width="1.5" fill="none"><rect x="420" y="46" width="340" height="200"/></g>
+  <g stroke="var(--accent)" stroke-width="1.2" fill="var(--fill1)" opacity="0.55">
+    <rect x="420" y="46" width="85" height="100"/><rect x="505" y="46" width="85" height="100"/>
+    <rect x="590" y="46" width="85" height="100"/><rect x="675" y="46" width="85" height="100"/>
+    <rect x="420" y="146" width="85" height="100"/><rect x="505" y="146" width="85" height="100"/>
+    <rect x="590" y="146" width="85" height="100"/><rect x="675" y="146" width="85" height="100"/>
+  </g>
+  <text class="s-key" x="462" y="102" text-anchor="middle">50 m²</text>
+  <text class="s-key" x="547" y="102" text-anchor="middle">50 m²</text>
+  <text class="s-key" x="632" y="102" text-anchor="middle">50 m²</text>
+  <text class="s-key" x="717" y="102" text-anchor="middle">50 m²</text>
+  <text class="s-sm" x="590" y="268" text-anchor="middle">「一只一齊開放閥啟動放射之區域」，每一區域以 50 m² 為原則</text>
+  <text class="s-sm" x="590" y="288" text-anchor="middle" fill="var(--accent)" font-weight="700">放射區域有 2 區域以上者，主管管徑 ≥ 100 mm</text>
+  <text class="s-sm" x="590" y="308" text-anchor="middle">（§63Ⅱ）</text>
+</svg>
+<figcaption>圖 2　噴頭有效半徑 2.1 m 與 50 m² 的放射區域劃分</figcaption>
+</figure>
+
+<div class="cmp">
+  <b>「放射區域」的定義在三個設備裡是一致的概念，但數值不同：</b>
+  水霧（§63）每區<b>以 50 m² 為原則</b>；
+  泡沫用泡沫噴頭時（§75①）是 <b>50～100 m²</b>；
+  開放式自動撒水（§54）則是每區 <b>≥ 100 m²</b>、每一舞臺 ≤ 4 個放水區域。
+</div>
+
+<!-- ============ 3 ============ -->
+<h2 id="water"><span class="no">03</span>水源與加壓送水裝置：全法唯一的固定值水源</h2>
+<p class="lede">§64、§65。其他水系設備的水源都要算，只有水霧直接給數字。</p>
+
+<figure>
+<svg viewBox="0 0 800 300" role="img" aria-label="水霧水源容量與幫浦出水量">
+  <!-- 1 區域 -->
+  <rect x="40" y="40" width="330" height="220" rx="10" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.6"/>
+  <text class="s-txt" x="205" y="66" text-anchor="middle" font-weight="700" fill="var(--accent2)">放射區域 1 區</text>
+
+  <rect x="80" y="88" width="120" height="90" rx="6" fill="var(--card)" stroke="var(--fg)" stroke-width="1.5"/>
+  <text class="s-sm" x="140" y="112" text-anchor="middle">水源容量</text>
+  <text class="s-key" x="140" y="140" text-anchor="middle" fill="var(--accent2)">≥ 20 m³</text>
+  <text class="s-sm" x="140" y="162" text-anchor="middle">§64</text>
+
+  <rect x="222" y="88" width="120" height="90" rx="6" fill="var(--card)" stroke="var(--fg)" stroke-width="1.5"/>
+  <text class="s-sm" x="282" y="112" text-anchor="middle">幫浦出水量</text>
+  <text class="s-key" x="282" y="140" text-anchor="middle" fill="var(--accent2)">≥ 1,200 L/min</text>
+  <text class="s-sm" x="282" y="162" text-anchor="middle">§65①</text>
+
+  <text class="s-sm" x="205" y="204" text-anchor="middle">主管管徑：無特別規定</text>
+  <text class="s-sm" x="205" y="228" text-anchor="middle">出水壓力 ≥ 2.7 kgf/cm²（0.27 MPa）</text>
+  <text class="s-sm" x="205" y="246" text-anchor="middle">防護電氣設備者 ≥ 3.5 kgf/cm²（0.35 MPa）</text>
+
+  <!-- 2 區域以上 -->
+  <rect x="430" y="40" width="330" height="220" rx="10" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-txt" x="595" y="66" text-anchor="middle" font-weight="700" fill="var(--accent)">放射區域 2 區以上</text>
+
+  <rect x="470" y="88" width="120" height="90" rx="6" fill="var(--card)" stroke="var(--fg)" stroke-width="1.5"/>
+  <text class="s-sm" x="530" y="112" text-anchor="middle">水源容量</text>
+  <text class="s-key" x="530" y="140" text-anchor="middle">≥ 40 m³</text>
+  <text class="s-sm" x="530" y="162" text-anchor="middle">§64 但書</text>
+
+  <rect x="612" y="88" width="120" height="90" rx="6" fill="var(--card)" stroke="var(--fg)" stroke-width="1.5"/>
+  <text class="s-sm" x="672" y="112" text-anchor="middle">幫浦出水量</text>
+  <text class="s-key" x="672" y="140" text-anchor="middle">≥ 2,000 L/min</text>
+  <text class="s-sm" x="672" y="162" text-anchor="middle">§65①</text>
+
+  <text class="s-sm" x="595" y="204" text-anchor="middle" fill="var(--accent)" font-weight="700">主管管徑 ≥ 100 mm（§63Ⅱ）</text>
+  <text class="s-sm" x="595" y="228" text-anchor="middle">出水壓力規定同左</text>
+  <text class="s-sm" x="595" y="246" text-anchor="middle">§65③ 連接緊急電源</text>
+</svg>
+<figcaption>圖 3　水源、幫浦出水量與主管管徑，全部只看「放射區域是不是 2 區以上」</figcaption>
+</figure>
+
+<div class="note">
+  <b>20／40 m³ 不是憑空給的數字。</b>
+  一個放射區域 50 m²（§63）× 車輛場所放水量 20 L/min·m²（§61③）= <b>1,000 L/min</b>，
+  乘上水系設備通用的 <b>20 分鐘</b> = 20,000 L = <b>20 m³</b>。
+  兩個區域就是 2,000 L/min × 20 min = <b>40 m³</b>。<b>推得出來，就不必硬背。</b>
+</div>
+
+<div class="cmp">
+  <b>水霧是唯一「水源不隨面積變動」的水系設備。</b>
+  室內消防栓要算 2 支 × 放水量 × 20 分、室外消防栓 2 具 × 350 × 30 分、
+  自動撒水要查 §57 撒水頭數量表、泡沫要算放射區域面積 × 單位放射量——
+  只有水霧直接寫死 20 m³ 或 40 m³。
+</div>
+
+<h3>加壓送水裝置（§65）</h3>
+<table>
+<thead><tr><th>項目</th><th>規定</th></tr></thead>
+<tbody>
+<tr><td><b>出水量</b></td><td>≥ <b>1,200 L/min</b>；放射區域 <b>2 個以上</b>時 ≥ <b>2,000 L/min</b></td></tr>
+<tr><td><b>出水壓力</b></td><td>核算管系最末端<b>一個</b>放射區域<b>全部</b>水霧噴頭放水壓力均能達 ≥ <b>2.7 kgf/cm²</b>（0.27 MPa）<br>但<b>用於防護電氣設備</b>者，應達 ≥ <b>3.5 kgf/cm²</b>（0.35 MPa）</td></tr>
+<tr><td>緊急電源</td><td>應<b>連接緊急電源</b>（另依 §62 準用 §38：30 分鐘以上）</td></tr>
+</tbody>
+</table>
+
+<h3>送水口（§67）</h3>
+<p class="lede">依 §59 第 1 款至第 4 款規定設置，並標明「<b>水霧送水口</b>」字樣及<b>送水壓力範圍</b>——
+也就是專用、口徑 63 mm、樓地板面積 3,000 m² 以下至少雙口形 1 個（最多以 3 個計）、高度距基地地面 0.5～1 m。</p>
+
+<div class="ex">
+  <div class="t">例一｜室內停車空間</div>
+  <div class="given">地下一層室內停車空間，樓地板面積 300 m²，放射區域依原則取 50 m²。</div>
+  <div class="step"><b>Step 1　應設判斷</b>　§18 附表項目三：地下層 ≥ 200 m² → 應設，可選水霧</div>
+  <div class="step"><b>Step 2　每 m² 放水量</b>　項目三 → <b>20 L/min·m²</b>（§61③）</div>
+  <div class="step"><b>Step 3　放射區域數</b>　300 ÷ 50 = <b>6 區</b></div>
+  <div class="step"><b>Step 4　每一放射區域放水量</b>　50 × 20 = <b>1,000 L/min</b></div>
+  <div class="step"><b>Step 5　水源容量</b>　放射區域 2 區以上 → <b>≥ 40 m³</b>（§64，固定值）</div>
+  <div class="step"><b>Step 6　幫浦出水量</b>　2 區以上 → <b>≥ 2,000 L/min</b>（§65①）</div>
+  <div class="step"><b>Step 7　出水壓力</b>　非防護電氣設備 → <b>≥ 2.7 kgf/cm²</b></div>
+  <div class="step"><b>Step 8　主管管徑</b>　2 區以上 → <b>≥ 100 mm</b>（§63Ⅱ）</div>
+  <div class="step"><b>Step 9　排水設備</b>　室內停車空間 → 應依 <b>§68</b> 設置（見第 05 節）</div>
+  <div class="ans">水源 40 m³　·　幫浦 2,000 L/min　·　壓力 2.7 kgf/cm²　·　主管 100 mm</div>
+</div>
+
+<div class="ex">
+  <div class="t">例二｜發電機室</div>
+  <div class="given">發電機室樓地板面積 120 m²，放射區域取 50 m²。</div>
+  <div class="step"><b>Step 1　應設判斷</b>　§18 附表項目五：≥ 200 m² 才應設——<b>120 m² 未達</b>，依 §18 不強制。<br>以下按「若自願設置或另有規定應設」演算。</div>
+  <div class="step"><b>Step 2　每 m² 放水量</b>　項目五屬「其他場所」→ <b>10 L/min·m²</b></div>
+  <div class="step"><b>Step 3　放射區域數</b>　120 ÷ 50 = 2.4 → <b>3 區</b></div>
+  <div class="step"><b>Step 4　每一放射區域放水量</b>　50 × 10 = <b>500 L/min</b></div>
+  <div class="step"><b>Step 5　水源容量</b>　2 區以上 → <b>≥ 40 m³</b></div>
+  <div class="step"><b>Step 6　出水壓力</b>　<b>防護電氣設備</b> → <b>≥ 3.5 kgf/cm²</b>（§65②但書）</div>
+  <div class="step"><b>Step 7　與高壓電器設備距離</b>　依 §66 表查（見第 04 節）</div>
+  <div class="ans">放水量減半（10 vs 20），但壓力加嚴（3.5 vs 2.7）；水源仍是固定的 40 m³</div>
+</div>
+
+<!-- ============ 4 ============ -->
+<h2 id="elec"><span class="no">04</span>與高壓電器設備應保持之距離</h2>
+<p class="lede">§66。水霧噴頭<b>及配管</b>都要保持距離——不只噴頭。</p>
+
+<figure>
+<svg viewBox="0 0 700 330" role="img" aria-label="水霧噴頭與高壓電器設備離開距離曲線">
+  <path class="s-line" d="M80 270 L640 270"/>
+  <path class="s-line" d="M80 270 L80 40"/>
+  <text class="s-sm" x="88" y="34">離開距離（mm）</text>
+  <text class="s-sm" x="360" y="308" text-anchor="middle">電壓（kV）</text>
+
+  <g class="s-thin">
+    <path d="M80 270 L74 270 M80 205 L74 205 M80 140 L74 140 M80 75 L74 75"/>
+  </g>
+  <text class="s-sm" x="70" y="274" text-anchor="end">0</text>
+  <text class="s-sm" x="70" y="209" text-anchor="end">1,000</text>
+  <text class="s-sm" x="70" y="144" text-anchor="end">2,000</text>
+  <text class="s-sm" x="70" y="79" text-anchor="end">3,000</text>
+
+  <g class="s-thin">
+    <path d="M111 270 L111 276 M173 270 L173 276 M235 270 L235 276 M390 270 L390 276 M615 270 L615 276"/>
+  </g>
+  <text class="s-sm" x="111" y="290" text-anchor="middle">20</text>
+  <text class="s-sm" x="173" y="290" text-anchor="middle">60</text>
+  <text class="s-sm" x="235" y="290" text-anchor="middle">100</text>
+  <text class="s-sm" x="390" y="290" text-anchor="middle">200</text>
+  <text class="s-sm" x="615" y="290" text-anchor="middle">345</text>
+
+  <!-- 標準值 -->
+  <path d="M91 253.8 L96 250.5 L111 244 L127 237.5 L173 205 L189 198.5 L235 172.5 L297 146.5 L390 101 L615 55.5"
+        stroke="var(--accent)" stroke-width="2.6" fill="none"/>
+  <!-- 最低值 -->
+  <path d="M91 260.3 L96 257 L111 250.5 L127 244 L173 224.5 L189 218 L235 198.5 L297 172.5 L390 133.5 L615 101"
+        stroke="var(--accent2)" stroke-width="2.6" fill="none" stroke-dasharray="7 4"/>
+
+  <rect x="300" y="52" width="330" height="60" rx="6" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <path d="M316 74 L346 74" stroke="var(--accent)" stroke-width="2.6"/>
+  <text class="s-sm" x="356" y="78" fill="var(--accent)" font-weight="700">標準值（mm）</text>
+  <path d="M316 98 L346 98" stroke="var(--accent2)" stroke-width="2.6" stroke-dasharray="6 3"/>
+  <text class="s-sm" x="356" y="102" fill="var(--accent2)" font-weight="700">最低值（mm）</text>
+
+  <circle cx="173" cy="205" r="4.5" fill="var(--accent)"/>
+  <circle cx="173" cy="224.5" r="4.5" fill="var(--accent2)"/>
+  <path class="s-thin" stroke-dasharray="3 3" d="M173 205 L173 270"/>
+  <text class="s-sm" x="182" y="196">60 kV → 標準 1,000</text>
+  <text class="s-sm" x="182" y="240">最低 700</text>
+</svg>
+<figcaption>圖 4　§66 離開距離隨電壓遞增（電壓越高，距離越遠）</figcaption>
+</figure>
+
+<table>
+<thead><tr><th class="n">電壓（kV）</th><th class="n">最低（mm）</th><th class="n">標準（mm）</th></tr></thead>
+<tbody>
+<tr><td class="n">7 以下</td><td class="n">150</td><td class="n">250</td></tr>
+<tr><td class="n">10 以下</td><td class="n">200</td><td class="n">300</td></tr>
+<tr><td class="n">20 以下</td><td class="n">300</td><td class="n">400</td></tr>
+<tr><td class="n">30 以下</td><td class="n">400</td><td class="n">500</td></tr>
+<tr><td class="n">60 以下</td><td class="n">700</td><td class="n">1,000</td></tr>
+<tr><td class="n">70 以下</td><td class="n">800</td><td class="n">1,100</td></tr>
+<tr><td class="n">100 以下</td><td class="n">1,100</td><td class="n">1,500</td></tr>
+<tr><td class="n">140 以下</td><td class="n">1,500</td><td class="n">1,900</td></tr>
+<tr><td class="n">200 以下</td><td class="n">2,100</td><td class="n">2,600</td></tr>
+<tr><td class="n">345 以下</td><td class="n">2,600</td><td class="n">3,300</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <b>不必背整張表，記住三個定位點就夠：</b>
+  最小的 <b>7 kV → 150／250 mm</b>、中間的 <b>60 kV → 700／1,000 mm</b>、
+  最大的 <b>345 kV → 2,600／3,300 mm</b>。
+  中間各級介於其間且單調遞增，題目通常只考頭尾或某一特定級距。
+</div>
+
+<div class="ex">
+  <div class="t">例三｜查表題</div>
+  <div class="given">某變電設備電壓 60 kV，設置水霧滅火設備。</div>
+  <div class="step"><b>查 §66 表</b>　「60 以下」該列 → 最低 <b>700 mm</b>、標準 <b>1,000 mm</b></div>
+  <div class="step"><b>注意適用範圍</b>　§66 規定的是「水霧噴頭<b>及配管</b>」與高壓電器設備應保持之距離，配管也要算</div>
+  <div class="ans">最低 700 mm、標準 1,000 mm</div>
+</div>
+
+<!-- ============ 5 ============ -->
+<h2 id="drain"><span class="no">05</span>室內停車空間排水設備</h2>
+<p class="lede">§68。只有「裝置水霧滅火設備之<b>室內停車空間</b>」才適用——這是水霧獨有的一條。</p>
+
+<figure>
+<svg viewBox="0 0 820 330" role="img" aria-label="室內停車空間排水設備剖面">
+  <!-- 地面 -->
+  <path class="s-line" stroke-width="2" d="M40 150 L300 168"/>
+  <path class="s-line" stroke-width="2" d="M520 168 L780 150"/>
+  <text class="s-sm" x="150" y="132" text-anchor="middle">車輛停駐場所</text>
+  <text class="s-sm" x="670" y="132" text-anchor="middle">車輛停駐場所</text>
+
+  <!-- 坡度標註 -->
+  <path class="s-dim" d="M70 176 L280 190"/>
+  <text class="s-key" x="150" y="206" text-anchor="middle">地面坡度 ≥ 2%（§68①）</text>
+  <text class="s-key" x="670" y="206" text-anchor="middle">地面坡度 ≥ 2%</text>
+
+  <!-- 車輛 -->
+  <g fill="var(--fill2)" stroke="var(--fg)" stroke-width="1.3">
+    <path d="M95 150 L100 122 L200 116 L210 145 Z"/>
+    <path d="M610 145 L620 116 L720 122 L725 150 Z"/>
+  </g>
+  <circle cx="120" cy="151" r="7" fill="var(--fg)"/><circle cx="190" cy="147" r="7" fill="var(--fg)"/>
+  <circle cx="630" cy="147" r="7" fill="var(--fg)"/><circle cx="700" cy="151" r="7" fill="var(--fg)"/>
+
+  <!-- 境界堤 -->
+  <rect x="296" y="146" width="12" height="24" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <rect x="512" y="146" width="12" height="24" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-key" x="302" y="138" text-anchor="middle" style="font-size:11px">≥10cm</text>
+  <text class="s-sm" x="302" y="124" text-anchor="middle">地區境界堤</text>
+  <text class="s-sm" x="518" y="124" text-anchor="middle">或境界溝（深10×寬10cm以上）</text>
+
+  <!-- 車道與排水溝 -->
+  <path class="s-line" stroke-width="2" d="M308 168 L512 168"/>
+  <text class="s-sm" x="410" y="160" text-anchor="middle">車　道</text>
+  <rect x="386" y="168" width="48" height="30" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.6"/>
+  <text class="s-sm" x="410" y="214" text-anchor="middle" fill="var(--accent2)" font-weight="700">排水溝</text>
+  <text class="s-sm" x="410" y="230" text-anchor="middle">設於車道中央或二側（§68④）</text>
+
+  <!-- 集水管 -->
+  <path class="s-line" stroke="var(--accent2)" stroke-width="2.4" d="M410 198 L410 246 L580 246"/>
+  <text class="s-sm" x="470" y="262" text-anchor="middle" fill="var(--accent2)">集水管</text>
+
+  <!-- 滅火坑 -->
+  <rect x="580" y="222" width="180" height="70" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.8"/>
+  <text class="s-sm" x="670" y="244" text-anchor="middle" font-weight="700" fill="var(--accent3)">滅火坑</text>
+  <text class="s-sm" x="670" y="262" text-anchor="middle">具備油水分離裝置</text>
+  <text class="s-sm" x="670" y="280" text-anchor="middle">設於火災不易殃及之處所</text>
+
+  <!-- 底部說明 -->
+  <rect x="40" y="298" width="520" height="26" rx="5" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.3"/>
+  <text class="s-sm" x="300" y="316" text-anchor="middle" fill="var(--warn)" font-weight="700">§68⑤　排水溝及集水管之大小與坡度，應能將加壓送水裝置之「最大能力水量」有效排出</text>
+</svg>
+<figcaption>圖 5　§68 室內停車空間排水設備的五項要求</figcaption>
+</figure>
+
+<table>
+<tbody>
+<tr><td>①</td><td>車輛停駐場所地面作<b>百分之二以上</b>之坡度</td></tr>
+<tr><td>②</td><td>車輛停駐場所，除面臨車道部分外，應設<b>高 10 cm 以上</b>之<b>地區境界堤</b>，或<b>深 10 cm 寬 10 cm 以上</b>之<b>地區境界溝</b>，並與排水溝連通</td></tr>
+<tr><td>③</td><td><b>滅火坑</b>具備<b>油水分離裝置</b>，並設於<b>火災不易殃及</b>之處所</td></tr>
+<tr><td>④</td><td><b>車道之中央或二側</b>設置排水溝，排水溝設置<b>集水管</b>，並與滅火坑相連接</td></tr>
+<tr><td>⑤</td><td>排水溝及集水管之大小及坡度，應具備能將加壓送水裝置之<b>最大能力水量</b>有效排出</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <b>為什麼要「油水分離」？</b>停車空間火災多半燒的是汽油、機油。
+  水霧把火壓下來之後，混著油的水會流進排水系統——
+  若直接排入下水道，等於把可燃液體送到別處，也造成汙染。
+  所以 §68③ 要求滅火坑具備油水分離裝置，而且滅火坑本身要設在<b>火災不易殃及之處所</b>，
+  避免收集起來的油品被二次引燃。
+</div>
+
+<!-- ============ 6 ============ -->
+<h2 id="refs"><span class="no">06</span>準用關係：與泡沫完全相同</h2>
+<p class="lede">§62。這一條和泡沫的 §74 準用清單<b>一模一樣</b>，可以一起記。</p>
+
+<figure>
+<svg viewBox="0 0 860 260" role="img" aria-label="水霧與泡沫準用關係比較">
+  <rect x="40" y="30" width="360" height="200" rx="10" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.6"/>
+  <text class="s-txt" x="220" y="56" text-anchor="middle" font-weight="700" fill="var(--accent2)">§62　水霧滅火設備</text>
+  <text class="s-sm" x="220" y="76" text-anchor="middle">緊急電源、配管、配件、屋頂水箱、竣工時之</text>
+  <text class="s-sm" x="220" y="92" text-anchor="middle">加壓送水試驗、流水檢知裝置、啟動裝置、一齊開放閥</text>
+
+  <rect x="460" y="30" width="360" height="200" rx="10" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-txt" x="640" y="56" text-anchor="middle" font-weight="700" fill="var(--accent)">§74　泡沫滅火設備</text>
+  <text class="s-sm" x="640" y="76" text-anchor="middle">緊急電源、配管、配件、屋頂水箱、竣工時之</text>
+  <text class="s-sm" x="640" y="92" text-anchor="middle">加壓試驗、流水檢知裝置、啟動裝置、一齊開放閥</text>
+
+  <g>
+    <rect x="70" y="112" width="300" height="100" rx="6" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+    <text class="s-sm" x="86" y="134">§38　緊急電源（30 分鐘）</text>
+    <text class="s-sm" x="86" y="154">§44　配管、配件、屋頂水箱</text>
+    <text class="s-sm" x="86" y="174">§45　竣工加壓試驗</text>
+    <text class="s-sm" x="86" y="196">§51～§53　流水檢知裝置、啟動裝置、一齊開放閥</text>
+  </g>
+  <g>
+    <rect x="490" y="112" width="300" height="100" rx="6" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+    <text class="s-sm" x="506" y="134">§38　緊急電源（30 分鐘）</text>
+    <text class="s-sm" x="506" y="154">§44　配管、配件、屋頂水箱</text>
+    <text class="s-sm" x="506" y="174">§45　竣工加壓試驗</text>
+    <text class="s-sm" x="506" y="196">§51～§53　流水檢知裝置、啟動裝置、一齊開放閥</text>
+  </g>
+
+  <text class="s-key" x="430" y="160" text-anchor="middle" style="font-size:20px">＝</text>
+</svg>
+<figcaption>圖 6　§62 與 §74 的準用清單完全一致</figcaption>
+</figure>
+
+<table>
+<thead><tr><th class="n">準用條</th><th>內容與關鍵數字</th></tr></thead>
+<tbody>
+<tr><td class="n">§38</td><td>緊急電源：發電機設備或蓄電池設備，<b>30 分鐘</b>以上</td></tr>
+<tr><td class="n">§44</td><td>配管、配件、屋頂水箱（再準用 §32Ⅰ、Ⅱ）；立管連接屋頂水箱時容量 <b>≥ 1 m³</b></td></tr>
+<tr><td class="n">§45</td><td>竣工加壓試驗（再準用 §33）：試驗壓力 ≥ 全閉揚程 <b>1.5 倍</b>，<b>持續 2 小時</b>無漏水</td></tr>
+<tr><td class="n">§51</td><td>流水檢知裝置：樓地板面積 ≤ 3,000 m² 裝 1 套（無隔間得增為 10,000 m²）；制水閥 <b>0.8～1.5 m</b></td></tr>
+<tr><td class="n">§52</td><td>啟動裝置：感知撒水頭標示溫度 <b>≤ 79°C</b>、每 <b>20 m²</b> 1 個；手動啟動開關 <b>0.8～1.5 m</b></td></tr>
+<tr><td class="n">§53</td><td>一齊開放閥：每一放水區域 <b>1 個</b></td></tr>
+</tbody>
+</table>
+
+<div class="cmp">
+  <b>水霧與泡沫都「不」準用 §58（加壓送水裝置）。</b>
+  水霧的加壓送水裝置在 <b>§65</b>，泡沫在 <b>§77</b>，各自另有規定。
+  這是兩節共同的高頻誤答點——看到「準用」就以為連幫浦一起準用。
+</div>
+
+<!-- ============ 7 ============ -->
+<h2 id="card"><span class="no">07</span>速查數字卡</h2>
+<table>
+<thead><tr><th>項目</th><th>數值</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td>應設場所（§18 附表中水霧有○者）</td><td>項目<b>三</b>（汽車修理廠、室內停車空間）、<b>四</b>（昇降機械式停車場）、<b>五</b>（發電機室、變壓器室）</td><td class="n">§18 附表</td></tr>
+<tr><td>噴頭有效防護</td><td>防護對象總面積應在各水霧噴頭放水之<b>有效防護範圍內</b></td><td class="n">§61①</td></tr>
+<tr><td><b>噴頭有效半徑</b></td><td>≤ <b>2.1 m</b></td><td class="n">§61②</td></tr>
+<tr><td><b>每 m² 放水量</b></td><td>§18 附表<b>第三、四項</b> ≥ <b>20 L/min</b>；<b>其他場所</b> ≥ <b>10 L/min</b></td><td class="n">§61③</td></tr>
+<tr><td>準用</td><td>§38、§44、§45、§51～§53（<b>不含 §58</b>）</td><td class="n">§62</td></tr>
+<tr><td><b>放射區域</b></td><td>一只一齊開放閥啟動放射之區域，每一區域<b>以 50 m² 為原則</b></td><td class="n">§63Ⅰ</td></tr>
+<tr><td><b>主管管徑</b></td><td>放射區域 <b>2 區域以上</b>者 ≥ <b>100 mm</b></td><td class="n">§63Ⅱ</td></tr>
+<tr><td><b>水源容量</b></td><td>≥ <b>20 m³</b>；放射區域 <b>2 區域以上</b>者 ≥ <b>40 m³</b>（<b>固定值</b>）</td><td class="n">§64</td></tr>
+<tr><td><b>幫浦出水量</b></td><td>≥ <b>1,200 L/min</b>；放射區域 2 個以上時 ≥ <b>2,000 L/min</b></td><td class="n">§65①</td></tr>
+<tr><td><b>幫浦出水壓力</b></td><td>最末端<b>一個</b>放射區域<b>全部</b>噴頭 ≥ <b>2.7 kgf/cm²</b>（0.27 MPa）<br><b>防護電氣設備</b>者 ≥ <b>3.5 kgf/cm²</b>（0.35 MPa）</td><td class="n">§65②</td></tr>
+<tr><td>緊急電源</td><td>連接緊急電源；依 §62 準用 §38 → <b>30 分鐘</b>以上</td><td class="n">§65③・§62</td></tr>
+<tr><td><b>與高壓電器設備距離</b></td><td><b>水霧噴頭及配管</b>；7 kV → 150／250 mm；60 kV → 700／1,000 mm；345 kV → 2,600／3,300 mm</td><td class="n">§66</td></tr>
+<tr><td>送水口</td><td>依 §59①～④；標明「<b>水霧送水口</b>」字樣及<b>送水壓力範圍</b></td><td class="n">§67</td></tr>
+<tr><td><b>排水設備・坡度</b></td><td>車輛停駐場所地面作 <b>2% 以上</b>之坡度</td><td class="n">§68①</td></tr>
+<tr><td><b>排水設備・境界堤／溝</b></td><td>高 <b>10 cm 以上</b>之地區境界堤，或深 <b>10 cm</b> 寬 <b>10 cm 以上</b>之地區境界溝</td><td class="n">§68②</td></tr>
+<tr><td><b>排水設備・滅火坑</b></td><td>具備<b>油水分離裝置</b>，設於<b>火災不易殃及</b>之處所</td><td class="n">§68③</td></tr>
+<tr><td>排水設備・排水溝</td><td>設於<b>車道中央或二側</b>，設集水管並與滅火坑相連接</td><td class="n">§68④</td></tr>
+<tr><td>排水設備・排水能力</td><td>應能將加壓送水裝置之<b>最大能力水量</b>有效排出</td><td class="n">§68⑤</td></tr>
+</tbody>
+</table>
+
+<h3>水系設備 水源與壓力對照</h3>
+<table>
+<thead><tr><th>設備</th><th>水源容量</th><th class="n">放水壓力</th><th class="n">時間</th></tr></thead>
+<tbody>
+<tr><td>室內消防栓（第一種）</td><td>2 支 × 130 L/min × 20 min = <b>5.2 m³</b></td><td class="n">1.7 kgf/cm²</td><td class="n">20 min</td></tr>
+<tr><td>室內消防栓（第二種）</td><td>2 支 × 80 L/min × 20 min = <b>3.2 m³</b></td><td class="n">1.7 kgf/cm²</td><td class="n">20 min</td></tr>
+<tr><td>室外消防栓</td><td>2 具 × 350 L/min × 30 min = <b>21 m³</b></td><td class="n">2.5 kgf/cm²</td><td class="n">30 min</td></tr>
+<tr><td>自動撒水（10 樓以下一般場所）</td><td>10 個 × 80 L/min × 20 min = <b>16 m³</b></td><td class="n">1 kgf/cm²</td><td class="n">20 min</td></tr>
+<tr><td><b>水霧</b></td><td><b>20 m³／40 m³（固定值，不隨面積變動）</b></td><td class="n">2.7／3.5 kgf/cm²</td><td class="n">—</td></tr>
+<tr><td>泡沫（泡沫頭）</td><td>最大一個放射區域 × 單位放射量 × 20 min，再 ×1.2</td><td class="n">1 kgf/cm²</td><td class="n">20 min</td></tr>
+<tr><td>泡沫（移動式）</td><td>2 具瞄子 × 100 L/min × <b>15 min</b></td><td class="n">3.5 kgf/cm²</td><td class="n">15 min</td></tr>
+</tbody>
+</table>
+
+<div class="navbar" style="margin-top:32px">
+  <a class="btn go" href="index.html">🏠 回學習首頁</a>
+  <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+  <a class="btn" href="#apply">↑ 回到最上方</a>
+</div>
+
+<footer>
+  <p>本頁數據取自全國法規資料庫「各類場所消防安全設備設置標準」（pcode D0120029）民國 113 年 4 月 24 日修正版原文，於 2026-08-04 擷取核對。</p>
+  <p>§18 附表在法規資料庫網頁版被省略，本頁引用之項目三、四、五內容取自該條之「完整條文」PDF。</p>
+  <p><b>法規以主管機關公布文字為準。</b>本頁為個人學習筆記，不構成法律意見；設計送審前請回查現行條文：
+  <code>https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0120029</code></p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  function target(){
+    var h=(location.hash||'').replace('#','');
+    if(!h){ var m=/[?&]s=([\w-]+)/.exec(location.search||''); h=m?m[1]:''; }
+    return h?document.getElementById(h):null;
+  }
+  function go(smooth){
+    var el=target(); if(!el) return;
+    el.scrollIntoView({behavior:smooth?'smooth':'auto',block:'start'});
+    el.style.transition='background-color .4s';
+    var old=el.style.backgroundColor;
+    el.style.backgroundColor='var(--fill4)';
+    setTimeout(function(){ el.style.backgroundColor=old||''; },1600);
+  }
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){ setTimeout(go,60); });
+  else setTimeout(go,60);
+  window.addEventListener('hashchange',function(){ go(true); });
+})();
+</script>
+</body>
+</html>
