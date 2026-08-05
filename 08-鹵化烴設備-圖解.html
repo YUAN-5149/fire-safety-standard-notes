@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>鹵化烴滅火設備 圖解 — 各類場所消防安全設備設置標準 §97-1～§97-10</title>
+<meta name="description" content="海龍替代品——鹵化烴滅火設備（HFC-23、HFC-227ea、FK-5-1-12）的設計濃度、藥劑量公式、噴頭與儲存容器規定圖解。">
+<style>
+  :root{
+    --bg:#fbfaf7; --fg:#1c1b19; --muted:#6b6862; --line:#d8d4cb;
+    --card:#ffffff; --accent:#b03a2e; --accent2:#1d6fa5; --accent3:#2e7d4f;
+    --warn:#a86b00; --danger:#8e1b0f;
+    --fill1:#f2e4e1; --fill2:#e0edf6; --fill3:#e3f0e8; --fill4:#f7efd9;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#16161a; --fg:#e8e6e1; --muted:#9b968c; --line:#3a3a40;
+      --card:#1e1e23; --accent:#e8705f; --accent2:#5aa8d8; --accent3:#5fbb87;
+      --warn:#d9a441; --danger:#f08070;
+      --fill1:#3a2622; --fill2:#1e3341; --fill3:#1f3a2c; --fill4:#3a3120;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+    line-height:1.75;-webkit-text-size-adjust:100%}
+  .wrap{max-width:960px;margin:0 auto;padding:32px 20px 80px}
+  header{border-bottom:2px solid var(--fg);padding-bottom:18px;margin-bottom:8px}
+  h1{font-size:clamp(1.4rem,4vw,2rem);margin:0 0 6px;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:.9rem;margin:0}
+  h2{font-size:1.15rem;margin:48px 0 4px;padding-top:14px;border-top:1px solid var(--line);
+    scroll-margin-top:16px}
+  h2 .no{color:var(--accent);font-variant-numeric:tabular-nums;margin-right:.5em}
+  h2:target{background:linear-gradient(transparent 62%,var(--fill4) 62%)}
+  h3{font-size:1rem;margin:26px 0 6px}
+  .lede{color:var(--muted);font-size:.92rem;margin:.2em 0 18px}
+  figure{margin:0 0 10px;background:var(--card);border:1px solid var(--line);
+    border-radius:10px;padding:18px 14px;overflow-x:auto}
+  svg{display:block;margin:0 auto;max-width:100%;height:auto}
+  figcaption{color:var(--muted);font-size:.84rem;margin-top:10px;text-align:center}
+  .note{border-left:3px solid var(--warn);background:var(--fill4);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .note b{color:var(--warn)}
+  .cmp{border-left:3px solid var(--accent2);background:var(--fill2);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .cmp b{color:var(--accent2)}
+  table{border-collapse:collapse;width:100%;font-size:.88rem;margin:14px 0}
+  th,td{border:1px solid var(--line);padding:6px 9px;text-align:left}
+  th{background:var(--fill2);font-weight:600}
+  td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+  code{background:var(--fill2);padding:1px 5px;border-radius:4px;font-size:.88em}
+  .formula{background:var(--fill3);border:1px solid var(--line);border-radius:8px;
+    padding:12px 16px;margin:14px 0;font-size:1rem;text-align:center}
+  .ex{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent2);
+    border-radius:0 10px 10px 0;padding:14px 18px;margin:18px 0}
+  .ex .t{font-weight:700;margin-bottom:6px;color:var(--accent2)}
+  .ex .given{font-size:.88rem;color:var(--muted);border-left:3px solid var(--line);
+    padding-left:12px;margin-bottom:10px}
+  .ex .step{font-size:.92rem;margin:8px 0}
+  .ex .ans{background:var(--fill3);border-radius:7px;padding:9px 13px;margin-top:10px;
+    font-weight:700;font-size:.94rem}
+  footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:.82rem}
+  a{color:var(--accent2)}
+  .navbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+  .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;
+    font-size:.86rem;padding:7px 14px;border-radius:8px;border:1px solid var(--line);
+    background:var(--card);color:var(--fg);transition:.12s}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.go{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+  .btn.go:hover{filter:brightness(1.1);color:#fff}
+  .toc{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 4px}
+  .toc a{font-size:.8rem;text-decoration:none;padding:4px 10px;border-radius:99px;
+    border:1px solid var(--line);background:var(--card);color:var(--muted)}
+  .toc a:hover{border-color:var(--accent);color:var(--accent)}
+  .s-line{stroke:var(--fg);stroke-width:1.4;fill:none}
+  .s-thin{stroke:var(--muted);stroke-width:1;fill:none}
+  .s-txt{fill:var(--fg);font-size:13px;font-family:inherit}
+  .s-sm{fill:var(--muted);font-size:11px;font-family:inherit}
+  .s-key{fill:var(--accent);font-size:13px;font-weight:700;font-family:inherit}
+  .s-dim{stroke:var(--accent2);stroke-width:1;fill:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>鹵化烴滅火設備 圖解</h1>
+  <p class="sub">各類場所消防安全設備設置標準 §97-1～§97-10（海龍替代品）　|　民國 113 年 4 月 24 日修正版</p>
+  <div class="navbar">
+    <a class="btn go" href="index.html">🏠 回學習首頁</a>
+    <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+    <a class="btn" href="06-%E4%BA%8C%E6%B0%A7%E5%8C%96%E7%A2%B3%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html">📐 二氧化碳設備圖解</a>
+    <a class="btn" href="07-%E4%B9%BE%E7%B2%89%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html">📐 乾粉設備圖解</a>
+  </div>
+</header>
+
+<nav class="toc" aria-label="章節目錄">
+  <a href="#kinds">01 三種藥劑與放射方式</a>
+  <a href="#conc">02 設計濃度</a>
+  <a href="#amount">03 藥劑量公式</a>
+  <a href="#nozzle">04 噴頭與 10 秒 95%</a>
+  <a href="#storage">05 儲存容器與配管</a>
+  <a href="#refs">06 準用關係</a>
+  <a href="#card">07 速查數字卡</a>
+</nav>
+
+<div class="cmp" style="margin-top:24px">
+  <b>鹵化烴是「海龍（Halon）的替代品」。</b>海龍因破壞臭氧層被蒙特婁議定書禁用，
+  法規改用三種不破壞臭氧層的鹵化烴。它們的滅火機制是<b>化學抑制</b>（打斷燃燒連鎖反應），
+  不是二氧化碳的窒息、也不是惰性氣體的稀釋氧氣——所以<b>設計濃度低得多</b>（10% 上下），
+  對人相對安全，這也是整節條文與 CO₂ 最根本的差異來源。
+</div>
+
+<!-- ============ 1 ============ -->
+<h2 id="kinds"><span class="no">01</span>三種藥劑與放射方式</h2>
+<p class="lede">§97-1。藥劑只有三種、放射方式只有一種——這一節的入口比 CO₂ 單純很多。</p>
+
+<figure>
+<svg viewBox="0 0 900 380" role="img" aria-label="鹵化烴滅火設備三種藥劑與放射方式">
+  <rect x="325" y="10" width="250" height="42" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text class="s-txt" x="450" y="29" text-anchor="middle" font-weight="700">鹵化烴滅火設備</text>
+  <text class="s-sm" x="450" y="45" text-anchor="middle">§97-1　海龍替代品</text>
+
+  <path class="s-line" d="M450 52 L450 76"/>
+  <path class="s-line" d="M160 76 L740 76"/>
+  <path class="s-line" d="M160 76 L160 100 M450 76 L450 100 M740 76 L740 100"/>
+
+  <rect x="35" y="100" width="250" height="88" rx="6" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-txt" x="160" y="122" text-anchor="middle" font-weight="700">HFC-23</text>
+  <text class="s-sm" x="160" y="140" text-anchor="middle">三氟甲烷</text>
+  <text class="s-sm" x="160" y="160" text-anchor="middle">常時有人場所濃度上限 30%</text>
+  <text class="s-sm" x="160" y="177" text-anchor="middle">放射壓力 ≥ 9 kgf/cm²</text>
+
+  <rect x="325" y="100" width="250" height="88" rx="6" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-txt" x="450" y="122" text-anchor="middle" font-weight="700">HFC-227ea</text>
+  <text class="s-sm" x="450" y="140" text-anchor="middle">七氟丙烷</text>
+  <text class="s-sm" x="450" y="160" text-anchor="middle">常時有人場所濃度上限 10.5%</text>
+  <text class="s-sm" x="450" y="177" text-anchor="middle">放射壓力 ≥ 3 kgf/cm²</text>
+
+  <rect x="615" y="100" width="250" height="88" rx="6" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-txt" x="740" y="122" text-anchor="middle" font-weight="700">FK-5-1-12</text>
+  <text class="s-sm" x="740" y="140" text-anchor="middle">全氟（2-甲基-3-戊酮）</text>
+  <text class="s-sm" x="740" y="160" text-anchor="middle">常時有人場所濃度上限 10%</text>
+  <text class="s-sm" x="740" y="177" text-anchor="middle">放射壓力 ≥ 3 kgf/cm²</text>
+
+  <path class="s-line" d="M160 188 L160 212 L740 212 M450 188 L450 212 M740 188 L740 212"/>
+  <path class="s-line" d="M450 212 L450 234"/>
+
+  <rect x="270" y="234" width="360" height="46" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.8"/>
+  <text class="s-txt" x="450" y="255" text-anchor="middle" font-weight="700">放射方式「以全區放射方式為限」</text>
+  <text class="s-sm" x="450" y="272" text-anchor="middle">§97-1Ⅱ　沒有局部放射、也沒有移動放射</text>
+
+  <path class="s-line" d="M450 280 L450 302"/>
+
+  <rect x="120" y="302" width="330" height="66" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-sm" x="285" y="322" text-anchor="middle" font-weight="700" fill="var(--accent3)">防護區域準用（§97-1Ⅱ）</text>
+  <text class="s-sm" x="285" y="340" text-anchor="middle">§82Ⅰ①本文（區劃、開口自動關閉）</text>
+  <text class="s-sm" x="285" y="357" text-anchor="middle">§82Ⅲ（放射前自動關閉）　§85（通風換氣）</text>
+
+  <rect x="470" y="302" width="330" height="66" rx="6" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <text class="s-sm" x="635" y="322" text-anchor="middle" font-weight="700" fill="var(--warn)">§97-1Ⅲ　防止壓力上升措施</text>
+  <text class="s-sm" x="635" y="340" text-anchor="middle">應依流量計算結果採取防止該區域內壓力上升之措施</text>
+  <text class="s-sm" x="635" y="357" text-anchor="middle">但無影響防護區域完整性之虞者，不在此限</text>
+</svg>
+<figcaption>圖 1　§97-1 三種藥劑、單一放射方式與防護區域規定</figcaption>
+</figure>
+
+<div class="cmp">
+  <b>「以全區放射為限」這件事，鹵化烴與惰性氣體相同，與 CO₂ 和乾粉不同。</b>
+  CO₂ 有全區／局部／移動三種，乾粉也有三種；惰性氣體（§82Ⅲ）與鹵化烴（§97-1Ⅱ）都只有全區。
+  所以這兩節<b>完全沒有</b>「假想防護空間」「Q 值」「噴射瞄子」這些概念。
+</div>
+
+<!-- ============ 2 ============ -->
+<h2 id="conc"><span class="no">02</span>設計濃度：安全係數照抄，濃度上限自己一套</h2>
+<p class="lede">§97-2。準用 §83-1（惰性氣體的設計濃度條文），<b>但刻意排除其中一目</b>。</p>
+
+<figure>
+<svg viewBox="0 0 860 340" role="img" aria-label="鹵化烴設計濃度準用與上限">
+  <rect x="30" y="30" width="200" height="120" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.5"/>
+  <text class="s-txt" x="130" y="54" text-anchor="middle" font-weight="700">§83-1</text>
+  <text class="s-sm" x="130" y="72" text-anchor="middle">（惰性氣體設計濃度）</text>
+  <text class="s-sm" x="130" y="94" text-anchor="middle">Ⅱ①（一）×1.2 一般</text>
+  <text class="s-sm" x="130" y="112" text-anchor="middle">Ⅱ②　　×1.3 易燃液體</text>
+  <text class="s-sm" x="130" y="130" text-anchor="middle">Ⅱ③　　×1.35 通電設備</text>
+
+  <path class="s-line" d="M230 90 L280 90"/>
+  <path d="M280 85 L292 90 L280 95 z" fill="var(--fg)"/>
+  <text class="s-sm" x="256" y="82" text-anchor="middle">準用</text>
+
+  <rect x="300" y="30" width="250" height="70" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.5"/>
+  <text class="s-sm" x="425" y="52" text-anchor="middle" font-weight="700" fill="var(--accent3)">安全係數三段　全部照用</text>
+  <text class="s-sm" x="425" y="72" text-anchor="middle">×1.2 一般／×1.3 含易燃液體</text>
+  <text class="s-sm" x="425" y="90" text-anchor="middle">×1.35 含通電中電氣設備</text>
+
+  <rect x="300" y="116" width="250" height="70" rx="8" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.8"/>
+  <text class="s-sm" x="425" y="138" text-anchor="middle" font-weight="700" fill="var(--accent)">Ⅱ①（二）52% 上限　排除不用</text>
+  <text class="s-sm" x="425" y="158" text-anchor="middle">§97-2 明文「除第二項第一款第二目外」</text>
+  <text class="s-sm" x="425" y="176" text-anchor="middle">改用 §97-2 自己的濃度表 ↓</text>
+
+  <path class="s-line" d="M425 186 L425 210"/>
+
+  <!-- 濃度長條 -->
+  <path class="s-line" d="M120 300 L800 300"/>
+  <text class="s-sm" x="112" y="304" text-anchor="end">0</text>
+  <text class="s-sm" x="112" y="228" text-anchor="end">30%</text>
+  <path class="s-thin" stroke-dasharray="3 3" d="M120 224 L800 224"/>
+
+  <g stroke="var(--accent)" stroke-width="1.5">
+    <rect x="200" y="224" width="110" height="76" fill="var(--fill1)"/>
+    <rect x="400" y="273" width="110" height="27" fill="var(--fill1)"/>
+    <rect x="600" y="275" width="110" height="25" fill="var(--fill1)"/>
+  </g>
+  <text class="s-key" x="255" y="216" text-anchor="middle">30%</text>
+  <text class="s-key" x="455" y="265" text-anchor="middle">10.5%</text>
+  <text class="s-key" x="655" y="267" text-anchor="middle">10%</text>
+  <text class="s-sm" x="255" y="318" text-anchor="middle">HFC-23</text>
+  <text class="s-sm" x="455" y="318" text-anchor="middle">HFC-227ea</text>
+  <text class="s-sm" x="655" y="318" text-anchor="middle">FK-5-1-12</text>
+  <text class="s-sm" x="130" y="334">常時有人之場所　藥劑最高設計濃度（§97-2 表）</text>
+</svg>
+<figcaption>圖 2　§97-2 準用範圍與常時有人場所之濃度上限</figcaption>
+</figure>
+
+<table>
+<thead><tr><th>滅火藥劑種類</th><th>化學名稱</th><th class="n">常時有人之場所<br>最高設計濃度</th></tr></thead>
+<tbody>
+<tr><td><b>HFC-23</b></td><td>三氟甲烷</td><td class="n"><b>30%</b></td></tr>
+<tr><td><b>HFC-227ea</b></td><td>七氟丙烷</td><td class="n"><b>10.5%</b></td></tr>
+<tr><td><b>FK-5-1-12</b></td><td>全氟（2-甲基-3-戊酮）</td><td class="n"><b>10%</b></td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <b>為什麼 HFC-23 的上限特別高（30%）？</b>因為三種藥劑的毒理特性不同——
+  HFC-23 的無明顯不良反應濃度（NOAEL）較高，所以容許的設計濃度也高。
+  這也表示<b>「藥劑上限」不是可以互相套用的數字</b>，看到 HFC-227ea 就不能用 30%。
+</div>
+
+<div class="cmp">
+  <b>三套濃度上限，別互相張冠李戴：</b>
+  惰性氣體（§83-1Ⅱ①（二））常時有人場所是 <b>52%</b>；
+  鹵化烴（§97-2）是 <b>30／10.5／10%</b>；
+  二氧化碳沒有濃度上限規定，改用 §18 附表註五直接<b>禁止</b>設在常時有人的中央管理室、防災中心。
+</div>
+
+<!-- ============ 3 ============ -->
+<h2 id="amount"><span class="no">03</span>藥劑量公式：與惰性氣體只差一個函數</h2>
+<p class="lede">§97-3。兩條公式長得很像，但一條是分式、一條是對數——代錯會差很多。</p>
+
+<div class="formula" style="font-size:1.1rem">
+  <b>W = (V / S) × [ C / (100 − C) ]</b>
+</div>
+<table>
+<tbody>
+<tr><td><b>W</b></td><td>防護空間所需藥劑量（kg）</td></tr>
+<tr><td><b>V</b></td><td>防護空間<b>淨體積</b>（m³，得扣除不滲透且不可移動固體之體積）</td></tr>
+<tr><td><b>S</b></td><td>防護空間<b>最低溫度</b>（t°C）、<b>一大氣壓</b>下之<b>比容積</b>（m³/kg）</td></tr>
+<tr><td><b>C</b></td><td>設計濃度百分比（%，<b>體積百分比</b>）</td></tr>
+</tbody>
+</table>
+<p class="lede"><b>§97-3②</b>：同一建築物內有二個以上防護區域時，所需滅火藥劑量<b>取其最大量者</b>。</p>
+
+<figure>
+<svg viewBox="0 0 680 330" role="img" aria-label="鹵化烴與惰性氣體藥劑量係數曲線比較">
+  <path class="s-line" d="M80 260 L620 260"/>
+  <path class="s-line" d="M80 260 L80 40"/>
+  <text class="s-sm" x="88" y="34">係數</text>
+  <text class="s-sm" x="350" y="300" text-anchor="middle">設計濃度 C（%）</text>
+
+  <g class="s-thin"><path d="M80 260 L74 260 M80 213 L74 213 M80 167 L74 167 M80 120 L74 120 M80 50 L74 50"/></g>
+  <text class="s-sm" x="70" y="264" text-anchor="end">0</text>
+  <text class="s-sm" x="70" y="217" text-anchor="end">0.33</text>
+  <text class="s-sm" x="70" y="171" text-anchor="end">0.67</text>
+  <text class="s-sm" x="70" y="124" text-anchor="end">1.0</text>
+  <text class="s-sm" x="70" y="54" text-anchor="end">1.5</text>
+
+  <g class="s-thin"><path d="M165 260 L165 266 M250 260 L250 266 M335 260 L335 266 M420 260 L420 266 M505 260 L505 266 M590 260 L590 266"/></g>
+  <text class="s-sm" x="165" y="280" text-anchor="middle">10</text>
+  <text class="s-sm" x="250" y="280" text-anchor="middle">20</text>
+  <text class="s-sm" x="335" y="280" text-anchor="middle">30</text>
+  <text class="s-sm" x="420" y="280" text-anchor="middle">40</text>
+  <text class="s-sm" x="505" y="280" text-anchor="middle">50</text>
+  <text class="s-sm" x="590" y="280" text-anchor="middle">60</text>
+
+  <!-- 鹵化烴 C/(100-C) -->
+  <path d="M80 260 L165 244.4 L250 225 L335 200 L420 166.7 L505 120 L590 50"
+        stroke="var(--accent)" stroke-width="2.6" fill="none"/>
+  <!-- 惰性氣體 ln(100/(100-C)) -->
+  <path d="M80 260 L165 245.3 L250 228.8 L335 210.1 L420 188.5 L505 163 L590 131.7"
+        stroke="var(--accent3)" stroke-width="2.6" fill="none" stroke-dasharray="7 4"/>
+
+  <rect x="330" y="50" width="290" height="66" rx="6" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <path d="M344 70 L372 70" stroke="var(--accent)" stroke-width="2.6"/>
+  <text class="s-sm" x="380" y="74" fill="var(--accent)" font-weight="700">鹵化烴　C /(100 − C)　§97-3</text>
+  <path d="M344 96 L372 96" stroke="var(--accent3)" stroke-width="2.6" stroke-dasharray="6 3"/>
+  <text class="s-sm" x="380" y="100" fill="var(--accent3)" font-weight="700">惰性氣體　ln[100/(100 − C)]　§83-2</text>
+
+  <path class="s-thin" stroke-dasharray="3 3" d="M420 166.7 L420 188.5"/>
+  <text class="s-sm" x="430" y="180">C = 40% 時差 30%</text>
+</svg>
+<figcaption>圖 3　兩條藥劑量公式的係數比較（同樣的 V、S、C）</figcaption>
+</figure>
+
+<div class="cmp">
+  <b>公式不可互換，而且差距隨濃度放大。</b>
+  同樣的 V、S、C = 40% 時，鹵化烴係數 0.667、惰性氣體係數 0.511，<b>相差約 30%</b>。
+  記法：<b>鹵化烴用分式、惰性氣體用對數</b>——鹵化烴靠化學抑制、藥劑本身占據體積，
+  惰性氣體靠稀釋氧氣、是對數型的稀釋過程。
+</div>
+
+<div class="ex">
+  <div class="t">例一｜HFC-227ea 全區放射</div>
+  <div class="given">防護空間淨體積 V = 150 m³；設計濃度 C = 9%；該溫度下比容積 S = 0.1373 m³/kg（題目給定；實務依認可值）。</div>
+  <div class="step"><b>Step 1　檢核濃度上限</b>　若為常時有人之場所，C = 9% ≤ <b>10.5%</b>（HFC-227ea）✓</div>
+  <div class="step"><b>Step 2　代入公式</b>　W = (150 / 0.1373) × [9 / (100 − 9)]</div>
+  <div class="step">　　= 1,092.5 × (9 / 91) = 1,092.5 × 0.09890 = <b>108.0 kg</b></div>
+  <div class="step"><b>Step 3　放射時間</b>　§97-4Ⅱ：應於 <b>10 秒內放射 95% 以上</b></div>
+  <div class="step"><b>Step 4　噴頭放射壓力</b>　HFC-227ea → ≥ <b>3 kgf/cm²（0.3 MPa）</b></div>
+  <div class="ans">藥劑量約 108.0 kg　·　10 秒內放射 95% 以上　·　放射壓力 ≥ 3 kgf/cm²</div>
+</div>
+
+<div class="ex">
+  <div class="t">例二｜HFC-23 全區放射</div>
+  <div class="given">防護空間淨體積 V = 100 m³；設計濃度 C = 16%；比容積 S = 0.5 m³/kg（題目給定）。</div>
+  <div class="step"><b>Step 1　檢核濃度上限</b>　HFC-23 常時有人場所上限 <b>30%</b>，C = 16% ✓</div>
+  <div class="step"><b>Step 2　代入公式</b>　W = (100 / 0.5) × [16 / 84] = 200 × 0.19048 = <b>38.1 kg</b></div>
+  <div class="step"><b>Step 3　噴頭放射壓力</b>　HFC-23 → ≥ <b>9 kgf/cm²（0.9 MPa）</b>（三者中唯一的高壓）</div>
+  <div class="ans">藥劑量約 38.1 kg　·　放射壓力 ≥ 9 kgf/cm²</div>
+</div>
+
+<div class="ex">
+  <div class="t">例三｜設計濃度的推導與檢核</div>
+  <div class="given">某機房設 HFC-227ea，含通電中之電氣設備（非持續通電大於 480 V）；該藥劑理論滅火濃度經測試為 6.7%。</div>
+  <div class="step"><b>Step 1　選安全係數</b>　§97-2 準用 §83-1Ⅱ③：含通電中電氣設備 → <b>×1.35</b></div>
+  <div class="step"><b>Step 2　設計濃度</b>　6.7% × 1.35 = <b>9.045%</b>，取 9.05% 以上</div>
+  <div class="step"><b>Step 3　檢核上限</b>　若屬常時有人之場所 → 上限 <b>10.5%</b>，9.05% ≤ 10.5% ✓ 可行</div>
+  <div class="ans">設計濃度取 9.05%（或以上、但不得逾 10.5%）</div>
+  <div class="step" style="margin-top:10px;color:var(--muted)">
+    若該場所改用 FK-5-1-12，上限降為 10%；若安全係數推得的濃度超過上限，
+    代表該藥劑不適用於此常時有人場所，須改用其他藥劑或改變場所使用型態。
+  </div>
+</div>
+
+<!-- ============ 4 ============ -->
+<h2 id="nozzle"><span class="no">04</span>噴頭：10 秒放射 95%，全法最快</h2>
+<p class="lede">§97-4。這個時間要求比任何其他滅火設備都嚴苛。</p>
+
+<figure>
+<svg viewBox="0 0 860 260" role="img" aria-label="各種滅火設備放射時間比較">
+  <text class="s-txt" x="430" y="26" text-anchor="middle" font-weight="700">放射時間對照（全區放射）</text>
+
+  <!-- 時間軸 0-420 秒，對數感：改用分段刻度 -->
+  <path class="s-line" d="M180 220 L820 220"/>
+  <text class="s-sm" x="180" y="240" text-anchor="middle">0</text>
+  <text class="s-sm" x="270" y="240" text-anchor="middle">10 秒</text>
+  <text class="s-sm" x="360" y="240" text-anchor="middle">30 秒</text>
+  <text class="s-sm" x="450" y="240" text-anchor="middle">1 分</text>
+  <text class="s-sm" x="600" y="240" text-anchor="middle">3.5 分</text>
+  <text class="s-sm" x="780" y="240" text-anchor="middle">7 分</text>
+  <g class="s-thin"><path d="M270 220 L270 226 M360 220 L360 226 M450 220 L450 226 M600 220 L600 226 M780 220 L780 226"/></g>
+
+  <!-- 條 -->
+  <rect x="180" y="44" width="90" height="22" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.8"/>
+  <text class="s-sm" x="24" y="59" font-weight="700" fill="var(--accent)">鹵化烴</text>
+  <text class="s-sm" x="278" y="59" fill="var(--accent)" font-weight="700">10 秒內放射 95% 以上（§97-4Ⅱ）</text>
+
+  <rect x="180" y="76" width="90" height="22" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.5"/>
+  <text class="s-sm" x="24" y="91" font-weight="700">惰性氣體</text>
+  <text class="s-sm" x="278" y="91">1 分內 90%（含易燃液體）／2 分內 90%（其他）（§84Ⅰ③）</text>
+
+  <rect x="180" y="108" width="180" height="22" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.5"/>
+  <text class="s-sm" x="24" y="123" font-weight="700">乾粉</text>
+  <text class="s-sm" x="368" y="123">30 秒內全部放射（全區與局部皆同，§100③）</text>
+
+  <rect x="180" y="140" width="420" height="22" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <text class="s-sm" x="24" y="155" font-weight="700">CO₂ 電信機械室</text>
+  <text class="s-sm" x="608" y="155">3.5 分鐘</text>
+
+  <rect x="180" y="172" width="600" height="22" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <text class="s-sm" x="24" y="187" font-weight="700">CO₂ 乾式電器設備室</text>
+  <text class="s-sm" x="788" y="187">7 分鐘</text>
+</svg>
+<figcaption>圖 4　鹵化烴 10 秒的要求，在各滅火設備中最嚴苛</figcaption>
+</figure>
+
+<table>
+<thead><tr><th>項目</th><th>規定</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td>噴頭擴散</td><td>能使放射藥劑<b>迅速且均勻</b>擴散至整個防護區域</td><td class="n">§97-4①</td></tr>
+<tr><td><b>放射壓力（HFC-23）</b></td><td>≥ <b>9 kgf/cm²（0.9 MPa）</b></td><td class="n">§97-4②</td></tr>
+<tr><td><b>放射壓力（HFC-227ea、FK-5-1-12）</b></td><td>≥ <b>3 kgf/cm²（0.3 MPa）</b></td><td class="n">§97-4②</td></tr>
+<tr><td>但書</td><td>經<b>中央主管機關認可</b>者，不在此限</td><td class="n">§97-4②</td></tr>
+<tr><td>噴頭數量及型式</td><td>依<b>流量計算</b>配置</td><td class="n">§97-4③</td></tr>
+<tr><td><b>放射時間</b></td><td>應於 <b>10 秒內放射 95% 以上</b></td><td class="n">§97-4Ⅱ</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <b>為什麼是「95%」而不是「全部」？</b>其他設備寫「全部放射完畢」（CO₂ 局部 30 秒、乾粉 30 秒），
+  惰性氣體寫「放射 90% 以上」，鹵化烴則是「放射 95% 以上」。
+  鹵化烴靠化學抑制，必須在火勢成長前<b>瞬間建立設計濃度</b>，所以時間最短、比例要求最高。
+</div>
+
+<!-- ============ 5 ============ -->
+<h2 id="storage"><span class="no">05</span>儲存容器與配管：HFC-23 自成一類</h2>
+<p class="lede">§97-5、§97-6。三種藥劑裡，HFC-23 的壓力與管厚要求都與另外兩種不同。</p>
+
+<figure>
+<svg viewBox="0 0 880 300" role="img" aria-label="鹵化烴儲存容器與配管規定">
+  <!-- HFC-23 -->
+  <rect x="30" y="30" width="390" height="240" rx="10" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-txt" x="225" y="56" text-anchor="middle" font-weight="700" fill="var(--accent)">HFC-23（三氟甲烷）</text>
+
+  <rect x="60" y="76" width="150" height="76" rx="6" fill="var(--card)" stroke="var(--fg)" stroke-width="1.5"/>
+  <text class="s-sm" x="135" y="98" text-anchor="middle" font-weight="700">儲存容器</text>
+  <text class="s-sm" x="135" y="118" text-anchor="middle">充填比</text>
+  <text class="s-key" x="135" y="138" text-anchor="middle">0.5 以上 1.5 以下</text>
+
+  <rect x="240" y="76" width="150" height="76" rx="6" fill="var(--card)" stroke="var(--fg)" stroke-width="1.5"/>
+  <text class="s-sm" x="315" y="98" text-anchor="middle" font-weight="700">配管（鋼管）</text>
+  <text class="s-sm" x="315" y="118" text-anchor="middle">CNS 4626 無縫鋼管</text>
+  <text class="s-key" x="315" y="138" text-anchor="middle">管號 Sch 80 以上</text>
+
+  <rect x="60" y="172" width="330" height="76" rx="6" fill="var(--card)" stroke="var(--accent)" stroke-width="1.4"/>
+  <text class="s-sm" x="225" y="194" text-anchor="middle" font-weight="700">蓄壓式儲存壓力</text>
+  <text class="s-sm" x="225" y="214" text-anchor="middle">§97-5② 僅規定 HFC-227ea 與 FK-5-1-12</text>
+  <text class="s-sm" x="225" y="234" text-anchor="middle" fill="var(--accent)" font-weight="700">HFC-23 不在該款列舉之列</text>
+
+  <!-- 227ea / FK -->
+  <rect x="450" y="30" width="400" height="240" rx="10" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.6"/>
+  <text class="s-txt" x="650" y="56" text-anchor="middle" font-weight="700" fill="var(--accent2)">HFC-227ea ／ FK-5-1-12</text>
+
+  <rect x="478" y="76" width="160" height="76" rx="6" fill="var(--card)" stroke="var(--fg)" stroke-width="1.5"/>
+  <text class="s-sm" x="558" y="98" text-anchor="middle" font-weight="700">儲存容器</text>
+  <text class="s-sm" x="558" y="118" text-anchor="middle">充填比</text>
+  <text class="s-key" x="558" y="138" text-anchor="middle" fill="var(--accent2)">0.5 以上 1.6 以下</text>
+
+  <rect x="662" y="76" width="160" height="76" rx="6" fill="var(--card)" stroke="var(--fg)" stroke-width="1.5"/>
+  <text class="s-sm" x="742" y="98" text-anchor="middle" font-weight="700">配管（鋼管）</text>
+  <text class="s-sm" x="742" y="118" text-anchor="middle">CNS 4626 無縫鋼管</text>
+  <text class="s-key" x="742" y="138" text-anchor="middle" fill="var(--accent2)">管號 Sch 40 以上</text>
+
+  <rect x="478" y="172" width="344" height="76" rx="6" fill="var(--card)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-sm" x="650" y="194" text-anchor="middle" font-weight="700">蓄壓式儲存壓力（§97-5②）</text>
+  <text class="s-key" x="650" y="216" text-anchor="middle" fill="var(--accent2)">以氮氣加壓至 ≥ 25 kgf/cm²（2.5 MPa）</text>
+  <text class="s-sm" x="650" y="236" text-anchor="middle">加壓式：設可調整壓力至 2.0 MPa 之壓力調整裝置（§97-5③）</text>
+</svg>
+<figcaption>圖 5　HFC-23 與另外兩種藥劑在充填比、管厚、儲存壓力上的差異</figcaption>
+</figure>
+
+<table>
+<thead><tr><th>項目</th><th>HFC-23</th><th>HFC-227ea ／ FK-5-1-12</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td><b>充填比</b></td><td>0.5 以上 <b>1.5</b> 以下</td><td>0.5 以上 <b>1.6</b> 以下</td><td class="n">§97-5①</td></tr>
+<tr><td><b>噴頭放射壓力</b></td><td>≥ <b>9 kgf/cm²</b>（0.9 MPa）</td><td>≥ <b>3 kgf/cm²</b>（0.3 MPa）</td><td class="n">§97-4②</td></tr>
+<tr><td><b>蓄壓式儲存壓力</b></td><td>條文未列舉</td><td>以<b>氮氣</b>加壓至 ≥ <b>25 kgf/cm²</b>（2.5 MPa）</td><td class="n">§97-5②</td></tr>
+<tr><td><b>鋼管管號</b></td><td><b>Sch 80</b> 以上</td><td><b>Sch 40</b> 以上或同等強度</td><td class="n">§97-6③</td></tr>
+<tr><td>加壓式壓力調整裝置</td><td colspan="2" style="text-align:center">應設置可調整壓力至 <b>2.0 MPa</b> 之壓力調整裝置</td><td class="n">§97-5③</td></tr>
+<tr><td>加壓用氣體</td><td colspan="2" style="text-align:center">應充填<b>氮氣</b>；安全裝置及容器閥準用 §87Ⅰ③④</td><td class="n">§97-5⑤</td></tr>
+<tr><td>配管落差</td><td colspan="2" style="text-align:center">最低與最高配管間 <b>≤ 50 m</b></td><td class="n">§97-6②</td></tr>
+</tbody>
+</table>
+
+<p class="lede"><b>充填比定義（§97-5Ⅱ）</b>：容器內容積（公升）與液化氣體重量（公斤）之比值——與 CO₂（§87Ⅱ）、乾粉（§102）的定義完全相同。</p>
+
+<div class="cmp">
+  <b>HFC-23 為什麼都比較「重裝」？</b>它在常溫下的蒸氣壓遠高於另外兩種，
+  所以噴頭放射壓力要 9 kgf/cm²（另外兩種只要 3）、鋼管要 Sch 80（另外兩種 Sch 40）、
+  充填比上限也較低（1.5 vs 1.6，裝得比較不滿以留氣相空間）。
+  <b>三個數字方向一致，一起記。</b>
+</div>
+
+<p class="lede"><b>儲存容器其他規定（§97-5④）</b>：設置場所、安全裝置、容器閥與開放裝置、防震措施及標示，
+準用 §87 第 1 項第 2 款至第 4 款、第 7 款至第 9 款——也就是<b>防護區域外、40°C 以下、無日曬雨淋</b>那一套。</p>
+
+<!-- ============ 6 ============ -->
+<h2 id="refs"><span class="no">06</span>準用關係：最容易被考的是「§93 第幾項」</h2>
+<p class="lede">§97-7、§97-8、§97-9。鹵化烴大量準用二氧化碳的條文，但有一個關鍵的「第二項」。</p>
+
+<figure>
+<svg viewBox="0 0 880 320" role="img" aria-label="鹵化烴滅火設備準用關係圖">
+  <rect x="330" y="14" width="220" height="40" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text class="s-txt" x="440" y="40" text-anchor="middle" font-weight="700">鹵化烴滅火設備</text>
+
+  <path class="s-line" d="M440 54 L440 74"/>
+  <path class="s-line" d="M130 74 L750 74"/>
+  <path class="s-line" d="M130 74 L130 96 M330 74 L330 96 M550 74 L550 96 M750 74 L750 96"/>
+
+  <rect x="30" y="96" width="200" height="72" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-sm" x="130" y="118" text-anchor="middle" font-weight="700">§97-7Ⅰ　氣體啟動</text>
+  <text class="s-sm" x="130" y="138" text-anchor="middle">準用 §88</text>
+  <text class="s-sm" x="130" y="156" text-anchor="middle">≥ 1 L／CO₂ 0.6 kg／充填比 1.5</text>
+
+  <rect x="250" y="96" width="200" height="72" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-sm" x="350" y="118" text-anchor="middle" font-weight="700">§97-7Ⅱ　選擇閥等</text>
+  <text class="s-sm" x="350" y="138" text-anchor="middle">準用 §90（選擇閥）</text>
+  <text class="s-sm" x="350" y="156" text-anchor="middle">§91（啟動裝置）§92（音響警報）</text>
+
+  <rect x="470" y="96" width="200" height="72" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-sm" x="570" y="118" text-anchor="middle" font-weight="700">§97-7Ⅱ　排放裝置</text>
+  <text class="s-sm" x="570" y="138" text-anchor="middle">準用 §94</text>
+  <text class="s-sm" x="570" y="156" text-anchor="middle">1 小時內排出・5 次換氣</text>
+
+  <rect x="690" y="96" width="180" height="72" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-sm" x="780" y="118" text-anchor="middle" font-weight="700">§97-8　緊急電源</text>
+  <text class="s-sm" x="780" y="138" text-anchor="middle">準用 §95</text>
+  <text class="s-key" x="780" y="158" text-anchor="middle">1 小時以上</text>
+
+  <!-- 重點：§93 第2項 -->
+  <rect x="120" y="196" width="640" height="102" rx="8" fill="var(--fill1)" stroke="var(--accent)" stroke-width="2"/>
+  <text class="s-txt" x="440" y="220" text-anchor="middle" font-weight="700" fill="var(--accent)">§97-7Ⅱ　安全裝置準用「§93 第二項」——不是第一項</text>
+
+  <rect x="146" y="234" width="280" height="50" rx="6" fill="var(--card)" stroke="var(--accent)" stroke-width="1.4" stroke-dasharray="6 3"/>
+  <text class="s-sm" x="286" y="253" text-anchor="middle" font-weight="700">§93 第一項（CO₂ 全區）</text>
+  <text class="s-sm" x="286" y="271" text-anchor="middle">20 秒遲延裝置　✗ 不準用</text>
+
+  <rect x="454" y="234" width="280" height="50" rx="6" fill="var(--card)" stroke="var(--accent3)" stroke-width="1.6"/>
+  <text class="s-sm" x="594" y="253" text-anchor="middle" font-weight="700" fill="var(--accent3)">§93 第二項（惰性氣體）</text>
+  <text class="s-sm" x="594" y="271" text-anchor="middle" fill="var(--accent3)">防止壓力上升措施＋放射表示燈　✓</text>
+</svg>
+<figcaption>圖 6　§97-7～§97-8 的準用關係，以及 §93 第一項與第二項的分野</figcaption>
+</figure>
+
+<div class="note">
+  <b>鹵化烴沒有 20 秒遲延裝置。</b>§97-7 第 2 項準用的是「§93 <b>第二項</b>」——
+  也就是惰性氣體那一項（防止區域內壓力上升之措施、設置放射表示燈），
+  <b>不含</b>第一項的 20 秒遲延裝置與「手動啟動時延遲期間內藥劑不得放射」。
+  原因是鹵化烴設計濃度僅 10% 上下、對人相對安全，加上 §97-4 要求 10 秒內放射 95%，
+  本來就沒有「先等 20 秒讓人跑」的空間。<b>看到「遲延裝置」直覺想 20 秒，在這一節就會錯。</b>
+</div>
+
+<h3>§97-9 竣工完整性測試</h3>
+<p class="lede">防護區域竣工時應做完整性測試，<b>10 分鐘內之氣體洩漏量，使滅火藥劑維持在設計濃度 85% 以上者為合格</b>——
+與惰性氣體（§96-1）的規定完全相同。二氧化碳與乾粉<b>沒有</b>這項要求。</p>
+
+<h3>§97-10 標示規格</h3>
+<p class="lede">鹵化烴滅火設備使用之各種標示規格，<b>由中央主管機關另定之</b>（與 §97 二氧化碳、§111-1 前的乾粉 §98 準用 §97 相同模式）。</p>
+
+<!-- ============ 7 ============ -->
+<h2 id="card"><span class="no">07</span>速查數字卡</h2>
+<table>
+<thead><tr><th>項目</th><th>數值</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td>藥劑種類</td><td>HFC-23（三氟甲烷）／HFC-227ea（七氟丙烷）／FK-5-1-12（全氟(2-甲基-3-戊酮)）</td><td class="n">§97-1Ⅰ</td></tr>
+<tr><td><b>放射方式</b></td><td><b>以全區放射方式為限</b></td><td class="n">§97-1Ⅱ</td></tr>
+<tr><td>防護區域準用</td><td>§82Ⅰ①本文、§82Ⅲ、§85（通風換氣）</td><td class="n">§97-1Ⅱ</td></tr>
+<tr><td>壓力上升</td><td>應依流量計算結果採取<b>防止區域內壓力上升</b>之措施（無影響完整性之虞者除外）</td><td class="n">§97-1Ⅲ</td></tr>
+<tr><td>設計濃度安全係數</td><td>準用 §83-1：×1.2 一般／×1.3 含易燃液體／×1.35 含通電中電氣設備</td><td class="n">§97-2</td></tr>
+<tr><td><b>常時有人場所濃度上限</b></td><td>HFC-23 <b>30%</b>／HFC-227ea <b>10.5%</b>／FK-5-1-12 <b>10%</b></td><td class="n">§97-2</td></tr>
+<tr><td>排除準用</td><td>§83-1 第 2 項第 1 款第 2 目（惰性氣體 52% 上限）<b>不準用</b></td><td class="n">§97-2</td></tr>
+<tr><td><b>藥劑量公式</b></td><td><b>W = (V/S) × [C/(100−C)]</b></td><td class="n">§97-3①</td></tr>
+<tr><td>多區域時</td><td>取<b>最大量</b>者</td><td class="n">§97-3②</td></tr>
+<tr><td><b>噴頭放射壓力</b></td><td>HFC-23 ≥ <b>9 kgf/cm²</b>（0.9 MPa）；HFC-227ea 及 FK-5-1-12 ≥ <b>3 kgf/cm²</b>（0.3 MPa）</td><td class="n">§97-4②</td></tr>
+<tr><td><b>放射時間</b></td><td><b>10 秒</b>內放射 <b>95%</b> 以上</td><td class="n">§97-4Ⅱ</td></tr>
+<tr><td><b>充填比</b></td><td>HFC-23 <b>0.5～1.5</b>；HFC-227ea 及 FK-5-1-12 <b>0.5～1.6</b></td><td class="n">§97-5①</td></tr>
+<tr><td>蓄壓式儲存壓力</td><td>HFC-227ea、FK-5-1-12 以<b>氮氣</b>加壓至 ≥ <b>25 kgf/cm²</b>（2.5 MPa）</td><td class="n">§97-5②</td></tr>
+<tr><td>加壓式壓力調整裝置</td><td>可調整壓力至 <b>2.0 MPa</b></td><td class="n">§97-5③</td></tr>
+<tr><td>儲存容器其他規定</td><td>準用 §87Ⅰ②～④、⑦～⑨（防護區域外、40°C 以下、無日曬雨淋等）</td><td class="n">§97-5④</td></tr>
+<tr><td>加壓用氣體</td><td>應充填<b>氮氣</b></td><td class="n">§97-5⑤</td></tr>
+<tr><td>配管落差</td><td>≤ <b>50 m</b></td><td class="n">§97-6②</td></tr>
+<tr><td><b>鋼管管號</b></td><td>HFC-23 <b>Sch 80</b> 以上；HFC-227ea 及 FK-5-1-12 <b>Sch 40</b> 以上</td><td class="n">§97-6③</td></tr>
+<tr><td>氣體啟動</td><td>準用 §88（≥ 1 L／CO₂ 0.6 kg／充填比 ≥ 1.5／不得兼供自動關閉裝置）</td><td class="n">§97-7Ⅰ</td></tr>
+<tr><td><b>安全裝置</b></td><td>準用 <b>§93 第二項</b>（防止壓力上升＋放射表示燈）——<b>無 20 秒遲延裝置</b></td><td class="n">§97-7Ⅱ</td></tr>
+<tr><td>選擇閥、啟動裝置、音響警報、排放裝置</td><td>準用 §90～§92、§94</td><td class="n">§97-7Ⅱ</td></tr>
+<tr><td>緊急電源</td><td>準用 §95：<b>1 小時</b>以上</td><td class="n">§97-8</td></tr>
+<tr><td><b>完整性測試</b></td><td><b>10 分鐘</b>內洩漏量使藥劑維持設計濃度 <b>85%</b> 以上為合格</td><td class="n">§97-9</td></tr>
+<tr><td>標示規格</td><td>由中央主管機關<b>另定之</b></td><td class="n">§97-10</td></tr>
+</tbody>
+</table>
+
+<h3>四種氣體系滅火設備 差異總表</h3>
+<table>
+<thead><tr><th>項目</th><th>鹵化烴</th><th>惰性氣體</th><th>二氧化碳</th><th>乾粉</th></tr></thead>
+<tbody>
+<tr><td><b>放射方式</b></td><td>僅全區</td><td>僅全區</td><td>全區／局部／移動</td><td>全區／局部／移動</td></tr>
+<tr><td><b>藥劑量公式</b></td><td>(V/S)·C/(100−C)</td><td>(V/S)·ln[100/(100−C)]</td><td>查表 體積＋開口部</td><td>查表 體積＋開口部</td></tr>
+<tr><td><b>常時有人濃度上限</b></td><td>30／10.5／10%</td><td>52%</td><td>—（§18 禁設）</td><td>—</td></tr>
+<tr><td><b>放射時間</b></td><td><b>10 秒放 95%</b></td><td>1 或 2 分放 90%</td><td>7／3.5／1 分；局部 30 秒</td><td>30 秒（全區與局部）</td></tr>
+<tr><td><b>噴頭放射壓力</b></td><td>9 或 3 kgf/cm²</td><td>19 kgf/cm²</td><td>高壓 14／低壓 9</td><td>1 kgf/cm²</td></tr>
+<tr><td><b>20 秒遲延裝置</b></td><td><b>無</b>（準用 §93Ⅱ）</td><td><b>無</b>（§93Ⅱ）</td><td><b>有</b>（§93Ⅰ）</td><td><b>有</b>（§98 準用 §93）</td></tr>
+<tr><td><b>完整性測試</b></td><td><b>有</b>（10 分 85%）</td><td><b>有</b>（10 分 85%）</td><td>無</td><td>無</td></tr>
+<tr><td><b>排放裝置</b></td><td>準用 §94</td><td>§94</td><td>§94</td><td><b>不準用</b></td></tr>
+<tr><td>緊急電源</td><td colspan="4" style="text-align:center">四者<b>都是 1 小時</b>（§95）</td></tr>
+<tr><td>配管落差</td><td colspan="4" style="text-align:center">四者<b>都是 ≤ 50 m</b></td></tr>
+</tbody>
+</table>
+
+<div class="navbar" style="margin-top:32px">
+  <a class="btn go" href="index.html">🏠 回學習首頁</a>
+  <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+  <a class="btn" href="#kinds">↑ 回到最上方</a>
+</div>
+
+<footer>
+  <p>本頁數據取自全國法規資料庫「各類場所消防安全設備設置標準」（pcode D0120029）民國 113 年 4 月 24 日修正版原文，於 2026-08-04 擷取核對。</p>
+  <p>§97-2 常時有人場所設計濃度表、§97-3 藥劑量公式、§97-5 充填比表在法規資料庫網頁版被省略（顯示「因條文排版無法完整呈現內容」），本頁數值取自各該條之「完整條文」PDF。</p>
+  <p>計算實例中的比容積 S 為題目給定值，非法規數值；實務應採中央主管機關認可之值或藥劑製造商提供之物性資料。</p>
+  <p><b>法規以主管機關公布文字為準。</b>本頁為個人學習筆記，不構成法律意見；設計送審前請回查現行條文：
+  <code>https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0120029</code></p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  function target(){
+    var h=(location.hash||'').replace('#','');
+    if(!h){ var m=/[?&]s=([\w-]+)/.exec(location.search||''); h=m?m[1]:''; }
+    return h?document.getElementById(h):null;
+  }
+  function go(smooth){
+    var el=target(); if(!el) return;
+    el.scrollIntoView({behavior:smooth?'smooth':'auto',block:'start'});
+    el.style.transition='background-color .4s';
+    var old=el.style.backgroundColor;
+    el.style.backgroundColor='var(--fill4)';
+    setTimeout(function(){ el.style.backgroundColor=old||''; },1600);
+  }
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){ setTimeout(go,60); });
+  else setTimeout(go,60);
+  window.addEventListener('hashchange',function(){ go(true); });
+})();
+</script>
+</body>
+</html>
