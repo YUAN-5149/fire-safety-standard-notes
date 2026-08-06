@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>消防專用蓄水池 圖解 — 各類場所消防安全設備設置標準 §185～§187</title>
+<meta name="description" content="消防專用蓄水池（§185～§187）的有效水量計算、投入孔與採水口數量、機械方式引水與加壓送水裝置圖解。">
+<style>
+  :root{
+    --bg:#fbfaf7; --fg:#1c1b19; --muted:#6b6862; --line:#d8d4cb;
+    --card:#ffffff; --accent:#b03a2e; --accent2:#1d6fa5; --accent3:#2e7d4f;
+    --warn:#a86b00; --danger:#8e1b0f;
+    --fill1:#f2e4e1; --fill2:#e0edf6; --fill3:#e3f0e8; --fill4:#f7efd9;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#16161a; --fg:#e8e6e1; --muted:#9b968c; --line:#3a3a40;
+      --card:#1e1e23; --accent:#e8705f; --accent2:#5aa8d8; --accent3:#5fbb87;
+      --warn:#d9a441; --danger:#f08070;
+      --fill1:#3a2622; --fill2:#1e3341; --fill3:#1f3a2c; --fill4:#3a3120;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+    line-height:1.75;-webkit-text-size-adjust:100%}
+  .wrap{max-width:960px;margin:0 auto;padding:32px 20px 80px}
+  header{border-bottom:2px solid var(--fg);padding-bottom:18px;margin-bottom:8px}
+  h1{font-size:clamp(1.4rem,4vw,2rem);margin:0 0 6px;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:.9rem;margin:0}
+  h2{font-size:1.15rem;margin:48px 0 4px;padding-top:14px;border-top:1px solid var(--line);
+    scroll-margin-top:16px}
+  h2 .no{color:var(--accent);font-variant-numeric:tabular-nums;margin-right:.5em}
+  h2:target{background:linear-gradient(transparent 62%,var(--fill4) 62%)}
+  h3{font-size:1rem;margin:26px 0 6px}
+  .lede{color:var(--muted);font-size:.92rem;margin:.2em 0 18px}
+  figure{margin:0 0 10px;background:var(--card);border:1px solid var(--line);
+    border-radius:10px;padding:18px 14px;overflow-x:auto}
+  svg{display:block;margin:0 auto;max-width:100%;height:auto}
+  figcaption{color:var(--muted);font-size:.84rem;margin-top:10px;text-align:center}
+  .note{border-left:3px solid var(--warn);background:var(--fill4);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .note b{color:var(--warn)}
+  .cmp{border-left:3px solid var(--accent2);background:var(--fill2);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .cmp b{color:var(--accent2)}
+  table{border-collapse:collapse;width:100%;font-size:.88rem;margin:14px 0}
+  th,td{border:1px solid var(--line);padding:6px 9px;text-align:left}
+  th{background:var(--fill2);font-weight:600}
+  td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+  code{background:var(--fill2);padding:1px 5px;border-radius:4px;font-size:.88em}
+  .formula{background:var(--fill3);border:1px solid var(--line);border-radius:8px;
+    padding:12px 16px;margin:14px 0;font-size:1rem;text-align:center}
+  .ex{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent2);
+    border-radius:0 10px 10px 0;padding:14px 18px;margin:18px 0}
+  .ex .t{font-weight:700;margin-bottom:6px;color:var(--accent2)}
+  .ex .given{font-size:.88rem;color:var(--muted);border-left:3px solid var(--line);
+    padding-left:12px;margin-bottom:10px}
+  .ex .step{font-size:.92rem;margin:8px 0}
+  .ex .ans{background:var(--fill3);border-radius:7px;padding:9px 13px;margin-top:10px;
+    font-weight:700;font-size:.94rem}
+  footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:.82rem}
+  a{color:var(--accent2)}
+  .navbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+  .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;
+    font-size:.86rem;padding:7px 14px;border-radius:8px;border:1px solid var(--line);
+    background:var(--card);color:var(--fg);transition:.12s}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.go{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+  .btn.go:hover{filter:brightness(1.1);color:#fff}
+  .toc{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 4px}
+  .toc a{font-size:.8rem;text-decoration:none;padding:4px 10px;border-radius:99px;
+    border:1px solid var(--line);background:var(--card);color:var(--muted)}
+  .toc a:hover{border-color:var(--accent);color:var(--accent)}
+  .s-line{stroke:var(--fg);stroke-width:1.4;fill:none}
+  .s-thin{stroke:var(--muted);stroke-width:1;fill:none}
+  .s-txt{fill:var(--fg);font-size:13px;font-family:inherit}
+  .s-sm{fill:var(--muted);font-size:11px;font-family:inherit}
+  .s-key{fill:var(--accent);font-size:13px;font-weight:700;font-family:inherit}
+  .s-dim{stroke:var(--accent2);stroke-width:1;fill:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>消防專用蓄水池 圖解</h1>
+  <p class="sub">各類場所消防安全設備設置標準 §185～§187　|　民國 113 年 4 月 24 日修正版</p>
+  <div class="navbar">
+    <a class="btn go" href="index.html">🏠 回學習首頁</a>
+    <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+    <a class="btn" href="10-%E9%80%A3%E7%B5%90%E9%80%81%E6%B0%B4%E7%AE%A1-%E5%9C%96%E8%A7%A3.html">📐 連結送水管圖解</a>
+  </div>
+</header>
+
+<nav class="toc" aria-label="章節目錄">
+  <a href="#apply">01 應設場所與水量計算</a>
+  <a href="#access">02 有效水量與配置條件</a>
+  <a href="#inlet">03 投入孔與採水口</a>
+  <a href="#mech">04 機械方式引水</a>
+  <a href="#card">05 速查數字卡</a>
+</nav>
+
+<div class="cmp" style="margin-top:24px">
+  <b>消防專用蓄水池是「給消防車補水用的水池」。</b>
+  它和連結送水管一樣屬「消防搶救上之必要設備」（§11②），
+  但角色相反——<b>連結送水管是把水送上去，蓄水池是把水存起來給消防車抽</b>。
+  大型基地離消防栓遠、或消防車水箱不夠用時，就靠它。
+  所以整節在處理三件事：<b>要存多少水</b>（§185①）、<b>消防車怎麼靠近抽水</b>（§185②～⑤），
+  以及<b>水太深抽不動怎麼辦</b>（§186 機械方式引水）。
+</div>
+
+<!-- ============ 1 ============ -->
+<h2 id="apply"><span class="no">01</span>應設場所與水量計算：兩款門檻、兩套公式</h2>
+<p class="lede">§27 決定要不要設，§185 第 1 款決定要設多少——而且<b>依哪一款應設，就用哪一套公式</b>。</p>
+
+<figure>
+<svg viewBox="0 0 900 420" role="img" aria-label="消防專用蓄水池應設場所與水量計算對應關係">
+  <rect x="330" y="10" width="240" height="42" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text class="s-txt" x="450" y="29" text-anchor="middle" font-weight="700">§27 應設消防專用蓄水池</text>
+  <text class="s-sm" x="450" y="45" text-anchor="middle">三款擇一符合即應設</text>
+
+  <path class="s-line" d="M450 52 L450 74"/>
+  <path class="s-line" d="M160 74 L740 74"/>
+  <path class="s-line" d="M160 74 L160 96 M450 74 L450 96 M740 74 L740 96"/>
+
+  <rect x="30" y="96" width="260" height="96" rx="6" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-txt" x="160" y="118" text-anchor="middle" font-weight="700">第 1 款</text>
+  <text class="s-sm" x="160" y="138" text-anchor="middle">建築基地面積 ≥ 20,000 m²</text>
+  <text class="s-sm" x="160" y="155" text-anchor="middle">且任何一層樓地板面積</text>
+  <text class="s-sm" x="160" y="172" text-anchor="middle">≥ 1,500 m²</text>
+
+  <rect x="320" y="96" width="260" height="96" rx="6" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-txt" x="450" y="118" text-anchor="middle" font-weight="700">第 2 款</text>
+  <text class="s-sm" x="450" y="138" text-anchor="middle">高度 &gt; 31 m</text>
+  <text class="s-sm" x="450" y="155" text-anchor="middle">且總樓地板面積</text>
+  <text class="s-sm" x="450" y="172" text-anchor="middle">≥ 25,000 m²</text>
+
+  <rect x="610" y="96" width="260" height="96" rx="6" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-txt" x="740" y="118" text-anchor="middle" font-weight="700">第 3 款</text>
+  <text class="s-sm" x="740" y="136" text-anchor="middle">同一基地二棟以上，外牆與中心線</text>
+  <text class="s-sm" x="740" y="153" text-anchor="middle">水平距離 1F ≤ 3 m、2F ≤ 5 m</text>
+  <text class="s-sm" x="740" y="170" text-anchor="middle">且各棟 1F+2F 合計 ≥ 10,000 m²</text>
+
+  <path class="s-line" d="M160 192 L160 220 L740 220 M740 192 L740 220"/>
+  <path class="s-line" d="M450 220 L450 244"/>
+  <path class="s-line" stroke="var(--warn)" stroke-width="2" d="M450 192 L450 212 L620 212 L620 244"/>
+
+  <!-- 公式一 -->
+  <rect x="60" y="244" width="380" height="110" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.8"/>
+  <text class="s-txt" x="250" y="268" text-anchor="middle" font-weight="700" fill="var(--accent2)">§185①（一）　第 1 款及第 3 款</text>
+  <text class="s-sm" x="250" y="292" text-anchor="middle">基準面積：<tspan font-weight="700">第 1 層及第 2 層樓地板面積合計</tspan></text>
+  <text class="s-key" x="250" y="318" text-anchor="middle" fill="var(--accent2)">每 7,500 m²（含未滿）設 20 m³ 以上</text>
+  <text class="s-sm" x="250" y="340" text-anchor="middle">（第 1、3 款都是「低樓層面積大」的型態）</text>
+
+  <!-- 公式二 -->
+  <rect x="470" y="244" width="380" height="110" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.8"/>
+  <text class="s-txt" x="660" y="268" text-anchor="middle" font-weight="700" fill="var(--warn)">§185①（二）　第 2 款</text>
+  <text class="s-sm" x="660" y="292" text-anchor="middle">基準面積：<tspan font-weight="700">總樓地板面積</tspan></text>
+  <text class="s-key" x="660" y="318" text-anchor="middle" fill="var(--warn)">每 12,500 m²（含未滿）設 20 m³ 以上</text>
+  <text class="s-sm" x="660" y="340" text-anchor="middle">（第 2 款是「高樓層、總量大」的型態）</text>
+
+  <rect x="60" y="374" width="790" height="34" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-sm" x="455" y="395" text-anchor="middle" font-weight="700" fill="var(--accent3)">兩套公式的共同點：單位都是 20 m³，且都「包括未滿」——不足一個單位仍以一個單位計</text>
+</svg>
+<figcaption>圖 1　§27 三款與 §185 兩套水量公式的對應</figcaption>
+</figure>
+
+<div class="formula">
+  <b>應設水量 = ⌈ 基準面積 ÷ 單位面積 ⌉ × 20 m³</b><br>
+  <span style="font-size:.88rem;color:var(--muted)">
+  第 1、3 款：基準面積 = 1F + 2F 樓地板面積合計，單位面積 = 7,500 m²<br>
+  第 2 款：基準面積 = 總樓地板面積，單位面積 = 12,500 m²</span>
+</div>
+
+<div class="note">
+  <b>為什麼兩款用不同的基準面積？</b>
+  §27 第 1、3 款針對的是<b>基地大、低樓層攤得廣</b>的建築物（廠房、大型商場、多棟社區），
+  火災時消防車主要在 1、2 樓周邊作業，所以用 <b>1F+2F 合計</b>當基準；
+  第 2 款針對<b>高層</b>（&gt;31 m）建築物，火載量分布在整棟，所以改用<b>總樓地板面積</b>，
+  單位面積也放寬到 12,500 m²。
+</div>
+
+<div class="ex">
+  <div class="t">例一｜依 §27 第 1 款應設</div>
+  <div class="given">某廠房建築基地面積 22,000 m²，任一層樓地板面積 5,000 m²；1F 5,000 m²、2F 5,000 m²。</div>
+  <div class="step"><b>Step 1　應設判斷</b>　基地面積 22,000 ≥ 20,000 m² 且任一層 5,000 ≥ 1,500 m² → 依 <b>§27 第 1 款</b>應設</div>
+  <div class="step"><b>Step 2　選公式</b>　第 1 款 → 用 §185①（一）：<b>1F + 2F 合計</b>，每 <b>7,500 m²</b> 設 20 m³</div>
+  <div class="step"><b>Step 3　基準面積</b>　5,000 + 5,000 = <b>10,000 m²</b></div>
+  <div class="step"><b>Step 4　單位數</b>　10,000 ÷ 7,500 = 1.33 →「包括未滿」→ <b>2 個單位</b></div>
+  <div class="step"><b>Step 5　應設水量</b>　2 × 20 = <b>40 m³</b></div>
+  <div class="step"><b>Step 6　孔口數量</b>　投入孔：40 &lt; 80 m³ → <b>1 個以上</b>；採水口：40 m³ → <b>2 個以上</b></div>
+  <div class="ans">有效水量 40 m³　·　投入孔 1 個以上　·　採水口 2 個以上</div>
+</div>
+
+<div class="ex">
+  <div class="t">例二｜依 §27 第 2 款應設</div>
+  <div class="given">某辦公大樓高度 45 m，總樓地板面積 40,000 m²。</div>
+  <div class="step"><b>Step 1　應設判斷</b>　高度 45 &gt; 31 m 且總樓地板面積 40,000 ≥ 25,000 m² → 依 <b>§27 第 2 款</b>應設</div>
+  <div class="step"><b>Step 2　選公式</b>　第 2 款 → 用 §185①（二）：<b>總樓地板面積</b>，每 <b>12,500 m²</b> 設 20 m³</div>
+  <div class="step"><b>Step 3　單位數</b>　40,000 ÷ 12,500 = 3.2 →「包括未滿」→ <b>4 個單位</b></div>
+  <div class="step"><b>Step 4　應設水量</b>　4 × 20 = <b>80 m³</b></div>
+  <div class="step"><b>Step 5　孔口數量</b>　投入孔：80 ≥ 80 m³ → <b>2 個以上</b>；採水口：40 ≤ 80 &lt; 120 → <b>2 個以上</b></div>
+  <div class="ans">有效水量 80 m³　·　投入孔 2 個以上　·　採水口 2 個以上　·　80 剛好踩在投入孔的分界上</div>
+</div>
+
+<!-- ============ 2 ============ -->
+<h2 id="access"><span class="no">02</span>有效水量與配置條件</h2>
+<p class="lede">§185 第 2、3、4 款與第 2 項。<b>「有效水量」不等於「池子裡的水量」</b>——這是本節最容易錯的觀念。</p>
+
+<figure>
+<svg viewBox="0 0 880 380" role="img" aria-label="消防專用蓄水池有效水量與配置條件剖面">
+  <!-- 基地地面 -->
+  <path class="s-line" stroke-width="2.5" d="M40 120 L840 120"/>
+  <text class="s-sm" x="48" y="112">基地地面</text>
+
+  <!-- 建築物 -->
+  <path class="s-line" stroke-width="2" d="M600 120 L600 30 L830 30 L830 120"/>
+  <text class="s-sm" x="715" y="80" text-anchor="middle">建築物</text>
+
+  <!-- 水池 -->
+  <path class="s-line" stroke-width="2" d="M120 120 L120 320 L400 320 L400 120"/>
+  <!-- 有效水量範圍 -->
+  <rect x="120" y="120" width="280" height="130" fill="var(--fill2)" opacity="0.75"/>
+  <rect x="120" y="250" width="280" height="70" fill="var(--fill1)" opacity="0.55"/>
+  <path class="s-dash" stroke="var(--accent)" stroke-width="1.6" stroke-dasharray="7 4" d="M120 250 L400 250"/>
+
+  <text class="s-key" x="260" y="180" text-anchor="middle" fill="var(--accent2)">有效水量</text>
+  <text class="s-sm" x="260" y="200" text-anchor="middle">基地地面下 4.5 m 範圍內之水量</text>
+  <text class="s-sm" x="260" y="288" text-anchor="middle" fill="var(--accent)">4.5 m 以下部分</text>
+  <text class="s-sm" x="260" y="306" text-anchor="middle" fill="var(--accent)">不計入有效水量</text>
+
+  <!-- 深度標註 -->
+  <path class="s-dim" d="M96 120 L96 250"/>
+  <path class="s-dim" d="M90 120 L102 120 M90 250 L102 250"/>
+  <text class="s-key" x="86" y="190" text-anchor="end">4.5 m</text>
+
+  <!-- 投入孔 -->
+  <rect x="160" y="104" width="44" height="16" fill="var(--card)" stroke="var(--accent)" stroke-width="1.8"/>
+  <text class="s-sm" x="182" y="96" text-anchor="middle" font-weight="700">投入孔</text>
+  <!-- 採水口 -->
+  <rect x="320" y="100" width="26" height="20" fill="var(--card)" stroke="var(--accent3)" stroke-width="1.8"/>
+  <text class="s-sm" x="333" y="94" text-anchor="middle" font-weight="700" fill="var(--accent3)">採水口</text>
+
+  <!-- 消防車 -->
+  <g fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.6">
+    <rect x="440" y="76" width="130" height="44" rx="5"/>
+  </g>
+  <circle cx="470" cy="120" r="8" fill="var(--fg)"/><circle cx="540" cy="120" r="8" fill="var(--fg)"/>
+  <text class="s-sm" x="505" y="102" text-anchor="middle" font-weight="700">消防車</text>
+  <path class="s-dim" d="M400 62 L440 62"/>
+  <path class="s-dim" d="M400 56 L400 68 M440 56 L440 68"/>
+  <text class="s-key" x="420" y="52" text-anchor="middle" style="font-size:11px">≤ 2 m</text>
+  <text class="s-sm" x="420" y="38" text-anchor="middle">§185③</text>
+
+  <!-- 水平距離 -->
+  <path class="s-dim" d="M260 344 L830 344"/>
+  <path class="s-dim" d="M260 338 L260 350 M830 338 L830 350"/>
+  <text class="s-key" x="545" y="366" text-anchor="middle">任一蓄水池至建築物各部分之水平距離 ≤ 100 m（§185②）</text>
+</svg>
+<figcaption>圖 2　有效水量的深度界定與消防車接近條件</figcaption>
+</figure>
+
+<table>
+<thead><tr><th>款／項</th><th>規定</th></tr></thead>
+<tbody>
+<tr><td>§185②</td><td>任一消防專用蓄水池至建築物各部分之<b>水平距離 ≤ 100 m</b>，且其<b>有效水量 ≥ 20 m³</b></td></tr>
+<tr><td>§185③</td><td>設於<b>消防車能接近至其 2 m 範圍內</b>，易於抽取處</td></tr>
+<tr><td>§185④</td><td>有<b>進水管投入後</b>，能有效抽取所需水量之構造</td></tr>
+<tr><td><b>§185 第 2 項</b></td><td><b>有效水量</b>指蓄水池深度在<b>基地地面下 4.5 m 範圍內</b>之水量<br><b>但採機械方式引水時，不在此限</b></td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <b>4.5 m 這個深度是消防車幫浦的吸水極限。</b>
+  消防車靠大氣壓力把水吸上來，理論極限約 10 m，扣掉管路損失與實務餘裕，法規訂在 <b>4.5 m</b>。
+  所以蓄水池挖得再深，<b>超過 4.5 m 的部分不算有效水量</b>。
+  這也解釋了 §186 的存在——想用更深的池子，就得自己裝加壓送水裝置把水打上來，
+  屆時「<b>不在此限</b>」，深度限制解除。
+</div>
+
+<div class="cmp">
+  <b>「有效水量 ≥ 20 m³」是每一座池子的下限，不是總量下限。</b>
+  §185② 說的是「<b>任一</b>消防專用蓄水池……其有效水量在 20 m³ 以上」——
+  若應設水量 60 m³ 要分成三座，每座都得有 20 m³ 以上，不能一座 50、兩座各 5。
+</div>
+
+<!-- ============ 3 ============ -->
+<h2 id="inlet"><span class="no">03</span>投入孔與採水口：兩組不同的數量階梯</h2>
+<p class="lede">§185 第 5 款。兩者的分界點<b>不一樣</b>，這是最常被考的細節。</p>
+
+<figure>
+<svg viewBox="0 0 800 340" role="img" aria-label="投入孔與採水口數量階梯">
+  <!-- 軸 -->
+  <path class="s-line" d="M90 290 L740 290"/>
+  <text class="s-sm" x="415" y="322" text-anchor="middle">有效水量（m³）</text>
+  <g class="s-thin">
+    <path d="M158 290 L158 296 M226 290 L226 296 M362 290 L362 296 M498 290 L498 296 M634 290 L634 296"/>
+  </g>
+  <text class="s-sm" x="158" y="310" text-anchor="middle">20</text>
+  <text class="s-sm" x="226" y="310" text-anchor="middle">40</text>
+  <text class="s-sm" x="362" y="310" text-anchor="middle">80</text>
+  <text class="s-sm" x="498" y="310" text-anchor="middle">120</text>
+  <text class="s-sm" x="634" y="310" text-anchor="middle">160</text>
+
+  <!-- 投入孔 -->
+  <text class="s-txt" x="90" y="60" font-weight="700" fill="var(--accent)">投入孔（§185⑤（一））</text>
+  <rect x="158" y="88" width="204" height="34" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-key" x="260" y="110" text-anchor="middle">1 個以上</text>
+  <rect x="362" y="72" width="378" height="50" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-key" x="551" y="102" text-anchor="middle">2 個以上</text>
+  <path class="s-thin" stroke-dasharray="3 3" d="M362 72 L362 290"/>
+  <text class="s-sm" x="370" y="140" fill="var(--accent)" font-weight="700">分界：80 m³</text>
+  <text class="s-sm" x="370" y="156">未滿 80 → 1 個；80 以上 → 2 個</text>
+
+  <!-- 採水口 -->
+  <text class="s-txt" x="90" y="196" font-weight="700" fill="var(--accent3)">採水口（§185⑤（二））</text>
+  <rect x="158" y="224" width="68" height="30" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.6"/>
+  <text class="s-key" x="192" y="244" text-anchor="middle" fill="var(--accent3)" style="font-size:11px">1 個</text>
+  <rect x="226" y="216" width="272" height="38" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.6"/>
+  <text class="s-key" x="362" y="240" text-anchor="middle" fill="var(--accent3)">2 個以上</text>
+  <rect x="498" y="208" width="242" height="46" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.6"/>
+  <text class="s-key" x="619" y="236" text-anchor="middle" fill="var(--accent3)">3 個以上</text>
+  <path class="s-thin" stroke-dasharray="3 3" d="M226 216 L226 290 M498 208 L498 290"/>
+  <text class="s-sm" x="234" y="274" fill="var(--accent3)" font-weight="700">分界：40 與 120 m³</text>
+</svg>
+<figcaption>圖 3　投入孔看 80，採水口看 40 與 120</figcaption>
+</figure>
+
+<h3>投入孔（§185⑤（一））</h3>
+<table>
+<tbody>
+<tr><td><b>形狀尺寸</b></td><td>邊長 <b>60 cm 以上之正方形</b>，或<b>直徑 60 cm 以上之圓孔</b></td></tr>
+<tr><td><b>保護</b></td><td>設<b>鐵蓋</b>保護之</td></tr>
+<tr><td><b>數量</b></td><td>水量<b>未滿 80 m³</b> → <b>1 個以上</b>；<b>80 m³ 以上</b> → <b>2 個以上</b></td></tr>
+<tr><td>標示（§187①）</td><td>進水管投入孔標明「<b>消防專用蓄水池</b>」字樣</td></tr>
+</tbody>
+</table>
+
+<h3>採水口（§185⑤（二））</h3>
+<table>
+<tbody>
+<tr><td><b>口徑與接頭</b></td><td>口徑 <b>100 mm</b>，接裝<b>陽式螺牙</b></td></tr>
+<tr><td><b>數量</b></td><td><b>20 m³ 以上</b> → 1 個以上<br><b>40 m³ 以上至 120 m³ 未滿</b> → 2 個以上<br><b>120 m³ 以上</b> → 3 個以上</td></tr>
+<tr><td><b>配管口徑</b></td><td>至少 <b>100 mm 以上</b></td></tr>
+<tr><td><b>高度</b></td><td>距基地地面 <b>1 m 以下 0.5 m 以上</b></td></tr>
+<tr><td>標示（§187②）</td><td>標明「<b>採水口</b>」或「<b>消防專用蓄水池採水口</b>」字樣</td></tr>
+</tbody>
+</table>
+
+<div class="cmp">
+  <b>採水口的口徑，一般式與機械式不同：</b>
+  §185⑤（二）的採水口是<b>口徑 100 mm、陽式螺牙</b>；
+  §186④ 機械方式引水的採水口則是<b>接裝 63 mm 陽式快接頭</b>。
+  兩者高度規定相同（距基地地面 0.5～1 m），但接頭規格差很多——<b>看到「63」就是機械式那條</b>。
+</div>
+
+<!-- ============ 4 ============ -->
+<h2 id="mech"><span class="no">04</span>機械方式引水</h2>
+<p class="lede">§186。池子太深、消防車吸不動時，改由建築物自己加壓把水送到採水口。</p>
+
+<figure>
+<svg viewBox="0 0 880 372" role="img" aria-label="機械方式引水系統組成">
+  <!-- 基地地面 -->
+  <path class="s-line" stroke-width="2.5" d="M40 130 L840 130"/>
+  <text class="s-sm" x="48" y="122">基地地面</text>
+
+  <!-- 深水池 -->
+  <path class="s-line" stroke-width="2" d="M110 130 L110 300 L330 300 L330 130"/>
+  <rect x="110" y="130" width="220" height="170" fill="var(--fill2)" opacity="0.7"/>
+  <text class="s-sm" x="220" y="210" text-anchor="middle" font-weight="700">蓄水池</text>
+  <text class="s-sm" x="220" y="230" text-anchor="middle" fill="var(--accent2)">深度不受 4.5 m 限制</text>
+  <text class="s-sm" x="220" y="248" text-anchor="middle">（§185Ⅱ 但書）</text>
+
+  <!-- 吸水管與幫浦 -->
+  <path class="s-line" stroke="var(--accent2)" stroke-width="3" d="M220 270 L220 160 L400 160"/>
+  <circle cx="440" cy="160" r="30" fill="var(--fill1)" stroke="var(--accent)" stroke-width="2"/>
+  <text class="s-sm" x="440" y="157" text-anchor="middle" font-weight="700">加壓</text>
+  <text class="s-sm" x="440" y="171" text-anchor="middle" font-weight="700">送水裝置</text>
+  <path class="s-line" stroke="var(--accent2)" stroke-width="3" d="M470 160 L620 160 L620 118"/>
+
+  <!-- 採水口 -->
+  <rect x="604" y="98" width="32" height="22" fill="var(--card)" stroke="var(--accent3)" stroke-width="2"/>
+  <text class="s-sm" x="620" y="90" text-anchor="middle" font-weight="700" fill="var(--accent3)">採水口</text>
+  <text class="s-sm" x="620" y="76" text-anchor="middle">63 mm 陽式快接頭</text>
+  <path class="s-dim" d="M654 98 L654 130"/>
+  <path class="s-dim" d="M648 98 L660 98 M648 130 L660 130"/>
+  <text class="s-key" x="666" y="118" style="font-size:11px">0.5～1 m</text>
+
+  <!-- 消防車 -->
+  <g fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.6">
+    <rect x="700" y="86" width="120" height="44" rx="5"/>
+  </g>
+  <circle cx="728" cy="130" r="8" fill="var(--fg)"/><circle cx="792" cy="130" r="8" fill="var(--fg)"/>
+  <text class="s-sm" x="760" y="112" text-anchor="middle" font-weight="700">消防車</text>
+
+  <!-- 啟動裝置 -->
+  <rect x="440" y="216" width="290" height="70" rx="6" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-sm" x="456" y="238" font-weight="700" fill="var(--warn)">§186③　採水口附近</text>
+  <text class="s-sm" x="456" y="258">啟動裝置 ＋ 紅色啟動表示燈</text>
+  <text class="s-sm" x="456" y="276">但設防災中心遙控啟動＋通話連絡裝置者，不在此限</text>
+  <path class="s-thin" stroke-dasharray="4 3" d="M600 216 L620 130"/>
+
+  <!-- 全揚程 -->
+  <rect x="40" y="252" width="380" height="66" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-sm" x="56" y="272" font-weight="700" fill="var(--accent3)">§186②　幫浦全揚程</text>
+  <text class="s-key" x="56" y="292" fill="var(--accent3)">H = 落差 + 配管摩擦損失水頭 + 15 m</text>
+  <text class="s-sm" x="56" y="310">常數 15 m ＝ 1.5 kgf/cm²，延續全法同一條規律</text>
+
+  <!-- 水平距離 -->
+  <text class="s-sm" x="440" y="352" text-anchor="middle" fill="var(--accent)" font-weight="700">§186 本文：任一「採水口」至建築物各部分之水平距離 ≤ 100 m（一般式量的是「蓄水池」）</text>
+</svg>
+<figcaption>圖 4　機械方式引水的系統組成</figcaption>
+</figure>
+
+<h3>§186 加壓送水裝置出水量及採水口數</h3>
+<table>
+<thead><tr><th class="n">水量（m³）</th><th class="n">出水量（L/min）</th><th class="n">採水口數（個）</th></tr></thead>
+<tbody>
+<tr><td class="n">40 未滿</td><td class="n">1,100</td><td class="n">1</td></tr>
+<tr><td class="n">40 以上 120 未滿</td><td class="n">2,200</td><td class="n">2</td></tr>
+<tr><td class="n">120 以上</td><td class="n">3,300</td><td class="n">3</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <b>出水量是 1,100 的整數倍。</b>1,100／2,200／3,300 恰好對應採水口 1／2／3 個——
+  也就是<b>每一個採水口配 1,100 L/min</b>。記住這個單位量，整張表就不必背。
+  另外採水口數的級距（40／120）與 §185⑤（二）一般式完全一致。
+</div>
+
+<h3>§186 其他規定</h3>
+<table>
+<tbody>
+<tr><td>本文</td><td>除依 §185Ⅰ①及②<b>後段</b>規定外（水量計算＋有效水量 ≥ 20 m³），任一<b>採水口</b>至建築物各部分之水平距離 <b>≤ 100 m</b></td></tr>
+<tr><td>②</td><td>幫浦全揚程 <code>H = h₁ + h₂ + 15 m</code>（落差＋配管摩擦損失水頭＋15 m）</td></tr>
+<tr><td>③</td><td><b>採水口附近</b>設<b>啟動裝置及紅色啟動表示燈</b>；但設有防災中心遙控啟動且設通話連絡裝置者不在此限</td></tr>
+<tr><td>④</td><td>採水口接裝 <b>63 mm 陽式快接頭</b>，距基地地面 <b>1 m 以下 0.5 m 以上</b></td></tr>
+</tbody>
+</table>
+
+<div class="cmp">
+  <b>「常數 = 放水壓力 × 10」在這裡也成立。</b>
+  §186② 的 <b>+15 m</b> 對應 1.5 kgf/cm²，和室內消防栓 +17、室外消防栓 +25、
+  自動撒水 +10、連結送水管 +60 是同一套邏輯。
+  <b>蓄水池只是把水送到採水口讓消防車接手，不必打到樓上，所以常數最小。</b>
+</div>
+
+<div class="ex">
+  <div class="t">例三｜機械方式引水</div>
+  <div class="given">某蓄水池有效水量 130 m³，採機械方式引水；落差 20 m、配管摩擦損失水頭 12 m。</div>
+  <div class="step"><b>Step 1　查表（§186①）</b>　水量 130 ≥ 120 m³ → 出水量 <b>≥ 3,300 L/min</b>、採水口 <b>3 個</b></div>
+  <div class="step"><b>Step 2　全揚程（§186②）</b>　H = 20 + 12 + 15 = <b>47 m</b></div>
+  <div class="step"><b>Step 3　採水口規格（§186④）</b>　<b>63 mm 陽式快接頭</b>，距基地地面 0.5～1 m</div>
+  <div class="step"><b>Step 4　水平距離</b>　任一<b>採水口</b>至建築物各部分 ≤ 100 m（注意量的是採水口，不是蓄水池）</div>
+  <div class="step"><b>Step 5　深度</b>　採機械方式引水 → <b>不受基地地面下 4.5 m 之限制</b>（§185Ⅱ 但書）</div>
+  <div class="ans">出水量 ≥ 3,300 L/min　·　採水口 3 個　·　全揚程 ≥ 47 m</div>
+</div>
+
+<h3>一般式 vs 機械式 對照</h3>
+<table>
+<thead><tr><th>項目</th><th>一般（§185）</th><th>機械方式引水（§186）</th></tr></thead>
+<tbody>
+<tr><td><b>有效水量深度</b></td><td>基地地面下 <b>4.5 m 範圍內</b></td><td><b>不受此限</b></td></tr>
+<tr><td><b>100 m 量的對象</b></td><td>任一<b>蓄水池</b>至建築物各部分</td><td>任一<b>採水口</b>至建築物各部分</td></tr>
+<tr><td><b>採水口接頭</b></td><td>口徑 <b>100 mm、陽式螺牙</b></td><td><b>63 mm 陽式快接頭</b></td></tr>
+<tr><td>採水口高度</td><td colspan="2" style="text-align:center">距基地地面 <b>0.5～1 m</b>（相同）</td></tr>
+<tr><td>加壓送水裝置</td><td>不需要</td><td><b>需要</b>；出水量 1,100／2,200／3,300 L/min</td></tr>
+<tr><td>啟動裝置</td><td>—</td><td>採水口附近設啟動裝置及<b>紅色啟動表示燈</b></td></tr>
+<tr><td>消防車接近</td><td><b>2 m 範圍內</b>（§185③）</td><td>條文未另定（水由幫浦送至採水口）</td></tr>
+<tr><td>水量計算</td><td colspan="2" style="text-align:center">兩者<b>相同</b>，均依 §185①（7,500／12,500 m² 每 20 m³）</td></tr>
+</tbody>
+</table>
+
+<!-- ============ 5 ============ -->
+<h2 id="card"><span class="no">05</span>速查數字卡</h2>
+<table>
+<thead><tr><th>項目</th><th>數值</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td><b>應設場所①</b></td><td>建築基地面積 ≥ <b>20,000 m²</b> 且任何一層樓地板面積 ≥ <b>1,500 m²</b></td><td class="n">§27①</td></tr>
+<tr><td><b>應設場所②</b></td><td>高度 &gt; <b>31 m</b> 且總樓地板面積 ≥ <b>25,000 m²</b></td><td class="n">§27②</td></tr>
+<tr><td><b>應設場所③</b></td><td>同一基地二棟以上，1F ≤ 3 m、2F ≤ 5 m，且各棟 1F+2F 合計 ≥ <b>10,000 m²</b></td><td class="n">§27③</td></tr>
+<tr><td><b>水量（依 §27①③）</b></td><td><b>1F + 2F 合計</b>，每 <b>7,500 m²</b>（含未滿）設 <b>20 m³</b> 以上</td><td class="n">§185①（一）</td></tr>
+<tr><td><b>水量（依 §27②）</b></td><td><b>總樓地板面積</b>，每 <b>12,500 m²</b>（含未滿）設 <b>20 m³</b> 以上</td><td class="n">§185①（二）</td></tr>
+<tr><td><b>水平距離</b></td><td>任一蓄水池至建築物各部分 <b>≤ 100 m</b>，且該池有效水量 <b>≥ 20 m³</b></td><td class="n">§185②</td></tr>
+<tr><td><b>消防車接近</b></td><td>設於消防車能接近至其 <b>2 m 範圍內</b>，易於抽取處</td><td class="n">§185③</td></tr>
+<tr><td>構造</td><td>有<b>進水管投入後</b>，能有效抽取所需水量之構造</td><td class="n">§185④</td></tr>
+<tr><td><b>投入孔尺寸</b></td><td>邊長 <b>60 cm 以上正方形</b>或直徑 <b>60 cm 以上圓孔</b>，設<b>鐵蓋</b>保護</td><td class="n">§185⑤（一）</td></tr>
+<tr><td><b>投入孔數量</b></td><td>未滿 <b>80 m³</b> → 1 個以上；<b>80 m³ 以上</b> → 2 個以上</td><td class="n">§185⑤（一）</td></tr>
+<tr><td><b>採水口規格</b></td><td>口徑 <b>100 mm</b>，接裝<b>陽式螺牙</b>；配管口徑至少 <b>100 mm 以上</b></td><td class="n">§185⑤（二）</td></tr>
+<tr><td><b>採水口數量</b></td><td><b>20 m³ 以上</b> → 1 個以上；<b>40 以上未滿 120</b> → 2 個以上；<b>120 m³ 以上</b> → 3 個以上</td><td class="n">§185⑤（二）</td></tr>
+<tr><td>採水口高度</td><td>距基地地面 <b>1 m 以下 0.5 m 以上</b></td><td class="n">§185⑤（二）</td></tr>
+<tr><td><b>有效水量定義</b></td><td>蓄水池深度在<b>基地地面下 4.5 m 範圍內</b>之水量；<b>採機械方式引水者不在此限</b></td><td class="n">§185Ⅱ</td></tr>
+<tr><td><b>機械式・出水量與採水口數</b></td><td>40 未滿 → 1,100 L/min／1 個；40～120 未滿 → 2,200／2 個；120 以上 → 3,300／3 個</td><td class="n">§186①</td></tr>
+<tr><td><b>機械式・幫浦全揚程</b></td><td><code>H = 落差 + 配管摩擦損失水頭 + 15 m</code></td><td class="n">§186②</td></tr>
+<tr><td>機械式・啟動裝置</td><td><b>採水口附近</b>設啟動裝置及<b>紅色啟動表示燈</b>（防災中心遙控＋通話連絡裝置者不在此限）</td><td class="n">§186③</td></tr>
+<tr><td><b>機械式・採水口接頭</b></td><td><b>63 mm 陽式快接頭</b>，距基地地面 <b>0.5～1 m</b></td><td class="n">§186④</td></tr>
+<tr><td>機械式・水平距離</td><td>任一<b>採水口</b>至建築物各部分 <b>≤ 100 m</b></td><td class="n">§186 本文</td></tr>
+<tr><td><b>標示・投入孔</b></td><td>標明「<b>消防專用蓄水池</b>」字樣</td><td class="n">§187①</td></tr>
+<tr><td><b>標示・採水口</b></td><td>標明「<b>採水口</b>」或「<b>消防專用蓄水池採水口</b>」字樣</td><td class="n">§187②</td></tr>
+</tbody>
+</table>
+
+<h3>三個容易混的「數字組」</h3>
+<table>
+<thead><tr><th>數字</th><th>意義</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td class="n"><b>7,500 / 12,500</b></td><td>水量計算的單位面積（依 §27 哪一款而定）</td><td class="n">§185①</td></tr>
+<tr><td class="n"><b>80</b></td><td><b>投入孔</b>數量的唯一分界（m³）</td><td class="n">§185⑤（一）</td></tr>
+<tr><td class="n"><b>40 / 120</b></td><td><b>採水口</b>數量的兩個分界（m³），機械式亦同</td><td class="n">§185⑤（二）・§186①</td></tr>
+<tr><td class="n"><b>100 / 63</b></td><td>採水口口徑：一般式 <b>100 mm 螺牙</b>／機械式 <b>63 mm 快接頭</b>（mm）</td><td class="n">§185⑤（二）・§186④</td></tr>
+<tr><td class="n"><b>4.5</b></td><td>有效水量的深度界限（m），機械式不受限</td><td class="n">§185Ⅱ</td></tr>
+<tr><td class="n"><b>2 / 100</b></td><td>消防車接近距離 2 m／至建築物水平距離 100 m</td><td class="n">§185③②</td></tr>
+</tbody>
+</table>
+
+<div class="navbar" style="margin-top:32px">
+  <a class="btn go" href="index.html">🏠 回學習首頁</a>
+  <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+  <a class="btn" href="#apply">↑ 回到最上方</a>
+</div>
+
+<footer>
+  <p>本頁數據取自全國法規資料庫「各類場所消防安全設備設置標準」（pcode D0120029）民國 113 年 4 月 24 日修正版原文，於 2026-08-04 擷取核對。</p>
+  <p>「4.5 m 為消防車吸水極限」之說明係工程原理的一般解釋，非條文明文；條文僅規定有效水量之深度範圍。</p>
+  <p><b>法規以主管機關公布文字為準。</b>本頁為個人學習筆記，不構成法律意見；設計送審前請回查現行條文：
+  <code>https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0120029</code></p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  function target(){
+    var h=(location.hash||'').replace('#','');
+    if(!h){ var m=/[?&]s=([\w-]+)/.exec(location.search||''); h=m?m[1]:''; }
+    return h?document.getElementById(h):null;
+  }
+  function go(smooth){
+    var el=target(); if(!el) return;
+    el.scrollIntoView({behavior:smooth?'smooth':'auto',block:'start'});
+    el.style.transition='background-color .4s';
+    var old=el.style.backgroundColor;
+    el.style.backgroundColor='var(--fill4)';
+    setTimeout(function(){ el.style.backgroundColor=old||''; },1600);
+  }
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){ setTimeout(go,60); });
+  else setTimeout(go,60);
+  window.addEventListener('hashchange',function(){ go(true); });
+})();
+</script>
+</body>
+</html>
