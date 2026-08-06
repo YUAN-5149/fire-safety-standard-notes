@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>排煙設備 圖解 — 各類場所消防安全設備設置標準 §188～§190</title>
+<meta name="description" content="排煙設備（§188～§190）的防煙區劃、排煙口與排煙機排煙量計算、特別安全梯排煙室兩種方式與免設處所圖解。">
+<style>
+  :root{
+    --bg:#fbfaf7; --fg:#1c1b19; --muted:#6b6862; --line:#d8d4cb;
+    --card:#ffffff; --accent:#b03a2e; --accent2:#1d6fa5; --accent3:#2e7d4f;
+    --warn:#a86b00; --danger:#8e1b0f;
+    --fill1:#f2e4e1; --fill2:#e0edf6; --fill3:#e3f0e8; --fill4:#f7efd9;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#16161a; --fg:#e8e6e1; --muted:#9b968c; --line:#3a3a40;
+      --card:#1e1e23; --accent:#e8705f; --accent2:#5aa8d8; --accent3:#5fbb87;
+      --warn:#d9a441; --danger:#f08070;
+      --fill1:#3a2622; --fill2:#1e3341; --fill3:#1f3a2c; --fill4:#3a3120;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+    line-height:1.75;-webkit-text-size-adjust:100%}
+  .wrap{max-width:960px;margin:0 auto;padding:32px 20px 80px}
+  header{border-bottom:2px solid var(--fg);padding-bottom:18px;margin-bottom:8px}
+  h1{font-size:clamp(1.4rem,4vw,2rem);margin:0 0 6px;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:.9rem;margin:0}
+  h2{font-size:1.15rem;margin:48px 0 4px;padding-top:14px;border-top:1px solid var(--line);
+    scroll-margin-top:16px}
+  h2 .no{color:var(--accent);font-variant-numeric:tabular-nums;margin-right:.5em}
+  h2:target{background:linear-gradient(transparent 62%,var(--fill4) 62%)}
+  h3{font-size:1rem;margin:26px 0 6px}
+  .lede{color:var(--muted);font-size:.92rem;margin:.2em 0 18px}
+  figure{margin:0 0 10px;background:var(--card);border:1px solid var(--line);
+    border-radius:10px;padding:18px 14px;overflow-x:auto}
+  svg{display:block;margin:0 auto;max-width:100%;height:auto}
+  figcaption{color:var(--muted);font-size:.84rem;margin-top:10px;text-align:center}
+  .note{border-left:3px solid var(--warn);background:var(--fill4);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .note b{color:var(--warn)}
+  .cmp{border-left:3px solid var(--accent2);background:var(--fill2);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .cmp b{color:var(--accent2)}
+  table{border-collapse:collapse;width:100%;font-size:.88rem;margin:14px 0}
+  th,td{border:1px solid var(--line);padding:6px 9px;text-align:left}
+  th{background:var(--fill2);font-weight:600}
+  td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+  code{background:var(--fill2);padding:1px 5px;border-radius:4px;font-size:.88em}
+  .formula{background:var(--fill3);border:1px solid var(--line);border-radius:8px;
+    padding:12px 16px;margin:14px 0;font-size:1rem;text-align:center}
+  .ex{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent2);
+    border-radius:0 10px 10px 0;padding:14px 18px;margin:18px 0}
+  .ex .t{font-weight:700;margin-bottom:6px;color:var(--accent2)}
+  .ex .given{font-size:.88rem;color:var(--muted);border-left:3px solid var(--line);
+    padding-left:12px;margin-bottom:10px}
+  .ex .step{font-size:.92rem;margin:8px 0}
+  .ex .ans{background:var(--fill3);border-radius:7px;padding:9px 13px;margin-top:10px;
+    font-weight:700;font-size:.94rem}
+  footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:.82rem}
+  a{color:var(--accent2)}
+  .navbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+  .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;
+    font-size:.86rem;padding:7px 14px;border-radius:8px;border:1px solid var(--line);
+    background:var(--card);color:var(--fg);transition:.12s}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.go{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+  .btn.go:hover{filter:brightness(1.1);color:#fff}
+  .toc{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 4px}
+  .toc a{font-size:.8rem;text-decoration:none;padding:4px 10px;border-radius:99px;
+    border:1px solid var(--line);background:var(--card);color:var(--muted)}
+  .toc a:hover{border-color:var(--accent);color:var(--accent)}
+  .s-line{stroke:var(--fg);stroke-width:1.4;fill:none}
+  .s-thin{stroke:var(--muted);stroke-width:1;fill:none}
+  .s-txt{fill:var(--fg);font-size:13px;font-family:inherit}
+  .s-sm{fill:var(--muted);font-size:11px;font-family:inherit}
+  .s-key{fill:var(--accent);font-size:13px;font-weight:700;font-family:inherit}
+  .s-dim{stroke:var(--accent2);stroke-width:1;fill:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>排煙設備 圖解</h1>
+  <p class="sub">各類場所消防安全設備設置標準 §188～§190　|　民國 113 年 4 月 24 日修正版</p>
+  <div class="navbar">
+    <a class="btn go" href="index.html">🏠 回學習首頁</a>
+    <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+    <a class="btn" href="11-%E6%B6%88%E9%98%B2%E5%B0%88%E7%94%A8%E8%93%84%E6%B0%B4%E6%B1%A0-%E5%9C%96%E8%A7%A3.html">📐 消防專用蓄水池圖解</a>
+  </div>
+</header>
+
+<nav class="toc" aria-label="章節目錄">
+  <a href="#apply">01 應設場所與兩套規定的分工</a>
+  <a href="#zone">02 防煙區劃與排煙口</a>
+  <a href="#fan">03 排煙機與排煙量</a>
+  <a href="#stair">04 排煙室（特別安全梯・緊急昇降機間）</a>
+  <a href="#exempt">05 免設處所</a>
+  <a href="#card">06 速查數字卡</a>
+</nav>
+
+<div class="cmp" style="margin-top:24px">
+  <b>排煙設備要先分清楚「你在讀哪一套規定」。</b>
+  §28 第 1 項有五款應設情形，但條文把它們拆給<b>兩個不同的條</b>處理：
+  第 <b>1～4 款</b>（一般場所）走 <b>§188</b>，第 <b>5 款</b>（特別安全梯或緊急昇降機間）走 <b>§189</b>。
+  兩套的數字幾乎沒有一個相同——<b>§188 論「每分鐘立方公尺」，§189 論「每秒立方公尺」</b>，
+  單位都不一樣。看到題目先問「這是哪一套」，答對率就先拉高一半。
+</div>
+
+<!-- ============ 1 ============ -->
+<h2 id="apply"><span class="no">01</span>應設場所與兩套規定的分工</h2>
+
+<figure>
+<svg viewBox="0 0 900 400" role="img" aria-label="排煙設備應設場所與兩套規定的分工">
+  <rect x="330" y="10" width="240" height="42" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text class="s-txt" x="450" y="29" text-anchor="middle" font-weight="700">§28 第 1 項　應設排煙設備</text>
+  <text class="s-sm" x="450" y="45" text-anchor="middle">五款擇一符合即應設</text>
+
+  <path class="s-line" d="M450 52 L450 72"/>
+  <path class="s-line" d="M240 72 L700 72"/>
+  <path class="s-line" d="M240 72 L240 92 M700 72 L700 92"/>
+
+  <!-- 左：1~4 款 -->
+  <rect x="30" y="92" width="420" height="150" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.6"/>
+  <text class="s-txt" x="240" y="114" text-anchor="middle" font-weight="700" fill="var(--accent2)">第 1～4 款（一般場所）</text>
+  <text class="s-sm" x="48" y="138">① 甲類及戊三目（地下建築物）合計 ≥ 500 m²</text>
+  <text class="s-sm" x="48" y="160">② 居室 ≥ 100 m²，且天花板下方 80 cm 範圍內</text>
+  <text class="s-sm" x="60" y="176">　有效通風面積未達該居室樓地板面積 2%</text>
+  <text class="s-sm" x="48" y="198">③ 無開口樓層 ≥ 1,000 m²</text>
+  <text class="s-sm" x="48" y="220">④ 甲一目及甲二目集會堂之舞臺部分 ≥ 500 m²</text>
+
+  <!-- 右：第 5 款 -->
+  <rect x="490" y="92" width="380" height="150" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.6"/>
+  <text class="s-txt" x="680" y="114" text-anchor="middle" font-weight="700" fill="var(--warn)">第 5 款</text>
+  <text class="s-sm" x="508" y="142">⑤ 依建築技術規則應設置之</text>
+  <text class="s-sm" x="508" y="164" font-weight="700">　 特別安全梯或緊急昇降機間</text>
+  <text class="s-sm" x="508" y="192">此款針對的是「排煙室」——避難與搶救</text>
+  <text class="s-sm" x="508" y="210">動線上的中繼空間，要求與一般場所不同</text>
+
+  <path class="s-line" stroke="var(--accent2)" stroke-width="2" d="M240 242 L240 272"/>
+  <path class="s-line" stroke="var(--warn)" stroke-width="2" d="M680 242 L680 272"/>
+
+  <rect x="60" y="272" width="360" height="96" rx="8" fill="var(--card)" stroke="var(--accent2)" stroke-width="1.8"/>
+  <text class="s-txt" x="240" y="296" text-anchor="middle" font-weight="700" fill="var(--accent2)">§188　一般排煙設備（11 款）</text>
+  <text class="s-sm" x="240" y="318" text-anchor="middle">防煙區劃 500／300 m²・排煙口水平距離 30 m</text>
+  <text class="s-sm" x="240" y="336" text-anchor="middle">開口面積 ≥ 防煙區劃 2%</text>
+  <text class="s-key" x="240" y="358" text-anchor="middle" fill="var(--accent2)">排煙量以「m³/min」計</text>
+
+  <rect x="500" y="272" width="360" height="96" rx="8" fill="var(--card)" stroke="var(--warn)" stroke-width="1.8"/>
+  <text class="s-txt" x="680" y="296" text-anchor="middle" font-weight="700" fill="var(--warn)">§189　排煙室之排煙設備（二擇一）</text>
+  <text class="s-sm" x="680" y="318" text-anchor="middle">窗戶方式：有效開口 ≥ 2 m²（兼用 3 m²）</text>
+  <text class="s-sm" x="680" y="336" text-anchor="middle">風管方式：排煙口天花板 1/2 以上、進風口 1/2 以下</text>
+  <text class="s-key" x="680" y="358" text-anchor="middle" fill="var(--warn)">排煙量以「m³/s」計</text>
+
+  <rect x="60" y="380" width="800" height="0" fill="none"/>
+</svg>
+<figcaption>圖 1　§28 五款分流到 §188 與 §189 兩套規定</figcaption>
+</figure>
+
+<div class="note">
+  <b>單位是最快的辨識線索。</b>
+  §188⑧ 的排煙量寫「每分鐘一百二十立方公尺」「每平方公尺每分鐘一（二）立方公尺」；
+  §189②（四）寫「每秒四立方公尺（兼用時每秒六立方公尺）」。
+  <b>看到「每秒」就是排煙室那套</b>——4 m³/s 換算約 240 m³/min，量級差很多，因為排煙室空間小但要維持正壓、快速排空。
+</div>
+
+<p class="lede"><b>§28 第 2 項</b>：前項場所之樓地板面積，在建築物以具 1 小時以上防火時效之牆壁、平時保持關閉之防火門窗等防火設備及各該樓層防火構造之樓地板區劃，且防火設備具 1 小時以上之阻熱性者，<b>增建、改建或變更用途部分得分別計算</b>。</p>
+
+<!-- ============ 2 ============ -->
+<h2 id="zone"><span class="no">02</span>防煙區劃與排煙口</h2>
+<p class="lede">§188 第 1～6 款。這一段全部在處理「煙要怎麼被關住，然後從哪裡出去」。</p>
+
+<figure>
+<svg viewBox="0 0 880 400" role="img" aria-label="防煙區劃與排煙口配置剖面">
+  <!-- 天花板 -->
+  <path class="s-line" stroke-width="2.5" d="M60 60 L820 60"/>
+  <text class="s-sm" x="68" y="52">天花板</text>
+  <!-- 樓地板 -->
+  <path class="s-line" stroke-width="2.5" d="M60 300 L820 300"/>
+  <text class="s-sm" x="68" y="318">樓地板</text>
+
+  <!-- 防煙壁 -->
+  <rect x="430" y="60" width="12" height="60" fill="var(--fill1)" stroke="var(--accent)" stroke-width="2"/>
+  <text class="s-key" x="452" y="86">防煙壁</text>
+  <text class="s-sm" x="452" y="102">不燃材料建造</text>
+  <path class="s-dim" d="M414 60 L414 120"/>
+  <path class="s-dim" d="M408 60 L420 60 M408 120 L420 120"/>
+  <text class="s-key" x="404" y="96" text-anchor="end" style="font-size:11px">≥ 50 cm</text>
+  <text class="s-sm" x="404" y="112" text-anchor="end" style="font-size:10px">地下通道 ≥ 80 cm</text>
+
+  <!-- 煙層 -->
+  <rect x="60" y="60" width="370" height="60" fill="var(--fill1)" opacity="0.55"/>
+  <rect x="442" y="60" width="378" height="60" fill="var(--fill1)" opacity="0.55"/>
+  <text class="s-sm" x="245" y="96" text-anchor="middle" fill="var(--accent)">煙被擋在區劃內</text>
+
+  <!-- 排煙口 -->
+  <rect x="150" y="60" width="54" height="14" fill="var(--card)" stroke="var(--accent3)" stroke-width="2"/>
+  <text class="s-sm" x="177" y="50" text-anchor="middle" font-weight="700" fill="var(--accent3)">排煙口</text>
+  <path class="s-dim" d="M126 60 L126 124"/>
+  <path class="s-dim" d="M120 60 L132 60 M120 124 L132 124"/>
+  <text class="s-key" x="116" y="96" text-anchor="end" style="font-size:11px">80 cm</text>
+  <text class="s-sm" x="116" y="112" text-anchor="end" style="font-size:10px">排煙口設於天花板</text>
+  <text class="s-sm" x="116" y="124" text-anchor="end" style="font-size:10px">或其下方 80 cm 內</text>
+
+  <!-- 水平距離 -->
+  <path class="s-dim" d="M177 160 L420 160"/>
+  <path class="s-dim" d="M177 154 L177 166 M420 154 L420 166"/>
+  <text class="s-key" x="298" y="152" text-anchor="middle">任一位置至排煙口水平距離 ≤ 30 m（§188③）</text>
+
+  <!-- 手動開關 -->
+  <rect x="600" y="196" width="26" height="34" fill="var(--card)" stroke="var(--accent2)" stroke-width="1.8"/>
+  <text class="s-sm" x="640" y="206" fill="var(--accent2)" font-weight="700">手動開關裝置</text>
+  <text class="s-sm" x="640" y="222">設於牆面</text>
+  <path class="s-dim" d="M580 196 L580 300"/>
+  <path class="s-dim" d="M574 196 L586 196 M574 230 L586 230 M574 300 L586 300"/>
+  <text class="s-key" x="570" y="222" text-anchor="end" style="font-size:11px">150 cm</text>
+  <text class="s-key" x="570" y="272" text-anchor="end" style="font-size:11px">80 cm</text>
+
+  <!-- 垂鍊 -->
+  <path class="s-line" stroke="var(--accent2)" stroke-width="1.6" stroke-dasharray="4 3" d="M740 60 L740 228"/>
+  <circle cx="740" cy="228" r="6" fill="var(--accent2)"/>
+  <text class="s-sm" x="752" y="222" fill="var(--accent2)" font-weight="700">操作垂鍊或垂桿</text>
+  <text class="s-sm" x="752" y="238">裝置於天花板時</text>
+  <path class="s-dim" d="M716 228 L716 300"/>
+  <path class="s-dim" d="M710 228 L722 228 M710 300 L722 300"/>
+  <text class="s-key" x="706" y="268" text-anchor="end" style="font-size:11px">180 cm</text>
+
+  <!-- 區劃面積 -->
+  <rect x="60" y="330" width="380" height="56" rx="6" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-sm" x="250" y="350" text-anchor="middle" font-weight="700" fill="var(--accent2)">§188①　每層樓地板面積每 500 m² 內以防煙壁區劃</text>
+  <text class="s-sm" x="250" y="370" text-anchor="middle">但天花板高 ≥ 5 m 且耐燃一級裝修之觀眾席、工廠等，不在此限</text>
+
+  <rect x="460" y="330" width="380" height="56" rx="6" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-sm" x="650" y="350" text-anchor="middle" font-weight="700" fill="var(--warn)">§188②　地下建築物之地下通道每 300 m²</text>
+  <text class="s-sm" x="650" y="370" text-anchor="middle">且防煙壁應自天花板下垂 80 cm 以上（§188Ⅱ 但書）</text>
+</svg>
+<figcaption>圖 2　防煙區劃、排煙口位置與操作裝置高度</figcaption>
+</figure>
+
+<table>
+<thead><tr><th>款</th><th>規定</th></tr></thead>
+<tbody>
+<tr><td>①</td><td>每層樓地板面積<b>每 500 m² 內</b>，以防煙壁區劃<br><b>但</b>戲院、電影院、歌廳、集會堂等場所<b>觀眾席</b>，及<b>工廠</b>等類似建築物，其<b>天花板高度 ≥ 5 m</b> 且天花板及室內牆面以<b>耐燃一級</b>材料裝修者，不在此限</td></tr>
+<tr><td>②</td><td><b>地下建築物之地下通道每 300 m²</b> 應以防煙壁區劃</td></tr>
+<tr><td>③</td><td>防煙區劃範圍內，任一位置至排煙口之<b>水平距離 ≤ 30 m</b><br>排煙口設於<b>天花板或其下方 80 cm 範圍內</b>，除直接面向戶外，應與排煙風管連接<br><b>但</b>排煙口設在天花板下方、<b>防煙壁下垂高度未達 80 cm 時</b>，排煙口應設在該防煙壁之下垂高度內</td></tr>
+<tr><td>④</td><td>排煙口、風管及其他<b>與煙接觸部分</b>應使用<b>不燃材料</b></td></tr>
+<tr><td>⑤</td><td>排煙風管貫穿防火區劃時，貫穿處設<b>防火閘門</b>；風管與貫穿部位合成之構造應具所貫穿構造之防火時效；<b>跨樓層設置時，立管應置於防火區劃之管道間</b></td></tr>
+<tr><td>⑥</td><td>排煙口設<b>手動開關裝置及探測器連動自動開關裝置</b>；平時保持關閉<br>手動開關裝置操作部分設於距樓地板面 <b>80～150 cm</b> 之牆面<br>裝置於天花板時，設<b>操作垂鍊或垂桿在距樓地板 180 cm</b> 之位置，並標示簡易操作方式</td></tr>
+<tr><td><b>第 2 項</b></td><td><b>防煙壁</b>：以<b>不燃材料</b>建造，自天花板<b>下垂 50 cm 以上</b>之垂壁或具同等以上阻止煙流動構造<br><b>但地下建築物之地下通道，應自天花板下垂 80 cm 以上</b></td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <b>三個「80 公分」，意義各不相同：</b>
+  §28②「天花板下方 <b>80 cm</b> 範圍內之有效通風面積」是<b>應設判斷</b>；
+  §188③「排煙口設於天花板或其下方 <b>80 cm</b> 範圍內」是<b>排煙口位置</b>；
+  §188Ⅱ 但書「地下通道防煙壁下垂 <b>80 cm</b> 以上」是<b>防煙壁高度</b>。
+  三者都是 80，但問的是完全不同的東西。
+</div>
+
+<div class="cmp">
+  <b>地下建築物的地下通道，處處加嚴：</b>
+  防煙區劃 <b>300 m²</b>（一般 500）、防煙壁下垂 <b>80 cm</b>（一般 50）、
+  總排煙量 <b>≥ 600 m³/min</b>（§188⑧但書）。<b>三個數字一起記。</b>
+</div>
+
+<!-- ============ 3 ============ -->
+<h2 id="fan"><span class="no">03</span>排煙機與排煙量</h2>
+<p class="lede">§188 第 7～11 款。先判斷「能不能自然排煙」，不能才設排煙機。</p>
+
+<figure>
+<svg viewBox="0 0 880 300" role="img" aria-label="自然排煙與機械排煙的判斷流程">
+  <rect x="320" y="12" width="240" height="42" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text class="s-txt" x="440" y="31" text-anchor="middle" font-weight="700">§188⑦　排煙口開口面積</text>
+  <text class="s-key" x="440" y="47" text-anchor="middle">≥ 防煙區劃面積之 2%</text>
+
+  <path class="s-line" d="M440 54 L440 76"/>
+  <rect x="330" y="76" width="220" height="38" rx="19" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-txt" x="440" y="100" text-anchor="middle">能否以自然方式直接排至戶外？</text>
+
+  <path class="s-line" d="M440 114 L440 134"/>
+  <path class="s-line" d="M230 134 L650 134"/>
+  <path class="s-line" d="M230 134 L230 156 M650 134 L650 156"/>
+  <text class="s-key" x="230" y="150" text-anchor="middle">能</text>
+  <text class="s-key" x="650" y="150" text-anchor="middle">不能</text>
+
+  <rect x="90" y="156" width="280" height="76" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.6"/>
+  <text class="s-txt" x="230" y="180" text-anchor="middle" font-weight="700" fill="var(--accent3)">自然排煙</text>
+  <text class="s-sm" x="230" y="200" text-anchor="middle">以自然方式直接排至戶外</text>
+  <text class="s-sm" x="230" y="220" text-anchor="middle">不必設排煙機</text>
+
+  <rect x="510" y="156" width="280" height="76" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.8"/>
+  <text class="s-txt" x="650" y="180" text-anchor="middle" font-weight="700" fill="var(--accent)">應設排煙機（§188⑧）</text>
+  <text class="s-sm" x="650" y="200" text-anchor="middle">應隨任一排煙口之開啟而動作</text>
+  <text class="s-sm" x="650" y="220" text-anchor="middle">排煙量依下列三項取其大者</text>
+
+  <rect x="90" y="252" width="700" height="36" rx="6" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-sm" x="440" y="274" text-anchor="middle" font-weight="700" fill="var(--accent2)">§188⑩　排煙口「直接面向戶外且常時開啟」者，得不受第 6 款（開關裝置）及第 9 款（緊急電源）之限制</text>
+</svg>
+<figcaption>圖 3　自然排煙與機械排煙的分流</figcaption>
+</figure>
+
+<div class="formula">
+  <b>排煙量 Q ≥ max( 120 m³/min，區劃條件值 )</b><br>
+  <span style="font-size:.9rem;color:var(--muted)">
+  一防煙區劃時：該防煙區劃面積 × <b>1 m³/min·m²</b>
+  二區以上時：<b>最大</b>防煙區劃面積 × <b>2 m³/min·m²</b><br>
+  但地下建築物之地下通道，<b>總排煙量 ≥ 600 m³/min</b></span>
+</div>
+
+<figure>
+<svg viewBox="0 0 720 330" role="img" aria-label="排煙量隨防煙區劃面積變化">
+  <path class="s-line" d="M80 280 L660 280"/>
+  <path class="s-line" d="M80 280 L80 40"/>
+  <text class="s-sm" x="88" y="34">排煙量（m³/min）</text>
+  <text class="s-sm" x="370" y="316" text-anchor="middle">防煙區劃面積（m²）</text>
+
+  <g class="s-thin"><path d="M80 280 L74 280 M80 236 L74 236 M80 170 L74 170 M80 60 L74 60"/></g>
+  <text class="s-sm" x="70" y="284" text-anchor="end">0</text>
+  <text class="s-sm" x="70" y="240" text-anchor="end">200</text>
+  <text class="s-sm" x="70" y="174" text-anchor="end">500</text>
+  <text class="s-sm" x="70" y="64" text-anchor="end">1,000</text>
+
+  <g class="s-thin"><path d="M190 280 L190 286 M300 280 L300 286 M410 280 L410 286 M630 280 L630 286"/></g>
+  <text class="s-sm" x="190" y="300" text-anchor="middle">100</text>
+  <text class="s-sm" x="300" y="300" text-anchor="middle">200</text>
+  <text class="s-sm" x="410" y="300" text-anchor="middle">300</text>
+  <text class="s-sm" x="630" y="300" text-anchor="middle">500</text>
+
+  <!-- 120 底線 -->
+  <path class="s-thin" stroke="var(--warn)" stroke-width="1.8" stroke-dasharray="6 3" d="M80 253.6 L660 253.6"/>
+  <text class="s-sm" x="600" y="248" fill="var(--warn)" font-weight="700">下限 120 m³/min</text>
+
+  <!-- 二區以上 2×A -->
+  <path d="M80 253.6 L146 253.6 L630 60" stroke="var(--accent)" stroke-width="2.6" fill="none"/>
+  <text class="s-key" x="540" y="94">二區以上　最大區劃 × 2</text>
+
+  <!-- 一區劃 1×A -->
+  <path d="M80 253.6 L212 253.6 L630 170" stroke="var(--accent3)" stroke-width="2.6" fill="none" stroke-dasharray="7 4"/>
+  <text class="s-sm" x="540" y="186" fill="var(--accent3)" font-weight="700">一防煙區劃　面積 × 1</text>
+
+  <circle cx="146" cy="253.6" r="4.5" fill="var(--accent)"/>
+  <text class="s-sm" x="152" y="270" fill="var(--accent)">A = 60</text>
+  <circle cx="212" cy="253.6" r="4.5" fill="var(--accent3)"/>
+  <text class="s-sm" x="218" y="270" fill="var(--accent3)">A = 120</text>
+</svg>
+<figcaption>圖 4　排煙量：面積條件與 120 m³/min 下限取大者</figcaption>
+</figure>
+
+<table>
+<thead><tr><th>款</th><th>規定</th></tr></thead>
+<tbody>
+<tr><td>⑦</td><td>排煙口之<b>開口面積在防煙區劃面積之 2% 以上</b>，且以<b>自然方式直接排至戶外</b><br>排煙口無法以自然方式直接排至戶外時，<b>應設排煙機</b></td></tr>
+<tr><td>⑧</td><td>排煙機應<b>隨任一排煙口之開啟而動作</b><br>排煙量 <b>≥ 120 m³/min</b>；<br>一防煙區劃時：該防煙區劃面積每 m² <b>≥ 1 m³/min</b>；<br>二區以上時：<b>最大</b>防煙區劃面積每 m² <b>≥ 2 m³/min</b><br><b>但地下建築物之地下通道，總排煙量 ≥ 600 m³/min</b></td></tr>
+<tr><td>⑨</td><td>連接<b>緊急電源</b>，供電容量應供有效動作 <b>30 分鐘</b>以上</td></tr>
+<tr><td>⑩</td><td>排煙口<b>直接面向戶外且常時開啟</b>者，得不受<b>第 6 款及第 9 款</b>之限制</td></tr>
+<tr><td>⑪</td><td>排煙口開啟時應<b>連動停止空氣調節及通風設備</b>運轉</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <b>為什麼「二區以上」的係數要加倍？</b>
+  一個防煙區劃時，排煙機只服務那一區，用該區面積 × 1 即可。
+  但有兩區以上時，煙可能從相鄰區劃越過防煙壁擴散，
+  排煙機必須有能力同時處理<b>最大區劃</b>及其溢入量，所以係數提高到 2。
+  <b>注意用的是「最大」防煙區劃面積，不是全部面積相加。</b>
+</div>
+
+<div class="ex">
+  <div class="t">例一｜一般樓層・二區以上</div>
+  <div class="given">某樓層樓地板面積 1,800 m²，天花板高 3 m，無法自然排煙。</div>
+  <div class="step"><b>Step 1　防煙區劃（§188①）</b>　每 500 m² 內區劃 → 1,800 ÷ 500 = 3.6 → 至少 <b>4 個防煙區劃</b><br>
+    （天花板高 3 m &lt; 5 m，不適用但書免除）</div>
+  <div class="step"><b>Step 2　假設均分</b>　每區 1,800 ÷ 4 = <b>450 m²</b></div>
+  <div class="step"><b>Step 3　排煙口開口面積（§188⑦）</b>　450 × 2% = <b>9 m²</b> 以上</div>
+  <div class="step"><b>Step 4　排煙量（§188⑧）</b>　二區以上 → 最大區劃 450 × 2 = <b>900 m³/min</b><br>
+    與下限 120 取大者 → <b>900 m³/min</b></div>
+  <div class="step"><b>Step 5　水平距離（§188③）</b>　各區內任一位置至排煙口 ≤ 30 m</div>
+  <div class="step"><b>Step 6　緊急電源（§188⑨）</b>　30 分鐘以上</div>
+  <div class="ans">4 個防煙區劃　·　排煙口 ≥ 9 m²／區　·　排煙量 ≥ 900 m³/min</div>
+</div>
+
+<div class="ex">
+  <div class="t">例二｜單一防煙區劃・觸及下限</div>
+  <div class="given">某獨立居室構成一個防煙區劃，面積 80 m²，無法自然排煙。</div>
+  <div class="step"><b>Step 1　面積條件</b>　一防煙區劃 → 80 × 1 = <b>80 m³/min</b></div>
+  <div class="step"><b>Step 2　與下限比較</b>　80 &lt; <b>120 m³/min</b> → 取 <b>120 m³/min</b></div>
+  <div class="step"><b>Step 3　排煙口開口面積</b>　80 × 2% = <b>1.6 m²</b> 以上</div>
+  <div class="ans">排煙量 ≥ 120 m³/min（下限發生作用）　·　排煙口 ≥ 1.6 m²</div>
+  <div class="step" style="margin-top:10px;color:var(--muted)">
+    一防煙區劃時，面積小於 120 m² 就會踩到下限；二區以上時，最大區劃小於 60 m² 才會踩到。
+  </div>
+</div>
+
+<div class="ex">
+  <div class="t">例三｜地下建築物之地下通道</div>
+  <div class="given">某地下建築物之地下通道，樓地板面積 1,200 m²。</div>
+  <div class="step"><b>Step 1　防煙區劃（§188②）</b>　地下通道每 <b>300 m²</b> → 1,200 ÷ 300 = <b>4 個防煙區劃</b></div>
+  <div class="step"><b>Step 2　防煙壁（§188Ⅱ 但書）</b>　自天花板下垂 <b>80 cm 以上</b>（一般場所為 50 cm）</div>
+  <div class="step"><b>Step 3　排煙量（§188⑧ 但書）</b>　地下通道<b>總排煙量 ≥ 600 m³/min</b></div>
+  <div class="step" style="color:var(--muted)">對照：若按一般規則（二區以上、最大區劃 300 m² × 2）為 600 m³/min，
+    兩者恰好相同；但條文是以「總排煙量」直接規定，判斷時應優先適用但書。</div>
+  <div class="ans">4 個防煙區劃　·　防煙壁下垂 ≥ 80 cm　·　總排煙量 ≥ 600 m³/min</div>
+</div>
+
+<!-- ============ 4 ============ -->
+<h2 id="stair"><span class="no">04</span>排煙室：特別安全梯與緊急昇降機間</h2>
+<p class="lede">§189。針對 §28 第 5 款，<b>兩種方式擇一設置</b>——開窗，或裝風管。</p>
+
+<figure>
+<svg viewBox="0 0 880 380" role="img" aria-label="排煙室兩種排煙方式對照">
+  <!-- 左：窗戶方式 -->
+  <rect x="30" y="26" width="390" height="330" rx="10" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.6"/>
+  <text class="s-txt" x="225" y="52" text-anchor="middle" font-weight="700" fill="var(--accent3)">方式一　直接面向戶外之窗戶</text>
+
+  <!-- 房間 -->
+  <path class="s-line" stroke-width="2" d="M90 78 L360 78 L360 268 L90 268 Z"/>
+  <path class="s-thin" stroke-dasharray="5 3" d="M90 173 L360 173"/>
+  <text class="s-sm" x="100" y="168">天花板高度 1/2</text>
+
+  <!-- 窗戶（1/2 以上） -->
+  <rect x="330" y="100" width="30" height="60" fill="var(--card)" stroke="var(--accent3)" stroke-width="2"/>
+  <text class="s-sm" x="196" y="106" text-anchor="middle" font-weight="700">有效開口面積位於</text>
+  <text class="s-sm" x="196" y="124" text-anchor="middle" font-weight="700">天花板高度 1/2 以上範圍內</text>
+  <text class="s-key" x="196" y="144" text-anchor="middle" fill="var(--accent3)">≥ 2 m²（兼用時 ≥ 3 m²）</text>
+
+  <!-- 手動開關 -->
+  <rect x="120" y="212" width="24" height="30" fill="var(--card)" stroke="var(--accent2)" stroke-width="1.6"/>
+  <path class="s-dim" d="M104 212 L104 268"/>
+  <path class="s-dim" d="M98 212 L110 212 M98 242 L110 242 M98 268 L110 268"/>
+  <text class="s-sm" x="152" y="226">平時關閉之窗戶設手動開關裝置</text>
+  <text class="s-key" x="152" y="244" style="font-size:11px">操作部分 80～150 cm</text>
+  <text class="s-sm" x="152" y="260" style="font-size:10px">並標示簡易之操作方式</text>
+
+  <text class="s-sm" x="225" y="296" text-anchor="middle">窗戶與煙接觸部分使用不燃材料</text>
+  <text class="s-sm" x="225" y="316" text-anchor="middle" fill="var(--accent3)" font-weight="700">不需排煙機、不需緊急電源</text>
+  <text class="s-sm" x="225" y="338" text-anchor="middle">§189①</text>
+
+  <!-- 右：風管方式 -->
+  <rect x="460" y="26" width="390" height="330" rx="10" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.6"/>
+  <text class="s-txt" x="655" y="52" text-anchor="middle" font-weight="700" fill="var(--accent2)">方式二　排煙、進風風管</text>
+
+  <path class="s-line" stroke-width="2" d="M520 78 L790 78 L790 268 L520 268 Z"/>
+  <path class="s-thin" stroke-dasharray="5 3" d="M520 173 L790 173"/>
+  <text class="s-sm" x="530" y="168">天花板高度 1/2</text>
+
+  <!-- 排煙口（上） -->
+  <rect x="560" y="90" width="52" height="16" fill="var(--card)" stroke="var(--accent)" stroke-width="2"/>
+  <text class="s-key" x="626" y="102" style="font-size:11px">排煙口</text>
+  <text class="s-sm" x="626" y="118" style="font-size:10px">位於天花板高度 1/2 以上</text>
+  <path class="s-line" stroke="var(--accent)" stroke-width="2" d="M586 90 L586 78"/>
+
+  <!-- 進風口（下） -->
+  <rect x="560" y="230" width="52" height="16" fill="var(--card)" stroke="var(--accent3)" stroke-width="2"/>
+  <text class="s-key" x="626" y="242" style="font-size:11px" fill="var(--accent3)">進風口</text>
+  <text class="s-sm" x="626" y="258" style="font-size:10px">位於天花板高度 1/2 以下</text>
+  <text class="s-sm" x="626" y="272" style="font-size:10px">直接面向戶外者 ≥ 1 m²（兼用 1.5 m²）</text>
+
+  <text class="s-key" x="655" y="300" text-anchor="middle" fill="var(--accent2)">排煙量、進風量 ≥ 4 m³/s</text>
+  <text class="s-key" x="655" y="318" text-anchor="middle" fill="var(--accent2)">（兼用時 ≥ 6 m³/s）</text>
+  <text class="s-sm" x="655" y="338" text-anchor="middle">可隨排煙口、進風口開啟而自動啟動　·　緊急電源 30 分鐘</text>
+</svg>
+<figcaption>圖 5　§189 兩種排煙方式：窗戶（上排下不進）vs 風管（上排下進）</figcaption>
+</figure>
+
+<h3>方式一　直接面向戶外之窗戶（§189①）</h3>
+<table>
+<tbody>
+<tr><td>（一）</td><td>排煙時窗戶<b>與煙接觸部分</b>使用<b>不燃材料</b></td></tr>
+<tr><td>（二）</td><td>窗戶<b>有效開口面積位於天花板高度 1/2 以上</b>之範圍內</td></tr>
+<tr><td>（三）</td><td>窗戶之有效開口面積 <b>≥ 2 m²</b>；<b>但兼用時 ≥ 3 m²</b></td></tr>
+<tr><td>（四）</td><td>平時關閉之窗戶設<b>手動開關裝置</b>，操作部分設於距樓地板面 <b>80～150 cm</b> 之牆面，並標示簡易之操作方式</td></tr>
+</tbody>
+</table>
+
+<h3>方式二　排煙、進風風管（§189②）</h3>
+<table>
+<tbody>
+<tr><td>（一）</td><td>排煙口、排煙風管、進風口、進風風管及其他與煙接觸部分應使用<b>不燃材料</b></td></tr>
+<tr><td>（二）</td><td>貫穿防火區劃時設<b>防火閘門</b>；跨樓層設置時立管應置於<b>防火區劃之管道間</b></td></tr>
+<tr><td>（三）</td><td><b>排煙口位於天花板高度 1/2 以上</b>範圍內，與直接連通戶外之排煙風管連接，該風管並連接<b>排煙機</b><br><b>進風口位於天花板高度 1/2 以下</b>範圍內；其直接面向戶外，開口面積 <b>≥ 1 m²</b>（<b>兼用時 1.5 m²</b>）以上；或與直接連通戶外之進風風管連接，該風管並連接<b>進風機</b></td></tr>
+<tr><td>（四）</td><td>排煙機、進風機之排煙量、進風量 <b>≥ 4 m³/s</b>（<b>兼用時 6 m³/s</b>），且可隨排煙口、進風口開啟而<b>自動啟動</b></td></tr>
+<tr><td>（五）</td><td>進風口、排煙口設<b>手動開關裝置及探測器連動自動開關裝置</b>；平時保持關閉</td></tr>
+<tr><td>（六）</td><td>排煙口、進風口、排煙機及進風機連接<b>緊急電源</b>，供電容量 <b>≥ 30 分鐘</b></td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <b>「兼用」指什麼？</b>指<b>特別安全梯排煙室與緊急昇降機間兼用</b>（§189①（三）明文定義）。
+  兼用時三個數字都放大：窗戶 <b>2 → 3 m²</b>、進風口 <b>1 → 1.5 m²</b>、
+  排煙／進風量 <b>4 → 6 m³/s</b>。<b>放大倍率都是 1.5 倍。</b>
+</div>
+
+<div class="cmp">
+  <b>「上排下進」是風管方式的核心概念。</b>
+  熱煙往上積，所以<b>排煙口設在天花板高度 1/2 以上</b>；
+  新鮮空氣要從下方補入才能把煙往上推，所以<b>進風口設在 1/2 以下</b>。
+  §188 的一般排煙設備<b>沒有進風口的規定</b>——這是排煙室特有的設計。
+</div>
+
+<!-- ============ 5 ============ -->
+<h2 id="exempt"><span class="no">05</span>免設處所</h2>
+<p class="lede">§190。八款分成四個邏輯群組，比逐條硬記快得多。</p>
+
+<figure>
+<svg viewBox="0 0 880 340" role="img" aria-label="排煙設備免設處所分類">
+  <rect x="20" y="20" width="420" height="140" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.5"/>
+  <text class="s-txt" x="230" y="44" text-anchor="middle" font-weight="700" fill="var(--accent2)">群組一　靠「防火區劃＋耐燃裝修」免設</text>
+  <text class="s-sm" x="36" y="68">① 10 層以下（地下層除外）<b>非居室</b>：</text>
+  <text class="s-sm" x="50" y="86">　耐燃一級裝修＋半小時防火設備區劃，或每 100 m² 防煙壁區劃</text>
+  <text class="s-sm" x="36" y="108">② 10 層以下（地下層除外）<b>居室</b>：</text>
+  <text class="s-sm" x="50" y="126">　每 100 m² 以 1 小時防火時效區劃＋耐燃一級，或 ≤100 m² 且含底材耐燃一級</text>
+  <text class="s-sm" x="36" y="148">③ <b>11 層以上、地下層或地下建築物</b>：每 100 m² 以 1 小時防火時效區劃＋耐燃一級</text>
+
+  <rect x="460" y="20" width="400" height="140" rx="8" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text class="s-txt" x="660" y="44" text-anchor="middle" font-weight="700" fill="var(--accent)">群組二　本來就不會積煙或不需排煙</text>
+  <text class="s-sm" x="476" y="70">④ 樓梯間、昇降機昇降路、管道間、儲藏室、</text>
+  <text class="s-sm" x="490" y="88">　洗手間、廁所及其他類似部分</text>
+  <text class="s-sm" x="476" y="112">⑥ 機器製造工廠、儲放不燃性物品倉庫及其他</text>
+  <text class="s-sm" x="490" y="130">　類似用途建築物，且主要構造為不燃材料建造</text>
+
+  <rect x="20" y="180" width="420" height="86" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <text class="s-txt" x="230" y="204" text-anchor="middle" font-weight="700" fill="var(--warn)">群組三　已有「窒息式」滅火設備</text>
+  <text class="s-sm" x="36" y="228">⑤ 設有<b>二氧化碳、惰性氣體、鹵化烴或乾粉</b>等滅火設備之場所</text>
+  <text class="s-sm" x="36" y="250" fill="var(--warn)" font-weight="700">　注意：不含撒水、泡沫、水霧等水系設備</text>
+
+  <rect x="460" y="180" width="400" height="86" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.5"/>
+  <text class="s-txt" x="660" y="204" text-anchor="middle" font-weight="700" fill="var(--accent3)">群組四　列舉之特定用途</text>
+  <text class="s-sm" x="476" y="228">⑦ 集合住宅、學校教室、學校活動中心、</text>
+  <text class="s-sm" x="490" y="246">　體育館、室內溜冰場、室內游泳池</text>
+  <text class="s-sm" x="476" y="262">⑧ 其他經中央主管機關核定之場所</text>
+
+  <rect x="20" y="286" width="840" height="42" rx="6" fill="var(--card)" stroke="var(--accent)" stroke-width="1.4"/>
+  <text class="s-sm" x="440" y="306" text-anchor="middle" font-weight="700">§190 第 2 項　阻熱性要求</text>
+  <text class="s-sm" x="440" y="322" text-anchor="middle">第 1 款第 1 目之防火設備應具<b>半小時</b>以上阻熱性；第 2 款第 1 目及第 3 款者應具<b>1 小時</b>以上阻熱性</text>
+</svg>
+<figcaption>圖 6　§190 八款免設處所的四個邏輯群組</figcaption>
+</figure>
+
+<div class="note">
+  <b>第 5 款只列「氣體系與乾粉」，不含水系設備。</b>
+  二氧化碳、惰性氣體、鹵化烴、乾粉滅火時會<b>把整個空間充滿藥劑</b>，
+  此時開排煙反而把藥劑抽走、破壞滅火濃度；
+  而撒水、泡沫、水霧是<b>局部覆蓋</b>，煙仍會持續產生，所以不能因設了它們就免設排煙。
+  <b>看到「設有自動撒水設備得免設排煙設備」就是錯的。</b>
+</div>
+
+<div class="cmp">
+  <b>第 3 款有一個容易漏掉的括號。</b>
+  「11 層以上各樓層、地下層或地下建築物（<b>地下層或地下建築物之甲類場所除外</b>）」——
+  也就是地下層或地下建築物若屬<b>甲類場所</b>，即使做了 100 m² 防火區劃與耐燃一級裝修，
+  <b>仍不得免設排煙設備</b>。
+</div>
+
+<!-- ============ 6 ============ -->
+<h2 id="card"><span class="no">06</span>速查數字卡</h2>
+<table>
+<thead><tr><th>項目</th><th>數值</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td><b>應設①</b></td><td>甲類及戊三目合計 ≥ <b>500 m²</b></td><td class="n">§28①</td></tr>
+<tr><td><b>應設②</b></td><td>居室 ≥ <b>100 m²</b>，天花板下方 <b>80 cm</b> 內有效通風面積未達居室樓地板面積 <b>2%</b></td><td class="n">§28②</td></tr>
+<tr><td><b>應設③</b></td><td>無開口樓層 ≥ <b>1,000 m²</b></td><td class="n">§28③</td></tr>
+<tr><td><b>應設④</b></td><td>甲一目及甲二目集會堂之<b>舞臺部分</b> ≥ <b>500 m²</b></td><td class="n">§28④</td></tr>
+<tr><td><b>應設⑤</b></td><td>依建築技術規則應設之<b>特別安全梯或緊急昇降機間</b>（→ 適用 §189）</td><td class="n">§28⑤</td></tr>
+<tr><td><b>防煙區劃（一般）</b></td><td>每層樓地板面積<b>每 500 m² 內</b>以防煙壁區劃</td><td class="n">§188①</td></tr>
+<tr><td>防煙區劃免除但書</td><td>觀眾席、工廠等，<b>天花板高 ≥ 5 m</b> 且天花板及室內牆面<b>耐燃一級</b>裝修者</td><td class="n">§188①</td></tr>
+<tr><td><b>防煙區劃（地下通道）</b></td><td>地下建築物之地下通道<b>每 300 m²</b></td><td class="n">§188②</td></tr>
+<tr><td><b>至排煙口水平距離</b></td><td>≤ <b>30 m</b></td><td class="n">§188③</td></tr>
+<tr><td><b>排煙口位置</b></td><td>天花板或其下方 <b>80 cm 範圍內</b>；防煙壁下垂未達 80 cm 時，應設在該下垂高度內</td><td class="n">§188③</td></tr>
+<tr><td>材質</td><td>排煙口、風管及與煙接觸部分應使用<b>不燃材料</b></td><td class="n">§188④</td></tr>
+<tr><td>貫穿防火區劃</td><td>設<b>防火閘門</b>；跨樓層立管置於<b>防火區劃之管道間</b></td><td class="n">§188⑤</td></tr>
+<tr><td><b>手動開關高度</b></td><td>牆面 <b>80～150 cm</b>；裝於天花板時設<b>垂鍊或垂桿於 180 cm</b></td><td class="n">§188⑥</td></tr>
+<tr><td><b>排煙口開口面積</b></td><td>≥ 防煙區劃面積之 <b>2%</b>，且以自然方式直接排至戶外；不能者應設排煙機</td><td class="n">§188⑦</td></tr>
+<tr><td><b>排煙量</b></td><td>≥ <b>120 m³/min</b>；一區劃 ×<b>1</b>、二區以上取最大區劃 ×<b>2</b>（m³/min·m²）</td><td class="n">§188⑧</td></tr>
+<tr><td><b>地下通道總排煙量</b></td><td>≥ <b>600 m³/min</b></td><td class="n">§188⑧</td></tr>
+<tr><td><b>緊急電源</b></td><td><b>30 分鐘</b>以上</td><td class="n">§188⑨・§189②（六）</td></tr>
+<tr><td>免除開關與電源</td><td>排煙口<b>直接面向戶外且常時開啟</b>者，得不受第 6、9 款限制</td><td class="n">§188⑩</td></tr>
+<tr><td>連動</td><td>排煙口開啟時應<b>連動停止空氣調節及通風設備</b></td><td class="n">§188⑪</td></tr>
+<tr><td><b>防煙壁下垂高度</b></td><td>不燃材料，自天花板下垂 <b>≥ 50 cm</b>；<b>地下通道 ≥ 80 cm</b></td><td class="n">§188Ⅱ</td></tr>
+<tr><td><b>排煙室・窗戶面積</b></td><td>≥ <b>2 m²</b>（<b>兼用 3 m²</b>），位於天花板高度 <b>1/2 以上</b>範圍內</td><td class="n">§189①</td></tr>
+<tr><td><b>排煙室・排煙口位置</b></td><td>天花板高度 <b>1/2 以上</b>範圍內</td><td class="n">§189②（三）</td></tr>
+<tr><td><b>排煙室・進風口位置</b></td><td>天花板高度 <b>1/2 以下</b>範圍內；直接面向戶外者 ≥ <b>1 m²</b>（<b>兼用 1.5 m²</b>）</td><td class="n">§189②（三）</td></tr>
+<tr><td><b>排煙室・排煙量進風量</b></td><td>≥ <b>4 m³/s</b>（<b>兼用 6 m³/s</b>），可隨開啟<b>自動啟動</b></td><td class="n">§189②（四）</td></tr>
+<tr><td>排煙室・操作部分高度</td><td>距樓地板面 <b>80～150 cm</b> 之牆面</td><td class="n">§189①（四）</td></tr>
+<tr><td><b>免設・區劃面積</b></td><td>各款均為<b>每 100 m² 以下</b>區劃</td><td class="n">§190①②③</td></tr>
+<tr><td><b>免設・滅火設備</b></td><td>設有<b>二氧化碳、惰性氣體、鹵化烴或乾粉</b>者（<b>不含水系設備</b>）</td><td class="n">§190⑤</td></tr>
+<tr><td><b>免設・特定用途</b></td><td>集合住宅、學校教室、學校活動中心、體育館、室內溜冰場、室內游泳池</td><td class="n">§190⑦</td></tr>
+<tr><td><b>免設・阻熱性</b></td><td>第 1 款第 1 目 <b>半小時</b>；第 2 款第 1 目及第 3 款 <b>1 小時</b></td><td class="n">§190Ⅱ</td></tr>
+</tbody>
+</table>
+
+<h3>§188 vs §189 對照</h3>
+<table>
+<thead><tr><th>項目</th><th>§188 一般排煙設備</th><th>§189 排煙室</th></tr></thead>
+<tbody>
+<tr><td><b>適用</b></td><td>§28Ⅰ①～④</td><td>§28Ⅰ⑤</td></tr>
+<tr><td><b>排煙量單位</b></td><td><b>m³/min</b>（120／面積×1 或 2）</td><td><b>m³/s</b>（4／兼用 6）</td></tr>
+<tr><td><b>進風口</b></td><td><b>無此規定</b></td><td><b>有</b>；位於天花板高度 1/2 以下</td></tr>
+<tr><td><b>防煙區劃</b></td><td><b>有</b>（500／300 m²）</td><td><b>無</b>（排煙室本身即獨立空間）</td></tr>
+<tr><td><b>開口面積基準</b></td><td>防煙區劃面積之 <b>2%</b></td><td>窗戶 <b>≥ 2 m²</b>（絕對值，非比例）</td></tr>
+<tr><td>水平距離</td><td>任一位置至排煙口 ≤ <b>30 m</b></td><td>無此規定</td></tr>
+<tr><td>手動開關高度</td><td colspan="2" style="text-align:center">兩者<b>相同</b>：距樓地板面 80～150 cm 之牆面</td></tr>
+<tr><td>緊急電源</td><td colspan="2" style="text-align:center">兩者<b>相同</b>：30 分鐘以上</td></tr>
+<tr><td>不燃材料・防火閘門</td><td colspan="2" style="text-align:center">兩者<b>相同</b></td></tr>
+</tbody>
+</table>
+
+<div class="navbar" style="margin-top:32px">
+  <a class="btn go" href="index.html">🏠 回學習首頁</a>
+  <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+  <a class="btn" href="#apply">↑ 回到最上方</a>
+</div>
+
+<footer>
+  <p>本頁數據取自全國法規資料庫「各類場所消防安全設備設置標準」（pcode D0120029）民國 113 年 4 月 24 日修正版原文，於 2026-08-04 擷取核對。</p>
+  <p>「二區以上係數加倍係考量煙由相鄰區劃溢入」「第 5 款只列氣體系與乾粉係因藥劑會被抽走」等說明，
+  為設計原理之一般解釋，非條文明文。</p>
+  <p><b>法規以主管機關公布文字為準。</b>本頁為個人學習筆記，不構成法律意見；設計送審前請回查現行條文：
+  <code>https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0120029</code></p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  function target(){
+    var h=(location.hash||'').replace('#','');
+    if(!h){ var m=/[?&]s=([\w-]+)/.exec(location.search||''); h=m?m[1]:''; }
+    return h?document.getElementById(h):null;
+  }
+  function go(smooth){
+    var el=target(); if(!el) return;
+    el.scrollIntoView({behavior:smooth?'smooth':'auto',block:'start'});
+    el.style.transition='background-color .4s';
+    var old=el.style.backgroundColor;
+    el.style.backgroundColor='var(--fill4)';
+    setTimeout(function(){ el.style.backgroundColor=old||''; },1600);
+  }
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){ setTimeout(go,60); });
+  else setTimeout(go,60);
+  window.addEventListener('hashchange',function(){ go(true); });
+})();
+</script>
+</body>
+</html>
