@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>連結送水管 圖解 — 各類場所消防安全設備設置標準 §180～§184</title>
+<meta name="description" content="連結送水管（§180～§184）的出水口與送水口配置、配管、水帶箱、中繼幫浦與送水設計壓力計算圖解。">
+<style>
+  :root{
+    --bg:#fbfaf7; --fg:#1c1b19; --muted:#6b6862; --line:#d8d4cb;
+    --card:#ffffff; --accent:#b03a2e; --accent2:#1d6fa5; --accent3:#2e7d4f;
+    --warn:#a86b00; --danger:#8e1b0f;
+    --fill1:#f2e4e1; --fill2:#e0edf6; --fill3:#e3f0e8; --fill4:#f7efd9;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#16161a; --fg:#e8e6e1; --muted:#9b968c; --line:#3a3a40;
+      --card:#1e1e23; --accent:#e8705f; --accent2:#5aa8d8; --accent3:#5fbb87;
+      --warn:#d9a441; --danger:#f08070;
+      --fill1:#3a2622; --fill2:#1e3341; --fill3:#1f3a2c; --fill4:#3a3120;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+    line-height:1.75;-webkit-text-size-adjust:100%}
+  .wrap{max-width:960px;margin:0 auto;padding:32px 20px 80px}
+  header{border-bottom:2px solid var(--fg);padding-bottom:18px;margin-bottom:8px}
+  h1{font-size:clamp(1.4rem,4vw,2rem);margin:0 0 6px;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:.9rem;margin:0}
+  h2{font-size:1.15rem;margin:48px 0 4px;padding-top:14px;border-top:1px solid var(--line);
+    scroll-margin-top:16px}
+  h2 .no{color:var(--accent);font-variant-numeric:tabular-nums;margin-right:.5em}
+  h2:target{background:linear-gradient(transparent 62%,var(--fill4) 62%)}
+  h3{font-size:1rem;margin:26px 0 6px}
+  .lede{color:var(--muted);font-size:.92rem;margin:.2em 0 18px}
+  figure{margin:0 0 10px;background:var(--card);border:1px solid var(--line);
+    border-radius:10px;padding:18px 14px;overflow-x:auto}
+  svg{display:block;margin:0 auto;max-width:100%;height:auto}
+  figcaption{color:var(--muted);font-size:.84rem;margin-top:10px;text-align:center}
+  .note{border-left:3px solid var(--warn);background:var(--fill4);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .note b{color:var(--warn)}
+  .cmp{border-left:3px solid var(--accent2);background:var(--fill2);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .cmp b{color:var(--accent2)}
+  table{border-collapse:collapse;width:100%;font-size:.88rem;margin:14px 0}
+  th,td{border:1px solid var(--line);padding:6px 9px;text-align:left}
+  th{background:var(--fill2);font-weight:600}
+  td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+  code{background:var(--fill2);padding:1px 5px;border-radius:4px;font-size:.88em}
+  .formula{background:var(--fill3);border:1px solid var(--line);border-radius:8px;
+    padding:12px 16px;margin:14px 0;font-size:1rem;text-align:center}
+  .ex{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent2);
+    border-radius:0 10px 10px 0;padding:14px 18px;margin:18px 0}
+  .ex .t{font-weight:700;margin-bottom:6px;color:var(--accent2)}
+  .ex .given{font-size:.88rem;color:var(--muted);border-left:3px solid var(--line);
+    padding-left:12px;margin-bottom:10px}
+  .ex .step{font-size:.92rem;margin:8px 0}
+  .ex .ans{background:var(--fill3);border-radius:7px;padding:9px 13px;margin-top:10px;
+    font-weight:700;font-size:.94rem}
+  footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:.82rem}
+  a{color:var(--accent2)}
+  .navbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+  .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;
+    font-size:.86rem;padding:7px 14px;border-radius:8px;border:1px solid var(--line);
+    background:var(--card);color:var(--fg);transition:.12s}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.go{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+  .btn.go:hover{filter:brightness(1.1);color:#fff}
+  .toc{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 4px}
+  .toc a{font-size:.8rem;text-decoration:none;padding:4px 10px;border-radius:99px;
+    border:1px solid var(--line);background:var(--card);color:var(--muted)}
+  .toc a:hover{border-color:var(--accent);color:var(--accent)}
+  .s-line{stroke:var(--fg);stroke-width:1.4;fill:none}
+  .s-thin{stroke:var(--muted);stroke-width:1;fill:none}
+  .s-txt{fill:var(--fg);font-size:13px;font-family:inherit}
+  .s-sm{fill:var(--muted);font-size:11px;font-family:inherit}
+  .s-key{fill:var(--accent);font-size:13px;font-weight:700;font-family:inherit}
+  .s-dim{stroke:var(--accent2);stroke-width:1;fill:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>連結送水管 圖解</h1>
+  <p class="sub">各類場所消防安全設備設置標準 §180～§184　|　民國 113 年 4 月 24 日修正版</p>
+  <div class="navbar">
+    <a class="btn go" href="index.html">🏠 回學習首頁</a>
+    <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+    <a class="btn" href="09-%E6%B0%B4%E9%9C%A7%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html">📐 水霧設備圖解</a>
+  </div>
+</header>
+
+<nav class="toc" aria-label="章節目錄">
+  <a href="#outlet">01 應設場所・出水口與送水口</a>
+  <a href="#pipe">02 配管</a>
+  <a href="#hose">03 水帶箱</a>
+  <a href="#pump">04 中繼幫浦</a>
+  <a href="#design">05 送水設計壓力</a>
+  <a href="#card">06 速查數字卡</a>
+</nav>
+
+<div class="cmp" style="margin-top:24px">
+  <b>連結送水管不是給人用的，是給消防車用的。</b>
+  它屬「消防搶救上之必要設備」（§11①）——建築物本身不儲水、不加壓，
+  水由<b>消防車從地面送水口打進來</b>，消防人員在高樓層的出水口接水帶滅火。
+  所以整節條文只在處理三件事：<b>水怎麼進來</b>（送水口）、<b>水怎麼上去</b>（配管與中繼幫浦）、
+  <b>人在樓上怎麼取水</b>（出水口與水帶箱）。
+</div>
+
+<!-- ============ 1 ============ -->
+<h2 id="outlet"><span class="no">01</span>應設場所・出水口與送水口</h2>
+
+<h3>應設場所（§26）</h3>
+<table>
+<tbody>
+<tr><td>①</td><td><b>5 或 6 層</b>建築物總樓地板面積 <b>≥ 6,000 m²</b>，及 <b>7 層以上</b>建築物（無面積門檻）</td></tr>
+<tr><td>②</td><td>總樓地板面積 <b>≥ 1,000 m²</b> 之<b>地下建築物</b></td></tr>
+</tbody>
+</table>
+
+<figure>
+<svg viewBox="0 0 880 460" role="img" aria-label="連結送水管建築物整體配置剖面">
+  <!-- 建築物外框 -->
+  <path class="s-line" stroke-width="2" d="M180 40 L560 40 L560 400 L180 400 Z"/>
+  <!-- 樓層線 -->
+  <g class="s-thin">
+    <path d="M180 76 L560 76 M180 112 L560 112 M180 148 L560 148 M180 184 L560 184
+             M180 220 L560 220 M180 256 L560 256 M180 292 L560 292 M180 328 L560 328
+             M180 364 L560 364"/>
+  </g>
+  <text class="s-sm" x="172" y="60" text-anchor="end">屋頂</text>
+  <text class="s-sm" x="172" y="98" text-anchor="end">12F</text>
+  <text class="s-sm" x="172" y="134" text-anchor="end">11F</text>
+  <text class="s-sm" x="172" y="170" text-anchor="end">10F</text>
+  <text class="s-sm" x="172" y="242" text-anchor="end">…</text>
+  <text class="s-sm" x="172" y="350" text-anchor="end">3F</text>
+  <text class="s-sm" x="172" y="386" text-anchor="end">2F</text>
+
+  <!-- 立管 -->
+  <path class="s-line" stroke="var(--accent2)" stroke-width="3.5" d="M300 400 L300 52"/>
+  <text class="s-sm" x="308" y="240" fill="var(--accent2)" font-weight="700">立管</text>
+  <text class="s-sm" x="308" y="256" fill="var(--accent2)">管徑 ≥ 100 mm</text>
+
+  <!-- 測試用出水口（屋頂） -->
+  <circle cx="300" cy="52" r="6" fill="var(--accent3)"/>
+  <text class="s-sm" x="316" y="50" fill="var(--accent3)" font-weight="700">屋頂適當位置至少 1 個</text>
+  <text class="s-sm" x="316" y="65" fill="var(--accent3)">測試用出水口（§180③）</text>
+
+  <!-- 11F 以上出水口＋水帶箱 -->
+  <g>
+    <rect x="288" y="86" width="24" height="18" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+    <rect x="288" y="122" width="24" height="18" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+    <rect x="340" y="86" width="30" height="18" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.5"/>
+    <rect x="340" y="122" width="30" height="18" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.5"/>
+    <path class="s-dim" d="M312 95 L338 95 M312 131 L338 131"/>
+  </g>
+  <text class="s-key" x="386" y="82" style="font-size:11px">11F 以上</text>
+  <text class="s-sm" x="386" y="98">出水口<b>必須雙口形</b>＋水帶箱</text>
+  <text class="s-sm" x="386" y="114">水帶箱設於距出水口 <tspan font-weight="700">5 m 範圍內</tspan>（§182）</text>
+  <text class="s-sm" x="386" y="136">箱面表面積 ≥ 0.8 m²・水帶 20 m × 2 條以上</text>
+
+  <!-- 3F~10F 出水口 -->
+  <g fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.5">
+    <rect x="288" y="158" width="24" height="18"/>
+    <rect x="288" y="230" width="24" height="18"/>
+    <rect x="288" y="338" width="24" height="18"/>
+  </g>
+  <text class="s-sm" x="386" y="168" fill="var(--accent2)" font-weight="700">3F～10F</text>
+  <text class="s-sm" x="386" y="184">出水口<b>得用單口形</b>（§180②但書）</text>
+  <text class="s-sm" x="386" y="206">出水口位置：樓梯間或緊急升降機間等</text>
+  <text class="s-sm" x="386" y="222">（含該處 <tspan font-weight="700">5 m 以內</tspan>之處所）</text>
+  <text class="s-sm" x="386" y="244">各層任一點至出水口<b>水平距離 ≤ 50 m</b></text>
+  <text class="s-sm" x="386" y="266">距樓地板面高度 <tspan font-weight="700">0.5～1.5 m</tspan></text>
+
+  <!-- 2F 以下無出水口 -->
+  <text class="s-sm" x="386" y="300" fill="var(--muted)">2F 以下不設出水口</text>
+  <text class="s-sm" x="386" y="316" fill="var(--muted)">（§180① 限「第三層以上各層」及地下建築物各層）</text>
+
+  <!-- 地面與送水口 -->
+  <path class="s-line" stroke-width="2.5" d="M60 400 L820 400"/>
+  <rect x="120" y="368" width="34" height="32" fill="var(--fill1)" stroke="var(--accent)" stroke-width="2"/>
+  <text class="s-sm" x="137" y="360" text-anchor="middle" fill="var(--accent)" font-weight="700">送水口</text>
+  <path class="s-line" stroke="var(--accent2)" stroke-width="3" d="M154 384 L300 384"/>
+  <path class="s-dim" d="M104 368 L104 400"/>
+  <path class="s-dim" d="M98 368 L110 368 M98 400 L110 400"/>
+  <text class="s-key" x="94" y="388" text-anchor="end" style="font-size:11px">0.5～1 m</text>
+
+  <!-- 消防車 -->
+  <g fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.6">
+    <rect x="620" y="352" width="150" height="48" rx="5"/>
+  </g>
+  <circle cx="655" cy="400" r="9" fill="var(--fg)"/><circle cx="735" cy="400" r="9" fill="var(--fg)"/>
+  <text class="s-sm" x="695" y="380" text-anchor="middle" font-weight="700">消防車</text>
+  <path class="s-line" stroke="var(--warn)" stroke-width="2.4" stroke-dasharray="6 3" d="M620 380 L160 380"/>
+
+  <rect x="60" y="418" width="760" height="34" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.3"/>
+  <text class="s-sm" x="440" y="439" text-anchor="middle" fill="var(--accent)" font-weight="700">§180④⑤⑥　送水口設於消防車易於接近且無送水障礙處，數量在「立管數以上」；雙口形、63 mm 陰式快速接頭；附近裝設逆止閥及止水閥</text>
+</svg>
+<figcaption>圖 1　出水口與送水口的樓層分布與規格</figcaption>
+</figure>
+
+<h3>出水口（§180①②③）</h3>
+<table>
+<thead><tr><th>項目</th><th>規定</th></tr></thead>
+<tbody>
+<tr><td><b>設置樓層</b></td><td><b>地下建築物各層</b>，或建築物<b>第 3 層以上各層</b></td></tr>
+<tr><td><b>設置位置</b></td><td>樓梯間或緊急升降機間等（<b>含該處 5 m 以內之處所</b>）消防人員易於施行救火之位置</td></tr>
+<tr><td><b>水平距離</b></td><td>各層任一點至出水口 <b>≤ 50 m</b></td></tr>
+<tr><td><b>型式</b></td><td><b>雙口形</b>，接裝口徑 <b>63 mm 快速接頭</b><br><b>但設於第 10 層以下之樓層，得用單口形</b></td></tr>
+<tr><td><b>高度</b></td><td>距樓地板面 <b>0.5 m 以上 1.5 m 以下</b></td></tr>
+<tr><td><b>箱體</b></td><td>厚度 <b>≥ 1.6 mm</b> 鋼板或同等性能以上不燃材料製箱內<br>箱面<b>短邊 ≥ 40 cm、長邊 ≥ 50 cm</b>；標明「出水口」字樣，每字 <b>≥ 20 cm²</b></td></tr>
+<tr><td>測試用出水口</td><td>屋頂上適當位置<b>至少設置 1 個</b></td></tr>
+</tbody>
+</table>
+
+<h3>送水口（§180④⑤⑥）</h3>
+<table>
+<thead><tr><th>項目</th><th>規定</th></tr></thead>
+<tbody>
+<tr><td><b>位置</b></td><td>消防車易於接近，且無送水障礙處</td></tr>
+<tr><td><b>數量</b></td><td><b>在立管數以上</b></td></tr>
+<tr><td><b>型式</b></td><td><b>雙口形</b>，接裝口徑 <b>63 mm 陰式</b>快速接頭</td></tr>
+<tr><td><b>高度</b></td><td>距基地地面 <b>1 m 以下 0.5 m 以上</b></td></tr>
+<tr><td>標示</td><td>標明「<b>連結送水管送水口</b>」字樣</td></tr>
+<tr><td>閥類</td><td>附近便於檢查確認處，裝設<b>逆止閥及止水閥</b></td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <b>三組高度數字別記混：</b>
+  出水口距<b>樓地板面</b> <b>0.5～1.5 m</b>；
+  送水口距<b>基地地面</b> <b>0.5～1 m</b>；
+  自動撒水送水口（§59③）也是距基地地面 <b>0.5～1 m</b>——兩種送水口高度相同，出水口才是 1.5 m。
+</div>
+
+<div class="cmp">
+  <b>「單口形」只有一個適用時機。</b>§180② 本文要求雙口形，但書放寬為
+  「<b>設於第 10 層以下之樓層，得用單口形</b>」。
+  也就是 <b>11 層以上一律雙口形</b>——而 11 層以上剛好也是 §182 要設水帶箱的樓層，兩條可以綁在一起記。
+</div>
+
+<!-- ============ 2 ============ -->
+<h2 id="pipe"><span class="no">02</span>配管</h2>
+<p class="lede">§181。重點在「什麼時候可以跟室內消防栓共用立管」與「耐壓試驗怎麼做」。</p>
+
+<figure>
+<svg viewBox="0 0 860 300" role="img" aria-label="連結送水管配管規定">
+  <!-- 專用 -->
+  <rect x="30" y="30" width="380" height="240" rx="10" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-txt" x="220" y="56" text-anchor="middle" font-weight="700" fill="var(--accent)">原則：應為專用</text>
+  <path class="s-line" stroke="var(--accent2)" stroke-width="4" d="M150 80 L150 230"/>
+  <text class="s-key" x="164" y="150">立管管徑 ≥ 100 mm</text>
+  <text class="s-sm" x="164" y="170">連結送水管專用立管</text>
+  <text class="s-sm" x="220" y="256" text-anchor="middle">§181①本文</text>
+
+  <!-- 共用 -->
+  <rect x="450" y="30" width="380" height="240" rx="10" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.6"/>
+  <text class="s-txt" x="640" y="56" text-anchor="middle" font-weight="700" fill="var(--accent2)">例外：得與室內消防栓共用立管</text>
+  <text class="s-key" x="640" y="80" text-anchor="middle" fill="var(--accent2)">條件：建築物高度 ≤ 50 m</text>
+
+  <path class="s-line" stroke="var(--accent2)" stroke-width="4" d="M560 100 L560 230"/>
+  <path class="s-line" stroke="var(--accent3)" stroke-width="2.4" d="M560 130 L640 130 M560 175 L640 175"/>
+  <text class="s-sm" x="576" y="150">立管 ≥ 100 mm</text>
+  <text class="s-key" x="650" y="126" style="font-size:11px">支管 ≥ 65 mm</text>
+  <text class="s-key" x="650" y="180" style="font-size:11px">支管 ≥ 65 mm</text>
+  <text class="s-sm" x="640" y="256" text-anchor="middle">§181①但書</text>
+</svg>
+<figcaption>圖 2　專用立管與共用立管的條件差異</figcaption>
+</figure>
+
+<table>
+<thead><tr><th>款</th><th>規定</th></tr></thead>
+<tbody>
+<tr><td>①</td><td>應為<b>專用</b>，立管管徑 <b>≥ 100 mm</b><br><b>但建築物高度 ≤ 50 m 時</b>，得與<b>室內消防栓共用</b>立管，其管徑 <b>≥ 100 mm</b>，<b>支管管徑 ≥ 65 mm</b></td></tr>
+<tr><td>②</td><td>符合 CNS 6445、4626 規定或同等以上強度、耐腐蝕性及耐熱性者<br><b>但送水設計壓力逾每平方公分 10 公斤時</b>，應使用 CNS 4626 <b>管號 Sch 40 以上</b>或同等</td></tr>
+<tr><td>③</td><td>同一建築物內裝置 <b>2 支以上立管</b>時，<b>立管間以橫管連通</b></td></tr>
+<tr><td>④</td><td>管徑依<b>水力計算</b>配置之</td></tr>
+<tr><td>⑤</td><td>能承受<b>送水設計壓力 1.5 倍</b>以上之水壓，且<b>持續 30 分鐘</b><br><b>但設有中繼幫浦時</b>，幫浦<b>二次側</b>配管應能承受<b>幫浦全閉揚程 1.5 倍</b>以上之水壓</td></tr>
+</tbody>
+</table>
+
+<div class="cmp">
+  <b>「1.5 倍」在全法出現三次，但持續時間不同：</b>
+  連結送水管（§181⑤）是<b>送水設計壓力 1.5 倍、持續 30 分鐘</b>；
+  室內消防栓（§33）與自動撒水（§45）是<b>全閉揚程 1.5 倍、持續 2 小時</b>。
+  <b>倍數相同、時間差了四倍，這是最容易寫錯的地方。</b>
+</div>
+
+<!-- ============ 3 ============ -->
+<h2 id="hose"><span class="no">03</span>水帶箱</h2>
+<p class="lede">§182。只有<b>11 層以上之樓層</b>要設——因為消防人員帶著水帶爬到 11 樓以上太慢。</p>
+
+<figure>
+<svg viewBox="0 0 760 250" role="img" aria-label="連結送水管水帶箱規定">
+  <!-- 出水口 -->
+  <rect x="80" y="90" width="60" height="60" rx="4" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.8"/>
+  <text class="s-sm" x="110" y="118" text-anchor="middle" font-weight="700">出水口</text>
+  <text class="s-sm" x="110" y="136" text-anchor="middle">雙口形</text>
+  <text class="s-sm" x="110" y="80" text-anchor="middle">§180②</text>
+
+  <!-- 距離 -->
+  <path class="s-dim" d="M140 120 L280 120"/>
+  <path class="s-dim" d="M140 114 L140 126 M280 114 L280 126"/>
+  <text class="s-key" x="210" y="110" text-anchor="middle">≤ 5 m</text>
+
+  <!-- 水帶箱 -->
+  <rect x="280" y="76" width="150" height="88" rx="5" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="2"/>
+  <text class="s-sm" x="355" y="100" text-anchor="middle" font-weight="700" fill="var(--accent3)">水帶箱</text>
+  <text class="s-sm" x="355" y="120" text-anchor="middle">直線水霧兩用瞄子 1 具</text>
+  <text class="s-sm" x="355" y="138" text-anchor="middle">長 20 m 水帶 2 條以上</text>
+  <text class="s-sm" x="355" y="156" text-anchor="middle">箱面表面積 ≥ 0.8 m²</text>
+
+  <!-- 規格說明 -->
+  <rect x="470" y="60" width="270" height="120" rx="6" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-sm" x="486" y="84" font-weight="700">§182 其他要求</text>
+  <text class="s-sm" x="486" y="106">・適用樓層：<tspan font-weight="700">11 層以上之樓層，各層</tspan></text>
+  <text class="s-sm" x="486" y="126">・具足夠裝置水帶及瞄子之深度</text>
+  <text class="s-sm" x="486" y="146">・標明「水帶箱」字樣，每字 ≥ 20 cm²</text>
+  <text class="s-sm" x="486" y="166">・材質厚度 ≥ 1.6 mm 鋼板或同等不燃材料</text>
+
+  <rect x="80" y="196" width="660" height="34" rx="6" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.3"/>
+  <text class="s-sm" x="410" y="217" text-anchor="middle" fill="var(--warn)" font-weight="700">「11 層以上」同時觸發兩件事：出水口不得用單口形（§180②但書反面）＋ 各層應設水帶箱（§182）</text>
+</svg>
+<figcaption>圖 3　11 層以上樓層的水帶箱配置</figcaption>
+</figure>
+
+<div class="cmp">
+  <b>三種箱體的表面積要求：</b>
+  連結送水管<b>水帶箱 ≥ 0.8 m²</b>（§182）、
+  室外消防栓<b>水帶箱 ≥ 0.8 m²</b>（§40④）、
+  移動式泡沫<b>泡沫消防栓箱 ≥ 0.8 m²</b>（§80④）——三者相同；
+  只有<b>室內消防栓箱是 0.7 m²</b>（§35②）。<b>記「室內 0.7、其餘 0.8」。</b>
+</div>
+
+<!-- ============ 4 ============ -->
+<h2 id="pump"><span class="no">04</span>中繼幫浦：高度超過 60 公尺的分水嶺</h2>
+<p class="lede">§183。消防車的送水壓力有極限，超過 60 m 就得靠建築物自己接力。</p>
+
+<div class="formula">
+  <b>建築物高度 &gt; 60 m　→　連結送水管應採用「濕式」，並設中繼幫浦</b>
+</div>
+
+<figure>
+<svg viewBox="0 0 880 400" role="img" aria-label="中繼幫浦系統組成">
+  <!-- 建築物 -->
+  <path class="s-line" stroke-width="2" d="M170 30 L520 30 L520 330 L170 330 Z"/>
+  <text class="s-sm" x="345" y="22" text-anchor="middle">建築物高度 &gt; 60 m</text>
+
+  <!-- 屋頂水箱 -->
+  <rect x="380" y="38" width="110" height="40" rx="4" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.6"/>
+  <text class="s-sm" x="435" y="56" text-anchor="middle" font-weight="700">屋頂水箱</text>
+  <text class="s-key" x="435" y="72" text-anchor="middle" style="font-size:11px">≥ 0.5 m³</text>
+
+  <!-- 中繼水箱 -->
+  <rect x="380" y="168" width="110" height="40" rx="4" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.6"/>
+  <text class="s-sm" x="435" y="186" text-anchor="middle" font-weight="700">中繼水箱</text>
+  <text class="s-key" x="435" y="202" text-anchor="middle" style="font-size:11px" fill="var(--accent3)">≥ 2.5 m³</text>
+
+  <!-- 立管 -->
+  <path class="s-line" stroke="var(--accent2)" stroke-width="3.5" d="M260 330 L260 60"/>
+
+  <!-- 中繼幫浦 -->
+  <circle cx="260" cy="228" r="26" fill="var(--fill1)" stroke="var(--accent)" stroke-width="2"/>
+  <text class="s-sm" x="260" y="226" text-anchor="middle" font-weight="700">中繼</text>
+  <text class="s-sm" x="260" y="240" text-anchor="middle" font-weight="700">幫浦</text>
+  <text class="s-key" x="196" y="232" text-anchor="end" style="font-size:11px">出水量</text>
+  <text class="s-key" x="196" y="248" text-anchor="end" style="font-size:11px">≥ 2,400 L/min</text>
+
+  <!-- 一次側 / 二次側 標註 -->
+  <path class="s-thin" stroke-dasharray="4 3" d="M170 262 L520 262"/>
+  <text class="s-sm" x="512" y="278" text-anchor="end" fill="var(--muted)">一次側（下游來水）</text>
+  <path class="s-thin" stroke-dasharray="4 3" d="M170 196 L370 196"/>
+  <text class="s-sm" x="364" y="190" text-anchor="end" fill="var(--muted)">二次側（送往上層）</text>
+
+  <!-- 旁通管 -->
+  <path class="s-line" stroke="var(--warn)" stroke-width="2.2" d="M260 288 L316 288 L316 168 L260 168"/>
+  <text class="s-sm" x="324" y="232" fill="var(--warn)" font-weight="700">旁通管</text>
+  <text class="s-sm" x="324" y="248" fill="var(--warn)">設逆止閥（§183⑥）</text>
+
+  <!-- 一次側配件 -->
+  <rect x="60" y="270" width="102" height="58" rx="5" fill="var(--card)" stroke="var(--accent)" stroke-width="1.3"/>
+  <text class="s-sm" x="111" y="288" text-anchor="middle" font-weight="700">一次側</text>
+  <text class="s-sm" x="111" y="304" text-anchor="middle">出水口・止水閥</text>
+  <text class="s-sm" x="111" y="320" text-anchor="middle">壓力調整閥</text>
+  <path class="s-thin" d="M162 292 L236 292 L236 254"/>
+
+  <!-- 二次側配件 -->
+  <rect x="60" y="120" width="102" height="58" rx="5" fill="var(--card)" stroke="var(--accent3)" stroke-width="1.3"/>
+  <text class="s-sm" x="111" y="138" text-anchor="middle" font-weight="700">二次側</text>
+  <text class="s-sm" x="111" y="154" text-anchor="middle">逆止閥・止水閥</text>
+  <text class="s-sm" x="111" y="170" text-anchor="middle">送水口</text>
+  <path class="s-thin" d="M162 148 L236 148 L236 202"/>
+
+  <!-- 地面送水口 -->
+  <path class="s-line" stroke-width="2.5" d="M60 330 L820 330"/>
+  <rect x="196" y="300" width="30" height="30" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.8"/>
+  <text class="s-sm" x="211" y="294" text-anchor="middle" font-weight="700">送水口</text>
+  <path class="s-line" stroke="var(--accent2)" stroke-width="3" d="M226 316 L260 316"/>
+
+  <!-- 手動啟動裝置 -->
+  <rect x="560" y="60" width="300" height="94" rx="6" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-sm" x="576" y="82" font-weight="700" fill="var(--warn)">§183③　送水口附近</text>
+  <text class="s-sm" x="576" y="102">手動啟動裝置 ＋ 紅色啟動表示燈</text>
+  <text class="s-sm" x="576" y="122">但設有防災中心遙控啟動，且送水口與</text>
+  <text class="s-sm" x="576" y="140">防災中心間設有通話裝置者，得免設</text>
+
+  <!-- 串聯 -->
+  <rect x="560" y="170" width="300" height="66" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.4"/>
+  <text class="s-sm" x="576" y="192" font-weight="700" fill="var(--accent)">§183⑦　串聯運轉</text>
+  <text class="s-sm" x="576" y="212">全閉揚程與押入揚程合計 <tspan font-weight="700">≥ 170 m</tspan> 時</text>
+  <text class="s-sm" x="576" y="230">增設幫浦使串聯運轉</text>
+
+  <!-- 放水測試 -->
+  <rect x="560" y="252" width="300" height="94" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-sm" x="576" y="274" font-weight="700" fill="var(--accent3)">§183⑨　放水測試</text>
+  <text class="s-sm" x="576" y="294">從送水口以送水設計壓力送水</text>
+  <text class="s-sm" x="576" y="312">以口徑 <tspan font-weight="700">21 mm</tspan> 瞄子在<tspan font-weight="700">最頂層</tspan>測試</text>
+  <text class="s-sm" x="576" y="332">放水壓力 ≥ <tspan font-weight="700">6 kgf/cm²</tspan>・放水量 ≥ <tspan font-weight="700">600 L/min</tspan></text>
+
+  <!-- 標示牌 -->
+  <rect x="60" y="356" width="480" height="36" rx="5" fill="var(--card)" stroke="var(--accent)" stroke-width="1.4"/>
+  <text class="s-sm" x="300" y="378" text-anchor="middle" font-weight="700">送水設計壓力標示牌：長邊 ≥ 20 cm、短邊 ≥ 7 cm，設於送水口附近明顯易見處</text>
+</svg>
+<figcaption>圖 4　中繼幫浦系統組成與各項規定</figcaption>
+</figure>
+
+<h3>中繼幫浦九項規定（§183）</h3>
+<table>
+<thead><tr><th>款</th><th>規定</th></tr></thead>
+<tbody>
+<tr><td>①</td><td><b>全揚程</b> = 消防水帶摩擦損失水頭 + 配管摩擦損失水頭 + 落差 + 放水壓力<br><code>H = h₁ + h₂ + h₃ + 60 m</code></td></tr>
+<tr><td>②</td><td>出水量 <b>≥ 2,400 L/min</b></td></tr>
+<tr><td>③</td><td>送水口附近設<b>手動啟動裝置及紅色啟動表示燈</b>；但設有防災中心遙控啟動且設通話裝置者得免設</td></tr>
+<tr><td>④</td><td><b>一次側</b>設出水口、止水閥及<b>壓力調整閥</b>，並附設旁通管；<b>二次側</b>設逆止閥、止水閥及送水口</td></tr>
+<tr><td>⑤</td><td><b>屋頂水箱 ≥ 0.5 m³</b>；<b>中繼水箱 ≥ 2.5 m³</b></td></tr>
+<tr><td>⑥</td><td>進水側配管及出水側配管間設<b>旁通管</b>，並於旁通管設<b>逆止閥</b></td></tr>
+<tr><td>⑦</td><td><b>全閉揚程與押入揚程合計 ≥ 170 m</b> 時，增設幫浦使<b>串聯運轉</b></td></tr>
+<tr><td>⑧</td><td>設置中繼幫浦之<b>機械室</b>及連結送水管<b>送水口處</b>，設有能與<b>防災中心通話</b>之裝置</td></tr>
+<tr><td>⑨</td><td>放水測試：從送水口以送水設計壓力送水，以口徑 <b>21 mm</b> 瞄子在<b>最頂層</b>測試，放水壓力 <b>≥ 6 kgf/cm²（0.6 MPa）</b>、放水量 <b>≥ 600 L/min</b></td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <b>屋頂水箱 0.5 m³ 這個數字有來歷。</b>它與<b>第一種室內消防栓</b>的屋頂水箱容量（§32Ⅲ①）完全相同。
+  而中繼水箱 2.5 m³ 是它的 5 倍——中繼幫浦要有足夠的押入水量才啟動得起來。
+</div>
+
+<!-- ============ 5 ============ -->
+<h2 id="design"><span class="no">05</span>送水設計壓力</h2>
+<p class="lede">§184。這條決定了配管等級（§181②）、耐壓試驗值（§181⑤）與中繼幫浦揚程（§183①）。</p>
+
+<div class="formula" style="font-size:1.05rem">
+  <b>送水設計壓力 = 配管摩擦損失水頭 ＋ 消防水帶摩擦損失水頭 ＋ 落差 ＋ 放水壓力</b><br>
+  <code>H = h₁ + h₂ + h₃ + 60 m</code>
+</div>
+
+<table>
+<thead><tr><th>款</th><th>規定</th></tr></thead>
+<tbody>
+<tr><td>①</td><td>送水設計壓力在上式計算值以上（<b>放水壓力固定為 60 m</b>）</td></tr>
+<tr><td>②</td><td><b>消防水帶摩擦損失水頭為 4 公尺</b>（法定固定值，不必自己算）</td></tr>
+<tr><td>③</td><td><b>立管水量</b>：<b>最上層與其直下層間為 1,200 L/min</b>；<b>其他樓層為 2,400 L/min</b></td></tr>
+<tr><td>④</td><td><b>每一線瞄子支管之水量為 600 L/min</b></td></tr>
+</tbody>
+</table>
+
+<figure>
+<svg viewBox="0 0 780 340" role="img" aria-label="立管水量分布與放水壓力常數">
+  <!-- 建築物 -->
+  <path class="s-line" stroke-width="2" d="M120 40 L420 40 L420 290 L120 290 Z"/>
+  <g class="s-thin"><path d="M120 90 L420 90 M120 140 L420 140 M120 190 L420 190 M120 240 L420 240"/></g>
+  <text class="s-sm" x="112" y="70" text-anchor="end">最上層</text>
+  <text class="s-sm" x="112" y="120" text-anchor="end">直下層</text>
+  <text class="s-sm" x="112" y="170" text-anchor="end">其他樓層</text>
+  <text class="s-sm" x="112" y="220" text-anchor="end">其他樓層</text>
+  <text class="s-sm" x="112" y="270" text-anchor="end">…</text>
+
+  <!-- 立管 -->
+  <path class="s-line" stroke="var(--accent2)" stroke-width="3" d="M200 290 L200 60"/>
+
+  <!-- 瞄子支管 -->
+  <g stroke="var(--accent3)" stroke-width="2.2" fill="none">
+    <path d="M200 66 L300 66"/><path d="M200 116 L300 116"/>
+  </g>
+  <text class="s-sm" x="308" y="70" fill="var(--accent3)">瞄子支管 600 L/min</text>
+  <text class="s-sm" x="308" y="120" fill="var(--accent3)">瞄子支管 600 L/min</text>
+
+  <!-- 水量標註 -->
+  <path class="s-dim" d="M168 66 L168 116"/>
+  <path class="s-dim" d="M162 66 L174 66 M162 116 L174 116"/>
+  <text class="s-key" x="158" y="96" text-anchor="end" style="font-size:11px">1,200</text>
+  <path class="s-dim" d="M168 140 L168 288"/>
+  <path class="s-dim" d="M162 140 L174 140 M162 288 L174 288"/>
+  <text class="s-key" x="158" y="218" text-anchor="end" style="font-size:11px">2,400</text>
+
+  <text class="s-sm" x="270" y="176" fill="var(--accent)" font-weight="700">最上層與其直下層間　1,200 L/min</text>
+  <text class="s-sm" x="270" y="216" fill="var(--accent)" font-weight="700">其他樓層　2,400 L/min</text>
+  <text class="s-sm" x="270" y="236">（＝中繼幫浦出水量下限 §183②）</text>
+
+  <!-- 公式常數對照 -->
+  <rect x="470" y="60" width="290" height="200" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.5"/>
+  <text class="s-txt" x="615" y="86" text-anchor="middle" font-weight="700" fill="var(--accent3)">常數 60 m 從哪裡來？</text>
+  <text class="s-sm" x="486" y="112">§183⑨ 放水測試要求最頂層放水壓力</text>
+  <text class="s-key" x="486" y="132">≥ 6 kgf/cm²</text>
+  <text class="s-sm" x="486" y="156">6 kgf/cm² 換算水頭 = <tspan font-weight="700">60 m</tspan></text>
+  <path class="s-thin" d="M486 172 L744 172"/>
+  <text class="s-sm" x="486" y="194">同樣規律：</text>
+  <text class="s-sm" x="486" y="214">室內消防栓 1.7 kgf/cm² → +17 m</text>
+  <text class="s-sm" x="486" y="232">室外消防栓 2.5 kgf/cm² → +25 m</text>
+  <text class="s-sm" x="486" y="250">自動撒水　 1.0 kgf/cm² → +10 m</text>
+
+  <rect x="120" y="304" width="640" height="30" rx="5" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.3"/>
+  <text class="s-sm" x="440" y="324" text-anchor="middle" fill="var(--warn)" font-weight="700">§184② 消防水帶摩擦損失水頭為 4 公尺——這是法規直接給的固定值，不必自己算</text>
+</svg>
+<figcaption>圖 5　立管水量分布與「+60 m」的由來</figcaption>
+</figure>
+
+<div class="cmp">
+  <b>「常數 ＝ 放水壓力 × 10」的規律，在連結送水管一樣成立。</b>
+  §183⑨ 要求最頂層放水壓力 ≥ 6 kgf/cm²，換算水頭正是 <b>60 m</b>——
+  和室內消防栓 +17、室外消防栓 +25、自動撒水 +10 是同一套邏輯。
+  <b>整部標準的揚程公式只有這一條規律要記。</b>
+</div>
+
+<div class="ex">
+  <div class="t">例一｜送水設計壓力</div>
+  <div class="given">某 15 層建築物設連結送水管；配管摩擦損失水頭 25 m、落差 55 m。</div>
+  <div class="step"><b>Step 1　消防水帶摩擦損失水頭</b>　§184②：<b>固定為 4 m</b></div>
+  <div class="step"><b>Step 2　代入公式</b>　H = h₁ + h₂ + h₃ + 60 = 25 + 4 + 55 + 60 = <b>144 m</b></div>
+  <div class="step"><b>Step 3　換算壓力</b>　144 m ÷ 10 = <b>14.4 kgf/cm²</b></div>
+  <div class="step"><b>Step 4　配管等級檢核（§181②但書）</b>　14.4 &gt; 10 kgf/cm²<br>
+    → 應使用 CNS 4626 <b>管號 Sch 40 以上</b>或同等以上強度、耐腐蝕性及耐熱性之配管</div>
+  <div class="step"><b>Step 5　耐壓試驗（§181⑤）</b>　144 × 1.5 = <b>216 m（21.6 kgf/cm²）</b>，持續 <b>30 分鐘</b></div>
+  <div class="ans">送水設計壓力 144 m（14.4 kgf/cm²）　·　須用 Sch 40 以上配管　·　耐壓試驗 21.6 kgf/cm² × 30 分</div>
+</div>
+
+<div class="ex">
+  <div class="t">例二｜中繼幫浦全揚程</div>
+  <div class="given">某建築物高度 80 m；消防水帶摩擦損失水頭 4 m、配管摩擦損失水頭 30 m、落差 78 m。</div>
+  <div class="step"><b>Step 1　是否需設中繼幫浦</b>　建築物高度 80 m &gt; <b>60 m</b> → 連結送水管應採<b>濕式</b>並設中繼幫浦（§183 本文）</div>
+  <div class="step"><b>Step 2　全揚程（§183①）</b>　H = 4 + 30 + 78 + 60 = <b>172 m</b></div>
+  <div class="step"><b>Step 3　出水量（§183②）</b>　≥ <b>2,400 L/min</b></div>
+  <div class="step"><b>Step 4　水箱（§183⑤）</b>　屋頂水箱 ≥ 0.5 m³、中繼水箱 ≥ 2.5 m³</div>
+  <div class="step"><b>Step 5　串聯檢核（§183⑦）</b>　另須確認「<b>全閉揚程 ＋ 押入揚程</b>」合計是否 ≥ 170 m；
+    若是，應增設幫浦使串聯運轉。<br>
+    <span style="color:var(--muted)">注意：這裡比的是全閉揚程與押入揚程之合計，不是 Step 2 算出的全揚程，兩者定義不同。</span></div>
+  <div class="ans">全揚程 ≥ 172 m　·　出水量 ≥ 2,400 L/min　·　屋頂水箱 0.5 m³／中繼水箱 2.5 m³</div>
+</div>
+
+<div class="ex">
+  <div class="t">例三｜出水口與水帶箱的樓層判斷</div>
+  <div class="given">某 12 層建築物（地上 12 層、無地下層），總樓地板面積 8,000 m²。</div>
+  <div class="step"><b>Step 1　應設判斷（§26①）</b>　7 層以上建築物 → <b>應設連結送水管</b>（無面積門檻）</div>
+  <div class="step"><b>Step 2　出水口樓層（§180①）</b>　第 <b>3 層以上各層</b> → <b>3F～12F</b> 設出水口；1F、2F 不設</div>
+  <div class="step"><b>Step 3　出水口型式（§180②）</b>　3F～10F <b>得用單口形</b>；<b>11F、12F 須雙口形</b></div>
+  <div class="step"><b>Step 4　水帶箱（§182）</b>　11 層以上各層 → <b>11F、12F</b> 各於距出水口 5 m 內設水帶箱</div>
+  <div class="step"><b>Step 5　測試用出水口（§180③）</b>　屋頂上適當位置至少 1 個</div>
+  <div class="step"><b>Step 6　中繼幫浦</b>　須看建築物<b>高度</b>是否超過 60 m，不是看層數——12 層若層高 4 m 則為 48 m，不必設</div>
+  <div class="ans">出水口 3F～12F（11F 以上雙口形）　·　水帶箱 11F、12F　·　屋頂測試用出水口 1 個</div>
+</div>
+
+<!-- ============ 6 ============ -->
+<h2 id="card"><span class="no">06</span>速查數字卡</h2>
+<table>
+<thead><tr><th>項目</th><th>數值</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td><b>應設場所</b></td><td>5 或 6 層總樓地板面積 ≥ <b>6,000 m²</b>，及 <b>7 層以上</b>建築物；地下建築物總樓地板面積 ≥ <b>1,000 m²</b></td><td class="n">§26</td></tr>
+<tr><td>出水口設置樓層</td><td>地下建築物各層，或建築物<b>第 3 層以上</b>各層</td><td class="n">§180①</td></tr>
+<tr><td>出水口設置位置</td><td>樓梯間或緊急升降機間等（含該處 <b>5 m 以內</b>之處所）</td><td class="n">§180①</td></tr>
+<tr><td><b>出水口水平距離</b></td><td>各層任一點至出水口 <b>≤ 50 m</b></td><td class="n">§180①</td></tr>
+<tr><td><b>出水口型式</b></td><td><b>雙口形</b>、口徑 <b>63 mm</b> 快速接頭；<b>第 10 層以下得用單口形</b></td><td class="n">§180②</td></tr>
+<tr><td>出水口高度</td><td>距<b>樓地板面</b> <b>0.5～1.5 m</b></td><td class="n">§180②</td></tr>
+<tr><td>出水口箱體</td><td>厚度 ≥ <b>1.6 mm</b> 鋼板；箱面<b>短邊 ≥ 40 cm、長邊 ≥ 50 cm</b>；字樣每字 ≥ 20 cm²</td><td class="n">§180②</td></tr>
+<tr><td>測試用出水口</td><td>屋頂上適當位置<b>至少 1 個</b></td><td class="n">§180③</td></tr>
+<tr><td><b>送水口數量</b></td><td><b>在立管數以上</b></td><td class="n">§180④</td></tr>
+<tr><td>送水口型式</td><td><b>雙口形</b>、口徑 <b>63 mm 陰式</b>快速接頭；標明「連結送水管送水口」</td><td class="n">§180⑤</td></tr>
+<tr><td>送水口高度</td><td>距<b>基地地面</b> <b>0.5～1 m</b></td><td class="n">§180⑤</td></tr>
+<tr><td>送水口閥類</td><td>附近便於檢查確認處裝設<b>逆止閥及止水閥</b></td><td class="n">§180⑥</td></tr>
+<tr><td><b>立管管徑</b></td><td>≥ <b>100 mm</b>（專用）</td><td class="n">§181①</td></tr>
+<tr><td><b>共用立管條件</b></td><td>建築物高度 <b>≤ 50 m</b> 時得與室內消防栓共用；立管 ≥ 100 mm、<b>支管 ≥ 65 mm</b></td><td class="n">§181①</td></tr>
+<tr><td>配管等級</td><td>送水設計壓力<b>逾 10 kgf/cm²</b> 時，用 CNS 4626 <b>Sch 40 以上</b></td><td class="n">§181②</td></tr>
+<tr><td>多支立管</td><td>裝置 <b>2 支以上</b>立管時，<b>立管間以橫管連通</b></td><td class="n">§181③</td></tr>
+<tr><td><b>耐壓試驗</b></td><td>送水設計壓力 <b>1.5 倍</b>以上水壓，<b>持續 30 分鐘</b>；設中繼幫浦時二次側配管為<b>全閉揚程 1.5 倍</b></td><td class="n">§181⑤</td></tr>
+<tr><td><b>水帶箱樓層</b></td><td><b>11 層以上</b>之樓層，各層</td><td class="n">§182</td></tr>
+<tr><td>水帶箱位置與內容</td><td>距出水口 <b>5 m 範圍內</b>；直線水霧兩用瞄子 1 具、長 <b>20 m 水帶 2 條以上</b></td><td class="n">§182</td></tr>
+<tr><td>水帶箱規格</td><td>箱面表面積 ≥ <b>0.8 m²</b>；字樣每字 ≥ 20 cm²；材質厚度 ≥ <b>1.6 mm</b> 鋼板</td><td class="n">§182</td></tr>
+<tr><td><b>中繼幫浦設置門檻</b></td><td>建築物高度<b>超過 60 m</b> 者，連結送水管應採用<b>濕式</b>並設中繼幫浦</td><td class="n">§183</td></tr>
+<tr><td><b>中繼幫浦全揚程</b></td><td><code>H = h₁ + h₂ + h₃ + 60 m</code></td><td class="n">§183①</td></tr>
+<tr><td><b>中繼幫浦出水量</b></td><td>≥ <b>2,400 L/min</b></td><td class="n">§183②</td></tr>
+<tr><td>啟動裝置</td><td>送水口附近設<b>手動啟動裝置及紅色啟動表示燈</b>（防災中心遙控＋通話裝置者得免設）</td><td class="n">§183③</td></tr>
+<tr><td>一次側／二次側</td><td>一次側：出水口、止水閥、<b>壓力調整閥</b>＋旁通管<br>二次側：逆止閥、止水閥、送水口</td><td class="n">§183④</td></tr>
+<tr><td><b>水箱容量</b></td><td>屋頂水箱 ≥ <b>0.5 m³</b>；中繼水箱 ≥ <b>2.5 m³</b></td><td class="n">§183⑤</td></tr>
+<tr><td>旁通管</td><td>進水側與出水側配管間設<b>旁通管</b>，並於旁通管設<b>逆止閥</b></td><td class="n">§183⑥</td></tr>
+<tr><td><b>串聯運轉</b></td><td><b>全閉揚程＋押入揚程合計 ≥ 170 m</b> 時，增設幫浦使串聯運轉</td><td class="n">§183⑦</td></tr>
+<tr><td>通話裝置</td><td>中繼幫浦<b>機械室</b>及連結送水管<b>送水口處</b>，設能與<b>防災中心</b>通話之裝置</td><td class="n">§183⑧</td></tr>
+<tr><td><b>放水測試</b></td><td>口徑 <b>21 mm</b> 瞄子、<b>最頂層</b>測試；放水壓力 ≥ <b>6 kgf/cm²</b>、放水量 ≥ <b>600 L/min</b></td><td class="n">§183⑨</td></tr>
+<tr><td>送水設計壓力標示牌</td><td>長邊 ≥ <b>20 cm</b>、短邊 ≥ <b>7 cm</b>，設於送水口附近明顯易見處</td><td class="n">§183⑨</td></tr>
+<tr><td><b>送水設計壓力</b></td><td><code>H = h₁ + h₂ + h₃ + 60 m</code></td><td class="n">§184①</td></tr>
+<tr><td><b>消防水帶摩擦損失水頭</b></td><td><b>4 m</b>（法定固定值）</td><td class="n">§184②</td></tr>
+<tr><td><b>立管水量</b></td><td>最上層與其直下層間 <b>1,200 L/min</b>；其他樓層 <b>2,400 L/min</b></td><td class="n">§184③</td></tr>
+<tr><td>瞄子支管水量</td><td>每一線 <b>600 L/min</b></td><td class="n">§184④</td></tr>
+</tbody>
+</table>
+
+<h3>四個關鍵門檻，別記混</h3>
+<table>
+<thead><tr><th class="n">數值</th><th>意義</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td class="n"><b>50 m</b></td><td>建築物高度 ≤ 50 m 才<b>得與室內消防栓共用立管</b></td><td class="n">§181①</td></tr>
+<tr><td class="n"><b>50 m</b></td><td>各層任一點至出水口之<b>水平距離</b>上限</td><td class="n">§180①</td></tr>
+<tr><td class="n"><b>60 m</b></td><td>建築物高度超過 60 m 應採<b>濕式</b>並設<b>中繼幫浦</b></td><td class="n">§183</td></tr>
+<tr><td class="n"><b>170 m</b></td><td>全閉揚程＋押入揚程合計達此值應<b>串聯運轉</b></td><td class="n">§183⑦</td></tr>
+<tr><td class="n"><b>第 10 層</b></td><td>設於第 10 層以下之樓層，出水口<b>得用單口形</b></td><td class="n">§180②</td></tr>
+<tr><td class="n"><b>第 11 層</b></td><td>11 層以上各層應設<b>水帶箱</b></td><td class="n">§182</td></tr>
+</tbody>
+</table>
+
+<div class="navbar" style="margin-top:32px">
+  <a class="btn go" href="index.html">🏠 回學習首頁</a>
+  <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+  <a class="btn" href="#outlet">↑ 回到最上方</a>
+</div>
+
+<footer>
+  <p>本頁數據取自全國法規資料庫「各類場所消防安全設備設置標準」（pcode D0120029）民國 113 年 4 月 24 日修正版原文，於 2026-08-04 擷取核對。</p>
+  <p>§183 之送水設計壓力標示牌尺寸取自該條「完整條文」PDF 之附圖（網頁版被省略）。</p>
+  <p><b>法規以主管機關公布文字為準。</b>本頁為個人學習筆記，不構成法律意見；設計送審前請回查現行條文：
+  <code>https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0120029</code></p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  function target(){
+    var h=(location.hash||'').replace('#','');
+    if(!h){ var m=/[?&]s=([\w-]+)/.exec(location.search||''); h=m?m[1]:''; }
+    return h?document.getElementById(h):null;
+  }
+  function go(smooth){
+    var el=target(); if(!el) return;
+    el.scrollIntoView({behavior:smooth?'smooth':'auto',block:'start'});
+    el.style.transition='background-color .4s';
+    var old=el.style.backgroundColor;
+    el.style.backgroundColor='var(--fill4)';
+    setTimeout(function(){ el.style.backgroundColor=old||''; },1600);
+  }
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){ setTimeout(go,60); });
+  else setTimeout(go,60);
+  window.addEventListener('hashchange',function(){ go(true); });
+})();
+</script>
+</body>
+</html>
