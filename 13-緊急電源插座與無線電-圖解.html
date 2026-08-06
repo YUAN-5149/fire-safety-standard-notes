@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>緊急電源插座・無線電通信輔助設備・防災監控系統 圖解 — §191～§192-1</title>
+<meta name="description" content="緊急電源插座（§191）、無線電通信輔助設備（§192）與防災監控系統綜合操作裝置（§192-1）的配置、規格與監控項目圖解。">
+<style>
+  :root{
+    --bg:#fbfaf7; --fg:#1c1b19; --muted:#6b6862; --line:#d8d4cb;
+    --card:#ffffff; --accent:#b03a2e; --accent2:#1d6fa5; --accent3:#2e7d4f;
+    --warn:#a86b00; --danger:#8e1b0f;
+    --fill1:#f2e4e1; --fill2:#e0edf6; --fill3:#e3f0e8; --fill4:#f7efd9;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#16161a; --fg:#e8e6e1; --muted:#9b968c; --line:#3a3a40;
+      --card:#1e1e23; --accent:#e8705f; --accent2:#5aa8d8; --accent3:#5fbb87;
+      --warn:#d9a441; --danger:#f08070;
+      --fill1:#3a2622; --fill2:#1e3341; --fill3:#1f3a2c; --fill4:#3a3120;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+    line-height:1.75;-webkit-text-size-adjust:100%}
+  .wrap{max-width:960px;margin:0 auto;padding:32px 20px 80px}
+  header{border-bottom:2px solid var(--fg);padding-bottom:18px;margin-bottom:8px}
+  h1{font-size:clamp(1.3rem,3.6vw,1.8rem);margin:0 0 6px;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:.9rem;margin:0}
+  h2{font-size:1.15rem;margin:48px 0 4px;padding-top:14px;border-top:1px solid var(--line);
+    scroll-margin-top:16px}
+  h2 .no{color:var(--accent);font-variant-numeric:tabular-nums;margin-right:.5em}
+  h2:target{background:linear-gradient(transparent 62%,var(--fill4) 62%)}
+  h3{font-size:1rem;margin:26px 0 6px}
+  .lede{color:var(--muted);font-size:.92rem;margin:.2em 0 18px}
+  figure{margin:0 0 10px;background:var(--card);border:1px solid var(--line);
+    border-radius:10px;padding:18px 14px;overflow-x:auto}
+  svg{display:block;margin:0 auto;max-width:100%;height:auto}
+  figcaption{color:var(--muted);font-size:.84rem;margin-top:10px;text-align:center}
+  .note{border-left:3px solid var(--warn);background:var(--fill4);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .note b{color:var(--warn)}
+  .cmp{border-left:3px solid var(--accent2);background:var(--fill2);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .cmp b{color:var(--accent2)}
+  table{border-collapse:collapse;width:100%;font-size:.88rem;margin:14px 0}
+  th,td{border:1px solid var(--line);padding:6px 9px;text-align:left}
+  th{background:var(--fill2);font-weight:600}
+  td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+  code{background:var(--fill2);padding:1px 5px;border-radius:4px;font-size:.88em}
+  .ex{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent2);
+    border-radius:0 10px 10px 0;padding:14px 18px;margin:18px 0}
+  .ex .t{font-weight:700;margin-bottom:6px;color:var(--accent2)}
+  .ex .given{font-size:.88rem;color:var(--muted);border-left:3px solid var(--line);
+    padding-left:12px;margin-bottom:10px}
+  .ex .step{font-size:.92rem;margin:8px 0}
+  .ex .ans{background:var(--fill3);border-radius:7px;padding:9px 13px;margin-top:10px;
+    font-weight:700;font-size:.94rem}
+  footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:.82rem}
+  a{color:var(--accent2)}
+  .navbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+  .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;
+    font-size:.86rem;padding:7px 14px;border-radius:8px;border:1px solid var(--line);
+    background:var(--card);color:var(--fg);transition:.12s}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.go{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+  .btn.go:hover{filter:brightness(1.1);color:#fff}
+  .toc{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 4px}
+  .toc a{font-size:.8rem;text-decoration:none;padding:4px 10px;border-radius:99px;
+    border:1px solid var(--line);background:var(--card);color:var(--muted)}
+  .toc a:hover{border-color:var(--accent);color:var(--accent)}
+  .s-line{stroke:var(--fg);stroke-width:1.4;fill:none}
+  .s-thin{stroke:var(--muted);stroke-width:1;fill:none}
+  .s-txt{fill:var(--fg);font-size:13px;font-family:inherit}
+  .s-sm{fill:var(--muted);font-size:11px;font-family:inherit}
+  .s-key{fill:var(--accent);font-size:13px;font-weight:700;font-family:inherit}
+  .s-dim{stroke:var(--accent2);stroke-width:1;fill:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>緊急電源插座・無線電通信輔助設備・防災監控系統 圖解</h1>
+  <p class="sub">各類場所消防安全設備設置標準 §191～§192-1　|　民國 113 年 4 月 24 日修正版</p>
+  <div class="navbar">
+    <a class="btn go" href="index.html">🏠 回學習首頁</a>
+    <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+    <a class="btn" href="12-%E6%8E%92%E7%85%99%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html">📐 排煙設備圖解</a>
+  </div>
+</header>
+
+<nav class="toc" aria-label="章節目錄">
+  <a href="#outlet">01 緊急電源插座</a>
+  <a href="#circuit">02 供電回路</a>
+  <a href="#radio">03 無線電通信輔助設備</a>
+  <a href="#monitor">04 防災監控系統綜合操作裝置</a>
+  <a href="#card">05 速查數字卡</a>
+</nav>
+
+<div class="cmp" style="margin-top:24px">
+  <b>這三項是「消防搶救上之必要設備」的最後三項，共同點是——都不滅火。</b>
+  緊急電源插座讓消防人員在樓上有電可用（照明、破壞器材、排煙機）；
+  無線電通信輔助設備讓地下層或高樓的無線電訊號能傳到地面；
+  防災監控系統綜合操作裝置則把整棟建築物的消防設備集中到一個地方監控。
+  <b>它們服務的對象是「進去救火的人」，不是火本身。</b>
+</div>
+
+<!-- ============ 1 ============ -->
+<h2 id="outlet"><span class="no">01</span>緊急電源插座</h2>
+<p class="lede">§29 應設場所、§191 設置規定。</p>
+
+<h3>應設場所（§29）</h3>
+<table>
+<tbody>
+<tr><td>①</td><td><b>11 層以上</b>建築物之各樓層</td></tr>
+<tr><td>②</td><td>總樓地板面積 <b>≥ 1,000 m²</b> 之<b>地下建築物</b></td></tr>
+<tr><td>③</td><td>依建築技術規則應設置之<b>緊急昇降機間</b></td></tr>
+</tbody>
+</table>
+
+<figure>
+<svg viewBox="0 0 880 380" role="img" aria-label="緊急電源插座配置與保護箱規格">
+  <!-- 樓層剖面 -->
+  <path class="s-line" stroke-width="2" d="M40 40 L400 40 L400 300 L40 300 Z"/>
+  <text class="s-sm" x="220" y="32" text-anchor="middle">樓梯間或緊急昇降機間等（含各該處 5 m 以內之場所）</text>
+
+  <!-- 保護箱 -->
+  <rect x="90" y="150" width="86" height="70" rx="4" fill="var(--fill1)" stroke="var(--accent)" stroke-width="2"/>
+  <text class="s-sm" x="133" y="172" text-anchor="middle" font-weight="700">保護箱</text>
+  <circle cx="115" cy="196" r="9" fill="var(--card)" stroke="var(--fg)" stroke-width="1.4"/>
+  <circle cx="151" cy="196" r="9" fill="var(--card)" stroke="var(--fg)" stroke-width="1.4"/>
+  <text class="s-sm" x="133" y="240" text-anchor="middle">插座 2 個</text>
+
+  <!-- 紅色表示燈 -->
+  <circle cx="133" cy="138" r="7" fill="var(--accent)"/>
+  <text class="s-key" x="150" y="134" style="font-size:11px">紅色表示燈（§191⑤）</text>
+  <text class="s-sm" x="150" y="148" style="font-size:10px">設於保護箱「上方」</text>
+
+  <!-- 高度標註 -->
+  <path class="s-dim" d="M70 150 L70 300"/>
+  <path class="s-dim" d="M64 150 L76 150 M64 220 L76 220 M64 300 L76 300"/>
+  <text class="s-key" x="60" y="176" text-anchor="end" style="font-size:11px">1.5 m</text>
+  <text class="s-key" x="60" y="266" text-anchor="end" style="font-size:11px">1 m</text>
+
+  <!-- 水平距離 -->
+  <path class="s-dim" d="M133 264 L390 264"/>
+  <path class="s-dim" d="M133 258 L133 270 M390 258 L390 270"/>
+  <text class="s-key" x="262" y="256" text-anchor="middle" style="font-size:11px">每一層任何一處至插座 ≤ 50 m</text>
+
+  <!-- 保護箱規格 -->
+  <rect x="450" y="40" width="400" height="150" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.6"/>
+  <text class="s-txt" x="650" y="64" text-anchor="middle" font-weight="700" fill="var(--accent2)">§191④　崁裝式保護箱七項規定</text>
+  <text class="s-sm" x="466" y="86">（一）長邊 <tspan font-weight="700">25 cm</tspan>、短邊 <tspan font-weight="700">20 cm</tspan> 以上</text>
+  <text class="s-sm" x="466" y="105">（二）厚度 <tspan font-weight="700">1.6 mm</tspan> 以上鋼板或同等不燃材料製</text>
+  <text class="s-sm" x="466" y="124">（三）箱內有防止插頭脫落之裝置（<tspan font-weight="700">L 型或 C 型護鉤</tspan>）</text>
+  <text class="s-sm" x="466" y="143">（四）箱蓋易於開閉　（五）保護箱須<tspan font-weight="700">接地</tspan></text>
+  <text class="s-sm" x="466" y="162">（六）箱蓋標示「緊急電源插座」，每字 <tspan font-weight="700">2 cm²</tspan> 以上</text>
+  <text class="s-sm" x="466" y="181">（七）與室內消防栓箱併設時設於<tspan font-weight="700">上方</tspan>且箱蓋能<tspan font-weight="700">另外開啟</tspan></text>
+
+  <!-- 插座規格 -->
+  <rect x="450" y="206" width="400" height="94" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.6"/>
+  <text class="s-txt" x="650" y="230" text-anchor="middle" font-weight="700" fill="var(--accent3)">§191②③④　插座規格</text>
+  <text class="s-sm" x="466" y="252">電流供應容量：<tspan font-weight="700">交流單相 110 V（或 120 V）15 A</tspan></text>
+  <text class="s-sm" x="466" y="271">容量約 <tspan font-weight="700">1.5 kW 以上</tspan>　·　型式：<tspan font-weight="700">接地型</tspan></text>
+  <text class="s-sm" x="466" y="290">規範依 §191 附圖（單相 125 V 15 A 插座，單位 mm）</text>
+
+  <!-- 併設 -->
+  <rect x="40" y="320" width="810" height="46" rx="6" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-sm" x="445" y="340" text-anchor="middle" font-weight="700" fill="var(--warn)">§191①　裝設於樓梯間或緊急昇降機間等（含各該處 5 m 以內之場所）消防人員易於施行救火處</text>
+  <text class="s-sm" x="445" y="358" text-anchor="middle">與連結送水管出水口（§180①）的設置位置描述完全相同——兩者常設在同一處</text>
+</svg>
+<figcaption>圖 1　緊急電源插座的位置、高度與保護箱規格</figcaption>
+</figure>
+
+<div class="note">
+  <b>「每字 2 平方公分以上」是全法的異數。</b>
+  滅火器標識（§31④）、室內消防栓箱（§35③）、出水口（§180②）、水帶箱（§182）
+  的字樣都是「每字 <b>20 cm²</b> 以上」，只有緊急電源插座保護箱蓋是 <b>2 cm²</b>。
+  <b>差了十倍，看到「2 平方公分」就是這一條。</b>
+</div>
+
+<div class="cmp">
+  <b>緊急電源插座與連結送水管出水口，設置位置的描述一字不差：</b>
+  都是「樓梯間或緊急昇降機間等（含<b>該處 5 m 以內</b>之處所）消防人員易於施行救火處」，
+  水平距離也都是 <b>≤ 50 m</b>。差別在<b>高度</b>——
+  出水口距樓地板 <b>0.5～1.5 m</b>，緊急電源插座是 <b>1～1.5 m</b>。
+</div>
+
+<!-- ============ 2 ============ -->
+<h2 id="circuit"><span class="no">02</span>供電回路</h2>
+<p class="lede">§191 第 6～9 款。這一段是純電氣規定，四款環環相扣。</p>
+
+<figure>
+<svg viewBox="0 0 880 320" role="img" aria-label="緊急電源插座供電回路架構">
+  <!-- 緊急供電系統 -->
+  <rect x="30" y="120" width="120" height="70" rx="6" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.6"/>
+  <text class="s-sm" x="90" y="146" text-anchor="middle" font-weight="700">緊急供電系統</text>
+  <text class="s-sm" x="90" y="166" text-anchor="middle">§191⑨</text>
+
+  <!-- 主配電盤 -->
+  <rect x="200" y="120" width="120" height="70" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.8"/>
+  <text class="s-sm" x="260" y="146" text-anchor="middle" font-weight="700">主配電盤</text>
+  <text class="s-sm" x="260" y="166" text-anchor="middle">§191⑥</text>
+  <path class="s-line" d="M150 155 L196 155"/>
+
+  <!-- 專用回路 -->
+  <path class="s-line" stroke="var(--accent)" stroke-width="2.4" d="M320 135 L420 135"/>
+  <path class="s-line" stroke="var(--accent)" stroke-width="2.4" d="M320 175 L420 175"/>
+  <text class="s-key" x="370" y="126" text-anchor="middle" style="font-size:11px">專用回路</text>
+  <text class="s-sm" x="370" y="196" text-anchor="middle" style="font-size:10px">各層至少 2 回路以上</text>
+
+  <!-- 回路 1 -->
+  <rect x="420" y="106" width="230" height="56" rx="6" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-sm" x="535" y="128" text-anchor="middle" font-weight="700">回路 1</text>
+  <text class="s-sm" x="535" y="148" text-anchor="middle">連接插座數 ≤ 10 個</text>
+
+  <rect x="420" y="150" width="230" height="56" rx="6" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-sm" x="535" y="172" text-anchor="middle" font-weight="700">回路 2</text>
+  <text class="s-sm" x="535" y="192" text-anchor="middle">連接插座數 ≤ 10 個</text>
+
+  <!-- 無熔絲斷路器 -->
+  <rect x="690" y="106" width="160" height="100" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.6"/>
+  <text class="s-sm" x="770" y="130" text-anchor="middle" font-weight="700" fill="var(--accent3)">§191⑧　各插座</text>
+  <text class="s-sm" x="770" y="152" text-anchor="middle">設容量 110 V、15 A</text>
+  <text class="s-sm" x="770" y="170" text-anchor="middle">以上之<tspan font-weight="700">無熔絲斷路器</tspan></text>
+  <text class="s-sm" x="770" y="192" text-anchor="middle">（每一插座各設一個）</text>
+  <path class="s-line" d="M650 155 L686 155"/>
+
+  <!-- 禁止漏電斷路器 -->
+  <rect x="200" y="228" width="450" height="46" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.8"/>
+  <text class="s-sm" x="425" y="248" text-anchor="middle" font-weight="700" fill="var(--accent)">§191⑦　專用回路「不得」設漏電斷路器</text>
+  <text class="s-sm" x="425" y="266" text-anchor="middle">避免救災中因漏電跳脫而斷電——這是唯一一條「不得設某種保護裝置」的規定</text>
+  <path class="s-thin" stroke-dasharray="4 3" d="M370 226 L370 190"/>
+
+  <text class="s-sm" x="425" y="298" text-anchor="middle">每回路電線容量在「2 個插座同時使用」之容量以上（§191⑥ 括號）</text>
+</svg>
+<figcaption>圖 2　從緊急供電系統到各插座的回路架構</figcaption>
+</figure>
+
+<table>
+<thead><tr><th>款</th><th>規定</th></tr></thead>
+<tbody>
+<tr><td>⑥</td><td>應從<b>主配電盤</b>設<b>專用回路</b>，各層至少設 <b>2 回路以上</b>之供電線路，且<b>每一回路之連接插座數在 10 個以下</b><br>（每回路電線容量在 <b>2 個插座同時使用</b>之容量以上）</td></tr>
+<tr><td>⑦</td><td>前款之專用回路<b>不得設漏電斷路器</b></td></tr>
+<tr><td>⑧</td><td>各插座設容量 <b>110 V、15 A 以上</b>之<b>無熔絲斷路器</b></td></tr>
+<tr><td>⑨</td><td>緊急用電源插座<b>連接至緊急供電系統</b></td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <b>第 7 款是全法唯一「禁止設保護裝置」的條文。</b>
+  一般電氣設計會加漏電斷路器保護人身安全，但救災現場潮濕、器材老舊，
+  漏電跳脫會讓消防人員<b>在最需要電的時候失去電源</b>。
+  法規因此明文禁止——改用第 8 款的<b>無熔絲斷路器</b>做過載保護即可。
+</div>
+
+<div class="ex">
+  <div class="t">例一｜某 15 層建築物之緊急電源插座配置判斷</div>
+  <div class="given">某 15 層建築物，各層樓地板面積 1,200 m²，設有緊急昇降機。</div>
+  <div class="step"><b>Step 1　應設判斷（§29①）</b>　11 層以上建築物之各樓層 → <b>1F～15F 各層均應設</b></div>
+  <div class="step"><b>Step 2　設置位置（§191①）</b>　樓梯間或緊急昇降機間等（含該處 5 m 以內），且每一層任何一處至插座<b>水平距離 ≤ 50 m</b></div>
+  <div class="step"><b>Step 3　每處數量（§191④）</b>　每一保護箱裝設<b>插座 2 個</b>，高度距樓地板 <b>1～1.5 m</b></div>
+  <div class="step"><b>Step 4　回路（§191⑥）</b>　各層至少 <b>2 回路以上</b>，每回路插座數 ≤ 10 個<br>
+    → 若某層設 3 個保護箱共 6 個插座，2 回路即足夠（每路 3 個）</div>
+  <div class="step"><b>Step 5　保護裝置</b>　專用回路<b>不得設漏電斷路器</b>（§191⑦）；各插座設 110 V／15 A 以上<b>無熔絲斷路器</b>（§191⑧）</div>
+  <div class="ans">1F～15F 各層設置　·　每箱 2 插座、高度 1～1.5 m　·　各層 ≥ 2 專用回路、每路 ≤ 10 插座</div>
+</div>
+
+<!-- ============ 3 ============ -->
+<h2 id="radio"><span class="no">03</span>無線電通信輔助設備</h2>
+<p class="lede">§30 應設場所、§192 設置規定。地下層與高樓的無線電訊號傳不出去，得靠洩波同軸電纜。</p>
+
+<h3>應設場所（§30）</h3>
+<table>
+<tbody>
+<tr><td>①</td><td>樓高 <b>≥ 100 m</b> 建築物之<b>地下層</b></td></tr>
+<tr><td>②</td><td>總樓地板面積 <b>≥ 1,000 m²</b> 之<b>地下建築物</b></td></tr>
+<tr><td>③</td><td>地下層在 <b>4 層以上</b>，且地下層樓地板面積合計 <b>≥ 3,000 m²</b> 建築物之地下層</td></tr>
+</tbody>
+</table>
+
+<figure>
+<svg viewBox="0 0 880 360" role="img" aria-label="無線電通信輔助設備系統與接頭規格">
+  <!-- 地面 -->
+  <path class="s-line" stroke-width="2.5" d="M40 120 L840 120"/>
+  <text class="s-sm" x="48" y="112">地面</text>
+
+  <!-- 地下層 -->
+  <path class="s-line" stroke-width="2" d="M100 120 L100 300 L560 300 L560 120"/>
+  <g class="s-thin"><path d="M100 165 L560 165 M100 210 L560 210 M100 255 L560 255"/></g>
+  <text class="s-sm" x="92" y="146" text-anchor="end">B1</text>
+  <text class="s-sm" x="92" y="191" text-anchor="end">B2</text>
+  <text class="s-sm" x="92" y="236" text-anchor="end">B3</text>
+  <text class="s-sm" x="92" y="281" text-anchor="end">B4</text>
+
+  <!-- 洩波同軸電纜 -->
+  <path class="s-line" stroke="var(--accent)" stroke-width="3" stroke-dasharray="10 5"
+        d="M200 290 L200 140 L500 140 L500 290"/>
+  <text class="s-key" x="350" y="132" text-anchor="middle">洩波同軸電纜</text>
+  <text class="s-sm" x="350" y="158" text-anchor="middle">150 MHz 或中央主管機關指定周波數</text>
+  <text class="s-sm" x="350" y="176" text-anchor="middle">標稱阻抗 <tspan font-weight="700">50 Ω</tspan>　·　經<tspan font-weight="700">耐燃處理</tspan></text>
+
+  <!-- 增輻器 -->
+  <rect x="300" y="222" width="100" height="44" rx="5" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.6"/>
+  <text class="s-sm" x="350" y="242" text-anchor="middle" font-weight="700">增輻器</text>
+  <text class="s-sm" x="350" y="258" text-anchor="middle">蓄電池 30 分鐘</text>
+  <path class="s-thin" d="M350 222 L350 140"/>
+
+  <!-- 地面接頭 -->
+  <rect x="620" y="80" width="90" height="40" rx="4" fill="var(--fill1)" stroke="var(--accent)" stroke-width="2"/>
+  <text class="s-sm" x="665" y="104" text-anchor="middle" font-weight="700">無線電接頭</text>
+  <path class="s-line" stroke="var(--accent)" stroke-width="2.4" stroke-dasharray="8 4" d="M500 140 L600 140 L600 110 L616 110"/>
+  <path class="s-dim" d="M736 80 L736 120"/>
+  <path class="s-dim" d="M730 80 L742 80 M730 120 L742 120"/>
+  <text class="s-key" x="748" y="104" style="font-size:11px">0.8～1.5 m</text>
+
+  <!-- 接頭規格 -->
+  <rect x="600" y="150" width="250" height="128" rx="6" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.5"/>
+  <text class="s-sm" x="616" y="172" font-weight="700" fill="var(--accent2)">§192⑥　無線電接頭</text>
+  <text class="s-sm" x="616" y="194">・設於地面消防人員便於取用處</text>
+  <text class="s-sm" x="616" y="212">　及<b>值日室</b>等平時有人之處所</text>
+  <text class="s-sm" x="616" y="234">・任一出入口與其他出入口<b>步行距離</b></text>
+  <text class="s-sm" x="616" y="250">　<b>&gt; 300 m</b> 時，設 <b>2 個以上</b></text>
+  <text class="s-sm" x="616" y="270">・裝於保護箱內，箱內設 <b>≥ 2 m</b> 射頻電纜</text>
+
+  <rect x="100" y="316" width="750" height="36" rx="6" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-sm" x="475" y="338" text-anchor="middle" font-weight="700" fill="var(--warn)">保護箱：構造堅固、有防水及防塵措施、箱面漆<b>紅色</b>、標明「<b>消防隊專用無線電接頭</b>」字樣</text>
+</svg>
+<figcaption>圖 3　無線電通信輔助設備的電纜、增輻器與地面接頭</figcaption>
+</figure>
+
+<table>
+<thead><tr><th>款</th><th>規定</th></tr></thead>
+<tbody>
+<tr><td>①</td><td>使用<b>洩波同軸電纜</b>，該電纜適合傳送或輻射 <b>150 MHz</b> 或中央主管機關指定之周波數</td></tr>
+<tr><td>②</td><td>洩波同軸電纜之<b>標稱阻抗為 50 Ω</b></td></tr>
+<tr><td>③</td><td>洩波同軸電纜經<b>耐燃處理</b></td></tr>
+<tr><td>④</td><td>分配器、混合器、分波器及其他類似器具，應使用<b>介入衰耗少</b>，且接頭部分有適當<b>防水</b>措施者</td></tr>
+<tr><td>⑤</td><td>設<b>增輻器</b>時，其緊急電源應使用<b>蓄電池設備</b>，能有效動作 <b>30 分鐘以上</b></td></tr>
+<tr><td>⑥</td><td>無線電接頭：<br>（一）設於<b>地面</b>消防人員便於取用處及<b>值日室</b>等平時有人之處所<br>（二）設於地面之接頭數量，在任一出入口與其他出入口之<b>步行距離 &gt; 300 m</b> 時，設 <b>2 個以上</b><br>（三）設於距樓地板面或基地地面高度 <b>0.8～1.5 m</b> 間<br>（四）裝設於保護箱內，箱內設長度 <b>≥ 2 m</b> 之射頻電纜；保護箱構造堅固、有<b>防水及防塵</b>措施、箱面漆<b>紅色</b>、標明「<b>消防隊專用無線電接頭</b>」字樣</td></tr>
+<tr><td>第 2 項</td><td><b>共構之建築物</b>內有二處以上場所設置無線電通信輔助設備時，應有能使該設備<b>訊號連通</b>之措施</td></tr>
+</tbody>
+</table>
+
+<div class="cmp">
+  <b>三個「0.8～1.5 m」，一個「1～1.5 m」。</b>
+  無線電接頭（§192⑥（三））、火警受信總機壁掛型（§126④）、緊急廣播啟動裝置（§136②）、
+  瓦斯漏氣受信總機（§142④）等都是 <b>0.8～1.5 m</b>；
+  <b>只有緊急電源插座是 1～1.5 m</b>（§191④）——下限高了 20 公分。
+</div>
+
+<!-- ============ 4 ============ -->
+<h2 id="monitor"><span class="no">04</span>防災監控系統綜合操作裝置</h2>
+<p class="lede">§30-1 應設場所、§192-1 設置規定。把整棟建築物的消防設備集中到一個地方監控。</p>
+
+<h3>應設場所（§30-1）</h3>
+<table>
+<tbody>
+<tr><td>①</td><td><b>高層建築物</b>（無面積門檻）</td></tr>
+<tr><td>②</td><td>總樓地板面積 <b>≥ 50,000 m²</b> 之建築物</td></tr>
+<tr><td>③</td><td>總樓地板面積 <b>≥ 1,000 m²</b> 之<b>地下建築物</b></td></tr>
+<tr><td>④</td><td>其他經中央主管機關公告之供公眾使用之場所</td></tr>
+</tbody>
+</table>
+
+<figure>
+<svg viewBox="0 0 880 400" role="img" aria-label="防災監控系統綜合操作裝置監控項目">
+  <rect x="330" y="16" width="220" height="60" rx="8" fill="var(--fill1)" stroke="var(--accent)" stroke-width="2"/>
+  <text class="s-txt" x="440" y="40" text-anchor="middle" font-weight="700">防災監控系統</text>
+  <text class="s-txt" x="440" y="58" text-anchor="middle" font-weight="700">綜合操作裝置</text>
+  <text class="s-sm" x="440" y="72" text-anchor="middle">設於防災中心・中央管理室・值日室</text>
+
+  <!-- 三大類 -->
+  <path class="s-line" d="M440 76 L440 96"/>
+  <path class="s-line" d="M160 96 L720 96"/>
+  <path class="s-line" d="M160 96 L160 116 M440 96 L440 116 M720 96 L720 116"/>
+
+  <rect x="30" y="116" width="260" height="150" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.5"/>
+  <text class="s-sm" x="160" y="138" text-anchor="middle" font-weight="700" fill="var(--accent2)">警報與通報</text>
+  <text class="s-sm" x="46" y="162">① 火警自動警報設備之受信總機</text>
+  <text class="s-sm" x="46" y="184">② 瓦斯漏氣火警自動警報設備之受信總機</text>
+  <text class="s-sm" x="46" y="206">③ 緊急廣播設備之擴大機及操作裝置</text>
+  <text class="s-sm" x="46" y="228">④ 連結送水管之加壓送水裝置及與其</text>
+  <text class="s-sm" x="58" y="244">　送水口處之通話連絡</text>
+
+  <rect x="310" y="116" width="260" height="150" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.5"/>
+  <text class="s-sm" x="440" y="138" text-anchor="middle" font-weight="700" fill="var(--accent3)">滅火設備</text>
+  <text class="s-sm" x="326" y="164">⑦ 室內消防栓、自動撒水、泡沫及</text>
+  <text class="s-sm" x="338" y="180">　水霧等滅火設備<b>加壓送水裝置</b></text>
+  <text class="s-sm" x="326" y="208">⑧ 乾粉、惰性氣體及鹵化烴等</text>
+  <text class="s-sm" x="338" y="224">　滅火設備</text>
+  <text class="s-sm" x="326" y="248" fill="var(--accent)" font-weight="700">※ 條文未列二氧化碳</text>
+
+  <rect x="590" y="116" width="260" height="150" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <text class="s-sm" x="720" y="138" text-anchor="middle" font-weight="700" fill="var(--warn)">其他設備</text>
+  <text class="s-sm" x="606" y="164">⑤ 緊急發電機</text>
+  <text class="s-sm" x="606" y="192">⑥ 常開式防火門之<b>偵煙型探測器</b></text>
+  <text class="s-sm" x="606" y="220">⑨ 排煙設備</text>
+
+  <!-- 緊急電源 -->
+  <rect x="230" y="300" width="420" height="70" rx="8" fill="var(--fill1)" stroke="var(--accent)" stroke-width="2"/>
+  <text class="s-txt" x="440" y="326" text-anchor="middle" font-weight="700" fill="var(--accent)">§192-1 第 2 項　緊急電源</text>
+  <text class="s-sm" x="440" y="346" text-anchor="middle">準用 §38（發電機設備或蓄電池設備）</text>
+  <text class="s-key" x="440" y="364" text-anchor="middle">供電容量應供有效動作「2 小時」以上　←　全法最長</text>
+  <path class="s-line" d="M440 266 L440 296"/>
+</svg>
+<figcaption>圖 4　§192-1 的九項監控或操作對象</figcaption>
+</figure>
+
+<div class="note">
+  <b>2 小時是全法最長的緊急電源要求。</b>
+  警報類 10 分、標示燈 20 分（特定場所主要避難路徑 60 分）、
+  水系滅火與緊急照明及排煙 30 分、氣體系滅火設備 1 小時——
+  <b>防災監控系統綜合操作裝置 2 小時</b>。
+  因為它是整場救災的指揮中樞，必須撐得比任何單一設備都久。
+</div>
+
+<div class="cmp">
+  <b>§192-1 第 8 款的列舉值得注意。</b>
+  條文寫「乾粉、惰性氣體及<b>鹵化烴</b>等滅火設備」，<b>未列舉二氧化碳滅火設備</b>。
+  句末雖有「等」字，但是否涵蓋二氧化碳，文義上並不明確。
+  <b>實際設計或審查時建議向主管機關確認</b>——本頁僅照條文原文呈現，不作擴張解釋。
+</div>
+
+<div class="ex">
+  <div class="t">例二｜某高層建築物的三項設備判斷</div>
+  <div class="given">某建築物地上 20 層、樓高 78 m，地下 4 層、地下層樓地板面積合計 3,500 m²，總樓地板面積 42,000 m²。</div>
+  <div class="step"><b>緊急電源插座（§29①）</b>　11 層以上建築物之各樓層 → <b>應設</b>（地上 1～20 層各層）</div>
+  <div class="step"><b>無線電通信輔助設備（§30）</b>
+    ①樓高 78 m &lt; 100 m，不符；②非地下建築物，不符；
+    ③<b>地下層 4 層以上且地下層合計 3,500 ≥ 3,000 m² → 符合，應設於地下層</b></div>
+  <div class="step"><b>防災監控系統綜合操作裝置（§30-1）</b>
+    ①樓高 78 m &gt; 50 m 屬<b>高層建築物 → 應設</b>（無面積門檻）<br>
+    <span style="color:var(--muted)">（②總樓地板面積 42,000 &lt; 50,000 m² 不符，但第①款已成立）</span></div>
+  <div class="ans">三項全數應設　·　無線電通信輔助設備是靠「地下層 4 層以上＋合計 3,000 m²」這一款成立的</div>
+</div>
+
+<!-- ============ 5 ============ -->
+<h2 id="card"><span class="no">05</span>速查數字卡</h2>
+
+<h3>緊急電源插座（§29・§191）</h3>
+<table>
+<thead><tr><th>項目</th><th>數值</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td><b>應設場所</b></td><td><b>11 層以上</b>建築物各樓層／地下建築物 ≥ <b>1,000 m²</b>／應設之<b>緊急昇降機間</b></td><td class="n">§29</td></tr>
+<tr><td>設置位置</td><td>樓梯間或緊急昇降機間等（含各該處 <b>5 m 以內</b>之場所）</td><td class="n">§191①</td></tr>
+<tr><td><b>水平距離</b></td><td>每一層任何一處至插座 <b>≤ 50 m</b></td><td class="n">§191①</td></tr>
+<tr><td><b>電流供應容量</b></td><td>交流單相 <b>110 V（或 120 V）15 A</b>，容量約 <b>1.5 kW 以上</b></td><td class="n">§191②</td></tr>
+<tr><td><b>插座型式與高度</b></td><td><b>接地型</b>；距樓地板 <b>1 m 以上 1.5 m 以下</b>；每箱裝設 <b>2 個</b></td><td class="n">§191④</td></tr>
+<tr><td><b>保護箱尺寸</b></td><td>長邊 <b>25 cm</b>、短邊 <b>20 cm</b> 以上；厚度 <b>1.6 mm</b> 以上鋼板</td><td class="n">§191④</td></tr>
+<tr><td>防脫落裝置</td><td><b>L 型或 C 型護鉤</b></td><td class="n">§191④</td></tr>
+<tr><td><b>箱蓋標示</b></td><td>「緊急電源插座」字樣，每字 <b>2 cm² 以上</b>（<b>非 20 cm²</b>）</td><td class="n">§191④</td></tr>
+<tr><td>併設時</td><td>與室內消防栓箱等併設時設於<b>上方</b>，且箱蓋須能<b>另外開啟</b></td><td class="n">§191④</td></tr>
+<tr><td>表示燈</td><td>保護箱<b>上方</b>設<b>紅色表示燈</b></td><td class="n">§191⑤</td></tr>
+<tr><td><b>回路</b></td><td>自<b>主配電盤</b>設<b>專用回路</b>；各層至少 <b>2 回路以上</b>；每回路插座數 <b>≤ 10 個</b></td><td class="n">§191⑥</td></tr>
+<tr><td><b>禁止事項</b></td><td>專用回路<b>不得設漏電斷路器</b></td><td class="n">§191⑦</td></tr>
+<tr><td>斷路器</td><td>各插座設 <b>110 V、15 A 以上</b>之<b>無熔絲斷路器</b></td><td class="n">§191⑧</td></tr>
+<tr><td>電源</td><td>連接至<b>緊急供電系統</b></td><td class="n">§191⑨</td></tr>
+</tbody>
+</table>
+
+<h3>無線電通信輔助設備（§30・§192）</h3>
+<table>
+<thead><tr><th>項目</th><th>數值</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td><b>應設場所</b></td><td>樓高 ≥ <b>100 m</b> 建築物之地下層／地下建築物 ≥ <b>1,000 m²</b>／地下層 <b>4 層以上</b>且合計 ≥ <b>3,000 m²</b></td><td class="n">§30</td></tr>
+<tr><td><b>電纜</b></td><td><b>洩波同軸電纜</b>，適合傳送或輻射 <b>150 MHz</b> 或中央主管機關指定之周波數</td><td class="n">§192①</td></tr>
+<tr><td><b>標稱阻抗</b></td><td><b>50 Ω</b></td><td class="n">§192②</td></tr>
+<tr><td>處理</td><td>洩波同軸電纜經<b>耐燃處理</b></td><td class="n">§192③</td></tr>
+<tr><td>器具</td><td>分配器、混合器、分波器等應<b>介入衰耗少</b>，接頭有適當<b>防水</b>措施</td><td class="n">§192④</td></tr>
+<tr><td><b>增輻器緊急電源</b></td><td><b>蓄電池設備</b>，有效動作 <b>30 分鐘以上</b></td><td class="n">§192⑤</td></tr>
+<tr><td>接頭位置</td><td><b>地面</b>消防人員便於取用處及<b>值日室</b>等平時有人之處所</td><td class="n">§192⑥</td></tr>
+<tr><td><b>接頭數量</b></td><td>任一出入口與其他出入口<b>步行距離 &gt; 300 m</b> 時，設 <b>2 個以上</b></td><td class="n">§192⑥</td></tr>
+<tr><td><b>接頭高度</b></td><td>距樓地板面或基地地面 <b>0.8～1.5 m</b></td><td class="n">§192⑥</td></tr>
+<tr><td><b>保護箱</b></td><td>箱內設 <b>≥ 2 m</b> 射頻電纜；構造堅固、<b>防水及防塵</b>；箱面漆<b>紅色</b>；標明「<b>消防隊專用無線電接頭</b>」</td><td class="n">§192⑥</td></tr>
+<tr><td>共構建築物</td><td>二處以上場所設置時，應有能使設備<b>訊號連通</b>之措施</td><td class="n">§192Ⅱ</td></tr>
+</tbody>
+</table>
+
+<h3>防災監控系統綜合操作裝置（§30-1・§192-1）</h3>
+<table>
+<thead><tr><th>項目</th><th>數值</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td><b>應設場所</b></td><td><b>高層建築物</b>／總樓地板面積 ≥ <b>50,000 m²</b>／地下建築物 ≥ <b>1,000 m²</b>／其他經公告者</td><td class="n">§30-1</td></tr>
+<tr><td><b>設置處所</b></td><td><b>防災中心、中央管理室或值日室</b>等經常有人之處所</td><td class="n">§192-1</td></tr>
+<tr><td><b>監控項目</b></td><td>火警受信總機／瓦斯漏氣受信總機／緊急廣播擴大機及操作裝置／連結送水管加壓送水裝置及送水口通話連絡／緊急發電機／常開式防火門之偵煙型探測器／室內消防栓・自動撒水・泡沫・水霧之加壓送水裝置／乾粉・惰性氣體・鹵化烴滅火設備／排煙設備（共 <b>9 項</b>）</td><td class="n">§192-1</td></tr>
+<tr><td><b>緊急電源</b></td><td>準用 §38，供電容量應供有效動作 <b>2 小時以上</b>（<b>全法最長</b>）</td><td class="n">§192-1Ⅱ</td></tr>
+</tbody>
+</table>
+
+<h3>全法緊急電源時間總表（第三編收尾）</h3>
+<table>
+<thead><tr><th>設備</th><th class="n">時間</th><th>電源種類</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td>火警自動警報設備</td><td class="n"><b>10 分</b></td><td>蓄電池設備</td><td class="n">§128</td></tr>
+<tr><td>緊急廣播設備</td><td class="n"><b>10 分</b></td><td>蓄電池設備（準用 §128）</td><td class="n">§135Ⅲ</td></tr>
+<tr><td>瓦斯漏氣火警自動警報設備</td><td class="n"><b>10 分</b></td><td>蓄電池設備（二回路動作／其他監視）</td><td class="n">§145</td></tr>
+<tr><td>出口標示燈、避難方向指示燈</td><td class="n"><b>20 分</b></td><td>蓄電池設備</td><td class="n">§155</td></tr>
+<tr><td>　└ 特定場所之主要避難路徑</td><td class="n"><b>60 分</b></td><td>得併設緊急發電機</td><td class="n">§155</td></tr>
+<tr><td>室內外消防栓、自動撒水、水霧、泡沫</td><td class="n"><b>30 分</b></td><td>發電機設備或蓄電池設備</td><td class="n">§38</td></tr>
+<tr><td>緊急照明設備</td><td class="n"><b>30 分</b></td><td>蓄電池（併設時 10 分＋30 分）</td><td class="n">§177</td></tr>
+<tr><td>排煙設備</td><td class="n"><b>30 分</b></td><td>—</td><td class="n">§188⑨・§189②</td></tr>
+<tr><td>無線電通信輔助設備之增輻器</td><td class="n"><b>30 分</b></td><td>蓄電池設備</td><td class="n">§192⑤</td></tr>
+<tr><td>CO₂、惰性氣體、乾粉、鹵化烴滅火設備</td><td class="n"><b>1 小時</b></td><td>自用發電設備或蓄電池設備</td><td class="n">§95</td></tr>
+<tr><td><b>防災監控系統綜合操作裝置</b></td><td class="n"><b>2 小時</b></td><td>準用 §38</td><td class="n">§192-1Ⅱ</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <b>五段記憶：</b>警報類 <b>10 分</b> → 標示燈 <b>20 分</b> → 水系滅火・照明・排煙・增輻器 <b>30 分</b>
+  → 氣體系滅火 <b>1 小時</b> → 防災監控 <b>2 小時</b>。
+  唯一的例外是標示燈在特定大型場所之主要避難路徑要 <b>60 分</b>。
+</div>
+
+<div class="navbar" style="margin-top:32px">
+  <a class="btn go" href="index.html">🏠 回學習首頁</a>
+  <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+  <a class="btn" href="#outlet">↑ 回到最上方</a>
+</div>
+
+<footer>
+  <p>本頁數據取自全國法規資料庫「各類場所消防安全設備設置標準」（pcode D0120029）民國 113 年 4 月 24 日修正版原文，於 2026-08-04 擷取核對。</p>
+  <p>§191 第 3 款之插座規範圖在法規資料庫網頁版被省略，本頁僅引述該圖之標題資訊（單相 125 V 15 A 插座、單位 mm）；
+  <b>詳細尺寸請逕查該條之「完整條文」PDF 附圖</b>，本頁未轉錄圖中細部標註。</p>
+  <p>§192-1 第 8 款未列舉二氧化碳滅火設備，本頁照原文呈現，未作擴張解釋。</p>
+  <p><b>法規以主管機關公布文字為準。</b>本頁為個人學習筆記，不構成法律意見；設計送審前請回查現行條文：
+  <code>https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0120029</code></p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  function target(){
+    var h=(location.hash||'').replace('#','');
+    if(!h){ var m=/[?&]s=([\w-]+)/.exec(location.search||''); h=m?m[1]:''; }
+    return h?document.getElementById(h):null;
+  }
+  function go(smooth){
+    var el=target(); if(!el) return;
+    el.scrollIntoView({behavior:smooth?'smooth':'auto',block:'start'});
+    el.style.transition='background-color .4s';
+    var old=el.style.backgroundColor;
+    el.style.backgroundColor='var(--fill4)';
+    setTimeout(function(){ el.style.backgroundColor=old||''; },1600);
+  }
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){ setTimeout(go,60); });
+  else setTimeout(go,60);
+  window.addEventListener('hashchange',function(){ go(true); });
+})();
+</script>
+</body>
+</html>

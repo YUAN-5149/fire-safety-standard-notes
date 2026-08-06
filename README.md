@@ -1,6 +1,8 @@
 # 各類場所消防安全設備設置標準 — 學習筆記
 
-台灣「**各類場所消防安全設備設置標準**」（內政部依消防法第 6 條第 1 項訂定）的結構化學習筆記、泡沫設備計算圖解與互動題庫。
+台灣「**各類場所消防安全設備設置標準**」（內政部依消防法第 6 條第 1 項訂定）的結構化學習筆記、**九套設備計算圖解**與 **418 題互動題庫**。
+
+圖解已涵蓋第三編第一章「滅火設備」中的水霧、泡沫、二氧化碳（含惰性氣體）、乾粉（含簡易自動滅火）、鹵化烴，以及第四章「消防搶救上之必要設備」全部五節。
 
 - **法規版本**：民國 113 年 4 月 24 日修正
 - **條文來源**：[全國法規資料庫 pcode D0120029](https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0120029)
@@ -20,7 +22,7 @@
 | [03-警報與避難逃生-關鍵數字.md](03-警報與避難逃生-關鍵數字.md) | 火警、廣播、瓦斯漏氣、標示設備、避難器具、緊急照明 | §112～§179 |
 | [04-泡沫滅火設備-公式與實例.md](04-泡沫滅火設備-公式與實例.md) | **四條計算路徑公式 + 五個演算實例 + 15 項易錯點** | §69～§81 |
 | [04a-泡沫設備-圖解.html](https://yuan-5149.github.io/fire-safety-standard-notes/04a-泡沫設備-圖解.html) | 8 張 SVG 圖解，可從題庫深連結跳轉 | §69～§81 |
-| [05-互動題庫.html](https://yuan-5149.github.io/fire-safety-standard-notes/05-互動題庫.html) | **389 題**，十一章節可選，含 38 題計算題 | 全部 |
+| [05-互動題庫.html](https://yuan-5149.github.io/fire-safety-standard-notes/05-互動題庫.html) | **418 題**，十二章節可選，含 39 題計算題 | 全部 |
 | [06-二氧化碳設備-圖解.html](https://yuan-5149.github.io/fire-safety-standard-notes/06-二氧化碳設備-圖解.html) | **7 張 SVG 圖解 + 5 個計算實例**，含惰性氣體 | §82～§97 |
 | [07-乾粉設備-圖解.html](https://yuan-5149.github.io/fire-safety-standard-notes/07-乾粉設備-圖解.html) | **6 張 SVG 圖解 + 4 個計算實例**，含簡易自動滅火設備 | §98～§111-1 |
 | [08-鹵化烴設備-圖解.html](https://yuan-5149.github.io/fire-safety-standard-notes/08-鹵化烴設備-圖解.html) | **6 張 SVG 圖解 + 3 個計算實例**，海龍替代品 | §97-1～§97-10 |
@@ -28,6 +30,7 @@
 | [10-連結送水管-圖解.html](https://yuan-5149.github.io/fire-safety-standard-notes/10-連結送水管-圖解.html) | **5 張 SVG 圖解 + 3 個計算實例**，含中繼幫浦 | §180～§184 |
 | [11-消防專用蓄水池-圖解.html](https://yuan-5149.github.io/fire-safety-standard-notes/11-消防專用蓄水池-圖解.html) | **4 張 SVG 圖解 + 3 個計算實例**，含機械引水 | §185～§187 |
 | [12-排煙設備-圖解.html](https://yuan-5149.github.io/fire-safety-standard-notes/12-排煙設備-圖解.html) | **6 張 SVG 圖解 + 3 個計算實例**，含排煙室 | §188～§190 |
+| [13-緊急電源插座與無線電-圖解.html](https://yuan-5149.github.io/fire-safety-standard-notes/13-緊急電源插座與無線電-圖解.html) | **4 張 SVG 圖解**，附全法緊急電源時間總表 | §191～§192-1 |
 
 ## 特色
 
