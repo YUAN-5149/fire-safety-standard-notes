@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>緊急廣播與瓦斯漏氣 圖解 — 各類場所消防安全設備設置標準 §133～§145-1</title>
+<meta name="description" content="緊急廣播設備揚聲器等級與音壓公式、廣播分區與啟動裝置、瓦斯漏氣檢知器的比重分流、受信總機與警報裝置，以及一一九火災通報裝置的圖解。">
+<style>
+  :root{
+    --bg:#fbfaf7; --fg:#1c1b19; --muted:#6b6862; --line:#d8d4cb;
+    --card:#ffffff; --accent:#b03a2e; --accent2:#1d6fa5; --accent3:#2e7d4f;
+    --warn:#a86b00; --danger:#8e1b0f;
+    --fill1:#f2e4e1; --fill2:#e0edf6; --fill3:#e3f0e8; --fill4:#f7efd9;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#16161a; --fg:#e8e6e1; --muted:#9b968c; --line:#3a3a40;
+      --card:#1e1e23; --accent:#e8705f; --accent2:#5aa8d8; --accent3:#5fbb87;
+      --warn:#d9a441; --danger:#f08070;
+      --fill1:#3a2622; --fill2:#1e3341; --fill3:#1f3a2c; --fill4:#3a3120;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+    line-height:1.75;-webkit-text-size-adjust:100%}
+  .wrap{max-width:960px;margin:0 auto;padding:32px 20px 80px}
+  header{border-bottom:2px solid var(--fg);padding-bottom:18px;margin-bottom:8px}
+  h1{font-size:clamp(1.4rem,4vw,2rem);margin:0 0 6px;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:.9rem;margin:0}
+  h2{font-size:1.15rem;margin:48px 0 4px;padding-top:14px;border-top:1px solid var(--line);
+    scroll-margin-top:16px}
+  h2 .no{color:var(--accent);font-variant-numeric:tabular-nums;margin-right:.5em}
+  h2:target{background:linear-gradient(transparent 62%,var(--fill4) 62%)}
+  h3{font-size:1rem;margin:26px 0 6px}
+  .lede{color:var(--muted);font-size:.92rem;margin:.2em 0 18px}
+  figure{margin:0 0 10px;background:var(--card);border:1px solid var(--line);
+    border-radius:10px;padding:18px 14px;overflow-x:auto}
+  svg{display:block;margin:0 auto;max-width:100%;height:auto}
+  figcaption{color:var(--muted);font-size:.84rem;margin-top:10px;text-align:center}
+  .note{border-left:3px solid var(--warn);background:var(--fill4);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .note b{color:var(--warn)}
+  .cmp{border-left:3px solid var(--accent2);background:var(--fill2);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .cmp b{color:var(--accent2)}
+  table{border-collapse:collapse;width:100%;font-size:.88rem;margin:14px 0}
+  th,td{border:1px solid var(--line);padding:6px 9px;text-align:left}
+  th{background:var(--fill2);font-weight:600}
+  td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+  td.c,th.c{text-align:center}
+  code{background:var(--fill2);padding:1px 5px;border-radius:4px;font-size:.88em}
+  .formula{background:var(--fill3);border:1px solid var(--line);border-radius:8px;
+    padding:12px 16px;margin:14px 0;font-size:1rem;text-align:center}
+  .ex{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent2);
+    border-radius:0 10px 10px 0;padding:14px 18px;margin:18px 0}
+  .ex .t{font-weight:700;margin-bottom:6px;color:var(--accent2)}
+  .ex .given{font-size:.88rem;color:var(--muted);border-left:3px solid var(--line);
+    padding-left:12px;margin-bottom:10px}
+  .ex .step{font-size:.92rem;margin:8px 0}
+  .ex .ans{background:var(--fill3);border-radius:7px;padding:9px 13px;margin-top:10px;
+    font-weight:700;font-size:.94rem}
+  ol.law{font-size:.9rem;padding-left:1.4em}
+  ol.law li{margin:4px 0}
+  footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:.82rem}
+  a{color:var(--accent2)}
+  .navbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+  .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;
+    font-size:.86rem;padding:7px 14px;border-radius:8px;border:1px solid var(--line);
+    background:var(--card);color:var(--fg);transition:.12s}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.go{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+  .btn.go:hover{filter:brightness(1.1);color:#fff}
+  .toc{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 4px}
+  .toc a{font-size:.8rem;text-decoration:none;padding:4px 10px;border-radius:99px;
+    border:1px solid var(--line);background:var(--card);color:var(--muted)}
+  .toc a:hover{border-color:var(--accent);color:var(--accent)}
+  .s-line{stroke:var(--fg);stroke-width:1.4;fill:none}
+  .s-thin{stroke:var(--muted);stroke-width:1;fill:none}
+  .s-txt{fill:var(--fg);font-size:13px;font-family:inherit}
+  .s-sm{fill:var(--muted);font-size:11px;font-family:inherit}
+  .s-key{fill:var(--accent);font-size:13px;font-weight:700;font-family:inherit}
+  .s-dim{stroke:var(--accent2);stroke-width:1;fill:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>緊急廣播與瓦斯漏氣 圖解</h1>
+  <p class="sub">各類場所消防安全設備設置標準 §133～§145-1（第三編第二章第三、四節）　|　民國 113 年 4 月 24 日修正版</p>
+  <div class="navbar">
+    <a class="btn go" href="index.html">🏠 回學習首頁</a>
+    <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+    <a class="btn" href="17-%E7%81%AB%E8%AD%A6%E8%87%AA%E5%8B%95%E8%AD%A6%E5%A0%B1%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html">📐 火警自動警報設備圖解</a>
+    <a class="btn" href="13-%E7%B7%8A%E6%80%A5%E9%9B%BB%E6%BA%90%E6%8F%92%E5%BA%A7%E8%88%87%E7%84%A1%E7%B7%9A%E9%9B%BB-%E5%9C%96%E8%A7%A3.html">📐 插座・無線電・防災監控</a>
+  </div>
+</header>
+
+<nav class="toc" aria-label="章節目錄">
+  <a href="#speaker">01 揚聲器等級與配置</a>
+  <a href="#calc">02 音壓公式與殘響時間</a>
+  <a href="#zone">03 廣播分區・啟動裝置・擴音機</a>
+  <a href="#gas">04 瓦斯漏氣檢知器</a>
+  <a href="#gaspanel">05 受信總機與警報裝置</a>
+  <a href="#call119">06 一一九火災通報裝置</a>
+  <a href="#card">07 速查數字卡</a>
+</nav>
+
+<div class="cmp" style="margin-top:24px">
+  <b>這一頁裝了兩套完全不同的系統，唯一的共同點是「都在第二章警報設備裡」。</b><br>
+  ・<b>緊急廣播設備（§133～§139）</b>：火警警鈴只會「叮叮叮」，廣播設備能用<b>語音</b>告訴人往哪走。
+  設了它，§131Ⅱ 就可以免設火警警鈴。<br>
+  ・<b>瓦斯漏氣火警自動警報設備（§140～§145）</b>：它偵測的不是火，是<b>還沒燒起來的燃氣</b>。
+  整節的設計主軸只有一句話——<b>瓦斯比空氣輕就往上找，比空氣重就往下找</b>。<br>
+  ・<b>§145-1 一一九火災通報裝置</b>：民國 112 年新增，把火警訊號直接送到消防機關。
+</div>
+
+<!-- ============ 1 ============ -->
+<h2 id="speaker"><span class="no">01</span>揚聲器等級與配置</h2>
+<p class="lede">§133 用<b>廣播區域的樓地板面積</b>決定揚聲器等級，用<b>水平距離 10 m</b> 決定要設幾個。兩者是獨立的兩道檢查。</p>
+
+<figure>
+<svg viewBox="0 0 900 350" role="img" aria-label="緊急廣播設備揚聲器等級的選擇與水平距離規定">
+  <text class="s-txt" x="450" y="28" text-anchor="middle" font-weight="700">§133② 揚聲器等級的選擇</text>
+
+  <rect x="80" y="56" width="340" height="76" rx="8" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text class="s-txt" x="250" y="84" text-anchor="middle" font-weight="700">廣播區域 &gt; 100 m²</text>
+  <text class="s-key" x="250" y="112" text-anchor="middle">只能設 L 級</text>
+
+  <rect x="80" y="146" width="340" height="76" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <text class="s-txt" x="250" y="174" text-anchor="middle" font-weight="700">50 m² &lt; 廣播區域 ≤ 100 m²</text>
+  <text class="s-key" x="250" y="202" text-anchor="middle" fill="var(--warn)">設 L 級或 M 級</text>
+
+  <rect x="80" y="236" width="340" height="76" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.5"/>
+  <text class="s-txt" x="250" y="264" text-anchor="middle" font-weight="700">廣播區域 ≤ 50 m²</text>
+  <text class="s-key" x="250" y="292" text-anchor="middle" fill="var(--accent3)">設 L 級、M 級或 S 級</text>
+
+  <text class="s-txt" x="670" y="80" text-anchor="middle" font-weight="700">§133②（四） 水平距離 ≤ 10 m</text>
+  <rect x="520" y="100" width="300" height="90" fill="var(--fill2)" stroke="var(--line)" stroke-width="1.4"/>
+  <circle cx="600" cy="145" r="10" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <path fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.4" d="M610 137 L624 128 L624 162 L610 153 Z"/>
+  <path class="s-dim" d="M624 145 L800 145 M624 139 L624 151 M800 139 L800 151"/>
+  <text class="s-key" x="712" y="136" text-anchor="middle" fill="var(--accent2)">≤ 10 m</text>
+  <text class="s-sm" x="670" y="212" text-anchor="middle">自各廣播區域內任一點至揚聲器量測</text>
+
+  <text class="s-sm" x="670" y="242" text-anchor="middle">得免設之條件（§133②（四）但書）：居室樓地板面積 ≤ 6 m²，</text>
+  <text class="s-sm" x="670" y="262" text-anchor="middle">或由居室通往地面之主要走廊及通道 ≤ 6 m²，其他非居室部分</text>
+  <text class="s-sm" x="670" y="282" text-anchor="middle">≤ 30 m²，且與相鄰接區域揚聲器之水平距離 ≤ 8 m</text>
+
+  <text class="s-key" x="670" y="312" text-anchor="middle">§133②（五） 樓梯或斜坡通道</text>
+  <text class="s-sm" x="670" y="334" text-anchor="middle">至少垂直距離每 15 m 設一個 L 級揚聲器</text>
+</svg>
+<figcaption>圖 1　§133② 面積決定等級、距離決定數量。樓梯與斜坡通道則跳過面積，直接每 15 m 一個 L 級</figcaption>
+</figure>
+
+<h3>§133 第 1 款：距揚聲器 1 m 處所測得之音壓</h3>
+<table>
+<thead><tr><th>揚聲器種類</th><th>音壓</th><th>適用之廣播區域</th></tr></thead>
+<tbody>
+<tr><td><b>L 級</b></td><td><b>92 分貝以上</b></td><td>任何面積都可用（&gt;100 m² <b>只能</b>用 L 級）</td></tr>
+<tr><td><b>M 級</b></td><td><b>87 分貝以上 92 分貝未滿</b></td><td>≤ 100 m²</td></tr>
+<tr><td><b>S 級</b></td><td><b>84 分貝以上 87 分貝未滿</b></td><td>≤ 50 m²</td></tr>
+</tbody>
+</table>
+<p class="lede"><b>84 / 87 / 92</b> 三個分界值，區間都是「以上、未滿」不重疊。記法：<b>面積翻倍（50 → 100 → 無上限），音壓往上跳一級</b>。<br>
+對照 §131② 的火警警鈴：距 <b>100 cm</b> 處 <b>90 分貝</b>以上——警鈴的 90 dB 剛好卡在 M 級與 L 級之間，容易混。</p>
+
+<!-- ============ 2 ============ -->
+<h2 id="calc"><span class="no">02</span>音壓公式與殘響時間</h2>
+<p class="lede">§133 第 3 項給了一條「不受 10 m 限制」的出路：只要用計算證明音壓夠、或距離在殘響公式的容許值內，就可以把揚聲器拉遠。<b>但這條路不適用於樓梯與斜坡通道。</b></p>
+
+<figure>
+<svg viewBox="0 0 900 335" role="img" aria-label="緊急廣播設備音壓公式與殘響時間公式">
+  <text class="s-txt" x="450" y="28" text-anchor="middle" font-weight="700">§133Ⅲ 不受水平距離 10 m 限制的兩條路</text>
+
+  <rect x="40" y="56" width="380" height="200" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.5"/>
+  <text class="s-txt" x="230" y="84" text-anchor="middle" font-weight="700">（一）音壓法</text>
+  <text class="s-sm" x="230" y="110" text-anchor="middle">廣播區域內距樓地板面 1 m 處</text>
+  <text class="s-key" x="230" y="140" text-anchor="middle" fill="var(--accent2)">P = p + 10 log₁₀( Q/4πr² + 4(1−α)/Sα )</text>
+  <text class="s-key" x="230" y="168" text-anchor="middle">求得之音壓 P ≥ 75 dB</text>
+  <text class="s-sm" x="230" y="196" text-anchor="middle">P 音壓（dB）／p 揚聲器音響功率（dB）</text>
+  <text class="s-sm" x="230" y="218" text-anchor="middle">Q 指向係數／r 受音點至揚聲器距離（m）</text>
+  <text class="s-sm" x="230" y="240" text-anchor="middle">α 平均吸音率／S 牆壁樓地板天花板面積合計（m²）</text>
+
+  <rect x="480" y="56" width="380" height="200" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <text class="s-txt" x="670" y="84" text-anchor="middle" font-weight="700">（二）殘響時間法</text>
+  <text class="s-sm" x="670" y="110" text-anchor="middle">廣播區域之殘響時間在 3 秒以上時</text>
+  <text class="s-sm" x="670" y="132" text-anchor="middle">距樓地板面 1 m 處至揚聲器之距離</text>
+  <text class="s-key" x="670" y="166" text-anchor="middle" fill="var(--warn)">r ≤ (3/4) × √( QSα / π(1−α) )</text>
+  <text class="s-sm" x="670" y="198" text-anchor="middle">符號意義同左（本式沒有 p 與 P）</text>
+  <text class="s-sm" x="670" y="222" text-anchor="middle">殘響時間長 → 反射音多 → 距離要壓短</text>
+  <text class="s-sm" x="670" y="244" text-anchor="middle">吸音率 α 越大，允許的 r 越大</text>
+
+  <text class="s-sm" x="450" y="290" text-anchor="middle">兩條路徑符合其一，就不受「各廣播區域內任一點至揚聲器水平距離 10 m 以下」的限制。</text>
+  <text class="s-sm" x="450" y="314" text-anchor="middle">但本項明定僅適用「樓梯或斜坡通道<tspan font-weight="700">以外</tspan>之場所」——樓梯仍須每 15 m 設一個 L 級揚聲器。</text>
+</svg>
+<figcaption>圖 2　§133Ⅲ 的兩條計算路徑。左式算「這個位置夠不夠大聲」，右式算「最遠能放多遠」</figcaption>
+</figure>
+
+<div class="formula">
+  <b>音壓法</b>　<code>P = p + 10·log₁₀( Q / 4πr² + 4(1−α) / Sα )　≥ 75 dB</code><br>
+  <b>殘響時間法</b>　<code>r ≤ (3/4) · √( QSα / π(1−α) )</code>
+</div>
+
+<div class="note">
+  <b>兩式的物理意義。</b>
+  括號裡的第一項 <code>Q/4πr²</code> 是<b>直接音</b>——從揚聲器直線傳到耳朵的，隨距離平方衰減；
+  第二項 <code>4(1−α)/Sα</code> 是<b>殘響音</b>——在房間裡反射累積的，與距離無關，只跟房間大小 S 與吸音率 α 有關。<br>
+  房間越「硬」（α 小），殘響音越強，第二項越大——所以吸音率低的空間反而比較容易達到 75 dB，但語音會糊成一團。
+  這正是第二式的用意：<b>殘響時間 ≥3 秒時，光有音壓還不夠，距離也必須壓下來，否則聽得到卻聽不懂。</b>
+</div>
+
+<div class="ex">
+  <div class="t">實例 1　殘響時間法的最遠距離</div>
+  <div class="given">某挑高大廳，殘響時間 3.5 秒（≥3 秒，須用第二式）。牆壁、樓地板及天花板面積合計 S = 1,200 m²，平均吸音率 α = 0.12，揚聲器指向係數 Q = 2。</div>
+  <div class="step">① 分子：<code>Q·S·α = 2 × 1,200 × 0.12 = 288</code></div>
+  <div class="step">② 分母：<code>π(1−α) = 3.1416 × 0.88 = 2.7646</code></div>
+  <div class="step">③ 開根號：<code>√(288 ÷ 2.7646) = √104.174 = 10.2066</code></div>
+  <div class="step">④ 乘 3/4：<code>0.75 × 10.2066 = 7.655</code></div>
+  <div class="ans">受音點至揚聲器之距離 <b>r ≤ 7.65 m</b>。<br>
+  比 §133②（四）的 10 m 還嚴——殘響長的空間，走公式反而綁得更緊，這時直接照 10 m 佈置並不合法。</div>
+</div>
+
+<div class="ex">
+  <div class="t">實例 2　同一空間改善吸音後</div>
+  <div class="given">承上例，加裝吸音材使平均吸音率提高到 α = 0.30，其餘條件不變。</div>
+  <div class="step">① 分子：<code>2 × 1,200 × 0.30 = 720</code></div>
+  <div class="step">② 分母：<code>3.1416 × 0.70 = 2.1991</code></div>
+  <div class="step">③ <code>√(720 ÷ 2.1991) = √327.40 = 18.0942</code>；<code>0.75 × 18.0942 = 13.571</code></div>
+  <div class="ans">r ≤ <b>13.57 m</b>，比 10 m 寬鬆——這時走公式才有意義。<br>
+  <b>吸音率從 0.12 提高到 0.30，容許距離就從 7.65 m 拉到 13.57 m</b>，可見這一條的關鍵變數是 α 而不是揚聲器功率。</div>
+</div>
+
+<!-- ============ 3 ============ -->
+<h2 id="zone"><span class="no">03</span>廣播分區・啟動裝置・擴音機</h2>
+<p class="lede">§134 的廣播分區規則比 §112 的火警分區簡單得多——<b>沒有面積上限</b>，只有「不得超過一樓層」與樓梯的 45 m。</p>
+
+<figure>
+<svg viewBox="0 0 900 380" role="img" aria-label="緊急廣播設備的廣播分區與啟動裝置擴音機規定">
+  <path class="s-thin" d="M435 16 L435 360"/>
+
+  <text class="s-txt" x="230" y="30" text-anchor="middle" font-weight="700">§134 廣播分區</text>
+  <rect x="180" y="56" width="100" height="100" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-sm" x="230" y="110" text-anchor="middle">安全梯</text>
+  <rect x="180" y="156" width="100" height="100" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-sm" x="230" y="210" text-anchor="middle">安全梯</text>
+  <path class="s-dim" d="M160 56 L160 156 M154 56 L166 56 M154 156 L166 156"/>
+  <text class="s-key" x="152" y="110" text-anchor="end" fill="var(--accent2)">≤45 m</text>
+  <path class="s-dim" d="M160 156 L160 256 M154 256 L166 256"/>
+  <text class="s-key" x="152" y="210" text-anchor="end" fill="var(--accent2)">≤45 m</text>
+  <path class="s-line" stroke-width="2" d="M150 256 L310 256"/>
+  <rect x="180" y="256" width="100" height="60" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.4"/>
+  <text class="s-sm" x="230" y="292" text-anchor="middle">地下層</text>
+  <text class="s-sm" x="230" y="344" text-anchor="middle">室內安全梯或特別安全梯：垂直每 45 m 單獨一分區</text>
+  <text class="s-sm" x="230" y="366" text-anchor="middle">其地下層部分另設定一廣播分區；一般分區不得超過一樓層</text>
+
+  <text class="s-txt" x="450" y="50" font-weight="700">§136 啟動裝置</text>
+  <text class="s-key" x="450" y="72">各樓層任一點至啟動裝置步行距離 ≤ 50 m</text>
+  <text class="s-sm" x="450" y="92">設在距樓地板高度 0.8 m 以上 1.5 m 以下範圍內</text>
+  <text class="s-key" x="450" y="112">11 層以上各樓層、地下第 3 層以下各樓層</text>
+  <text class="s-key" x="450" y="132">或地下建築物 → 應使用緊急電話方式啟動</text>
+  <text class="s-sm" x="450" y="152">啟動裝置應符合 CNS 10522 之規定</text>
+
+  <text class="s-txt" x="450" y="186" font-weight="700">§137 與其他設備共用</text>
+  <text class="s-sm" x="450" y="208">火災時應能遮斷緊急廣播設備以外之廣播</text>
+
+  <text class="s-txt" x="450" y="242" font-weight="700">§138 擴音機及操作裝置</text>
+  <text class="s-sm" x="450" y="264">與啟動裝置或火警自動警報設備動作連動，並標示</text>
+  <text class="s-sm" x="450" y="284">該啟動裝置或設備所動作之樓層或區域</text>
+  <text class="s-sm" x="450" y="304">具有選擇必要樓層或區域廣播之性能</text>
+  <text class="s-sm" x="450" y="324">各廣播分區配線有短路時，應有短路信號之標示</text>
+  <text class="s-key" x="450" y="344">操作開關距樓地板 0.8 m（座式 0.6 m）～1.5 m</text>
+  <text class="s-sm" x="450" y="364">設於值日室等經常有人處所；設有防災中心時設於該中心</text>
+</svg>
+<figcaption>圖 3　§134～§138 廣播分區、啟動裝置與擴音機。樓梯的 45 m 與火警分區（§112⑤）完全一致</figcaption>
+</figure>
+
+<h3>§139 配線</h3>
+<table>
+<thead><tr><th class="n">款</th><th>規定</th></tr></thead>
+<tbody>
+<tr><td class="n">①</td><td>絕緣電阻以直流 <b>250 V</b> 額定之絕緣電阻計測定：對地電壓 ≤150 V → ≥ <b>0.1 MΩ</b>；&gt;150 V → ≥ <b>0.2 MΩ</b></td></tr>
+<tr><td class="n">②</td><td><b>不得與其他電線共用管槽</b>；但電線管槽內之電線用於 <b>60 V 以下之弱電回路</b>者，不在此限</td></tr>
+<tr><td class="n">③</td><td>任一層之揚聲器或配線<b>短路或斷線</b>時，<b>不得影響其他樓層之廣播</b></td></tr>
+<tr><td class="n">④</td><td>設有<b>音量調整器</b>時，應為 <b>3 線式</b>配線</td></tr>
+</tbody>
+</table>
+
+<div class="cmp">
+  <b>「3 線式」是這一條的關鍵設計。</b>
+  一般廣播只需 2 條線；但裝了音量調整器後，平時聽背景音樂可以轉小聲，火災時如果沿用同一條線路，警報也會被轉小聲。
+  <b>3 線式多拉一條「緊急用」線，繞過音量調整器直接送到揚聲器</b>，火災時強制全音量播放。<br>
+  §137 的「遮斷其他廣播」是同一個思路的另一半：<b>該響的時候，誰都不准搶頻道</b>。
+</div>
+
+<h3>§135：與火警自動警報設備的三個連動關係</h3>
+<table>
+<thead><tr><th class="n">項</th><th>規定</th><th>準用之條文</th></tr></thead>
+<tbody>
+<tr><td class="n">Ⅰ</td><td>與火警自動警報設備連動時，其<b>火警音響之鳴動</b>準用之</td><td><b>§113</b>（一部分鳴動與 10 分鐘全區鳴動）</td></tr>
+<tr><td class="n">Ⅱ</td><td>音響警報應以<b>語音方式</b>播放</td><td>—</td></tr>
+<tr><td class="n">Ⅲ</td><td><b>緊急電源</b>準用之</td><td><b>§128</b>（蓄電池設備，有效動作 10 分鐘以上）</td></tr>
+</tbody>
+</table>
+<p class="lede">緊急廣播設備<b>沒有自己的緊急電源條文</b>，整條靠準用 §128——所以也是<b>蓄電池設備、10 分鐘</b>，而不是發電機。</p>
+
+<!-- ============ 4 ============ -->
+<h2 id="gas"><span class="no">04</span>瓦斯漏氣檢知器</h2>
+<p class="lede">§141 只有一個判斷點：<b>瓦斯對空氣的比重是大於 1 還是小於 1</b>。答案決定檢知器裝天花板還是裝地板，也決定水平距離是 8 m 還是 4 m。</p>
+
+<figure>
+<svg viewBox="0 0 900 345" role="img" aria-label="瓦斯漏氣檢知器依瓦斯比重的兩種設置方式">
+  <path class="s-thin" d="M450 16 L450 335"/>
+
+  <text class="s-txt" x="230" y="30" text-anchor="middle" font-weight="700">① 比重未滿 1（天然氣，往上飄）</text>
+  <path class="s-line" d="M60 60 L400 60"/>
+  <path class="s-thin" d="M70 60 L62 52 M100 60 L92 52 M130 60 L122 52 M160 60 L152 52 M190 60 L182 52 M220 60 L212 52 M250 60 L242 52 M280 60 L272 52 M310 60 L302 52 M340 60 L332 52 M370 60 L362 52"/>
+  <path class="s-line" d="M60 250 L400 250"/>
+  <rect x="300" y="215" width="60" height="35" fill="var(--fill2)" stroke="var(--line)" stroke-width="1.4"/>
+  <text class="s-sm" x="330" y="272" text-anchor="middle">瓦斯燃燒器具</text>
+  <rect x="150" y="66" width="30" height="16" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-sm" x="165" y="98" text-anchor="middle">檢知器</text>
+  <path stroke="var(--accent2)" stroke-width="1.6" fill="none" d="M310 212 L310 134"/>
+  <path fill="none" stroke="var(--accent2)" stroke-width="1.6" d="M305 144 L310 132 L315 144"/>
+  <path class="s-dim" d="M165 176 L330 176 M165 170 L165 182 M330 170 L330 182"/>
+  <text class="s-key" x="248" y="166" text-anchor="middle" fill="var(--accent2)">≤ 8 m</text>
+  <path class="s-dim" d="M120 60 L120 82 M114 60 L126 60 M114 82 L126 82"/>
+  <text class="s-key" x="108" y="76" text-anchor="end">≤30 cm</text>
+  <text class="s-sm" x="230" y="300" text-anchor="middle">檢知器<tspan font-weight="700">下端</tspan>裝設在天花板下方 30 cm 範圍內</text>
+  <text class="s-sm" x="230" y="322" text-anchor="middle">但樓板有淨高 ≥ 60 cm 之樑時，設於近器具或貫穿處</text>
+
+  <text class="s-txt" x="675" y="30" text-anchor="middle" font-weight="700">② 比重大於 1（液化石油氣，往下沉）</text>
+  <path class="s-line" d="M500 60 L840 60"/>
+  <path class="s-thin" d="M510 60 L502 52 M540 60 L532 52 M570 60 L562 52 M600 60 L592 52 M630 60 L622 52 M660 60 L652 52 M690 60 L682 52 M720 60 L712 52 M750 60 L742 52 M780 60 L772 52 M810 60 L802 52"/>
+  <path class="s-line" d="M500 250 L840 250"/>
+  <rect x="740" y="215" width="60" height="35" fill="var(--fill2)" stroke="var(--line)" stroke-width="1.4"/>
+  <text class="s-sm" x="770" y="272" text-anchor="middle">瓦斯燃燒器具</text>
+  <rect x="675" y="228" width="30" height="16" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-sm" x="660" y="212" text-anchor="middle">檢知器</text>
+  <path stroke="var(--accent2)" stroke-width="1.6" fill="none" d="M736 214 L716 240"/>
+  <path fill="none" stroke="var(--accent2)" stroke-width="1.6" d="M711 230 L714 242 L726 238"/>
+  <path class="s-dim" d="M690 178 L770 178 M690 172 L690 184 M770 172 L770 184"/>
+  <text class="s-key" x="730" y="168" text-anchor="middle" fill="var(--accent2)">≤ 4 m</text>
+  <path class="s-dim" d="M640 228 L640 250 M634 228 L646 228 M634 250 L646 250"/>
+  <text class="s-key" x="628" y="244" text-anchor="end">≤30 cm</text>
+  <text class="s-sm" x="675" y="300" text-anchor="middle">檢知器<tspan font-weight="700">上端</tspan>裝設在距樓地板面 30 cm 範圍內</text>
+  <text class="s-sm" x="675" y="322" text-anchor="middle">水平距離縮短為 4 m——重瓦斯不會擴散得那麼遠</text>
+</svg>
+<figcaption>圖 4　§141 兩種比重的鏡像設計。輕瓦斯：上端裝天花板下 30 cm、水平 8 m；重瓦斯：上端距地板 30 cm、水平 4 m</figcaption>
+</figure>
+
+<h3>§141 全條對照</h3>
+<table>
+<thead><tr><th>項目</th><th>比重未滿 1（如天然氣）</th><th>比重大於 1（如液化石油氣）</th></tr></thead>
+<tbody>
+<tr><td><b>裝設位置</b></td><td>天花板附近</td><td>樓地板附近</td></tr>
+<tr><td><b>水平距離</b></td><td>距瓦斯燃燒器具或瓦斯導管貫穿牆壁處 ≤ <b>8 m</b></td><td>≤ <b>4 m</b></td></tr>
+<tr><td><b>深度基準</b></td><td>檢知器<b>下端</b>在天花板下方 <b>30 cm</b> 範圍內</td><td>檢知器<b>上端</b>在距樓地板面 <b>30 cm</b> 範圍內</td></tr>
+<tr><td>樑的例外</td><td>樓板有<b>淨高 ≥ 60 cm</b> 之樑或類似構造體時，設於近器具或貫穿處</td><td>—</td></tr>
+<tr><td>吸氣口特例</td><td>器具室內天花板附近設有吸氣口，且與器具間<b>無淨高 ≥ 60 cm</b> 之樑區隔時，設在<b>吸氣口 1.5 m 範圍內</b></td><td>—</td></tr>
+</tbody>
+</table>
+<p class="lede"><b>§141③ 水平距離的起算點</b>：瓦斯燃燒器具為<b>燃燒器中心點</b>；瓦斯導管貫穿牆壁處為<b>面向室內牆壁處之瓦斯配管中心處</b>。<br>
+<b>§140Ⅱ</b>：本節所稱「瓦斯」指<b>天然氣、液化石油氣</b>及其他經中央主管機關指定者。<b>§140Ⅰ</b>：瓦斯漏氣火警自動警報設備依 <b>§112</b> 之規定劃定警報分區——與火警分區用同一套規則。</p>
+
+<div class="note">
+  <b>「下端」與「上端」不要背反。</b>
+  輕瓦斯浮在天花板下，所以檢知器要盡量貼上去——限制的是它的<b>下端</b>不能離天花板太遠（≤30 cm）。<br>
+  重瓦斯沉在地板上，所以檢知器要盡量貼下去——限制的是它的<b>上端</b>不能離地板太高（≤30 cm）。<br>
+  兩者都是「<b>讓整個檢知器待在瓦斯會聚集的那 30 cm 裡</b>」，只是一個從上量、一個從下量。
+</div>
+
+<!-- ============ 5 ============ -->
+<h2 id="gaspanel"><span class="no">05</span>受信總機與警報裝置</h2>
+<p class="lede">§142～§145 是把瓦斯訊號收回來、讓現場的人聽得到、看得到，並確保停電時還能撐 10 分鐘。</p>
+
+<figure>
+<svg viewBox="0 0 900 350" role="img" aria-label="瓦斯漏氣表示燈受信總機與警報裝置的規定">
+  <text class="s-txt" x="230" y="30" text-anchor="middle" font-weight="700">§143① 瓦斯漏氣表示燈</text>
+  <path class="s-line" d="M60 250 L400 250"/>
+  <path class="s-thin" d="M70 250 L62 260 M100 250 L92 260 M130 250 L122 260 M160 250 L152 260 M190 250 L182 260 M220 250 L212 260 M250 250 L242 260 M280 250 L272 260 M310 250 L302 260 M340 250 L332 260 M370 250 L362 260"/>
+  <rect x="120" y="110" width="180" height="140" fill="var(--fill2)" stroke="var(--line)" stroke-width="1.4"/>
+  <text class="s-sm" x="200" y="190" text-anchor="middle">設有檢知器之居室</text>
+  <path class="s-line" stroke-width="2.4" d="M300 150 L300 210"/>
+  <text class="s-sm" x="336" y="238" text-anchor="middle">通路</text>
+  <circle cx="300" cy="120" r="9" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.6"/>
+  <path class="s-dim" d="M340 120 L340 250 M334 120 L346 120 M334 250 L346 250"/>
+  <text class="s-key" x="352" y="190" fill="var(--warn)">≤ 4.5 m</text>
+  <text class="s-sm" x="230" y="282" text-anchor="middle">居室面向通路時，設於該面向通路部分之出入口附近</text>
+  <text class="s-sm" x="230" y="304" text-anchor="middle">亮度在表示燈前方 3 m 處能明確識別</text>
+  <text class="s-sm" x="230" y="326" text-anchor="middle">一警報分區僅一室時得免設；附近標明「瓦斯漏氣表示燈」字樣</text>
+
+  <text class="s-txt" x="430" y="50" font-weight="700">§142 瓦斯漏氣受信總機</text>
+  <text class="s-sm" x="430" y="72">裝置於值日室等平時有人處所；設防災中心時設於該中心</text>
+  <text class="s-sm" x="430" y="92">具有標示瓦斯漏氣發生之警報分區</text>
+  <text class="s-key" x="430" y="112">設於瓦斯導管貫穿牆壁處之檢知器，警報分區應個別標示</text>
+  <text class="s-sm" x="430" y="132">操作開關距樓地板 0.8 m 以上（座式 0.6 m）～1.5 m 以下</text>
+  <text class="s-sm" x="430" y="152">主音響裝置之音色及音壓應有別於其他警報音響</text>
+  <text class="s-sm" x="430" y="172">二臺以上時，設有能相互同時通話連絡之設備</text>
+
+  <text class="s-txt" x="430" y="206" font-weight="700">§143② 檢知區域警報裝置</text>
+  <text class="s-key" x="430" y="228">距 1 m 處音壓 ≥ 70 分貝</text>
+  <text class="s-sm" x="430" y="248">但檢知器具有發出警報功能者，或設於機械室等常時無人</text>
+  <text class="s-sm" x="430" y="268">場所及瓦斯導管貫穿牆壁處者，不在此限</text>
+
+  <text class="s-txt" x="430" y="302" font-weight="700">§144 配線 ・ §145 緊急電源</text>
+  <text class="s-key" x="430" y="324">絕緣電阻用直流 500 V（火警自動警報是 250 V）</text>
+  <text class="s-sm" x="430" y="344">檢知器回路不得與本設備以外之設備回路共用</text>
+</svg>
+<figcaption>圖 5　§142～§145 瓦斯漏氣的受信總機、表示燈與檢知區域警報裝置</figcaption>
+</figure>
+
+<h3>§144 配線與 §145 緊急電源</h3>
+<table>
+<thead><tr><th>項目</th><th>規定</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td><b>絕緣電阻測定電壓</b></td><td>直流 <b>500 V</b>（火警自動警報設備、緊急廣播設備都是 250 V）</td><td class="n">§144①</td></tr>
+<tr><td>判定值</td><td>電源回路：對地 ≤150 V → ≥ 0.1 MΩ，&gt;150 V → ≥ 0.2 MΩ；檢知器回路：每一警報分區 ≥ <b>0.1 MΩ</b></td><td class="n">§144①</td></tr>
+<tr><td>信號回路</td><td>常開式檢知器信號回路採<b>串接式</b>，並加設<b>終端電阻</b>，以便作斷線自動檢出</td><td class="n">§144②</td></tr>
+<tr><td>回路共用</td><td>檢知器回路<b>不得與瓦斯漏氣火警自動警報設備以外之設備回路共用</b></td><td class="n">§144③</td></tr>
+<tr><td><b>緊急電源</b></td><td><b>蓄電池設備</b>；容量應能使<b>二回路有效動作 10 分鐘</b>以上，<b>其他回路能監視 10 分鐘</b>以上</td><td class="n">§145</td></tr>
+</tbody>
+</table>
+
+<div class="cmp">
+  <b>§145 是全法唯一寫成「二回路動作＋其他回路監視」的緊急電源條文。</b>
+  火警自動警報設備（§128）只寫「有效動作 10 分鐘以上」，沒有區分回路；
+  瓦斯漏氣則明確要求：<b>兩個回路要能真的動作（發警報），其餘回路至少要維持監視狀態（不能整個停擺）</b>。<br>
+  設計上這代表蓄電池的容量計算要分兩塊——動作電流 × 2 回路，加上監視電流 × 其餘回路。
+</div>
+
+<!-- ============ 6 ============ -->
+<h2 id="call119"><span class="no">06</span>一一九火災通報裝置</h2>
+<p class="lede">§145-1 全條只有六款，是本章最短的一條，但它是「人不在場也能報案」的最後一道保險。</p>
+
+<figure>
+<svg viewBox="0 0 900 265" role="img" aria-label="一一九火災通報裝置的組成與規定">
+  <text class="s-txt" x="450" y="28" text-anchor="middle" font-weight="700">§145-1 一一九火災通報裝置</text>
+
+  <rect x="60" y="60" width="220" height="70" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.5"/>
+  <text class="s-txt" x="170" y="88" text-anchor="middle" font-weight="700">手動啟動</text>
+  <text class="s-sm" x="170" y="112" text-anchor="middle">操作開關 0.8～1.5 m</text>
+
+  <rect x="340" y="60" width="220" height="70" rx="8" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.8"/>
+  <text class="s-txt" x="450" y="88" text-anchor="middle" font-weight="700">一一九火災通報裝置</text>
+  <text class="s-sm" x="450" y="112" text-anchor="middle">設於值日室等經常有人之處所</text>
+
+  <rect x="620" y="60" width="220" height="70" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.5"/>
+  <text class="s-txt" x="730" y="88" text-anchor="middle" font-weight="700">自動啟動</text>
+  <text class="s-sm" x="730" y="112" text-anchor="middle">（條文僅要求應具備此功能）</text>
+
+  <path class="s-line" d="M280 95 L332 95 M324 90 L334 95 L324 100"/>
+  <path class="s-line" d="M620 95 L568 95 M576 90 L566 95 L576 100"/>
+
+  <path class="s-thin" d="M310 155 L310 145 L590 145 L590 155 M450 145 L450 130"/>
+
+  <rect x="200" y="155" width="220" height="56" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <text class="s-sm" x="310" y="178" text-anchor="middle">遠端啟動裝置</text>
+  <text class="s-sm" x="310" y="198" text-anchor="middle">須設可與裝置場所通話之設備</text>
+
+  <rect x="480" y="155" width="220" height="56" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.5"/>
+  <text class="s-sm" x="590" y="178" text-anchor="middle">送、收話器</text>
+  <text class="s-sm" x="590" y="198" text-anchor="middle">與其他內線電話明確區分</text>
+
+  <text class="s-sm" x="450" y="248" text-anchor="middle">設有防災中心時應設於該中心；應避免斜裝置，並採取有效防震措施。</text>
+</svg>
+<figcaption>圖 6　§145-1 一一九火災通報裝置的六款規定</figcaption>
+</figure>
+
+<ol class="law">
+<li>應具<b>手動及自動</b>啟動功能</li>
+<li>應設於<b>值日室等經常有人之處所</b>；但設有<b>防災中心</b>時，應設於該中心</li>
+<li>設置<b>遠端啟動裝置</b>時，應設有<b>可與設置一一九火災通報裝置場所通話</b>之設備</li>
+<li>手動啟動裝置之操作開關距離樓地板面之高度，在 <b>0.8 m 以上 1.5 m 以下</b></li>
+<li>裝置附近，應設置<b>送、收話器</b>，並與其他內線電話<b>明確區分</b></li>
+<li>應避免斜裝置，並採取<b>有效防震措施</b></li>
+</ol>
+
+<div class="note">
+  <b>「0.8～1.5 m 俱樂部」在第二章有五個成員。</b><br>
+  ・§126④ 火警受信總機操作開關（座式 0.6 m）<br>
+  ・§136② 緊急廣播設備啟動裝置<br>
+  ・§138④ 擴音機及操作裝置之操作開關（座式 0.6 m）<br>
+  ・§142④ 瓦斯漏氣受信總機操作開關（座式 0.6 m）<br>
+  ・§145-1④ 一一九火災通報裝置手動啟動開關<br>
+  同章唯一的例外是 <b>§132② 火警發信機的 1.2～1.5 m</b>——因為它是「緊急時要一拳按下去」的東西，不能太低。
+</div>
+
+<!-- ============ 7 ============ -->
+<h2 id="card"><span class="no">07</span>速查數字卡</h2>
+
+<table>
+<thead><tr><th>項目</th><th>數值</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td colspan="3" style="background:var(--fill2);font-weight:700">緊急廣播設備</td></tr>
+<tr><td><b>揚聲器音壓</b></td><td>距 <b>1 m</b> 處：L 級 ≥ <b>92</b>／M 級 <b>87～未滿 92</b>／S 級 <b>84～未滿 87</b> 分貝</td><td class="n">§133①</td></tr>
+<tr><td><b>等級選擇</b></td><td>&gt; <b>100 m²</b> → 僅 L 級；<b>50～100 m²</b> → L 或 M；≤ <b>50 m²</b> → L、M 或 S</td><td class="n">§133②（一）～（三）</td></tr>
+<tr><td><b>水平距離</b></td><td>各廣播區域內任一點至揚聲器 ≤ <b>10 m</b></td><td class="n">§133②（四）</td></tr>
+<tr><td>得免設揚聲器</td><td>居室 ≤ <b>6 m²</b>，或通往地面之主要走廊通道 ≤ <b>6 m²</b>，其他非居室 ≤ <b>30 m²</b>，且與相鄰區域揚聲器水平距離 ≤ <b>8 m</b></td><td class="n">§133②（四）但書</td></tr>
+<tr><td><b>樓梯・斜坡通道</b></td><td>至少垂直距離每 <b>15 m</b> 設 <b>1 個 L 級</b>揚聲器</td><td class="n">§133②（五）</td></tr>
+<tr><td><b>音壓法</b></td><td><code>P = p + 10 log₁₀(Q/4πr² + 4(1−α)/Sα) ≥ 75 dB</code></td><td class="n">§133Ⅲ（一）</td></tr>
+<tr><td><b>殘響時間法</b></td><td>殘響時間 ≥ <b>3 秒</b>時，<code>r ≤ (3/4)·√(QSα / π(1−α))</code></td><td class="n">§133Ⅲ（二）</td></tr>
+<tr><td>廣播分區</td><td>每一分區<b>不得超過一樓層</b>（<b>沒有面積上限</b>）</td><td class="n">§134①</td></tr>
+<tr><td><b>安全梯分區</b></td><td>室內安全梯或特別安全梯，垂直距離每 <b>45 m</b> 單獨設定一分區；地下層部分另設</td><td class="n">§134②</td></tr>
+<tr><td>挑空構造</td><td>所設揚聲器音壓符合規定時，該部分得為一廣播分區</td><td class="n">§134③</td></tr>
+<tr><td>鳴動方式</td><td>與火警自動警報設備連動時，準用 <b>§113</b></td><td class="n">§135Ⅰ</td></tr>
+<tr><td><b>警報方式</b></td><td>應以<b>語音方式</b>播放</td><td class="n">§135Ⅱ</td></tr>
+<tr><td><b>緊急電源</b></td><td>準用 <b>§128</b>：蓄電池設備，有效動作 <b>10 分鐘</b>以上</td><td class="n">§135Ⅲ</td></tr>
+<tr><td><b>啟動裝置步行距離</b></td><td>各樓層任一點至啟動裝置 ≤ <b>50 m</b></td><td class="n">§136①</td></tr>
+<tr><td>啟動裝置高度</td><td>距樓地板 <b>0.8～1.5 m</b>；應符合 <b>CNS 10522</b></td><td class="n">§136②</td></tr>
+<tr><td><b>緊急電話方式</b></td><td><b>11 層以上</b>各樓層、<b>地下第 3 層以下</b>各樓層或<b>地下建築物</b>，應使用緊急電話方式啟動</td><td class="n">§136③</td></tr>
+<tr><td>共用時</td><td>火災時應能<b>遮斷</b>緊急廣播設備以外之廣播</td><td class="n">§137</td></tr>
+<tr><td>操作裝置</td><td>與啟動裝置或火警設備<b>連動並標示動作樓層或區域</b>；具選擇樓層區域廣播性能；短路信號標示</td><td class="n">§138①～③</td></tr>
+<tr><td>操作開關高度</td><td><b>0.8 m</b> 以上（座式 <b>0.6 m</b>）～<b>1.5 m</b> 以下</td><td class="n">§138④</td></tr>
+<tr><td>絕緣電阻</td><td>直流 <b>250 V</b>；≤150 V → ≥0.1 MΩ，&gt;150 V → ≥0.2 MΩ</td><td class="n">§139①</td></tr>
+<tr><td>管槽</td><td><b>不得與其他電線共用管槽</b>；但 <b>60 V 以下</b>弱電回路不在此限</td><td class="n">§139②</td></tr>
+<tr><td><b>3 線式</b></td><td>設有<b>音量調整器</b>時，應為 <b>3 線式</b>配線</td><td class="n">§139④</td></tr>
+
+<tr><td colspan="3" style="background:var(--fill4);font-weight:700">瓦斯漏氣火警自動警報設備</td></tr>
+<tr><td>警報分區</td><td>依 <b>§112</b> 之規定劃定（與火警分區同一套規則）</td><td class="n">§140Ⅰ</td></tr>
+<tr><td>瓦斯之定義</td><td><b>天然氣、液化石油氣</b>及其他經中央主管機關指定者</td><td class="n">§140Ⅱ</td></tr>
+<tr><td><b>比重未滿 1</b></td><td>水平距離 ≤ <b>8 m</b>；檢知器<b>下端</b>在天花板下方 <b>30 cm</b> 內</td><td class="n">§141①</td></tr>
+<tr><td>樑的例外</td><td>樓板有<b>淨高 ≥ 60 cm</b> 之樑時，設於近器具或貫穿處</td><td class="n">§141①（一）但書</td></tr>
+<tr><td>吸氣口</td><td>與器具間無淨高 ≥60 cm 之樑區隔時，設在吸氣口 <b>1.5 m</b> 範圍內</td><td class="n">§141①（二）</td></tr>
+<tr><td><b>比重大於 1</b></td><td>水平距離 ≤ <b>4 m</b>；檢知器<b>上端</b>在距樓地板面 <b>30 cm</b> 內</td><td class="n">§141②</td></tr>
+<tr><td>距離起算</td><td>器具為<b>燃燒器中心點</b>；導管貫穿牆壁處為<b>面向室內牆壁處之配管中心</b></td><td class="n">§141③</td></tr>
+<tr><td>受信總機位置</td><td>值日室等平時有人處所；設防災中心時設於該中心</td><td class="n">§142①</td></tr>
+<tr><td>個別標示</td><td>設於<b>瓦斯導管貫穿牆壁處</b>之檢知器，其警報分區應<b>個別標示</b></td><td class="n">§142③</td></tr>
+<tr><td>操作開關高度</td><td><b>0.8 m</b> 以上（座式 <b>0.6 m</b>）～<b>1.5 m</b> 以下</td><td class="n">§142④</td></tr>
+<tr><td>主音響</td><td>音色及音壓應<b>有別於其他警報音響</b></td><td class="n">§142⑤</td></tr>
+<tr><td><b>表示燈高度</b></td><td>距樓地板面 ≤ <b>4.5 m</b>；前方 <b>3 m</b> 處能明確識別；<b>一警報分區僅一室時得免設</b></td><td class="n">§143①</td></tr>
+<tr><td><b>檢知區域警報裝置</b></td><td>距 <b>1 m</b> 處音壓 ≥ <b>70 分貝</b></td><td class="n">§143②</td></tr>
+<tr><td>警報裝置免設</td><td>檢知器具發出警報功能者、設於<b>機械室等常時無人場所</b>及<b>瓦斯導管貫穿牆壁處</b>者</td><td class="n">§143② 但書</td></tr>
+<tr><td><b>絕緣電阻</b></td><td>直流 <b>500 V</b>（全章唯一）；判定值同其他設備</td><td class="n">§144①</td></tr>
+<tr><td>回路</td><td>常開式採<b>串接式＋終端電阻</b>；檢知器回路<b>不得與本設備以外之回路共用</b></td><td class="n">§144②③</td></tr>
+<tr><td><b>緊急電源</b></td><td>蓄電池設備：<b>二回路有效動作 10 分鐘</b>以上，<b>其他回路監視 10 分鐘</b>以上</td><td class="n">§145</td></tr>
+
+<tr><td colspan="3" style="background:var(--fill1);font-weight:700">一一九火災通報裝置</td></tr>
+<tr><td>啟動功能</td><td>應具<b>手動及自動</b>啟動功能</td><td class="n">§145-1①</td></tr>
+<tr><td>位置</td><td>值日室等經常有人之處所；設防災中心時設於該中心</td><td class="n">§145-1②</td></tr>
+<tr><td>遠端啟動</td><td>設置遠端啟動裝置時，應設有<b>可與裝置場所通話</b>之設備</td><td class="n">§145-1③</td></tr>
+<tr><td>操作開關高度</td><td><b>0.8～1.5 m</b>（本條<b>沒有</b>座式 0.6 m 的但書）</td><td class="n">§145-1④</td></tr>
+<tr><td>送收話器</td><td>裝置附近應設置，並與其他內線電話<b>明確區分</b></td><td class="n">§145-1⑤</td></tr>
+<tr><td>安裝</td><td>應避免斜裝置，並採取<b>有效防震措施</b></td><td class="n">§145-1⑥</td></tr>
+</tbody>
+</table>
+
+<h3>最容易記混的六組數字</h3>
+<table>
+<thead><tr><th>數字組</th><th>正確歸屬</th></tr></thead>
+<tbody>
+<tr><td class="n"><b>92／87／84</b></td><td>揚聲器 <b>L／M／S 級</b>音壓下限（dB，距 1 m 處）</td></tr>
+<tr><td class="n"><b>90／70</b></td><td>火警警鈴 <b>90 dB</b>（§131②）／瓦斯檢知區域警報裝置 <b>70 dB</b>（§143②），都是距 1 m</td></tr>
+<tr><td class="n"><b>100／50</b></td><td>揚聲器等級的兩個面積分界（m²）</td></tr>
+<tr><td class="n"><b>10／8／15／50</b></td><td>揚聲器水平距離 10 m／免設時相鄰 8 m／樓梯垂直 15 m／啟動裝置步行 50 m</td></tr>
+<tr><td class="n"><b>8／4</b></td><td>瓦斯檢知器水平距離：<b>輕瓦斯 8 m、重瓦斯 4 m</b></td></tr>
+<tr><td class="n"><b>250／500</b></td><td>絕緣電阻測定電壓：火警與廣播 <b>250 V</b>／<b>瓦斯漏氣 500 V</b></td></tr>
+</tbody>
+</table>
+
+<div class="navbar" style="margin-top:32px">
+  <a class="btn go" href="index.html">🏠 回學習首頁</a>
+  <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+  <a class="btn" href="17-%E7%81%AB%E8%AD%A6%E8%87%AA%E5%8B%95%E8%AD%A6%E5%A0%B1%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html">📐 火警自動警報設備圖解</a>
+  <a class="btn" href="#speaker">↑ 回到最上方</a>
+</div>
+
+<footer>
+  <p>本頁數據取自全國法規資料庫「各類場所消防安全設備設置標準」（pcode D0120029）民國 113 年 4 月 24 日修正版原文，於 2026-08-11 擷取核對。</p>
+  <p><b>§133 的兩條公式</b>在法規資料庫網頁版無法完整呈現（根號與分式排版），本頁公式係自該條完整條文 PDF（FileId 0000036170）核對重排。</p>
+  <p>圖 2 說明文字中「直接音／殘響音」之物理解釋為建築聲學的一般原理，用以說明公式兩項的意義，非條文明文。</p>
+  <p><b>法規以主管機關公布文字為準。</b>本頁為個人學習筆記，不構成法律意見；設計送審前請回查現行條文：
+  <code>https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0120029</code></p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  function target(){
+    var h=(location.hash||'').replace('#','');
+    if(!h){ var m=/[?&]s=([\w-]+)/.exec(location.search||''); h=m?m[1]:''; }
+    return h?document.getElementById(h):null;
+  }
+  function go(smooth){
+    var el=target(); if(!el) return;
+    el.scrollIntoView({behavior:smooth?'smooth':'auto',block:'start'});
+    el.style.transition='background-color .4s';
+    var old=el.style.backgroundColor;
+    el.style.backgroundColor='var(--fill4)';
+    setTimeout(function(){ el.style.backgroundColor=old||''; },1600);
+  }
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){ setTimeout(go,60); });
+  else setTimeout(go,60);
+  window.addEventListener('hashchange',function(){ go(true); });
+})();
+</script>
+</body>
+</html>

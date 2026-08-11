@@ -1,0 +1,940 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>火警自動警報設備 圖解 — 各類場所消防安全設備設置標準 §112～§132</title>
+<meta name="description" content="火警分區劃定、鳴動方式、探測器種類與有效探測範圍、§117 被省略的探測器適用表、受信總機與配線、手動報警設備的圖解。">
+<style>
+  :root{
+    --bg:#fbfaf7; --fg:#1c1b19; --muted:#6b6862; --line:#d8d4cb;
+    --card:#ffffff; --accent:#b03a2e; --accent2:#1d6fa5; --accent3:#2e7d4f;
+    --warn:#a86b00; --danger:#8e1b0f;
+    --fill1:#f2e4e1; --fill2:#e0edf6; --fill3:#e3f0e8; --fill4:#f7efd9;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#16161a; --fg:#e8e6e1; --muted:#9b968c; --line:#3a3a40;
+      --card:#1e1e23; --accent:#e8705f; --accent2:#5aa8d8; --accent3:#5fbb87;
+      --warn:#d9a441; --danger:#f08070;
+      --fill1:#3a2622; --fill2:#1e3341; --fill3:#1f3a2c; --fill4:#3a3120;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+    line-height:1.75;-webkit-text-size-adjust:100%}
+  .wrap{max-width:960px;margin:0 auto;padding:32px 20px 80px}
+  header{border-bottom:2px solid var(--fg);padding-bottom:18px;margin-bottom:8px}
+  h1{font-size:clamp(1.4rem,4vw,2rem);margin:0 0 6px;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:.9rem;margin:0}
+  h2{font-size:1.15rem;margin:48px 0 4px;padding-top:14px;border-top:1px solid var(--line);
+    scroll-margin-top:16px}
+  h2 .no{color:var(--accent);font-variant-numeric:tabular-nums;margin-right:.5em}
+  h2:target{background:linear-gradient(transparent 62%,var(--fill4) 62%)}
+  h3{font-size:1rem;margin:26px 0 6px}
+  .lede{color:var(--muted);font-size:.92rem;margin:.2em 0 18px}
+  figure{margin:0 0 10px;background:var(--card);border:1px solid var(--line);
+    border-radius:10px;padding:18px 14px;overflow-x:auto}
+  svg{display:block;margin:0 auto;max-width:100%;height:auto}
+  figcaption{color:var(--muted);font-size:.84rem;margin-top:10px;text-align:center}
+  .note{border-left:3px solid var(--warn);background:var(--fill4);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .note b{color:var(--warn)}
+  .cmp{border-left:3px solid var(--accent2);background:var(--fill2);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .cmp b{color:var(--accent2)}
+  table{border-collapse:collapse;width:100%;font-size:.88rem;margin:14px 0}
+  th,td{border:1px solid var(--line);padding:6px 9px;text-align:left}
+  th{background:var(--fill2);font-weight:600}
+  td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+  td.c,th.c{text-align:center}
+  .scroll{overflow-x:auto}
+  .scroll table{min-width:640px}
+  code{background:var(--fill2);padding:1px 5px;border-radius:4px;font-size:.88em}
+  .formula{background:var(--fill3);border:1px solid var(--line);border-radius:8px;
+    padding:12px 16px;margin:14px 0;font-size:1rem;text-align:center}
+  .ex{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent2);
+    border-radius:0 10px 10px 0;padding:14px 18px;margin:18px 0}
+  .ex .t{font-weight:700;margin-bottom:6px;color:var(--accent2)}
+  .ex .given{font-size:.88rem;color:var(--muted);border-left:3px solid var(--line);
+    padding-left:12px;margin-bottom:10px}
+  .ex .step{font-size:.92rem;margin:8px 0}
+  .ex .ans{background:var(--fill3);border-radius:7px;padding:9px 13px;margin-top:10px;
+    font-weight:700;font-size:.94rem}
+  ol.law{font-size:.9rem;padding-left:1.4em}
+  ol.law li{margin:4px 0}
+  footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:.82rem}
+  a{color:var(--accent2)}
+  .navbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+  .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;
+    font-size:.86rem;padding:7px 14px;border-radius:8px;border:1px solid var(--line);
+    background:var(--card);color:var(--fg);transition:.12s}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.go{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+  .btn.go:hover{filter:brightness(1.1);color:#fff}
+  .toc{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 4px}
+  .toc a{font-size:.8rem;text-decoration:none;padding:4px 10px;border-radius:99px;
+    border:1px solid var(--line);background:var(--card);color:var(--muted)}
+  .toc a:hover{border-color:var(--accent);color:var(--accent)}
+  .s-line{stroke:var(--fg);stroke-width:1.4;fill:none}
+  .s-thin{stroke:var(--muted);stroke-width:1;fill:none}
+  .s-txt{fill:var(--fg);font-size:13px;font-family:inherit}
+  .s-sm{fill:var(--muted);font-size:11px;font-family:inherit}
+  .s-key{fill:var(--accent);font-size:13px;font-weight:700;font-family:inherit}
+  .s-dim{stroke:var(--accent2);stroke-width:1;fill:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>火警自動警報設備 圖解</h1>
+  <p class="sub">各類場所消防安全設備設置標準 §112～§132（第三編第二章第一、二節）　|　民國 113 年 4 月 24 日修正版</p>
+  <div class="navbar">
+    <a class="btn go" href="index.html">🏠 回學習首頁</a>
+    <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+    <a class="btn" href="18-%E7%B7%8A%E6%80%A5%E5%BB%A3%E6%92%AD%E8%88%87%E7%93%A6%E6%96%AF%E6%BC%8F%E6%B0%A3-%E5%9C%96%E8%A7%A3.html">📐 緊急廣播與瓦斯漏氣圖解</a>
+    <a class="btn" href="16-%E8%87%AA%E5%8B%95%E6%92%92%E6%B0%B4%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html">📐 自動撒水設備圖解</a>
+  </div>
+</header>
+
+<nav class="toc" aria-label="章節目錄">
+  <a href="#zone">01 火警分區的劃定</a>
+  <a href="#sound">02 鳴動方式</a>
+  <a href="#kinds">03 探測器種類的選擇</a>
+  <a href="#forbid">04 免設與不得設</a>
+  <a href="#area">05 探測區域與有效探測範圍</a>
+  <a href="#special">06 光電式分離型與火焰式</a>
+  <a href="#panel">07 受信總機・配線・緊急電源</a>
+  <a href="#manual">08 手動報警設備</a>
+  <a href="#card">09 速查數字卡</a>
+</nav>
+
+<div class="cmp" style="margin-top:24px">
+  <b>滅火設備問「水從哪來、噴多少」；警報設備問「哪裡起火、怎麼讓人知道」。</b>
+  §112～§132 的骨架只有四段：<b>把建築物切成火警分區</b>（§112～§113）→
+  <b>每個分區挑對探測器並算出要幾個</b>（§114～§124）→
+  <b>把信號收回受信總機</b>（§125～§128）→ <b>人也要能手動報警</b>（§129～§132）。<br>
+  §117 第 3 項的探測器適用表在法規資料庫網頁版被省略（顯示「因條文排版無法完整呈現內容」），本頁已從完整條文 PDF 補齊。
+</div>
+
+<!-- ============ 1 ============ -->
+<h2 id="zone"><span class="no">01</span>火警分區的劃定</h2>
+<p class="lede">火警分區是「受信總機上的一顆燈」所代表的範圍。分得太大找不到火點，分得太細成本爆炸——§112 五款就是在拉這條線。</p>
+
+<figure>
+<svg viewBox="0 0 900 320" role="img" aria-label="火警分區的面積與邊長規定及放寬條件">
+  <text class="s-txt" x="450" y="26" text-anchor="middle" font-weight="700">§112 火警分區的四個數字</text>
+
+  <rect x="60" y="60" width="300" height="170" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.5"/>
+  <text class="s-txt" x="210" y="100" text-anchor="middle" font-weight="700">§112①② 原則</text>
+  <text class="s-key" x="210" y="128" text-anchor="middle" fill="var(--accent2)">每一分區 ≤ 600 m²</text>
+  <text class="s-sm" x="210" y="154" text-anchor="middle">且不得超過一樓層</text>
+  <text class="s-sm" x="210" y="180" text-anchor="middle">任一邊長 ≤ 50 m</text>
+  <text class="s-key" x="210" y="206" text-anchor="middle" fill="var(--accent2)">光電式分離型 → 邊長 ≤ 100 m</text>
+
+  <path class="s-dim" stroke-width="1.6" d="M372 145 L528 145 M518 139 L528 145 L518 151"/>
+  <text class="s-sm" x="450" y="136" text-anchor="middle">可直接觀察</text>
+
+  <rect x="540" y="60" width="300" height="170" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <text class="s-txt" x="690" y="100" text-anchor="middle" font-weight="700">§112③ 放寬</text>
+  <text class="s-sm" x="690" y="126" text-anchor="middle">由主要出入口或直通樓梯出入口</text>
+  <text class="s-sm" x="690" y="148" text-anchor="middle">能直接觀察該樓層任一角落時</text>
+  <text class="s-key" x="690" y="176" text-anchor="middle" fill="var(--warn)">600 m² → 1,000 m²</text>
+  <text class="s-sm" x="690" y="206" text-anchor="middle">邊長規定不放寬，仍為 50 m</text>
+
+  <text class="s-sm" x="450" y="270" text-anchor="middle">「邊長」是用來擋掉細長型分區的——面積再小，一條 60 m 的長廊也不能算同一分區。</text>
+  <text class="s-sm" x="450" y="296" text-anchor="middle">光電式分離型探測器本身就是「一條光軸」，天生適合長條空間，所以只有它能把邊長放大到 100 m。</text>
+</svg>
+<figcaption>圖 1　§112①②③ 火警分區的面積、邊長與放寬條件</figcaption>
+</figure>
+
+<figure>
+<svg viewBox="0 0 900 380" role="img" aria-label="火警分區的三種垂直方向規定">
+  <text class="s-txt" x="155" y="30" text-anchor="middle" font-weight="700">§112① 但書：二層共用</text>
+  <rect x="75" y="58" width="160" height="44" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-sm" x="155" y="85" text-anchor="middle">上層</text>
+  <rect x="75" y="102" width="160" height="44" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-sm" x="155" y="129" text-anchor="middle">下層</text>
+  <path class="s-dim" d="M60 58 L60 146 M54 58 L66 58 M54 146 L66 146"/>
+  <text class="s-key" x="155" y="176" text-anchor="middle" fill="var(--accent2)">二層面積和 ≤ 500 m²</text>
+  <text class="s-sm" x="155" y="200" text-anchor="middle">→ 得二層共用一分區</text>
+  <text class="s-sm" x="155" y="222" text-anchor="middle">（原則是「不得超過一樓層」）</text>
+
+  <text class="s-txt" x="445" y="30" text-anchor="middle" font-weight="700">§112⑤ 樓梯 ・ 斜坡通道</text>
+  <rect x="405" y="58" width="80" height="100" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-sm" x="445" y="112" text-anchor="middle">樓梯</text>
+  <rect x="405" y="158" width="80" height="100" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-sm" x="445" y="212" text-anchor="middle">樓梯</text>
+  <path class="s-dim" d="M390 58 L390 158 M384 58 L396 58 M384 158 L396 158"/>
+  <text class="s-key" x="382" y="112" text-anchor="end" fill="var(--warn)">≤45 m</text>
+  <path class="s-dim" d="M390 158 L390 258 M384 258 L396 258"/>
+  <text class="s-key" x="382" y="212" text-anchor="end" fill="var(--warn)">≤45 m</text>
+  <path class="s-line" stroke-width="2" d="M370 258 L520 258"/>
+  <rect x="405" y="258" width="80" height="60" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.4"/>
+  <text class="s-sm" x="445" y="292" text-anchor="middle">地下層</text>
+  <text class="s-key" x="445" y="340" text-anchor="middle">地下層部分應為另一分區</text>
+  <text class="s-sm" x="445" y="362" text-anchor="middle">垂直距離每 45 m 以下為一分區</text>
+
+  <text class="s-txt" x="740" y="30" text-anchor="middle" font-weight="700">§112④ 樓梯 ・ 管道間等</text>
+  <rect x="650" y="70" width="50" height="120" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-sm" x="675" y="208" text-anchor="middle">樓梯</text>
+  <rect x="790" y="90" width="50" height="100" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-sm" x="815" y="208" text-anchor="middle">管道間</text>
+  <path class="s-dim" d="M700 130 L790 130 M700 124 L700 136 M790 124 L790 136"/>
+  <text class="s-key" x="745" y="120" text-anchor="middle" fill="var(--accent3)">≤ 50 m</text>
+  <text class="s-sm" x="740" y="240" text-anchor="middle">水平距離 50 m 範圍內</text>
+  <text class="s-sm" x="740" y="262" text-anchor="middle">且其頂層相差在二層以下</text>
+  <text class="s-key" x="740" y="288" text-anchor="middle" fill="var(--accent3)">→ 得為一火警分區</text>
+  <text class="s-sm" x="740" y="314" text-anchor="middle">但應與各層之走廊、通道</text>
+  <text class="s-sm" x="740" y="336" text-anchor="middle">及居室等場所分別設置</text>
+</svg>
+<figcaption>圖 2　§112①但書、④、⑤ 三條垂直方向的分區規則。垂直空間（樓梯、管道間）永遠要跟水平空間分開設分區</figcaption>
+</figure>
+
+<div class="note">
+  <b>§112④ 與 §112⑤ 講的是同一批空間，但管的事情不同。</b><br>
+  ・<b>④ 管「水平方向能不能合併」</b>：好幾座樓梯、管道間彼此在 50 m 內、頂層高差 ≤2 層 → 可以合成一個分區。<br>
+  ・<b>⑤ 管「垂直方向要不要切開」</b>：同一座樓梯只要超過 45 m 就得再切一個分區，地下層一律另設。<br>
+  兩款都有一句共同的底線：<b>垂直空間的火警分區，不能和走廊、通道、居室混在一起</b>。
+</div>
+
+<!-- ============ 2 ============ -->
+<h2 id="sound"><span class="no">02</span>鳴動方式</h2>
+<p class="lede">大樓全棟同時響會造成樓梯口壅塞。§113 的「一部分鳴動」就是分批疏散的設計，但只適用於<b>5 樓以上且總樓地板面積 3,000 m² 以上</b>的建築物。</p>
+
+<figure>
+<svg viewBox="0 0 900 380" role="img" aria-label="火警自動警報設備三種起火位置的鳴動範圍">
+  <text class="s-txt" x="150" y="44" text-anchor="middle" font-weight="700">① 起火層為地上二層以上</text>
+  <text class="s-sm" x="150" y="60" text-anchor="middle">限該層＋直上二層＋直下層</text>
+  <rect x="105" y="70" width="90" height="26" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-sm" x="150" y="87" text-anchor="middle">6F</text>
+  <rect x="105" y="96" width="90" height="26" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-sm" x="150" y="113" text-anchor="middle">5F 鳴動</text>
+  <rect x="105" y="122" width="90" height="26" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-sm" x="150" y="139" text-anchor="middle">4F 鳴動</text>
+  <rect x="105" y="148" width="90" height="26" fill="var(--fill1)" stroke="var(--accent)" stroke-width="2.4"/>
+  <text class="s-sm" x="150" y="165" text-anchor="middle">3F 起火</text>
+  <rect x="105" y="174" width="90" height="26" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-sm" x="150" y="191" text-anchor="middle">2F 鳴動</text>
+  <rect x="105" y="200" width="90" height="26" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-sm" x="150" y="217" text-anchor="middle">1F</text>
+  <path class="s-line" stroke-width="2" d="M90 226 L210 226"/>
+  <rect x="105" y="226" width="90" height="26" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-sm" x="150" y="243" text-anchor="middle">B1</text>
+  <rect x="105" y="252" width="90" height="26" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-sm" x="150" y="269" text-anchor="middle">B2</text>
+
+  <text class="s-txt" x="450" y="44" text-anchor="middle" font-weight="700">② 起火層為地面層</text>
+  <text class="s-sm" x="450" y="60" text-anchor="middle">限該層＋直上層＋地下層各層</text>
+  <rect x="405" y="70" width="90" height="26" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-sm" x="450" y="87" text-anchor="middle">6F</text>
+  <rect x="405" y="96" width="90" height="26" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-sm" x="450" y="113" text-anchor="middle">5F</text>
+  <rect x="405" y="122" width="90" height="26" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-sm" x="450" y="139" text-anchor="middle">4F</text>
+  <rect x="405" y="148" width="90" height="26" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-sm" x="450" y="165" text-anchor="middle">3F</text>
+  <rect x="405" y="174" width="90" height="26" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-sm" x="450" y="191" text-anchor="middle">2F 鳴動</text>
+  <rect x="405" y="200" width="90" height="26" fill="var(--fill1)" stroke="var(--accent)" stroke-width="2.4"/>
+  <text class="s-sm" x="450" y="217" text-anchor="middle">1F 起火</text>
+  <path class="s-line" stroke-width="2" d="M390 226 L510 226"/>
+  <rect x="405" y="226" width="90" height="26" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-sm" x="450" y="243" text-anchor="middle">B1 鳴動</text>
+  <rect x="405" y="252" width="90" height="26" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-sm" x="450" y="269" text-anchor="middle">B2 鳴動</text>
+
+  <text class="s-txt" x="750" y="44" text-anchor="middle" font-weight="700">③ 起火層為地下層</text>
+  <text class="s-sm" x="750" y="60" text-anchor="middle">限地面層＋地下層各層</text>
+  <rect x="705" y="70" width="90" height="26" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-sm" x="750" y="87" text-anchor="middle">6F</text>
+  <rect x="705" y="96" width="90" height="26" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-sm" x="750" y="113" text-anchor="middle">5F</text>
+  <rect x="705" y="122" width="90" height="26" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-sm" x="750" y="139" text-anchor="middle">4F</text>
+  <rect x="705" y="148" width="90" height="26" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-sm" x="750" y="165" text-anchor="middle">3F</text>
+  <rect x="705" y="174" width="90" height="26" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-sm" x="750" y="191" text-anchor="middle">2F</text>
+  <rect x="705" y="200" width="90" height="26" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-sm" x="750" y="217" text-anchor="middle">1F 鳴動</text>
+  <path class="s-line" stroke-width="2" d="M690 226 L810 226"/>
+  <rect x="705" y="226" width="90" height="26" fill="var(--fill1)" stroke="var(--accent)" stroke-width="2.4"/>
+  <text class="s-sm" x="750" y="243" text-anchor="middle">B1 起火</text>
+  <rect x="705" y="252" width="90" height="26" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-sm" x="750" y="269" text-anchor="middle">B2 鳴動</text>
+
+  <text class="s-key" x="450" y="312" text-anchor="middle">§113④ 於 10 分鐘內，或受信總機再接受火災信號時，應立即全區鳴動</text>
+  <text class="s-sm" x="450" y="338" text-anchor="middle">適用範圍：建築物在 5 樓以上，且總樓地板面積 3,000 m² 以上者；未達此規模者一律全區鳴動。</text>
+  <text class="s-sm" x="450" y="362" text-anchor="middle">§135Ⅰ：緊急廣播設備與火警自動警報設備連動時，其火警音響之鳴動準用本條。</text>
+</svg>
+<figcaption>圖 3　§113 三種起火位置的鳴動範圍。共同邏輯是「煙往上跑」——所以永遠往上多叫幾層，地下層則整批叫</figcaption>
+</figure>
+
+<div class="cmp">
+  <b>三款的規律，用一句話記：往上多、往下少，地下層一律整批。</b><br>
+  ・起火在<b>地上二層以上</b> → 上 2 層、下 1 層（共 4 層）<br>
+  ・起火在<b>地面層</b> → 上 1 層、地下層<b>全部</b>（因為地面層起火煙會灌進地下）<br>
+  ・起火在<b>地下層</b> → 地面層、地下層<b>全部</b>（地下層只有一條路可以逃，就是往地面層）
+</div>
+
+<!-- ============ 3 ============ -->
+<h2 id="kinds"><span class="no">03</span>探測器種類的選擇</h2>
+<p class="lede">選型有兩道關卡：<b>§114 依「裝置場所高度」篩掉不夠靈敏的</b>，<b>§118 依「場所性質」強制指定要用偵煙式或火焰式</b>。兩張表要一起看。</p>
+
+<figure>
+<svg viewBox="0 0 900 390" role="img" aria-label="依裝置場所高度可選用的探測器種類">
+  <text class="s-txt" x="450" y="28" text-anchor="middle" font-weight="700">§114 依裝置場所高度選擇探測器種類</text>
+
+  <rect x="15" y="56" width="210" height="220" rx="6" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.5"/>
+  <text class="s-txt" x="120" y="80" text-anchor="middle" font-weight="700">未滿 4 m</text>
+  <text class="s-sm" x="120" y="112" text-anchor="middle">差動式局限型</text>
+  <text class="s-sm" x="120" y="132" text-anchor="middle">差動式分布型</text>
+  <text class="s-sm" x="120" y="152" text-anchor="middle">補償式局限型</text>
+  <text class="s-sm" x="120" y="172" text-anchor="middle">定溫式</text>
+  <text class="s-sm" x="120" y="192" text-anchor="middle">離子式局限型</text>
+  <text class="s-sm" x="120" y="212" text-anchor="middle">光電式局限型</text>
+  <text class="s-sm" x="120" y="232" text-anchor="middle">光電式分離型</text>
+  <text class="s-sm" x="120" y="252" text-anchor="middle">火焰式</text>
+
+  <rect x="235" y="56" width="210" height="220" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.5"/>
+  <text class="s-txt" x="340" y="80" text-anchor="middle" font-weight="700">4 m 以上未滿 8 m</text>
+  <text class="s-sm" x="340" y="112" text-anchor="middle">差動式局限型</text>
+  <text class="s-sm" x="340" y="132" text-anchor="middle">差動式分布型</text>
+  <text class="s-sm" x="340" y="152" text-anchor="middle">補償式局限型</text>
+  <text class="s-sm" x="340" y="172" text-anchor="middle">定溫式 特種或一種</text>
+  <text class="s-sm" x="340" y="192" text-anchor="middle">離子式局限型 一種或二種</text>
+  <text class="s-sm" x="340" y="212" text-anchor="middle">光電式局限型 一種或二種</text>
+  <text class="s-sm" x="340" y="232" text-anchor="middle">光電式分離型</text>
+  <text class="s-sm" x="340" y="252" text-anchor="middle">火焰式</text>
+
+  <rect x="455" y="56" width="210" height="220" rx="6" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <text class="s-txt" x="560" y="80" text-anchor="middle" font-weight="700">8 m 以上未滿 15 m</text>
+  <text class="s-sm" x="560" y="112" text-anchor="middle">差動式分布型</text>
+  <text class="s-sm" x="560" y="132" text-anchor="middle">離子式局限型 一種或二種</text>
+  <text class="s-sm" x="560" y="152" text-anchor="middle">光電式局限型 一種或二種</text>
+  <text class="s-sm" x="560" y="172" text-anchor="middle">光電式分離型</text>
+  <text class="s-sm" x="560" y="192" text-anchor="middle">火焰式</text>
+  <text class="s-sm" x="560" y="228" text-anchor="middle">差動式局限型、補償式</text>
+  <text class="s-sm" x="560" y="248" text-anchor="middle">局限型、定溫式全部出局</text>
+
+  <rect x="675" y="56" width="210" height="220" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text class="s-txt" x="780" y="80" text-anchor="middle" font-weight="700">15 m 以上未滿 20 m</text>
+  <text class="s-sm" x="780" y="112" text-anchor="middle">離子式局限型 一種</text>
+  <text class="s-sm" x="780" y="132" text-anchor="middle">光電式局限型 一種</text>
+  <text class="s-sm" x="780" y="152" text-anchor="middle">光電式分離型 一種</text>
+  <text class="s-sm" x="780" y="172" text-anchor="middle">火焰式</text>
+  <text class="s-sm" x="780" y="208" text-anchor="middle">只剩偵煙式的「一種」</text>
+  <text class="s-sm" x="780" y="228" text-anchor="middle">與火焰式，且差動式</text>
+  <text class="s-sm" x="780" y="248" text-anchor="middle">分布型也退場了</text>
+
+  <text class="s-key" x="450" y="318" text-anchor="middle">高度越高，熱訊號越稀薄——熱感式先出局，最後只剩偵煙式一種與火焰式</text>
+  <text class="s-sm" x="450" y="344" text-anchor="middle">同一室內之天花板或屋頂板高度不同時，以平均高度計（§114 但書）。</text>
+  <text class="s-sm" x="450" y="368" text-anchor="middle">超過 20 m 時，除火焰式外得免設探測器（§116①）——火焰式是唯一沒有高度上限的種類。</text>
+</svg>
+<figcaption>圖 4　§114 裝置場所高度與可選探測器種類。四個級距是「越來越少」的包含關係</figcaption>
+</figure>
+
+<h3>§118：下表所列場所「應」就偵煙式、熱煙複合式或火焰式選擇設置</h3>
+<div class="scroll">
+<table>
+<thead><tr><th>設置場所</th><th class="c">偵煙式</th><th class="c">熱煙複合式</th><th class="c">火焰式</th></tr></thead>
+<tbody>
+<tr><td>樓梯或斜坡通道</td><td class="c"><b>○</b></td><td class="c"></td><td class="c"></td></tr>
+<tr><td>走廊或通道（限供 §12①、②之二目、六目至十目、④及⑤使用者）</td><td class="c"><b>○</b></td><td class="c"><b>○</b></td><td class="c"></td></tr>
+<tr><td>昇降機之昇降坑道或配管配線管道間</td><td class="c"><b>○</b></td><td class="c"></td><td class="c"></td></tr>
+<tr><td>天花板等高度在 <b>15 m 以上未滿 20 m</b> 之場所</td><td class="c"><b>○</b></td><td class="c"></td><td class="c"><b>○</b></td></tr>
+<tr><td>天花板等高度<b>超過 20 m</b> 之場所</td><td class="c"></td><td class="c"></td><td class="c"><b>○</b></td></tr>
+<tr><td>地下層、無開口樓層及 11 層以上之各樓層<br><span style="color:var(--muted);font-size:.92em">（前揭所列樓層限供 §12①、②之二目、六目、八目至十目及⑤使用者）</span></td><td class="c"><b>○</b></td><td class="c"><b>○</b></td><td class="c"><b>○</b></td></tr>
+</tbody>
+</table>
+</div>
+<p class="lede">○ 表可選擇設置。<b>天花板超過 20 m 的場所只剩火焰式一個選項</b>——這也呼應 §114 把 20 m 設為上限，以及 §116① 除火焰式外得免設。</p>
+
+<div class="note">
+  <b>§114 和 §118 的關係是「上限」與「下限」。</b>
+  §114 說的是「這個高度<b>最多</b>能用哪些」，§118 說的是「這種場所<b>至少</b>要用偵煙式／熱煙複合式／火焰式」。
+  兩張表要取交集：例如天花板 18 m 的挑高中庭，§114 允許四種、§118 限定偵煙式或火焰式，
+  交集就是<b>離子式局限型一種、光電式局限型一種、光電式分離型一種、火焰式</b>。
+</div>
+
+<!-- ============ 4 ============ -->
+<h2 id="forbid"><span class="no">04</span>免設與不得設</h2>
+<p class="lede">「<b>得免設</b>」是整個處所不用裝；「<b>不得設</b>」是這一種不能用，但仍然要裝，只是要換一種。兩者常被混為一談。</p>
+
+<figure>
+<svg viewBox="0 0 900 305" role="img" aria-label="免設探測器與不得設某種探測器的差異">
+  <text class="s-txt" x="450" y="28" text-anchor="middle" font-weight="700">「得免設」與「不得設」不是同一件事</text>
+
+  <rect x="40" y="56" width="380" height="170" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.5"/>
+  <text class="s-txt" x="230" y="84" text-anchor="middle" font-weight="700">§116　得免設探測器</text>
+  <text class="s-sm" x="230" y="110" text-anchor="middle">該處所不必裝任何探測器</text>
+  <text class="s-key" x="230" y="138" text-anchor="middle" fill="var(--accent3)">→ 整個分區在此留白</text>
+  <text class="s-sm" x="230" y="166" text-anchor="middle">例：裝置面高度 &gt; 20 m（火焰式除外）、</text>
+  <text class="s-sm" x="230" y="188" text-anchor="middle">洗手間廁所浴室、金庫、游泳池水面上方</text>
+  <text class="s-sm" x="230" y="212" text-anchor="middle">共 8 款</text>
+
+  <rect x="480" y="56" width="380" height="170" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <text class="s-txt" x="670" y="84" text-anchor="middle" font-weight="700">§117　不得設（限某一種）</text>
+  <text class="s-sm" x="670" y="110" text-anchor="middle">偵煙式・熱煙複合式局限型不得設 9 款</text>
+  <text class="s-sm" x="670" y="132" text-anchor="middle">火焰式不得設（準用其中 7 款＋水蒸氣）</text>
+  <text class="s-key" x="670" y="160" text-anchor="middle" fill="var(--warn)">→ 仍要裝，但要換一種探測器</text>
+  <text class="s-sm" x="670" y="188" text-anchor="middle">依 §117 第 3 項表選擇適當種類</text>
+  <text class="s-sm" x="670" y="212" text-anchor="middle">（該表在法規資料庫網頁版被省略）</text>
+
+  <text class="s-sm" x="450" y="264" text-anchor="middle">同一個「廚房」：§117Ⅰ③ 說偵煙式不得設，但廚房並不在 §116 免設之列——查表後改用定溫式特種或一種。</text>
+  <text class="s-sm" x="450" y="290" text-anchor="middle">定溫式特種與一種是全表唯一 9 個場所都打勾的，等於「什麼惡劣環境都撐得住」。</text>
+</svg>
+<figcaption>圖 5　§116 與 §117 的分野。搞錯的代價是整個廚房沒有探測器</figcaption>
+</figure>
+
+<h3>§116：得免設探測器之處所（8 款）</h3>
+<ol class="law">
+<li>探測器<b>除火焰式外</b>，裝置面高度<b>超過 20 m</b> 者</li>
+<li><b>外氣流通</b>無法有效探測火災之場所</li>
+<li>洗手間、廁所或浴室</li>
+<li><b>冷藏庫</b>等設有能早期發現火災之溫度自動調整裝置者</li>
+<li>主要構造為防火構造，且開口設有具 <b>1 小時</b>以上防火時效防火門之<b>金庫</b></li>
+<li>室內游泳池之<b>水面</b>或溜冰場之<b>冰面上方</b></li>
+<li><b>不燃性石材或金屬等加工場</b>，未儲存或未處理可燃性物品處</li>
+<li>其他經中央主管機關指定之場所</li>
+</ol>
+
+<h3>§117 第 1 項：偵煙式或熱煙複合式局限型探測器<b>不得設</b>之處所（9 款）</h3>
+<ol class="law">
+<li>塵埃、粉末或水蒸氣會大量滯留之場所</li>
+<li>會散發<b>腐蝕性氣體</b>之場所</li>
+<li><b>廚房</b>及其他平時煙會滯留之場所</li>
+<li>顯著<b>高溫</b>之場所</li>
+<li>排放<b>廢氣</b>會大量滯留之場所</li>
+<li>煙會大量流入之場所</li>
+<li>會<b>結露</b>之場所</li>
+<li>設有用火設備其<b>火焰外露</b>之場所</li>
+<li>其他對探測器機能會造成障礙之場所</li>
+</ol>
+<p class="lede"><b>§117 第 2 項</b>：火焰式探測器不得設於——前項<b>第 2 款至第 4 款</b>或<b>第 6 款至第 8 款</b>所列處所、<b>水蒸氣</b>會大量滯留之處所、其他對探測器機能會造成障礙之處所。（即火焰式對「灰塵粉末」與「結露」相對耐受，但怕水蒸氣、腐蝕、高溫、煙、火焰外露。）</p>
+
+<h3>§117 第 3 項：前二項所列場所之探測器適用表（網頁版省略之表）</h3>
+<div class="scroll">
+<table>
+<thead>
+<tr>
+  <th rowspan="2">適用探測器</th>
+  <th class="c">1</th><th class="c">2</th><th class="c">3</th><th class="c">4</th><th class="c">5</th><th class="c">6</th><th class="c">7</th><th class="c">8</th><th class="c">9</th>
+</tr>
+<tr>
+  <th class="c" style="font-weight:400;font-size:.86em">灰塵、粉末會大量滯留</th>
+  <th class="c" style="font-weight:400;font-size:.86em">水蒸氣會大量滯留</th>
+  <th class="c" style="font-weight:400;font-size:.86em">會散發腐蝕性氣體</th>
+  <th class="c" style="font-weight:400;font-size:.86em">平時煙會滯留</th>
+  <th class="c" style="font-weight:400;font-size:.86em">顯著高溫</th>
+  <th class="c" style="font-weight:400;font-size:.86em">排放廢氣會大量滯留</th>
+  <th class="c" style="font-weight:400;font-size:.86em">煙會大量流入</th>
+  <th class="c" style="font-weight:400;font-size:.86em">會結露</th>
+  <th class="c" style="font-weight:400;font-size:.86em">用火設備火焰外露</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>差動式局限型　一種</td><td class="c">○</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c">○</td><td class="c">○</td><td class="c"></td><td class="c"></td></tr>
+<tr><td>差動式局限型　二種</td><td class="c">○</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c">○</td><td class="c">○</td><td class="c"></td><td class="c"></td></tr>
+<tr><td>差動式分布型　一種</td><td class="c">○</td><td class="c"></td><td class="c">○</td><td class="c"></td><td class="c"></td><td class="c">○</td><td class="c">○</td><td class="c">○</td><td class="c"></td></tr>
+<tr><td>差動式分布型　二種</td><td class="c">○</td><td class="c">○</td><td class="c">○</td><td class="c"></td><td class="c"></td><td class="c">○</td><td class="c">○</td><td class="c">○</td><td class="c"></td></tr>
+<tr><td>補償式局限型　一種</td><td class="c">○</td><td class="c"></td><td class="c">○</td><td class="c"></td><td class="c"></td><td class="c">○</td><td class="c">○</td><td class="c">○</td><td class="c"></td></tr>
+<tr><td>補償式局限型　二種</td><td class="c">○</td><td class="c">○</td><td class="c">○</td><td class="c"></td><td class="c"></td><td class="c">○</td><td class="c">○</td><td class="c">○</td><td class="c"></td></tr>
+<tr><td><b>定溫式　特種</b></td><td class="c"><b>○</b></td><td class="c"><b>○</b></td><td class="c"><b>○</b></td><td class="c"><b>○</b></td><td class="c"><b>○</b></td><td class="c"><b>○</b></td><td class="c"><b>○</b></td><td class="c"><b>○</b></td><td class="c"><b>○</b></td></tr>
+<tr><td><b>定溫式　一種</b></td><td class="c"><b>○</b></td><td class="c"><b>○</b></td><td class="c"><b>○</b></td><td class="c"><b>○</b></td><td class="c"><b>○</b></td><td class="c"><b>○</b></td><td class="c"><b>○</b></td><td class="c"><b>○</b></td><td class="c"><b>○</b></td></tr>
+<tr><td>火焰式</td><td class="c">○</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c">○</td><td class="c"></td><td class="c"></td><td class="c"></td></tr>
+</tbody>
+</table>
+</div>
+<p class="lede">○ 表可選擇設置。原表附註四點：<br>
+① 場所 <b>1</b> 所使用之差動式局限型、補償式局限型探測器或差動式分布型之檢出器，應具<b>灰塵、粉末不易入侵</b>之構造。<br>
+② 場所 <b>2、4、8</b> 所使用之定溫式或補償式探測器，應具有<b>防水性能</b>。<br>
+③ 場所 <b>3</b> 所使用之定溫式或補償式探測器，應依腐蝕性氣體別使用具<b>耐酸或耐鹼</b>性能者；使用差動式分布型時，其空氣管及檢出器應採有效措施防範腐蝕性氣體侵蝕。</p>
+
+<div class="cmp">
+  <b>從表裡讀得出三件事。</b><br>
+  ① <b>顯著高溫（5）與火焰外露（9）只有定溫式能用</b>——溫度本來就高，只能靠「到達某一溫度才動作」的定溫式。<br>
+  ② <b>水蒸氣（2）把「一種」全部刷掉</b>：差動式分布型與補償式局限型只剩二種可用，因為一種太靈敏會誤報。<br>
+  ③ <b>火焰式只在「灰塵粉末（1）」與「排放廢氣（6）」兩欄有○</b>——它靠看火光工作，不怕粉塵，但怕任何會擋住視線或發熱的東西。
+</div>
+
+<!-- ============ 5 ============ -->
+<h2 id="area"><span class="no">05</span>探測區域與有效探測範圍</h2>
+<p class="lede">算探測器個數是兩步：先用 <b>§119</b> 把樓層切成「探測區域」，再用 <b>§120～§122</b> 的有效探測範圍表除下去。</p>
+
+<figure>
+<svg viewBox="0 0 900 215" role="img" aria-label="探測區域的樑淨高定義與探測器裝設高度">
+  <path class="s-thin" d="M450 16 L450 205"/>
+
+  <text class="s-txt" x="235" y="30" text-anchor="middle" font-weight="700">§119 探測區域 ・ §120Ⅰ① 裝設高度</text>
+  <path class="s-line" d="M60 70 L410 70"/>
+  <path class="s-thin" d="M70 70 L62 62 M100 70 L92 62 M130 70 L122 62 M160 70 L152 62 M190 70 L182 62 M220 70 L212 62 M250 70 L242 62 M280 70 L272 62 M310 70 L302 62 M340 70 L332 62 M370 70 L362 62"/>
+  <rect x="270" y="70" width="40" height="50" fill="var(--fill2)" stroke="var(--line)" stroke-width="1.4"/>
+  <text class="s-sm" x="290" y="140" text-anchor="middle">樑</text>
+  <path class="s-dim" d="M330 70 L330 120 M324 70 L336 70 M324 120 L336 120"/>
+  <text class="s-key" x="342" y="98">淨高</text>
+  <rect x="130" y="70" width="18" height="22" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.4"/>
+  <path class="s-dim" d="M110 70 L110 92 M104 70 L116 70 M104 92 L116 92"/>
+  <text class="s-key" x="98" y="86" text-anchor="end">≤30 cm</text>
+  <text class="s-sm" x="235" y="168" text-anchor="middle">一般 ≥ 40 cm；差動式分布型與偵煙式 ≥ 60 cm</text>
+  <text class="s-sm" x="235" y="192" text-anchor="middle">有樑包圍才叫「探測區域」，各區域分別核算應設個數</text>
+
+  <text class="s-txt" x="675" y="30" text-anchor="middle" font-weight="700">§122①②③ 偵煙式（除光電式分離型外）</text>
+  <path class="s-line" d="M490 70 L860 70"/>
+  <path class="s-thin" d="M500 70 L492 62 M530 70 L522 62 M560 70 L552 62 M590 70 L582 62 M620 70 L612 62 M650 70 L642 62 M680 70 L672 62 M710 70 L702 62 M740 70 L732 62 M770 70 L762 62 M800 70 L792 62"/>
+  <rect x="836" y="70" width="24" height="90" fill="var(--fill2)" stroke="var(--line)" stroke-width="1.4"/>
+  <rect x="660" y="70" width="18" height="26" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.4"/>
+  <path class="s-dim" d="M630 70 L630 96 M624 70 L636 70 M624 96 L636 96"/>
+  <text class="s-key" x="618" y="88" text-anchor="end">≤60 cm</text>
+  <path class="s-dim" d="M678 120 L836 120 M678 114 L678 126 M836 114 L836 126"/>
+  <text class="s-key" x="757" y="112" text-anchor="middle" fill="var(--accent2)">≥ 60 cm</text>
+  <text class="s-sm" x="675" y="168" text-anchor="middle">下端距裝置面 ≤ 60 cm；距牆壁或樑 ≥ 60 cm</text>
+  <text class="s-sm" x="675" y="192" text-anchor="middle">居室天花板高 ≤ 2.3 m 或面積 ≤ 40 m² 時，設在出入口附近</text>
+</svg>
+<figcaption>圖 6　§119 探測區域的樑淨高門檻，與熱感式（30 cm）／偵煙式（60 cm）兩種裝設深度</figcaption>
+</figure>
+
+<div class="note">
+  <b>「30 / 60」這組數字貫穿整節。</b>
+  熱感式（差動式局限型、補償式局限型、定溫式局限型、差動式分布型的空氣管與熱電偶、定溫式線型）一律是<b>裝置面下方 30 cm</b> 範圍內；
+  偵煙式是 <b>60 cm</b>。探測區域的樑淨高門檻也是同一組：一般 <b>40 cm</b>，但差動式分布型與偵煙式要 <b>60 cm</b>。<br>
+  原因是煙比熱更容易在樑下停滯，所以偵煙式需要更大的空間才算得上是獨立區域。
+</div>
+
+<h3>§115：探測器的裝置位置</h3>
+<table>
+<thead><tr><th class="n">款</th><th>規定</th></tr></thead>
+<tbody>
+<tr><td class="n">①</td><td>天花板上設有<b>出風口</b>時，除<b>火焰式、差動式分布型及光電式分離型</b>外，應距離該出風口 <b>1.5 m 以上</b></td></tr>
+<tr><td class="n">②</td><td>牆上設有出風口時，應距離該出風口 <b>1.5 m 以上</b>；但該出風口距天花板在 <b>1 m 以上</b>時，不在此限</td></tr>
+<tr><td class="n">③</td><td>天花板設<b>排氣口或回風口</b>時，<b>偵煙式</b>探測器應裝置於排氣口或回風口<b>周圍 1 m 範圍內</b></td></tr>
+<tr><td class="n">④</td><td>局限型探測器以裝置在<b>探測區域中心附近</b>為原則</td></tr>
+<tr><td class="n">⑤</td><td>局限型探測器之裝置，<b>不得傾斜 45 度以上</b>；但火焰式探測器不在此限</td></tr>
+</tbody>
+</table>
+<p class="lede"><b>出風口要「遠離」，排氣口／回風口要「靠近」。</b>出風口把煙吹散、稀釋，探測器待在旁邊會漏報；排氣口與回風口則是把煙「吸過去」的地方，偵煙式待在那裡反而最靈。</p>
+
+<h3>§120 第 2 款：差動式局限型・補償式局限型・定溫式局限型的有效探測範圍（m²）</h3>
+<div class="scroll">
+<table>
+<thead>
+<tr><th rowspan="2">探測器種類</th><th colspan="2" class="c">裝置面高度 未滿 4 m</th><th colspan="2" class="c">裝置面高度 4 m 以上未滿 8 m</th></tr>
+<tr><th class="c">防火構造建築物</th><th class="c">其他建築物</th><th class="c">防火構造建築物</th><th class="c">其他建築物</th></tr>
+</thead>
+<tbody>
+<tr><td>差動式局限型　一種</td><td class="c"><b>90</b></td><td class="c">50</td><td class="c">45</td><td class="c">30</td></tr>
+<tr><td>差動式局限型　二種</td><td class="c">70</td><td class="c">40</td><td class="c">35</td><td class="c">25</td></tr>
+<tr><td>補償式局限型　一種</td><td class="c"><b>90</b></td><td class="c">50</td><td class="c">45</td><td class="c">30</td></tr>
+<tr><td>補償式局限型　二種</td><td class="c">70</td><td class="c">40</td><td class="c">35</td><td class="c">25</td></tr>
+<tr><td>定溫式局限型　特種</td><td class="c">70</td><td class="c">40</td><td class="c">35</td><td class="c">25</td></tr>
+<tr><td>定溫式局限型　一種</td><td class="c">60</td><td class="c">30</td><td class="c">30</td><td class="c">15</td></tr>
+<tr><td>定溫式局限型　二種</td><td class="c"><b>20</b></td><td class="c">15</td><td class="c">—</td><td class="c">—</td></tr>
+</tbody>
+</table>
+</div>
+<p class="lede">每一有效探測範圍<b>至少設置一個</b>。四個規律：<b>差動式一種＝補償式一種</b>（同為 90/50/45/30）、<b>差動式二種＝補償式二種＝定溫式特種</b>（同為 70/40/35/25）、<b>非防火構造大約打七折</b>、<b>定溫式二種在 4 m 以上不能用</b>（表上是「—」，與 §114 相符）。</p>
+
+<div class="note">
+  <b>§120 第 3 款的「低 20 度」規定。</b>
+  具有定溫式性能之探測器，應裝設在平時之<b>最高周圍溫度，比補償式局限型探測器之標稱定溫點或其他具定溫式性能探測器之標稱動作溫度低攝氏 20 度以上</b>處。
+  具二種以上標稱動作溫度者，以<b>最低</b>標稱動作溫度為準。<br>
+  對照自動撒水的 §48（周圍溫度 39／64／106 對應標示溫度 75／121／162），兩者都是同一個道理：<b>留足夠的溫差，避免平時就動作</b>。
+</div>
+
+<h3>§121 第 1 款：差動式分布型（空氣管式）</h3>
+<table>
+<thead><tr><th class="n">目</th><th>規定</th></tr></thead>
+<tbody>
+<tr><td class="n">（一）</td><td>每一探測區域內之空氣管長度，<b>露出部分在 20 m 以上</b></td></tr>
+<tr><td class="n">（二）</td><td>裝接於<b>一個檢出器</b>之空氣管長度，在 <b>100 m 以下</b></td></tr>
+<tr><td class="n">（三）</td><td>空氣管裝置在裝置面下方 <b>30 cm</b> 範圍內</td></tr>
+<tr><td class="n">（四）</td><td>裝置在自裝置面任一邊起 <b>1.5 m 以內</b>之位置；其間距，<b>防火構造建築物 ≤ 9 m</b>、<b>其他建築物 ≤ 6 m</b>（能有效探測火災發生者不在此限）</td></tr>
+</tbody>
+</table>
+
+<h3>§121 第 2 款：差動式分布型（熱電偶式）</h3>
+<table>
+<thead><tr><th>建築物構造</th><th>探測區域樓地板面積</th><th>應設探測器數</th></tr></thead>
+<tbody>
+<tr><td rowspan="2"><b>防火構造</b>建築物</td><td><b>88 m² 以下</b></td><td>至少 <b>4 個</b></td></tr>
+<tr><td>超過 88 m²</td><td>應設 4 個，<b>每增加 22 m²</b>（包括未滿）增設 1 個</td></tr>
+<tr><td rowspan="2"><b>其他</b>建築物</td><td><b>72 m² 以下</b></td><td>至少 <b>4 個</b></td></tr>
+<tr><td>超過 72 m²</td><td>應設 4 個，<b>每增加 18 m²</b>（包括未滿）增設 1 個</td></tr>
+</tbody>
+</table>
+<p class="lede">另：熱電偶應裝置在裝置面下方 <b>30 cm</b> 範圍內；裝接於一個檢出器之<b>熱電偶數在 20 個以下</b>。<br>
+規律很好記：<b>88 = 4 × 22、72 = 4 × 18</b>——「至少 4 個」其實就是把基準面積分成四份。</p>
+
+<h3>§121 第 3 款：差動式分布型（熱半導體式）有效探測範圍（m²）</h3>
+<table>
+<thead><tr><th>裝置面高度</th><th>建築物構造</th><th class="c">一種</th><th class="c">二種</th></tr></thead>
+<tbody>
+<tr><td rowspan="2">未滿 8 m</td><td>防火構造建築物</td><td class="c"><b>65</b></td><td class="c">36</td></tr>
+<tr><td>其他建築物</td><td class="c">40</td><td class="c">23</td></tr>
+<tr><td rowspan="2">8 m 以上未滿 15 m</td><td>防火構造建築物</td><td class="c"><b>50</b></td><td class="c">—</td></tr>
+<tr><td>其他建築物</td><td class="c">30</td><td class="c">—</td></tr>
+</tbody>
+</table>
+<p class="lede">探測器下端裝設在裝置面下方 <b>30 cm</b> 範圍內；每一有效探測範圍<b>至少設置 2 個</b>，<b>但裝置面高度未滿 8 m 時至少 1 個</b>。裝接於一個檢出器之<b>感熱器數量在 2 個以上 15 個以下</b>。<br>
+<b>§121 第 2 項</b>：檢出器應設於便於檢修處，且與裝置面<b>不得傾斜 5 度以上</b>（局限型是 45 度，差很多）。</p>
+
+<h3>§121 第 3 項：定溫式線型探測器</h3>
+<table>
+<thead><tr><th>種類</th><th>自裝置面任一點起之水平距離</th></tr></thead>
+<tbody>
+<tr><td><b>第一種</b></td><td><b>3 m</b> 以內（防火構造建築物為 <b>4.5 m</b>）</td></tr>
+<tr><td><b>第二種</b></td><td><b>1 m</b> 以內（防火構造建築物為 <b>3 m</b>）</td></tr>
+</tbody>
+</table>
+<p class="lede">探測器設在裝置面下方 <b>30 cm</b> 範圍內。</p>
+
+<h3>§122 第 4 款：偵煙式（除光電式分離型外）有效探測範圍（m²）</h3>
+<table>
+<thead><tr><th>裝置面高度</th><th class="c">一種或二種</th><th class="c">三種</th></tr></thead>
+<tbody>
+<tr><td>未滿 4 m</td><td class="c"><b>150</b></td><td class="c">50</td></tr>
+<tr><td>4 m 以上未滿 20 m</td><td class="c"><b>75</b></td><td class="c">—</td></tr>
+</tbody>
+</table>
+<p class="lede">走廊、通道、樓梯及傾斜路面<b>不適用</b>本表，改依第 5、6 款以距離計。<b>偵煙式的 150 m² 是全部探測器裡最大的有效範圍</b>——這也是為什麼實務上大量採用它。</p>
+
+<figure>
+<svg viewBox="0 0 900 230" role="img" aria-label="偵煙式探測器在走廊及通道的間距規定">
+  <text class="s-txt" x="450" y="30" text-anchor="middle" font-weight="700">§122⑤ 走廊及通道：以步行距離計，不查表</text>
+  <rect x="60" y="60" width="700" height="60" fill="var(--fill2)" stroke="var(--line)" stroke-width="1.4"/>
+  <rect x="760" y="52" width="16" height="76" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.4"/>
+  <text class="s-sm" x="768" y="42" text-anchor="middle">盡頭</text>
+  <circle cx="180" cy="90" r="8" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <circle cx="420" cy="90" r="8" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <circle cx="660" cy="90" r="8" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <path class="s-dim" d="M180 142 L420 142 M180 136 L180 148 M420 136 L420 148"/>
+  <text class="s-key" x="300" y="164" text-anchor="middle">步行距離 ≤ 30 m</text>
+  <path class="s-dim" d="M660 142 L760 142 M660 136 L660 148 M760 136 L760 148"/>
+  <text class="s-key" x="710" y="164" text-anchor="middle">≤ 15 m</text>
+  <text class="s-sm" x="450" y="192" text-anchor="middle">使用<tspan font-weight="700">第三種</tspan>探測器時：每 20 m 一個，距盡頭之牆壁 ≤ 10 m</text>
+  <text class="s-sm" x="450" y="216" text-anchor="middle">但走廊或通道至樓梯之步行距離 ≤ 10 m，且樓梯設有平時開放式防火門或居室有面向該處之出入口時，得免設</text>
+</svg>
+<figcaption>圖 7　§122⑤ 走廊與通道的兩個距離：間距 30 m、距盡頭 15 m（第三種各為 20 m 與 10 m）</figcaption>
+</figure>
+
+<figure>
+<svg viewBox="0 0 900 300" role="img" aria-label="偵煙式探測器在樓梯與昇降機坑道管道間的設置">
+  <path class="s-thin" d="M450 16 L450 240"/>
+
+  <text class="s-txt" x="235" y="28" text-anchor="middle" font-weight="700">§122⑥ 樓梯 ・ 斜坡通道 ・ 電扶梯</text>
+  <rect x="180" y="50" width="110" height="190" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <circle cx="235" cy="70" r="7" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <circle cx="235" cy="140" r="7" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <circle cx="235" cy="210" r="7" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <path class="s-dim" d="M160 70 L160 140 M154 70 L166 70 M154 140 L166 140"/>
+  <text class="s-key" x="148" y="109" text-anchor="end" fill="var(--accent2)">≤15 m</text>
+  <path class="s-dim" d="M160 140 L160 210 M154 210 L166 210"/>
+  <text class="s-key" x="148" y="179" text-anchor="end" fill="var(--accent2)">≤15 m</text>
+  <text class="s-sm" x="235" y="266" text-anchor="middle">垂直距離每 15 m 至少一個</text>
+  <text class="s-sm" x="235" y="288" text-anchor="middle">使用第三種探測器時，每 10 m 至少一個</text>
+
+  <text class="s-txt" x="675" y="28" text-anchor="middle" font-weight="700">§122⑦ 昇降機坑道 ・ 管道間</text>
+  <rect x="620" y="50" width="110" height="190" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <circle cx="675" cy="66" r="7" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-key" x="675" y="96" text-anchor="middle" fill="var(--warn)">設在最頂部</text>
+  <text class="s-sm" x="675" y="266" text-anchor="middle">限管道截面積 ≥ 1 m² 者</text>
+  <text class="s-sm" x="675" y="288" text-anchor="middle">昇降路頂部有機械室且與昇降路間有開口時，設於機械室，昇降路頂部得免設</text>
+</svg>
+<figcaption>圖 8　§122⑥⑦ 垂直空間的兩種算法：樓梯按 15 m 分段，坑道與管道間只在最頂部設一個</figcaption>
+</figure>
+
+<div class="ex">
+  <div class="t">實例 1　辦公室的探測器個數</div>
+  <div class="given">某防火構造建築物之辦公室，樓層天花板高度 3.2 m，一個探測區域樓地板面積 420 m²。分別以「差動式局限型一種」與「光電式局限型二種（偵煙式）」核算應設個數。</div>
+  <div class="step">① 天花板高度 3.2 m &lt; 4 m，兩種都在 §114 允許範圍內。</div>
+  <div class="step">② 差動式局限型一種（§120②，未滿 4 m、防火構造）：有效探測範圍 <b>90 m²</b> → <code>420 ÷ 90 = 4.67 → 5 個</code></div>
+  <div class="step">③ 偵煙式一種或二種（§122④，未滿 4 m）：有效探測範圍 <b>150 m²</b> → <code>420 ÷ 150 = 2.8 → 3 個</code></div>
+  <div class="ans">差動式局限型一種需 <b>5 個</b>；偵煙式一種或二種需 <b>3 個</b>。<br>
+  偵煙式的有效範圍與建築物構造無關（表上沒有防火構造欄位），這是它和熱感式最大的差別。</div>
+</div>
+
+<div class="ex">
+  <div class="t">實例 2　熱電偶式的個數</div>
+  <div class="given">某<b>非</b>防火構造建築物，一個探測區域樓地板面積 150 m²，採差動式分布型（熱電偶式）。</div>
+  <div class="step">① 非防火構造之基準為 <b>72 m²</b> 以下至少 4 個。150 &gt; 72，須加算。</div>
+  <div class="step">② 超出部分：<code>150 − 72 = 78 m²</code>；每增加 <b>18 m²</b>（包括未滿）增設 1 個 → <code>78 ÷ 18 = 4.33 → 5 個</code></div>
+  <div class="step">③ 合計：<code>4 + 5 = 9 個</code></div>
+  <div class="ans">應設熱電偶 <b>9 個</b>。<br>
+  但 §121Ⅰ②（三）規定<b>裝接於一個檢出器之熱電偶數在 20 個以下</b>，9 個仍在同一個檢出器可承受的範圍內。</div>
+</div>
+
+<!-- ============ 6 ============ -->
+<h2 id="special"><span class="no">06</span>光電式分離型與火焰式</h2>
+<p class="lede">這兩種探測器不算「面積」，算的是<b>一條線</b>與<b>一個視野</b>，所以 §123、§124 用的是完全不同的量法。</p>
+
+<figure>
+<svg viewBox="0 0 900 270" role="img" aria-label="光電式分離型探測器與火焰式探測器的設置規定">
+  <path class="s-thin" d="M450 16 L450 258"/>
+
+  <text class="s-txt" x="230" y="28" text-anchor="middle" font-weight="700">§123 光電式分離型</text>
+  <path class="s-line" d="M70 55 L390 55"/>
+  <rect x="72" y="80" width="16" height="24" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.4"/>
+  <rect x="372" y="80" width="16" height="24" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.4"/>
+  <path stroke="var(--accent2)" stroke-width="1.6" stroke-dasharray="6 4" fill="none" d="M88 92 L372 92"/>
+  <text class="s-key" x="230" y="80" text-anchor="middle" fill="var(--accent2)">光軸</text>
+  <path class="s-line" d="M70 130 L390 130"/>
+  <text class="s-sm" x="230" y="152" text-anchor="middle">受光面設在無日光照射之處</text>
+  <text class="s-sm" x="230" y="172" text-anchor="middle">與光軸平行之牆壁距離 ≥ 60 cm</text>
+  <text class="s-sm" x="230" y="192" text-anchor="middle">受光器及送光器距背部牆壁 1 m 範圍內</text>
+  <text class="s-sm" x="230" y="212" text-anchor="middle">光軸高度 ≥ 天花板等高度的 80%</text>
+  <text class="s-sm" x="230" y="232" text-anchor="middle">光軸與警戒區任一點之水平距離 ≤ 7 m</text>
+  <text class="s-sm" x="230" y="252" text-anchor="middle">光軸長度 ≤ 標稱監視距離；設於天花板等高度 20 m 以下之場所</text>
+
+  <text class="s-txt" x="675" y="28" text-anchor="middle" font-weight="700">§124 火焰式</text>
+  <path class="s-line" d="M500 55 L850 55"/>
+  <rect x="660" y="55" width="20" height="16" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.4"/>
+  <path stroke="var(--accent2)" stroke-width="1.4" stroke-dasharray="5 4" fill="none" d="M670 71 L560 130 M670 71 L780 130"/>
+  <rect x="510" y="100" width="330" height="30" fill="var(--fill4)" stroke="none"/>
+  <path class="s-line" d="M500 130 L850 130"/>
+  <text class="s-sm" x="675" y="152" text-anchor="middle">距樓地板面 1.2 m 範圍內之空間（上圖底色帶）</text>
+  <text class="s-key" x="675" y="176" text-anchor="middle">應在探測器標稱監視距離範圍內</text>
+  <text class="s-sm" x="675" y="200" text-anchor="middle">裝設於天花板、樓板或牆壁</text>
+  <text class="s-sm" x="675" y="220" text-anchor="middle">不得設在有障礙物妨礙探測火災發生處</text>
+  <text class="s-sm" x="675" y="240" text-anchor="middle">設在無日光照射之處（有遮光功能可避免探測障礙者除外）</text>
+</svg>
+<figcaption>圖 9　§123 光電式分離型的五個幾何條件，與 §124 火焰式的「1.2 m 高度帶」監視範圍</figcaption>
+</figure>
+
+<div class="cmp">
+  <b>「1.2 m」與「7 m」的用意都一樣：確保火在還小的時候就被看到。</b><br>
+  ・火焰式的 <b>1.2 m</b>：人站著、坐著、躺著的活動高度帶，也是初期火災最可能發生的高度。<br>
+  ・光電式分離型的 <b>7 m</b>：光軸只是一條線，離光軸太遠的煙會來不及穿過去，所以警戒區任一點都要在光軸 7 m 內——換句話說，兩條光軸的間距最多 14 m。<br>
+  ・<b>光軸高度 ≥ 天花板高度 80%</b>：煙浮在天花板下方最厚的那一層，光軸要架在那裡才攔得到。
+</div>
+
+<!-- ============ 7 ============ -->
+<h2 id="panel"><span class="no">07</span>受信總機・配線・緊急電源</h2>
+<p class="lede">§125～§128 是把訊號收回來的一段。考點集中在<b>蓄積時間 60／20 秒</b>、<b>P 型公用線 7 個分區</b>與<b>緊急電源 10 分鐘</b>三處。</p>
+
+<figure>
+<svg viewBox="0 0 900 410" role="img" aria-label="火警受信總機的位置高度與功能規定">
+  <text class="s-txt" x="220" y="50" text-anchor="middle" font-weight="700">§126 位置與高度</text>
+  <rect x="150" y="80" width="140" height="110" rx="4" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.6"/>
+  <text class="s-sm" x="220" y="110" text-anchor="middle">火警受信總機</text>
+  <path class="s-thin" d="M166 124 L274 124 M166 138 L274 138"/>
+  <circle cx="220" cy="164" r="7" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <path class="s-line" d="M100 300 L360 300"/>
+  <path class="s-thin" d="M110 300 L102 310 M140 300 L132 310 M170 300 L162 310 M200 300 L192 310 M230 300 L222 310 M260 300 L252 310 M290 300 L282 310 M320 300 L312 310 M350 300 L342 310"/>
+  <path class="s-dim" d="M120 164 L120 300 M114 164 L126 164 M114 300 L126 300"/>
+  <text class="s-key" x="108" y="236" text-anchor="end" fill="var(--accent2)">0.8～1.5 m</text>
+  <text class="s-sm" x="220" y="330" text-anchor="middle">壁掛型 0.8 m 以上（座式操作者 0.6 m）～1.5 m 以下</text>
+  <text class="s-sm" x="220" y="354" text-anchor="middle">設於值日室等經常有人處所；設有防災中心時設於該中心</text>
+  <text class="s-sm" x="220" y="378" text-anchor="middle">日光不直接照射；避免傾斜裝置；外殼應接地</text>
+
+  <text class="s-txt" x="430" y="60" font-weight="700">§125Ⅰ 受信總機九項功能</text>
+  <text class="s-sm" x="430" y="82">火警區域表示裝置、警戒人員注意之音響</text>
+  <text class="s-sm" x="430" y="100">附設與火警發信機通話之裝置</text>
+  <text class="s-sm" x="430" y="118">二臺以上總機時，設能相互同時通話連絡之設備</text>
+  <text class="s-sm" x="430" y="136">附近備有識別火警分區之圖面資料</text>
+  <text class="s-sm" x="430" y="154">蓄積式探測器或中繼器之分區，不得有雙信號功能</text>
+  <text class="s-key" x="430" y="174">蓄積時間合計：偵煙式 ≤ 60 秒；其他探測器 ≤ 20 秒</text>
+  <text class="s-sm" x="430" y="194">KTV、酒吧等場所，應連動停止相關娛樂用影音設備</text>
+  <text class="s-sm" x="430" y="212">接受信號後一定時間內或再接受信號時，強制地區警報鳴動</text>
+
+  <text class="s-txt" x="430" y="246" font-weight="700">§125Ⅱ 單回路受信總機</text>
+  <text class="s-sm" x="430" y="268">總樓地板面積未達 350 m² 之建築物得設置</text>
+  <text class="s-sm" x="430" y="286">不受第 1 項第 1 款及第 3 款至第 5 款之限制</text>
+
+  <text class="s-txt" x="430" y="320" font-weight="700">§127 配線 ・ §128 緊急電源</text>
+  <text class="s-sm" x="430" y="342">探測器信號回路採串接式，並加設終端電阻</text>
+  <text class="s-key" x="430" y="362">P 型公用線供應分區數 ≤ 7 個；探測器回路電阻 ≤ 50 Ω</text>
+  <text class="s-sm" x="430" y="382">屋外埋設配線採電纜穿管，與電力線間距 ≥ 30 cm</text>
+  <text class="s-key" x="430" y="402">緊急電源：蓄電池設備，有效動作 10 分鐘以上</text>
+</svg>
+<figcaption>圖 10　§125～§128 受信總機的位置、功能、配線與緊急電源</figcaption>
+</figure>
+
+<h3>絕緣電阻：三套設備的測定電壓不一樣</h3>
+<table>
+<thead><tr><th>設備</th><th>測定電壓</th><th>判定值</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td><b>火警自動警報設備</b>　電源回路</td><td>直流 <b>250 V</b></td><td>對地電壓 ≤150 V → ≥ <b>0.1 MΩ</b>；&gt;150 V → ≥ <b>0.2 MΩ</b></td><td class="n">§127④</td></tr>
+<tr><td><b>火警自動警報設備</b>　探測器回路</td><td>直流 <b>250 V</b></td><td>每一火警分區 ≥ <b>0.1 MΩ</b></td><td class="n">§127④</td></tr>
+<tr><td><b>火警警鈴</b>（電鈴）</td><td>直流 <b>250 V</b></td><td>≥ <b>20 MΩ</b>（全章最高）</td><td class="n">§131③</td></tr>
+<tr><td><b>緊急廣播設備</b></td><td>直流 <b>250 V</b></td><td>對地電壓 ≤150 V → ≥ 0.1 MΩ；&gt;150 V → ≥ 0.2 MΩ</td><td class="n">§139①</td></tr>
+<tr><td><b>瓦斯漏氣火警自動警報設備</b></td><td>直流 <b>500 V</b></td><td>同上判定值；<b>但測定電壓是 500 V</b></td><td class="n">§144①</td></tr>
+</tbody>
+</table>
+<p class="lede">四種設備裡<b>只有瓦斯漏氣用直流 500 V</b>，其餘都是 250 V。這是本章最容易被出成陷阱題的一組。</p>
+
+<!-- ============ 8 ============ -->
+<h2 id="manual"><span class="no">08</span>手動報警設備</h2>
+<p class="lede">§129～§132 是「人按的那顆鈕」。三件東西——<b>火警發信機、標示燈、火警警鈴</b>——高度不同，但都掛在同一面牆上。</p>
+
+<figure>
+<svg viewBox="0 0 900 360" role="img" aria-label="火警發信機標示燈與火警警鈴的裝設高度">
+  <text class="s-txt" x="240" y="30" text-anchor="middle" font-weight="700">§132 三者的裝設高度</text>
+  <path class="s-line" d="M60 260 L400 260"/>
+  <path class="s-thin" d="M70 260 L62 270 M100 260 L92 270 M130 260 L122 270 M160 260 L152 270 M190 260 L182 270 M220 260 L212 270 M250 260 L242 270 M280 260 L272 270 M310 260 L302 270 M340 260 L332 270 M370 260 L362 270"/>
+  <rect x="180" y="188" width="120" height="72" rx="3" fill="var(--card)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text class="s-sm" x="240" y="230" text-anchor="middle">消防栓箱</text>
+  <rect x="210" y="170" width="40" height="18" rx="2" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.5"/>
+  <circle cx="210" cy="125" r="9" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <circle cx="270" cy="125" r="11" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.5"/>
+  <path class="s-dim" d="M150 170 L150 188 M144 170 L156 170 M144 188 L156 188"/>
+  <text class="s-key" x="142" y="184" text-anchor="end">1.2～1.5 m</text>
+  <path class="s-dim" d="M150 110 L150 140 M144 110 L156 110 M144 140 L156 140"/>
+  <text class="s-key" x="142" y="130" text-anchor="end" fill="var(--accent2)">2～2.5 m</text>
+  <path class="s-thin" d="M252 179 L318 179"/>
+  <text class="s-sm" x="322" y="183">火警發信機</text>
+  <path class="s-thin" d="M282 125 L318 125"/>
+  <text class="s-sm" x="322" y="129">標示燈 ・ 火警警鈴</text>
+  <text class="s-sm" x="240" y="300" text-anchor="middle">§132④ 建築物內裝有消防立管之消防栓箱時</text>
+  <text class="s-sm" x="240" y="322" text-anchor="middle">三者裝設在消防栓箱上方牆上</text>
+  <text class="s-sm" x="240" y="344" text-anchor="middle">標示燈及警鈴與發信機合併裝設者，不受 2～2.5 m 之限制</text>
+
+  <text class="s-txt" x="450" y="60" font-weight="700">§129 火警發信機</text>
+  <text class="s-sm" x="450" y="82">每一火警分區設置；按鈕按下時能即刻發出火警音響</text>
+  <text class="s-sm" x="450" y="100">按鈕前有防止隨意撥弄之保護板；附設緊急電話插座</text>
+  <text class="s-sm" x="450" y="118">裝置於屋外之火警發信機，具防水之性能</text>
+  <text class="s-key" x="450" y="138">二樓層共用一火警分區者，發信機應分別設置</text>
+  <text class="s-sm" x="450" y="158">但樓梯或管道間之火警分區，得免設</text>
+
+  <text class="s-txt" x="450" y="192" font-weight="700">§130 標示燈</text>
+  <text class="s-key" x="450" y="214">平時保持明亮；與裝置面成 15 度角</text>
+  <text class="s-sm" x="450" y="234">在 10 m 距離內須無遮視物且明顯易見</text>
+
+  <text class="s-txt" x="450" y="268" font-weight="700">§131 火警警鈴</text>
+  <text class="s-sm" x="450" y="290">電壓到達規定電壓之 80% 時，能即刻發出音響</text>
+  <text class="s-key" x="450" y="310">距警鈴 100 cm 處測得音壓 ≥ 90 分貝</text>
+  <text class="s-sm" x="450" y="330">絕緣電阻以直流 250 V 測定 ≥ 20 MΩ；音響應有別於其他音響</text>
+  <text class="s-key" x="450" y="350">設有緊急廣播設備時，得免設火警警鈴（§131Ⅱ）</text>
+</svg>
+<figcaption>圖 11　§129～§132 手動報警設備三件套的高度與規格。發信機在手的高度，燈與鈴在頭頂上方</figcaption>
+</figure>
+
+<div class="note">
+  <b>三個「共用一分區」的處理方式不一樣，要分開記。</b><br>
+  ・<b>火警分區</b>（§112① 但書）：上下二層面積和 ≤500 m² <b>可以</b>共用。<br>
+  ・<b>火警發信機</b>（§129Ⅱ）：即使共用一分區，發信機<b>仍應分別設置</b>——因為人不會為了按鈕跑到另一層。<br>
+  ・但<b>樓梯或管道間</b>之火警分區，發信機<b>得免設</b>——那裡本來就沒有人常駐。
+</div>
+
+<!-- ============ 9 ============ -->
+<h2 id="card"><span class="no">09</span>速查數字卡</h2>
+
+<table>
+<thead><tr><th>項目</th><th>數值</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td colspan="3" style="background:var(--fill2);font-weight:700">火警分區與鳴動</td></tr>
+<tr><td><b>分區面積</b></td><td>≤ <b>600 m²</b>，且不得超過一樓層</td><td class="n">§112①</td></tr>
+<tr><td><b>二層共用</b></td><td>上下二層樓地板面積之和 ≤ <b>500 m²</b> 者，得二層共用一分區</td><td class="n">§112① 但書</td></tr>
+<tr><td><b>邊長</b></td><td>任一邊長 ≤ <b>50 m</b>；裝<b>光電式分離型</b>探測器時 ≤ <b>100 m</b></td><td class="n">§112②</td></tr>
+<tr><td><b>放寬</b></td><td>由主要出入口或直通樓梯出入口能直接觀察任一角落時，600 → <b>1,000 m²</b></td><td class="n">§112③</td></tr>
+<tr><td>垂直空間合併</td><td>樓梯、斜坡通道、昇降路、管道間，水平距離 <b>50 m</b> 內且頂層相差 <b>2 層</b>以下者得為一分區</td><td class="n">§112④</td></tr>
+<tr><td><b>樓梯垂直分區</b></td><td>垂直距離每 <b>45 m</b> 以下為一分區；<b>地下層部分應為另一分區</b></td><td class="n">§112⑤</td></tr>
+<tr><td><b>鳴動適用範圍</b></td><td>建築物在 <b>5 樓以上</b>，且總樓地板面積 <b>3,000 m²</b> 以上</td><td class="n">§113</td></tr>
+<tr><td>地上二層以上起火</td><td>該層＋<b>直上二層</b>＋直下層</td><td class="n">§113①</td></tr>
+<tr><td>地面層起火</td><td>該層＋直上層＋<b>地下層各層</b></td><td class="n">§113②</td></tr>
+<tr><td>地下層起火</td><td><b>地面層</b>＋地下層各層</td><td class="n">§113③</td></tr>
+<tr><td><b>全區鳴動</b></td><td><b>10 分鐘</b>內或受信總機再接受火災信號時，立即全區鳴動</td><td class="n">§113④</td></tr>
+
+<tr><td colspan="3" style="background:var(--fill1);font-weight:700">探測器選型與位置</td></tr>
+<tr><td><b>高度級距</b></td><td>未滿 <b>4</b>／<b>4～8</b>／<b>8～15</b>／<b>15～20</b> m 四級；高度不同時以<b>平均高度</b>計</td><td class="n">§114</td></tr>
+<tr><td>出風口</td><td>距天花板出風口 ≥ <b>1.5 m</b>（火焰式、差動式分布型、光電式分離型除外）</td><td class="n">§115①</td></tr>
+<tr><td>牆上出風口</td><td>≥ <b>1.5 m</b>；但出風口距天花板 ≥ <b>1 m</b> 時不在此限</td><td class="n">§115②</td></tr>
+<tr><td><b>排氣口・回風口</b></td><td>偵煙式應裝置於<b>周圍 1 m 範圍內</b>（要靠近，不是遠離）</td><td class="n">§115③</td></tr>
+<tr><td>傾斜限制</td><td>局限型不得傾斜 <b>45 度</b>以上（火焰式除外）；<b>檢出器</b>不得傾斜 <b>5 度</b>以上</td><td class="n">§115⑤・§121Ⅱ</td></tr>
+<tr><td><b>免設高度</b></td><td>除火焰式外，裝置面高度<b>超過 20 m</b> 者得免設</td><td class="n">§116①</td></tr>
+<tr><td><b>探測區域樑淨高</b></td><td>≥ <b>40 cm</b>；差動式分布型及偵煙式為 ≥ <b>60 cm</b></td><td class="n">§119</td></tr>
+<tr><td><b>裝設深度</b></td><td>熱感式：裝置面下方 <b>30 cm</b> 內；偵煙式：<b>60 cm</b> 內</td><td class="n">§120Ⅰ①・§122②</td></tr>
+<tr><td>偵煙式距牆或樑</td><td>≥ <b>60 cm</b></td><td class="n">§122③</td></tr>
+<tr><td>小居室特例</td><td>天花板高 ≤ <b>2.3 m</b> 或面積 ≤ <b>40 m²</b> 時，設在<b>出入口附近</b></td><td class="n">§122①</td></tr>
+<tr><td>定溫式溫差</td><td>裝在平時最高周圍溫度比標稱動作溫度<b>低 20°C 以上</b>處</td><td class="n">§120Ⅰ③</td></tr>
+
+<tr><td colspan="3" style="background:var(--fill3);font-weight:700">有效探測範圍與距離</td></tr>
+<tr><td><b>差動式・補償式一種</b></td><td>未滿 4 m：<b>90</b>（防火）／50；4～8 m：45／30　m²</td><td class="n">§120②</td></tr>
+<tr><td><b>差動式・補償式二種／定溫式特種</b></td><td>未滿 4 m：<b>70</b>／40；4～8 m：35／25　m²</td><td class="n">§120②</td></tr>
+<tr><td>定溫式一種</td><td>未滿 4 m：60／30；4～8 m：30／15　m²</td><td class="n">§120②</td></tr>
+<tr><td>定溫式二種</td><td>未滿 4 m：<b>20</b>／15；4 m 以上<b>不適用</b></td><td class="n">§120②</td></tr>
+<tr><td><b>偵煙式一種或二種</b></td><td>未滿 4 m：<b>150</b>；4～20 m：<b>75</b>　m²（不分建築物構造）</td><td class="n">§122④</td></tr>
+<tr><td>偵煙式三種</td><td>未滿 4 m：<b>50</b>；4 m 以上<b>不適用</b></td><td class="n">§122④</td></tr>
+<tr><td><b>空氣管式</b></td><td>露出部分 ≥ <b>20 m</b>／檢出器 ≤ <b>100 m</b>／距邊 <b>1.5 m</b> 內／間距 防火 <b>9 m</b>・其他 <b>6 m</b></td><td class="n">§121Ⅰ①</td></tr>
+<tr><td><b>熱電偶式</b></td><td>防火 <b>88 m²</b> 內 4 個，每增 <b>22 m²</b> 加 1；其他 <b>72 m²</b> 內 4 個，每增 <b>18 m²</b> 加 1；一檢出器 ≤ <b>20 個</b></td><td class="n">§121Ⅰ②</td></tr>
+<tr><td><b>熱半導體式</b></td><td>未滿 8 m：一種 <b>65</b>／40，二種 36／23；8～15 m：一種 <b>50</b>／30　m²；一檢出器 <b>2～15 個</b></td><td class="n">§121Ⅰ③</td></tr>
+<tr><td>定溫式線型</td><td>一種水平距離 <b>3 m</b>（防火 <b>4.5 m</b>）；二種 <b>1 m</b>（防火 <b>3 m</b>）</td><td class="n">§121Ⅲ</td></tr>
+<tr><td><b>偵煙式・走廊通道</b></td><td>步行距離每 <b>30 m</b> 一個（三種 <b>20 m</b>）；距盡頭牆壁 ≤ <b>15 m</b>（三種 ≤ <b>10 m</b>）</td><td class="n">§122⑤</td></tr>
+<tr><td><b>偵煙式・樓梯</b></td><td>垂直距離每 <b>15 m</b> 一個（三種 <b>10 m</b>）</td><td class="n">§122⑥</td></tr>
+<tr><td>偵煙式・坑道管道間</td><td>截面積 ≥ <b>1 m²</b> 者，設在<b>最頂部</b></td><td class="n">§122⑦</td></tr>
+<tr><td><b>光電式分離型</b></td><td>平行牆壁 ≥ <b>60 cm</b>／距背部牆壁 <b>1 m</b> 內／光軸高 ≥ 天花板 <b>80%</b>／光軸至任一點 ≤ <b>7 m</b>／天花板 ≤ <b>20 m</b></td><td class="n">§123</td></tr>
+<tr><td><b>火焰式</b></td><td>距樓地板面 <b>1.2 m</b> 範圍內之空間，應在標稱監視距離內</td><td class="n">§124</td></tr>
+
+<tr><td colspan="3" style="background:var(--fill4);font-weight:700">受信總機・配線・手動報警</td></tr>
+<tr><td><b>蓄積時間</b></td><td>偵煙式合計 ≤ <b>60 秒</b>；使用其他探測器時 ≤ <b>20 秒</b></td><td class="n">§125Ⅰ⑦</td></tr>
+<tr><td><b>單回路總機</b></td><td>總樓地板面積未達 <b>350 m²</b> 者得設置</td><td class="n">§125Ⅱ</td></tr>
+<tr><td>總機操作開關高度</td><td><b>0.8</b>（座式 <b>0.6</b>）～<b>1.5 m</b></td><td class="n">§126④</td></tr>
+<tr><td><b>P 型公用線</b></td><td>一條公用線供應之分區數 ≤ <b>7 個</b></td><td class="n">§127②</td></tr>
+<tr><td><b>探測器回路電阻</b></td><td>≤ <b>50 Ω</b></td><td class="n">§127③</td></tr>
+<tr><td>絕緣電阻</td><td>直流 <b>250 V</b> 測定；對地 ≤150 V → ≥ <b>0.1 MΩ</b>，&gt;150 V → ≥ <b>0.2 MΩ</b></td><td class="n">§127④</td></tr>
+<tr><td>屋外配線</td><td>採電纜穿金屬管或塑膠管，與電力線間距 ≥ <b>30 cm</b></td><td class="n">§127⑤</td></tr>
+<tr><td><b>緊急電源</b></td><td><b>蓄電池設備</b>，有效動作 <b>10 分鐘</b>以上（不是發電機）</td><td class="n">§128</td></tr>
+<tr><td><b>發信機高度</b></td><td>離地板面 <b>1.2～1.5 m</b></td><td class="n">§132②</td></tr>
+<tr><td><b>標示燈・警鈴高度</b></td><td>離地板面 <b>2～2.5 m</b>（與發信機合併裝設者不在此限）</td><td class="n">§132③</td></tr>
+<tr><td><b>標示燈</b></td><td>平時保持明亮；與裝置面成 <b>15 度</b>角，<b>10 m</b> 距離內無遮視物且明顯易見</td><td class="n">§130</td></tr>
+<tr><td><b>火警警鈴音壓</b></td><td>距 <b>100 cm</b> 處 ≥ <b>90 分貝</b>；規定電壓之 <b>80%</b> 時即刻發音</td><td class="n">§131①②</td></tr>
+<tr><td>警鈴絕緣電阻</td><td>直流 250 V 測定 ≥ <b>20 MΩ</b></td><td class="n">§131③</td></tr>
+<tr><td><b>警鈴免設</b></td><td>依本章第三節設有<b>緊急廣播設備</b>時，得免設火警警鈴</td><td class="n">§131Ⅱ</td></tr>
+</tbody>
+</table>
+
+<h3>最容易記混的六組數字</h3>
+<table>
+<thead><tr><th>數字組</th><th>正確歸屬</th></tr></thead>
+<tbody>
+<tr><td class="n"><b>600／500／1,000</b></td><td>分區面積上限／二層共用門檻／可直接觀察時的放寬值（m²）</td></tr>
+<tr><td class="n"><b>50／100／45</b></td><td>分區邊長／光電式分離型邊長／樓梯垂直分區（m）</td></tr>
+<tr><td class="n"><b>30／60</b></td><td>探測器裝設深度：<b>熱感式 30 cm、偵煙式 60 cm</b>；樑淨高 40／60 cm 同理</td></tr>
+<tr><td class="n"><b>60／20</b></td><td>蓄積時間：<b>偵煙式 60 秒、其他探測器 20 秒</b></td></tr>
+<tr><td class="n"><b>1.2～1.5／2～2.5</b></td><td>發信機高度／標示燈與警鈴高度（m）</td></tr>
+<tr><td class="n"><b>90／70／20</b></td><td>火警警鈴音壓 90 dB／緊急廣播 L 級揚聲器 92 dB 不同／警鈴絕緣電阻 20 MΩ</td></tr>
+</tbody>
+</table>
+
+<div class="navbar" style="margin-top:32px">
+  <a class="btn go" href="index.html">🏠 回學習首頁</a>
+  <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+  <a class="btn" href="18-%E7%B7%8A%E6%80%A5%E5%BB%A3%E6%92%AD%E8%88%87%E7%93%A6%E6%96%AF%E6%BC%8F%E6%B0%A3-%E5%9C%96%E8%A7%A3.html">📐 緊急廣播與瓦斯漏氣圖解</a>
+  <a class="btn" href="#zone">↑ 回到最上方</a>
+</div>
+
+<footer>
+  <p>本頁數據取自全國法規資料庫「各類場所消防安全設備設置標準」（pcode D0120029）民國 113 年 4 月 24 日修正版原文，於 2026-08-11 擷取核對。</p>
+  <p><b>§117 第 3 項表</b>在法規資料庫網頁版顯示「因條文排版無法完整呈現內容」，本頁該表係自該條完整條文 PDF（FileId 0000294491）逐格核對後補齊，含原表附註四點。</p>
+  <p><b>法規以主管機關公布文字為準。</b>本頁為個人學習筆記，不構成法律意見；設計送審前請回查現行條文：
+  <code>https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0120029</code></p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  function target(){
+    var h=(location.hash||'').replace('#','');
+    if(!h){ var m=/[?&]s=([\w-]+)/.exec(location.search||''); h=m?m[1]:''; }
+    return h?document.getElementById(h):null;
+  }
+  function go(smooth){
+    var el=target(); if(!el) return;
+    el.scrollIntoView({behavior:smooth?'smooth':'auto',block:'start'});
+    el.style.transition='background-color .4s';
+    var old=el.style.backgroundColor;
+    el.style.backgroundColor='var(--fill4)';
+    setTimeout(function(){ el.style.backgroundColor=old||''; },1600);
+  }
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){ setTimeout(go,60); });
+  else setTimeout(go,60);
+  window.addEventListener('hashchange',function(){ go(true); });
+})();
+</script>
+</body>
+</html>
