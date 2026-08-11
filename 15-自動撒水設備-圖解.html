@@ -1,0 +1,819 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>自動撒水設備 圖解 — 各類場所消防安全設備設置標準 §43～§60</title>
+<meta name="description" content="自動撒水設備五種型式、撒水頭水平距離、§47 樑與障礙物裝置規定（含網頁版省略之表）、標示溫度、水源容量與幫浦出水量、開放式啟動裝置與補助撒水栓的圖解。">
+<style>
+  :root{
+    --bg:#fbfaf7; --fg:#1c1b19; --muted:#6b6862; --line:#d8d4cb;
+    --card:#ffffff; --accent:#b03a2e; --accent2:#1d6fa5; --accent3:#2e7d4f;
+    --warn:#a86b00; --danger:#8e1b0f;
+    --fill1:#f2e4e1; --fill2:#e0edf6; --fill3:#e3f0e8; --fill4:#f7efd9;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#16161a; --fg:#e8e6e1; --muted:#9b968c; --line:#3a3a40;
+      --card:#1e1e23; --accent:#e8705f; --accent2:#5aa8d8; --accent3:#5fbb87;
+      --warn:#d9a441; --danger:#f08070;
+      --fill1:#3a2622; --fill2:#1e3341; --fill3:#1f3a2c; --fill4:#3a3120;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+    line-height:1.75;-webkit-text-size-adjust:100%}
+  .wrap{max-width:960px;margin:0 auto;padding:32px 20px 80px}
+  header{border-bottom:2px solid var(--fg);padding-bottom:18px;margin-bottom:8px}
+  h1{font-size:clamp(1.4rem,4vw,2rem);margin:0 0 6px;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:.9rem;margin:0}
+  h2{font-size:1.15rem;margin:48px 0 4px;padding-top:14px;border-top:1px solid var(--line);
+    scroll-margin-top:16px}
+  h2 .no{color:var(--accent);font-variant-numeric:tabular-nums;margin-right:.5em}
+  h2:target{background:linear-gradient(transparent 62%,var(--fill4) 62%)}
+  h3{font-size:1rem;margin:26px 0 6px}
+  .lede{color:var(--muted);font-size:.92rem;margin:.2em 0 18px}
+  figure{margin:0 0 10px;background:var(--card);border:1px solid var(--line);
+    border-radius:10px;padding:18px 14px;overflow-x:auto}
+  svg{display:block;margin:0 auto;max-width:100%;height:auto}
+  figcaption{color:var(--muted);font-size:.84rem;margin-top:10px;text-align:center}
+  .note{border-left:3px solid var(--warn);background:var(--fill4);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .note b{color:var(--warn)}
+  .cmp{border-left:3px solid var(--accent2);background:var(--fill2);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .cmp b{color:var(--accent2)}
+  table{border-collapse:collapse;width:100%;font-size:.88rem;margin:14px 0}
+  th,td{border:1px solid var(--line);padding:6px 9px;text-align:left}
+  th{background:var(--fill2);font-weight:600}
+  td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+  code{background:var(--fill2);padding:1px 5px;border-radius:4px;font-size:.88em}
+  .formula{background:var(--fill3);border:1px solid var(--line);border-radius:8px;
+    padding:12px 16px;margin:14px 0;font-size:1rem;text-align:center}
+  .ex{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent2);
+    border-radius:0 10px 10px 0;padding:14px 18px;margin:18px 0}
+  .ex .t{font-weight:700;margin-bottom:6px;color:var(--accent2)}
+  .ex .given{font-size:.88rem;color:var(--muted);border-left:3px solid var(--line);
+    padding-left:12px;margin-bottom:10px}
+  .ex .step{font-size:.92rem;margin:8px 0}
+  .ex .ans{background:var(--fill3);border-radius:7px;padding:9px 13px;margin-top:10px;
+    font-weight:700;font-size:.94rem}
+  ol.law{font-size:.9rem;padding-left:1.4em}
+  ol.law li{margin:4px 0}
+  footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:.82rem}
+  a{color:var(--accent2)}
+  .navbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+  .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;
+    font-size:.86rem;padding:7px 14px;border-radius:8px;border:1px solid var(--line);
+    background:var(--card);color:var(--fg);transition:.12s}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.go{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+  .btn.go:hover{filter:brightness(1.1);color:#fff}
+  .toc{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 4px}
+  .toc a{font-size:.8rem;text-decoration:none;padding:4px 10px;border-radius:99px;
+    border:1px solid var(--line);background:var(--card);color:var(--muted)}
+  .toc a:hover{border-color:var(--accent);color:var(--accent)}
+  .s-line{stroke:var(--fg);stroke-width:1.4;fill:none}
+  .s-thin{stroke:var(--muted);stroke-width:1;fill:none}
+  .s-txt{fill:var(--fg);font-size:13px;font-family:inherit}
+  .s-sm{fill:var(--muted);font-size:11px;font-family:inherit}
+  .s-key{fill:var(--accent);font-size:13px;font-weight:700;font-family:inherit}
+  .s-dim{stroke:var(--accent2);stroke-width:1;fill:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>自動撒水設備 圖解</h1>
+  <p class="sub">各類場所消防安全設備設置標準 §43～§60　|　民國 113 年 4 月 24 日修正版</p>
+  <div class="navbar">
+    <a class="btn go" href="index.html">🏠 回學習首頁</a>
+    <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+    <a class="btn" href="14-%E6%BB%85%E7%81%AB%E5%99%A8%E8%88%87%E5%AE%A4%E5%85%A7%E5%A4%96%E6%B6%88%E9%98%B2%E6%A0%93-%E5%9C%96%E8%A7%A3.html">📐 滅火器與消防栓圖解</a>
+    <a class="btn" href="09-%E6%B0%B4%E9%9C%A7%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html">📐 水霧設備圖解</a>
+  </div>
+</header>
+
+<nav class="toc" aria-label="章節目錄">
+  <a href="#types">01 五種型式與乾式／預動式</a>
+  <a href="#layout">02 撒水頭水平距離</a>
+  <a href="#position">03 撒水頭位置：樑與障礙物</a>
+  <a href="#temp">04 標示溫度與免設處所</a>
+  <a href="#water">05 水源容量與加壓送水</a>
+  <a href="#open">06 開放式：啟動與放水區域</a>
+  <a href="#aux">07 流水檢知裝置・查驗閥・補助撒水栓・送水口</a>
+  <a href="#card">08 速查數字卡</a>
+</nav>
+
+<div class="cmp" style="margin-top:24px">
+  <b>自動撒水是全法條文最多的一種滅火設備（§43～§60，共 18 條）。</b>
+  但它的骨架只有四段：<b>選型式</b>（§43～§45）→ <b>擺撒水頭</b>（§46～§50）→
+  <b>算水量與壓力</b>（§57～§58）→ <b>附屬設備</b>（§51～§56、§59～§60）。
+  §57 與 §47 的表格在法規資料庫網頁版被省略（顯示「因條文排版無法完整呈現內容」），本頁已從完整條文 PDF 補齊。
+</div>
+
+<!-- ============ 1 ============ -->
+<h2 id="types"><span class="no">01</span>五種型式與乾式／預動式</h2>
+<p class="lede">§43 五款的差別只在一句話：<b>平時管內裝什麼</b>。裝了什麼，就決定了動作順序、竣工試驗方式與水源要不要加算。</p>
+
+<figure>
+<svg viewBox="0 0 900 395" role="img" aria-label="自動撒水設備五種型式與平時管內狀態比較">
+  <text class="s-txt" x="450" y="30" text-anchor="middle" font-weight="700">§43　自動撒水設備得就下列各款擇一設置</text>
+
+  <rect x="15" y="52" width="270" height="128" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.5"/>
+  <text class="s-txt" x="150" y="78" text-anchor="middle" font-weight="700">① 密閉濕式</text>
+  <text class="s-sm" x="150" y="102" text-anchor="middle">平時管內：貯滿<tspan font-weight="700">高壓水</tspan></text>
+  <text class="s-sm" x="150" y="124" text-anchor="middle">撒水頭動作 → 立即撒水</text>
+  <text class="s-sm" x="150" y="148" text-anchor="middle">最單純、反應最快</text>
+  <text class="s-sm" x="150" y="168" text-anchor="middle">最常見的型式</text>
+
+  <rect x="315" y="52" width="270" height="128" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <text class="s-txt" x="450" y="78" text-anchor="middle" font-weight="700">② 密閉乾式</text>
+  <text class="s-sm" x="450" y="102" text-anchor="middle">平時管內：貯滿<tspan font-weight="700">高壓空氣</tspan></text>
+  <text class="s-sm" x="450" y="124" text-anchor="middle">撒水頭動作 → 先排空氣 → 撒水</text>
+  <text class="s-sm" x="450" y="148" text-anchor="middle">用於會結凍或高溫之場所</text>
+  <text class="s-sm" x="450" y="168" text-anchor="middle">有延遲，水源需追加 50%</text>
+
+  <rect x="615" y="52" width="270" height="128" rx="8" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text class="s-txt" x="750" y="78" text-anchor="middle" font-weight="700">③ 開放式</text>
+  <text class="s-sm" x="750" y="102" text-anchor="middle">平時管內：<tspan font-weight="700">無水</tspan></text>
+  <text class="s-sm" x="750" y="124" text-anchor="middle">啟動一齊開放閥 → 全區撒水</text>
+  <text class="s-sm" x="750" y="148" text-anchor="middle">撒水頭沒有感熱元件</text>
+  <text class="s-sm" x="750" y="168" text-anchor="middle">舞臺用，見第 06 節</text>
+
+  <rect x="165" y="204" width="270" height="128" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.5"/>
+  <text class="s-txt" x="300" y="230" text-anchor="middle" font-weight="700">④ 預動式</text>
+  <text class="s-sm" x="300" y="254" text-anchor="middle">平時管內：貯滿<tspan font-weight="700">低壓空氣</tspan></text>
+  <text class="s-sm" x="300" y="276" text-anchor="middle">感知裝置啟動流水檢知裝置</text>
+  <text class="s-sm" x="300" y="298" text-anchor="middle"><tspan font-weight="700">且</tspan>撒水頭動作 → 撒水</text>
+  <text class="s-sm" x="300" y="320" text-anchor="middle">兩個條件都成立才出水，防誤放</text>
+
+  <rect x="465" y="204" width="270" height="128" rx="8" fill="var(--card)" stroke="var(--line)" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text class="s-txt" x="600" y="230" text-anchor="middle" font-weight="700">⑤ 其他經中央主管機關認可者</text>
+  <text class="s-sm" x="600" y="262" text-anchor="middle">保留條款，供新技術納入</text>
+  <text class="s-sm" x="600" y="290" text-anchor="middle">實務上須逐案取得認可</text>
+
+  <text class="s-key" x="450" y="372" text-anchor="middle">但書：§12①（一）所列場所及第二目之集會堂使用之舞臺 → 應設開放式</text>
+</svg>
+<figcaption>圖 1　§43 五種型式。乾式與預動式共同的特徵是「平時管內是空氣」，所以竣工試驗與水源計算都要另外處理</figcaption>
+</figure>
+
+<h3>乾式與預動式的三組附加規定</h3>
+<table>
+<thead><tr><th>項目</th><th>規定</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td><b>竣工空氣壓試驗</b></td><td>空氣壓力達 <b>2.8 kgf/cm²</b>（0.28 MPa），持續 <b>24 小時</b>，漏氣減壓量 ≤ <b>0.1 kgf/cm²</b>（0.01 MPa）為合格</td><td class="n">§45 但書</td></tr>
+<tr><td>水壓試驗</td><td>準用 §33：全閉揚程 × <b>1.5 倍</b>，持續 <b>2 小時</b>無漏水</td><td class="n">§45 本文</td></tr>
+<tr><td><b>二次側配管防腐</b></td><td>流水檢知裝置二次側配管施予<b>鍍鋅等防腐蝕處理</b>；一齊開放閥二次側配管亦同</td><td class="n">§44①</td></tr>
+<tr><td><b>二次側配管洩水坡度</b></td><td><b>支管每 10 m 傾斜 4 cm</b>、<b>主管每 10 m 傾斜 2 cm</b>；明顯易見處設排水閥並標明字樣</td><td class="n">§44②</td></tr>
+<tr><td>空氣壓縮機</td><td>應為<b>專用</b>，並能在 <b>30 分鐘</b>內加壓達二次側配管設定壓力值</td><td class="n">§55①</td></tr>
+<tr><td>減壓警報</td><td>二次側減壓警報設於<b>平時有人處</b></td><td class="n">§55②</td></tr>
+<tr><td><b>放水時間</b></td><td>撒水頭動作後，流水檢知裝置應在 <b>1 分鐘</b>內使撒水頭放水</td><td class="n">§55③</td></tr>
+<tr><td>撒水頭型式</td><td>使用<b>向上型</b>（配管能採取有效措施者不在此限）</td><td class="n">§55④</td></tr>
+<tr><td><b>水源加算</b></td><td>撒水頭數量<b>追加 50%</b></td><td class="n">§57Ⅱ</td></tr>
+<tr><td>屋頂水箱</td><td>立管連接屋頂水箱時，容量 ≥ <b>1 m³</b>（室內消防栓為 0.5／0.3 m³）</td><td class="n">§44③</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <b>「支管 4 cm、主管 2 cm」不要記反。</b>
+  支管管徑小、積水更難排，所以坡度要陡一倍。記法：<b>細管陡、粗管緩</b>。
+</div>
+
+<!-- ============ 2 ============ -->
+<h2 id="layout"><span class="no">02</span>撒水頭水平距離</h2>
+<p class="lede">§46 是自動撒水設備最常考的一條。十一組數字，全部落在 <b>1.7～3.6 m</b> 之間，用一張長條圖比背表快得多。</p>
+
+<figure>
+<svg viewBox="0 0 900 420" role="img" aria-label="各類場所與撒水頭型式之水平距離長條比較圖">
+  <text class="s-txt" x="450" y="28" text-anchor="middle" font-weight="700">§46　任一點至撒水頭之水平距離 R</text>
+
+  <path class="s-thin" stroke-dasharray="3 4" d="M410 46 L410 382 M540 46 L540 382 M670 46 L670 382"/>
+  <path class="s-line" d="M280 46 L280 382"/>
+
+  <rect x="280" y="59" width="221" height="14" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1"/>
+  <text class="s-sm" x="272" y="70" text-anchor="end">戲院舞臺・道具室、放映室、易燃物品倉庫</text>
+  <text class="s-key" x="509" y="70">1.7 m</text>
+
+  <rect x="280" y="89" width="273" height="14" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1"/>
+  <text class="s-sm" x="272" y="100" text-anchor="end">汽車修理廠、室內停車空間、機械式停車場</text>
+  <text class="s-key" x="561" y="100">2.1 m</text>
+
+  <rect x="280" y="119" width="273" height="14" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1"/>
+  <text class="s-sm" x="272" y="130" text-anchor="end">一般反應型（第二種感度）</text>
+  <text class="s-key" x="561" y="130" fill="var(--accent2)">2.1 m</text>
+
+  <rect x="280" y="149" width="299" height="14" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1"/>
+  <text class="s-sm" x="272" y="160" text-anchor="end">一般反應型 ・ 防火構造建築物</text>
+  <text class="s-key" x="587" y="160" fill="var(--accent2)">2.3 m</text>
+
+  <rect x="280" y="179" width="299" height="14" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1"/>
+  <text class="s-sm" x="272" y="190" text-anchor="end">快速反應型（第一種感度）</text>
+  <text class="s-key" x="587" y="190" fill="var(--accent3)">2.3 m</text>
+
+  <rect x="280" y="209" width="338" height="14" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1"/>
+  <text class="s-sm" x="272" y="220" text-anchor="end">快速反應型 ・ 防火構造建築物</text>
+  <text class="s-key" x="626" y="220" fill="var(--accent3)">2.6 m</text>
+
+  <rect x="280" y="239" width="338" height="14" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1"/>
+  <text class="s-sm" x="272" y="250" text-anchor="end">小區劃型（限第一種感度）</text>
+  <text class="s-key" x="626" y="250" fill="var(--warn)">2.6 m</text>
+
+  <rect x="280" y="269" width="325" height="14" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1"/>
+  <text class="s-sm" x="272" y="280" text-anchor="end">高架儲存倉庫：貨架撒水頭（交錯設置）</text>
+  <text class="s-key" x="613" y="280">2.5 m</text>
+
+  <rect x="280" y="299" width="273" height="14" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1"/>
+  <text class="s-sm" x="272" y="310" text-anchor="end">高架儲存倉庫：天花板或樓板</text>
+  <text class="s-key" x="561" y="310">2.1 m</text>
+
+  <rect x="280" y="329" width="234" height="14" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1"/>
+  <text class="s-sm" x="272" y="340" text-anchor="end">側壁型：牆面二側</text>
+  <text class="s-key" x="522" y="340" fill="var(--warn)">1.8 m</text>
+
+  <rect x="280" y="359" width="468" height="14" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1"/>
+  <text class="s-sm" x="272" y="370" text-anchor="end">側壁型：牆壁前方</text>
+  <text class="s-key" x="756" y="370" fill="var(--warn)">3.6 m</text>
+
+  <text class="s-sm" x="410" y="400" text-anchor="middle">1 m</text>
+  <text class="s-sm" x="540" y="400" text-anchor="middle">2 m</text>
+  <text class="s-sm" x="670" y="400" text-anchor="middle">3 m</text>
+</svg>
+<figcaption>圖 2　§46 全部水平距離一覽。防火構造可放寬 0.2 m，快速反應型比一般反應型再放寬 0.2 m</figcaption>
+</figure>
+
+<div class="cmp">
+  <b>2.1 → 2.3 → 2.6 的兩次加碼，來源不同，可以疊加。</b><br>
+  ・基準值 <b>2.1 m</b>（一般反應型、非防火構造）<br>
+  ・<b>防火構造</b>建築物 → <b>+0.2</b>（2.1 → 2.3）<br>
+  ・改用<b>快速反應型</b>（第一種感度）→ <b>+0.2</b>（2.1 → 2.3；防火構造時 2.3 → 2.6）<br>
+  ・快速反應型且撒水頭<b>有效撒水半徑經中央主管機關認可</b>者 → 可<b>超過 2.6 m</b>（唯一沒有上限的情形）
+</div>
+
+<h3>四種特殊撒水頭的適用與限制</h3>
+<table>
+<thead><tr><th>型式</th><th>適用場所</th><th>幾何限制</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td><b>小區劃型</b></td><td>§12①（三）（六）、②（七）、⑤（一）等場所之<b>住宿居室、病房</b>及其他類似處所<br><span style="color:var(--muted);font-size:.9em">（旅館、醫院・長照、集合住宅、複合用途中含甲類者）</span></td><td>限<b>第一種感度</b>；R ≤ <b>2.6 m</b>；撒水頭間距 ≥ <b>3 m</b>；任一撒水頭防護面積 ≤ <b>13 m²</b></td><td class="n">§46Ⅰ④</td></tr>
+<tr><td><b>側壁型</b></td><td>前款所列場所之住宿居室等<b>及其走廊、通道</b>與類似場所</td><td>限<b>第一種感度</b>；牆面二側 ≤ <b>1.8 m</b>；牆壁前方 ≤ <b>3.6 m</b></td><td class="n">§46Ⅰ⑤</td></tr>
+<tr><td><b>放水型</b></td><td>中央主管機關認定<b>儲存大量可燃物</b>之場所天花板高度 &gt; <b>6 m</b>；<b>其他場所</b>天花板高度 &gt; <b>10 m</b></td><td>放水量 ≥ <b>5 L/min·m²</b>；儲存可燃物場所 ≥ <b>10 L/min·m²</b>（§50Ⅱ）</td><td class="n">§46Ⅰ⑥</td></tr>
+<tr><td><b>貨架撒水頭</b></td><td>§17Ⅰ⑥ 之<b>高架儲存倉庫</b>貨架內</td><td>R ≤ <b>2.5 m</b> 並<b>交錯設置</b>；易燃物品每 <b>4 m</b> 高度至少 1 個、其他物品每 <b>6 m</b> 至少 1 個；物品會產生撒水障礙時其下方亦應設置</td><td class="n">§46Ⅱ①</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <b>地下建築物的雙層配置（§46Ⅰ⑦）。</b>
+  天花板與樓板間之高度 ≥ <b>50 cm</b> 時，<b>天花板與樓板均應配置撒水頭</b>，R ≤ 2.1 m。
+  但天花板以<b>不燃性材料</b>裝修者，其<b>樓板</b>得免設。<br>
+  另 <b>§47Ⅰ⑥</b>：使用密閉式撒水頭且<b>風管等障礙物寬度超過 120 cm</b> 時，該障礙物下方亦應設置。
+</div>
+
+<!-- ============ 3 ============ -->
+<h2 id="position"><span class="no">03</span>撒水頭位置：樑與障礙物</h2>
+<p class="lede">§46 決定「平面上擺哪裡」，§47 決定「立面上裝多高」。這一條在網頁版被省略了第 8 款的表，本頁已從完整條文 PDF 補回。</p>
+
+<figure>
+<svg viewBox="0 0 900 200" role="img" aria-label="撒水頭迴水板與裝置面間距及樑下裝置的兩個條件">
+  <path class="s-thin" d="M450 16 L450 190"/>
+
+  <text class="s-txt" x="230" y="28" text-anchor="middle" font-weight="700">① 一般裝置面（§47Ⅰ②③）</text>
+  <path class="s-line" d="M70 60 L400 60"/>
+  <path class="s-thin" d="M80 60 L72 52 M110 60 L102 52 M140 60 L132 52 M170 60 L162 52 M200 60 L192 52 M230 60 L222 52 M260 60 L252 52 M290 60 L282 52 M320 60 L312 52 M350 60 L342 52 M380 60 L372 52"/>
+  <rect x="222" y="60" width="16" height="28" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.4"/>
+  <rect x="200" y="88" width="60" height="6" fill="var(--accent)"/>
+  <path class="s-dim" d="M170 60 L170 91 M164 60 L176 60 M164 91 L176 91"/>
+  <text class="s-key" x="158" y="80" text-anchor="end">≤ 30 cm</text>
+  <rect x="158" y="94" width="144" height="63" fill="none" stroke="var(--accent2)" stroke-width="1.2" stroke-dasharray="5 3"/>
+  <text class="s-sm" x="230" y="177" text-anchor="middle">淨空間：迴水板下方 45 cm、水平 30 cm 內不得有障礙物</text>
+
+  <text class="s-txt" x="675" y="28" text-anchor="middle" font-weight="700">② 裝置於樑下（§47Ⅰ④）</text>
+  <path class="s-line" d="M490 60 L860 60"/>
+  <path class="s-thin" d="M500 60 L492 52 M530 60 L522 52 M560 60 L552 52 M590 60 L582 52 M620 60 L612 52 M650 60 L642 52 M680 60 L672 52 M710 60 L702 52 M740 60 L732 52 M770 60 L762 52 M800 60 L792 52 M830 60 L822 52"/>
+  <rect x="620" y="60" width="90" height="55" fill="var(--fill2)" stroke="var(--line)" stroke-width="1.4"/>
+  <text class="s-sm" x="665" y="93" text-anchor="middle">樑</text>
+  <rect x="657" y="115" width="16" height="13" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.4"/>
+  <rect x="640" y="128" width="50" height="6" fill="var(--accent)"/>
+  <path class="s-dim" d="M615 115 L615 131 M609 115 L621 115 M609 131 L621 131"/>
+  <text class="s-key" x="603" y="127" text-anchor="end">≤ 10 cm</text>
+  <path class="s-dim" d="M555 60 L555 131 M549 60 L561 60 M549 131 L561 131"/>
+  <text class="s-key" x="543" y="98" text-anchor="end">≤ 50 cm</text>
+  <text class="s-sm" x="675" y="177" text-anchor="middle">與樑底 10 cm、與樓板 50 cm，兩個條件要同時滿足</text>
+</svg>
+<figcaption>圖 3　§47Ⅰ②③④ 迴水板的兩種基準：一般裝置面量到樓板／天花板，樑下裝置要同時量樑底與樓板</figcaption>
+</figure>
+
+<figure>
+<svg viewBox="0 0 900 240" role="img" aria-label="撒水頭側面有樑的階梯關係與防護板規定">
+  <path class="s-thin" d="M460 16 L460 230"/>
+
+  <text class="s-txt" x="235" y="28" text-anchor="middle" font-weight="700">③ 側面有樑（§47Ⅰ⑧）</text>
+  <path class="s-line" d="M60 70 L420 70"/>
+  <path class="s-thin" d="M70 70 L62 62 M100 70 L92 62 M130 70 L122 62 M160 70 L152 62 M190 70 L182 62 M220 70 L212 62 M250 70 L242 62 M280 70 L272 62 M310 70 L302 62"/>
+  <rect x="320" y="70" width="90" height="70" fill="var(--fill2)" stroke="var(--line)" stroke-width="1.4"/>
+  <text class="s-sm" x="365" y="112" text-anchor="middle">樑</text>
+  <rect x="172" y="70" width="16" height="40" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.4"/>
+  <rect x="155" y="110" width="50" height="6" fill="var(--accent)"/>
+  <path class="s-dim" d="M180 92 L320 92 M180 86 L180 98 M320 86 L320 98"/>
+  <text class="s-key" x="250" y="86" text-anchor="middle">a</text>
+  <path class="s-dim" d="M245 113 L245 140 M239 113 L251 113 M239 140 L251 140"/>
+  <text class="s-key" x="257" y="132">b</text>
+  <text class="s-sm" x="60" y="186">a＝撒水頭與樑側面淨距離</text>
+  <text class="s-sm" x="60" y="206">b＝迴水板高出樑底面尺寸</text>
+  <text class="s-sm" x="60" y="226">a 越大，允許的 b 越大（見下表）</text>
+
+  <text class="s-txt" x="680" y="28" text-anchor="middle" font-weight="700">④ 防護板（§47Ⅱ）</text>
+  <path class="s-line" d="M500 70 L860 70"/>
+  <path class="s-thin" d="M510 70 L502 62 M540 70 L532 62 M570 70 L562 62 M600 70 L592 62 M630 70 L622 62 M660 70 L652 62 M690 70 L682 62 M720 70 L712 62 M750 70 L742 62 M780 70 L772 62 M810 70 L802 62 M840 70 L832 62"/>
+  <rect x="672" y="70" width="16" height="60" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.4"/>
+  <rect x="650" y="130" width="60" height="6" fill="var(--accent)"/>
+  <path class="s-dim" d="M612 70 L612 133 M606 70 L618 70 M606 133 L618 133"/>
+  <text class="s-key" x="600" y="105" text-anchor="end">&gt; 30 cm</text>
+  <rect x="640" y="160" width="80" height="7" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <path class="s-dim" d="M760 133 L760 163 M754 133 L766 133 M754 163 L766 163"/>
+  <text class="s-key" x="772" y="152" fill="var(--warn)">≤ 30 cm</text>
+  <text class="s-sm" x="680" y="192" text-anchor="middle">防護板：金屬材料、直徑 ≥ 30 cm</text>
+  <text class="s-sm" x="680" y="214" text-anchor="middle">僅第 8 款之撒水頭，且迴水板與天花板</text>
+  <text class="s-sm" x="680" y="230" text-anchor="middle">或樓板距離超過 30 cm 時才需設置</text>
+</svg>
+<figcaption>圖 4　§47Ⅰ⑧ 的 a／b 關係與 §47Ⅱ 防護板。防護板只跟第 8 款（側面有樑）的撒水頭有關</figcaption>
+</figure>
+
+<h3>§47 第 1 項第 8 款：密閉式撒水頭側面有樑時（網頁版省略之表）</h3>
+<table>
+<thead>
+<tr><th>撒水頭與樑側面淨距離 a（cm）</th><th class="n">74 以下</th><th class="n">75 以上<br>99 以下</th><th class="n">100 以上<br>149 以下</th><th class="n">150 以上</th></tr>
+</thead>
+<tbody>
+<tr><td><b>迴水板高出樑底面尺寸 b（cm）</b></td><td class="n"><b>零</b></td><td class="n"><b>9 以下</b></td><td class="n"><b>14 以下</b></td><td class="n"><b>29 以下</b></td></tr>
+</tbody>
+</table>
+<p class="lede">距離樑越遠，樑對水霧的遮蔽越小，迴水板就可以裝得比樑底面更高。<b>a &lt; 75 cm 時 b 必須為零</b>——迴水板不得高出樑底面。</p>
+
+<h3>§47 其餘各款</h3>
+<table>
+<thead><tr><th class="n">款</th><th>規定</th></tr></thead>
+<tbody>
+<tr><td class="n">①</td><td>撒水頭<b>軸心與裝置面成垂直</b>裝置</td></tr>
+<tr><td class="n">②</td><td>迴水板<b>下方 45 cm 內</b>及<b>水平方向 30 cm 內</b>應保持淨空間，不得有障礙物</td></tr>
+<tr><td class="n">③</td><td>密閉式撒水頭迴水板裝設於<b>裝置面（樓板或天花板）下方</b>，間距 ≤ <b>30 cm</b></td></tr>
+<tr><td class="n">④</td><td>裝置於<b>樑下</b>時：迴水板與<b>樑底</b>間距 ≤ <b>10 cm</b>，<b>且</b>與樓板或天花板間距 ≤ <b>50 cm</b></td></tr>
+<tr><td class="n">⑤</td><td>裝置面四周以<b>淨高 40 cm 以上</b>之樑或類似構造體區劃包圍時，<b>按各區劃裝置</b>；但該樑或構造體間距 ≤ <b>180 cm</b> 者不在此限</td></tr>
+<tr><td class="n">⑥</td><td>使用密閉式撒水頭，<b>風管等障礙物寬度超過 120 cm</b> 時，該障礙物<b>下方亦應設置</b></td></tr>
+<tr><td class="n">⑦</td><td><b>側壁型</b>：與裝置面（牆壁）間距 ≤ <b>15 cm</b>；迴水板與天花板或樓板間距 ≤ <b>15 cm</b>；迴水板<b>下方及水平方向 45 cm</b> 內保持淨空間</td></tr>
+<tr><td class="n">⑧</td><td>密閉式撒水頭<b>側面有樑</b>時，依上表裝置</td></tr>
+<tr><td class="n">⑨</td><td>汽車修理廠、室內停車空間及昇降機械式停車場有<b>複層式停車設施</b>者，準用 <b>§71 第 5 款及第 6 款</b>（泡沫滅火設備之泡沫噴頭規定）</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <b>「30 / 45 / 15」三個數字要分清楚屬於誰。</b><br>
+  ・一般撒水頭：迴水板與裝置面 ≤ <b>30 cm</b>；淨空間下方 <b>45 cm</b>、水平 <b>30 cm</b>（§47Ⅰ②③）<br>
+  ・<b>側壁型</b>：與牆壁 ≤ <b>15 cm</b>、與天花板 ≤ <b>15 cm</b>；淨空間下方<b>及水平都是 45 cm</b>（§47Ⅰ⑦）<br>
+  側壁型的淨空間水平方向是 45 cm 而非 30 cm，這是兩款唯一的差異點。
+</div>
+
+<!-- ============ 4 ============ -->
+<h2 id="temp"><span class="no">04</span>標示溫度與免設處所</h2>
+<p class="lede">§48 是四級連鎖的溫度階梯，§49 則是全法最長的免設清單（15 款）。</p>
+
+<figure>
+<svg viewBox="0 0 900 300" role="img" aria-label="密閉式撒水頭最高周圍溫度與標示溫度的四級對應">
+  <text class="s-txt" x="240" y="44" text-anchor="middle" font-weight="700">裝置場所平時最高周圍溫度</text>
+  <text class="s-txt" x="540" y="44" text-anchor="middle" font-weight="700">應選擇之標示溫度</text>
+
+  <text class="s-sm" x="340" y="84" text-anchor="end">39 °C 未滿</text>
+  <path class="s-dim" d="M350 80 L372 80 M366 76 L374 80 L366 84"/>
+  <rect x="380" y="64" width="320" height="32" rx="5" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.3"/>
+  <text class="s-txt" x="540" y="85" text-anchor="middle">75 °C 未滿</text>
+
+  <text class="s-sm" x="340" y="124" text-anchor="end">39 °C 以上　64 °C 未滿</text>
+  <path class="s-dim" d="M350 120 L372 120 M366 116 L374 120 L366 124"/>
+  <rect x="380" y="104" width="320" height="32" rx="5" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.3"/>
+  <text class="s-txt" x="540" y="125" text-anchor="middle">75 °C 以上　121 °C 未滿</text>
+
+  <text class="s-sm" x="340" y="164" text-anchor="end">64 °C 以上　106 °C 未滿</text>
+  <path class="s-dim" d="M350 160 L372 160 M366 156 L374 160 L366 164"/>
+  <rect x="380" y="144" width="320" height="32" rx="5" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.3"/>
+  <text class="s-txt" x="540" y="165" text-anchor="middle">121 °C 以上　162 °C 未滿</text>
+
+  <text class="s-sm" x="340" y="204" text-anchor="end">106 °C 以上</text>
+  <path class="s-dim" d="M350 200 L372 200 M366 196 L374 200 L366 204"/>
+  <rect x="380" y="184" width="320" height="32" rx="5" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.3"/>
+  <text class="s-txt" x="540" y="205" text-anchor="middle">162 °C 以上</text>
+
+  <text class="s-key" x="450" y="252" text-anchor="middle">分界 39 ／ 64 ／ 106　→　對應 75 ／ 121 ／ 162</text>
+  <text class="s-sm" x="450" y="278" text-anchor="middle">四級連鎖：每一級的下限，就是上一級的上限，中間不留空隙也不重疊。</text>
+</svg>
+<figcaption>圖 5　§48 密閉式撒水頭標示溫度選擇表</figcaption>
+</figure>
+
+<h3>§49 得免裝撒水頭之處所（15 款）</h3>
+<ol class="law">
+<li>洗手間、浴室或廁所</li>
+<li>室內安全梯間、特別安全梯間或緊急昇降機間之<b>排煙室</b></li>
+<li>防火構造之<b>昇降機昇降路或管道間</b></li>
+<li>昇降機<b>機械室</b>或通風換氣設備機械室</li>
+<li><b>電信機械室或電腦室</b></li>
+<li>發電機、變壓器等<b>電氣設備室</b></li>
+<li>外氣流通<b>無法有效探測火災之走廊</b>　<span style="color:var(--warn)">※ 不得改設補助撒水栓</span></li>
+<li>手術室、產房、Ｘ光（放射線）室、加護病房或麻醉室等其他類似處所</li>
+<li>§12①（一）所列場所及第二目之集會堂使用之<b>觀眾席</b>，設有固定座椅部分，且撒水頭裝置面高度在 <b>8 m 以上</b>者</li>
+<li>室內游泳池之<b>水面</b>或溜冰場之<b>冰面上方</b></li>
+<li>主要構造為防火構造，且開口設有具 <b>1 小時</b>以上防火時效防火門之<b>金庫</b></li>
+<li>儲存鋁粉、碳化鈣、磷化鈣、鈉、生石灰、鎂粉、鉀、過氧化鈉等<b>禁水性物質</b>或其他遇水將發生危險之化學品倉庫或房間　<span style="color:var(--warn)">※ 不得改設補助撒水栓</span></li>
+<li>§17Ⅰ⑤ 之建築物（地下層、無開口樓層及 11 層以上除外）中，供 §12②～④ 使用，以具 <b>1 小時</b>以上防火時效之牆壁、樓地板區劃分隔，且開口面積<b>合計 ≤ 8 m²、任一開口 ≤ 4 m²</b>，開口部設 1 小時防火設備並不得使用防火鐵捲門（開口 ≤4 m² 且能二方向避難者得用半小時防火設備）</li>
+<li>§17Ⅰ④ 之建築物（同上除外）中，供 §12②～④ 使用，同樣區劃分隔，且<b>區劃部分樓地板面積 ≤ 200 m²</b>、內部裝修符合建築技術規則建築設計施工編 §88、開口部規定同前款</li>
+<li>其他經中央主管機關指定之場所</li>
+</ol>
+
+<div class="note">
+  <b>免設撒水頭 ≠ 什麼都不用做。</b>
+  §57 第 3 項：免設撒水頭處所，<b>除第 7 款（外氣流通走廊）及第 12 款（禁水性物質）外</b>，得設置<b>補助撒水栓</b>。<br>
+  這兩款被排除的理由不同：第 7 款是「外氣流通、火災不易蓄熱」，本來就不需要；第 12 款是<b>遇水會出事</b>，補助撒水栓噴的還是水，當然不能設。
+</div>
+
+<!-- ============ 5 ============ -->
+<h2 id="water"><span class="no">05</span>水源容量與加壓送水</h2>
+<p class="lede">整節最容易出錯的地方：<b>算水源用一組數字（§50 放水量），選幫浦用另一組數字（§58 出水量）</b>，兩組長得很像但不一樣。</p>
+
+<figure>
+<svg viewBox="0 0 900 395" role="img" aria-label="撒水頭數量核算流程與水源容量幫浦出水量的兩組不同單位">
+  <rect x="290" y="10" width="320" height="50" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text class="s-txt" x="450" y="32" text-anchor="middle" font-weight="700">§57Ⅰ 依表核算撒水頭數量 N</text>
+  <text class="s-sm" x="450" y="50" text-anchor="middle">實設數量較表列少時，得依實際數量計算</text>
+
+  <path class="s-line" d="M450 60 L450 84"/>
+  <rect x="290" y="84" width="320" height="46" rx="6" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <text class="s-txt" x="450" y="105" text-anchor="middle">使用乾式或預動式流水檢知裝置？</text>
+  <text class="s-key" x="450" y="123" text-anchor="middle" fill="var(--warn)">是 → N 追加 50%（§57Ⅱ）</text>
+
+  <path class="s-line" d="M450 130 L450 150 M200 150 L700 150 M200 150 L200 172 M700 150 L700 172"/>
+
+  <rect x="40" y="172" width="320" height="152" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.5"/>
+  <text class="s-txt" x="200" y="196" text-anchor="middle" font-weight="700">水源容量（§57Ⅰ）</text>
+  <text class="s-key" x="200" y="222" text-anchor="middle" fill="var(--accent2)">V = N × q × 20 min</text>
+  <text class="s-sm" x="200" y="246" text-anchor="middle">q ＝ §50 之<tspan font-weight="700">放水量</tspan></text>
+  <text class="s-sm" x="200" y="268" text-anchor="middle">一般 80 ／ 高架倉庫 114 ／ 小區劃 50</text>
+  <text class="s-sm" x="200" y="288" text-anchor="middle">側壁型・小區劃型不查表：</text>
+  <text class="s-sm" x="200" y="308" text-anchor="middle">10F 以下 8 個、11F 以上 12 個（§57Ⅰ③）</text>
+
+  <rect x="540" y="172" width="320" height="152" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.5"/>
+  <text class="s-txt" x="700" y="196" text-anchor="middle" font-weight="700">幫浦出水量（§58Ⅰ③）</text>
+  <text class="s-key" x="700" y="222" text-anchor="middle" fill="var(--accent3)">Q = N × q′</text>
+  <text class="s-sm" x="700" y="246" text-anchor="middle">q′ ＝ 幫浦用之<tspan font-weight="700">單位出水量</tspan></text>
+  <text class="s-sm" x="700" y="268" text-anchor="middle">一般 90 ／ 高架儲存倉庫 130 ／ 小區劃 60</text>
+  <text class="s-sm" x="700" y="288" text-anchor="middle">全揚程 H = h₁ + h₂ + 10 m</text>
+  <text class="s-sm" x="700" y="308" text-anchor="middle">放水壓力上限 10 kgf/cm²（§58Ⅱ）</text>
+
+  <text class="s-key" x="450" y="356" text-anchor="middle">80／114／50 是「放水量」；90／130／60 是「幫浦出水量」——不可互換</text>
+  <text class="s-sm" x="450" y="380" text-anchor="middle">水源容量用前者，幫浦選型用後者；放水型撒水頭則依中央消防機關認可者計算。</text>
+</svg>
+<figcaption>圖 6　§57／§58 的核算流程。同一個 N，乘上兩組不同的單位流量，得到兩個不同用途的答案</figcaption>
+</figure>
+
+<h3>§57 第 1 項第 1 款：撒水頭數量表（網頁版省略之表）</h3>
+<table>
+<thead><tr><th>各類場所</th><th class="n">快速反應型</th><th class="n">一般反應型</th></tr></thead>
+<tbody>
+<tr><td><b>11 樓以上建築物、地下建築物</b></td><td class="n"><b>12</b></td><td class="n"><b>15</b></td></tr>
+<tr><td>10 樓以下建築物　供 §12①（四）（商場、市場、百貨、超市、零售市場、展覽場）使用，及複合用途建築物中供其使用者</td><td class="n">12</td><td class="n">15</td></tr>
+<tr><td>10 樓以下建築物　<b>地下層</b></td><td class="n">12</td><td class="n">15</td></tr>
+<tr><td>10 樓以下建築物　<b>其他</b></td><td class="n"><b>8</b></td><td class="n"><b>10</b></td></tr>
+<tr><td>汽車修理廠、室內停車空間及昇降機械式停車場</td><td class="n" colspan="2" style="text-align:center"><b>15</b>（不分感度，一格橫跨兩欄）</td></tr>
+<tr><td>高架儲存倉庫　儲存棉花、塑膠、木製品、紡織品等<b>易燃物品</b></td><td class="n"><b>24</b></td><td class="n"><b>30</b></td></tr>
+<tr><td>高架儲存倉庫　<b>儲存其他物品</b></td><td class="n"><b>16</b></td><td class="n"><b>20</b></td></tr>
+</tbody>
+</table>
+<p class="lede">有分感度的各列，快速反應型一律是一般反應型的 <b>0.8 倍</b>（12↔15、8↔10、24↔30、16↔20）。<b>汽車修理廠等停車場所在原表中是橫跨兩欄的合併格</b>，不分感度一律 15 個。<br>
+另注意：本表第 1 列寫的是「11 <b>樓</b>以上<b>建築物</b>、地下建築物」，第 2～4 列是「10 <b>樓</b>以下<b>建築物</b>」——與 §17 應設場所條文用「樓層」的寫法不同。</p>
+
+<h3>§50 放水量與放水壓力</h3>
+<table>
+<thead><tr><th>撒水頭</th><th class="n">放水量</th><th>放水壓力</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td>一般</td><td class="n"><b>80 L/min</b> 以上</td><td rowspan="3">≥ <b>1 kgf/cm²</b>（0.1 MPa）</td><td class="n">§50Ⅰ</td></tr>
+<tr><td>設於<b>高架倉庫</b></td><td class="n"><b>114 L/min</b> 以上</td><td class="n">§50Ⅰ</td></tr>
+<tr><td><b>小區劃型</b></td><td class="n"><b>50 L/min</b> 以上</td><td class="n">§50Ⅰ 但書</td></tr>
+<tr><td><b>放水型</b>（一般）</td><td class="n"><b>5 L/min·m²</b> 以上</td><td>依防護區域面積計</td><td class="n">§50Ⅱ</td></tr>
+<tr><td><b>放水型</b>（儲存可燃物場所）</td><td class="n"><b>10 L/min·m²</b> 以上</td><td>依防護區域面積計</td><td class="n">§50Ⅱ 但書</td></tr>
+</tbody>
+</table>
+
+<h3>§58 加壓送水裝置</h3>
+<table>
+<thead><tr><th>方式</th><th>公式與規定</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td><b>重力水箱</b></td><td><code>H = h₁ + 10</code>（m）　必要落差＝<b>配管</b>摩擦損失水頭＋10<br><span style="color:var(--muted);font-size:.9em">沒有「消防水帶摩擦損失」這一項——撒水頭是固定配管，不用水帶</span></td><td class="n">§58Ⅰ①</td></tr>
+<tr><td><b>壓力水箱</b></td><td><code>P = P₁ + P₂ + 1</code>（kgf/cm²）　必要壓力＝配管摩擦損失＋落差＋1<br>空氣占容積 ≥ 1/3；壓力以建築物<b>最高處</b>之撒水頭為準</td><td class="n">§58Ⅰ②</td></tr>
+<tr><td><b>消防幫浦</b></td><td>出水量 <code>Q = N × 90</code>（高架儲存倉庫 130、小區劃型 60）L/min<br>全揚程 <code>H = h₁ + h₂ + 10</code>（m）；應為專用；連接緊急電源</td><td class="n">§58Ⅰ③</td></tr>
+<tr><td>共通</td><td>準用 <b>§37Ⅱ①②⑤</b>（設置處所、防火區劃、防震）——<b>不準用第 3 款啟動裝置、第 4 款減壓</b><br>撒水頭放水壓力應在 <b>10 kgf/cm²（1 MPa）以下</b></td><td class="n">§58Ⅱ</td></tr>
+<tr><td>緊急電源</td><td>依 <b>§38</b>：發電機或蓄電池，<b>30 分鐘</b>以上</td><td class="n">§60</td></tr>
+</tbody>
+</table>
+
+<div class="ex">
+  <div class="t">實例 1　一般辦公大樓（濕式）</div>
+  <div class="given">某 8 層辦公大樓，各層均為一般用途（非甲類第四目、非地下層），採<b>一般反應型</b>密閉式撒水頭、<b>密閉濕式</b>流水檢知裝置。實設撒水頭數量遠超過表列。</div>
+  <div class="step">① §57 表：10 層以下「其他」，一般反應型 → <b>N = 10</b></div>
+  <div class="step">② 濕式，不追加 → N 仍為 10</div>
+  <div class="step">③ 水源容量：<code>10 × 80 L/min × 20 min = 16,000 L</code></div>
+  <div class="step">④ 幫浦出水量：<code>10 × 90 L/min = 900 L/min</code></div>
+  <div class="ans">水源容量 <b>16 m³</b>；幫浦出水量 <b>900 L/min</b> 以上。</div>
+</div>
+
+<div class="ex">
+  <div class="t">實例 2　同一棟改為快速反應型 + 預動式</div>
+  <div class="given">條件同實例 1，但改用<b>快速反應型</b>撒水頭與<b>預動式</b>流水檢知裝置。</div>
+  <div class="step">① §57 表：10 層以下「其他」，快速反應型 → <b>N = 8</b></div>
+  <div class="step">② §57Ⅱ 預動式追加 50%：<code>8 × 1.5 = 12</code></div>
+  <div class="step">③ 水源容量：<code>12 × 80 × 20 = 19,200 L</code></div>
+  <div class="step">④ 幫浦出水量：<code>12 × 90 = 1,080 L/min</code></div>
+  <div class="ans">水源容量 <b>19.2 m³</b>；幫浦出水量 <b>1,080 L/min</b> 以上。<br>
+  換快速反應型省下的 2 個頭，被預動式的 50% 加算全部吃掉還倒賠——先減後加的順序不能顛倒。</div>
+</div>
+
+<div class="ex">
+  <div class="t">實例 3　旅館住宿居室（小區劃型）</div>
+  <div class="given">某 12 層旅館，住宿居室採<b>小區劃型</b>撒水頭（第一種感度），濕式。求 11 層以上樓層之水源容量與幫浦出水量。</div>
+  <div class="step">① §57Ⅰ③：<b>不查表</b>——側壁型或小區劃型，11 層以上樓層以 <b>12 個</b>計</div>
+  <div class="step">② 水源容量（§50 但書，小區劃型放水量 50 L/min）：<code>12 × 50 × 20 = 12,000 L</code></div>
+  <div class="step">③ 幫浦出水量（§58 小區劃型 60 L/min）：<code>12 × 60 = 720 L/min</code></div>
+  <div class="ans">水源容量 <b>12 m³</b>；幫浦出水量 <b>720 L/min</b> 以上。<br>
+  §57Ⅰ③ 是獨立於表格的另一條路徑，看到「側壁型／小區劃型」就直接用 8／12，不要回去查 §57 表。</div>
+</div>
+
+<div class="ex">
+  <div class="t">實例 4　高架儲存倉庫（易燃物品）</div>
+  <div class="given">某高架儲存倉庫儲存塑膠製品，採一般反應型撒水頭、濕式。</div>
+  <div class="step">① §57 表：高架儲存倉庫易燃物品，一般反應型 → <b>N = 30</b></div>
+  <div class="step">② 水源容量（高架倉庫放水量 114 L/min）：<code>30 × 114 × 20 = 68,400 L</code></div>
+  <div class="step">③ 幫浦出水量（高架儲存倉庫 130 L/min）：<code>30 × 130 = 3,900 L/min</code></div>
+  <div class="ans">水源容量 <b>68.4 m³</b>；幫浦出水量 <b>3,900 L/min</b> 以上。<br>
+  高架倉庫是全表最大的一組，水源容量是一般辦公大樓的 4 倍以上。</div>
+</div>
+
+<!-- ============ 6 ============ -->
+<h2 id="open"><span class="no">06</span>開放式：啟動裝置與放水區域</h2>
+<p class="lede">開放式撒水頭沒有感熱元件，所以「什麼時候放、放哪一區」必須由外部的啟動裝置與一齊開放閥決定——§52～§54 三條就是在講這件事。</p>
+
+<figure>
+<svg viewBox="0 0 900 390" role="img" aria-label="開放式自動撒水設備的放水區域與自動手動啟動裝置">
+  <text class="s-txt" x="450" y="28" text-anchor="middle" font-weight="700">§52～§54　開放式自動撒水設備</text>
+
+  <text class="s-sm" x="270" y="52" text-anchor="middle">舞臺（放水區域每一舞臺 4 個以下）</text>
+  <rect x="60" y="60" width="420" height="180" fill="var(--fill2)" stroke="var(--line)" stroke-width="1.6"/>
+  <path class="s-thin" stroke-dasharray="5 4" d="M270 60 L270 240 M60 150 L480 150"/>
+  <text class="s-txt" x="165" y="106" text-anchor="middle">放水區域 ①</text>
+  <text class="s-sm" x="165" y="126" text-anchor="middle">≥ 100 m²</text>
+  <text class="s-txt" x="375" y="106" text-anchor="middle">放水區域 ②</text>
+  <text class="s-sm" x="375" y="126" text-anchor="middle">≥ 100 m²</text>
+  <text class="s-txt" x="165" y="196" text-anchor="middle">放水區域 ③</text>
+  <text class="s-sm" x="165" y="216" text-anchor="middle">≥ 100 m²</text>
+  <text class="s-txt" x="375" y="196" text-anchor="middle">放水區域 ④</text>
+  <text class="s-sm" x="375" y="216" text-anchor="middle">≥ 100 m²</text>
+  <circle cx="90" cy="90" r="7" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.4"/>
+  <circle cx="300" cy="90" r="7" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.4"/>
+  <circle cx="90" cy="180" r="7" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.4"/>
+  <circle cx="300" cy="180" r="7" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.4"/>
+  <text class="s-sm" x="270" y="268" text-anchor="middle">● ＝ 一齊開放閥，每一放水區域 1 個（§53①）</text>
+  <text class="s-sm" x="270" y="290" text-anchor="middle">放水區域 2 個以上時，鄰接區域須相互重疊，使有效滅火（§54②）</text>
+
+  <text class="s-txt" x="520" y="76" font-weight="700">自動啟動裝置（§52①）</text>
+  <text class="s-sm" x="520" y="96">感知撒水頭：標示溫度 ≤79 °C，每 20 m² 設 1 個</text>
+  <text class="s-sm" x="520" y="114">裝置面距樓地板 ≤5 m，且能有效探測火災處</text>
+  <text class="s-sm" x="520" y="132">或探測器：定溫式一種或二種，依 §120 設置</text>
+  <text class="s-sm" x="520" y="150">每一放水區域至少 1 個</text>
+  <text class="s-sm" x="520" y="168">動作後能啟動一齊開放閥及加壓送水裝置</text>
+
+  <text class="s-txt" x="520" y="202" font-weight="700">手動啟動裝置（§52②）</text>
+  <text class="s-sm" x="520" y="222">每一放水區域設 1 個開關</text>
+  <text class="s-sm" x="520" y="240">高度距樓地板 0.8～1.5 m</text>
+  <text class="s-sm" x="520" y="258">標明「手動啟動開關」字樣</text>
+
+  <text class="s-txt" x="520" y="292" font-weight="700">一齊開放閥（§53）</text>
+  <text class="s-sm" x="520" y="312">二次側配管裝設試驗用裝置，可在不放水下測試</text>
+  <text class="s-sm" x="520" y="330">所承受之壓力在其最高使用壓力以下</text>
+
+  <text class="s-key" x="450" y="372" text-anchor="middle">但書：受信總機設在平時有人處，且火災時能立即操作啟動裝置者，得免設自動啟動裝置</text>
+</svg>
+<figcaption>圖 7　§52～§54 開放式的啟動邏輯與放水區域劃分。手動啟動裝置沒有免設規定，一定要設</figcaption>
+</figure>
+
+<div class="note">
+  <b>0.8～1.5 m 是「手動啟動開關」與「制水閥」的高度；0.3～1.5 m 才是室內消防栓開關。</b>
+  三個高度規定長得很像：<br>
+  ・§52②（一）開放式<b>手動啟動開關</b>：<b>0.8 ～ 1.5 m</b><br>
+  ・§51④ 流水檢知裝置<b>制水閥</b>：<b>0.8 ～ 1.5 m</b><br>
+  ・§34Ⅱ① <b>室內消防栓開關</b>：<b>0.3 ～ 1.5 m</b>
+</div>
+
+<!-- ============ 7 ============ -->
+<h2 id="aux"><span class="no">07</span>流水檢知裝置・查驗閥・補助撒水栓・送水口</h2>
+<p class="lede">這四樣是自動撒水的附屬設備，考點都在「數量門檻」與「安裝高度」。</p>
+
+<figure>
+<svg viewBox="0 0 900 445" role="img" aria-label="自動撒水設備的流水檢知裝置末端查驗閥補助撒水栓與送水口位置">
+  <rect x="110" y="70" width="380" height="290" rx="3" fill="none" stroke="var(--line)" stroke-width="1.6"/>
+  <path class="s-thin" d="M110 170 L490 170 M110 270 L490 270"/>
+  <path d="M180 70 L180 360" stroke="var(--accent2)" stroke-width="4" fill="none"/>
+
+  <!-- 3F -->
+  <path d="M180 110 L440 110" stroke="var(--accent2)" stroke-width="2" fill="none"/>
+  <rect x="192" y="100" width="24" height="20" rx="3" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.3"/>
+  <path class="s-line" d="M280 110 L280 118 M272 118 L288 118"/>
+  <path class="s-line" d="M330 110 L330 118 M322 118 L338 118"/>
+  <path class="s-line" d="M380 110 L380 118 M372 118 L388 118"/>
+  <circle cx="440" cy="110" r="7" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.4"/>
+  <path class="s-line" d="M440 117 L440 140"/>
+  <text class="s-sm" x="440" y="156" text-anchor="middle">查驗閥</text>
+
+  <!-- 2F -->
+  <path d="M180 210 L440 210" stroke="var(--accent2)" stroke-width="2" fill="none"/>
+  <rect x="192" y="200" width="24" height="20" rx="3" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.3"/>
+  <path class="s-line" d="M280 210 L280 218 M272 218 L288 218"/>
+  <path class="s-line" d="M330 210 L330 218 M322 218 L338 218"/>
+  <path class="s-line" d="M380 210 L380 218 M372 218 L388 218"/>
+  <circle cx="440" cy="210" r="7" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.4"/>
+
+  <!-- 1F -->
+  <path d="M180 310 L400 310" stroke="var(--accent2)" stroke-width="2" fill="none"/>
+  <rect x="192" y="300" width="24" height="20" rx="3" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.3"/>
+  <rect x="400" y="294" width="66" height="34" rx="4" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-sm" x="433" y="316" text-anchor="middle">補助撒水栓</text>
+
+  <!-- 送水口 -->
+  <rect x="36" y="320" width="54" height="40" rx="4" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text class="s-sm" x="63" y="345" text-anchor="middle">送水口</text>
+  <path class="s-line" d="M90 340 L180 340"/>
+
+  <text class="s-sm" x="204" y="386" text-anchor="middle">■ 流水檢知裝置</text>
+
+  <!-- 註記 -->
+  <text class="s-txt" x="520" y="96" font-weight="700">流水檢知裝置（§51）</text>
+  <text class="s-sm" x="520" y="116">樓地板面積 ≤3,000 m² → 1 套；超過 → 2 套</text>
+  <text class="s-sm" x="520" y="134">無隔間之樓層：3,000 得增為 10,000 m²</text>
+  <text class="s-sm" x="520" y="152">上下二層各層撒水頭 ≤10 個且設火警自動警報</text>
+  <text class="s-sm" x="520" y="170">設備者，得二層共用</text>
+  <text class="s-sm" x="520" y="188">開啟放水時即發出警報；附設制水閥 0.8～1.5 m</text>
+
+  <text class="s-txt" x="520" y="222" font-weight="700">末端查驗閥（§56）</text>
+  <text class="s-sm" x="520" y="242">管徑 ≥25 mm；接在放水壓力最低之最遠支管末端</text>
+  <text class="s-sm" x="520" y="260">一次側設壓力表、二次側設同等放水性能之限流孔</text>
+  <text class="s-sm" x="520" y="278">距地板面 ≤2.1 m，附排水管並標明字樣</text>
+
+  <text class="s-txt" x="520" y="312" font-weight="700">補助撒水栓（§57Ⅲ）</text>
+  <text class="s-sm" x="520" y="332">水平距離 ≤15 m；壓力 ≥2.5 kgf/cm²；60 L/min</text>
+  <text class="s-sm" x="520" y="350">配管從各層流水檢知裝置二次側配置</text>
+  <text class="s-sm" x="520" y="368">箱上方紅色啟動表示燈；開關閥距地板 ≤1.5 m</text>
+
+  <text class="s-txt" x="520" y="402" font-weight="700">送水口（§59）</text>
+  <text class="s-sm" x="520" y="422">口徑 63 mm 雙口形，每 3,000 m² 1 個（上限 3 個）</text>
+  <text class="s-sm" x="520" y="440">高度 0.5～1 m；標明「自動撒水送水口」及壓力範圍</text>
+</svg>
+<figcaption>圖 8　§51、§56、§57Ⅲ、§59 四項附屬設備在系統中的位置</figcaption>
+</figure>
+
+<h3>補助撒水栓（§57 第 3 項）七款</h3>
+<table>
+<thead><tr><th class="n">款</th><th>規定</th></tr></thead>
+<tbody>
+<tr><td class="n">①</td><td>各層任一點至<b>水帶接頭</b>之水平距離 ≤ <b>15 m</b>（設有撒水頭之部分不在此限）</td></tr>
+<tr><td class="n">②</td><td>同時使用該層所有補助撒水栓時，各瞄子放水壓力 ≥ <b>2.5 kgf/cm²</b>（0.25 MPa）、放水量 ≥ <b>60 L/min</b>；超過 2 支時以 <b>2 支</b>計（鄰接補助撒水栓水帶接頭水平距離超過 30 m 時，為 1 個）</td></tr>
+<tr><td class="n">③</td><td>箱表面標示「<b>補助撒水栓</b>」字樣，箱體上方設<b>紅色啟動表示燈</b></td></tr>
+<tr><td class="n">④</td><td>瞄子具有<b>容易開關</b>之裝置</td></tr>
+<tr><td class="n">⑤</td><td>開關閥設在距地板面 <b>1.5 m 以下</b></td></tr>
+<tr><td class="n">⑥</td><td>水帶能便於操作延伸</td></tr>
+<tr><td class="n">⑦</td><td>配管從各層<b>流水檢知裝置二次側</b>配置</td></tr>
+</tbody>
+</table>
+
+<div class="cmp">
+  <b>補助撒水栓的 2.5 kgf/cm² 和室外消防栓一樣，但放水量只有 60 L/min。</b>
+  它的定位是「撒水頭涵蓋不到的死角，由人拿著補噴」，所以壓力要夠但水量不必大。
+  對照：室內消防栓第二種 1.7 kgf/cm² × 80 L/min——<b>補助撒水栓壓力更高、水量更小</b>。
+</div>
+
+<!-- ============ 8 ============ -->
+<h2 id="card"><span class="no">08</span>速查數字卡</h2>
+
+<table>
+<thead><tr><th>項目</th><th>數值</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td colspan="3" style="background:var(--fill2);font-weight:700">型式與試驗</td></tr>
+<tr><td>五種型式</td><td>密閉<b>濕式</b>（高壓水）／密閉<b>乾式</b>（高壓空氣）／<b>開放式</b>（無水）／<b>預動式</b>（低壓空氣）／其他認可者</td><td class="n">§43</td></tr>
+<tr><td>應設開放式</td><td>§12①（一）所列場所及第二目之<b>集會堂使用之舞臺</b></td><td class="n">§43 但書</td></tr>
+<tr><td>二次側配管坡度</td><td><b>支管每 10 m 傾斜 4 cm</b>、<b>主管每 10 m 傾斜 2 cm</b></td><td class="n">§44②</td></tr>
+<tr><td><b>屋頂水箱</b></td><td>≥ <b>1 m³</b>（室內消防栓為 0.5／0.3 m³）</td><td class="n">§44③</td></tr>
+<tr><td><b>水壓試驗</b></td><td>全閉揚程 × <b>1.5 倍</b>，持續 <b>2 小時</b>無漏水（準用 §33）</td><td class="n">§45</td></tr>
+<tr><td><b>空氣壓試驗</b></td><td>乾式：<b>2.8 kgf/cm²</b> 持續 <b>24 小時</b>，漏氣減壓量 ≤ <b>0.1 kgf/cm²</b></td><td class="n">§45 但書</td></tr>
+
+<tr><td colspan="3" style="background:var(--fill1);font-weight:700">撒水頭配置（§46～§47）</td></tr>
+<tr><td><b>1.7 m</b></td><td>舞臺及道具室、電影院放映室、儲存易燃物品之倉庫</td><td class="n">§46Ⅰ①</td></tr>
+<tr><td><b>2.1 m</b></td><td>汽車修理廠、室內停車空間、昇降機械式停車場；一般反應型（非防火構造）；高架倉庫天花板；地下建築物</td><td class="n">§46Ⅰ②③⑦・Ⅱ②</td></tr>
+<tr><td><b>2.3 m</b></td><td>一般反應型於防火構造；快速反應型（非防火構造）</td><td class="n">§46Ⅰ③</td></tr>
+<tr><td><b>2.6 m</b></td><td>快速反應型於防火構造；小區劃型（認可有效撒水半徑者得超過 2.6 m）</td><td class="n">§46Ⅰ③④</td></tr>
+<tr><td><b>2.5 m</b></td><td>高架儲存倉庫貨架撒水頭，<b>交錯設置</b></td><td class="n">§46Ⅱ①</td></tr>
+<tr><td><b>1.8／3.6 m</b></td><td>側壁型：牆面二側 1.8 m、牆壁前方 3.6 m</td><td class="n">§46Ⅰ⑤</td></tr>
+<tr><td>小區劃型限制</td><td>限第一種感度；間距 ≥ <b>3 m</b>；防護面積 ≤ <b>13 m²</b></td><td class="n">§46Ⅰ④</td></tr>
+<tr><td>貨架垂直間隔</td><td>易燃物品每 <b>4 m</b> 高度 ≥1 個；其他物品每 <b>6 m</b> ≥1 個</td><td class="n">§46Ⅱ①（二）</td></tr>
+<tr><td>放水型適用</td><td>大量可燃物場所天花板 &gt; <b>6 m</b>；其他場所 &gt; <b>10 m</b></td><td class="n">§46Ⅰ⑥</td></tr>
+<tr><td>地下建築物</td><td>天花板與樓板間高度 ≥ <b>50 cm</b> 時二者均設（天花板不燃材料裝修者樓板得免設）</td><td class="n">§46Ⅰ⑦</td></tr>
+<tr><td><b>迴水板與裝置面</b></td><td>≤ <b>30 cm</b></td><td class="n">§47Ⅰ③</td></tr>
+<tr><td><b>淨空間</b></td><td>迴水板下方 <b>45 cm</b>、水平方向 <b>30 cm</b> 內；<b>側壁型</b>下方及水平均 <b>45 cm</b></td><td class="n">§47Ⅰ②⑦</td></tr>
+<tr><td><b>樑下裝置</b></td><td>與樑底 ≤ <b>10 cm</b> <b>且</b>與樓板／天花板 ≤ <b>50 cm</b></td><td class="n">§47Ⅰ④</td></tr>
+<tr><td>樑區劃</td><td>淨高 ≥ <b>40 cm</b> 之樑包圍時按各區劃裝置；間距 ≤ <b>180 cm</b> 者不在此限</td><td class="n">§47Ⅰ⑤</td></tr>
+<tr><td>風管障礙物</td><td>寬度超過 <b>120 cm</b> 時其下方亦應設置</td><td class="n">§47Ⅰ⑥</td></tr>
+<tr><td>側壁型間距</td><td>與牆壁 ≤ <b>15 cm</b>；迴水板與天花板／樓板 ≤ <b>15 cm</b></td><td class="n">§47Ⅰ⑦</td></tr>
+<tr><td><b>側面有樑 a／b</b></td><td>a ≤74 → b <b>零</b>｜a 75～99 → b ≤<b>9</b>｜a 100～149 → b ≤<b>14</b>｜a ≥150 → b ≤<b>29</b>（cm）</td><td class="n">§47Ⅰ⑧</td></tr>
+<tr><td><b>防護板</b></td><td>金屬材料、直徑 ≥ <b>30 cm</b>；與迴水板距離 ≤ <b>30 cm</b>（迴水板與天花板距離 &gt;30 cm 時設）</td><td class="n">§47Ⅱ</td></tr>
+
+<tr><td colspan="3" style="background:var(--fill4);font-weight:700">溫度、免設與放水量</td></tr>
+<tr><td><b>標示溫度</b></td><td>周圍 &lt;39 → &lt;75｜39～&lt;64 → 75～&lt;121｜64～&lt;106 → 121～&lt;162｜≥106 → ≥162（°C）</td><td class="n">§48</td></tr>
+<tr><td>免設處所</td><td>共 <b>15 款</b>；其中第 <b>7</b> 款（外氣流通走廊）、第 <b>12</b> 款（禁水性物質）<b>不得</b>改設補助撒水栓</td><td class="n">§49・§57Ⅲ</td></tr>
+<tr><td><b>放水量</b></td><td>一般 <b>80</b>／高架倉庫 <b>114</b>／小區劃型 <b>50</b> L/min；放水壓力 ≥ <b>1 kgf/cm²</b></td><td class="n">§50Ⅰ</td></tr>
+<tr><td>放水型放水量</td><td>≥ <b>5 L/min·m²</b>；儲存可燃物場所 ≥ <b>10 L/min·m²</b></td><td class="n">§50Ⅱ</td></tr>
+
+<tr><td colspan="3" style="background:var(--fill3);font-weight:700">水源與加壓送水</td></tr>
+<tr><td><b>撒水頭數量表</b></td><td>11 樓以上・地下建築物 <b>12／15</b>｜10 樓以下甲四目及複合用途 <b>12／15</b>｜10 樓以下地下層 <b>12／15</b>｜10 樓以下其他 <b>8／10</b>｜停車場所 <b>15</b>（不分感度）｜高架倉庫易燃 <b>24／30</b>｜高架倉庫其他 <b>16／20</b>（快速／一般）</td><td class="n">§57Ⅰ①</td></tr>
+<tr><td>開放式水源</td><td>10F 以下：<b>最大放水區域</b>全部撒水頭；11F 以上：<b>最大樓層</b>全部撒水頭，均放水 20 分鐘</td><td class="n">§57Ⅰ②</td></tr>
+<tr><td><b>側壁型・小區劃型</b></td><td>10F 以下 <b>8 個</b>、11F 以上 <b>12 個</b>（不查表）</td><td class="n">§57Ⅰ③</td></tr>
+<tr><td>放水型水源</td><td>固定式：最大放水區域全部撒水頭；可動式：最大放水量撒水頭，放射 20 分鐘</td><td class="n">§57Ⅰ④</td></tr>
+<tr><td><b>乾式／預動式加算</b></td><td>撒水頭數量<b>追加 50%</b></td><td class="n">§57Ⅱ</td></tr>
+<tr><td><b>放水時間</b></td><td><b>20 分鐘</b>（全設備一致）</td><td class="n">§57Ⅰ</td></tr>
+<tr><td><b>重力水箱</b></td><td><code>H = h₁ + 10</code>（m）——只有配管損失，沒有水帶損失</td><td class="n">§58Ⅰ①</td></tr>
+<tr><td><b>壓力水箱</b></td><td><code>P = P₁ + P₂ + 1</code>（kgf/cm²）</td><td class="n">§58Ⅰ②</td></tr>
+<tr><td><b>幫浦出水量</b></td><td>N × <b>90</b> L/min（高架儲存倉庫 <b>130</b>、小區劃型 <b>60</b>）</td><td class="n">§58Ⅰ③（一）</td></tr>
+<tr><td><b>幫浦全揚程</b></td><td><code>H = h₁ + h₂ + 10</code>（m）</td><td class="n">§58Ⅰ③（二）</td></tr>
+<tr><td><b>放水壓力上限</b></td><td><b>10 kgf/cm²</b>（1 MPa）以下</td><td class="n">§58Ⅱ</td></tr>
+<tr><td>緊急電源</td><td>依 §38：<b>30 分鐘</b>以上</td><td class="n">§60</td></tr>
+
+<tr><td colspan="3" style="background:var(--fill2);font-weight:700">附屬設備</td></tr>
+<tr><td><b>流水檢知裝置</b></td><td>≤ <b>3,000 m²</b> 1 套、超過 2 套；<b>無隔間</b>樓層 3,000 得增為 <b>10,000 m²</b></td><td class="n">§51①②</td></tr>
+<tr><td>二層共用</td><td>上下二層各層撒水頭 ≤ <b>10 個</b>且設火警自動警報設備者，得二層共用</td><td class="n">§51① 但書</td></tr>
+<tr><td>制水閥</td><td>距樓地板 <b>0.8～1.5 m</b>，附近設標明字樣之標識</td><td class="n">§51④</td></tr>
+<tr><td><b>開放式自動啟動</b></td><td>感知撒水頭標示溫度 ≤ <b>79 °C</b>、每 <b>20 m²</b> 1 個、裝置面高度 ≤ <b>5 m</b>；或定溫式一種／二種探測器，每放水區域 ≥1 個</td><td class="n">§52①</td></tr>
+<tr><td>開放式手動啟動</td><td>每一放水區域 1 個開關，距樓地板 <b>0.8～1.5 m</b></td><td class="n">§52②</td></tr>
+<tr><td>一齊開放閥</td><td>每一放水區域 <b>1 個</b>；二次側設試驗用裝置</td><td class="n">§53</td></tr>
+<tr><td><b>放水區域</b></td><td>每一舞臺 ≤ <b>4 個</b>；2 個以上時每區 ≥ <b>100 m²</b> 且鄰接區域相互重疊</td><td class="n">§54</td></tr>
+<tr><td><b>末端查驗閥</b></td><td>管徑 ≥ <b>25 mm</b>；距地板面 ≤ <b>2.1 m</b>；一次側壓力表、二次側限流孔</td><td class="n">§56</td></tr>
+<tr><td><b>補助撒水栓</b></td><td>水平距離 ≤ <b>15 m</b>；≥ <b>2.5 kgf/cm²</b>、<b>60 L/min</b>；超過 2 支以 2 支計；配管接流水檢知裝置<b>二次側</b></td><td class="n">§57Ⅲ</td></tr>
+<tr><td><b>送水口</b></td><td>口徑 <b>63 mm</b> 雙口形；每 <b>3,000 m²</b> 1 個，<b>上限 3 個</b>；高度 <b>0.5～1 m</b>；應為專用</td><td class="n">§59</td></tr>
+</tbody>
+</table>
+
+<h3>最容易記混的七組數字</h3>
+<table>
+<thead><tr><th>數字組</th><th>正確歸屬</th></tr></thead>
+<tbody>
+<tr><td class="n"><b>80／114／50</b></td><td>§50 <b>放水量</b>（一般／高架倉庫／小區劃型），算<b>水源</b>用</td></tr>
+<tr><td class="n"><b>90／130／60</b></td><td>§58 <b>幫浦出水量</b>（一般／高架儲存倉庫／小區劃型），選<b>幫浦</b>用</td></tr>
+<tr><td class="n"><b>8／12</b></td><td>§57Ⅰ③ 側壁型・小區劃型撒水頭數（10F 以下／11F 以上）</td></tr>
+<tr><td class="n"><b>10／15</b></td><td>§57 表「10F 以下其他」的一般反應型 10、停車場所 15</td></tr>
+<tr><td class="n"><b>30／45／15</b></td><td>§47 迴水板與裝置面 30／淨空間下方 45／側壁型與牆壁 15（cm）</td></tr>
+<tr><td class="n"><b>10／50</b></td><td>§47Ⅰ④ 樑下裝置：與樑底 10、與樓板 50（cm）</td></tr>
+<tr><td class="n"><b>3,000／10,000</b></td><td>§51 流水檢知裝置面積門檻（有隔間／無隔間），送水口門檻同為 3,000</td></tr>
+</tbody>
+</table>
+
+<div class="navbar" style="margin-top:32px">
+  <a class="btn go" href="index.html">🏠 回學習首頁</a>
+  <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+  <a class="btn" href="14-%E6%BB%85%E7%81%AB%E5%99%A8%E8%88%87%E5%AE%A4%E5%85%A7%E5%A4%96%E6%B6%88%E9%98%B2%E6%A0%93-%E5%9C%96%E8%A7%A3.html">📐 滅火器與消防栓圖解</a>
+  <a class="btn" href="#types">↑ 回到最上方</a>
+</div>
+
+<footer>
+  <p>本頁數據取自全國法規資料庫「各類場所消防安全設備設置標準」（pcode D0120029）民國 113 年 4 月 24 日修正版原文，於 2026-08-11 擷取核對。</p>
+  <p><b>§47 第 1 項第 8 款表</b>與 <b>§57 第 1 項第 1 款表</b>在法規資料庫網頁版顯示「因條文排版無法完整呈現內容」，本頁二表係自各該條完整條文 PDF（FileId 0000366989、0000366990）逐格核對後補齊。</p>
+  <p><b>法規以主管機關公布文字為準。</b>本頁為個人學習筆記，不構成法律意見；設計送審前請回查現行條文：
+  <code>https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0120029</code></p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  function target(){
+    var h=(location.hash||'').replace('#','');
+    if(!h){ var m=/[?&]s=([\w-]+)/.exec(location.search||''); h=m?m[1]:''; }
+    return h?document.getElementById(h):null;
+  }
+  function go(smooth){
+    var el=target(); if(!el) return;
+    el.scrollIntoView({behavior:smooth?'smooth':'auto',block:'start'});
+    el.style.transition='background-color .4s';
+    var old=el.style.backgroundColor;
+    el.style.backgroundColor='var(--fill4)';
+    setTimeout(function(){ el.style.backgroundColor=old||''; },1600);
+  }
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){ setTimeout(go,60); });
+  else setTimeout(go,60);
+  window.addEventListener('hashchange',function(){ go(true); });
+})();
+</script>
+</body>
+</html>

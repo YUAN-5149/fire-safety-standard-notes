@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>滅火器與室內外消防栓 圖解 — 各類場所消防安全設備設置標準 §31～§42</title>
+<meta name="description" content="滅火器滅火效能值核算、第一種與第二種室內消防栓比較、水源容量與加壓送水裝置三公式、室外消防栓配置與常數 17／25 由來的圖解。">
+<style>
+  :root{
+    --bg:#fbfaf7; --fg:#1c1b19; --muted:#6b6862; --line:#d8d4cb;
+    --card:#ffffff; --accent:#b03a2e; --accent2:#1d6fa5; --accent3:#2e7d4f;
+    --warn:#a86b00; --danger:#8e1b0f;
+    --fill1:#f2e4e1; --fill2:#e0edf6; --fill3:#e3f0e8; --fill4:#f7efd9;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#16161a; --fg:#e8e6e1; --muted:#9b968c; --line:#3a3a40;
+      --card:#1e1e23; --accent:#e8705f; --accent2:#5aa8d8; --accent3:#5fbb87;
+      --warn:#d9a441; --danger:#f08070;
+      --fill1:#3a2622; --fill2:#1e3341; --fill3:#1f3a2c; --fill4:#3a3120;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+    line-height:1.75;-webkit-text-size-adjust:100%}
+  .wrap{max-width:960px;margin:0 auto;padding:32px 20px 80px}
+  header{border-bottom:2px solid var(--fg);padding-bottom:18px;margin-bottom:8px}
+  h1{font-size:clamp(1.4rem,4vw,2rem);margin:0 0 6px;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:.9rem;margin:0}
+  h2{font-size:1.15rem;margin:48px 0 4px;padding-top:14px;border-top:1px solid var(--line);
+    scroll-margin-top:16px}
+  h2 .no{color:var(--accent);font-variant-numeric:tabular-nums;margin-right:.5em}
+  h2:target{background:linear-gradient(transparent 62%,var(--fill4) 62%)}
+  h3{font-size:1rem;margin:26px 0 6px}
+  .lede{color:var(--muted);font-size:.92rem;margin:.2em 0 18px}
+  figure{margin:0 0 10px;background:var(--card);border:1px solid var(--line);
+    border-radius:10px;padding:18px 14px;overflow-x:auto}
+  svg{display:block;margin:0 auto;max-width:100%;height:auto}
+  figcaption{color:var(--muted);font-size:.84rem;margin-top:10px;text-align:center}
+  .note{border-left:3px solid var(--warn);background:var(--fill4);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .note b{color:var(--warn)}
+  .cmp{border-left:3px solid var(--accent2);background:var(--fill2);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .cmp b{color:var(--accent2)}
+  table{border-collapse:collapse;width:100%;font-size:.88rem;margin:14px 0}
+  th,td{border:1px solid var(--line);padding:6px 9px;text-align:left}
+  th{background:var(--fill2);font-weight:600}
+  td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+  code{background:var(--fill2);padding:1px 5px;border-radius:4px;font-size:.88em}
+  .formula{background:var(--fill3);border:1px solid var(--line);border-radius:8px;
+    padding:12px 16px;margin:14px 0;font-size:1rem;text-align:center}
+  .ex{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent2);
+    border-radius:0 10px 10px 0;padding:14px 18px;margin:18px 0}
+  .ex .t{font-weight:700;margin-bottom:6px;color:var(--accent2)}
+  .ex .given{font-size:.88rem;color:var(--muted);border-left:3px solid var(--line);
+    padding-left:12px;margin-bottom:10px}
+  .ex .step{font-size:.92rem;margin:8px 0}
+  .ex .ans{background:var(--fill3);border-radius:7px;padding:9px 13px;margin-top:10px;
+    font-weight:700;font-size:.94rem}
+  footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:.82rem}
+  a{color:var(--accent2)}
+  .navbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+  .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;
+    font-size:.86rem;padding:7px 14px;border-radius:8px;border:1px solid var(--line);
+    background:var(--card);color:var(--fg);transition:.12s}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.go{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+  .btn.go:hover{filter:brightness(1.1);color:#fff}
+  .toc{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 4px}
+  .toc a{font-size:.8rem;text-decoration:none;padding:4px 10px;border-radius:99px;
+    border:1px solid var(--line);background:var(--card);color:var(--muted)}
+  .toc a:hover{border-color:var(--accent);color:var(--accent)}
+  .s-line{stroke:var(--fg);stroke-width:1.4;fill:none}
+  .s-thin{stroke:var(--muted);stroke-width:1;fill:none}
+  .s-txt{fill:var(--fg);font-size:13px;font-family:inherit}
+  .s-sm{fill:var(--muted);font-size:11px;font-family:inherit}
+  .s-key{fill:var(--accent);font-size:13px;font-weight:700;font-family:inherit}
+  .s-dim{stroke:var(--accent2);stroke-width:1;fill:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>滅火器與室內外消防栓 圖解</h1>
+  <p class="sub">各類場所消防安全設備設置標準 §31～§42　|　民國 113 年 4 月 24 日修正版</p>
+  <div class="navbar">
+    <a class="btn go" href="index.html">🏠 回學習首頁</a>
+    <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+    <a class="btn" href="15-%E8%87%AA%E5%8B%95%E6%92%92%E6%B0%B4%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html">📐 自動撒水設備圖解</a>
+    <a class="btn" href="09-%E6%B0%B4%E9%9C%A7%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html">📐 水霧設備圖解</a>
+  </div>
+</header>
+
+<nav class="toc" aria-label="章節目錄">
+  <a href="#ext">01 滅火器：效能值核算與設置</a>
+  <a href="#kinds">02 第一種 vs 第二種室內消防栓</a>
+  <a href="#pipe">03 配管、屋頂水箱、消防栓箱與試壓</a>
+  <a href="#water">04 水源容量與加壓送水裝置</a>
+  <a href="#outdoor">05 室外消防栓</a>
+  <a href="#card">06 速查數字卡</a>
+</nav>
+
+<div class="cmp" style="margin-top:24px">
+  <b>這一節是整部設置標準的地基。</b>
+  滅火器（§31）是唯一「幾乎所有場所都要設」的滅火設備；
+  室內外消防栓（§32～§42）則建立了後面所有水系統共用的三件事——
+  <b>水源容量怎麼算、加壓送水裝置怎麼選、揚程公式長什麼樣</b>。
+  自動撒水（§58）、水霧（§64）、泡沫（§79）的加壓送水裝置條文全都寫著「準用第三十七條第二項」，
+  所以 §37 讀通了，後面四種設備等於先做完一半。
+</div>
+
+<!-- ============ 1 ============ -->
+<h2 id="ext"><span class="no">01</span>滅火器：效能值核算與設置</h2>
+<p class="lede">§31 只有五款，但它是全法唯一用「<b>滅火效能值</b>」而非面積或流量計價的設備。核算分兩段：先算效能值，再加算特定處所的滅火器支數。</p>
+
+<figure>
+<svg viewBox="0 0 900 350" role="img" aria-label="滅火器最低滅火效能值核算的三種基準面積與另設規定">
+  <rect x="300" y="8" width="300" height="46" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text class="s-txt" x="450" y="30" text-anchor="middle" font-weight="700">§31Ⅰ① 核算最低滅火效能值</text>
+  <text class="s-sm" x="450" y="47" text-anchor="middle">視各類場所潛在火災性質，按樓地板面積核算</text>
+
+  <path class="s-line" d="M450 54 L450 72"/>
+  <path class="s-line" d="M150 72 L750 72"/>
+  <path class="s-line" d="M150 72 L150 90 M450 72 L450 90 M750 72 L750 90"/>
+
+  <rect x="25" y="90" width="250" height="104" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.4"/>
+  <text class="s-txt" x="150" y="114" text-anchor="middle" font-weight="700">甲類 ・ 戊類</text>
+  <text class="s-sm" x="150" y="136" text-anchor="middle">§12 第一款、第五款</text>
+  <text class="s-key" x="150" y="160" text-anchor="middle">每 100 m² → 1 效能值</text>
+  <text class="s-sm" x="150" y="181" text-anchor="middle">人多、複合、地下建築物</text>
+
+  <rect x="325" y="90" width="250" height="104" rx="6" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-txt" x="450" y="114" text-anchor="middle" font-weight="700">乙 ・ 丙 ・ 丁類</text>
+  <text class="s-sm" x="450" y="136" text-anchor="middle">§12 第二款至第四款</text>
+  <text class="s-key" x="450" y="160" text-anchor="middle" fill="var(--accent2)">每 200 m² → 1 效能值</text>
+  <text class="s-sm" x="450" y="181" text-anchor="middle">密度最寬鬆的一級</text>
+
+  <rect x="625" y="90" width="250" height="104" rx="6" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-txt" x="750" y="114" text-anchor="middle" font-weight="700">鍋爐房 ・ 廚房</text>
+  <text class="s-sm" x="750" y="136" text-anchor="middle">大量使用火源之處所</text>
+  <text class="s-key" x="750" y="160" text-anchor="middle" fill="var(--warn)">每 25 m² → 1 效能值</text>
+  <text class="s-sm" x="750" y="181" text-anchor="middle">全條最嚴，與用途分類無關</text>
+
+  <text class="s-txt" x="60" y="228" font-weight="700">此外，依 §31Ⅰ② 再加算：</text>
+  <rect x="60" y="240" width="780" height="66" rx="8" fill="var(--card)" stroke="var(--accent)" stroke-width="1.4" stroke-dasharray="6 4"/>
+  <text class="s-txt" x="450" y="266" text-anchor="middle">電影片映演場所<tspan font-weight="700">放映室</tspan>、<tspan font-weight="700">電氣設備</tspan>使用之處所</text>
+  <text class="s-key" x="450" y="290" text-anchor="middle">每 100 m²（含未滿）另設 1 支滅火器</text>
+
+  <text class="s-sm" x="60" y="334">「含未滿」＝ 不足一單位仍算一單位，即無條件進位；效能值核算是「按各層」分別計算，不是全棟合計。</text>
+</svg>
+<figcaption>圖 1　§31Ⅰ①② 滅火效能值的三種基準面積，以及放映室／電氣設備處所的「另設」規定</figcaption>
+</figure>
+
+<div class="note">
+  <b>「效能值」和「支數」是兩回事。</b>
+  §31Ⅰ① 算出來的是<b>最低滅火效能值總和</b>，實際要買幾支，要看所選滅火器經認可的滅火效能值（例如一支 A-3 的滅火器提供 3 個 A 類效能值）。
+  §31Ⅰ② 則直接規定<b>支數</b>——每 100 m² 另設「一滅火器」，這一支是額外的，不能拿來抵前款的效能值。
+</div>
+
+<figure>
+<svg viewBox="0 0 900 345" role="img" aria-label="滅火器步行距離與懸掛高度規定">
+  <path class="s-thin" d="M450 16 L450 322"/>
+
+  <text class="s-txt" x="220" y="26" text-anchor="middle" font-weight="700">§31Ⅰ③ 步行距離</text>
+  <rect x="30" y="42" width="380" height="178" rx="4" fill="var(--fill2)" stroke="var(--line)" stroke-width="1.2"/>
+  <rect x="30" y="42" width="150" height="90" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <rect x="250" y="150" width="160" height="70" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <path class="s-dim" stroke-dasharray="5 3" stroke-width="1.6" d="M75 165 L200 165 L200 90 L340 90"/>
+  <circle cx="75" cy="165" r="5" fill="var(--accent2)"/>
+  <rect x="332" y="76" width="16" height="26" rx="3" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-sm" x="75" y="186" text-anchor="middle">居室任一點</text>
+  <text class="s-sm" x="340" y="66" text-anchor="middle">滅火器</text>
+
+  <text class="s-key" x="220" y="248" text-anchor="middle">步行距離 ≤ 20 m</text>
+  <text class="s-sm" x="220" y="270" text-anchor="middle">沿可通行路徑量測，不是直線水平距離</text>
+  <text class="s-sm" x="220" y="292" text-anchor="middle">遇隔間、走道轉折都要繞著算</text>
+  <text class="s-sm" x="220" y="314" text-anchor="middle">標識：紅底白字「滅火器」，每字 ≥ 20 cm²</text>
+
+  <text class="s-txt" x="675" y="26" text-anchor="middle" font-weight="700">§31Ⅰ⑤ 上端與樓地板面之距離</text>
+  <path class="s-line" d="M480 262 L880 262"/>
+  <path class="s-thin" d="M490 262 L482 272 M520 262 L512 272 M550 262 L542 272 M580 262 L572 272 M610 262 L602 272 M640 262 L632 272 M670 262 L662 272 M700 262 L692 272 M730 262 L722 272 M760 262 L752 272 M790 262 L782 272 M820 262 L812 272 M850 262 L842 272 M880 262 L872 272"/>
+
+  <rect x="545" y="176" width="38" height="68" rx="5" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <rect x="556" y="164" width="16" height="12" rx="2" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.4"/>
+  <path class="s-dim" d="M516 164 L516 262 M510 164 L522 164 M510 262 L522 262"/>
+  <text class="s-key" x="504" y="216" text-anchor="end">≤ 1 m</text>
+  <text class="s-sm" x="564" y="284" text-anchor="middle">18 kg 以上</text>
+
+  <rect x="756" y="128" width="32" height="56" rx="5" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.6"/>
+  <rect x="765" y="118" width="14" height="10" rx="2" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <path class="s-dim" d="M726 118 L726 262 M720 118 L732 118 M720 262 L732 262"/>
+  <text class="s-key" x="714" y="194" text-anchor="end" fill="var(--accent2)">≤ 1.5 m</text>
+  <text class="s-sm" x="772" y="284" text-anchor="middle">未滿 18 kg</text>
+
+  <text class="s-sm" x="675" y="314" text-anchor="middle">越重掛越低——18 kg 的鋼瓶舉過頭是拿不下來的</text>
+</svg>
+<figcaption>圖 2　§31Ⅰ③⑤ 步行距離 20 m 與懸掛高度的 18 kg 分界</figcaption>
+</figure>
+
+<h3>§31 五款速記</h3>
+<table>
+<thead><tr><th class="n">款</th><th>內容</th><th>關鍵數字</th></tr></thead>
+<tbody>
+<tr><td class="n">①</td><td>核算最低滅火效能值</td><td>甲戊 <b>100</b>／乙丙丁 <b>200</b>／鍋爐房廚房 <b>25</b>　m²（含未滿）</td></tr>
+<tr><td class="n">②</td><td>放映室、電氣設備處所另設滅火器</td><td>每 <b>100 m²</b>（含未滿）另設 <b>1 支</b></td></tr>
+<tr><td class="n">③</td><td>樓面居室任一點至滅火器</td><td><b>步行距離</b> ≤ <b>20 m</b></td></tr>
+<tr><td class="n">④</td><td>固定放置於取用方便之明顯處所並設標識</td><td>紅底白字，每字 ≥ <b>20 cm²</b>（與消防栓箱併設並於箱面標明者，顏色不在此限）</td></tr>
+<tr><td class="n">⑤</td><td>上端與樓地板面之距離</td><td>≥18 kg → ≤ <b>1 m</b>；&lt;18 kg → ≤ <b>1.5 m</b></td></tr>
+</tbody>
+</table>
+
+<div class="ex">
+  <div class="t">實例 1　效能值核算（含大量用火處所）</div>
+  <div class="given">某 3 層旅館（甲類第三目），每層樓地板面積 850 m²，其中 1 樓另有廚房 90 m²（已含在 850 m² 內）。求 1 樓之最低滅火效能值。</div>
+  <div class="step">① 廚房部分依 §31Ⅰ①（三）單獨核算：<code>90 ÷ 25 = 3.6 → 4</code>（含未滿，進位）</div>
+  <div class="step">② 廚房以外部分為甲類，依（一）核算：<code>(850 − 90) ÷ 100 = 7.6 → 8</code></div>
+  <div class="step">③ 合計：<code>4 + 8 = 12</code></div>
+  <div class="ans">1 樓最低滅火效能值 = 12。<br>若廚房不單獨拆出而全按 100 m² 計，只會得到 9，少了 3 個效能值——這是最常見的漏算。</div>
+</div>
+
+<!-- ============ 2 ============ -->
+<h2 id="kinds"><span class="no">02</span>第一種 vs 第二種室內消防栓</h2>
+<p class="lede">兩種消防栓的差別，說穿了是<b>「兩個人操作的大水量」對上「一個人操作的小水量」</b>。所有數字都從這句話推得出來。</p>
+
+<figure>
+<svg viewBox="0 0 900 435" role="img" aria-label="第一種與第二種室內消防栓箱內裝備與性能數值比較">
+  <text class="s-txt" x="225" y="24" text-anchor="middle" font-weight="700" fill="var(--accent)">第一種消防栓（§34Ⅰ①）</text>
+  <text class="s-txt" x="675" y="24" text-anchor="middle" font-weight="700" fill="var(--accent2)">第二種消防栓（§34Ⅰ②）</text>
+
+  <!-- 第一種箱體 -->
+  <rect x="90" y="40" width="270" height="180" rx="6" fill="var(--card)" stroke="var(--accent)" stroke-width="1.6"/>
+  <circle cx="130" cy="76" r="13" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <path class="s-line" d="M117 76 L143 76 M130 63 L130 89"/>
+  <text class="s-sm" x="155" y="80" text-anchor="start">消防栓 口徑 38 或 50 mm ×1</text>
+  <rect x="112" y="112" width="104" height="34" rx="17" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <rect x="234" y="112" width="104" height="34" rx="17" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-sm" x="164" y="134" text-anchor="middle">水帶</text>
+  <text class="s-sm" x="286" y="134" text-anchor="middle">水帶</text>
+  <text class="s-sm" x="225" y="168" text-anchor="middle">長 15 m 附快式接頭 ×2 條＋水帶架 1 組</text>
+  <path class="s-line" d="M140 190 L172 190 L182 184 L182 196 L172 190"/>
+  <text class="s-sm" x="225" y="206" text-anchor="middle">直線水霧兩用瞄子 口徑 ≥ 13 mm ×1</text>
+
+  <!-- 第二種箱體 -->
+  <rect x="540" y="40" width="270" height="180" rx="6" fill="var(--card)" stroke="var(--accent2)" stroke-width="1.6"/>
+  <circle cx="640" cy="116" r="42" fill="none" stroke="var(--accent2)" stroke-width="2"/>
+  <circle cx="640" cy="116" r="15" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <path class="s-line" d="M682 116 L722 116 L732 110 L732 122 L722 116"/>
+  <text class="s-sm" x="705" y="72" text-anchor="middle">消防栓 口徑 25 mm</text>
+  <text class="s-sm" x="675" y="180" text-anchor="middle">管盤 長 30 m 皮管，或消防用保形水帶</text>
+  <text class="s-sm" x="675" y="206" text-anchor="middle">瞄子設有容易開關之裝置（一人可操作）</text>
+
+  <!-- 數值 -->
+  <rect x="90" y="242" width="270" height="122" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.4"/>
+  <text class="s-key" x="225" y="266" text-anchor="middle">放水量 ≥ 130 L/min</text>
+  <text class="s-sm" x="225" y="288" text-anchor="middle">幫浦出水量 150 L/min・支</text>
+  <text class="s-sm" x="225" y="310" text-anchor="middle">立管管徑 ≥ 63 mm</text>
+  <text class="s-sm" x="225" y="332" text-anchor="middle">屋頂水箱 ≥ 0.5 m³</text>
+  <text class="s-sm" x="225" y="354" text-anchor="middle">水帶較粗、反作用力大，需二人</text>
+
+  <rect x="540" y="242" width="270" height="122" rx="6" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-key" x="675" y="266" text-anchor="middle" fill="var(--accent2)">放水量 ≥ 80 L/min</text>
+  <text class="s-sm" x="675" y="288" text-anchor="middle">幫浦出水量 90 L/min・支</text>
+  <text class="s-sm" x="675" y="310" text-anchor="middle">立管管徑 ≥ 50 mm</text>
+  <text class="s-sm" x="675" y="332" text-anchor="middle">屋頂水箱 ≥ 0.3 m³</text>
+  <text class="s-sm" x="675" y="354" text-anchor="middle">保形水帶不需展開，一人可操作</text>
+
+  <text class="s-key" x="450" y="392" text-anchor="middle">共通：水平距離 ≤ 25 m　｜　放水壓力 ≥ 1.7 kgf/cm²　｜　超過 2 支時以 2 支計算</text>
+  <text class="s-sm" x="450" y="416" text-anchor="middle">§12②十一目（倉庫、傢俱展示販售場）及 §12④（丁類危險工作場所）＝ 只能設第一種</text>
+</svg>
+<figcaption>圖 3　§34 第一種與第二種室內消防栓的裝備與性能對照（放水壓力與水平距離兩者相同）</figcaption>
+</figure>
+
+<table>
+<thead><tr><th>項目</th><th>第一種</th><th>第二種</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td>水平距離（任一點至接頭）</td><td colspan="2" style="text-align:center">同為 <b>25 m 以下</b></td><td class="n">§34Ⅰ①②（一）</td></tr>
+<tr><td>瞄子放水壓力</td><td colspan="2" style="text-align:center">同為 <b>1.7 kgf/cm²（0.17 MPa）以上</b></td><td class="n">§34Ⅰ①②（二）</td></tr>
+<tr><td><b>瞄子放水量</b></td><td><b>130 L/min</b> 以上</td><td><b>80 L/min</b> 以上</td><td class="n">§34Ⅰ①②（二）</td></tr>
+<tr><td><b>幫浦出水量</b></td><td><b>150 L/min</b>・支</td><td><b>90 L/min</b>・支</td><td class="n">§37Ⅰ③（一）</td></tr>
+<tr><td>消防栓口徑</td><td>38 或 50 mm</td><td>25 mm</td><td class="n">§34Ⅰ①②（三）</td></tr>
+<tr><td>水帶</td><td>長 <b>15 m</b> ×2 條＋水帶架（接頭至任一點 ≤15 m 時得改 <b>10 m</b> ×2）</td><td>管盤長 <b>30 m</b> 皮管或消防用保形水帶</td><td class="n">§34Ⅰ①②（三）</td></tr>
+<tr><td>瞄子</td><td>直線水霧兩用，口徑 ≥13 mm</td><td>直線水霧兩用，且設容易開關之裝置</td><td class="n">§34Ⅰ①②（三）</td></tr>
+<tr><td><b>立管管徑</b></td><td>≥ <b>63 mm</b></td><td>≥ <b>50 mm</b></td><td class="n">§32Ⅰ④</td></tr>
+<tr><td><b>屋頂水箱</b></td><td>≥ <b>0.5 m³</b></td><td>≥ <b>0.3 m³</b></td><td class="n">§32Ⅲ①</td></tr>
+<tr><td>應設第一種之場所</td><td colspan="2">§12 第二款第十一目（倉庫、傢俱展示販售場）、§12 第四款（丁類）——<b>不得選第二種</b></td><td class="n">§34 本文</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <b>130／80 是「瞄子放水量」，150／90 是「幫浦出水量」。</b>
+  兩組數字差在幫浦要多留摩擦損失與餘裕，考題最愛把它們對調。
+  記法：<b>放水量是水噴出來的量、出水量是幫浦打出去的量，幫浦一定比較大</b>。
+</div>
+
+<h3>§34 第 2 項：四項共通設置規定</h3>
+<table>
+<thead><tr><th class="n">款</th><th>規定</th></tr></thead>
+<tbody>
+<tr><td class="n">①</td><td>消防栓<b>開關</b>距離樓地板高度 <b>0.3 m 以上 1.5 m 以下</b></td></tr>
+<tr><td class="n">②</td><td>設在<b>走廊或防火構造樓梯間附近</b>便於取用處</td></tr>
+<tr><td class="n">③</td><td>供集會或娛樂處所，設於<b>舞臺二側、觀眾席後二側、包廂後側</b></td></tr>
+<tr><td class="n">④</td><td>屋頂上適當位置至少設 <b>1 個測試用出水口</b>並標明字樣（斜屋頂設置有困難者得免設）</td></tr>
+</tbody>
+</table>
+
+<!-- ============ 3 ============ -->
+<h2 id="pipe"><span class="no">03</span>配管、屋頂水箱、消防栓箱與試壓</h2>
+<p class="lede">§32、§33、§35 三條講的是「硬體」。§32 立下的配管規格，後面自動撒水（§44）、室外消防栓（§39）都直接準用。</p>
+
+<figure>
+<svg viewBox="0 0 900 475" role="img" aria-label="室內消防栓立管系統與各條文規定位置">
+  <!-- 建築物 -->
+  <rect x="140" y="60" width="300" height="330" rx="3" fill="none" stroke="var(--line)" stroke-width="1.6"/>
+  <path class="s-thin" d="M140 170 L440 170 M140 280 L440 280"/>
+
+  <!-- 屋頂水箱 -->
+  <rect x="220" y="20" width="120" height="36" rx="4" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.6"/>
+  <text class="s-sm" x="280" y="43" text-anchor="middle">屋頂水箱</text>
+
+  <!-- 測試出水口 -->
+  <path class="s-line" d="M340 38 L400 38"/>
+  <circle cx="405" cy="38" r="5" fill="var(--accent)"/>
+  <text class="s-sm" x="398" y="56" text-anchor="middle">測試出水口</text>
+
+  <!-- 立管 -->
+  <path d="M280 56 L280 396" stroke="var(--accent2)" stroke-width="4" fill="none"/>
+
+  <!-- 消防栓箱 -->
+  <rect x="300" y="100" width="70" height="40" rx="3" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.4"/>
+  <rect x="300" y="210" width="70" height="40" rx="3" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.4"/>
+  <rect x="300" y="320" width="70" height="40" rx="3" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.4"/>
+  <text class="s-sm" x="335" y="125" text-anchor="middle">消防栓箱</text>
+  <text class="s-sm" x="335" y="235" text-anchor="middle">消防栓箱</text>
+  <text class="s-sm" x="335" y="345" text-anchor="middle">消防栓箱</text>
+  <path class="s-line" d="M280 120 L300 120 M280 230 L300 230 M280 340 L300 340"/>
+  <circle cx="335" cy="94" r="4" fill="var(--accent)"/>
+  <circle cx="335" cy="204" r="4" fill="var(--accent)"/>
+  <circle cx="335" cy="314" r="4" fill="var(--accent)"/>
+
+  <!-- 幫浦與水源 -->
+  <circle cx="200" cy="420" r="16" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.6"/>
+  <path class="s-line" d="M192 412 L212 420 L192 428 Z"/>
+  <text class="s-sm" x="200" y="456" text-anchor="middle">消防幫浦</text>
+  <rect x="300" y="400" width="140" height="40" rx="4" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-sm" x="370" y="425" text-anchor="middle">水源（§36）</text>
+  <path class="s-line" d="M300 420 L218 420"/>
+  <path class="s-line" d="M200 404 L200 396 L280 396"/>
+
+  <!-- 註記 -->
+  <text class="s-txt" x="470" y="32" font-weight="700">屋頂水箱（§32Ⅲ）</text>
+  <text class="s-sm" x="470" y="52">第一種 ≥ 0.5 m³／第二種 ≥ 0.3 m³</text>
+  <text class="s-sm" x="470" y="70">與其他滅火設備並用時取最大值；斜屋頂得免設</text>
+  <text class="s-sm" x="470" y="88">連接立管，使配管平時充滿水（§32Ⅰ⑥）</text>
+
+  <text class="s-txt" x="470" y="122" font-weight="700">立管（§32Ⅰ）</text>
+  <text class="s-sm" x="470" y="142">管徑：第一種 ≥ 63 mm／第二種 ≥ 50 mm</text>
+  <text class="s-sm" x="470" y="160">與連結送水管共用時 ≥ 100 mm</text>
+  <text class="s-sm" x="470" y="178">裝設於不受外來損傷、火災不易殃及之位置</text>
+
+  <text class="s-txt" x="470" y="212" font-weight="700">消防栓箱（§35・§34Ⅱ・§37Ⅱ）</text>
+  <text class="s-sm" x="470" y="232">箱身鋼板厚 ≥ 1.6 mm；箱面表面積 ≥ 0.7 m²</text>
+  <text class="s-sm" x="470" y="250">箱面「消防栓」字樣，每字 ≥ 20 cm²</text>
+  <text class="s-sm" x="470" y="268">開關距樓地板 0.3～1.5 m</text>
+  <text class="s-sm" x="470" y="286">箱內設手動啟動裝置，箱上方紅色啟動表示燈</text>
+
+  <text class="s-txt" x="470" y="320" font-weight="700">竣工加壓試驗（§33）</text>
+  <text class="s-sm" x="470" y="340">試驗壓力 ≥ 加壓送水裝置全閉揚程 × 1.5 倍水壓</text>
+  <text class="s-sm" x="470" y="358">持續維持 2 小時無漏水為合格</text>
+
+  <text class="s-txt" x="470" y="392" font-weight="700">閥件（§32Ⅱ）</text>
+  <text class="s-sm" x="470" y="412">止水閥以明顯方式標示開關之狀態</text>
+  <text class="s-sm" x="470" y="430">逆止閥標示水流之方向，並符合 CNS 規定</text>
+</svg>
+<figcaption>圖 4　室內消防栓立管系統與 §32、§33、§34Ⅱ、§35、§37Ⅱ 各條規定的位置對照</figcaption>
+</figure>
+
+<div class="cmp">
+  <b>§32Ⅰ① 的「應為專用」有例外。</b>
+  與<b>室外消防栓、自動撒水設備及連結送水管</b>等滅火系統共用而無礙其功能者，不在此限。
+  但注意 <b>§37Ⅰ③（三）的幫浦「應為專用」但書寫的是「與其他滅火設備並用，無妨礙各設備之性能時」</b>——
+  兩處但書的文字不同，配管列舉四種系統，幫浦則概括寫「其他滅火設備」。
+</div>
+
+<h3>配管材質（§32Ⅰ②）</h3>
+<table>
+<thead><tr><th>類別</th><th>標準</th></tr></thead>
+<tbody>
+<tr><td rowspan="3">金屬管（擇一）</td><td>CNS <b>6445</b> 配管用碳鋼鋼管</td></tr>
+<tr><td>CNS <b>4626</b> 壓力配管用碳鋼鋼管</td></tr>
+<tr><td>CNS <b>6331</b> 配管用不銹鋼鋼管</td></tr>
+<tr><td>或</td><td>具同等以上強度、耐腐蝕性及耐熱性者</td></tr>
+<tr><td>合成樹脂管</td><td>經中央主管機關認可具氣密性、強度、耐腐蝕性、耐候性及耐熱性等性能者</td></tr>
+</tbody>
+</table>
+
+<!-- ============ 4 ============ -->
+<h2 id="water"><span class="no">04</span>水源容量與加壓送水裝置</h2>
+<p class="lede">§36 定水量、§37 定壓力。這兩條是後面所有水系統設備的<b>母法</b>——自動撒水 §58、水霧 §64、泡沫 §79 的加壓送水裝置都準用 §37 第 2 項。</p>
+
+<div class="formula">
+  <b>§36 水源容量</b>　<code>V = min(實設支數, 2) × 放水量 × 20 min</code><br>
+  <span style="font-size:.85rem;color:var(--muted)">取「裝置室內消防栓<b>最多樓層</b>」之全部消防栓；同一樓層超過 2 支時，以 2 支計算</span>
+</div>
+
+<figure>
+<svg viewBox="0 0 900 385" role="img" aria-label="室內消防栓加壓送水裝置三種選擇與各自公式">
+  <text class="s-txt" x="450" y="30" text-anchor="middle" font-weight="700">§37Ⅰ　加壓送水裝置：依下列各款擇一設置</text>
+
+  <rect x="15" y="60" width="270" height="170" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.5"/>
+  <text class="s-txt" x="150" y="86" text-anchor="middle" font-weight="700">① 重力水箱</text>
+  <text class="s-sm" x="150" y="110" text-anchor="middle">水位計、排水管、溢水用排水管、</text>
+  <text class="s-sm" x="150" y="128" text-anchor="middle">補給水管及人孔</text>
+  <text class="s-key" x="150" y="158" text-anchor="middle" fill="var(--accent2)">H = h₁ + h₂ + 17</text>
+  <text class="s-sm" x="150" y="180" text-anchor="middle">必要落差＝水帶損失＋配管損失＋17</text>
+  <text class="s-sm" x="150" y="202" text-anchor="middle">單位：公尺</text>
+
+  <rect x="315" y="60" width="270" height="170" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <text class="s-txt" x="450" y="86" text-anchor="middle" font-weight="700">② 壓力水箱</text>
+  <text class="s-sm" x="450" y="110" text-anchor="middle">壓力表、水位計、排水管、補給水管、</text>
+  <text class="s-sm" x="450" y="128" text-anchor="middle">給氣管、空氣壓縮機及人孔</text>
+  <text class="s-key" x="450" y="158" text-anchor="middle" fill="var(--warn)">P = P₁ + P₂ + P₃ + 1.7</text>
+  <text class="s-sm" x="450" y="180" text-anchor="middle">空氣占水箱容積 ≥ 1/3，能自動補充加壓</text>
+  <text class="s-sm" x="450" y="202" text-anchor="middle">單位：kgf/cm²</text>
+
+  <rect x="615" y="60" width="270" height="170" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.5"/>
+  <text class="s-txt" x="750" y="86" text-anchor="middle" font-weight="700">③ 消防幫浦</text>
+  <text class="s-sm" x="750" y="110" text-anchor="middle">出水量：第一種 150 L/min・支</text>
+  <text class="s-sm" x="750" y="128" text-anchor="middle">第二種 90 L/min・支（超過 2 支以 2 支計）</text>
+  <text class="s-key" x="750" y="158" text-anchor="middle" fill="var(--accent3)">H = h₁ + h₂ + h₃ + 17</text>
+  <text class="s-sm" x="750" y="180" text-anchor="middle">全揚程＝水帶損失＋配管損失＋落差＋17</text>
+  <text class="s-sm" x="750" y="202" text-anchor="middle">應為專用；連接緊急電源</text>
+
+  <rect x="15" y="252" width="870" height="112" rx="8" fill="var(--card)" stroke="var(--accent)" stroke-width="1.4"/>
+  <text class="s-txt" x="450" y="276" text-anchor="middle" font-weight="700">§37Ⅱ　共通規定（重力水箱除外）</text>
+  <text class="s-sm" x="450" y="300" text-anchor="middle">設於便於檢修且不受火災等災害損害之處所；幫浦以具 1 小時以上防火時效之牆壁、樓地板及防火門窗區劃分隔</text>
+  <text class="s-sm" x="450" y="322" text-anchor="middle">設自動或手動啟動裝置，停止僅限手動操作；手動啟動裝置設於每一室內消防栓箱內，箱上方設紅色啟動表示燈</text>
+  <text class="s-key" x="450" y="348" text-anchor="middle">放水壓力超過 7 kgf/cm² 應採減壓措施；並採取有效之防震措施</text>
+</svg>
+<figcaption>圖 5　§37 加壓送水裝置三選一，以及 §37 第 2 項的五項共通規定</figcaption>
+</figure>
+
+<div class="note">
+  <b>設於屋頂或屋外的幫浦，可以不做防火區劃。</b>
+  §37Ⅱ② 但書：設於屋頂或屋外，且設有不受積水及雨水侵襲之防水措施者，不在此限。
+</div>
+
+<div class="ex">
+  <div class="t">實例 2　水源容量與幫浦選型</div>
+  <div class="given">某辦公大樓 8 層，各層均設第一種室內消防栓；3 樓設 4 支為全棟最多。求水源容量與幫浦出水量。</div>
+  <div class="step">① 水源容量（§36）：同一樓層超過 2 支以 2 支計 → <code>2 × 130 L/min × 20 min = 5,200 L</code></div>
+  <div class="step">② 幫浦出水量（§37Ⅰ③（一））：同樣以 2 支計 → <code>2 × 150 L/min = 300 L/min</code></div>
+  <div class="ans">水源容量 <b>5.2 m³</b>；幫浦出水量 <b>300 L/min</b> 以上。<br>
+  實設 4 支只影響配管水力計算，不影響水源與幫浦的法定核算基準。</div>
+</div>
+
+<div class="ex">
+  <div class="t">實例 3　幫浦全揚程</div>
+  <div class="given">同上大樓，消防水帶摩擦損失水頭 h₁ = 6 m、配管摩擦損失水頭 h₂ = 12 m、落差 h₃ = 28 m。</div>
+  <div class="step">§37Ⅰ③（二）：<code>H = h₁ + h₂ + h₃ + 17 = 6 + 12 + 28 + 17</code></div>
+  <div class="ans">幫浦全揚程 <b>H = 63 m</b> 以上。<br>
+  若改為室外消防栓，尾項常數換成 25，其餘結構完全相同。</div>
+</div>
+
+<h3>§38 緊急電源</h3>
+<div class="cmp">
+  室內消防栓設備之緊急電源使用<b>發電機設備或蓄電池設備</b>，供電容量應供有效動作 <b>30 分鐘</b>以上。<br>
+  第 2 項：供 <b>§12 第四款（丁類危險工作場所）</b>使用之場所，得使用<b>具有相同效果之引擎動力系統</b>——這是全法少見的替代規定。<br>
+  室外消防栓（§39）、自動撒水（§60）的緊急電源都直接寫「依第三十八條規定設置」。
+</div>
+
+<!-- ============ 5 ============ -->
+<h2 id="outdoor"><span class="no">05</span>室外消防栓</h2>
+<p class="lede">室外消防栓只有四條（§39～§42），而且 §39 一口氣把配管、試壓、緊急電源都準用室內消防栓。真正要記的只有<b>一組放大版的數字</b>。</p>
+
+<figure>
+<svg viewBox="0 0 900 320" role="img" aria-label="室外消防栓與水帶箱及建築物的距離配置">
+  <text class="s-txt" x="450" y="26" text-anchor="middle" font-weight="700">§40 室外消防栓配置</text>
+
+  <!-- 水帶箱 -->
+  <rect x="40" y="118" width="100" height="44" rx="4" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <text class="s-sm" x="90" y="145" text-anchor="middle">水帶箱</text>
+
+  <!-- 5m -->
+  <path class="s-dim" d="M140 140 L212 140 M140 134 L140 146 M212 134 L212 146"/>
+  <text class="s-key" x="165" y="130" text-anchor="middle">≤ 5 m</text>
+
+  <!-- 3m 空曠 -->
+  <circle cx="230" cy="140" r="38" fill="none" stroke="var(--muted)" stroke-width="1" stroke-dasharray="5 4"/>
+  <!-- 消防栓 -->
+  <circle cx="230" cy="140" r="15" fill="var(--fill1)" stroke="var(--accent)" stroke-width="2"/>
+  <path class="s-line" d="M230 125 L230 118 M215 140 L206 140 M245 140 L254 140"/>
+
+  <!-- 40m -->
+  <path class="s-dim" d="M248 140 L400 140 M248 134 L248 146 M400 134 L400 146"/>
+  <text class="s-key" x="324" y="130" text-anchor="middle">≤ 40 m</text>
+
+  <!-- 建築物 -->
+  <rect x="400" y="60" width="420" height="190" rx="4" fill="var(--fill2)" stroke="var(--line)" stroke-width="1.6"/>
+  <text class="s-txt" x="610" y="150" text-anchor="middle" font-weight="700">建築物</text>
+  <text class="s-sm" x="610" y="174" text-anchor="middle">（自 1 樓外牆各部分量測）</text>
+
+  <text class="s-sm" x="230" y="214" text-anchor="middle">室外消防栓　口徑 ≥ 63 mm</text>
+  <text class="s-sm" x="230" y="236" text-anchor="middle">虛線內 3 m 保持空曠</text>
+
+  <text class="s-sm" x="450" y="278" text-anchor="middle">開關位置：不得高於地面 1.5 m、不得低於地面 0.6 m；設於地面下者，水帶接頭不得低於地面 0.3 m</text>
+  <text class="s-sm" x="450" y="302" text-anchor="middle">水帶箱內：63 mm × 20 m 水帶 2 條、≥19 mm 直線噴霧兩用型瞄子 1 具、消防栓閥型開關 1 把；箱面表面積 ≥ 0.8 m²</text>
+</svg>
+<figcaption>圖 6　§40 室外消防栓的三個距離：至建築物 1 樓外牆 40 m、至水帶箱 5 m、周圍空曠 3 m</figcaption>
+</figure>
+
+<figure>
+<svg viewBox="0 0 900 290" role="img" aria-label="加壓送水裝置常數17與25的換算由來">
+  <text class="s-txt" x="450" y="28" text-anchor="middle" font-weight="700">常數 17 與 25 是怎麼來的</text>
+
+  <rect x="60" y="56" width="340" height="152" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.5"/>
+  <text class="s-txt" x="230" y="84" text-anchor="middle" font-weight="700">室內消防栓</text>
+  <text class="s-key" x="230" y="112" text-anchor="middle" fill="var(--accent2)">放水壓力 ≥ 1.7 kgf/cm²</text>
+  <text class="s-sm" x="230" y="140" text-anchor="middle">× 10　（1 kgf/cm² ≒ 10 m 水頭）</text>
+  <text class="s-key" x="230" y="170" text-anchor="middle">→ 常數 17 m</text>
+  <text class="s-sm" x="230" y="194" text-anchor="middle">§37 重力水箱與幫浦公式的尾項</text>
+
+  <rect x="500" y="56" width="340" height="152" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <text class="s-txt" x="670" y="84" text-anchor="middle" font-weight="700">室外消防栓</text>
+  <text class="s-key" x="670" y="112" text-anchor="middle" fill="var(--warn)">出水壓力 ≥ 2.5 kgf/cm²</text>
+  <text class="s-sm" x="670" y="140" text-anchor="middle">× 10</text>
+  <text class="s-key" x="670" y="170" text-anchor="middle">→ 常數 25 m</text>
+  <text class="s-sm" x="670" y="194" text-anchor="middle">§42 重力水箱與幫浦公式的尾項</text>
+
+  <text class="s-sm" x="450" y="244" text-anchor="middle">同理：自動撒水放水壓力 1 kgf/cm² → §58 常數 10 m；水霧 §64、泡沫 §79 各有自己的常數。</text>
+  <text class="s-sm" x="450" y="268" text-anchor="middle">壓力水箱公式的尾項則直接用壓力值本身：1.7 與 2.5 kgf/cm²，不必再乘 10。</text>
+</svg>
+<figcaption>圖 7　揚程公式尾項常數的由來——記住壓力值，常數就不用背</figcaption>
+</figure>
+
+<h3>室內 vs 室外：整組數字對照</h3>
+<table>
+<thead><tr><th>項目</th><th>室內消防栓</th><th>室外消防栓</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td><b>瞄子壓力</b></td><td>≥ 1.7 kgf/cm²（0.17 MPa）</td><td>≥ <b>2.5</b> kgf/cm²（0.25 MPa）</td><td class="n">§34・§40②</td></tr>
+<tr><td><b>放水／出水量</b></td><td>第一種 130／第二種 80 L/min</td><td><b>350</b> L/min</td><td class="n">§34・§40②</td></tr>
+<tr><td><b>幫浦出水量</b></td><td>第一種 150／第二種 90 L/min・支</td><td><b>400</b> L/min・支</td><td class="n">§37Ⅰ③・§42Ⅰ③</td></tr>
+<tr><td><b>水源放水時間</b></td><td><b>20</b> 分鐘</td><td><b>30</b> 分鐘</td><td class="n">§36・§41</td></tr>
+<tr><td>計算支（具）數</td><td>2 支</td><td>2 具</td><td class="n">§36・§41</td></tr>
+<tr><td><b>重力水箱常數</b></td><td>H = h₁+h₂+<b>17</b></td><td>H = h₁+h₂+<b>25</b></td><td class="n">§37Ⅰ①・§42Ⅰ①</td></tr>
+<tr><td><b>壓力水箱常數</b></td><td>P = P₁+P₂+P₃+<b>1.7</b></td><td>P = P₁+P₂+P₃+<b>2.5</b></td><td class="n">§37Ⅰ②・§42Ⅰ②</td></tr>
+<tr><td><b>幫浦全揚程</b></td><td>H = h₁+h₂+h₃+<b>17</b></td><td>H = h₁+h₂+h₃+<b>25</b></td><td class="n">§37Ⅰ③・§42Ⅰ③</td></tr>
+<tr><td><b>減壓門檻</b></td><td>超過 <b>7</b> kgf/cm²</td><td>超過 <b>6</b> kgf/cm²（0.6 MPa）</td><td class="n">§37Ⅱ④・§42Ⅱ</td></tr>
+<tr><td>水平距離</td><td>任一點至接頭 ≤ 25 m</td><td>至 1 樓外牆各部分 ≤ 40 m</td><td class="n">§34・§40①</td></tr>
+<tr><td>壓力水箱空氣壓力基準</td><td>建築物<b>最遠處</b>之消防栓</td><td>建築物<b>最高處</b>之消防栓</td><td class="n">§37Ⅰ②・§42Ⅰ②</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <b>兩個反直覺的地方。</b><br>
+  ① <b>減壓門檻室外反而比較低</b>（6 &lt; 7）：因為室外瞄子由消防人員在戶外操作、水帶長且無牆可倚，反作用力更難控制。<br>
+  ② <b>壓力水箱的壓力基準一個寫「最遠處」、一個寫「最高處」</b>：室內消防栓的臨界點是水平最遠的那一支，室外消防栓則是垂直最高的那一支。這組用詞常被出成是非題。
+</div>
+
+<div class="ex">
+  <div class="t">實例 4　室外消防栓水源容量</div>
+  <div class="given">某工廠設室外消防栓 5 具。求最低水源容量。</div>
+  <div class="step">§41：<b>以 2 具同時放水 30 分鐘</b>計算，與實設 5 具無關。</div>
+  <div class="step"><code>2 × 350 L/min × 30 min = 21,000 L</code></div>
+  <div class="ans">水源容量 <b>21 m³</b> 以上。<br>
+  對照室內消防栓 5.2 m³——室外是室內的 4 倍，因為量大（350 vs 130）又時間長（30 vs 20）。</div>
+</div>
+
+<h3>§39 準用清單</h3>
+<div class="cmp">
+  室外消防栓之<b>配管、試壓及緊急電源</b>，準用：
+  <b>§32Ⅰ①～⑤、⑦</b>（專用、材質、管徑、立管管徑、立管位置、防震）、
+  <b>§32Ⅱ</b>（止水閥／逆止閥標示）、
+  <b>§33</b>（加壓試驗）、
+  <b>§38</b>（緊急電源 30 分鐘）。<br>
+  <b>沒有準用 §32Ⅰ⑥（連接屋頂水箱使配管平時充滿水）與 §32Ⅲ（屋頂水箱）</b>——室外消防栓不必設屋頂水箱。<br>
+  §39 第 2 項另加一項室內消防栓沒有的規定：<b>水平主幹管外露部分，每 20 m 內以明顯方式標示水流方向及配管名稱</b>。
+</div>
+
+<!-- ============ 6 ============ -->
+<h2 id="card"><span class="no">06</span>速查數字卡</h2>
+
+<table>
+<thead><tr><th>項目</th><th>數值</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td colspan="3" style="background:var(--fill1);font-weight:700">滅火器</td></tr>
+<tr><td><b>效能值基準面積</b></td><td>甲・戊類 <b>100 m²</b>／乙・丙・丁類 <b>200 m²</b>／鍋爐房廚房等 <b>25 m²</b>（均含未滿）</td><td class="n">§31Ⅰ①</td></tr>
+<tr><td>另設滅火器</td><td>放映室、電氣設備處所每 <b>100 m²</b>（含未滿）另設 <b>1 支</b></td><td class="n">§31Ⅰ②</td></tr>
+<tr><td><b>步行距離</b></td><td>樓面居室任一點至滅火器 ≤ <b>20 m</b></td><td class="n">§31Ⅰ③</td></tr>
+<tr><td>標識</td><td>紅底白字「滅火器」，每字 ≥ <b>20 cm²</b></td><td class="n">§31Ⅰ④</td></tr>
+<tr><td><b>懸掛高度</b></td><td>≥18 kg → 上端距地板 ≤ <b>1 m</b>；&lt;18 kg → ≤ <b>1.5 m</b></td><td class="n">§31Ⅰ⑤</td></tr>
+
+<tr><td colspan="3" style="background:var(--fill2);font-weight:700">室內消防栓</td></tr>
+<tr><td><b>立管管徑</b></td><td>第一種 ≥ <b>63 mm</b>／第二種 ≥ <b>50 mm</b>；與連結送水管共用 ≥ <b>100 mm</b></td><td class="n">§32Ⅰ③④</td></tr>
+<tr><td>配管材質</td><td>CNS <b>6445</b>／<b>4626</b>／<b>6331</b>，或認可之合成樹脂管</td><td class="n">§32Ⅰ②</td></tr>
+<tr><td><b>屋頂水箱</b></td><td>第一種 ≥ <b>0.5 m³</b>／第二種 ≥ <b>0.3 m³</b>；斜屋頂得免設</td><td class="n">§32Ⅲ</td></tr>
+<tr><td><b>加壓試驗</b></td><td>全閉揚程 × <b>1.5 倍</b>水壓，持續 <b>2 小時</b>無漏水</td><td class="n">§33</td></tr>
+<tr><td><b>水平距離</b></td><td>任一點至消防栓接頭 ≤ <b>25 m</b>（第一、二種相同）</td><td class="n">§34Ⅰ</td></tr>
+<tr><td><b>放水壓力</b></td><td>≥ <b>1.7 kgf/cm²</b>（0.17 MPa）（第一、二種相同）</td><td class="n">§34Ⅰ</td></tr>
+<tr><td><b>放水量</b></td><td>第一種 <b>130 L/min</b>／第二種 <b>80 L/min</b></td><td class="n">§34Ⅰ</td></tr>
+<tr><td>第一種箱內</td><td>栓口徑 38 或 50 mm、水帶 <b>15 m ×2</b>（≤15 m 時得 10 m ×2）、水帶架 1 組、瞄子 ≥13 mm</td><td class="n">§34Ⅰ①（三）</td></tr>
+<tr><td>第二種箱內</td><td>栓口徑 <b>25 mm</b>、管盤長 <b>30 m</b> 皮管或保形水帶、瞄子附容易開關裝置</td><td class="n">§34Ⅰ②（三）</td></tr>
+<tr><td>應設第一種</td><td>§12②十一目（倉庫、傢俱展示販售場）、§12④（丁類）</td><td class="n">§34 本文</td></tr>
+<tr><td>開關高度</td><td>距樓地板 <b>0.3～1.5 m</b></td><td class="n">§34Ⅱ①</td></tr>
+<tr><td>測試出水口</td><td>屋頂上至少 <b>1 個</b>並標明字樣（斜屋頂有困難得免設）</td><td class="n">§34Ⅱ④</td></tr>
+<tr><td><b>消防栓箱</b></td><td>鋼板厚 ≥ <b>1.6 mm</b>；箱面表面積 ≥ <b>0.7 m²</b>；字樣每字 ≥ 20 cm²</td><td class="n">§35</td></tr>
+<tr><td><b>水源容量</b></td><td>最多樓層全部消防栓放水 <b>20 分鐘</b>；超過 2 支以 <b>2 支</b>計</td><td class="n">§36</td></tr>
+<tr><td><b>重力水箱</b></td><td><code>H = h₁ + h₂ + 17</code>（m）</td><td class="n">§37Ⅰ①</td></tr>
+<tr><td><b>壓力水箱</b></td><td><code>P = P₁ + P₂ + P₃ + 1.7</code>（kgf/cm²）；空氣 ≥ <b>1/3</b> 容積</td><td class="n">§37Ⅰ②</td></tr>
+<tr><td><b>幫浦出水量</b></td><td>第一種 <b>150 L/min</b>・支／第二種 <b>90 L/min</b>・支</td><td class="n">§37Ⅰ③（一）</td></tr>
+<tr><td><b>幫浦全揚程</b></td><td><code>H = h₁ + h₂ + h₃ + 17</code>（m）</td><td class="n">§37Ⅰ③（二）</td></tr>
+<tr><td>幫浦區劃</td><td><b>1 小時</b>以上防火時效牆壁、樓地板及防火門窗（屋頂／屋外有防水措施者除外）</td><td class="n">§37Ⅱ②</td></tr>
+<tr><td>啟動裝置</td><td>自動或手動；<b>停止僅限手動</b>；手動啟動裝置設於每一消防栓箱內，箱上方紅色表示燈</td><td class="n">§37Ⅱ③</td></tr>
+<tr><td><b>減壓門檻</b></td><td>放水壓力超過 <b>7 kgf/cm²</b> 應減壓</td><td class="n">§37Ⅱ④</td></tr>
+<tr><td><b>緊急電源</b></td><td>發電機或蓄電池，<b>30 分鐘</b>以上；丁類場所得用引擎動力系統</td><td class="n">§38</td></tr>
+
+<tr><td colspan="3" style="background:var(--fill4);font-weight:700">室外消防栓</td></tr>
+<tr><td>準用</td><td>§32Ⅰ①～⑤⑦、§32Ⅱ、§33、§38</td><td class="n">§39Ⅰ</td></tr>
+<tr><td>主幹管標示</td><td>水平主幹管外露部分每 <b>20 m</b> 內標示水流方向及配管名稱</td><td class="n">§39Ⅱ</td></tr>
+<tr><td><b>口徑・水平距離</b></td><td>口徑 ≥ <b>63 mm</b>；與 1 樓外牆各部分水平距離 ≤ <b>40 m</b></td><td class="n">§40①</td></tr>
+<tr><td><b>出水壓力・出水量</b></td><td>≥ <b>2.5 kgf/cm²</b>（0.25 MPa）；≥ <b>350 L/min</b></td><td class="n">§40②</td></tr>
+<tr><td>開關高度</td><td>不高於地面 <b>1.5 m</b>、不低於 <b>0.6 m</b>；地面下者水帶接頭不低於 <b>0.3 m</b></td><td class="n">§40③</td></tr>
+<tr><td><b>水帶箱</b></td><td>設於 <b>5 m</b> 範圍內；箱面表面積 ≥ <b>0.8 m²</b>；箱底二側設排水孔</td><td class="n">§40④（一）</td></tr>
+<tr><td>水帶箱內容</td><td>口徑 <b>63 mm × 20 m</b> 水帶 <b>2 條</b>、≥<b>19 mm</b> 直線噴霧兩用型瞄子 1 具、消防栓閥型開關 1 把</td><td class="n">§40④（三）</td></tr>
+<tr><td>周圍淨空</td><td><b>3 m</b> 以內保持空曠，不得堆放物品或種植花木，附近標明消防栓字樣</td><td class="n">§40⑤</td></tr>
+<tr><td><b>水源容量</b></td><td><b>2 具</b>同時放水 <b>30 分鐘</b></td><td class="n">§41</td></tr>
+<tr><td><b>重力水箱</b></td><td><code>H = h₁ + h₂ + 25</code>（m）</td><td class="n">§42Ⅰ①</td></tr>
+<tr><td><b>壓力水箱</b></td><td><code>P = P₁ + P₂ + P₃ + 2.5</code>（kgf/cm²）</td><td class="n">§42Ⅰ②</td></tr>
+<tr><td><b>幫浦出水量</b></td><td>一支 <b>400 L/min</b>；超過 2 支以 2 支計</td><td class="n">§42Ⅰ③（一）</td></tr>
+<tr><td><b>幫浦全揚程</b></td><td><code>H = h₁ + h₂ + h₃ + 25</code>（m）</td><td class="n">§42Ⅰ③（二）</td></tr>
+<tr><td><b>減壓門檻</b></td><td>放水壓力超過 <b>6 kgf/cm²</b>（0.6 MPa）應減壓</td><td class="n">§42Ⅱ</td></tr>
+</tbody>
+</table>
+
+<h3>最容易記混的六組數字</h3>
+<table>
+<thead><tr><th>數字組</th><th>正確歸屬</th></tr></thead>
+<tbody>
+<tr><td class="n"><b>130／80</b></td><td>瞄子<b>放水量</b>（第一種／第二種）</td></tr>
+<tr><td class="n"><b>150／90</b></td><td><b>幫浦出水量</b>（第一種／第二種）——比放水量大</td></tr>
+<tr><td class="n"><b>63／50</b></td><td><b>立管管徑</b>（第一種／第二種），單位 mm</td></tr>
+<tr><td class="n"><b>0.5／0.3</b></td><td><b>屋頂水箱</b>水量（第一種／第二種），單位 m³；自動撒水為 1 m³</td></tr>
+<tr><td class="n"><b>17／25</b></td><td>揚程<b>常數</b>（室內／室外）＝ 放水壓力 × 10</td></tr>
+<tr><td class="n"><b>7／6</b></td><td><b>減壓門檻</b>（室內／室外），單位 kgf/cm²——室外反而比較低</td></tr>
+</tbody>
+</table>
+
+<div class="navbar" style="margin-top:32px">
+  <a class="btn go" href="index.html">🏠 回學習首頁</a>
+  <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+  <a class="btn" href="15-%E8%87%AA%E5%8B%95%E6%92%92%E6%B0%B4%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html">📐 自動撒水設備圖解</a>
+  <a class="btn" href="#ext">↑ 回到最上方</a>
+</div>
+
+<footer>
+  <p>本頁數據取自全國法規資料庫「各類場所消防安全設備設置標準」（pcode D0120029）民國 113 年 4 月 24 日修正版原文，於 2026-08-11 擷取核對。</p>
+  <p>圖 7「1 kgf/cm² ≒ 10 m 水頭」係流體力學的一般換算關係，用以說明常數的來源，非條文明文；條文僅直接規定常數值 17 與 25。</p>
+  <p><b>法規以主管機關公布文字為準。</b>本頁為個人學習筆記，不構成法律意見；設計送審前請回查現行條文：
+  <code>https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0120029</code></p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  function target(){
+    var h=(location.hash||'').replace('#','');
+    if(!h){ var m=/[?&]s=([\w-]+)/.exec(location.search||''); h=m?m[1]:''; }
+    return h?document.getElementById(h):null;
+  }
+  function go(smooth){
+    var el=target(); if(!el) return;
+    el.scrollIntoView({behavior:smooth?'smooth':'auto',block:'start'});
+    el.style.transition='background-color .4s';
+    var old=el.style.backgroundColor;
+    el.style.backgroundColor='var(--fill4)';
+    setTimeout(function(){ el.style.backgroundColor=old||''; },1600);
+  }
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){ setTimeout(go,60); });
+  else setTimeout(go,60);
+  window.addEventListener('hashchange',function(){ go(true); });
+})();
+</script>
+</body>
+</html>
