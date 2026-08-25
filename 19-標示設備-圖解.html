@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>標示設備 圖解 — 各類場所消防安全設備設置標準 §146～§156</title>
+<meta name="description" content="出口標示燈與避難方向指示燈的免設條件、A／B／C 級區分、有效範圍與 D=kh 計算、設置位置、加強規定與亮燈方式、避難指標及緊急電源的圖解。">
+<style>
+  :root{
+    --bg:#fbfaf7; --fg:#1c1b19; --muted:#6b6862; --line:#d8d4cb;
+    --card:#ffffff; --accent:#b03a2e; --accent2:#1d6fa5; --accent3:#2e7d4f;
+    --warn:#a86b00; --danger:#8e1b0f;
+    --fill1:#f2e4e1; --fill2:#e0edf6; --fill3:#e3f0e8; --fill4:#f7efd9;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#16161a; --fg:#e8e6e1; --muted:#9b968c; --line:#3a3a40;
+      --card:#1e1e23; --accent:#e8705f; --accent2:#5aa8d8; --accent3:#5fbb87;
+      --warn:#d9a441; --danger:#f08070;
+      --fill1:#3a2622; --fill2:#1e3341; --fill3:#1f3a2c; --fill4:#3a3120;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+    line-height:1.75;-webkit-text-size-adjust:100%}
+  .wrap{max-width:960px;margin:0 auto;padding:32px 20px 80px}
+  header{border-bottom:2px solid var(--fg);padding-bottom:18px;margin-bottom:8px}
+  h1{font-size:clamp(1.4rem,4vw,2rem);margin:0 0 6px;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:.9rem;margin:0}
+  h2{font-size:1.15rem;margin:48px 0 4px;padding-top:14px;border-top:1px solid var(--line);
+    scroll-margin-top:16px}
+  h2 .no{color:var(--accent);font-variant-numeric:tabular-nums;margin-right:.5em}
+  h2:target{background:linear-gradient(transparent 62%,var(--fill4) 62%)}
+  h3{font-size:1rem;margin:26px 0 6px}
+  .lede{color:var(--muted);font-size:.92rem;margin:.2em 0 18px}
+  figure{margin:0 0 10px;background:var(--card);border:1px solid var(--line);
+    border-radius:10px;padding:18px 14px;overflow-x:auto}
+  svg{display:block;margin:0 auto;max-width:100%;height:auto}
+  figcaption{color:var(--muted);font-size:.84rem;margin-top:10px;text-align:center}
+  .note{border-left:3px solid var(--warn);background:var(--fill4);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .note b{color:var(--warn)}
+  .cmp{border-left:3px solid var(--accent2);background:var(--fill2);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .cmp b{color:var(--accent2)}
+  table{border-collapse:collapse;width:100%;font-size:.88rem;margin:14px 0}
+  th,td{border:1px solid var(--line);padding:6px 9px;text-align:left}
+  th{background:var(--fill2);font-weight:600}
+  td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+  td.c,th.c{text-align:center}
+  .scroll{overflow-x:auto}
+  .scroll table{min-width:620px}
+  code{background:var(--fill2);padding:1px 5px;border-radius:4px;font-size:.88em}
+  .formula{background:var(--fill3);border:1px solid var(--line);border-radius:8px;
+    padding:12px 16px;margin:14px 0;font-size:1rem;text-align:center}
+  .ex{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent2);
+    border-radius:0 10px 10px 0;padding:14px 18px;margin:18px 0}
+  .ex .t{font-weight:700;margin-bottom:6px;color:var(--accent2)}
+  .ex .given{font-size:.88rem;color:var(--muted);border-left:3px solid var(--line);
+    padding-left:12px;margin-bottom:10px}
+  .ex .step{font-size:.92rem;margin:8px 0}
+  .ex .ans{background:var(--fill3);border-radius:7px;padding:9px 13px;margin-top:10px;
+    font-weight:700;font-size:.94rem}
+  ol.law{font-size:.9rem;padding-left:1.4em}
+  ol.law li{margin:4px 0}
+  footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:.82rem}
+  a{color:var(--accent2)}
+  .navbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+  .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;
+    font-size:.86rem;padding:7px 14px;border-radius:8px;border:1px solid var(--line);
+    background:var(--card);color:var(--fg);transition:.12s}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.go{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+  .btn.go:hover{filter:brightness(1.1);color:#fff}
+  .toc{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 4px}
+  .toc a{font-size:.8rem;text-decoration:none;padding:4px 10px;border-radius:99px;
+    border:1px solid var(--line);background:var(--card);color:var(--muted)}
+  .toc a:hover{border-color:var(--accent);color:var(--accent)}
+  .s-line{stroke:var(--fg);stroke-width:1.4;fill:none}
+  .s-thin{stroke:var(--muted);stroke-width:1;fill:none}
+  .s-txt{fill:var(--fg);font-size:13px;font-family:inherit}
+  .s-sm{fill:var(--muted);font-size:11px;font-family:inherit}
+  .s-key{fill:var(--accent);font-size:13px;font-weight:700;font-family:inherit}
+  .s-dim{stroke:var(--accent2);stroke-width:1;fill:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>標示設備 圖解</h1>
+  <p class="sub">各類場所消防安全設備設置標準 §146～§156（第三編第三章第一節）　|　民國 113 年 4 月 24 日修正版</p>
+  <div class="navbar">
+    <a class="btn go" href="index.html">🏠 回學習首頁</a>
+    <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+    <a class="btn" href="17-%E7%81%AB%E8%AD%A6%E8%87%AA%E5%8B%95%E8%AD%A6%E5%A0%B1%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html">📐 火警自動警報設備圖解</a>
+    <a class="btn" href="18-%E7%B7%8A%E6%80%A5%E5%BB%A3%E6%92%AD%E8%88%87%E7%93%A6%E6%96%AF%E6%BC%8F%E6%B0%A3-%E5%9C%96%E8%A7%A3.html">📐 緊急廣播與瓦斯漏氣圖解</a>
+  </div>
+</header>
+
+<nav class="toc" aria-label="章節目錄">
+  <a href="#exempt">01 免設條件</a>
+  <a href="#grade">02 A／B／C 級區分</a>
+  <a href="#range">03 有效範圍與 D＝kh</a>
+  <a href="#place">04 設置位置</a>
+  <a href="#bright">05 加強規定與亮燈方式</a>
+  <a href="#indicator">06 避難指標</a>
+  <a href="#power">07 緊急電源與配線</a>
+  <a href="#card">08 速查數字卡</a>
+</nav>
+
+<div class="cmp" style="margin-top:24px">
+  <b>標示設備只有三種東西：出口標示燈、避難方向指示燈、避難指標。</b>
+  前兩種是<b>會發光的燈具</b>，第三種是<b>不發光的牌子</b>。<br>
+  整節的結構是：<b>要不要設</b>（§146 免設條件）→ <b>用哪一級</b>（§146-1 A／B／C）→
+  <b>一盞管多遠</b>（§146-2 有效範圍）→ <b>掛在哪裡</b>（§146-3、§146-4）→
+  <b>特殊場所要加強</b>（§146-5～§146-7）→ <b>避難指標另有一條</b>（§153）→
+  <b>停電要撐多久</b>（§155）。<br>
+  <b>§147～§152 六條已全部刪除</b>，現行規定由 §146-1 至 §146-7 七條增訂條文承接——查條號時看到「（刪除）」不要以為抓錯條。
+</div>
+
+<!-- ============ 1 ============ -->
+<h2 id="exempt"><span class="no">01</span>免設條件</h2>
+<p class="lede">§146 是全節唯一的免設條文，四款分別對應不同的設備。<b>三種設備的免設門檻不一樣，不能互相套用。</b></p>
+
+<figure>
+<svg viewBox="0 0 900 330" role="img" aria-label="三種標示設備依步行距離免設的門檻">
+  <text class="s-txt" x="450" y="28" text-anchor="middle" font-weight="700">§146Ⅰ① 自居室任一點易於觀察識別其主要出入口，且步行距離符合時得免設</text>
+
+  <text class="s-txt" x="530" y="84" text-anchor="middle" font-weight="700">避難層</text>
+  <text class="s-txt" x="750" y="84" text-anchor="middle" font-weight="700">避難層以外之樓層</text>
+
+  <text class="s-txt" x="415" y="124" text-anchor="end">免設出口標示燈</text>
+  <rect x="430" y="96" width="200" height="44" rx="5" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-key" x="530" y="124" text-anchor="middle" fill="var(--accent2)">≤ 20 m</text>
+  <rect x="640" y="96" width="220" height="44" rx="5" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-key" x="750" y="124" text-anchor="middle" fill="var(--accent2)">≤ 10 m</text>
+
+  <text class="s-txt" x="415" y="178" text-anchor="end">免設避難方向指示燈</text>
+  <rect x="430" y="150" width="200" height="44" rx="5" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-key" x="530" y="178" text-anchor="middle" fill="var(--accent3)">≤ 40 m</text>
+  <rect x="640" y="150" width="220" height="44" rx="5" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-key" x="750" y="178" text-anchor="middle" fill="var(--accent3)">≤ 30 m</text>
+
+  <text class="s-txt" x="415" y="232" text-anchor="end">免設避難指標</text>
+  <rect x="430" y="204" width="430" height="44" rx="5" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-key" x="645" y="232" text-anchor="middle" fill="var(--warn)">≤ 30 m（不分樓層）</text>
+
+  <text class="s-key" x="450" y="286" text-anchor="middle">但位於地下建築物、地下層或無開口樓層者，本款不適用——這三種場所一律要設</text>
+  <text class="s-sm" x="450" y="312" text-anchor="middle">「主要出入口」在避難層指通往戶外之出入口，在避難層以外指通往直通樓梯之出入口；設有排煙室者，為該室之出入口。</text>
+</svg>
+<figcaption>圖 1　§146Ⅰ① 三種標示設備的免設步行距離。出口標示燈最嚴（20／10），避難方向指示燈最寬（40／30）</figcaption>
+</figure>
+
+<div class="cmp">
+  <b>20／10、40／30、30 這五個數字的邏輯。</b>
+  出口標示燈標的是「出口在這裡」，看不到就會走錯方向，門檻壓得最低；
+  避難方向指示燈只是沿路提醒，走廊本來就看得到出口時不必再設，門檻放到兩倍；
+  避難指標是不發光的牌子，成本低、遮蔽風險也低，直接給 <b>30 m</b> 不分樓層。<br>
+  三者的共同前提都是「<b>自居室任一點易於觀察識別其主要出入口</b>」——看不到出口，再短的距離也不能免設。
+</div>
+
+<h3>§146Ⅰ② 居室的免設：依用途別的樓地板面積</h3>
+<p class="lede">前提是「自居室任一點<b>易於觀察識別該居室出入口</b>」，且樓地板面積符合下表。</p>
+<div class="scroll">
+<table>
+<thead><tr><th>用途別</th><th class="c">居室樓地板面積</th></tr></thead>
+<tbody>
+<tr><td>§12 第一款<b>第一目至第三目</b><br><span style="color:var(--muted);font-size:.92em">（戲院電影院歌廳舞廳酒家酒吧 KTV 等／保齡球館集會堂遊藝場等／觀光旅館飯店旅館招待所）</span></td><td class="c"><b>100 m² 以下</b></td></tr>
+<tr><td>§12 第一款<b>第四目、第五目、第七目</b>、第二款<b>第十目</b><br><span style="color:var(--muted);font-size:.92em">（商場市場百貨／餐廳飲食店咖啡廳／三溫暖公共浴室／電影攝影場電視播送場）</span></td><td class="c"><b>200 m² 以下</b></td></tr>
+<tr><td>§12 第一款<b>第六目</b>、第二款<b>第一目至第九目、第十一目、第十二目</b>、<b>第三款</b>、<b>第四款</b><br><span style="color:var(--muted);font-size:.92em">（醫院長照等／車站金融學校圖書館寺廟辦公室集合住宅體育館室內泳池／倉庫傢俱展售／幼兒園／丙類／丁類）</span></td><td class="c"><b>400 m² 以下</b></td></tr>
+</tbody>
+</table>
+</div>
+<p class="lede">另 <b>§146Ⅰ②（二）</b>：<b>供集合住宅使用之居室</b>，不論面積一律得免設。<br>
+規律很清楚：<b>火災風險與人員不熟悉度越高，面積門檻越低</b>——甲一～三目（昏暗、酒精、陌生環境）100 m²，商場餐廳 200 m²，其餘 400 m²。</p>
+
+<h3>§146Ⅰ③④ 另外兩款免設</h3>
+<table>
+<thead><tr><th class="n">款</th><th>條件</th><th>可免設</th></tr></thead>
+<tbody>
+<tr><td class="n">③</td><td>通往主要出入口之走廊或通道之出入口，設有<b>探測器連動自動關閉裝置之防火門</b>，並設有<b>避難指標及緊急照明設備</b>確保該指標明顯易見者</td><td><b>出口標示燈</b></td></tr>
+<tr><td class="n">④</td><td>樓梯或坡道，設有<b>緊急照明設備</b>及供<b>確認避難方向之樓層標示</b>者</td><td><b>避難方向指示燈</b></td></tr>
+</tbody>
+</table>
+<p class="lede">兩款的共同結構都是「<b>用別的東西替代</b>」：③ 用避難指標＋緊急照明取代出口標示燈；④ 用緊急照明＋樓層標示取代避難方向指示燈。<b>沒有任何一款可以一次免掉全部三種</b>。</p>
+
+<!-- ============ 2 ============ -->
+<h2 id="grade"><span class="no">02</span>A／B／C 級區分</h2>
+<p class="lede">§146-1 用兩個指標分級：<b>標示面縱向尺度 h</b>（燈有多大）與<b>標示面光度</b>（燈有多亮）。尺度分界兩種燈共用，光度則各有一套。</p>
+
+<figure>
+<svg viewBox="0 0 900 330" role="img" aria-label="標示面縱向尺度與光度的三級區分">
+  <path class="s-thin" d="M450 16 L450 320"/>
+
+  <text class="s-txt" x="220" y="28" text-anchor="middle" font-weight="700">標示面縱向尺度 h（m）</text>
+  <path class="s-line" d="M250 250 L250 44"/>
+  <path class="s-line" d="M244 90 L256 90 M244 170 L256 170 M244 210 L256 210 M244 250 L256 250"/>
+  <text class="s-sm" x="236" y="94" text-anchor="end">0.4</text>
+  <text class="s-sm" x="236" y="174" text-anchor="end">0.2</text>
+  <text class="s-sm" x="236" y="214" text-anchor="end">0.1</text>
+  <text class="s-sm" x="236" y="254" text-anchor="end">0</text>
+  <rect x="256" y="50" width="90" height="40" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-txt" x="301" y="75" text-anchor="middle" font-weight="700">A 級</text>
+  <rect x="256" y="90" width="90" height="80" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-txt" x="301" y="135" text-anchor="middle" font-weight="700">B 級</text>
+  <rect x="256" y="170" width="90" height="40" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-txt" x="301" y="195" text-anchor="middle" font-weight="700">C 級</text>
+  <path class="s-line" d="M301 50 L301 38 M296 46 L301 36 L306 46"/>
+  <text class="s-sm" x="220" y="290" text-anchor="middle">分界只有 0.1、0.2、0.4 三個數字</text>
+  <text class="s-sm" x="220" y="312" text-anchor="middle">出口標示燈與避難方向指示燈的尺度分級完全相同</text>
+
+  <text class="s-txt" x="675" y="28" text-anchor="middle" font-weight="700">標示面光度（cd）</text>
+  <text class="s-sm" x="635" y="68" text-anchor="middle">出口標示燈</text>
+  <text class="s-sm" x="795" y="68" text-anchor="middle">避難方向指示燈</text>
+  <text class="s-txt" x="545" y="105" text-anchor="end" font-weight="700">A 級</text>
+  <rect x="560" y="80" width="150" height="40" rx="4" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.3"/>
+  <text class="s-key" x="635" y="105" text-anchor="middle" fill="var(--accent2)">50 以上</text>
+  <rect x="720" y="80" width="150" height="40" rx="4" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.3"/>
+  <text class="s-key" x="795" y="105" text-anchor="middle" fill="var(--accent2)">60 以上</text>
+  <text class="s-txt" x="545" y="155" text-anchor="end" font-weight="700">B 級</text>
+  <rect x="560" y="130" width="150" height="40" rx="4" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.3"/>
+  <text class="s-key" x="635" y="155" text-anchor="middle" fill="var(--accent3)">10 以上</text>
+  <rect x="720" y="130" width="150" height="40" rx="4" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.3"/>
+  <text class="s-key" x="795" y="155" text-anchor="middle" fill="var(--accent3)">13 以上</text>
+  <text class="s-txt" x="545" y="205" text-anchor="end" font-weight="700">C 級</text>
+  <rect x="560" y="180" width="150" height="40" rx="4" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.3"/>
+  <text class="s-key" x="635" y="205" text-anchor="middle" fill="var(--warn)">1.5 以上</text>
+  <rect x="720" y="180" width="150" height="40" rx="4" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.3"/>
+  <text class="s-key" x="795" y="205" text-anchor="middle" fill="var(--warn)">5 以上</text>
+  <text class="s-sm" x="675" y="252" text-anchor="middle">避難方向指示燈的光度一律比出口標示燈高一階</text>
+  <text class="s-sm" x="675" y="274" text-anchor="middle">（60 &gt; 50、13 &gt; 10、5 &gt; 1.5）</text>
+  <text class="s-sm" x="675" y="304" text-anchor="middle">本條適用於出口標示燈及「非設於樓梯或坡道」之避難方向指示燈</text>
+</svg>
+<figcaption>圖 2　§146-1 三級區分。尺度看「有多大」，光度看「有多亮」，兩者要同時符合</figcaption>
+</figure>
+
+<div class="scroll">
+<table>
+<thead><tr><th>區分</th><th class="c">標示面縱向尺度（m）</th><th class="c">標示面光度（cd）</th></tr></thead>
+<tbody>
+<tr><td><b>出口標示燈</b>　A 級</td><td class="c"><b>0.4 以上</b></td><td class="c"><b>50 以上</b></td></tr>
+<tr><td><b>出口標示燈</b>　B 級</td><td class="c">0.2 以上，未滿 0.4</td><td class="c">10 以上</td></tr>
+<tr><td><b>出口標示燈</b>　C 級</td><td class="c">0.1 以上，未滿 0.2</td><td class="c">1.5 以上</td></tr>
+<tr><td><b>避難方向指示燈</b>　A 級</td><td class="c"><b>0.4 以上</b></td><td class="c"><b>60 以上</b></td></tr>
+<tr><td><b>避難方向指示燈</b>　B 級</td><td class="c">0.2 以上，未滿 0.4</td><td class="c">13 以上</td></tr>
+<tr><td><b>避難方向指示燈</b>　C 級</td><td class="c">0.1 以上，未滿 0.2</td><td class="c">5 以上</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ============ 3 ============ -->
+<h2 id="range"><span class="no">03</span>有效範圍與 D＝kh</h2>
+<p class="lede">§146-2 的「有效範圍」指<b>至該燈之步行距離</b>。有兩種求法可擇一：<b>查表</b>或<b>用 D＝kh 算</b>。另有一條但書會蓋掉兩者。</p>
+
+<figure>
+<svg viewBox="0 0 900 310" role="img" aria-label="有效範圍的定義與D等於kh的計算式">
+  <path class="s-thin" d="M450 16 L450 300"/>
+
+  <text class="s-txt" x="235" y="28" text-anchor="middle" font-weight="700">有效範圍＝至該燈之步行距離</text>
+  <rect x="60" y="60" width="340" height="80" fill="var(--fill2)" stroke="var(--line)" stroke-width="1.4"/>
+  <rect x="390" y="52" width="20" height="96" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <rect x="372" y="34" width="40" height="16" rx="3" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-sm" x="348" y="26" text-anchor="middle">出口標示燈</text>
+  <path class="s-dim" stroke-width="1.6" stroke-dasharray="6 4" d="M80 100 L384 100"/>
+  <circle cx="80" cy="100" r="5" fill="var(--accent2)"/>
+  <text class="s-key" x="232" y="92" text-anchor="middle" fill="var(--accent2)">有效範圍 D</text>
+  <text class="s-sm" x="235" y="172" text-anchor="middle">沿步行路徑量測，不是直線水平距離</text>
+  <text class="s-key" x="235" y="200" text-anchor="middle">有不易看清或識別該燈情形者 → 一律 10 m</text>
+  <text class="s-sm" x="235" y="226" text-anchor="middle">（§146-2 本文但書，會蓋過表列值與計算值）</text>
+  <text class="s-sm" x="235" y="256" text-anchor="middle">兩款擇一適用：第 1 款查表，第 2 款算 D＝kh</text>
+
+  <text class="s-txt" x="675" y="28" text-anchor="middle" font-weight="700">第 2 款：依計算值</text>
+  <rect x="490" y="50" width="370" height="60" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.6"/>
+  <text class="s-key" x="675" y="88" text-anchor="middle" fill="var(--accent3)">D ＝ k × h</text>
+  <text class="s-sm" x="675" y="130" text-anchor="middle">D：步行距離（m）　h：標示面縱向尺度（m）</text>
+  <rect x="490" y="148" width="290" height="36" rx="4" fill="var(--fill2)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-sm" x="635" y="171" text-anchor="middle">出口標示燈　未顯示避難方向符號</text>
+  <rect x="790" y="148" width="70" height="36" rx="4" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.3"/>
+  <text class="s-key" x="825" y="172" text-anchor="middle">150</text>
+  <rect x="490" y="188" width="290" height="36" rx="4" fill="var(--fill2)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-sm" x="635" y="211" text-anchor="middle">出口標示燈　顯示避難方向符號</text>
+  <rect x="790" y="188" width="70" height="36" rx="4" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.3"/>
+  <text class="s-key" x="825" y="212" text-anchor="middle">100</text>
+  <rect x="490" y="228" width="290" height="36" rx="4" fill="var(--fill2)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-sm" x="635" y="251" text-anchor="middle">避難方向指示燈</text>
+  <rect x="790" y="228" width="70" height="36" rx="4" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.3"/>
+  <text class="s-key" x="825" y="252" text-anchor="middle">50</text>
+  <text class="s-sm" x="675" y="292" text-anchor="middle">顯示避難方向符號時 k 值反而降低——箭頭占掉版面，字就變小</text>
+</svg>
+<figcaption>圖 3　§146-2 有效範圍的兩種求法，以及三個 k 值</figcaption>
+</figure>
+
+<h3>§146-2 第 1 款：有效範圍表</h3>
+<div class="scroll">
+<table>
+<thead><tr><th colspan="2">區分</th><th class="c">步行距離（m）</th></tr></thead>
+<tbody>
+<tr><td rowspan="5"><b>出口標示燈</b></td><td>A 級　未顯示避難方向符號者</td><td class="c"><b>60</b></td></tr>
+<tr><td>A 級　顯示避難方向符號者</td><td class="c"><b>40</b></td></tr>
+<tr><td>B 級　未顯示避難方向符號者</td><td class="c"><b>30</b></td></tr>
+<tr><td>B 級　顯示避難方向符號者</td><td class="c"><b>20</b></td></tr>
+<tr><td>C 級</td><td class="c"><b>15</b></td></tr>
+<tr><td rowspan="3"><b>避難方向指示燈</b></td><td>A 級</td><td class="c"><b>20</b></td></tr>
+<tr><td>B 級</td><td class="c"><b>15</b></td></tr>
+<tr><td>C 級</td><td class="c"><b>10</b></td></tr>
+</tbody>
+</table>
+</div>
+<p class="lede"><b>出口標示燈的 C 級不分「顯示／未顯示」</b>——表上只有一格 15 m。避難方向指示燈本身就是箭頭，自然也不分。</p>
+
+<div class="formula">
+  <b>§146-2 第 2 款</b>　<code>D = k × h</code><br>
+  <span style="font-size:.85rem;color:var(--muted)">
+  k：出口標示燈未顯示方向符號 <b>150</b>／顯示方向符號 <b>100</b>／避難方向指示燈 <b>50</b>　　h：標示面縱向尺度（m）</span>
+</div>
+
+<div class="ex">
+  <div class="t">實例 1　A 級出口標示燈的有效範圍</div>
+  <div class="given">某 A 級出口標示燈，標示面縱向尺度 h = 0.4 m，未顯示避難方向符號。分別以第 1 款與第 2 款求有效範圍。</div>
+  <div class="step">① 第 1 款查表：出口標示燈 A 級、未顯示避難方向符號 → <b>60 m</b></div>
+  <div class="step">② 第 2 款計算：<code>D = 150 × 0.4 = 60 m</code></div>
+  <div class="ans">兩款結果相同，有效範圍 <b>60 m</b>。<br>
+  這不是巧合——<b>表列值就是用各級尺度的下限乘上 k 值算出來的</b>：A 級 0.4×150＝60、B 級 0.2×150＝30、C 級 0.1×150＝15；顯示方向符號時換成 k＝100，得 40／20／（C 級仍列 15）。</div>
+</div>
+
+<div class="ex">
+  <div class="t">實例 2　尺度加大時，計算值才會超過表列值</div>
+  <div class="given">某出口標示燈標示面縱向尺度 h = 0.5 m，顯示避難方向符號。</div>
+  <div class="step">① 尺度 0.5 ≥ 0.4，屬 <b>A 級</b>；第 1 款查表（A 級、顯示方向符號）→ 40 m</div>
+  <div class="step">② 第 2 款計算：<code>D = 100 × 0.5 = 50 m</code></div>
+  <div class="ans">依第 2 款可取 <b>50 m</b>，比查表多 10 m。<br>
+  §146-2 明定「在下列<b>二款之一</b>規定步行距離以下之範圍」，兩款擇一適用；<b>燈做得比該級下限更大時，走計算式才划算</b>。</div>
+</div>
+
+<div class="ex">
+  <div class="t">實例 3　避難方向指示燈的間距</div>
+  <div class="given">某走廊採 B 級避難方向指示燈，標示面縱向尺度 h = 0.25 m。求單盞有效範圍與理論最大間距。</div>
+  <div class="step">① 第 1 款查表：避難方向指示燈 B 級 → 15 m</div>
+  <div class="step">② 第 2 款計算：<code>D = 50 × 0.25 = 12.5 m</code>；兩款擇一，取較有利的 <b>15 m</b></div>
+  <div class="step">③ 有效範圍是「至該燈之步行距離」，走廊上任一點都要落在某盞燈的範圍內 → 兩盞燈之間最遠 <code>15 × 2 = 30 m</code></div>
+  <div class="ans">單盞有效範圍 <b>15 m</b>，理論最大間距 <b>30 m</b>。<br>
+  但 §146-3Ⅱ① 要求<b>優先設於轉彎處</b>，實務上轉彎處會先卡掉位置，很少能拉到理論值。</div>
+</div>
+
+<!-- ============ 4 ============ -->
+<h2 id="place"><span class="no">04</span>設置位置</h2>
+<p class="lede">§146-3 第 1 項列出口標示燈的<b>四個位置</b>，第 2 項列避難方向指示燈的<b>三個原則</b>。共同的用語是「上方或其緊鄰之有效引導避難處」。</p>
+
+<figure>
+<svg viewBox="0 0 900 375" role="img" aria-label="出口標示燈四個設置位置與避難方向指示燈的轉彎處優先">
+  <text class="s-txt" x="450" y="28" text-anchor="middle" font-weight="700">§146-3 出口標示燈的四個設置位置</text>
+
+  <rect x="140" y="170" width="600" height="70" fill="var(--fill2)" stroke="var(--line)" stroke-width="1.4"/>
+  <rect x="200" y="240" width="70" height="80" fill="var(--fill2)" stroke="var(--line)" stroke-width="1.4"/>
+  <rect x="300" y="70" width="180" height="100" fill="var(--card)" stroke="var(--line)" stroke-width="1.4"/>
+  <text class="s-sm" x="390" y="125" text-anchor="middle">居室</text>
+
+  <rect x="120" y="170" width="20" height="70" fill="var(--fill1)" stroke="var(--accent)" stroke-width="2"/>
+  <text class="s-sm" x="96" y="150" text-anchor="middle">戶外</text>
+  <rect x="740" y="170" width="20" height="70" fill="var(--fill1)" stroke="var(--accent)" stroke-width="2"/>
+  <text class="s-sm" x="805" y="150" text-anchor="middle">直通樓梯</text>
+  <rect x="370" y="164" width="40" height="12" rx="2" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.3"/>
+  <path class="s-line" stroke="var(--accent)" stroke-width="3" d="M580 170 L580 240"/>
+  <text class="s-sm" x="580" y="158" text-anchor="middle">防火門</text>
+  <circle cx="235" cy="250" r="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.6"/>
+
+  <path class="s-thin" stroke-dasharray="4 3" d="M130 240 L130 262 M750 240 L750 262 M390 176 L390 262 M580 240 L580 262"/>
+  <rect x="118" y="262" width="24" height="22" rx="4" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.3"/>
+  <text class="s-key" x="130" y="278" text-anchor="middle">①</text>
+  <rect x="738" y="262" width="24" height="22" rx="4" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.3"/>
+  <text class="s-key" x="750" y="278" text-anchor="middle">②</text>
+  <rect x="378" y="262" width="24" height="22" rx="4" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.3"/>
+  <text class="s-key" x="390" y="278" text-anchor="middle">③</text>
+  <rect x="568" y="262" width="24" height="22" rx="4" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.3"/>
+  <text class="s-key" x="580" y="278" text-anchor="middle">④</text>
+
+  <text class="s-sm" x="130" y="304" text-anchor="middle">通往戶外</text>
+  <text class="s-sm" x="390" y="304" text-anchor="middle">室內往走廊</text>
+  <text class="s-sm" x="580" y="304" text-anchor="middle">跨防火區劃之防火門</text>
+  <text class="s-sm" x="750" y="304" text-anchor="middle">通往直通樓梯</text>
+  <text class="s-sm" x="235" y="340" text-anchor="middle">轉彎處：避難方向指示燈優先設置</text>
+  <text class="s-sm" x="450" y="366" text-anchor="middle">四款都是設於「出入口上方或其緊鄰之有效引導避難處」；設有排煙室者，為該室之出入口。</text>
+</svg>
+<figcaption>圖 4　§146-3 出口標示燈的四個位置。①② 是真正的出口，③④ 是通往它們的中繼點</figcaption>
+</figure>
+
+<h3>§146-3 全條</h3>
+<table>
+<thead><tr><th>設備</th><th class="n">款</th><th>規定</th></tr></thead>
+<tbody>
+<tr><td rowspan="4"><b>出口標示燈</b><br>（第 1 項）</td><td class="n">①</td><td>通往<b>戶外</b>之出入口；設有排煙室者，為該室之出入口</td></tr>
+<tr><td class="n">②</td><td>通往<b>直通樓梯</b>之出入口；設有排煙室者，為該室之出入口</td></tr>
+<tr><td class="n">③</td><td>通往前二款出入口，<b>由室內往走廊或通道</b>之出入口</td></tr>
+<tr><td class="n">④</td><td>通往第 ①②款出入口，走廊或通道上所設<b>跨防火區劃之防火門</b></td></tr>
+<tr><td rowspan="3"><b>避難方向指示燈</b><br>（第 2 項）<br><span style="color:var(--muted);font-size:.92em">裝設於走廊、樓梯及通道</span></td><td class="n">①</td><td><b>優先設於轉彎處</b></td></tr>
+<tr><td class="n">②</td><td>設於依第 1 項①②款所設<b>出口標示燈之有效範圍內</b></td></tr>
+<tr><td class="n">③</td><td>設於前二款規定者外，把走廊或通道<b>各部分包含在避難方向指示燈有效範圍內</b>必要之地點</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <b>避難方向指示燈第 2 款很容易被跳過。</b>
+  它要求指示燈本身也要落在<b>出口標示燈的有效範圍內</b>——用意是讓「看到箭頭的人，再往前一定看得到出口燈」，
+  形成一條不中斷的引導鏈。只做第 3 款（把走廊都涵蓋）會在接近出口前留下空白段。
+</div>
+
+<h3>§146-4 裝設的四項共同要求</h3>
+<ol class="law">
+<li>設置位置應<b>不妨礙通行</b></li>
+<li>周圍<b>不得設有影響視線之裝潢及廣告招牌</b></li>
+<li>設於<b>地板面</b>之指示燈，應具<b>不因荷重而破壞</b>之強度</li>
+<li>設於可能遭受<b>雨淋或溼氣滯留</b>之處所者，應具<b>防水構造</b></li>
+</ol>
+<p class="lede">第 2 款「周圍不得設有影響視線之裝潢及廣告招牌」在 <b>§153③ 避難指標</b>原文重複一次——這是本節唯一跨條文重複的規定，因為實務上最常見的缺失就是招牌把燈遮住。</p>
+
+<!-- ============ 5 ============ -->
+<h2 id="bright"><span class="no">05</span>加強規定與亮燈方式</h2>
+<p class="lede">§146-5 針對三類場所拉高規格；§146-6 管觀眾席；§146-7 則反過來，允許在特定情形<b>減光或消燈</b>。</p>
+
+<figure>
+<svg viewBox="0 0 900 330" role="img" aria-label="三類場所的標示設備加強規定">
+  <text class="s-txt" x="450" y="28" text-anchor="middle" font-weight="700">§146-5 三類場所的加強規定</text>
+
+  <rect x="20" y="56" width="280" height="120" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.5"/>
+  <text class="s-txt" x="160" y="82" text-anchor="middle" font-weight="700">① 特定用途</text>
+  <text class="s-sm" x="160" y="108" text-anchor="middle">§12②一目　車站、飛機場大廈、候船室</text>
+  <text class="s-sm" x="160" y="130" text-anchor="middle">§12③三目　室內停車場</text>
+  <text class="s-sm" x="160" y="152" text-anchor="middle">§12⑤三目　地下建築物</text>
+
+  <rect x="310" y="56" width="280" height="120" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.5"/>
+  <text class="s-txt" x="450" y="82" text-anchor="middle" font-weight="700">② 大面積娛樂 ・ 複合</text>
+  <text class="s-sm" x="450" y="108" text-anchor="middle">§12①一目至五目、七目</text>
+  <text class="s-sm" x="450" y="130" text-anchor="middle">或 §12⑤一目</text>
+  <text class="s-key" x="450" y="156" text-anchor="middle" fill="var(--accent3)">且該層樓地板面積 ≥ 1,000 m²</text>
+
+  <rect x="600" y="56" width="280" height="120" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <text class="s-txt" x="740" y="82" text-anchor="middle" font-weight="700">③ 醫院 ・ 長照</text>
+  <text class="s-sm" x="740" y="108" text-anchor="middle">§12①六目（不分面積）</text>
+  <text class="s-key" x="740" y="134" text-anchor="middle" fill="var(--warn)">出口標示燈並應採具閃滅功能</text>
+  <text class="s-key" x="740" y="156" text-anchor="middle" fill="var(--warn)">或兼具音聲引導功能</text>
+
+  <rect x="20" y="200" width="860" height="64" rx="8" fill="var(--card)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text class="s-txt" x="450" y="226" text-anchor="middle" font-weight="700">共同要求：應使用 A 級或 B 級</text>
+  <text class="s-key" x="450" y="250" text-anchor="middle">出口標示燈光度 ≥ 20 cd 或具閃滅功能　｜　避難方向指示燈光度 ≥ 25 cd</text>
+
+  <text class="s-sm" x="450" y="292" text-anchor="middle">但設於走廊，其有效範圍內各部分容易識別該燈者，不在此限。</text>
+  <text class="s-sm" x="450" y="316" text-anchor="middle">另 §146-5Ⅲ：避難方向指示燈設於樓梯或坡道者，樓梯級面或坡道表面照度 ≥ 1 lx；§146-6 觀眾席引導燈 ≥ 0.2 lx。</text>
+</svg>
+<figcaption>圖 5　§146-5 的三類場所與共同要求。醫院長照多一層——出口標示燈要會閃或會出聲</figcaption>
+</figure>
+
+<div class="cmp">
+  <b>閃滅與音聲引導有一組配套規定（§146-5 第 2 項）。</b><br>
+  ① <b>設於主要出入口</b>（不是每一盞都閃）<br>
+  ② <b>與火警自動警報設備連動</b><br>
+  ③ <b>由主要出入口往避難方向所設探測器動作時，該出入口之出口標示燈應停止閃滅及音聲引導</b><br>
+  第 ③ 款是關鍵：<b>火已經燒到出口那一側時，就不能再繼續叫人往那邊走</b>——閃滅與聲音必須自己關掉，避免把人引向火場。
+</div>
+
+<h3>§146-7：什麼時候可以減光或消燈</h3>
+<p class="lede">原則是「<b>應保持不熄滅</b>」（第 1 項）。要減光或消燈，前提是<b>與火警自動警報設備之探測器連動亮燈</b>，且配合設置場所使用型態採取適當亮燈方式，再符合下列之一：</p>
+<div class="scroll">
+<table>
+<thead><tr><th class="n">款</th><th>情形</th><th class="c">出口標示燈及<br>非設於樓梯坡道之方向燈</th><th class="c">設於樓梯或坡道之<br>避難方向指示燈</th></tr></thead>
+<tbody>
+<tr><td class="n">①</td><td>設置場所<b>無人期間</b></td><td class="c"><b>○</b></td><td class="c"><b>○</b></td></tr>
+<tr><td class="n">②</td><td>設置位置可利用<b>自然採光</b>辨識出入口或避難方向期間</td><td class="c"><b>○</b></td><td class="c"><b>○</b></td></tr>
+<tr><td class="n">③</td><td>設置在因其使用型態而<b>特別需要較暗</b>之處所，於使用上較暗期間</td><td class="c"><b>○</b></td><td class="c">—</td></tr>
+<tr><td class="n">④</td><td>設置在主要供<b>管理權人、其雇用之人或其他固定使用之人</b>使用之處所</td><td class="c"><b>○</b></td><td class="c">—</td></tr>
+</tbody>
+</table>
+</div>
+<p class="lede"><b>樓梯與坡道只准用第 ①②款</b>（§146-7 第 3 項）——電影院可以在放映時把觀眾席的燈調暗（第 ③ 款），但樓梯間不行，因為那是所有人共用的逃生路徑。</p>
+
+<!-- ============ 6 ============ -->
+<h2 id="indicator"><span class="no">06</span>避難指標</h2>
+<p class="lede">避難指標不發光，所以 §153 只管三件事：<b>掛多低、隔多密、看不看得到</b>。</p>
+
+<figure>
+<svg viewBox="0 0 900 300" role="img" aria-label="避難指標設於出入口與走廊的兩種規定">
+  <path class="s-thin" d="M450 16 L450 290"/>
+
+  <text class="s-txt" x="235" y="28" text-anchor="middle" font-weight="700">① 設於出入口</text>
+  <path class="s-line" d="M80 240 L400 240"/>
+  <path class="s-thin" d="M90 240 L82 250 M120 240 L112 250 M150 240 L142 250 M180 240 L172 250 M210 240 L202 250 M240 240 L232 250 M270 240 L262 250 M300 240 L292 250 M330 240 L322 250 M360 240 L352 250 M390 240 L382 250"/>
+  <rect x="260" y="120" width="80" height="120" fill="var(--fill2)" stroke="var(--line)" stroke-width="1.4"/>
+  <text class="s-sm" x="300" y="200" text-anchor="middle">出入口</text>
+  <rect x="285" y="150" width="30" height="20" rx="2" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <path class="s-dim" d="M240 150 L240 240 M234 150 L246 150 M234 240 L246 240"/>
+  <text class="s-key" x="228" y="198" text-anchor="end" fill="var(--warn)">≤ 1.5 m</text>
+  <text class="s-sm" x="235" y="274" text-anchor="middle">裝設高度距樓地板面 1.5 m 以下</text>
+
+  <text class="s-txt" x="675" y="28" text-anchor="middle" font-weight="700">② 設於走廊或通道</text>
+  <rect x="500" y="110" width="360" height="60" fill="var(--fill2)" stroke="var(--line)" stroke-width="1.4"/>
+  <rect x="545" y="150" width="26" height="14" rx="2" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <rect x="700" y="150" width="26" height="14" rx="2" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <path class="s-dim" d="M558 200 L713 200 M558 194 L558 206 M713 194 L713 206"/>
+  <text class="s-key" x="635" y="222" text-anchor="middle" fill="var(--accent2)">任一點至指標 ≤ 7.5 m</text>
+  <text class="s-sm" x="675" y="256" text-anchor="middle">任一點 7.5 m ⇒ 指標間距最大 15 m</text>
+  <text class="s-sm" x="675" y="278" text-anchor="middle">且優先設於走廊或通道之轉彎處</text>
+</svg>
+<figcaption>圖 6　§153 避難指標的兩個位置與兩個距離</figcaption>
+</figure>
+
+<h3>§153 全條</h3>
+<ol class="law">
+<li>設於<b>出入口</b>時，裝設高度距樓地板面 <b>1.5 m 以下</b></li>
+<li>設於<b>走廊或通道</b>時，自走廊或通道任一點至指標之<b>步行距離 7.5 m 以下</b>，且<b>優先設於轉彎處</b></li>
+<li>周圍<b>不得設有影響視線之裝潢及廣告招牌</b></li>
+<li>設於<b>易見且採光良好</b>處</li>
+</ol>
+
+<div class="note">
+  <b>避難指標是「低位」設備，出口標示燈是「高位」設備。</b>
+  §153① 要求避難指標裝在 <b>1.5 m 以下</b>，而 §146-3 的出口標示燈設在「出入口<b>上方</b>」。
+  一高一低的分工來自煙的行為——煙從天花板往下積，濃煙時人會蹲低前進，這時看得到的只有低位的指標。<br>
+  §153④「設於易見且<b>採光良好</b>處」也是同一個道理：它不會自己發光，得靠環境光才看得見，所以 §146Ⅰ③ 用它來取代出口標示燈時，才會同時要求<b>避難指標＋緊急照明設備</b>兩者並設。
+</div>
+
+<!-- ============ 7 ============ -->
+<h2 id="power"><span class="no">07</span>緊急電源與配線</h2>
+<p class="lede">§155 的 <b>20 分鐘</b>是原則，<b>60 分鐘</b>是三種大型場所主要避難路徑的例外——這也是全法少數允許「蓄電池＋發電機併設」的條文。</p>
+
+<figure>
+<svg viewBox="0 0 900 360" role="img" aria-label="標示設備緊急電源二十分鐘與六十分鐘的分野">
+  <text class="s-txt" x="450" y="28" text-anchor="middle" font-weight="700">§155 緊急電源：20 分鐘為原則，三種場所的主要避難路徑要 60 分鐘</text>
+
+  <rect x="40" y="56" width="360" height="110" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.5"/>
+  <text class="s-txt" x="220" y="84" text-anchor="middle" font-weight="700">原則</text>
+  <text class="s-key" x="220" y="112" text-anchor="middle" fill="var(--accent2)">蓄電池設備，有效動作 ≥ 20 分鐘</text>
+  <text class="s-sm" x="220" y="142" text-anchor="middle">不得單獨採用發電機設備</text>
+
+  <path class="s-dim" stroke-width="1.8" d="M410 111 L488 111 M478 105 L490 111 L478 117"/>
+
+  <rect x="500" y="56" width="360" height="110" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <text class="s-txt" x="680" y="84" text-anchor="middle" font-weight="700">下列場所之主要避難路徑</text>
+  <text class="s-key" x="680" y="112" text-anchor="middle" fill="var(--warn)">≥ 60 分鐘</text>
+  <text class="s-sm" x="680" y="142" text-anchor="middle">得採蓄電池設備及緊急發電機併設方式</text>
+
+  <rect x="40" y="190" width="270" height="76" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-sm" x="175" y="212" text-anchor="middle">（不限用途）</text>
+  <text class="s-sm" x="175" y="234" text-anchor="middle">總樓地板面積</text>
+  <text class="s-key" x="175" y="256" text-anchor="middle" fill="var(--accent3)">≥ 50,000 m²</text>
+
+  <rect x="320" y="190" width="270" height="76" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-sm" x="455" y="212" text-anchor="middle">高層建築物，其</text>
+  <text class="s-sm" x="455" y="234" text-anchor="middle">總樓地板面積</text>
+  <text class="s-key" x="455" y="256" text-anchor="middle" fill="var(--accent3)">≥ 30,000 m²</text>
+
+  <rect x="600" y="190" width="270" height="76" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-sm" x="735" y="212" text-anchor="middle">地下建築物，其</text>
+  <text class="s-sm" x="735" y="234" text-anchor="middle">總樓地板面積</text>
+  <text class="s-key" x="735" y="256" text-anchor="middle" fill="var(--accent3)">≥ 1,000 m²</text>
+
+  <text class="s-txt" x="450" y="300" text-anchor="middle" font-weight="700">§155Ⅱ 主要避難路徑＝</text>
+  <text class="s-sm" x="450" y="324" text-anchor="middle">① 通往戶外之出入口　② 通往直通樓梯之出入口（設有排煙室者，為該室之出入口）</text>
+  <text class="s-sm" x="450" y="346" text-anchor="middle">③ 通往第 ① 款出入口之走廊或通道　④ 直通樓梯</text>
+</svg>
+<figcaption>圖 7　§155 緊急電源。60 分鐘只針對「主要避難路徑」上的燈具，不是整棟所有標示燈</figcaption>
+</figure>
+
+<div class="cmp">
+  <b>50,000／30,000／1,000 的門檻差距，反映的是「逃出去要多久」。</b>
+  一般建築物要到 5 萬 m² 才適用；高層建築物垂直疏散慢，3 萬 m² 就適用；
+  <b>地下建築物只要 1,000 m²</b>——差了 50 倍，因為地下沒有窗、沒有自然採光，也只有一個方向可以逃。<br>
+  同一個「地下建築物特別嚴」的邏輯，在 §146Ⅰ① 但書（地下建築物、地下層、無開口樓層不得援用免設）也出現過一次。
+</div>
+
+<h3>§156 配線</h3>
+<table>
+<thead><tr><th class="n">款</th><th>規定</th></tr></thead>
+<tbody>
+<tr><td class="n">①</td><td>蓄電池設備<b>集中設置</b>時，<b>直接連接於分路配線</b>，不得裝置插座或開關等</td></tr>
+<tr><td class="n">②</td><td><b>電源回路不得設開關</b>；但以<b>三線式配線</b>使經常充電，或<b>燈具內置蓄電池設備</b>者，不在此限</td></tr>
+</tbody>
+</table>
+<p class="lede">兩款講的是同一件事：<b>不能有任何人可以把它關掉</b>。這與 §146-7Ⅰ「應保持不熄滅」互為表裡——一個管硬體、一個管運轉。<br>
+「三線式配線」在 <b>§139④ 緊急廣播設備</b>也出現過（設有音量調整器時應為三線式），兩處用意相同：<b>多拉一條線繞過會被人為關掉的元件</b>。</p>
+
+<h3>§154 構造與認可</h3>
+<table>
+<thead><tr><th>設備</th><th>應符合</th></tr></thead>
+<tbody>
+<tr><td>出口標示燈及避難方向指示燈</td><td><b>出口標示燈及避難方向指示燈認可基準</b></td></tr>
+<tr><td>避難指標</td><td><b>CNS 10208</b></td></tr>
+</tbody>
+</table>
+
+<!-- ============ 8 ============ -->
+<h2 id="card"><span class="no">08</span>速查數字卡</h2>
+
+<table>
+<thead><tr><th>項目</th><th>數值</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td colspan="3" style="background:var(--fill2);font-weight:700">免設條件</td></tr>
+<tr><td><b>免設出口標示燈</b></td><td>步行距離 避難層 ≤ <b>20 m</b>／避難層以外 ≤ <b>10 m</b></td><td class="n">§146Ⅰ①（一）</td></tr>
+<tr><td><b>免設避難方向指示燈</b></td><td>步行距離 避難層 ≤ <b>40 m</b>／避難層以外 ≤ <b>30 m</b></td><td class="n">§146Ⅰ①（二）</td></tr>
+<tr><td><b>免設避難指標</b></td><td>步行距離 ≤ <b>30 m</b>（不分樓層）</td><td class="n">§146Ⅰ①（三）</td></tr>
+<tr><td><b>不適用免設</b></td><td><b>地下建築物、地下層、無開口樓層</b></td><td class="n">§146Ⅰ① 但書</td></tr>
+<tr><td><b>居室面積門檻</b></td><td>甲一～三目 <b>100 m²</b>／甲四、五、七目及乙十目 <b>200 m²</b>／其餘 <b>400 m²</b></td><td class="n">§146Ⅰ②（一）</td></tr>
+<tr><td>集合住宅</td><td>供集合住宅使用之居室，<b>不論面積</b>得免設</td><td class="n">§146Ⅰ②（二）</td></tr>
+<tr><td>替代免設・出口標示燈</td><td>探測器連動自動關閉之防火門＋<b>避難指標及緊急照明設備</b></td><td class="n">§146Ⅰ③</td></tr>
+<tr><td>替代免設・方向指示燈</td><td>樓梯或坡道設<b>緊急照明設備＋樓層標示</b></td><td class="n">§146Ⅰ④</td></tr>
+
+<tr><td colspan="3" style="background:var(--fill1);font-weight:700">等級與有效範圍</td></tr>
+<tr><td><b>縱向尺度</b></td><td>A 級 ≥ <b>0.4 m</b>／B 級 <b>0.2～未滿 0.4</b>／C 級 <b>0.1～未滿 0.2</b>（兩種燈相同）</td><td class="n">§146-1</td></tr>
+<tr><td><b>出口標示燈光度</b></td><td>A <b>50</b>／B <b>10</b>／C <b>1.5</b> cd 以上</td><td class="n">§146-1</td></tr>
+<tr><td><b>方向指示燈光度</b></td><td>A <b>60</b>／B <b>13</b>／C <b>5</b> cd 以上</td><td class="n">§146-1</td></tr>
+<tr><td><b>出口標示燈有效範圍</b></td><td>A 級 <b>60</b>（顯示方向符號 <b>40</b>）／B 級 <b>30</b>（顯示 <b>20</b>）／C 級 <b>15</b> m</td><td class="n">§146-2①</td></tr>
+<tr><td><b>方向指示燈有效範圍</b></td><td>A <b>20</b>／B <b>15</b>／C <b>10</b> m</td><td class="n">§146-2①</td></tr>
+<tr><td><b>計算式</b></td><td><code>D = k × h</code>；k：出口燈未顯示方向符號 <b>150</b>／顯示 <b>100</b>／方向指示燈 <b>50</b></td><td class="n">§146-2②</td></tr>
+<tr><td><b>不易識別時</b></td><td>有不易看清或識別該燈情形者，有效範圍一律為 <b>10 m</b></td><td class="n">§146-2 但書</td></tr>
+
+<tr><td colspan="3" style="background:var(--fill4);font-weight:700">設置位置與加強規定</td></tr>
+<tr><td>出口標示燈位置</td><td>通往戶外／通往直通樓梯／室內往走廊或通道／走廊上跨防火區劃之防火門，共 <b>4 處</b></td><td class="n">§146-3Ⅰ</td></tr>
+<tr><td>方向指示燈位置</td><td><b>優先轉彎處</b>；須在出口標示燈<b>有效範圍內</b>；其餘涵蓋走廊各部分</td><td class="n">§146-3Ⅱ</td></tr>
+<tr><td>裝設共同要求</td><td>不妨礙通行／<b>周圍不得有影響視線之裝潢及廣告招牌</b>／地板面者具耐荷重強度／可能雨淋或溼氣者具防水構造</td><td class="n">§146-4</td></tr>
+<tr><td><b>加強場所</b></td><td>乙一目、丙三目、戊三目；甲一～五目、七目或戊一目且該層 ≥ <b>1,000 m²</b>；<b>甲六目</b></td><td class="n">§146-5Ⅰ</td></tr>
+<tr><td><b>加強規格</b></td><td>使用 <b>A 級或 B 級</b>；出口標示燈 ≥ <b>20 cd</b> 或具閃滅功能；方向指示燈 ≥ <b>25 cd</b></td><td class="n">§146-5Ⅰ</td></tr>
+<tr><td>加強免除</td><td>設於走廊，其有效範圍內各部分容易識別該燈者，不在此限</td><td class="n">§146-5Ⅰ 但書</td></tr>
+<tr><td><b>閃滅／音聲引導</b></td><td>設於<b>主要出入口</b>；與火警自動警報設備<b>連動</b>；往避難方向探測器動作時<b>應停止</b></td><td class="n">§146-5Ⅱ</td></tr>
+<tr><td><b>樓梯坡道照度</b></td><td>樓梯級面或坡道表面 ≥ <b>1 lx</b></td><td class="n">§146-5Ⅲ</td></tr>
+<tr><td><b>觀眾席引導燈</b></td><td>觀眾席通道地面水平面 ≥ <b>0.2 lx</b></td><td class="n">§146-6</td></tr>
+<tr><td>亮燈原則</td><td>應<b>保持不熄滅</b></td><td class="n">§146-7Ⅰ</td></tr>
+<tr><td><b>得減光或消燈</b></td><td>須與探測器<b>連動亮燈</b>，並符合：無人期間／自然採光可辨識／特別需要較暗處所／固定使用之人使用之處所（共 4 款）</td><td class="n">§146-7Ⅱ</td></tr>
+<tr><td>樓梯坡道限制</td><td>設於樓梯或坡道之方向指示燈，<b>僅得依第 ①②款</b>減光或消燈</td><td class="n">§146-7Ⅲ</td></tr>
+
+<tr><td colspan="3" style="background:var(--fill3);font-weight:700">避難指標・電源・配線</td></tr>
+<tr><td><b>避難指標高度</b></td><td>設於出入口時，距樓地板面 ≤ <b>1.5 m</b></td><td class="n">§153①</td></tr>
+<tr><td><b>避難指標間距</b></td><td>走廊或通道任一點至指標之<b>步行距離 ≤ 7.5 m</b>，優先設於<b>轉彎處</b></td><td class="n">§153②</td></tr>
+<tr><td>避難指標其他</td><td>周圍不得有影響視線之裝潢及廣告招牌；設於<b>易見且採光良好</b>處</td><td class="n">§153③④</td></tr>
+<tr><td>構造</td><td>出口標示燈及方向指示燈依<b>認可基準</b>；避難指標依 <b>CNS 10208</b></td><td class="n">§154</td></tr>
+<tr><td><b>緊急電源</b></td><td><b>蓄電池設備</b>，有效動作 ≥ <b>20 分鐘</b></td><td class="n">§155Ⅰ</td></tr>
+<tr><td><b>60 分鐘之場所</b></td><td>總樓地板面積 ≥ <b>50,000 m²</b>／高層建築物 ≥ <b>30,000 m²</b>／地下建築物 ≥ <b>1,000 m²</b>，且限<b>主要避難路徑</b></td><td class="n">§155Ⅰ 但書</td></tr>
+<tr><td>60 分鐘之電源方式</td><td>得採<b>蓄電池設備及緊急發電機併設</b>方式</td><td class="n">§155Ⅰ 但書</td></tr>
+<tr><td><b>主要避難路徑</b></td><td>通往戶外之出入口／通往直通樓梯之出入口／通往前者之走廊或通道／<b>直通樓梯</b></td><td class="n">§155Ⅱ</td></tr>
+<tr><td>配線</td><td>蓄電池集中設置時直接連接分路配線，<b>不得裝置插座或開關</b>；電源回路<b>不得設開關</b>（三線式或燈具內置蓄電池者除外）</td><td class="n">§156</td></tr>
+<tr><td>已刪除條文</td><td><b>§147～§152</b> 六條全部刪除，現由 §146-1～§146-7 承接</td><td class="n">—</td></tr>
+</tbody>
+</table>
+
+<h3>最容易記混的六組數字</h3>
+<table>
+<thead><tr><th>數字組</th><th>正確歸屬</th></tr></thead>
+<tbody>
+<tr><td class="n"><b>20／10・40／30・30</b></td><td>§146 免設步行距離：出口標示燈／方向指示燈／避難指標（避難層／避難層以外）</td></tr>
+<tr><td class="n"><b>100／200／400</b></td><td>§146Ⅰ②（一）居室免設的三級面積門檻（m²）</td></tr>
+<tr><td class="n"><b>50／10／1.5　60／13／5</b></td><td>§146-1 光度：<b>出口標示燈</b>／<b>避難方向指示燈</b>（cd），後者一律高一階</td></tr>
+<tr><td class="n"><b>150／100／50</b></td><td>§146-2 的 <b>k 值</b>，不是步行距離</td></tr>
+<tr><td class="n"><b>1.5／7.5</b></td><td>§153 避難指標：<b>高度 1.5 m 以下</b>／<b>步行距離 7.5 m 以下</b></td></tr>
+<tr><td class="n"><b>20／60 分鐘</b></td><td>§155 緊急電源：原則 20 分鐘／三種大型場所主要避難路徑 60 分鐘</td></tr>
+</tbody>
+</table>
+
+<div class="navbar" style="margin-top:32px">
+  <a class="btn go" href="index.html">🏠 回學習首頁</a>
+  <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+  <a class="btn" href="18-%E7%B7%8A%E6%80%A5%E5%BB%A3%E6%92%AD%E8%88%87%E7%93%A6%E6%96%AF%E6%BC%8F%E6%B0%A3-%E5%9C%96%E8%A7%A3.html">📐 緊急廣播與瓦斯漏氣圖解</a>
+  <a class="btn" href="#exempt">↑ 回到最上方</a>
+</div>
+
+<footer>
+  <p>本頁數據取自全國法規資料庫「各類場所消防安全設備設置標準」（pcode D0120029）民國 113 年 4 月 24 日修正版原文，於 2026-08-11 擷取核對。</p>
+  <p>§146～§156 各條之表格在法規資料庫網頁版均可完整顯示，本節無須另查完整條文 PDF；同章之 §163～§165（避難器具）則有被省略之表，屬第二節範圍。</p>
+  <p>圖 1、圖 6 中「煙由天花板往下積、濃煙時人會蹲低前進」及圖 3「箭頭占掉版面」之說明，係一般消防工程原理的解釋，非條文明文。</p>
+  <p><b>法規以主管機關公布文字為準。</b>本頁為個人學習筆記，不構成法律意見；設計送審前請回查現行條文：
+  <code>https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0120029</code></p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  function target(){
+    var h=(location.hash||'').replace('#','');
+    if(!h){ var m=/[?&]s=([\w-]+)/.exec(location.search||''); h=m?m[1]:''; }
+    return h?document.getElementById(h):null;
+  }
+  function go(smooth){
+    var el=target(); if(!el) return;
+    el.scrollIntoView({behavior:smooth?'smooth':'auto',block:'start'});
+    el.style.transition='background-color .4s';
+    var old=el.style.backgroundColor;
+    el.style.backgroundColor='var(--fill4)';
+    setTimeout(function(){ el.style.backgroundColor=old||''; },1600);
+  }
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){ setTimeout(go,60); });
+  else setTimeout(go,60);
+  window.addEventListener('hashchange',function(){ go(true); });
+})();
+</script>
+</body>
+</html>
