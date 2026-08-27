@@ -1,0 +1,1709 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>公共危險物品及可燃性高壓氣體場所 圖解 — 各類場所消防安全設備設置標準 §193～§239</title>
+<meta name="description" content="第四編公共危險物品等場所的圖解：§194～§196 三級滅火困難場所、§197 五種滅火設備、§199 滅火效能值、§209～§212 與第三編的加嚴對照、儲槽固定式泡沫、§228～§233 可燃性高壓氣體與加氣站，以及第五編附則。">
+<style>
+  :root{
+    --bg:#fbfaf7; --fg:#1c1b19; --muted:#6b6862; --line:#d8d4cb;
+    --card:#ffffff; --accent:#b03a2e; --accent2:#1d6fa5; --accent3:#2e7d4f;
+    --warn:#a86b00; --danger:#8e1b0f;
+    --fill1:#f2e4e1; --fill2:#e0edf6; --fill3:#e3f0e8; --fill4:#f7efd9;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#16161a; --fg:#e8e6e1; --muted:#9b968c; --line:#3a3a40;
+      --card:#1e1e23; --accent:#e8705f; --accent2:#5aa8d8; --accent3:#5fbb87;
+      --warn:#d9a441; --danger:#f08070;
+      --fill1:#3a2622; --fill2:#1e3341; --fill3:#1f3a2c; --fill4:#3a3120;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+    line-height:1.75;-webkit-text-size-adjust:100%}
+  .wrap{max-width:960px;margin:0 auto;padding:32px 20px 80px}
+  header{border-bottom:2px solid var(--fg);padding-bottom:18px;margin-bottom:8px}
+  h1{font-size:clamp(1.4rem,4vw,2rem);margin:0 0 6px;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:.9rem;margin:0}
+  h2{font-size:1.15rem;margin:48px 0 4px;padding-top:14px;border-top:1px solid var(--line);
+    scroll-margin-top:16px}
+  h2 .no{color:var(--accent);font-variant-numeric:tabular-nums;margin-right:.5em}
+  h2:target{background:linear-gradient(transparent 62%,var(--fill4) 62%)}
+  h3{font-size:1rem;margin:26px 0 6px}
+  .lede{color:var(--muted);font-size:.92rem;margin:.2em 0 18px}
+  figure{margin:0 0 10px;background:var(--card);border:1px solid var(--line);
+    border-radius:10px;padding:18px 14px;overflow-x:auto}
+  svg{display:block;margin:0 auto;max-width:100%;height:auto}
+  figcaption{color:var(--muted);font-size:.84rem;margin-top:10px;text-align:center}
+  .note{border-left:3px solid var(--warn);background:var(--fill4);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .note b{color:var(--warn)}
+  .cmp{border-left:3px solid var(--accent2);background:var(--fill2);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .cmp b{color:var(--accent2)}
+  .warnbox{border-left:3px solid var(--danger);background:var(--fill1);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .warnbox b{color:var(--danger)}
+  table{border-collapse:collapse;width:100%;font-size:.88rem;margin:14px 0}
+  th,td{border:1px solid var(--line);padding:6px 9px;text-align:left;vertical-align:top}
+  th{background:var(--fill2);font-weight:600}
+  td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+  td.c,th.c{text-align:center}
+  .scroll{overflow-x:auto}
+  .scroll table{min-width:620px}
+  code{background:var(--fill2);padding:1px 5px;border-radius:4px;font-size:.88em}
+  .formula{background:var(--fill3);border:1px solid var(--line);border-radius:8px;
+    padding:12px 16px;margin:14px 0;font-size:1rem;text-align:center}
+  .ex{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent2);
+    border-radius:0 10px 10px 0;padding:14px 18px;margin:18px 0}
+  .ex .t{font-weight:700;margin-bottom:6px;color:var(--accent2)}
+  .ex .given{font-size:.88rem;color:var(--muted);border-left:3px solid var(--line);
+    padding-left:12px;margin-bottom:10px}
+  .ex .step{font-size:.92rem;margin:8px 0}
+  .ex .ans{background:var(--fill3);border-radius:7px;padding:9px 13px;margin-top:10px;
+    font-weight:700;font-size:.94rem}
+  ol.law{font-size:.9rem;padding-left:1.4em}
+  ol.law li{margin:4px 0}
+  footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:.82rem}
+  a{color:var(--accent2)}
+  .navbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+  .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;
+    font-size:.86rem;padding:7px 14px;border-radius:8px;border:1px solid var(--line);
+    background:var(--card);color:var(--fg);transition:.12s}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.go{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+  .btn.go:hover{filter:brightness(1.1);color:#fff}
+  .toc{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 4px}
+  .toc a{font-size:.8rem;text-decoration:none;padding:4px 10px;border-radius:99px;
+    border:1px solid var(--line);background:var(--card);color:var(--muted)}
+  .toc a:hover{border-color:var(--accent);color:var(--accent)}
+  .s-line{stroke:var(--fg);stroke-width:1.4;fill:none}
+  .s-thin{stroke:var(--muted);stroke-width:1;fill:none}
+  .s-txt{fill:var(--fg);font-size:13px;font-family:inherit}
+  .s-sm{fill:var(--muted);font-size:11px;font-family:inherit}
+  .s-key{fill:var(--accent);font-size:13px;font-weight:700;font-family:inherit}
+  .s-dim{stroke:var(--accent2);stroke-width:1;fill:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>公共危險物品及可燃性高壓氣體場所 圖解</h1>
+  <p class="sub">各類場所消防安全設備設置標準 §193～§233（第四編）＋ §234～§239（第五編附則）　|　民國 113 年 4 月 24 日修正版</p>
+  <div class="navbar">
+    <a class="btn go" href="index.html">🏠 回學習首頁</a>
+    <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+    <a class="btn" href="15-%E6%BB%85%E7%81%AB%E5%99%A8%E8%88%87%E5%AE%A4%E5%85%A7%E5%A4%96%E6%B6%88%E9%98%B2%E6%A0%93-%E5%9C%96%E8%A7%A3.html">📐 滅火器與消防栓圖解</a>
+    <a class="btn" href="04a-%E6%B3%A1%E6%B2%AB%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html">📐 泡沫設備圖解</a>
+  </div>
+</header>
+
+<nav class="toc" aria-label="章節目錄">
+  <a href="#scope">01 適用範圍與定位</a>
+  <a href="#level">02 三級滅火困難場所</a>
+  <a href="#kinds">03 五種滅火設備與效能值</a>
+  <a href="#select">04 設備選擇與配置</a>
+  <a href="#alarm">05 警報・標示・爆竹煙火</a>
+  <a href="#water">06 水系設備加嚴對照</a>
+  <a href="#tank">07 儲槽泡沫與冷卻撒水</a>
+  <a href="#gas">08 氣體與乾粉係數</a>
+  <a href="#hpg">09 可燃性高壓氣體與加氣站</a>
+  <a href="#annex">10 第五編附則</a>
+  <a href="#card">11 速查數字卡</a>
+</nav>
+
+<div class="cmp" style="margin-top:24px">
+  <b>第四編是「另一套平行世界」，不是第三編的補充。</b>
+  第二編判斷「要不要設」、第三編判斷「怎麼設」——但只要場所落入 §193 的五類，
+  <b>整組規則就換成第四編的</b>：先用 §194～§196 把場所分成<b>顯著／一般／其他</b>三級滅火困難場所，
+  再依 §201～§203 決定設<b>第幾種</b>滅火設備。<br>
+  第四編自己只有兩章：<b>第一章消防設計（§193～§208）</b>回答「要不要設、設什麼」，
+  <b>第二章消防安全設備（§209～§233）</b>回答「怎麼設」——完全複製了第二編／第三編的分工，
+  只是把每個數字都往上調。
+</div>
+
+<!-- ============ 1 ============ -->
+<h2 id="scope"><span class="no">01</span>適用範圍與第四編在全法的位置</h2>
+<p class="lede">§193 一條就把整編的門關起來：只有這五類場所才進得來。另外要先訂正一個常見的範圍錯誤——<b>§234 起已經是第五編，不是第四編</b>。</p>
+
+<figure>
+<svg viewBox="0 0 900 420" role="img" aria-label="五編結構與第四編兩章的位置">
+  <text class="s-txt" x="450" y="24" text-anchor="middle" font-weight="700">各類場所消防安全設備設置標準　五編結構</text>
+
+  <rect x="30" y="44" width="120" height="46" rx="6" fill="var(--fill2)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-sm" x="90" y="66" text-anchor="middle">第一編 總則</text>
+  <text class="s-sm" x="90" y="82" text-anchor="middle">§1～§3</text>
+
+  <rect x="158" y="44" width="150" height="46" rx="6" fill="var(--fill2)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-sm" x="233" y="66" text-anchor="middle">第二編 消防設計</text>
+  <text class="s-sm" x="233" y="82" text-anchor="middle">§4～§30-1　要不要設</text>
+
+  <rect x="316" y="44" width="180" height="46" rx="6" fill="var(--fill2)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-sm" x="406" y="66" text-anchor="middle">第三編 消防安全設計</text>
+  <text class="s-sm" x="406" y="82" text-anchor="middle">§31～§192　怎麼設</text>
+
+  <rect x="504" y="44" width="240" height="46" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.8"/>
+  <text class="s-key" x="624" y="66" text-anchor="middle">第四編 公共危險物品等場所</text>
+  <text class="s-key" x="624" y="82" text-anchor="middle">§193～§233</text>
+
+  <rect x="752" y="44" width="118" height="46" rx="6" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-sm" x="811" y="66" text-anchor="middle" fill="var(--warn)">第五編 附則</text>
+  <text class="s-sm" x="811" y="82" text-anchor="middle" fill="var(--warn)">§234～§239</text>
+
+  <path class="s-dim" d="M624 92 L624 118"/>
+  <rect x="430" y="118" width="190" height="42" rx="6" fill="var(--card)" stroke="var(--accent)" stroke-width="1.4"/>
+  <text class="s-txt" x="525" y="138" text-anchor="middle" font-weight="700">第一章 消防設計</text>
+  <text class="s-sm" x="525" y="154" text-anchor="middle">§193～§208（16 條）</text>
+
+  <rect x="640" y="118" width="200" height="42" rx="6" fill="var(--card)" stroke="var(--accent)" stroke-width="1.4"/>
+  <text class="s-txt" x="740" y="138" text-anchor="middle" font-weight="700">第二章 消防安全設備</text>
+  <text class="s-sm" x="740" y="154" text-anchor="middle">§209～§233（26 條）</text>
+  <path class="s-dim" d="M624 100 L525 100 L525 118 M624 100 L740 100 L740 118"/>
+
+  <text class="s-txt" x="450" y="196" text-anchor="middle" font-weight="700">§193　適用本編規定之場所（公共危險物品等場所）</text>
+
+  <rect x="40" y="212" width="256" height="52" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.4"/>
+  <text class="s-key" x="168" y="232" text-anchor="middle">① 公共危險物品及可燃性高壓氣體</text>
+  <text class="s-sm" x="168" y="250" text-anchor="middle">製造儲存處理場所設置標準暨安全管理辦法之場所</text>
+
+  <rect x="308" y="212" width="120" height="52" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-key" x="368" y="238" text-anchor="middle" fill="var(--accent3)">② 加油站</text>
+  <text class="s-sm" x="368" y="256" text-anchor="middle">室內／室外</text>
+
+  <rect x="440" y="212" width="120" height="52" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-key" x="500" y="238" text-anchor="middle" fill="var(--accent3)">③ 加氣站</text>
+  <text class="s-sm" x="500" y="256" text-anchor="middle">LPG／CNG</text>
+
+  <rect x="572" y="212" width="150" height="52" rx="6" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-key" x="647" y="232" text-anchor="middle" fill="var(--accent2)">④ 天然氣儲槽及</text>
+  <text class="s-key" x="647" y="250" text-anchor="middle" fill="var(--accent2)">可燃性高壓氣體儲槽</text>
+
+  <rect x="734" y="212" width="130" height="52" rx="6" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-key" x="799" y="232" text-anchor="middle" fill="var(--warn)">⑤ 爆竹煙火</text>
+  <text class="s-sm" x="799" y="250" text-anchor="middle">製造・儲存・販賣</text>
+
+  <text class="s-sm" x="450" y="296" text-anchor="middle">五類分成兩個世界：①②③⑤ 走「滅火設備」路線（§197Ⅰ 的第一～五種）；</text>
+  <text class="s-sm" x="450" y="314" text-anchor="middle">可燃性高壓氣體製造場所、加氣站、天然氣儲槽、可燃性高壓氣體儲槽另走「防護設備」路線（§197Ⅱ 的冷卻撒水與射水設備）。</text>
+
+  <rect x="120" y="336" width="660" height="66" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <text class="s-key" x="450" y="358" text-anchor="middle" fill="var(--warn)">範圍訂正：第四編到 §233 為止，§234 起已經是第五編附則</text>
+  <text class="s-sm" x="450" y="378" text-anchor="middle">很多講義（含本站舊版總覽）寫成「第四編 §193～§239、第五編 §240」。</text>
+  <text class="s-sm" x="450" y="394" text-anchor="middle">現行條文的「第 五 編 附則」標題就緊接在 §233 之後、§234 之前；全法最後一條是 §239，沒有 §240。</text>
+</svg>
+<figcaption>圖 1　第四編兩章的分工，與 §193 五類適用場所。§234～§239 屬第五編，但因為條號相連、內容又全是消防設備的配線與電源，習慣上會跟第四編一起讀</figcaption>
+</figure>
+
+<div class="warnbox">
+  <b>為什麼本頁的標題寫 §193～§239。</b>
+  使用者習慣把「§193 之後」整段當成一個學習單元，而 §234～§239（耐燃／耐熱保護、緊急電源、防災中心）
+  在實務上也確實最常和公共危險物品場所一起被問到。<br>
+  但要記牢：<b>條文結構上第四編只到 §233</b>。考試若問「第四編的條號範圍」，答案是 <b>§193～§233</b>；
+  問「本標準最後一條」，答案是 <b>§239（施行日期）</b>，不是 §240。
+</div>
+
+<h3>§193 五類場所與其上位法規</h3>
+<table>
+<thead><tr><th class="n">款</th><th>場所</th><th>要注意的地方</th></tr></thead>
+<tbody>
+<tr><td class="n">①</td><td><b>公共危險物品及可燃性高壓氣體製造儲存處理場所設置標準暨安全管理辦法</b>規定之場所</td><td>這是<b>另一部法規</b>（俗稱「安管辦法」）。<b>什麼叫公共危險物品、六類怎麼分、管制量是多少，都定在那部辦法裡，不在本標準</b>——本標準只管「要設什麼消防設備」</td></tr>
+<tr><td class="n">②</td><td><b>加油站</b></td><td>第四編把加油站再細分為<b>室內加油站</b>與<b>室外加油站</b>，兩者分屬不同的滅火困難等級（§194⑥、§195⑥、§196）</td></tr>
+<tr><td class="n">③</td><td><b>加氣站</b></td><td>走 §197Ⅱ 的「防護設備」路線；§228③、§230③ 有專屬的滅火器具數與防護面積算法</td></tr>
+<tr><td class="n">④</td><td><b>天然氣儲槽及可燃性高壓氣體儲槽</b></td><td>同上，走防護設備路線</td></tr>
+<tr><td class="n">⑤</td><td><b>爆竹煙火</b>製造、儲存及販賣場所</td><td>§206-1 是<b>爆竹煙火專屬條文</b>，其餘各條多半不提爆竹煙火</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <b>本標準沒有定義「公共危險物品」。</b>
+  第四編從頭到尾都在用「第一類～第六類公共危險物品」「管制量」「高閃火點物品」「易燃性固體」「禁水性物質」這些名詞，
+  但一個都沒有定義——因為它們全部定在 §193① 引用的<b>安管辦法</b>。<br>
+  讀第四編時手邊一定要同時開那部辦法，否則 §194 一開頭的「管制量一百倍」根本沒有辦法換算。
+  這與第三編完全不同：第三編的用語幾乎都由本標準 §4 自己定義。
+</div>
+
+<!-- ============ 2 ============ -->
+<h2 id="level"><span class="no">02</span>三級滅火困難場所（§194～§196）</h2>
+<p class="lede">這是第四編獨有、第三編完全沒有的概念。<b>先分級，再配設備</b>——分級錯了，後面全錯。</p>
+
+<figure>
+<svg viewBox="0 0 900 400" role="img" aria-label="顯著、一般、其他三級滅火困難場所的判定與對應設備">
+  <text class="s-txt" x="450" y="24" text-anchor="middle" font-weight="700">§194～§196 三級滅火困難場所　→　§201～§203 對應設備</text>
+
+  <rect x="30" y="44" width="270" height="300" rx="10" fill="var(--fill1)" stroke="var(--accent)" stroke-width="2"/>
+  <text class="s-key" x="165" y="70" text-anchor="middle">§194　顯著滅火困難場所</text>
+  <path class="s-thin" d="M46 82 L284 82"/>
+  <text class="s-sm" x="165" y="102" text-anchor="middle">製造／一般處理：≥1,000 m²、</text>
+  <text class="s-sm" x="165" y="118" text-anchor="middle">管制量 ≥100 倍、設備高 ≥6 m、兼他用</text>
+  <text class="s-sm" x="165" y="140" text-anchor="middle">室內儲存：管制量 ≥150 倍、</text>
+  <text class="s-sm" x="165" y="156" text-anchor="middle">≥150 m²、兼他用、高 ≥6 m 之一層建築物</text>
+  <text class="s-sm" x="165" y="178" text-anchor="middle">室外儲存：塊狀硫磺 ≥100 m²</text>
+  <text class="s-sm" x="165" y="200" text-anchor="middle">室內／室外儲槽：液面積 ≥40 m²、</text>
+  <text class="s-sm" x="165" y="216" text-anchor="middle">槽高 ≥6 m（室外另加固體管制量 ≥100 倍）</text>
+  <text class="s-sm" x="165" y="238" text-anchor="middle">室內加油站：一面開放且上方樓層供他用</text>
+  <path class="s-thin" d="M46 254 L284 254"/>
+  <text class="s-key" x="165" y="276" text-anchor="middle">§201　第一／二／三種（依表）</text>
+  <text class="s-key" x="165" y="298" text-anchor="middle">＋ 第四種 ＋ 第五種</text>
+  <text class="s-sm" x="165" y="320" text-anchor="middle">火力最強的一級：固定式滅火設備打底，</text>
+  <text class="s-sm" x="165" y="336" text-anchor="middle">大型滅火器與滅火器全部補上</text>
+
+  <rect x="316" y="44" width="270" height="300" rx="10" fill="var(--fill4)" stroke="var(--warn)" stroke-width="2"/>
+  <text class="s-key" x="451" y="70" text-anchor="middle" fill="var(--warn)">§195　一般滅火困難場所</text>
+  <path class="s-thin" d="M332 82 L570 82"/>
+  <text class="s-sm" x="451" y="102" text-anchor="middle">製造／一般處理：600 m² 以上未滿 1,000 m²、</text>
+  <text class="s-sm" x="451" y="118" text-anchor="middle">管制量 10 倍以上未滿 100 倍</text>
+  <text class="s-sm" x="451" y="140" text-anchor="middle">或供噴漆、塗裝、印刷、清洗、淬火、鍋爐、</text>
+  <text class="s-sm" x="451" y="156" text-anchor="middle">油壓、切削、研磨、熱媒油循環等作業</text>
+  <text class="s-sm" x="451" y="178" text-anchor="middle">室內儲存：一層建築物以外、管制量 10～150 倍、</text>
+  <text class="s-sm" x="451" y="194" text-anchor="middle">總樓地板面積 ≥150 m²</text>
+  <text class="s-sm" x="451" y="216" text-anchor="middle">室外儲存：塊狀硫磺 5～100 m²、管制量 ≥100 倍</text>
+  <text class="s-sm" x="451" y="238" text-anchor="middle">第二種販賣場所　·　室內加油站（未達顯著）</text>
+  <path class="s-thin" d="M332 254 L570 254"/>
+  <text class="s-key" x="451" y="276" text-anchor="middle" fill="var(--warn)">§202　第四種 ＋ 第五種</text>
+  <text class="s-sm" x="451" y="298" text-anchor="middle">第五種效能值只要 <tspan font-weight="700">最低效能值的 1/5 以上</tspan></text>
+  <text class="s-sm" x="451" y="320" text-anchor="middle">儲槽場所則是「第四種、第五種各一具以上」</text>
+  <text class="s-sm" x="451" y="336" text-anchor="middle">已設第一／二／三種者，有效防護範圍內免設第四種</text>
+
+  <rect x="602" y="44" width="268" height="300" rx="10" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="2"/>
+  <text class="s-key" x="736" y="70" text-anchor="middle" fill="var(--accent3)">§196　其他滅火困難場所</text>
+  <path class="s-thin" d="M618 82 L856 82"/>
+  <text class="s-sm" x="736" y="108" text-anchor="middle">定義是「扣除法」：</text>
+  <text class="s-key" x="736" y="132" text-anchor="middle" fill="var(--accent3)">室外加油站</text>
+  <text class="s-sm" x="736" y="156" text-anchor="middle">＋</text>
+  <text class="s-key" x="736" y="180" text-anchor="middle" fill="var(--accent3)">未達顯著或一般滅火困難者</text>
+  <text class="s-sm" x="736" y="212" text-anchor="middle">注意：室外加油站是<tspan font-weight="700">直接指定</tspan>進本級的，</text>
+  <text class="s-sm" x="736" y="228" text-anchor="middle">不必再判斷面積或數量</text>
+  <path class="s-thin" d="M618 254 L856 254"/>
+  <text class="s-key" x="736" y="276" text-anchor="middle" fill="var(--accent3)">§203　只要第五種</text>
+  <text class="s-sm" x="736" y="298" text-anchor="middle">效能值須達<tspan font-weight="700">最低滅火效能值以上</tspan></text>
+  <text class="s-sm" x="736" y="320" text-anchor="middle">已設第一～四種之一者，有效防護範圍內</text>
+  <text class="s-sm" x="736" y="336" text-anchor="middle">得減至 <tspan font-weight="700">1/5 以上</tspan>；地下儲槽場所另設二具以上</text>
+
+  <text class="s-key" x="450" y="374" text-anchor="middle">判定順序不可顛倒：先看 §194 是否成立 → 不成立才看 §195 → 都不成立才落到 §196</text>
+  <text class="s-sm" x="450" y="392" text-anchor="middle">§195 的多數款次都寫「未達前條規定」或「未達顯著滅火困難場所」，本身就預設了這個順序</text>
+</svg>
+<figcaption>圖 2　三級滅火困難場所是第四編的骨幹。左邊最嚴、右邊最寬，設備要求逐級遞減</figcaption>
+</figure>
+
+<div class="cmp">
+  <b>三級的邏輯：「火災時人進不進得去」。</b><br>
+  <b>顯著</b>＝面積大、量大、高度高、又和其他用途混在一起——消防隊到場也很難靠人力搶救，
+  所以必須有<b>固定式滅火設備</b>（第一／二／三種）在人到場前先動作。<br>
+  <b>一般</b>＝規模中等，人力搶救還可行，但要有<b>大型滅火器（第四種）</b>撐場面。<br>
+  <b>其他</b>＝規模小，<b>滅火器（第五種）</b>就夠。<br>
+  這也解釋了為什麼三個等級的門檻幾乎都繞著同一組變數轉：<b>樓地板面積、管制量倍數、高度 6 m、是否兼作其他用途</b>。
+</div>
+
+<h3>§194 顯著滅火困難場所　六款門檻速查</h3>
+<div class="scroll">
+<table>
+<thead><tr><th>場所</th><th>門檻</th><th>但書／排除</th></tr></thead>
+<tbody>
+<tr><td rowspan="4"><b>製造場所<br>一般處理場所</b></td><td>總樓地板面積 <b>≥1,000 m²</b></td><td>—</td></tr>
+<tr><td>公共危險物品數量達管制量 <b>≥100 倍</b></td><td>氯酸鹽類、過氯酸鹽類、硝酸鹽類、硫磺、鐵粉、金屬粉、鎂、硝酸酯類、硝基化合物、金屬疊氮化合物（供作<b>爆炸物原料</b>使用者），或高閃火點物品操作溫度未滿 100℃ 者，<b>不列入管制量計算</b></td></tr>
+<tr><td>製造或處理設備<b>高於地面 ≥6 m</b></td><td>高閃火點物品操作溫度未滿 100℃ 者不在此限</td></tr>
+<tr><td>建築物除供一般處理場所使用外<b>尚有其他用途</b></td><td>以<b>無開口且具 1 小時以上防火時效</b>之牆壁、樓地板區劃分隔者，或處理高閃火點物品操作溫度未滿 100℃ 者，不在此限</td></tr>
+<tr><td rowspan="6"><b>室內儲存場所</b></td><td>儲存量達管制量 <b>≥150 倍</b></td><td>同上列舉物品（供爆炸物原料）或高閃火點物品，不列入計算</td></tr>
+<tr><td>儲存第一、三、五、六類，總樓地板面積 <b>≥150 m²</b></td><td>每 150 m² 內以無開口且具 <b>半小時</b>以上防火時效之牆壁、樓地板區劃分隔者，不在此限</td></tr>
+<tr><td>儲存第二類<b>易燃性固體</b>或第四類<b>閃火點未滿 70℃</b>，總樓地板面積 <b>≥150 m²</b></td><td>每 150 m² 內以無開口且具 <b>1 小時</b>以上防火時效區劃分隔者，不在此限</td></tr>
+<tr><td>儲存第一、三、五、六類，建築物<b>尚有其他用途</b></td><td>無開口＋1 小時防火時效區劃者不在此限</td></tr>
+<tr><td>儲存第二類易燃性固體或第四類閃火點未滿 70℃，建築物<b>尚有其他用途</b></td><td>無開口＋1 小時防火時效區劃者不在此限</td></tr>
+<tr><td><b>高度 ≥6 m 之一層建築物</b></td><td>—</td></tr>
+<tr><td><b>室外儲存場所</b></td><td>儲存<b>塊狀硫磺</b>，面積 <b>≥100 m²</b></td><td>—</td></tr>
+<tr><td rowspan="3"><b>室內儲槽場所</b></td><td>儲槽儲存<b>液體表面積 ≥40 m²</b></td><td rowspan="3">儲存<b>高閃火點物品或第六類</b>，操作溫度未滿 100℃ 者，全款不在此限</td></tr>
+<tr><td>儲槽<b>高度 ≥6 m</b></td></tr>
+<tr><td>儲存閃火點 <b>40℃ 以上未滿 70℃</b>，儲槽專用室設於<b>一層以外</b>之建築物</td></tr>
+<tr><td rowspan="3"><b>室外儲槽場所</b></td><td>儲槽儲存<b>液體表面積 ≥40 m²</b></td><td rowspan="3">同上，儲存高閃火點物品或第六類且操作溫度未滿 100℃ 者不在此限</td></tr>
+<tr><td>儲槽<b>高度 ≥6 m</b></td></tr>
+<tr><td>儲存<b>固體</b>公共危險物品，數量達管制量 <b>≥100 倍</b></td></tr>
+<tr><td><b>室內加油站</b></td><td><b>一面開放</b>且其<b>上方樓層供其他用途</b>使用</td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note">
+  <b>「無開口 ＋ 防火時效」的兩個時效值不要記反。</b>
+  §194 二款裡出現兩次區劃但書：<br>
+  · 儲存<b>第一、三、五、六類</b>而面積 ≥150 m² 者 → <b>半小時</b>以上防火時效（§194②（二））<br>
+  · 儲存<b>第二類易燃性固體或第四類閃火點未滿 70℃</b>而面積 ≥150 m² 者 → <b>1 小時</b>以上（§194②（三））<br>
+  <b>凡是「兼作其他用途」的那幾款，一律是 1 小時</b>。只有「同一室內儲存場所自己切割成 150 m² 小間」
+  且儲存第一、三、五、六類時，才降到半小時。
+</div>
+
+<!-- ============ 3 ============ -->
+<h2 id="kinds"><span class="no">03</span>五種滅火設備與滅火效能值（§197～§200）</h2>
+<p class="lede">第四編不用「室內消防栓設備」「自動撒水設備」這種名字，改用<b>第一種～第五種</b>的編號。編號本身就是強度順序。</p>
+
+<figure>
+<svg viewBox="0 0 900 380" role="img" aria-label="第一種到第五種滅火設備與兩種防護設備的分類">
+  <text class="s-txt" x="450" y="24" text-anchor="middle" font-weight="700">§197 第 1 項　滅火設備五種分類（適用公共危險物品等場所）</text>
+
+  <rect x="30" y="42" width="160" height="120" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.6"/>
+  <text class="s-key" x="110" y="66" text-anchor="middle" fill="var(--accent2)">第一種</text>
+  <text class="s-sm" x="110" y="92" text-anchor="middle">室內消防栓設備</text>
+  <text class="s-sm" x="110" y="110" text-anchor="middle">室外消防栓設備</text>
+  <text class="s-sm" x="110" y="140" text-anchor="middle">水系・人操作</text>
+
+  <rect x="200" y="42" width="150" height="120" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.6"/>
+  <text class="s-key" x="275" y="66" text-anchor="middle" fill="var(--accent2)">第二種</text>
+  <text class="s-sm" x="275" y="98" text-anchor="middle">自動撒水設備</text>
+  <text class="s-sm" x="275" y="140" text-anchor="middle">水系・自動</text>
+
+  <rect x="360" y="42" width="270" height="120" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.6"/>
+  <text class="s-key" x="495" y="66" text-anchor="middle" fill="var(--accent3)">第三種</text>
+  <text class="s-sm" x="495" y="90" text-anchor="middle">水霧　·　泡沫　·　二氧化碳</text>
+  <text class="s-sm" x="495" y="110" text-anchor="middle">惰性氣體　·　鹵化烴　·　乾粉</text>
+  <text class="s-sm" x="495" y="140" text-anchor="middle">六種「藥劑系」固定式滅火設備</text>
+
+  <rect x="640" y="42" width="110" height="120" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.6"/>
+  <text class="s-key" x="695" y="66" text-anchor="middle" fill="var(--warn)">第四種</text>
+  <text class="s-sm" x="695" y="98" text-anchor="middle">大型滅火器</text>
+  <text class="s-sm" x="695" y="140" text-anchor="middle">步行 ≤30 m</text>
+
+  <rect x="760" y="42" width="110" height="120" rx="8" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-key" x="815" y="66" text-anchor="middle">第五種</text>
+  <text class="s-sm" x="815" y="88" text-anchor="middle">滅火器・水桶</text>
+  <text class="s-sm" x="815" y="106" text-anchor="middle">水槽・乾燥砂</text>
+  <text class="s-sm" x="815" y="124" text-anchor="middle">膨脹蛭石・珍珠岩</text>
+  <text class="s-sm" x="815" y="150" text-anchor="middle">步行 ≤20 m</text>
+
+  <path class="s-dim" stroke-dasharray="4 3" d="M30 176 L870 176"/>
+  <text class="s-txt" x="450" y="204" text-anchor="middle" font-weight="700">§197 第 2 項　防護設備兩種</text>
+  <text class="s-sm" x="450" y="222" text-anchor="middle">適用對象：可燃性高壓氣體製造場所、加氣站、天然氣儲槽、可燃性高壓氣體儲槽</text>
+
+  <rect x="150" y="238" width="260" height="76" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.6"/>
+  <text class="s-key" x="280" y="264" text-anchor="middle" fill="var(--accent2)">一、冷卻撒水設備</text>
+  <text class="s-sm" x="280" y="288" text-anchor="middle">§229　撒水量 5 L/min·m²（被覆隔熱得減半）</text>
+  <text class="s-sm" x="280" y="304" text-anchor="middle">水源 30 分鐘</text>
+
+  <rect x="490" y="238" width="260" height="76" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.6"/>
+  <text class="s-key" x="620" y="264" text-anchor="middle" fill="var(--accent3)">二、射水設備</text>
+  <text class="s-sm" x="620" y="288" text-anchor="middle">固定式射水槍／移動式射水槍／室外消防栓</text>
+  <text class="s-sm" x="620" y="304" text-anchor="middle">§231　450 L/min、2 支、30 分鐘</text>
+
+  <text class="s-key" x="450" y="344" text-anchor="middle">「防護設備」不是滅火——是用水把槽體降溫，避免 BLEVE（沸騰液體膨脹蒸氣爆炸）</text>
+  <text class="s-sm" x="450" y="366" text-anchor="middle">所以 §229、§231 算的都是「槽壁表面積」而不是「樓地板面積」，這是第四編最容易換錯基準的地方</text>
+</svg>
+<figcaption>圖 3　§197 兩項各管一組設備。第一～五種是「滅火」，冷卻撒水與射水是「防護」——用途不同，算法基準也不同</figcaption>
+</figure>
+
+<div class="cmp">
+  <b>第一～五種的編號規律：越前面越「固定、越自動、越大水量」。</b><br>
+  第一種＝消防栓（人拉水帶）→ 第二種＝撒水（自動灑水）→ 第三種＝六種藥劑系固定設備 →
+  第四種＝大型滅火器（可搬）→ 第五種＝滅火器與砂石桶（手提）。<br>
+  <b>§201～§203 的邏輯就是「等級越高，可以停在越後面的種別」</b>：
+  顯著要從第一／二／三種起跳，一般從第四種起跳，其他只要第五種。
+</div>
+
+<h3>§199 最低滅火效能值的四款算法</h3>
+
+<figure>
+<svg viewBox="0 0 900 330" role="img" aria-label="第199條四款滅火效能值核算基準與第31條對照">
+  <text class="s-txt" x="450" y="24" text-anchor="middle" font-weight="700">§199　第五種滅火設備的「最低滅火效能值」怎麼算</text>
+
+  <rect x="40" y="44" width="380" height="130" rx="8" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-key" x="230" y="68" text-anchor="middle">① 製造或處理場所之建築物</text>
+  <text class="s-txt" x="150" y="98" text-anchor="middle">外牆<tspan font-weight="700">防火構造</tspan></text>
+  <text class="s-key" x="150" y="122" text-anchor="middle">每 100 m² → 1 效能值</text>
+  <text class="s-txt" x="330" y="98" text-anchor="middle">外牆<tspan font-weight="700">非防火構造</tspan></text>
+  <text class="s-key" x="330" y="122" text-anchor="middle">每 50 m² → 1 效能值</text>
+  <text class="s-sm" x="230" y="152" text-anchor="middle">（含未滿，即無條件進位）</text>
+
+  <rect x="440" y="44" width="420" height="130" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.6"/>
+  <text class="s-key" x="650" y="68" text-anchor="middle" fill="var(--accent3)">② 儲存場所之建築物</text>
+  <text class="s-txt" x="550" y="98" text-anchor="middle">外牆<tspan font-weight="700">防火構造</tspan></text>
+  <text class="s-key" x="550" y="122" text-anchor="middle" fill="var(--accent3)">每 150 m² → 1 效能值</text>
+  <text class="s-txt" x="755" y="98" text-anchor="middle">外牆<tspan font-weight="700">非防火構造</tspan></text>
+  <text class="s-key" x="755" y="122" text-anchor="middle" fill="var(--accent3)">每 75 m² → 1 效能值</text>
+  <text class="s-sm" x="650" y="152" text-anchor="middle">防火構造一律是非防火構造的 2 倍面積</text>
+
+  <rect x="40" y="188" width="380" height="72" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.6"/>
+  <text class="s-key" x="230" y="212" text-anchor="middle" fill="var(--accent2)">③ 室外附屬設施</text>
+  <text class="s-sm" x="230" y="234" text-anchor="middle">以該設施<tspan font-weight="700">水平最大面積</tspan>為樓地板面積，</text>
+  <text class="s-sm" x="230" y="250" text-anchor="middle">一律準用①②的<tspan font-weight="700">防火構造</tspan>那一欄（100／150）</text>
+
+  <rect x="440" y="188" width="420" height="72" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.6"/>
+  <text class="s-key" x="650" y="212" text-anchor="middle" fill="var(--warn)">④ 公共危險物品本身</text>
+  <text class="s-key" x="650" y="238" text-anchor="middle" fill="var(--warn)">每達管制量 10 倍（含未滿）→ 1 效能值</text>
+  <text class="s-sm" x="650" y="256" text-anchor="middle">與①②③<tspan font-weight="700">相加</tspan>，不是取大值</text>
+
+  <text class="s-key" x="450" y="292" text-anchor="middle">對照第三編 §31：甲類、戊類每 100 m²；乙～丁類每 200 m²；鍋爐房廚房每 25 m²</text>
+  <text class="s-sm" x="450" y="314" text-anchor="middle">第三編只看「用途 × 面積」，第四編則是「構造 × 面積」再<tspan font-weight="700">加上物品數量</tspan>——多了一條完全獨立的加算軸</text>
+</svg>
+<figcaption>圖 4　§199 四款。①②是建築物、③是室外附屬設施、④是物品本身，四款算出來的值要<b>相加</b></figcaption>
+</figure>
+
+<div class="ex">
+  <div class="t">實例 1　§199　一般處理場所的最低滅火效能值</div>
+  <div class="given">某公共危險物品<b>一般處理場所</b>，外牆為<b>防火構造</b>，總樓地板面積 <b>850 m²</b>；
+  室外另有具連帶使用關係之附屬設施，水平最大面積 <b>120 m²</b>；
+  場內處理第四類公共危險物品，數量達<b>管制量 62 倍</b>。</div>
+  <div class="step">① 建築物（§199①，製造／處理、防火構造）：<code>850 ÷ 100 = 8.5</code>，含未滿進位 → <b>9</b></div>
+  <div class="step">② 室外附屬設施（§199③，準用①的防火構造欄）：<code>120 ÷ 100 = 1.2</code> → <b>2</b></div>
+  <div class="step">③ 公共危險物品（§199④）：<code>62 ÷ 10 = 6.2</code>，含未滿進位 → <b>7</b></div>
+  <div class="step">④ 三者相加</div>
+  <div class="ans">最低滅火效能值 ＝ 9 ＋ 2 ＋ 7 ＝ <b>18</b><br>
+  若本場所判定為<b>一般</b>滅火困難場所（§202①），第五種的效能值只需 <code>18 × 1/5 = 3.6</code> → <b>4 以上</b>；
+  若為<b>其他</b>滅火困難場所（§203），須達 <b>18 以上</b>，但已設第一～四種之一者，其有效防護範圍內同樣得減至 1/5（4 以上）。</div>
+</div>
+
+<h3>§200　第五種滅火設備中「除滅火器外」的效能值換算</h3>
+<table>
+<thead><tr><th>器具</th><th>單位</th><th class="n">效能值</th><th>換算成每 1 效能值</th></tr></thead>
+<tbody>
+<tr><td><b>消防專用水桶</b>（8 L）</td><td>每 <b>3 個</b></td><td class="n"><b>1</b></td><td>3 個 × 8 L ＝ <b>24 L</b></td></tr>
+<tr><td><b>水槽</b></td><td>每 <b>80 L</b></td><td class="n"><b>1.5</b></td><td>80 ÷ 1.5 ≈ <b>53.3 L</b></td></tr>
+<tr><td><b>乾燥砂</b></td><td>每 <b>50 L</b></td><td class="n"><b>0.5</b></td><td>50 ÷ 0.5 ＝ <b>100 L</b></td></tr>
+<tr><td><b>膨脹蛭石或膨脹珍珠岩</b></td><td>每 <b>160 L</b></td><td class="n"><b>1</b></td><td><b>160 L</b></td></tr>
+</tbody>
+</table>
+<p class="lede">記法：<b>3 個水桶＝1</b>、<b>80 水槽＝1.5</b>、<b>50 乾砂＝0.5</b>、<b>160 蛭石＝1</b>。
+只有水槽是小數 1.5、只有乾燥砂是小數 0.5，其餘兩個都是整數 1。<br>
+另外 <b>§225 第 2 項</b>規定：選設<b>水槽</b>時須備 <b>3 個 1 L 的消防專用水桶</b>；選設<b>乾燥砂、膨脹蛭石及膨脹珍珠岩</b>時須備<b>鏟子</b>。
+注意這裡的水桶是 <b>1 L</b>，與 §200① 用來算效能值的 <b>8 L</b> 水桶不是同一件事。</p>
+
+<!-- ============ 4 ============ -->
+<h2 id="select"><span class="no">04</span>設備選擇與配置（§198、§201～§204）</h2>
+<p class="lede">§198 決定「這種物品<b>可以</b>用哪些滅火設備」，§201～§203 決定「這個等級<b>必須</b>設哪些」。兩者是<b>交集</b>關係。</p>
+
+<figure>
+<svg viewBox="0 0 900 340" role="img" aria-label="第198條與第201至203條的交集關係，以及禁水性物品的可用滅火設備">
+  <text class="s-txt" x="450" y="24" text-anchor="middle" font-weight="700">選設備的兩道篩子</text>
+
+  <rect x="60" y="46" width="300" height="96" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.6"/>
+  <text class="s-key" x="210" y="72" text-anchor="middle" fill="var(--accent2)">篩子 A　§198 附表</text>
+  <text class="s-sm" x="210" y="96" text-anchor="middle">依<tspan font-weight="700">防護對象</tspan>（建築物、電氣設備、</text>
+  <text class="s-sm" x="210" y="112" text-anchor="middle">六類公共危險物品、爆竹煙火）</text>
+  <text class="s-sm" x="210" y="130" text-anchor="middle">列出「○＝可選設」的設備欄位</text>
+
+  <rect x="540" y="46" width="300" height="96" rx="8" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-key" x="690" y="72" text-anchor="middle">篩子 B　§201～§203</text>
+  <text class="s-sm" x="690" y="96" text-anchor="middle">依<tspan font-weight="700">滅火困難等級</tspan>與場所類別，</text>
+  <text class="s-sm" x="690" y="112" text-anchor="middle">規定<tspan font-weight="700">應設第幾種</tspan></text>
+  <text class="s-sm" x="690" y="130" text-anchor="middle">（顯著另有 §201 附表逐格指定）</text>
+
+  <path class="s-dim" d="M210 142 L360 176 M690 142 L540 176"/>
+  <rect x="330" y="176" width="240" height="52" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.8"/>
+  <text class="s-key" x="450" y="200" text-anchor="middle" fill="var(--accent3)">兩者的交集＝實際可設的設備</text>
+  <text class="s-sm" x="450" y="220" text-anchor="middle">§198 說「不可以」的，§201 也不能逼你設</text>
+
+  <text class="s-txt" x="450" y="258" text-anchor="middle" font-weight="700">§198 附表最好記的一條：三種「禁水」物品只剩 8 個 ○</text>
+  <rect x="90" y="272" width="720" height="52" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <text class="s-sm" x="450" y="292" text-anchor="middle">第一類之<tspan font-weight="700">鹼金屬過氧化物</tspan>　·　第二類之<tspan font-weight="700">鐵粉、金屬粉、鎂</tspan>　·　第三類之<tspan font-weight="700">禁水性物質</tspan></text>
+  <text class="s-key" x="450" y="314" text-anchor="middle" fill="var(--warn)">只能選：乾粉（碳酸鹽類等／其他）· 大型與一般乾粉滅火器（同兩種）· 乾燥砂 · 膨脹蛭石或膨脹珍珠岩</text>
+</svg>
+<figcaption>圖 5　§198 與 §201～§203 是兩道獨立的篩子。禁水三類的可選項只剩乾粉（碳酸鹽類等與其他）與砂石類</figcaption>
+</figure>
+
+<div class="warnbox">
+  <b>§198 的完整附表本頁沒有重製。</b>
+  該表是 <b>13 列 × 31 欄</b>的○記號矩陣（第一種 1 欄、第二種 1 欄、第三種 8 欄、第四種大型滅火器 9 欄、第五種 12 欄），
+  在法規資料庫網頁版顯示「因條文排版無法完整呈現內容」，只能從
+  <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0120029&amp;flno=198" target="_blank" rel="noopener">§198 的「完整條文」PDF</a> 讀。<br>
+  本頁只收錄<b>可以百分之百確認的部分</b>：六款備註全文，以及三種禁水性物品那三列（各為 8 個 ○，內容如上圖）。
+  <b>其餘各列請直接查 PDF，不要憑印象填</b>——這張表的欄位極密，錯一格就是錯一種設備。
+</div>
+
+<h3>§198 附表　備註六款（全文）</h3>
+<ol class="law">
+<li>本表中「<b>○</b>」代表<b>可選設</b>該項滅火設備；「<b>△</b>」代表<b>電子工業</b>（指積體電路製造業、半導體封裝及測試業、液晶面板及組件製造業、發光二極體製造業、太陽能電池製造業及其他經中央主管機關認定之業別）可選設該項滅火設備。</li>
+<li>大型滅火器之藥劑數量應符合相關<b>滅火器認可規範</b>。</li>
+<li><b>磷酸鹽類等</b>為磷酸鹽類、硫酸鹽類及其他含有防焰性藥劑。</li>
+<li><b>碳酸鹽類等</b>為碳酸鹽類及碳酸鹽類與尿素反應生成物。</li>
+<li>惰性氣體滅火設備限 <b>IG-100、IG-55、IG-541</b>；鹵化烴滅火設備限 <b>HFC-23、HFC-227ea</b>。</li>
+<li>製造、儲存或處理<b>汽油、煤油、輕油或重油</b>之公共危險物品場所，選設 IG-100、IG-55、IG-541、HFC-23 或 HFC-227ea 滅火設備時，<b>防護區域體積應未滿 1,000 m³</b>。</li>
+</ol>
+
+<div class="cmp">
+  <b>備註一的「△ 電子工業」是全法唯一一個為特定產業開的窗口。</b>
+  它與<a href="14a-%E6%BD%94%E6%B7%A8%E5%8D%80%E6%B6%88%E9%98%B2%E5%AE%89%E5%85%A8%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html" target="_blank" rel="noopener">潔淨區要點</a>是同一組立法思路：
+  半導體與面板廠的製程會用到大量第四類公共危險物品（光阻劑、溶劑），
+  但潔淨室的滅火主力是<b>密閉濕式自動撒水設備</b>——所以要在 §198 表裡替電子工業另開一格。<br>
+  備註五、六則是 <b>2024 年修法</b>的重點：把惰性氣體與鹵化烴限縮到指定藥劑，
+  且用在油品場所時<b>防護區域體積不得達 1,000 m³</b>。
+</div>
+
+<h3>§201 第 1 項　顯著滅火困難場所應設之第一／二／三種滅火設備（網頁版省略之表）</h3>
+<div class="scroll">
+<table>
+<thead><tr><th colspan="2">場所類別</th><th>滅火設備</th></tr></thead>
+<tbody>
+<tr><td colspan="2"><b>公共危險物品製造場所及一般處理場所</b></td><td>設置<b>第一種、第二種或第三種</b>滅火設備。<b>但火災時有充滿濃煙之虞者，不得使用第一種或第三種之移動式滅火設備</b></td></tr>
+<tr><td rowspan="2"><b>室內儲存場所</b></td><td><b>高度 6 m 以上之一層建築物</b></td><td><b>第二種</b>或<b>移動式以外之第三種</b>滅火設備</td></tr>
+<tr><td>其他</td><td><b>第一種滅火設備之「室外消防栓設備」</b>、<b>第二種</b>、<b>第三種移動式泡沫設備（限設置室外泡沫消防栓者）</b>或<b>移動式以外之第三種</b>滅火設備</td></tr>
+<tr><td colspan="2"><b>室外儲存場所</b></td><td>設置<b>第一種、第二種或第三種</b>滅火設備。但火災時有充滿濃煙之虞者，不得使用第一種或第三種之移動式滅火設備</td></tr>
+<tr><td rowspan="3"><b>室內儲槽場所</b></td><td><b>儲存硫磺</b></td><td>第三種滅火設備之<b>水霧滅火設備</b></td></tr>
+<tr><td>儲存<b>閃火點 70℃ 以上</b>之第四類</td><td>第三種之<b>水霧、固定式泡沫</b>，或<b>移動式以外</b>之二氧化碳、惰性氣體、鹵化烴或乾粉滅火設備</td></tr>
+<tr><td>其他</td><td>第三種之<b>固定式泡沫</b>，或<b>移動式以外</b>之二氧化碳、惰性氣體、鹵化烴或乾粉滅火設備<br><span style="color:var(--muted)">（比上一列少了「水霧」）</span></td></tr>
+<tr><td rowspan="3"><b>室外儲槽場所</b></td><td><b>儲存硫磺</b></td><td>第三種滅火設備之<b>水霧滅火設備</b></td></tr>
+<tr><td>儲存<b>閃火點 70℃ 以上</b>之第四類</td><td>第三種之<b>水霧滅火設備或固定式泡沫滅火設備</b></td></tr>
+<tr><td>其他</td><td>第三種之<b>固定式泡沫滅火設備</b><span style="color:var(--muted)">（只剩這一個選項）</span></td></tr>
+<tr><td colspan="2"><b>室內加油站</b></td><td>第三種之<b>固定式泡沫滅火設備</b></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note">
+  <b>這張表的三條規律。</b><br>
+  ① <b>「儲存硫磺」一律是水霧</b>——室內、室外儲槽都一樣，而且只有水霧這一個選項。硫磺熔點低、燃燒時會流動，用泡沫會被熔融硫磺破壞，用氣體則因為是室外／半開放而留不住。<br>
+  ② <b>閃火點 70℃ 是室外儲槽的分水嶺</b>：70℃ 以上可以水霧或固定式泡沫二選一；<b>未滿 70℃（即「其他」列）就只剩固定式泡沫</b>。<br>
+  ③ <b>「移動式」被大量排除</b>。室內儲存高 6 m 以上、室內儲槽的兩列，都寫「移動式以外之第三種」；製造與室外儲存則是用但書排除（火災時有充滿濃煙之虞者）。理由一致：<b>移動式要人拉著水帶或皮管靠近火點</b>，在這些場所辦不到。
+</div>
+
+<h3>§201 第 2 項　顯著場所還要加設第四種與第五種——三個例外</h3>
+<table>
+<thead><tr><th class="n">款</th><th>情形</th><th>放寬內容</th></tr></thead>
+<tbody>
+<tr><td class="n">①</td><td>製造及一般處理場所，儲存或處理<b>高閃火點物品</b>且<b>操作溫度未滿 100℃</b></td><td>其設置之第一／二／三種滅火設備<b>有效範圍內，得免設第四種</b></td></tr>
+<tr><td class="n">②</td><td>儲存<b>第四類</b>公共危險物品之<b>室外儲槽或室內儲槽</b>場所</td><td>設置<b>第五種滅火設備二具以上</b>（即以二具取代原本按效能值核算的第四種＋第五種）</td></tr>
+<tr><td class="n">③</td><td><b>室內加油站</b></td><td>應設置<b>第五種</b>滅火設備</td></tr>
+</tbody>
+</table>
+
+<h3>§202～§204　一般滅火困難場所以下的配置</h3>
+<table>
+<thead><tr><th>條</th><th>場所</th><th>應設</th></tr></thead>
+<tbody>
+<tr><td class="n"><b>§202①</b></td><td>製造場所及一般處理場所、室內儲存場所、室外儲存場所、<b>第二種販賣場所</b>、室內加油站</td><td><b>第四種＋第五種</b>；第五種效能值 ≥ 該場所核算之<b>最低滅火效能值的 1/5</b></td></tr>
+<tr><td class="n"><b>§202②</b></td><td>室內及室外<b>儲槽</b>場所</td><td><b>第四種、第五種各一具以上</b></td></tr>
+<tr><td class="n"><b>§202Ⅱ</b></td><td>前項應設第四種之場所</td><td>設有<b>第一、二或三種</b>時，在該設備<b>有效防護範圍內得免設</b>第四種</td></tr>
+<tr><td class="n"><b>§203Ⅰ</b></td><td>其他滅火困難場所</td><td><b>第五種</b>，效能值須在<b>建築物＋附屬設施＋物品數量</b>核算之最低效能值以上；<b>已設第一～第四種之一者，有效防護範圍內得減至 1/5 以上</b></td></tr>
+<tr><td class="n"><b>§203Ⅱ</b></td><td><b>地下儲槽場所</b></td><td><b>第五種滅火設備二具以上</b></td></tr>
+<tr><td class="n"><b>§204</b></td><td><b>電氣設備</b>使用之處所</td><td>每 <b>100 m²</b>（含未滿）設<b>第五種</b>滅火設備<b>一具以上</b></td></tr>
+</tbody>
+</table>
+
+<div class="cmp">
+  <b>§204 與第三編 §31② 是同一個數字的兩種寫法。</b>
+  §31② 說「電影片映演場所放映室及電氣設備使用之處所，每 100 m²（含未滿）<b>另設</b>一滅火器」；
+  §204 說「電氣設備使用之處所，每 100 m²（含未滿）應設置<b>第五種滅火設備一具以上</b>」。<br>
+  兩條的面積基準相同（100 m²），差別在：第三編用「另設」強調是<b>加在原有效能值之外</b>，
+  第四編則直接規定具數。<b>§204 是第四編唯一一條不分滅火困難等級、一律適用的條文</b>。
+</div>
+
+<h3>§224、§225　第四種與第五種的步行距離</h3>
+<figure>
+<svg viewBox="0 0 900 230" role="img" aria-label="第四種30公尺與第五種20公尺步行距離對照">
+  <text class="s-txt" x="450" y="24" text-anchor="middle" font-weight="700">§224／§225　距防護對象任一點之<tspan font-weight="700">步行距離</tspan></text>
+
+  <circle cx="180" cy="120" r="8" fill="var(--accent)"/>
+  <text class="s-sm" x="180" y="146" text-anchor="middle">防護對象任一點</text>
+  <path class="s-dim" stroke-dasharray="5 4" d="M188 120 L400 120 M392 114 L404 120 L392 126"/>
+  <rect x="404" y="102" width="120" height="36" rx="6" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <text class="s-key" x="464" y="126" text-anchor="middle" fill="var(--warn)">第四種 ≤ 30 m</text>
+
+  <circle cx="180" cy="182" r="8" fill="var(--accent)"/>
+  <path class="s-dim" stroke-dasharray="5 4" d="M188 182 L330 182 M322 176 L334 182 L322 188"/>
+  <rect x="334" y="164" width="120" height="36" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text class="s-key" x="394" y="188" text-anchor="middle">第五種 ≤ 20 m</text>
+
+  <text class="s-sm" x="700" y="102" text-anchor="middle">兩條都有同一句但書：</text>
+  <text class="s-key" x="700" y="126" text-anchor="middle" fill="var(--accent2)">與其他種別滅火設備併設者，不在此限</text>
+  <text class="s-sm" x="700" y="150" text-anchor="middle">§224：與第一、二或三種併設　/　§225：與第一、二、三或第四種併設</text>
+  <text class="s-sm" x="700" y="180" text-anchor="middle">對照第三編 §31③：滅火器自樓面居室任一點</text>
+  <text class="s-sm" x="700" y="196" text-anchor="middle">之步行距離同樣是 <tspan font-weight="700">20 m</tspan> 以下</text>
+  <text class="s-key" x="450" y="222" text-anchor="middle">30／20 的差距來自重量：大型滅火器搬得動但慢，手提滅火器拿了就跑</text>
+</svg>
+<figcaption>圖 6　§224 的 30 m 與 §225 的 20 m。第五種的 20 m 與第三編滅火器 §31③ 完全一致</figcaption>
+</figure>
+
+<!-- ============ 5 ============ -->
+<h2 id="alarm"><span class="no">05</span>警報、標示、爆竹煙火與高壓氣體滅火器（§205～§208、§226～§227）</h2>
+<p class="lede">第四編對警報與標示只用了四條，其中兩條（§226、§227）根本是<b>整段丟回第三編</b>。真正自己寫的只有 §205 與 §206。</p>
+
+<figure>
+<svg viewBox="0 0 900 320" role="img" aria-label="第四編警報與標示設備的四條規定">
+  <text class="s-txt" x="450" y="24" text-anchor="middle" font-weight="700">第四編的警報與標示：兩條自訂 ＋ 兩條全部準用</text>
+
+  <rect x="40" y="44" width="390" height="150" rx="8" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-key" x="235" y="68" text-anchor="middle">§205 Ⅰ　應設火警自動警報設備</text>
+  <text class="s-sm" x="235" y="92" text-anchor="middle">① 製造／一般處理：≥500 m²、管制量 ≥100 倍、兼他用</text>
+  <text class="s-sm" x="235" y="112" text-anchor="middle">② 室內儲存：管制量 ≥100 倍、≥150 m²、</text>
+  <text class="s-sm" x="235" y="128" text-anchor="middle">　建築物一部分供其使用、高 ≥6 m 之一層建築物</text>
+  <text class="s-sm" x="235" y="150" text-anchor="middle">③ 室內儲槽場所<tspan font-weight="700">達顯著滅火困難</tspan>者</text>
+  <text class="s-sm" x="235" y="170" text-anchor="middle">④ 一面開放或上方有其他用途樓層之<tspan font-weight="700">室內加油站</tspan></text>
+  <text class="s-sm" x="235" y="188" text-anchor="middle">（門檻 500 m²／100 倍，比 §194 的 1,000 m²／100 倍低）</text>
+
+  <rect x="450" y="44" width="410" height="150" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.6"/>
+  <text class="s-key" x="655" y="68" text-anchor="middle" fill="var(--warn)">§205 Ⅱ　沒到 Ⅰ 的門檻怎麼辦</text>
+  <text class="s-sm" x="655" y="94" text-anchor="middle">前項<tspan font-weight="700">以外</tspan>之公共危險物品製造、儲存或處理場所，</text>
+  <text class="s-key" x="655" y="118" text-anchor="middle" fill="var(--warn)">數量達管制量 10 倍以上者</text>
+  <text class="s-sm" x="655" y="142" text-anchor="middle">應設<tspan font-weight="700">手動報警設備</tspan>或<tspan font-weight="700">具同等功能之緊急通報裝置</tspan></text>
+  <text class="s-key" x="655" y="168" text-anchor="middle" fill="var(--warn)">但書：平日無作業人員者，不在此限</text>
+  <text class="s-sm" x="655" y="188" text-anchor="middle">「沒有人，就沒有人可以按」——全法少見的以人為判準的免設</text>
+
+  <rect x="40" y="212" width="255" height="88" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.6"/>
+  <text class="s-key" x="167" y="236" text-anchor="middle" fill="var(--accent3)">§206　標示設備</text>
+  <text class="s-sm" x="167" y="262" text-anchor="middle"><tspan font-weight="700">加油站</tspan>所在建築物，其<tspan font-weight="700">二樓以上</tspan></text>
+  <text class="s-sm" x="167" y="280" text-anchor="middle">供其他用途使用者，應設置標示設備</text>
+
+  <rect x="315" y="212" width="255" height="88" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.6"/>
+  <text class="s-key" x="442" y="236" text-anchor="middle" fill="var(--accent2)">§226　警報設備</text>
+  <text class="s-sm" x="442" y="264" text-anchor="middle">依 <tspan font-weight="700">§112～§132</tspan> 之規定</text>
+  <text class="s-sm" x="442" y="284" text-anchor="middle">（火警自動警報＋手動報警，整段照搬）</text>
+
+  <rect x="590" y="212" width="270" height="88" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.6"/>
+  <text class="s-key" x="725" y="236" text-anchor="middle" fill="var(--accent2)">§227　標示設備</text>
+  <text class="s-sm" x="725" y="264" text-anchor="middle">依 <tspan font-weight="700">§146～§156</tspan> 之規定</text>
+  <text class="s-sm" x="725" y="284" text-anchor="middle">（出口標示燈、避難方向指示燈、避難指標）</text>
+</svg>
+<figcaption>圖 7　§205 決定「要不要設警報」、§226 決定「怎麼設」；§206／§227 對標示設備是同一組分工</figcaption>
+</figure>
+
+<div class="cmp">
+  <b>第四編的警報門檻比第三編低很多。</b><br>
+  第三編 <b>§19</b> 的一般場所要 5 層以下任一層 300／500 m²、或 11 層以上建築物才設火警自動警報；
+  第四編 <b>§205Ⅰ①</b> 只要製造／一般處理場所<b>總樓地板面積 500 m²</b>，或<b>管制量 100 倍</b>就要設，
+  <b>完全不看樓層</b>。<br>
+  更重要的是 <b>§205Ⅱ</b>：連 500 m² 都不到的場所，只要<b>管制量達 10 倍</b>，仍然要設<b>手動報警設備或同等功能之緊急通報裝置</b>。
+  換句話說，<b>第四編幾乎沒有「完全不必報警」的場所</b>——只有「平日無作業人員」這一個出口。
+</div>
+
+<h3>§205 Ⅰ 四款門檻與其但書</h3>
+<div class="scroll">
+<table>
+<thead><tr><th>款</th><th>場所</th><th>門檻</th><th>但書</th></tr></thead>
+<tbody>
+<tr><td class="n" rowspan="3">①</td><td rowspan="3">製造場所及<br>一般處理場所</td><td>總樓地板面積 <b>≥500 m²</b></td><td>—</td></tr>
+<tr><td>室內儲存或處理數量達管制量 <b>≥100 倍</b></td><td>處理<b>操作溫度未滿 100℃ 之高閃火點物品</b>者，不在此限</td></tr>
+<tr><td>建築物除供一般處理場所使用外<b>尚供其他用途</b></td><td>以<b>無開口且具 1 小時</b>以上防火時效之牆壁、樓地板區劃分隔者，不在此限</td></tr>
+<tr><td class="n" rowspan="4">②</td><td rowspan="4">室內儲存場所</td><td>儲存或處理數量達管制量 <b>≥100 倍</b></td><td>儲存或處理<b>高閃火點物品</b>，不在此限</td></tr>
+<tr><td>總樓地板面積 <b>≥150 m²</b></td><td>每 150 m² 內以無開口＋1 小時防火時效區劃分隔者；或儲存、處理<b>易燃性固體以外之第二類</b>或<b>閃火點 70℃ 以上之第四類</b>，且總樓地板面積 <b>≤500 m²</b> 者，不在此限</td></tr>
+<tr><td><b>建築物之一部分</b>供作室內儲存場所使用</td><td>以無開口＋1 小時防火時效區劃分隔者，或儲存、處理易燃性固體以外之第二類或閃火點 70℃ 以上之第四類，不在此限</td></tr>
+<tr><td><b>高度 ≥6 m 之一層建築物</b></td><td>—</td></tr>
+<tr><td class="n">③</td><td>室內儲槽場所</td><td>達<b>顯著滅火困難</b>者</td><td>—</td></tr>
+<tr><td class="n">④</td><td>室內加油站</td><td><b>一面開放</b>或<b>上方有其他用途樓層</b></td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note">
+  <b>§205Ⅰ②（二）那個「≤500 m²」的但書很容易漏。</b>
+  它的意思是：室內儲存場所總樓地板面積雖然超過 150 m²，但<b>只要儲存的是相對安全的兩種物品</b>
+  （易燃性固體<b>以外</b>之第二類、閃火點 <b>70℃ 以上</b>之第四類），<b>且總面積不超過 500 m²</b>，
+  就<b>不必</b>設火警自動警報設備。<br>
+  也就是說這一款其實有<b>三個</b>面積數字：<b>150</b>（起設門檻）、<b>150</b>（區劃單位）、<b>500</b>（安全物品的免設上限）。
+</div>
+
+<h3>§206-1、§207、§208　爆竹煙火與可燃性高壓氣體</h3>
+<table>
+<thead><tr><th class="n">條</th><th>場所</th><th>應設</th></tr></thead>
+<tbody>
+<tr><td class="n"><b>§206-1Ⅰ</b></td><td>① 爆竹煙火製造場所<b>有火藥區</b>之作業區或庫儲區<br>② 達中央主管機關所定<b>管制量以上</b>之爆竹煙火<b>儲存、販賣</b>場所</td><td><b>第五種</b>滅火設備</td></tr>
+<tr><td class="n"><b>§206-1Ⅱ</b></td><td>建築物供前項場所使用之樓地板面積<b>合計 ≥150 m²</b></td><td>應設<b>第一種滅火設備之「室外消防栓」</b>。<b>但前項第二款之販賣場所，不在此限</b></td></tr>
+<tr><td class="n"><b>§207</b></td><td>可燃性高壓氣體製造、儲存或處理場所<br>及<b>加氣站、天然氣儲槽、可燃性高壓氣體儲槽</b></td><td>應設置<b>滅火器</b>（具體具數見 §228）</td></tr>
+<tr><td class="n"><b>§208</b></td><td>① 可燃性高壓氣體<b>製造場所</b><br>② 儲存可燃性高壓氣體或天然氣儲槽<b>在 3,000 kg 以上</b>者<br>③ <b>氣槽車之卸收區</b><br>④ 加氣站之<b>加氣車位、儲氣槽人孔、壓縮機、幫浦</b></td><td>應設置<b>防護設備</b>（冷卻撒水或射水設備）。<br><b>但已設置水噴霧裝置者，得免設</b></td></tr>
+</tbody>
+</table>
+
+<div class="cmp">
+  <b>§206-1Ⅱ 的「室外消防栓」是指定，不是選項。</b>
+  §197Ⅰ① 的第一種滅火設備原本包含「室內<b>或</b>室外消防栓」，
+  但 §206-1Ⅱ 明寫「<b>第一種滅火設備之室外消防栓</b>」——爆竹煙火場所不能用室內消防栓充數。
+  理由很直接：<b>爆竹煙火有爆炸風險，人不能待在建築物裡面滅火</b>。<br>
+  同樣的指定寫法也出現在 §201 附表的室內儲存場所「其他」列：也是明寫「第一種滅火設備之<b>室外消防栓設備</b>」。
+</div>
+
+<!-- ============ 6 ============ -->
+<h2 id="water"><span class="no">06</span>水系設備加嚴對照：第三編 vs 第四編（§209～§212）</h2>
+<p class="lede">這一節是整個第四編最值得先讀、也最常考的地方。<b>四種水系設備的骨架完全準用第三編，但關鍵數字全部往上調</b>。</p>
+
+<figure>
+<svg viewBox="0 0 900 380" role="img" aria-label="室內消防栓在第三編與第四編的數字對照">
+  <text class="s-txt" x="450" y="24" text-anchor="middle" font-weight="700">室內消防栓：§34／§36／§38（第三編）　vs　§209（第四編）</text>
+
+  <rect x="40" y="44" width="380" height="292" rx="10" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.8"/>
+  <text class="s-key" x="230" y="70" text-anchor="middle" fill="var(--accent2)">第三編　一般場所　第一種消防栓</text>
+  <path class="s-thin" d="M58 82 L402 82"/>
+  <text class="s-sm" x="130" y="106" text-anchor="end">水平距離</text>
+  <text class="s-txt" x="146" y="106">25 m 以下</text>
+  <text class="s-sm" x="130" y="134" text-anchor="end">放水壓力</text>
+  <text class="s-txt" x="146" y="134">1.7 kgf/cm²（0.17 MPa）</text>
+  <text class="s-sm" x="130" y="162" text-anchor="end">放水量</text>
+  <text class="s-txt" x="146" y="162">130 L/min</text>
+  <text class="s-sm" x="130" y="190" text-anchor="end">同時使用</text>
+  <text class="s-txt" x="146" y="190">超過 2 支以 2 支計</text>
+  <text class="s-sm" x="130" y="218" text-anchor="end">放水時間</text>
+  <text class="s-txt" x="146" y="218">20 分鐘</text>
+  <text class="s-sm" x="130" y="246" text-anchor="end">緊急電源</text>
+  <text class="s-txt" x="146" y="246">30 分鐘</text>
+  <path class="s-thin" d="M58 262 L402 262"/>
+  <text class="s-sm" x="230" y="286" text-anchor="middle">水源容量</text>
+  <text class="s-key" x="230" y="312" text-anchor="middle" fill="var(--accent2)">2 × 130 × 20 ＝ 5.2 m³</text>
+
+  <rect x="480" y="44" width="380" height="292" rx="10" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.8"/>
+  <text class="s-key" x="670" y="70" text-anchor="middle">第四編　公共危險物品等場所　§209</text>
+  <path class="s-thin" d="M498 82 L842 82"/>
+  <text class="s-sm" x="570" y="106" text-anchor="end">水平距離</text>
+  <text class="s-txt" x="586" y="106">25 m 以下 ＋ 各層出入口附近設 1 支以上</text>
+  <text class="s-sm" x="570" y="134" text-anchor="end">放水壓力</text>
+  <text class="s-key" x="586" y="134">3.5 kgf/cm²（0.35 MPa）</text>
+  <text class="s-sm" x="570" y="162" text-anchor="end">放水量</text>
+  <text class="s-key" x="586" y="162">260 L/min</text>
+  <text class="s-sm" x="570" y="190" text-anchor="end">同時使用</text>
+  <text class="s-key" x="586" y="190">超過 5 支以 5 支計</text>
+  <text class="s-sm" x="570" y="218" text-anchor="end">放水時間</text>
+  <text class="s-key" x="586" y="218">30 分鐘</text>
+  <text class="s-sm" x="570" y="246" text-anchor="end">緊急電源</text>
+  <text class="s-key" x="586" y="246">45 分鐘</text>
+  <path class="s-thin" d="M498 262 L842 262"/>
+  <text class="s-sm" x="670" y="286" text-anchor="middle">水源容量</text>
+  <text class="s-key" x="670" y="312" text-anchor="middle">5 × 260 × 30 ＝ 39 m³</text>
+
+  <text class="s-key" x="450" y="358" text-anchor="middle" fill="var(--warn)">水源容量差 7.5 倍　·　壓力與放水量各 2 倍　·　支數 2 倍半　·　時間 1.5 倍</text>
+  <text class="s-sm" x="450" y="376" text-anchor="middle">§209① 另有一條：公共危險物品場所<tspan font-weight="700">只能設第一種消防栓</tspan>，沒有第二種可選</text>
+</svg>
+<figcaption>圖 8　同一支室內消防栓，換到公共危險物品場所後每一個數字都變。7.5 倍的水源差距來自「支數 × 放水量 × 時間」三個因子相乘</figcaption>
+</figure>
+
+<h3>四種水系設備完整加嚴對照表</h3>
+<div class="scroll">
+<table>
+<thead><tr><th>項目</th><th>第三編（一般場所）</th><th>第四編（公共危險物品等場所）</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td colspan="4" style="background:var(--fill2);font-weight:700">室內消防栓</td></tr>
+<tr><td>型式</td><td>第一種<b>或</b>第二種擇一</td><td><b>限第一種</b></td><td class="n">§34 / §209①</td></tr>
+<tr><td>水平距離</td><td>25 m 以下</td><td>25 m 以下，<b>且各層出入口附近設 1 支以上</b></td><td class="n">§34Ⅰ①(一) / §209③</td></tr>
+<tr><td><b>放水壓力</b></td><td><b>1.7</b> kgf/cm²（0.17 MPa）</td><td><b>3.5</b> kgf/cm²（0.35 MPa）</td><td class="n">§34Ⅰ①(二) / §209④</td></tr>
+<tr><td><b>放水量</b></td><td><b>130</b> L/min</td><td><b>260</b> L/min</td><td class="n">§34Ⅰ①(二) / §209④</td></tr>
+<tr><td><b>同時使用支數</b></td><td>超過 <b>2</b> 支以 2 支計</td><td>超過 <b>5</b> 支以 5 支計</td><td class="n">§34Ⅰ①(二) / §209④</td></tr>
+<tr><td><b>水源放水時間</b></td><td><b>20</b> 分鐘</td><td><b>30</b> 分鐘</td><td class="n">§36 / §209⑤</td></tr>
+<tr><td><b>水源容量（最小）</b></td><td><b>5.2 m³</b></td><td><b>39 m³</b></td><td class="n">同上</td></tr>
+<tr><td><b>緊急電源</b></td><td><b>30</b> 分鐘</td><td><b>45</b> 分鐘</td><td class="n">§38 / §209Ⅱ</td></tr>
+
+<tr><td colspan="4" style="background:var(--fill3);font-weight:700">室外消防栓</td></tr>
+<tr><td>口徑</td><td>63 mm 以上</td><td>63 mm 以上</td><td class="n">§40① / §210③</td></tr>
+<tr><td>水平距離</td><td>與<b>建築物一樓外牆</b>各部分 40 m 以下</td><td>與<b>防護對象外圍或外牆</b>各部分 40 m 以下，<b>且設 2 支以上</b></td><td class="n">§40① / §210③</td></tr>
+<tr><td><b>放水壓力</b></td><td><b>2.5</b> kgf/cm²（0.25 MPa）</td><td><b>3.5</b> kgf/cm²（0.35 MPa）</td><td class="n">§40② / §210⑥</td></tr>
+<tr><td><b>放水量</b></td><td><b>350</b> L/min</td><td><b>450</b> L/min</td><td class="n">§40② / §210⑥</td></tr>
+<tr><td><b>同時使用支數</b></td><td>超過 <b>2</b> 支以 2 支計</td><td>超過 <b>4</b> 支以 4 支計</td><td class="n">§41Ⅰ / §210⑥⑦</td></tr>
+<tr><td>放水時間</td><td>30 分鐘</td><td>30 分鐘（<b>相同</b>）</td><td class="n">§41Ⅰ / §210⑦</td></tr>
+<tr><td><b>水源容量（最小）</b></td><td><b>21 m³</b></td><td><b>54 m³</b></td><td class="n">同上</td></tr>
+<tr><td><b>減壓措施門檻</b></td><td>瞄子放水壓力超過 <b>6</b> kgf/cm²（0.6 MPa）</td><td>瞄子放水壓力超過 <b>7</b> kgf/cm²（0.7 MPa）</td><td class="n">§42Ⅱ / §210②</td></tr>
+<tr><td>配管材質</td><td>準用 §32</td><td>另加：採<b>鑄鐵管</b>時須符合 <b>CNS 832</b> 壓力管路鑄鐵管，標稱壓力 <b>≥16</b> kgf/cm²（1.6 MPa）；<b>埋設地下應防腐蝕</b>（鑄鐵管除外）</td><td class="n">§210④⑤</td></tr>
+<tr><td><b>緊急電源</b></td><td><b>30</b> 分鐘</td><td><b>45</b> 分鐘</td><td class="n">§39→§38 / §210Ⅱ</td></tr>
+
+<tr><td colspan="4" style="background:var(--fill4);font-weight:700">自動撒水設備</td></tr>
+<tr><td><b>撒水頭水平距離</b></td><td>依場所與感度分 <b>1.7／2.1／2.3／2.6</b> m 等多級</td><td><b>一律 1.7 m 以下</b>（取最嚴的一級）</td><td class="n">§46 / §211②</td></tr>
+<tr><td>開放式放水區域</td><td>—（依 §52、§53 規定啟動與區域）</td><td>每一放水區域樓地板面積 <b>≥150 m²</b>；防護對象未滿 150 m² 時以實際面積計</td><td class="n">§211③</td></tr>
+<tr><td><b>水源・密閉式</b></td><td>依 §57 表 <b>8～30 個</b>撒水頭 × <b>20</b> 分鐘</td><td><b>30 個</b>撒水頭 × <b>30</b> 分鐘（實設 ≤30 個時以實際數計）</td><td class="n">§57Ⅰ① / §211Ⅰ④(一)</td></tr>
+<tr><td>水源・開放式</td><td>最大放水區域全部撒水頭 × 20 分鐘</td><td>最大放水區域全部撒水頭 × <b>30</b> 分鐘</td><td class="n">§57Ⅰ② / §211Ⅰ④(二)</td></tr>
+<tr><td><b>乾式／預動式追加</b></td><td>追加 <b>50%</b>（比例）</td><td>追加 <b>10 個</b>（絕對數）</td><td class="n">§57Ⅱ / §211Ⅰ④(三)</td></tr>
+<tr><td><b>迴水板淨空間</b></td><td>下方 <b>45</b> cm、水平 30 cm</td><td>準用 §47；<b>但存放易燃性物質處所為下方 90 cm、水平 30 cm</b></td><td class="n">§47Ⅰ② / §211Ⅰ⑤</td></tr>
+<tr><td><b>緊急電源</b></td><td><b>30</b> 分鐘</td><td><b>45</b> 分鐘</td><td class="n">§60→§38 / §211Ⅱ</td></tr>
+
+<tr><td colspan="4" style="background:var(--fill1);font-weight:700">水霧滅火設備</td></tr>
+<tr><td><b>放射區域</b></td><td>每一區域<b>以 50 m² 為原則</b></td><td>每一區域 <b>≥150 m²</b>；防護對象未滿 150 m² 時以實際面積計</td><td class="n">§63Ⅰ / §212②</td></tr>
+<tr><td><b>每 m² 放水量</b></td><td><b>10</b> L/min（§18 附表三、四項場所為 <b>20</b>）</td><td><b>一律 20</b> L/min</td><td class="n">§61③ / §212③</td></tr>
+<tr><td><b>水源容量</b></td><td><b>固定值 20 m³</b>（二區域以上 <b>40 m³</b>）</td><td>最大放射區域全部噴頭 × <b>30 分鐘</b>（隨面積變動）</td><td class="n">§64 / §212③</td></tr>
+<tr><td><b>放射壓力</b></td><td><b>2.7</b> kgf/cm²（防護電氣設備 3.5）</td><td><b>一律 3.5</b> kgf/cm²（0.35 MPa）</td><td class="n">§65Ⅱ② / §212④</td></tr>
+<tr><td><b>緊急電源</b></td><td><b>30</b> 分鐘</td><td><b>45</b> 分鐘</td><td class="n">§62→§38 / §212Ⅱ</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="cmp">
+  <b>三條貫穿全表的規律，記這三條就等於記了半張表。</b><br>
+  ① <b>緊急電源一律 45 分鐘</b>（§209Ⅱ、§210Ⅱ、§211Ⅱ、§212Ⅱ 四條一模一樣），
+  第三編則一律 30 分鐘（§38）。<b>泡沫是唯一的例外</b>——§221Ⅱ 寫的是「<b>所需放射時間之 1.5 倍以上</b>」，
+  1.5 這個倍率正好與 30→45 相同，只是改成隨放射時間浮動。<br>
+  ② <b>放水／放射壓力一律拉到 3.5 kgf/cm²</b>：室內消防栓 1.7→3.5、室外消防栓 2.5→3.5、水霧 2.7→3.5、
+  泡沫瞄子（§219①）也是 3.5。<b>第四編幾乎沒有 3.5 以外的壓力值</b>。<br>
+  ③ <b>「取最嚴的一級」原則</b>：第三編給多級選擇的參數，第四編一律取最嚴那一級——
+  撒水頭水平距離取 1.7 m（易燃物品倉庫那一級）、水霧放水量取 20 L/min（§18 附表三四項那一級）、
+  水霧放射壓力取 3.5（電氣設備那一級）。
+</div>
+
+<div class="ex">
+  <div class="t">實例 2　§209　室內消防栓水源容量與「同一棟樓的兩種答案」</div>
+  <div class="given">某公共危險物品一般處理場所，地上 3 層。設置室內消防栓最多的樓層為 2 樓，共 <b>6 支</b>。</div>
+  <div class="step">① §209④ 但書：全部消防栓數量超過 5 支時，以<b>同時使用 5 支</b>計算 → N = 5</div>
+  <div class="step">② §209④：各消防栓放水量 <b>260 L/min</b> 以上</div>
+  <div class="step">③ §209⑤：水源容量為<b>繼續放水 30 分鐘</b>之水量</div>
+  <div class="step">④ <code>5 × 260 × 30 = 39,000 L</code></div>
+  <div class="ans">水源容量 ≥ <b>39 m³</b>；緊急電源供電容量 ≥ <b>45 分鐘</b>（§209Ⅱ）<br>
+  <span style="font-weight:400">對照：同一棟樓若<b>不是</b>公共危險物品場所，依 §34Ⅰ①、§36 只需
+  <code>2 × 130 × 20 = 5,200 L ＝ 5.2 m³</code>，緊急電源 30 分鐘（§38）。<b>差 7.5 倍。</b></span></div>
+</div>
+
+<div class="ex">
+  <div class="t">實例 3　§211　自動撒水（預動式）水源容量</div>
+  <div class="given">某公共危險物品<b>室內儲存場所</b>，設<b>密閉式</b>撒水頭 <b>42 個</b>，採用<b>預動式</b>流水檢知裝置。</div>
+  <div class="step">① §211Ⅰ④(一)：使用密閉式撒水頭 → 基準為 <b>30 個</b>撒水頭（實設 42 個 &gt; 30，故取 30）</div>
+  <div class="step">② §211Ⅰ④(三)：使用密閉乾式或<b>預動式</b>流水檢知裝置 → <b>追加 10 個</b> → N = 30 ＋ 10 = <b>40</b></div>
+  <div class="step">③ 放水量準用 §50（§211Ⅰ①）：每個撒水頭 <b>80 L/min</b></div>
+  <div class="step">④ §211Ⅰ④(一)：繼續放水 <b>30 分鐘</b></div>
+  <div class="step">⑤ <code>40 × 80 × 30 = 96,000 L</code></div>
+  <div class="ans">水源容量 ≥ <b>96 m³</b>；緊急電源 ≥ <b>45 分鐘</b><br>
+  <span style="font-weight:400">易錯點：第三編 §57Ⅱ 的追加是「<b>百分之五十</b>」，第四編 §211 的追加是「<b>十個</b>」。
+  若誤用 50%，會算成 30 × 1.5 = 45 個，多算 5 個、多出 12 m³。</span></div>
+</div>
+
+<div class="ex">
+  <div class="t">實例 4　§212　水霧水源容量：從「固定值」變成「算出來的值」</div>
+  <div class="given">某公共危險物品處理場所以水霧滅火設備防護，<b>最大放射區域面積 180 m²</b>。</div>
+  <div class="step">① §212②：每一放射區域 <b>≥150 m²</b>，本例 180 m² 符合</div>
+  <div class="step">② §212③：放射區域每 m² 每分鐘放水量 <b>≥20 L</b> → <code>180 × 20 = 3,600 L/min</code></div>
+  <div class="step">③ §212③：水源容量為最大放射區域全部噴頭<b>繼續放水 30 分鐘</b> → <code>3,600 × 30 = 108,000 L</code></div>
+  <div class="ans">水源容量 ≥ <b>108 m³</b>；各噴頭放射壓力 ≥ <b>3.5 kgf/cm²</b>；緊急電源 ≥ <b>45 分鐘</b><br>
+  <span style="font-weight:400">對照第三編 §64：<b>不管面積多大，水源就是 20 m³（二區域以上 40 m³）</b>——
+  這是全法唯一用固定值寫死水源的設備。到了第四編這個特例被取消，改回「面積 × 放水量 × 時間」的通則。</span></div>
+</div>
+
+<div class="note">
+  <b>§209～§212 的「準用」清單也要看，那是被<b>排除</b>的部分。</b><br>
+  §209② 準用第三編的配管、試壓、消防栓箱、有效水量與加壓送水裝置，但特別點名
+  <b>§34Ⅰ①（三）</b>（消防栓箱內裝備）與 <b>§36Ⅱ、Ⅲ</b>、<b>§35</b>、<b>§37</b>——
+  <b>沒有準用 §34Ⅰ①（一）（二）</b>，因為水平距離與放水量已經在 §209③④ 自己寫了。<br>
+  §211① 準用了 §43～§45、§48～§53、§55、§56、§58、§59，
+  <b>唯獨跳過 §46（撒水頭水平距離）、§54、§57（水源）、§60（緊急電源）</b>——
+  正好就是第四編自己在 §211②③④、§211Ⅱ 改寫過的那幾條。
+  <b>§47（撒水頭位置）則由 §211Ⅰ⑤ 單獨準用</b>，並加上「存放易燃性物質處所迴水板下方 90 cm」的但書。<br>
+  <b>看「哪幾條沒被準用、哪幾條被單獨拉出來加但書」，就知道第四編改了什麼。</b>
+</div>
+
+<!-- ============ 7 ============ -->
+<h2 id="tank"><span class="no">07</span>儲槽泡沫滅火設備與冷卻撒水（§213～§221）</h2>
+<p class="lede">第四編最大的一塊，也是第三編完全沒有的東西：<b>油槽專用的固定式泡沫系統</b>。九條條文構成一個完整的計算鏈。</p>
+
+<figure>
+<svg viewBox="0 0 900 400" role="img" aria-label="室外儲槽泡沫滅火設備與冷卻撒水的系統全景">
+  <text class="s-txt" x="450" y="22" text-anchor="middle" font-weight="700">室外儲槽的四套水系統（§213～§216）</text>
+
+  <!-- tank -->
+  <ellipse cx="300" cy="120" rx="130" ry="20" fill="var(--fill4)" stroke="var(--fg)" stroke-width="1.4"/>
+  <path class="s-line" d="M170 120 L170 250 M430 120 L430 250"/>
+  <path class="s-line" d="M170 250 A130 20 0 0 0 430 250"/>
+  <path class="s-thin" d="M170 175 A130 20 0 0 0 430 175"/>
+  <text class="s-sm" x="300" y="200" text-anchor="middle">儲槽（液面積 A ＝ π D²/4）</text>
+  <text class="s-sm" x="300" y="168" text-anchor="middle" fill="var(--accent)">液面</text>
+
+  <!-- foam outlet -->
+  <rect x="248" y="88" width="104" height="18" rx="4" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.4"/>
+  <text class="s-key" x="300" y="80" text-anchor="middle">① 固定式泡沫放出口</text>
+  <text class="s-sm" x="300" y="102" text-anchor="middle" font-size="10">§213　數量依直徑查表　·　量與放出率依物品查表</text>
+
+  <!-- cooling spray ring -->
+  <path class="s-dim" d="M170 128 L152 128 M430 128 L448 128"/>
+  <path class="s-dim" stroke-dasharray="3 3" d="M158 134 L150 148 M172 134 L164 148 M186 134 L178 148 M200 134 L192 148 M400 134 L392 148 M414 134 L406 148 M428 134 L420 148 M442 134 L434 148"/>
+  <text class="s-key" x="90" y="128" text-anchor="middle" fill="var(--accent2)">④ 冷卻撒水</text>
+  <text class="s-sm" x="90" y="146" text-anchor="middle">§216　2 L/min·m²</text>
+  <text class="s-sm" x="90" y="162" text-anchor="middle">水源 4 小時</text>
+
+  <!-- dike -->
+  <path class="s-line" d="M100 290 L100 250 M600 290 L600 250"/>
+  <path class="s-line" d="M100 290 L600 290"/>
+  <text class="s-sm" x="350" y="308" text-anchor="middle">防液堤</text>
+
+  <!-- aux foam hydrant -->
+  <rect x="640" y="222" width="76" height="40" rx="5" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.5"/>
+  <text class="s-sm" x="678" y="240" text-anchor="middle" font-size="10">② 補助泡沫</text>
+  <text class="s-sm" x="678" y="254" text-anchor="middle" font-size="10">消防栓</text>
+  <path class="s-dim" stroke-dasharray="5 4" d="M430 268 L636 268 M628 262 L640 268 L628 274"/>
+  <text class="s-key" x="533" y="262" text-anchor="middle" fill="var(--accent3)">距槽壁 ≥ 15 m</text>
+  <text class="s-sm" x="678" y="282" text-anchor="middle" font-size="10">步行至任一泡沫消防栓 ≤ 75 m</text>
+  <text class="s-sm" x="678" y="298" text-anchor="middle" font-size="10">400 L/min · 3.5 kgf/cm² · 最多 3 支</text>
+
+  <!-- connection inlet -->
+  <rect x="760" y="122" width="104" height="52" rx="5" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.5"/>
+  <text class="s-sm" x="812" y="142" text-anchor="middle" font-size="10">③ 連結送液口</text>
+  <text class="s-key" x="812" y="162" text-anchor="middle" fill="var(--accent2)" font-size="12">N ＝ Aq / C</text>
+  <text class="s-sm" x="812" y="190" text-anchor="middle" font-size="10">A：最大水平斷面積（浮頂得以環狀面積）</text>
+  <text class="s-sm" x="812" y="204" text-anchor="middle" font-size="10">q：每 m² 放射量　C ＝ 800 L/min</text>
+
+  <rect x="60" y="330" width="780" height="58" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <text class="s-key" x="450" y="352" text-anchor="middle" fill="var(--warn)">§220Ⅳ 水源容量 ＝ ①固定式泡沫放出口（水溶液量 × 液面積）＋ ②補助泡沫消防栓（放射量 × 20 分鐘）</text>
+  <text class="s-sm" x="450" y="374" text-anchor="middle">再依 §220 本文「加計配管內所需之水溶液量」。<tspan font-weight="700">冷卻撒水（§216）的水源是另外一筆，不併入這條算式</tspan></text>
+</svg>
+<figcaption>圖 9　室外儲槽的四套系統。①②③ 屬泡沫滅火設備，④ 冷卻撒水是獨立的一套，水源與緊急電源分別計算</figcaption>
+</figure>
+
+<h3>§213 Ⅰ　泡沫放出口應設數量（依儲槽直徑）</h3>
+<div class="scroll">
+<table>
+<thead>
+<tr><th rowspan="2">儲槽直徑</th><th colspan="2" class="c">固定頂儲槽</th><th class="c">內浮頂儲槽</th><th class="c">外浮頂儲槽</th></tr>
+<tr><th class="c">Ⅰ型 或 Ⅱ型</th><th class="c">Ⅲ型 或 Ⅳ型</th><th class="c">Ⅱ型</th><th class="c">特殊型</th></tr>
+</thead>
+<tbody>
+<tr><td>未達 13 m</td><td class="c" rowspan="3"><b>1</b></td><td class="c" rowspan="3"><b>1</b></td><td class="c">2</td><td class="c">2</td></tr>
+<tr><td>13 m 以上未達 19 m</td><td class="c">3</td><td class="c">3</td></tr>
+<tr><td>19 m 以上未達 24 m</td><td class="c">4</td><td class="c">4</td></tr>
+<tr><td>24 m 以上未達 35 m</td><td class="c">2</td><td class="c">2</td><td class="c">5</td><td class="c">5</td></tr>
+<tr><td>35 m 以上未達 42 m</td><td class="c">3</td><td class="c">3</td><td class="c">6</td><td class="c">6</td></tr>
+<tr><td>42 m 以上未達 46 m</td><td class="c">4</td><td class="c">4</td><td class="c">7</td><td class="c">7</td></tr>
+<tr><td>46 m 以上未達 53 m</td><td class="c">5</td><td class="c">6</td><td class="c">7</td><td class="c">7</td></tr>
+<tr><td>53 m 以上未達 60 m</td><td class="c">6</td><td class="c">8</td><td class="c">8</td><td class="c">8</td></tr>
+<tr><td>60 m 以上未達 67 m</td><td class="c">8</td><td class="c">10</td><td class="c" rowspan="6">—</td><td class="c">9</td></tr>
+<tr><td>67 m 以上未達 73 m</td><td class="c">9</td><td class="c">12</td><td class="c">10</td></tr>
+<tr><td>73 m 以上未達 79 m</td><td class="c">11</td><td class="c">14</td><td class="c">11</td></tr>
+<tr><td>79 m 以上未達 85 m</td><td class="c">13</td><td class="c">16</td><td class="c">12</td></tr>
+<tr><td>85 m 以上未達 90 m</td><td class="c">14</td><td class="c">18</td><td class="c">12</td></tr>
+<tr><td>90 m 以上未達 95 m</td><td class="c">16</td><td class="c">20</td><td class="c">13</td></tr>
+<tr><td>95 m 以上未達 99 m</td><td class="c">17</td><td class="c">22</td><td class="c">—</td><td class="c">13</td></tr>
+<tr><td>99 m 以上</td><td class="c">19</td><td class="c">24</td><td class="c">—</td><td class="c">14</td></tr>
+</tbody>
+</table>
+</div>
+<p class="lede">放出口須<b>等間隔</b>裝設在<b>不因火災或地震可能造成損害</b>之儲槽側板外圍上（§213Ⅰ 本文）。<br>
+<b>內浮頂儲槽只到「53 m 以上未達 60 m」的 8 個為止</b>，60 m 以上不再列值——實務上內浮頂槽不會做到那麼大。<br>
+表註四：內浮頂儲槽浮頂採用<b>鋼製雙層甲板（Double deck）或鋼製浮筒式（Pontoon）甲板</b>者，
+其泡沫放出口種類及數量<b>得比照外浮頂儲槽</b>設置。</p>
+
+<figure>
+<svg viewBox="0 0 900 300" role="img" aria-label="五種泡沫放出口的注入位置與適用槽型">
+  <text class="s-txt" x="450" y="22" text-anchor="middle" font-weight="700">§213 表註一　五種泡沫放出口</text>
+
+  <!-- I -->
+  <rect x="30" y="52" width="150" height="110" rx="6" fill="none" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-key" x="105" y="46" text-anchor="middle">Ⅰ 型</text>
+  <path class="s-line" d="M50 76 L50 150 L160 150 L160 76"/>
+  <path class="s-line" d="M50 76 L160 76"/>
+  <path class="s-thin" d="M50 118 L160 118"/>
+  <rect x="42" y="68" width="22" height="12" fill="var(--fill1)" stroke="var(--accent)"/>
+  <path class="s-dim" d="M64 74 L64 112 L100 112"/>
+  <text class="s-sm" x="105" y="176" text-anchor="middle" font-size="10">固定頂・<tspan font-weight="700">上部注入</tspan></text>
+  <text class="s-sm" x="105" y="190" text-anchor="middle" font-size="10">有泡沫<tspan font-weight="700">導管或滑道</tspan></text>
+  <text class="s-sm" x="105" y="204" text-anchor="middle" font-size="10">不攪動液面・可阻止逆流</text>
+
+  <!-- II -->
+  <rect x="196" y="52" width="150" height="110" rx="6" fill="none" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-key" x="271" y="46" text-anchor="middle">Ⅱ 型</text>
+  <path class="s-line" d="M216 76 L216 150 L326 150 L326 76"/>
+  <path class="s-line" d="M216 76 L326 76"/>
+  <path class="s-thin" d="M216 118 L326 118"/>
+  <rect x="208" y="68" width="22" height="12" fill="var(--fill1)" stroke="var(--accent)"/>
+  <path class="s-dim" d="M230 80 L218 96 M218 96 L218 116"/>
+  <text class="s-sm" x="271" y="176" text-anchor="middle" font-size="10">固定頂或上部注入</text>
+  <text class="s-sm" x="271" y="190" text-anchor="middle" font-size="10">附<tspan font-weight="700">泡沫反射板</tspan></text>
+  <text class="s-sm" x="271" y="204" text-anchor="middle" font-size="10">泡沫沿側板<tspan font-weight="700">內面流下</tspan></text>
+
+  <!-- special -->
+  <rect x="362" y="52" width="160" height="110" rx="6" fill="none" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-key" x="442" y="46" text-anchor="middle">特殊型</text>
+  <path class="s-line" d="M382 76 L382 150 L502 150 L502 76"/>
+  <path class="s-line" d="M394 110 L490 110"/>
+  <path class="s-line" d="M394 110 L394 96 M490 110 L490 96"/>
+  <rect x="374" y="68" width="20" height="12" fill="var(--fill1)" stroke="var(--accent)"/>
+  <text class="s-sm" x="442" y="176" text-anchor="middle" font-size="10"><tspan font-weight="700">外浮頂</tspan>儲槽上部注入</text>
+  <text class="s-sm" x="442" y="190" text-anchor="middle" font-size="10">注入側板與<tspan font-weight="700">泡沫隔板</tspan>之環狀部</text>
+  <text class="s-sm" x="442" y="204" text-anchor="middle" font-size="10">隔板高 ≥0.3 m、距槽內側 ≥0.3 m</text>
+
+  <!-- III -->
+  <rect x="538" y="52" width="150" height="110" rx="6" fill="none" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-key" x="613" y="46" text-anchor="middle">Ⅲ 型</text>
+  <path class="s-line" d="M558 76 L558 150 L668 150 L668 76"/>
+  <path class="s-line" d="M558 76 L668 76"/>
+  <path class="s-thin" d="M558 118 L668 118"/>
+  <path class="s-dim" d="M600 168 L600 150 M600 150 L613 142"/>
+  <rect x="588" y="166" width="24" height="10" fill="var(--fill3)" stroke="var(--accent3)"/>
+  <text class="s-sm" x="613" y="196" text-anchor="middle" font-size="10">固定頂・<tspan font-weight="700">槽底注入</tspan></text>
+  <text class="s-sm" x="613" y="210" text-anchor="middle" font-size="10">由泡沫輸送管送入</text>
+  <text class="s-sm" x="613" y="224" text-anchor="middle" font-size="10">限<tspan font-weight="700">不溶性物質</tspan>且儲存溫度 ≤50℃</text>
+  <text class="s-sm" x="613" y="238" text-anchor="middle" font-size="10">或動粘度 ≤100 cSt</text>
+
+  <!-- IV -->
+  <rect x="704" y="52" width="166" height="110" rx="6" fill="none" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-key" x="787" y="46" text-anchor="middle">Ⅳ 型</text>
+  <path class="s-line" d="M724 76 L724 150 L850 150 L850 76"/>
+  <path class="s-line" d="M724 76 L850 76"/>
+  <path class="s-thin" d="M724 118 L850 118"/>
+  <path class="s-dim" stroke-dasharray="4 3" d="M760 150 L760 130 L790 122 L800 118"/>
+  <rect x="750" y="166" width="24" height="10" fill="var(--fill3)" stroke="var(--accent3)"/>
+  <path class="s-dim" d="M762 166 L762 150"/>
+  <text class="s-sm" x="787" y="196" text-anchor="middle" font-size="10">固定頂・<tspan font-weight="700">槽底注入</tspan></text>
+  <text class="s-sm" x="787" y="210" text-anchor="middle" font-size="10">末端接<tspan font-weight="700">存放筒</tspan>內的特殊軟管</text>
+  <text class="s-sm" x="787" y="224" text-anchor="middle" font-size="10">送泡沫時軟管伸直至液面放出</text>
+
+  <text class="s-key" x="450" y="268" text-anchor="middle">記法：<tspan font-weight="700">Ⅰ・Ⅱ 型從上面灌，Ⅲ・Ⅳ 型從底下打，特殊型只給外浮頂</tspan></text>
+  <text class="s-sm" x="450" y="290" text-anchor="middle">表註二：特殊型安裝在<tspan font-weight="700">浮頂上方</tspan>者，得免附設泡沫反射板</text>
+</svg>
+<figcaption>圖 10　五種泡沫放出口。Ⅰ／Ⅱ 型是上部注入、Ⅲ／Ⅳ 型是槽底注入（Ⅳ 型多一段可伸展的特殊軟管），特殊型專供外浮頂</figcaption>
+</figure>
+
+<h3>§213 Ⅱ　不溶性第四類：泡沫水溶液量與放出率</h3>
+<div class="scroll">
+<table>
+<thead>
+<tr><th rowspan="2">儲存公共危險物品種類</th><th colspan="2" class="c">Ⅰ 型</th><th colspan="2" class="c">Ⅱ 型</th><th colspan="2" class="c">特殊型</th><th colspan="2" class="c">Ⅲ 型</th><th colspan="2" class="c">Ⅳ 型</th></tr>
+<tr><th class="c">水溶液量</th><th class="c">放出率</th><th class="c">水溶液量</th><th class="c">放出率</th><th class="c">水溶液量</th><th class="c">放出率</th><th class="c">水溶液量</th><th class="c">放出率</th><th class="c">水溶液量</th><th class="c">放出率</th></tr>
+</thead>
+<tbody>
+<tr><td>閃火點<b>未達 21℃</b>之第四類</td><td class="c"><b>120</b></td><td class="c">4</td><td class="c"><b>220</b></td><td class="c">4</td><td class="c"><b>240</b></td><td class="c"><b>8</b></td><td class="c"><b>220</b></td><td class="c">4</td><td class="c"><b>220</b></td><td class="c">4</td></tr>
+<tr><td>閃火點 <b>21℃ 以上未達 70℃</b></td><td class="c"><b>80</b></td><td class="c">4</td><td class="c"><b>120</b></td><td class="c">4</td><td class="c"><b>160</b></td><td class="c"><b>8</b></td><td class="c"><b>120</b></td><td class="c">4</td><td class="c"><b>120</b></td><td class="c">4</td></tr>
+<tr><td>閃火點 <b>70℃ 以上</b></td><td class="c"><b>60</b></td><td class="c">4</td><td class="c"><b>100</b></td><td class="c">4</td><td class="c"><b>120</b></td><td class="c"><b>8</b></td><td class="c"><b>100</b></td><td class="c">4</td><td class="c"><b>100</b></td><td class="c">4</td></tr>
+</tbody>
+</table>
+</div>
+<p class="lede">單位：泡沫水溶液量 <b>L/m²</b>、放出率 <b>L/min·m²</b>。表中的量要「<b>乘以該儲槽液面積</b>」才是應放射量（§213Ⅱ 本文）。<br>
+<b>三條規律</b>：① <b>放出率只有兩個值：特殊型 8，其餘全部 4</b>。
+② <b>Ⅱ、Ⅲ、Ⅳ 型的水溶液量完全相同</b>（220／120／100），只有 Ⅰ 型比較低、特殊型比較高。
+③ <b>放射時間 ＝ 水溶液量 ÷ 放出率</b>——除下去會發現 Ⅰ 型是 30／20／15 分鐘，Ⅱ Ⅲ Ⅳ 型是 55／30／25 分鐘，特殊型是 30／20／15 分鐘。</p>
+
+<h3>§213 Ⅲ　非不溶性第四類（耐酒精型泡沫）</h3>
+<table>
+<thead><tr><th class="c">Ⅰ 型</th><th class="c">Ⅱ 型</th><th class="c">特殊型</th><th class="c">Ⅲ 型</th><th class="c">Ⅳ 型</th></tr></thead>
+<tbody>
+<tr><td class="c">水溶液量 <b>160</b>　放出率 <b>8</b></td><td class="c">水溶液量 <b>240</b>　放出率 <b>8</b></td><td class="c">—</td><td class="c">—</td><td class="c">水溶液量 <b>240</b>　放出率 <b>8</b></td></tr>
+</tbody>
+</table>
+<p class="lede">表註一：<b>使用耐酒精型泡沫能有效滅火時，其水溶液量及放出率得依廠商提示值核計</b>。
+表註二：單位同上。<br>
+<b>特殊型與 Ⅲ 型是「—」</b>——非不溶性物質不得使用這兩種放出口。
+另外 §213Ⅳ 規定：前款（第三款）並依 §213 第四款表列的<b>公共危險物品種類乘以係數值</b>（醇類 1.0／1.25／2.0、醚類 1.25／1.5／2.0、酯類 1.0、酮類 1.0、醛類 1.25／2.0、胺類 1.0／1.25／2.0、腈類 1.25、有機酸 1.25、氧化丙烯 2.0）；
+<b>未表列之物質，依中央主管機關認可之試驗方法求其係數</b>。</p>
+
+<div class="note">
+  <b>§213 最後一項（末項）容易被跳過。</b>
+  「前項第二款之儲槽<b>如設置特殊型泡沫放出口，其儲槽液面積為浮頂式儲槽環狀部分之表面積</b>。」<br>
+  也就是說：<b>特殊型不是算整個槽的液面積，而是只算浮頂與側板之間那一圈環狀面積</b>。
+  這是為什麼特殊型的水溶液量（240／160／120）比其他型都高——面積基數小很多，單位量必須拉高。
+  §214Ⅱ 連結送液口公式裡的 A 也有同一句話：「浮頂儲槽<b>得以環狀面積核算</b>」。
+</div>
+
+<h3>§214　補助泡沫消防栓與連結送液口</h3>
+<table>
+<thead><tr><th>項目</th><th>規定</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td><b>設置位置</b></td><td>設在儲槽<b>防液堤外圍</b>，距離<b>槽壁 15 m 以上</b>，便於消防救災處</td><td class="n">§214①(一)</td></tr>
+<tr><td><b>步行距離</b></td><td>至任一泡沫消防栓之<b>步行距離 ≤75 m</b></td><td class="n">§214①(一)</td></tr>
+<tr><td><b>泡沫瞄子放射量</b></td><td><b>≥400 L/min</b></td><td class="n">§214①(一)</td></tr>
+<tr><td><b>放射壓力</b></td><td><b>≥3.5 kgf/cm²</b>（0.35 MPa）</td><td class="n">§214①(一)</td></tr>
+<tr><td><b>同時使用支數</b></td><td>全部泡沫消防栓數量<b>超過 3 支時，以同時使用 3 支</b>計算</td><td class="n">§214①(一) 但書</td></tr>
+<tr><td>附設水帶箱</td><td>準用 <b>§40④</b>（室外消防栓水帶箱：表面積 ≥0.8 m²、箱面標字、口徑 63 mm 長 20 m 水帶二條等）</td><td class="n">§214①(二)</td></tr>
+<tr><td><b>連結送液口數量</b></td><td><code>N ＝ A q / C</code><br>A：儲槽<b>最大水平斷面積</b>（浮頂儲槽<b>得以環狀面積</b>核算，m²）<br>q：固定式泡沫放出口<b>每 m² 放射量</b>（L/min·m²，即 §213Ⅱ／Ⅲ 的放出率）<br>C：每一個連結送液口之<b>標準送液量 ＝ 800 L/min</b></td><td class="n">§214②</td></tr>
+</tbody>
+</table>
+
+<div class="ex">
+  <div class="t">實例 5　§213／§214／§220　室外儲槽固定式泡沫的完整計算</div>
+  <div class="given">某<b>室外儲槽</b>（<b>固定頂</b>），內徑 <b>D ＝ 20 m</b>，儲存<b>不溶性</b>之第四類公共危險物品，
+  <b>閃火點 45℃</b>。採 <b>Ⅱ 型</b>泡沫放出口。廠區設 <b>4 支</b>補助泡沫消防栓。</div>
+  <div class="step">① 液面積：<code>A = π × 20² / 4 = 314.16 m²</code></div>
+  <div class="step">② 放出口數量（§213Ⅰ 表，固定頂・Ⅰ 或 Ⅱ 型、直徑 19 m 以上未達 24 m）→ <b>1 個</b></div>
+  <div class="step">③ 泡沫水溶液量與放出率（§213Ⅱ 表，閃火點 21℃ 以上未達 70℃、Ⅱ 型）→ <b>120 L/m²</b>、<b>4 L/min·m²</b></div>
+  <div class="step">④ 固定式泡沫所需水溶液量：<code>120 × 314.16 = 37,699 L ≈ 37.7 m³</code></div>
+  <div class="step">⑤ 應能放射之量：<code>4 × 314.16 = 1,256.6 L/min</code>；放射時間 <code>120 ÷ 4 = 30 分鐘</code></div>
+  <div class="step">⑥ 補助泡沫消防栓（§214①、§220Ⅳ(二)）：4 支&gt;3 支 → 以 <b>3 支</b>計，
+  <code>3 × 400 × 20 分鐘 = 24,000 L ＝ 24 m³</code></div>
+  <div class="step">⑦ 連結送液口（§214②）：<code>N = A q / C = 314.16 × 4 ÷ 800 = 1.57</code> → <b>2 個</b></div>
+  <div class="ans">水源容量（§220Ⅳ）＝ 37.7 ＋ 24 ＝ <b>61.7 m³</b>，另<b>加計配管內所需之水溶液量</b><br>
+  連結送液口 <b>2 個</b>；緊急電源供電容量 ＝ 所需放射時間 30 分鐘 × 1.5 ＝ <b>45 分鐘</b>以上（§221Ⅱ）</div>
+</div>
+
+<div class="warnbox">
+  <b>§220 沒有第三編 §76 第 2 項的「＋20%」。</b>
+  第三編泡沫的水源要「加算充滿配管所需之泡沫水溶液量，<b>且應加算總泡沫水溶液量之百分之二十</b>」（§76Ⅱ）；
+  第四編 §220 本文只寫「<b>並加計配管內所需之水溶液量</b>」，<b>沒有那 20%</b>。<br>
+  這是兩編之間少數「第四編反而比較寬」的地方，而且很容易因為習慣而多乘 1.2。設計送審前建議與當地消防機關確認。
+</div>
+
+<h3>§215、§216　岸壁碼頭的泡沫射水槍，與儲槽的冷卻撒水</h3>
+<table>
+<thead><tr><th>條</th><th>觸發條件</th><th>應加設</th><th>關鍵數字</th></tr></thead>
+<tbody>
+<tr><td class="n"><b>§215</b></td><td><b>室外儲槽</b>儲存<b>閃火點 ≤40℃</b> 之第四類，屬<b>顯著滅火困難場所</b>，
+且設於<b>岸壁、碼頭或其他類似地區</b>並<b>連接輸送設備</b></td><td>固定式泡沫滅火設備<br>＋<b>泡沫射水槍</b>滅火設備</td>
+<td>防護海面上前端水平距離 <b>15 m</b> 以內之海面；距注入口及附屬處理設備各部分水平距離 <b>30 m</b> 以內；
+<b>≥2 具</b>；<b>固定式</b>；放射量 <b>≥1,900 L/min</b>；有效水平放射距離 <b>≥30 m</b></td></tr>
+<tr><td class="n"><b>§216</b></td><td><b>室內或室外儲槽</b>儲存<b>閃火點 ≤70℃</b> 之第四類，屬<b>顯著滅火困難場所</b></td>
+<td>固定式泡沫滅火設備<br>＋<b>冷卻撒水設備</b></td>
+<td>撒水噴孔孔徑 <b>≥4 mm</b>（CNS 12854）；撒水量 <b>≥2 L/min·m²</b>（槽壁總防護面積）；
+<b>水源 ＝ 最大一座儲槽連續放水 4 小時</b>；選擇閥操作高度 <b>0.8～1.5 m</b>；
+啟動後 <b>5 分鐘</b>內能有效撒水；加壓送水裝置距撒水區域 <b>≤500 m</b>；送水區域距加壓送水裝置 <b>≤300 m</b> 者得免設遠隔啟動裝置</td></tr>
+</tbody>
+</table>
+
+<div class="cmp">
+  <b>兩個閃火點門檻不要記反：§215 是 40℃，§216 是 70℃。</b><br>
+  §215（泡沫射水槍）只針對<b>閃火點 40℃ 以下</b>、又在<b>岸壁碼頭</b>、又<b>連接輸送設備</b>的室外儲槽——三個條件缺一不可，適用面極窄。<br>
+  §216（冷卻撒水）門檻寬得多：<b>閃火點 70℃ 以下</b>的第四類，室內或室外儲槽都算。<br>
+  記法：<b>「射水槍要 40，冷卻撒水要 70」——愈危險（閃火點愈低）的才需要射水槍</b>。
+</div>
+
+<div class="ex">
+  <div class="t">實例 6　§216　冷卻撒水設備的水源容量</div>
+  <div class="given">承實例 5 之室外儲槽（<b>D ＝ 20 m</b>、閃火點 45℃ ≤ 70℃，顯著滅火困難場所），
+  <b>槽壁高度 H ＝ 12 m</b>。全廠只有這一座儲槽。</div>
+  <div class="step">① 槽壁總防護面積（側板圓周面）：<code>π × D × H = π × 20 × 12 = 753.98 m²</code></div>
+  <div class="step">② §216③ 撒水量：<code>2 L/min·m² × 753.98 = 1,507.96 L/min</code></div>
+  <div class="step">③ §216④ 加壓送水裝置為<b>專用</b>，幫浦出水量 ≥ 前款撒水量 × 防護面積 → <b>≥1,508 L/min</b></div>
+  <div class="step">④ §216⑤ 水源容量 ＝ 最大一座儲槽<b>連續放水 4 小時（240 分鐘）</b>：
+  <code>1,507.96 × 240 = 361,910 L</code></div>
+  <div class="ans">冷卻撒水水源容量 ≈ <b>362 m³</b>；緊急電源供電容量 <b>≥ 連續放水時間（4 小時）</b>（§216Ⅱ）<br>
+  <span style="font-weight:400">這是全法<b>最長的緊急電源時間</b>——不是 30 分、不是 45 分，而是 <b>4 小時</b>。
+  理由：油槽火災的救災是以小時計的，槽壁一旦被烤到失去強度就會破裂。</span></div>
+</div>
+
+<h3>§217～§221　非儲槽用的泡沫，與加壓送水裝置</h3>
+<table>
+<thead><tr><th>項目</th><th>第三編</th><th>第四編</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td>泡沫噴頭密度</td><td>泡水噴頭每 <b>8 m²</b>／泡沫噴頭每 <b>9 m²</b> 一個</td><td>防護對象<b>表面積</b>（建築物為樓地板面積）每 <b>9 m²</b> 一個</td><td class="n">§71①② / §217②</td></tr>
+<tr><td><b>放射區域</b></td><td>泡沫噴頭 <b>50～100 m²</b></td><td><b>≥100 m²</b>；表面積未滿 100 m² 時依實際計</td><td class="n">§75① / §217③</td></tr>
+<tr><td>放出口・放射量・配管等</td><td>—</td><td>準用 <b>§69、§70、§72～§74、§78、§79、§81</b>；<b>儲槽用泡沫放出口依 §213</b></td><td class="n">§218</td></tr>
+<tr><td><b>移動式泡沫</b></td><td>水源 <b>2 具 × 15 分鐘</b></td><td>水源 <b>4 具 × 30 分鐘</b>（未滿 4 個依實設數）；<b>室內 200 L/min</b>、<b>室外 400 L/min</b>；瞄子放射壓力 <b>≥3.5 kgf/cm²</b></td><td class="n">§76③ / §219①、§220②</td></tr>
+<tr><td>泡沫頭放射時的水源</td><td>最大放射區域<b>繼續放射 20 分鐘</b>以上</td><td>最大放射區域<b>繼續射水 10 分鐘</b>以上</td><td class="n">§76① / §220①</td></tr>
+<tr><td>泡沫射水槍水源</td><td>—</td><td><b>2 具射水槍連續放射 30 分鐘</b></td><td class="n">§220③</td></tr>
+<tr><td><b>加壓送水裝置</b></td><td>重力水箱 <code>H=h₁+h₂+h₃</code>／壓力水箱 <code>P=P₁+P₂+P₃+P₄</code>／幫浦 <code>H=h₁+h₂+h₃+h₄</code></td>
+<td>同結構，但第 4 項是<b>「泡沫放出口、泡沫瞄子或泡沫射水槍之放射壓力」</b>；幫浦採泡沫噴頭方式時出水量與出水壓力<b>準用 §77</b>；應為<b>專用</b>；連接<b>緊急電源</b></td><td class="n">§221Ⅰ</td></tr>
+<tr><td><b>緊急電源</b></td><td>30 分鐘（§38）</td><td>準用 §38，但供電容量在<b>所需放射時間之 1.5 倍以上</b></td><td class="n">§221Ⅱ</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <b>§220① 的「10 分鐘」是第四編唯一一個比第三編短的時間。</b>
+  第三編 §76① 用泡沫頭時是「繼續放射<b>二十分鐘</b>以上」，第四編 §220① 卻是「繼續射水<b>十分鐘</b>以上」。<br>
+  但別急著說第四編比較寬——第四編同時把<b>放射區域從 50～100 m² 拉高到 ≥100 m²</b>（§217③），
+  放射區域變大，總水量未必變少。而且 <b>移動式反而從「2 具 15 分鐘」暴增為「4 具 30 分鐘」</b>（§220②），
+  水量是第三編的 4 倍以上。
+</div>
+
+<!-- ============ 8 ============ -->
+<h2 id="gas"><span class="no">08</span>二氧化碳、惰性氣體、鹵化烴與乾粉（§222～§223）</h2>
+<p class="lede">這三條的寫法一模一樣：<b>全部準用第三編，但（一）二氧化碳全區的藥劑量改用第四編自己的表，（二）都要再乘一個「公共危險物品係數」</b>。</p>
+
+<figure>
+<svg viewBox="0 0 900 340" role="img" aria-label="第222至223條的準用結構與係數乘法">
+  <text class="s-txt" x="450" y="24" text-anchor="middle" font-weight="700">§222／§222-1／§223　三條共用的結構</text>
+
+  <rect x="40" y="44" width="240" height="88" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.6"/>
+  <text class="s-key" x="160" y="70" text-anchor="middle" fill="var(--accent2)">步驟 1　照第三編算</text>
+  <text class="s-sm" x="160" y="94" text-anchor="middle">CO₂ 全區：<tspan font-weight="700">改用 §222Ⅰ① 專表</tspan></text>
+  <text class="s-sm" x="160" y="112" text-anchor="middle">其餘一律準用 §82～§111 各條</text>
+
+  <path class="s-dim" d="M284 88 L336 88 M328 82 L340 88 L328 94"/>
+
+  <rect x="344" y="44" width="240" height="88" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.6"/>
+  <text class="s-key" x="464" y="70" text-anchor="middle" fill="var(--warn)">步驟 2　乘公共危險物品係數</text>
+  <text class="s-sm" x="464" y="94" text-anchor="middle">依 <tspan font-weight="700">§222 第 3 項</tspan>的 50 列物品表</text>
+  <text class="s-sm" x="464" y="112" text-anchor="middle">未表列者：中央主管機關<tspan font-weight="700">認可之設計係數值</tspan></text>
+
+  <path class="s-dim" d="M588 88 L640 88 M632 82 L644 88 L632 94"/>
+
+  <rect x="648" y="44" width="212" height="88" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.6"/>
+  <text class="s-key" x="754" y="70" text-anchor="middle" fill="var(--accent3)">步驟 3　開口加算</text>
+  <text class="s-sm" x="754" y="94" text-anchor="middle">CO₂ 全區、開口部未設自動關閉裝置：</text>
+  <text class="s-key" x="754" y="114" text-anchor="middle" fill="var(--accent3)">開口面積 × 5 kg/m²</text>
+
+  <text class="s-txt" x="450" y="166" text-anchor="middle" font-weight="700">§222 Ⅰ①　全區放射方式二氧化碳滅火藥劑量（網頁版省略之表）</text>
+  <text class="s-sm" x="450" y="186" text-anchor="middle">但實際量未達所列之量時，以該滅火藥劑之<tspan font-weight="700">總量所列最低限度之基本量</tspan>計算</text>
+
+  <path class="s-line" d="M110 300 L830 300"/>
+  <path class="s-line" d="M110 300 L110 206"/>
+  <text class="s-sm" x="96" y="212" text-anchor="end">kg/m³</text>
+  <text class="s-sm" x="96" y="302" text-anchor="end">0</text>
+  <rect x="130" y="212" width="100" height="88" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.2"/>
+  <text class="s-key" x="180" y="232" text-anchor="middle">1.2</text>
+  <text class="s-sm" x="180" y="318" text-anchor="middle">未達 5</text>
+  <text class="s-sm" x="180" y="334" text-anchor="middle">基本量 —</text>
+  <rect x="238" y="219" width="100" height="81" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.2"/>
+  <text class="s-key" x="288" y="239" text-anchor="middle">1.1</text>
+  <text class="s-sm" x="288" y="318" text-anchor="middle">5～15</text>
+  <text class="s-sm" x="288" y="334" text-anchor="middle">基本量 6 kg</text>
+  <rect x="346" y="227" width="100" height="73" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.2"/>
+  <text class="s-key" x="396" y="247" text-anchor="middle">1.0</text>
+  <text class="s-sm" x="396" y="318" text-anchor="middle">15～50</text>
+  <text class="s-sm" x="396" y="334" text-anchor="middle">基本量 17 kg</text>
+  <rect x="454" y="234" width="100" height="66" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.2"/>
+  <text class="s-key" x="504" y="254" text-anchor="middle">0.9</text>
+  <text class="s-sm" x="504" y="318" text-anchor="middle">50～150</text>
+  <text class="s-sm" x="504" y="334" text-anchor="middle">基本量 50 kg</text>
+  <rect x="562" y="242" width="100" height="58" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.2"/>
+  <text class="s-key" x="612" y="262" text-anchor="middle">0.8</text>
+  <text class="s-sm" x="612" y="318" text-anchor="middle">150～1,500</text>
+  <text class="s-sm" x="612" y="334" text-anchor="middle">基本量 135 kg</text>
+  <rect x="670" y="246" width="100" height="54" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.2"/>
+  <text class="s-key" x="720" y="266" text-anchor="middle">0.75</text>
+  <text class="s-sm" x="720" y="318" text-anchor="middle">1,500 以上</text>
+  <text class="s-sm" x="720" y="334" text-anchor="middle">基本量 1,200 kg</text>
+</svg>
+<figcaption>圖 11　§222 的三步驟，以及全區放射 CO₂ 的六級藥劑量階梯。體積越大單位量越低（1.2 → 0.75），但各級都有一個「基本需要量」保底</figcaption>
+</figure>
+
+<h3>§222 Ⅰ①　防護區域體積與所需藥劑量（全表）</h3>
+<table>
+<thead><tr><th>防護區域體積（m³）</th><th class="n">每 m³ 所需滅火藥劑量（kg/m³）</th><th class="n">滅火藥劑之基本需要量（kg）</th><th class="n">交叉點體積</th></tr></thead>
+<tbody>
+<tr><td><b>未達 5</b></td><td class="n"><b>1.2</b></td><td class="n">—</td><td class="n">—</td></tr>
+<tr><td><b>5 以上未達 15</b></td><td class="n"><b>1.1</b></td><td class="n"><b>6</b></td><td class="n">6 ÷ 1.1 ≈ 5.45 m³</td></tr>
+<tr><td><b>15 以上未達 50</b></td><td class="n"><b>1</b></td><td class="n"><b>17</b></td><td class="n">17 m³</td></tr>
+<tr><td><b>50 以上未達 150</b></td><td class="n"><b>0.9</b></td><td class="n"><b>50</b></td><td class="n">50 ÷ 0.9 ≈ 55.6 m³</td></tr>
+<tr><td><b>150 以上未達 1,500</b></td><td class="n"><b>0.8</b></td><td class="n"><b>135</b></td><td class="n">135 ÷ 0.8 ≈ 168.8 m³</td></tr>
+<tr><td><b>1,500 以上</b></td><td class="n"><b>0.75</b></td><td class="n"><b>1,200</b></td><td class="n">1,200 ÷ 0.75 ＝ 1,600 m³</td></tr>
+</tbody>
+</table>
+<p class="lede">「交叉點體積」＝ 基本需要量 ÷ 單位藥劑量。<b>防護區域體積小於交叉點時，用基本需要量；大於時，用「體積 × 單位量」</b>。
+例如 160 m³ 落在第 5 級，<code>160 × 0.8 = 128 kg</code> 小於基本需要量 135 kg，所以要取 <b>135 kg</b>。<br>
+記法：<b>1.2／1.1／1／0.9／0.8／0.75</b> 對應 <b>—／6／17／50／135／1200</b>，
+體積級距是 <b>5／15／50／150／1500</b>（每一級大約是前一級的 3 倍或 10 倍）。</p>
+
+<div class="ex">
+  <div class="t">實例 7　§222　全區放射二氧化碳的藥劑量（含係數與開口加算）</div>
+  <div class="given">某公共危險物品處理場所以全區放射方式之 CO₂ 滅火設備防護，
+  防護區域體積 <b>400 m³</b>，內部儲存<b>乙醇</b>（§222Ⅲ 表列係數 <b>1.2</b>），
+  開口部<b>未設自動關閉裝置</b>，面積 <b>3 m²</b>。</div>
+  <div class="step">① §222Ⅰ① 查表：400 m³ 落在「150 以上未達 1,500」→ 單位量 <b>0.8 kg/m³</b>、基本需要量 135 kg</div>
+  <div class="step">② <code>400 × 0.8 = 320 kg</code>，大於基本需要量 135 kg → 取 <b>320 kg</b></div>
+  <div class="step">③ §222Ⅲ 係數（乙醇，二氧化碳欄）＝ <b>1.2</b> → <code>320 × 1.2 = 384 kg</code></div>
+  <div class="step">④ §222Ⅰ② 開口加算：<code>3 × 5 = 15 kg</code></div>
+  <div class="ans">所需滅火藥劑量 ＝ 384 ＋ 15 ＝ <b>399 kg</b></div>
+</div>
+
+<div class="warnbox">
+  <b>實例 7 第 ③④ 步的順序，條文其實沒有寫死。</b>
+  §222 第 3 項的文字是「……<b>乘以第一項</b>、局部放射方式乘以 §83② 或惰性氣體滅火設備乘以 §83-2 <b>所算出之量</b>」。
+  這裡的「第一項」<b>字面上包含第 ①②兩款</b>（藥劑量表＋開口加算），
+  照字面就會變成 <code>(320 + 15) × 1.2 = 402 kg</code>。<br>
+  本頁採實務通行的做法——<b>係數只乘體積項，開口加算另計</b>（399 kg），
+  理由是開口洩漏量與物品性質無關。但<b>條文並未明文</b>，
+  兩種算法差 3 kg（約 0.8%），<b>設計送審前建議向當地消防機關確認採哪一種</b>。
+</div>
+
+<h3>§222 Ⅲ　公共危險物品滅火藥劑係數表（部分節錄）</h3>
+<div class="scroll">
+<table>
+<thead><tr><th>公共危險物品</th><th class="c">二氧化碳</th><th class="c">惰性氣體<br>IG-100／IG-55／IG-541</th><th class="c">鹵化烴<br>HFC-23／HFC-227ea</th><th class="c">乾粉<br>第一種</th><th class="c">第二種</th><th class="c">第三種</th><th class="c">第四種</th></tr></thead>
+<tbody>
+<tr><td><b>汽油・輕油・煤油・重油</b></td><td class="c"><b>1.0</b></td><td class="c"><b>1.0</b></td><td class="c"><b>1.0</b></td><td class="c">1.0</td><td class="c">1.0</td><td class="c">1.0</td><td class="c">1.0</td></tr>
+<tr><td>原油・潤滑油</td><td class="c">1.0</td><td class="c">—</td><td class="c">—</td><td class="c">1.0</td><td class="c">1.0</td><td class="c">1.0</td><td class="c">1.0</td></tr>
+<tr><td><b>乙醇</b></td><td class="c"><b>1.2</b></td><td class="c">—</td><td class="c">—</td><td class="c">1.2</td><td class="c">1.2</td><td class="c">1.2</td><td class="c">1.2</td></tr>
+<tr><td>丙烯腈</td><td class="c">1.2</td><td class="c">—</td><td class="c">—</td><td class="c">1.2</td><td class="c">1.2</td><td class="c">1.2</td><td class="c">1.2</td></tr>
+<tr><td><b>二硫化碳</b></td><td class="c"><b>3.0</b></td><td class="c">—</td><td class="c">—</td><td class="c"><b>—</b></td><td class="c"><b>—</b></td><td class="c"><b>—</b></td><td class="c"><b>—</b></td></tr>
+<tr><td><b>氧化丙烯</b></td><td class="c"><b>1.8</b></td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td class="c">—</td></tr>
+<tr><td>二咢烷／甲醛</td><td class="c"><b>1.6</b></td><td class="c">—</td><td class="c">—</td><td class="c">1.2</td><td class="c">1.2</td><td class="c">1.2</td><td class="c">1.2</td></tr>
+<tr><td>乙醚</td><td class="c">1.2</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td class="c">—</td></tr>
+<tr><td>戊烷</td><td class="c">1.0</td><td class="c">—</td><td class="c">—</td><td class="c"><b>1.4</b></td><td class="c"><b>1.4</b></td><td class="c"><b>1.4</b></td><td class="c"><b>1.4</b></td></tr>
+<tr><td><b>乙醛</b></td><td class="c">（空白）</td><td class="c">—</td><td class="c">—</td><td class="c"><b>—</b></td><td class="c"><b>—</b></td><td class="c"><b>—</b></td><td class="c"><b>—</b></td></tr>
+<tr><td>氯乙烯／氯苯</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td class="c"><b>1.0</b></td><td class="c">—</td></tr>
+</tbody>
+</table>
+</div>
+<p class="lede"><b>表註：標有「－」者，不可用為該公共危險物品之滅火劑。</b>這是全表最重要的一句——
+「—」不是「係數為 1」，而是<b>禁止使用</b>。<br>
+全表共約 <b>50 列</b>物品，本頁只節錄最常考與最極端的幾列。<b>完整表請查
+<a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0120029&amp;flno=222" target="_blank" rel="noopener">§222 的「完整條文」PDF</a></b>。<br>
+四個值得記的極端值：<b>二硫化碳 CO₂ 係數 3.0（全表最高）</b>、<b>氧化丙烯 1.8</b>、<b>二咢烷與甲醛 1.6</b>、
+<b>戊烷的乾粉係數 1.4（乾粉欄最高）</b>。另外<b>只有汽油、輕油、煤油、重油四種油品，惰性氣體與鹵化烴兩欄才有值（均為 1.0）</b>——
+其餘物品在這兩欄一律空白或「—」，這也呼應了 §198 備註六「油品場所選設惰性氣體或鹵化烴時，防護區域體積應未滿 1,000 m³」。</p>
+
+<table>
+<thead><tr><th class="n">條</th><th>設備</th><th>準用範圍</th><th>係數怎麼乘</th></tr></thead>
+<tbody>
+<tr><td class="n"><b>§222Ⅰ</b></td><td><b>二氧化碳</b></td><td>§82Ⅰ、§83、§84～§88、§89Ⅰ及Ⅱ、§90～§92、§93Ⅰ、§94～§96、§97</td><td>全區乘 <b>§222Ⅰ</b>；局部乘 <b>§83②</b> 所算出之量</td></tr>
+<tr><td class="n"><b>§222Ⅱ</b></td><td><b>惰性氣體</b></td><td>§82Ⅱ 之 <b>IG-100、IG-55、IG-541</b> 藥劑及Ⅲ、§83-1、§83-2、§84Ⅰ、§85、§87Ⅰ、§88、§89Ⅰ及Ⅲ、§90～§92、§93Ⅱ、§94、§95、§96-1、§97</td><td>乘 <b>§83-2</b> 所算出之量</td></tr>
+<tr><td class="n"><b>§222-1</b></td><td><b>鹵化烴</b></td><td>§97-1Ⅰ 之 <b>HFC-23、HFC-227ea</b> 藥劑、Ⅱ及Ⅲ、§97-2～§97-10</td><td>乘 <b>§97-3</b> 所算出之量</td></tr>
+<tr><td class="n"><b>§223</b></td><td><b>乾粉</b></td><td>§98～§111（<b>不含 §111-1 簡易自動滅火設備</b>）</td><td>乘 <b>§99</b> 所算出之量</td></tr>
+</tbody>
+</table>
+
+<div class="cmp">
+  <b>藥劑種類在第四編被限縮了。</b>
+  第三編的惰性氣體有 <b>IG-100、IG-01、IG-55、IG-541</b> 四種（§82Ⅱ），
+  但 §222Ⅱ 只準用其中的 <b>IG-100、IG-55、IG-541</b>——<b>IG-01（純氬氣）不能用在公共危險物品場所</b>。<br>
+  鹵化烴同理：第三編有 <b>HFC-23、HFC-227ea、FK-5-1-12</b> 三種（§97-1Ⅰ），
+  §222-1 只準用前兩種——<b>FK-5-1-12 出局</b>。<br>
+  這與 §198 附表備註五的限制完全一致，兩處要一起記。
+</div>
+
+<!-- ============ 9 ============ -->
+<h2 id="hpg"><span class="no">09</span>可燃性高壓氣體場所與加氣站（§228～§233）</h2>
+<p class="lede">第四編的最後六條自成一格：<b>對象是氣體不是液體，目的是冷卻不是滅火，面積基準是槽壁不是樓地板</b>。</p>
+
+<figure>
+<svg viewBox="0 0 900 360" role="img" aria-label="加氣站的防護面積六個項目與射水設備配置">
+  <text class="s-txt" x="450" y="24" text-anchor="middle" font-weight="700">§230③　加氣站防護面積：六個項目、六個定額</text>
+
+  <rect x="40" y="44" width="250" height="46" rx="6" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-sm" x="120" y="72" text-anchor="middle">（一）加氣機</text>
+  <text class="s-key" x="240" y="72" text-anchor="middle" fill="var(--accent2)">每臺 3.5 m²</text>
+
+  <rect x="325" y="44" width="250" height="46" rx="6" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-sm" x="405" y="72" text-anchor="middle">（二）加氣車位</text>
+  <text class="s-key" x="525" y="72" text-anchor="middle" fill="var(--accent2)">每處 2 m²</text>
+
+  <rect x="610" y="44" width="250" height="46" rx="6" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-sm" x="686" y="66" text-anchor="middle">（三）儲氣槽人孔</text>
+  <text class="s-key" x="800" y="66" text-anchor="middle" fill="var(--accent2)">每座 3 處</text>
+  <text class="s-key" x="800" y="84" text-anchor="middle" fill="var(--accent2)">共 3 m²</text>
+
+  <rect x="40" y="102" width="250" height="46" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-sm" x="120" y="130" text-anchor="middle">（四）壓縮機</text>
+  <text class="s-key" x="240" y="130" text-anchor="middle" fill="var(--accent3)">每臺 3 m²</text>
+
+  <rect x="325" y="102" width="250" height="46" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-sm" x="405" y="130" text-anchor="middle">（五）幫浦</text>
+  <text class="s-key" x="525" y="130" text-anchor="middle" fill="var(--accent3)">每臺 2 m²</text>
+
+  <rect x="610" y="102" width="250" height="46" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.8"/>
+  <text class="s-sm" x="690" y="130" text-anchor="middle">（六）氣槽車卸收區</text>
+  <text class="s-key" x="805" y="130" text-anchor="middle">每處 30 m²</text>
+
+  <text class="s-sm" x="450" y="176" text-anchor="middle">記法：<tspan font-weight="700">加氣機 3.5、車位 2、人孔 3、壓縮機 3、幫浦 2、卸收區 30</tspan>——只有卸收區是兩位數，其餘都是個位數</text>
+
+  <path class="s-dim" stroke-dasharray="4 3" d="M40 196 L860 196"/>
+
+  <text class="s-txt" x="450" y="224" text-anchor="middle" font-weight="700">§230①②　加氣站以外的防護面積</text>
+  <rect x="80" y="240" width="350" height="72" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-key" x="255" y="262" text-anchor="middle" fill="var(--warn)">① 儲槽</text>
+  <text class="s-sm" x="255" y="284" text-anchor="middle">儲槽<tspan font-weight="700">本體之外表面積</tspan>（圓筒形者含端板部分）</text>
+  <text class="s-sm" x="255" y="302" text-anchor="middle">＋附屬之<tspan font-weight="700">液面計及閥類</tspan>之露出表面積</text>
+
+  <rect x="470" y="240" width="350" height="72" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-key" x="645" y="262" text-anchor="middle" fill="var(--warn)">② 前款以外之設備</text>
+  <text class="s-sm" x="645" y="284" text-anchor="middle">露出之表面積。但<tspan font-weight="700">製造設備離地面高度超過 5 m</tspan> 者，</text>
+  <text class="s-sm" x="645" y="302" text-anchor="middle">以 <tspan font-weight="700">5 m 之間隔作水平面切割</tspan>所得之露出表面積為防護範圍</text>
+
+  <text class="s-key" x="450" y="342" text-anchor="middle">注意：儲槽是「外表面積」（整個球或圓筒），不是「槽壁圓周面」——與 §216 冷卻撒水的算法不同</text>
+</svg>
+<figcaption>圖 12　§230 三款防護面積算法。加氣站用定額表，儲槽用外表面積，其他設備用露出表面積並在 5 m 處切割</figcaption>
+</figure>
+
+<h3>§228　可燃性高壓氣體場所的滅火器</h3>
+<table>
+<thead><tr><th class="n">款</th><th>對象</th><th>設置數量／規定</th></tr></thead>
+<tbody>
+<tr><td class="n">①</td><td>製造、儲存或處理場所</td><td>設置 <b>2 具</b>。但<b>樓地板面積 200 m² 以上</b>者，<b>每 50 m²（含未滿）應增設 1 具</b></td></tr>
+<tr><td class="n">②</td><td>儲槽</td><td><b>3 具以上</b></td></tr>
+<tr><td class="n" rowspan="4">③</td><td>加氣站　儲氣槽區</td><td><b>4 具以上</b></td></tr>
+<tr><td>加氣站　加氣機</td><td><b>每臺 1 具以上</b></td></tr>
+<tr><td>加氣站　用火設備處所</td><td><b>1 具以上</b></td></tr>
+<tr><td>加氣站　建築物</td><td>每層樓地板面積 <b>100 m² 以下設 2 具</b>；超過 100 m² 時，<b>每增加（含未滿）100 m² 增設 1 具</b></td></tr>
+<tr><td class="n">④</td><td>儲存場所</td><td>任一點至滅火器之<b>步行距離 ≤15 m</b>，並<b>不得妨礙出入作業</b></td></tr>
+<tr><td class="n">⑤</td><td>設於屋外者</td><td>滅火器<b>置於箱內</b>或有<b>不受雨水侵襲</b>之措施</td></tr>
+<tr><td class="n">⑥</td><td>滅火效能值</td><td>每具對<b>普通火災（A 類）≥4 個</b>、對<b>油類火災（B 類）≥10 個</b>滅火效能值</td></tr>
+<tr><td class="n">⑦</td><td>放置及標示</td><td>依 <b>§31④</b>：固定放置於取用方便之明顯處所，並設<b>紅底白字</b>標明「滅火器」字樣之標識，每字 <b>≥20 cm²</b></td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <b>§228④ 的 15 m 與 §225 的 20 m 不是同一件事。</b>
+  §225 講的是「<b>第五種滅火設備</b>至防護對象任一點的步行距離 <b>20 m</b>」，適用公共危險物品場所；
+  §228④ 講的是「<b>可燃性高壓氣體儲存場所</b>任一點至滅火器的步行距離 <b>15 m</b>」。<br>
+  再加上第三編 §31③ 的<b>滅火器 20 m</b>，全法一共有<b>三個滅火器步行距離</b>：
+  <b>20（一般場所）／20（第五種）／15（高壓氣體儲存場所）</b>——只有高壓氣體那一個是 15。
+</div>
+
+<h3>§229、§231～§233　冷卻撒水與射水設備</h3>
+<div class="scroll">
+<table>
+<thead><tr><th>項目</th><th>冷卻撒水設備（§229）</th><th>射水設備（§231～§233）</th></tr></thead>
+<tbody>
+<tr><td><b>撒水／放水量</b></td><td>防護面積每 m² 每分鐘 <b>≥5 L</b><br><b>但</b>以厚度 <b>≥25 mm</b> 之岩棉或同等以上防火性能之隔熱材被覆，外側再以厚度 <b>≥0.35 mm</b> 符合 CNS 1244 之鋅鐵板或同等以上材料被覆者，<b>撒水量得減半</b>（2.5 L）</td><td>各射水設備放水量 <b>≥450 L/min</b></td></tr>
+<tr><td><b>壓力</b></td><td>—</td><td>放水壓力 <b>≥3.5 kgf/cm²</b>（0.35 MPa）</td></tr>
+<tr><td><b>同時使用</b></td><td>—</td><td>全部射水設備數量<b>超過 2 支時，以同時使用 2 支</b>計算</td></tr>
+<tr><td><b>水源容量</b></td><td>加壓送水裝置<b>連續撒水 30 分鐘</b>之水量以上</td><td><b>2 具</b>射水設備同時放水 <b>30 分鐘</b>之水量以上（＝ <code>2 × 450 × 30 = 27 m³</code>）</td></tr>
+<tr><td><b>設置位置</b></td><td>撒水管使用<b>撒水噴頭或配管穿孔</b>方式，對防護對象<b>均勻撒水</b>；穿孔方式須符合 CNS 12854，<b>孔徑 ≥4 mm</b></td><td>設置個數 <b>≥2 支</b>，設於距防護對象外圍 <b>40 m 以內</b>，能<b>自任何方向</b>對儲槽放射之位置</td></tr>
+<tr><td><b>數量核算</b></td><td>—</td><td>依儲槽<b>表面積</b>，每 <b>50 m²</b>（含未滿）設 1 具；<b>依 §229③ 但書設隔熱措施者，每 100 m²</b>（含未滿）設 1 具</td></tr>
+<tr><td><b>構造與啟動</b></td><td>構造及<b>手動啟動裝置準用 §216</b></td><td>配管、試壓、加壓送水裝置及緊急電源<b>準用 §39 及 §42</b>（即室外消防栓那一套）</td></tr>
+<tr><td><b>室外消防栓箱</b></td><td>—</td><td>室外消防栓應設於<b>屋外</b>且具備消防水帶箱；箱內配置<b>瞄子、開關把手</b>及口徑 <b>63 mm、長 20 m 水帶二條</b></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="ex">
+  <div class="t">實例 8　§228／§229／§230　加氣站的滅火器與冷卻撒水</div>
+  <div class="given">某<b>加氣站</b>：<b>加氣機 2 臺</b>、<b>加氣車位 3 處</b>、<b>儲氣槽人孔 1 座</b>、
+  <b>壓縮機 1 臺</b>、<b>幫浦 1 臺</b>、<b>氣槽車卸收區 1 處</b>；另有辦公建築物 1 層，樓地板面積 <b>120 m²</b>；
+  站內設<b>用火設備處所 1 處</b>。設備<b>未</b>做隔熱被覆。</div>
+  <div class="step">① §230③ 防護面積：加氣機 <code>2 × 3.5 = 7</code>；加氣車位 <code>3 × 2 = 6</code>；
+  儲氣槽人孔 <code>1 座 = 3</code>；壓縮機 <code>1 × 3 = 3</code>；幫浦 <code>1 × 2 = 2</code>；卸收區 <code>1 × 30 = 30</code></div>
+  <div class="step">② 防護面積合計 ＝ <code>7 + 6 + 3 + 3 + 2 + 30 = 51 m²</code></div>
+  <div class="step">③ §229③ 撒水量：<code>5 × 51 = 255 L/min</code>（若有隔熱被覆得減半為 127.5 L/min）</div>
+  <div class="step">④ §229④ 水源容量：<code>255 × 30 = 7,650 L</code></div>
+  <div class="step">⑤ §228③ 滅火器：儲氣槽區 <b>4</b> ＋ 加氣機 <code>2 × 1 = 2</code> ＋ 用火設備處所 <b>1</b>
+  ＋ 建築物（120 m² &gt; 100 m²，故 2 ＋ 1）＝ <b>3</b></div>
+  <div class="ans">冷卻撒水設備水源容量 ≥ <b>7.65 m³</b>；滅火器合計 <b>4 ＋ 2 ＋ 1 ＋ 3 ＝ 10 具</b><br>
+  每具滅火器須對普通火災 ≥4、對油類火災 ≥10 個滅火效能值（§228⑥）</div>
+</div>
+
+<div class="ex">
+  <div class="t">實例 9　§232　射水設備的設置個數</div>
+  <div class="given">某可燃性高壓氣體儲槽，儲槽<b>表面積 480 m²</b>。</div>
+  <div class="step">① §232②：每 <b>50 m²</b>（含未滿）設 1 具 → <code>480 ÷ 50 = 9.6</code> → <b>10 具</b></div>
+  <div class="step">② §232①：另須檢查「設置個數在 2 支以上」→ 10 &gt; 2，符合</div>
+  <div class="step">③ 若依 §229③ 但書做了<b>隔熱被覆</b>：改為每 <b>100 m²</b>（含未滿）1 具 → <code>480 ÷ 100 = 4.8</code> → <b>5 具</b></div>
+  <div class="step">④ §231④ 水源容量：不論設幾具，均為 <b>2 具同時放水 30 分鐘</b> → <code>2 × 450 × 30 = 27,000 L</code></div>
+  <div class="ans">未隔熱：<b>10 具</b>；已隔熱：<b>5 具</b>。兩者水源容量都是 <b>27 m³</b><br>
+  <span style="font-weight:400">關鍵：<b>隔熱被覆同時影響冷卻撒水的「撒水量減半」與射水設備的「50→100 m²」</b>，是 §229③ 但書一條牽動兩處。</span></div>
+</div>
+
+<!-- ============ 10 ============ -->
+<h2 id="annex"><span class="no">10</span>第五編附則（§234～§239）</h2>
+<p class="lede">條號緊接在第四編後面，內容卻是<b>全法通用</b>的：耐燃／耐熱保護、緊急電源、防災中心。這六條管的是<b>整部標準的所有設備</b>，不只公共危險物品場所。</p>
+
+<figure>
+<svg viewBox="0 0 900 330" role="img" aria-label="第235條耐燃保護與耐熱保護的三種做法對照">
+  <text class="s-txt" x="450" y="24" text-anchor="middle" font-weight="700">§235　緊急供電系統配線：兩級保護</text>
+
+  <rect x="40" y="46" width="390" height="196" rx="10" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.8"/>
+  <text class="s-key" x="235" y="72" text-anchor="middle">§235③　電源回路 →　耐燃保護</text>
+  <path class="s-thin" d="M58 84 L412 84"/>
+  <text class="s-sm" x="235" y="106" text-anchor="middle">（一）電線裝於<tspan font-weight="700">金屬導線管槽</tspan>內，並<tspan font-weight="700">埋設於</tspan></text>
+  <text class="s-key" x="235" y="126" text-anchor="middle">防火構造物之混凝土內，保護厚度 ≥20 mm</text>
+  <text class="s-sm" x="235" y="146" text-anchor="middle">但使用不燃材料建造、且符合建築技術規則防火區劃</text>
+  <text class="s-sm" x="235" y="162" text-anchor="middle">規定之<tspan font-weight="700">管道間</tspan>，得免埋設</text>
+  <text class="s-sm" x="235" y="188" text-anchor="middle">（二）使用 <tspan font-weight="700">MI 電纜或耐燃電纜</tspan>時，</text>
+  <text class="s-sm" x="235" y="204" text-anchor="middle">得按電纜裝設法<tspan font-weight="700">直接敷設</tspan></text>
+  <text class="s-sm" x="235" y="228" text-anchor="middle">（三）其他經中央主管機關指定之<tspan font-weight="700">耐燃保護裝置</tspan></text>
+
+  <rect x="470" y="46" width="390" height="196" rx="10" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.8"/>
+  <text class="s-key" x="665" y="72" text-anchor="middle" fill="var(--warn)">§235④　標示燈回路及控制回路 →　耐熱保護</text>
+  <path class="s-thin" d="M488 84 L842 84"/>
+  <text class="s-sm" x="665" y="112" text-anchor="middle">（一）電線於<tspan font-weight="700">金屬導線管槽</tspan>內裝置</text>
+  <text class="s-key" x="665" y="132" text-anchor="middle" fill="var(--warn)">（不必埋混凝土）</text>
+  <text class="s-sm" x="665" y="164" text-anchor="middle">（二）使用 <tspan font-weight="700">MI 電纜、耐燃電纜或耐熱電線電纜</tspan>時，</text>
+  <text class="s-sm" x="665" y="180" text-anchor="middle">得按電纜裝設法直接敷設</text>
+  <text class="s-key" x="665" y="200" text-anchor="middle" fill="var(--warn)">（多了「耐熱電線電纜」這個選項）</text>
+  <text class="s-sm" x="665" y="228" text-anchor="middle">（三）其他經中央主管機關指定之<tspan font-weight="700">耐熱保護裝置</tspan></text>
+
+  <text class="s-key" x="450" y="270" text-anchor="middle">兩級的唯一差別：耐燃要「埋 20 mm 混凝土」，耐熱只要「進金屬管槽」；電纜選項耐熱多一種</text>
+  <text class="s-sm" x="450" y="294" text-anchor="middle">§235① 電氣配線應設<tspan font-weight="700">專用回路</tspan>，不得與一般電路相接，開關有<tspan font-weight="700">消防安全設備別之明顯標示</tspan></text>
+  <text class="s-sm" x="450" y="316" text-anchor="middle">§235② 緊急用電源回路及操作回路使用 <tspan font-weight="700">600 V 耐熱絕緣電線</tspan>或同等耐熱效果以上之電線</text>
+</svg>
+<figcaption>圖 13　§235 的耐燃／耐熱兩級保護。這一條被第三編大量引用——例如緊急照明 §176② 就是直接指向它</figcaption>
+</figure>
+
+<h3>§236　耐燃／耐熱保護的適用範圍（網頁版省略之表）</h3>
+<p class="lede">§236 的附表是<b>十三組系統圖</b>，用線型區分保護等級：<b>粗實線＝耐燃保護、斜線帶＝耐熱保護、雙線＝同軸電纜、細實線＝一般配線、虛線＝配管</b>。
+下表把十三組的<b>設備種類</b>與<b>六個註、三個說明</b>整理出來，圖形本身仍須查
+<a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0120029&amp;flno=236" target="_blank" rel="noopener">§236 的「完整條文」PDF</a>。</p>
+<div class="scroll">
+<table>
+<thead><tr><th class="n">組</th><th>設備種類</th><th>圖中出現的元件</th></tr></thead>
+<tbody>
+<tr><td class="n">1</td><td>室內（外）消防栓設備及<b>射水設備</b></td><td>緊急電源—控制盤或受信總機—電動機・幫浦—消防栓箱；啟動表示燈、啟動裝置</td></tr>
+<tr><td class="n">2</td><td>自動撒水、水霧、泡沫及<b>冷卻撒水設備</b></td><td>緊急電源—控制盤或受信總機—電動機・幫浦；補助撒水栓啟動表示燈、遠隔啟動裝置、警報裝置、壓力檢知裝置、流水檢知裝置</td></tr>
+<tr><td class="n">3</td><td>二氧化碳、惰性氣體、鹵化烴及乾粉滅火設備</td><td>緊急電源—控制盤；音響警報裝置、放射表示燈、探測器、自動關閉裝置、啟動裝置、排放裝置、電磁閥・啟動用氣體容器—儲存容器</td></tr>
+<tr><td class="n">4</td><td>火警自動警報設備</td><td>受信總機、中繼器、探測器、定址式探測器、火警發信機、定址式火警發信機、火警警鈴、標示燈、消防安全設備操作回路</td></tr>
+<tr><td class="n">5</td><td>瓦斯漏氣火警自動警報設備</td><td>受信總機、中繼器、檢知器、瓦斯漏氣表示燈、檢知區域警報裝置、擴音機操作裝置、揚聲器、遠隔操作裝置</td></tr>
+<tr><td class="n">6</td><td>一一九火災通報裝置</td><td>受信總機—一一九火災通報裝置—遠端啟動裝置</td></tr>
+<tr><td class="n">7</td><td>緊急廣播設備</td><td>緊急電源—擴音機—揚聲器；操作裝置（含遠隔操作裝置）或啟動裝置、表示燈</td></tr>
+<tr><td class="n">8</td><td>標示設備</td><td>緊急電源—避難方向指示燈／出口標示燈</td></tr>
+<tr><td class="n">9</td><td>緊急照明設備</td><td>緊急電源—緊急照明燈</td></tr>
+<tr><td class="n">10</td><td>連結送水管及消防專用蓄水池</td><td>緊急電源—控制盤或受信總機—電動機・幫浦—出水口或採水口；啟動裝置、啟動表示燈</td></tr>
+<tr><td class="n">11</td><td>排煙設備</td><td>緊急電源—控制盤或受信總機—電動機・排煙機；排煙口、探測器、手動開關裝置或遠隔操作開關裝置</td></tr>
+<tr><td class="n">12</td><td>緊急電源插座</td><td>緊急電源—緊急電源插座；表示燈</td></tr>
+<tr><td class="n">13</td><td>無線電通信輔助設備</td><td>緊急電源—增幅器—分配器等—天線；無線電接頭、洩波同軸電纜</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>§236 附表　六個註與三個說明（全文）</h3>
+<ol class="law">
+<li><b>火警發信機兼作其他消防安全設備之啟動裝置者</b>：標示燈回路應採<b>耐熱保護</b>。</li>
+<li><b>中繼器（亦稱模組）之緊急電源回路</b>：中繼器<b>內置蓄電池</b>者，得採<b>一般配線</b>。</li>
+<li><b>中繼器之控制回路</b>：得採<b>耐熱保護</b>。</li>
+<li><b>標示設備內置蓄電池</b>者：得採<b>一般配線</b>。</li>
+<li><b>天花板及底板使用不燃材料</b>者：得採<b>耐熱保護</b>；<b>緊急照明燈內置蓄電池</b>者：得採<b>一般配線</b>。</li>
+<li><b>開啟後需外加緊急電源保持開啟狀態</b>者：緊急電源回路應採<b>耐燃保護</b>。</li>
+</ol>
+<p class="lede"><b>說明一</b>：經受信總機或控制盤供應緊急電源之裝置，應採<b>耐燃保護</b>；其<b>控制回路得採耐熱保護</b>。<br>
+<b>說明二</b>：<b>防災監控系統綜合操作裝置</b>與消防安全設備間之配線應採<b>耐熱保護</b>，其與緊急電源間之配線應採<b>耐燃保護</b>。
+但受信總機、擴音機、操作裝置等<b>設於防災中心</b>時，<b>在防災中心其間之配線得採一般配線</b>。<br>
+<b>說明三</b>：線型圖例——<b>粗實線＝耐燃保護</b>、<b>斜線帶＝耐熱保護</b>、<b>雙線＝同軸電纜</b>、<b>細實線＝一般配線</b>、<b>虛線＝配管</b>。</p>
+
+<div class="cmp">
+  <b>「內置蓄電池就可以用一般配線」出現三次</b>（註二中繼器、註四標示設備、註五緊急照明燈）。
+  邏輯很單純：<b>電源就在燈具或模組裡面，那條進來的線斷了也不影響動作</b>，所以不必保護。<br>
+  這正好解釋了第三編 §176 為什麼開頭寫「<b>緊急照明設備除內置蓄電池型外</b>，其配線依……§235 規定」——
+  §236 註五與 §176 是同一件事的兩個寫法。
+</div>
+
+<h3>§234、§237、§238、§239</h3>
+<table>
+<thead><tr><th class="n">條</th><th>內容</th><th>要點</th></tr></thead>
+<tbody>
+<tr><td class="n"><b>§234</b></td><td>室內消防栓、室外消防栓、自動撒水、水霧、泡沫、<b>冷卻撒水</b>、<b>射水設備</b>及<b>連結送水管</b>之
+<b>消防幫浦、電動機、附屬裝置及配管摩擦損失計算</b></td><td>由<b>中央消防機關另定</b>。注意名單裡包含第四編才有的<b>冷卻撒水與射水設備</b>，可見這條是全法通用</td></tr>
+<tr><td class="n"><b>§237①</b></td><td>緊急電源使用符合 <b>CNS 10204</b> 之發電機設備、<b>CNS 10205</b> 之蓄電池設備或具相同效果之設備</td><td>其<b>容量之計算，由中央消防機關另定</b>。CNS <b>10204＝發電機</b>、<b>10205＝蓄電池</b>，兩個編號差 1，不要記反</td></tr>
+<tr><td class="n"><b>§237②</b></td><td>緊急電源裝置<b>切換開關</b></td><td>常用電源切斷時<b>自動切換</b>至緊急用電器具；常用電源恢復時<b>自動恢復</b>由常用電源供應</td></tr>
+<tr><td class="n"><b>§237③</b></td><td>發電機裝設適當開關或<b>連鎖機件</b></td><td>以<b>防止向正常供電線路逆向電力</b>（逆送電）</td></tr>
+<tr><td class="n"><b>§237④</b></td><td>裝設發電機及蓄電池之處所</td><td>為<b>防火構造</b>。但設於<b>屋外</b>且設有<b>不受積水及雨水侵襲</b>之防水措施者，不在此限</td></tr>
+<tr><td class="n"><b>§237⑤</b></td><td>蓄電池設備<b>充電電源</b>之配線</td><td>設<b>專用回路</b>，其<b>開關上應有明顯之標示</b></td></tr>
+<tr><td class="n"><b>§238</b></td><td><b>防災中心</b></td><td><b>樓地板面積 ≥40 m²</b>；位置三款＋構造三款（見下表）</td></tr>
+<tr><td class="n"><b>§239</b></td><td>本標準<b>施行日期，由內政部以命令定之</b></td><td><b>全法最後一條</b></td></tr>
+</tbody>
+</table>
+
+<h3>§238　防災中心</h3>
+<figure>
+<svg viewBox="0 0 900 250" role="img" aria-label="第238條防災中心的位置與構造規定">
+  <text class="s-txt" x="450" y="24" text-anchor="middle" font-weight="700">§238　防災中心：樓地板面積 ≥ 40 m²</text>
+
+  <rect x="50" y="46" width="390" height="164" rx="10" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.6"/>
+  <text class="s-key" x="245" y="72" text-anchor="middle" fill="var(--accent2)">一、位置</text>
+  <path class="s-thin" d="M68 84 L422 84"/>
+  <text class="s-sm" x="245" y="110" text-anchor="middle">（一）設於<tspan font-weight="700">消防人員自外面容易進出</tspan>之位置</text>
+  <text class="s-sm" x="245" y="140" text-anchor="middle">（二）設於便於通達<tspan font-weight="700">緊急昇降機間及特別安全梯</tspan>處</text>
+  <text class="s-key" x="245" y="176" text-anchor="middle" fill="var(--accent2)">（三）出入口至屋外任一出入口之</text>
+  <text class="s-key" x="245" y="196" text-anchor="middle" fill="var(--accent2)">步行距離 ≤ 30 m</text>
+
+  <rect x="470" y="46" width="390" height="164" rx="10" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.6"/>
+  <text class="s-key" x="665" y="72" text-anchor="middle" fill="var(--accent3)">二、構造</text>
+  <path class="s-thin" d="M488 84 L842 84"/>
+  <text class="s-sm" x="665" y="110" text-anchor="middle">（一）<tspan font-weight="700">冷暖、換氣等空調系統為專用</tspan></text>
+  <text class="s-sm" x="665" y="140" text-anchor="middle">（二）防災監控系統相關設備以<tspan font-weight="700">地腳螺栓</tspan></text>
+  <text class="s-sm" x="665" y="158" text-anchor="middle">或其他堅固方法予以<tspan font-weight="700">固定</tspan></text>
+  <text class="s-sm" x="665" y="188" text-anchor="middle">（三）內設<tspan font-weight="700">睡眠、休息區域</tspan>時，</text>
+  <text class="s-sm" x="665" y="204" text-anchor="middle">該部分以<tspan font-weight="700">防火區劃</tspan>間隔</text>
+
+  <text class="s-key" x="450" y="240" text-anchor="middle">40 m² 與 30 m 是本條僅有的兩個數字。空調「專用」是為了避免火場煙氣經共用風管灌進防災中心</text>
+</svg>
+<figcaption>圖 14　§238 防災中心的位置三款與構造三款。與 §192-1 的防災監控系統綜合操作裝置是配套條文</figcaption>
+</figure>
+
+<!-- ============ 11 ============ -->
+<h2 id="card"><span class="no">11</span>速查數字卡</h2>
+
+<div class="scroll">
+<table>
+<thead><tr><th>項目</th><th>數值</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td colspan="3" style="background:var(--fill2);font-weight:700">範圍與分級</td></tr>
+<tr><td><b>第四編條號範圍</b></td><td><b>§193～§233</b>（第一章消防設計 §193～§208、第二章消防安全設備 §209～§233）。<b>§234～§239 屬第五編附則</b></td><td class="n">編章標題</td></tr>
+<tr><td>適用場所五類</td><td>安管辦法之場所／<b>加油站</b>／<b>加氣站</b>／天然氣及可燃性高壓氣體儲槽／<b>爆竹煙火</b>製造儲存販賣</td><td class="n">§193</td></tr>
+<tr><td><b>顯著・製造處理</b></td><td>≥<b>1,000 m²</b>／管制量 ≥<b>100 倍</b>／設備高 ≥<b>6 m</b>／兼作他用</td><td class="n">§194①</td></tr>
+<tr><td><b>顯著・室內儲存</b></td><td>管制量 ≥<b>150 倍</b>／≥<b>150 m²</b>／兼作他用／高 ≥<b>6 m</b> 之一層建築物</td><td class="n">§194②</td></tr>
+<tr><td>顯著・室外儲存</td><td>塊狀硫磺 ≥<b>100 m²</b></td><td class="n">§194③</td></tr>
+<tr><td><b>顯著・儲槽</b></td><td>液體表面積 ≥<b>40 m²</b>／槽高 ≥<b>6 m</b>；室外另加固體管制量 ≥<b>100 倍</b>；室內另加閃火點 <b>40～70℃</b> 且設於一層以外</td><td class="n">§194④⑤</td></tr>
+<tr><td><b>一般・製造處理</b></td><td><b>600～1,000 m²</b>／管制量 <b>10～100 倍</b>／噴漆塗裝印刷清洗淬火鍋爐油壓切削研磨熱媒油等作業</td><td class="n">§195①</td></tr>
+<tr><td>一般・室內儲存</td><td>一層建築物以外／管制量 <b>10～150 倍</b>／≥<b>150 m²</b></td><td class="n">§195②</td></tr>
+<tr><td>一般・室外儲存</td><td>塊狀硫磺 <b>5～100 m²</b>／管制量 ≥<b>100 倍</b></td><td class="n">§195③</td></tr>
+<tr><td>一般・其他</td><td>未達顯著之室內外儲槽場所／<b>第二種販賣場所</b>／未達顯著之室內加油站</td><td class="n">§195④⑤⑥</td></tr>
+<tr><td><b>其他滅火困難</b></td><td><b>室外加油站</b>＋未達顯著或一般者</td><td class="n">§196</td></tr>
+
+<tr><td colspan="3" style="background:var(--fill3);font-weight:700">設備分類與效能值</td></tr>
+<tr><td><b>五種滅火設備</b></td><td>一＝<b>室內或室外消防栓</b>／二＝<b>自動撒水</b>／三＝<b>水霧・泡沫・CO₂・惰性氣體・鹵化烴・乾粉</b>／四＝<b>大型滅火器</b>／五＝<b>滅火器・水桶・水槽・乾燥砂・膨脹蛭石或珍珠岩</b></td><td class="n">§197Ⅰ</td></tr>
+<tr><td><b>兩種防護設備</b></td><td><b>冷卻撒水設備</b>／<b>射水設備</b>（固定式射水槍、移動式射水槍或室外消防栓）</td><td class="n">§197Ⅱ</td></tr>
+<tr><td><b>效能值・製造處理</b></td><td>防火構造每 <b>100 m²</b>／非防火構造每 <b>50 m²</b>（含未滿）＝ 1 效能值</td><td class="n">§199①</td></tr>
+<tr><td><b>效能值・儲存</b></td><td>防火構造每 <b>150 m²</b>／非防火構造每 <b>75 m²</b>（含未滿）＝ 1 效能值</td><td class="n">§199②</td></tr>
+<tr><td>效能值・室外附屬設施</td><td>以<b>水平最大面積</b>為樓地板面積，準用前二款<b>防火構造</b>欄</td><td class="n">§199③</td></tr>
+<tr><td><b>效能值・物品</b></td><td>每達<b>管制量 10 倍</b>（含未滿）＝ 1 效能值</td><td class="n">§199④</td></tr>
+<tr><td><b>器具效能值</b></td><td>水桶（8 L）<b>3 個＝1</b>／水槽 <b>80 L＝1.5</b>／乾燥砂 <b>50 L＝0.5</b>／膨脹蛭石或珍珠岩 <b>160 L＝1</b></td><td class="n">§200</td></tr>
+<tr><td>選設附件</td><td>選<b>水槽</b>須備 <b>3 個 1 L</b> 消防專用水桶；選<b>乾燥砂、膨脹蛭石、膨脹珍珠岩</b>須備<b>鏟子</b></td><td class="n">§225Ⅱ</td></tr>
+<tr><td><b>步行距離</b></td><td>第四種 ≤<b>30 m</b>／第五種 ≤<b>20 m</b>（與其他種別併設者不在此限）；可燃性高壓氣體儲存場所之滅火器 ≤<b>15 m</b></td><td class="n">§224・§225・§228④</td></tr>
+<tr><td>電氣設備處所</td><td>每 <b>100 m²</b>（含未滿）設<b>第五種一具以上</b></td><td class="n">§204</td></tr>
+
+<tr><td colspan="3" style="background:var(--fill4);font-weight:700">警報與標示</td></tr>
+<tr><td><b>火警・製造處理</b></td><td>≥<b>500 m²</b>／管制量 ≥<b>100 倍</b>／兼供他用</td><td class="n">§205Ⅰ①</td></tr>
+<tr><td><b>火警・室內儲存</b></td><td>管制量 ≥<b>100 倍</b>／≥<b>150 m²</b>（安全物品且 ≤<b>500 m²</b> 者除外）／建築物一部分供其使用／高 ≥<b>6 m</b> 之一層建築物</td><td class="n">§205Ⅰ②</td></tr>
+<tr><td><b>手動報警門檻</b></td><td>前項以外場所，數量達<b>管制量 10 倍以上</b>應設<b>手動報警設備或同等功能之緊急通報裝置</b>；<b>平日無作業人員者除外</b></td><td class="n">§205Ⅱ</td></tr>
+<tr><td>標示設備</td><td>加油站所在建築物<b>二樓以上供其他用途</b>者應設</td><td class="n">§206</td></tr>
+<tr><td><b>爆竹煙火</b></td><td>有火藥區之作業區／庫儲區、達管制量之儲存販賣場所 → <b>第五種</b>；合計 ≥<b>150 m²</b> → <b>第一種之室外消防栓</b>（販賣場所除外）</td><td class="n">§206-1</td></tr>
+<tr><td>防護設備門檻</td><td>可燃性高壓氣體製造場所／儲存 ≥<b>3,000 kg</b> 之儲槽／<b>氣槽車卸收區</b>／加氣站之加氣車位、儲氣槽人孔、壓縮機、幫浦。<b>已設水噴霧裝置者得免設</b></td><td class="n">§208</td></tr>
+<tr><td>準用</td><td>警報設備依 <b>§112～§132</b>；標示設備依 <b>§146～§156</b></td><td class="n">§226・§227</td></tr>
+
+<tr><td colspan="3" style="background:var(--fill1);font-weight:700">水系設備（第四編值）</td></tr>
+<tr><td><b>室內消防栓</b></td><td>限<b>第一種</b>；水平 <b>25 m</b>＋各層出入口附近 1 支；<b>3.5 kgf/cm²</b>、<b>260 L/min</b>、最多 <b>5 支</b>、<b>30 分鐘</b> → 水源 <b>39 m³</b></td><td class="n">§209</td></tr>
+<tr><td><b>室外消防栓</b></td><td>口徑 <b>63 mm</b>、水平 <b>40 m</b>、<b>≥2 支</b>；<b>3.5 kgf/cm²</b>、<b>450 L/min</b>、最多 <b>4 支</b>、<b>30 分鐘</b> → 水源 <b>54 m³</b>；減壓門檻 <b>7 kgf/cm²</b>；鑄鐵管 <b>CNS 832、≥16 kgf/cm²</b></td><td class="n">§210</td></tr>
+<tr><td><b>自動撒水</b></td><td>水平 <b>1.7 m</b>；開放式放水區域 ≥<b>150 m²</b>；密閉式 <b>30 個 × 30 分鐘</b>；乾式／預動式<b>追加 10 個</b>；易燃性物質處所迴水板下方 <b>90 cm</b>、水平 <b>30 cm</b></td><td class="n">§211</td></tr>
+<tr><td><b>水霧</b></td><td>放射區域 ≥<b>150 m²</b>；<b>20 L/min·m²</b>；水源＝全部噴頭 <b>30 分鐘</b>；放射壓力 <b>3.5 kgf/cm²</b></td><td class="n">§212</td></tr>
+<tr><td><b>緊急電源</b></td><td>室內外消防栓、自動撒水、水霧一律 <b>45 分鐘</b>；泡沫為<b>所需放射時間之 1.5 倍</b>；冷卻撒水（§216）為<b>連續放水時間以上</b></td><td class="n">§209Ⅱ～§212Ⅱ・§221Ⅱ・§216Ⅱ</td></tr>
+
+<tr><td colspan="3" style="background:var(--fill2);font-weight:700">儲槽泡沫</td></tr>
+<tr><td><b>放出口數量</b></td><td>依<b>儲槽直徑</b>與槽型查 §213Ⅰ 表；固定頂 Ⅰ／Ⅱ 型未達 24 m 均為 <b>1 個</b></td><td class="n">§213Ⅰ</td></tr>
+<tr><td><b>水溶液量（不溶性）</b></td><td>Ⅰ 型 <b>120／80／60</b>；Ⅱ・Ⅲ・Ⅳ 型 <b>220／120／100</b>；特殊型 <b>240／160／120</b>（L/m²，依閃火點 &lt;21／21～70／≥70℃）</td><td class="n">§213Ⅱ</td></tr>
+<tr><td><b>放出率</b></td><td><b>特殊型 8</b>，其餘全部 <b>4</b>（L/min·m²）</td><td class="n">§213Ⅱ</td></tr>
+<tr><td>耐酒精型（非不溶性）</td><td>Ⅰ 型 <b>160/8</b>、Ⅱ 型 <b>240/8</b>、Ⅳ 型 <b>240/8</b>；<b>特殊型與 Ⅲ 型不可用</b>；得依廠商提示值核計</td><td class="n">§213Ⅲ</td></tr>
+<tr><td>係數</td><td>醇類 <b>1.0／1.25／2.0</b>、醚類 <b>1.25／1.5／2.0</b>、酯類 <b>1.0</b>、酮類 <b>1.0</b>、醛類 <b>1.25／2.0</b>、胺類 <b>1.0／1.25／2.0</b>、腈類 <b>1.25</b>、有機酸 <b>1.25</b>、氧化丙烯 <b>2.0</b></td><td class="n">§213Ⅳ</td></tr>
+<tr><td>特殊型液面積</td><td>設特殊型放出口者，儲槽液面積為<b>浮頂式儲槽環狀部分之表面積</b></td><td class="n">§213 末項</td></tr>
+<tr><td><b>補助泡沫消防栓</b></td><td>設於<b>防液堤外圍</b>、距槽壁 ≥<b>15 m</b>、步行 ≤<b>75 m</b>、<b>400 L/min</b>、<b>3.5 kgf/cm²</b>、最多 <b>3 支</b>、放射 <b>20 分鐘</b></td><td class="n">§214①・§220Ⅳ</td></tr>
+<tr><td><b>連結送液口</b></td><td><code>N ＝ A q / C</code>，<b>C ＝ 800 L/min</b>；A 為最大水平斷面積（浮頂得以環狀面積）</td><td class="n">§214②</td></tr>
+<tr><td><b>泡沫射水槍</b></td><td>閃火點 ≤<b>40℃</b>、岸壁碼頭、連接輸送設備之顯著場所；防護海面 <b>15 m</b>、距注入口 <b>30 m</b>、<b>≥2 具</b>、<b>1,900 L/min</b>、有效水平放射距離 ≥<b>30 m</b></td><td class="n">§215</td></tr>
+<tr><td><b>儲槽冷卻撒水</b></td><td>閃火點 ≤<b>70℃</b>之顯著場所；孔徑 ≥<b>4 mm</b>、<b>2 L/min·m²</b>、水源 <b>4 小時</b>、選擇閥 <b>0.8～1.5 m</b>、啟動後 <b>5 分鐘</b>內撒水、加壓送水裝置距撒水區域 ≤<b>500 m</b>、≤<b>300 m</b> 得免設遠隔啟動</td><td class="n">§216</td></tr>
+<tr><td>泡沫噴頭</td><td>每 <b>9 m²</b> 一個；每一放射區域 ≥<b>100 m²</b></td><td class="n">§217</td></tr>
+<tr><td><b>水源合計</b></td><td>泡沫頭 <b>10 分鐘</b>／移動式 <b>4 具 × 30 分鐘</b>（室內 200、室外 400 L/min）／射水槍 <b>2 具 × 30 分鐘</b>／儲槽固定式＝水溶液量 ＋ 補助泡沫消防栓 20 分鐘；<b>另加計配管內水溶液量（無 20% 加算）</b></td><td class="n">§220</td></tr>
+
+<tr><td colspan="3" style="background:var(--fill3);font-weight:700">氣體・乾粉・高壓氣體</td></tr>
+<tr><td><b>CO₂ 全區藥劑量</b></td><td>體積 <b>&lt;5／5～15／15～50／50～150／150～1,500／≥1,500</b> m³ → <b>1.2／1.1／1／0.9／0.8／0.75</b> kg/m³；基本需要量 <b>—／6／17／50／135／1,200</b> kg</td><td class="n">§222Ⅰ①</td></tr>
+<tr><td>開口加算</td><td>未設自動關閉裝置時，開口部面積每 m² 加 <b>5 kg</b></td><td class="n">§222Ⅰ②</td></tr>
+<tr><td><b>藥劑限縮</b></td><td>惰性氣體限 <b>IG-100、IG-55、IG-541</b>（<b>無 IG-01</b>）；鹵化烴限 <b>HFC-23、HFC-227ea</b>（<b>無 FK-5-1-12</b>）</td><td class="n">§222Ⅱ・§222-1・§198 備註五</td></tr>
+<tr><td>油品體積上限</td><td>汽油、煤油、輕油、重油場所選設惰性氣體或鹵化烴時，<b>防護區域體積應未滿 1,000 m³</b></td><td class="n">§198 備註六</td></tr>
+<tr><td>極端係數</td><td><b>二硫化碳 3.0</b>（CO₂ 欄最高）／<b>氧化丙烯 1.8</b>／<b>二咢烷・甲醛 1.6</b>／<b>戊烷乾粉 1.4</b>；「<b>—</b>」＝<b>不可使用</b></td><td class="n">§222Ⅲ</td></tr>
+<tr><td><b>高壓氣體滅火器</b></td><td>製造儲存處理場所 <b>2 具</b>（≥200 m² 者每 50 m² 增 1）／儲槽 <b>3 具</b>／加氣站：儲氣槽區 <b>4</b>、加氣機每臺 <b>1</b>、用火設備處所 <b>1</b>、建築物每層 100 m² 以下 <b>2</b> 具（每增 100 m² 加 1）</td><td class="n">§228①②③</td></tr>
+<tr><td>滅火效能值</td><td>每具對<b>普通火災 ≥4</b>、對<b>油類火災 ≥10</b></td><td class="n">§228⑥</td></tr>
+<tr><td><b>冷卻撒水</b></td><td><b>5 L/min·m²</b>（岩棉 ≥<b>25 mm</b>＋鋅鐵板 ≥<b>0.35 mm</b> 被覆者<b>減半</b>）；水源 <b>30 分鐘</b>；孔徑 ≥<b>4 mm</b></td><td class="n">§229</td></tr>
+<tr><td><b>防護面積</b></td><td>儲槽＝<b>外表面積</b>（含端板）＋液面計閥類；其他設備＝露出表面積，<b>高度超過 5 m 者以 5 m 間隔水平切割</b>；加氣站定額：<b>3.5／2／3／3／2／30</b></td><td class="n">§230</td></tr>
+<tr><td><b>射水設備</b></td><td><b>3.5 kgf/cm²</b>、<b>450 L/min</b>、最多 <b>2 支</b>、水源 <b>2 具 × 30 分鐘 ＝ 27 m³</b>；口徑 <b>63 mm</b>、長 <b>20 m</b> 水帶二條</td><td class="n">§231</td></tr>
+<tr><td>射水設備位置數量</td><td><b>≥2 支</b>、距防護對象外圍 <b>40 m</b> 內、能自<b>任何方向</b>放射；每 <b>50 m²</b>（隔熱者 <b>100 m²</b>）設 1 具</td><td class="n">§232</td></tr>
+
+<tr><td colspan="3" style="background:var(--fill4);font-weight:700">第五編附則</td></tr>
+<tr><td><b>耐燃保護</b></td><td>金屬導線管槽＋埋設防火構造物混凝土，<b>保護厚度 ≥20 mm</b>（合規管道間得免埋）／<b>MI 電纜或耐燃電纜</b>直接敷設／指定裝置</td><td class="n">§235③</td></tr>
+<tr><td><b>耐熱保護</b></td><td>金屬導線管槽內裝置／<b>MI 電纜、耐燃電纜或耐熱電線電纜</b>直接敷設／指定裝置</td><td class="n">§235④</td></tr>
+<tr><td>電線與回路</td><td><b>專用回路</b>、開關有<b>消防安全設備別之明顯標示</b>；緊急用電源回路及操作回路用 <b>600 V 耐熱絕緣電線</b></td><td class="n">§235①②</td></tr>
+<tr><td>內置蓄電池</td><td>中繼器、標示設備、緊急照明燈<b>內置蓄電池者，得採一般配線</b></td><td class="n">§236 註二・四・五</td></tr>
+<tr><td><b>緊急電源標準</b></td><td>發電機 <b>CNS 10204</b>／蓄電池 <b>CNS 10205</b>；容量計算由中央消防機關另定</td><td class="n">§237①</td></tr>
+<tr><td>發電機處所</td><td>為<b>防火構造</b>；設於屋外且有<b>防水措施</b>者不在此限；須防<b>逆向電力</b></td><td class="n">§237③④</td></tr>
+<tr><td><b>防災中心</b></td><td>樓地板面積 ≥<b>40 m²</b>；出入口至屋外任一出入口<b>步行距離 ≤30 m</b>；<b>空調專用</b>；設備<b>地腳螺栓固定</b>；睡眠休息區<b>防火區劃</b></td><td class="n">§238</td></tr>
+<tr><td>施行日期</td><td>由<b>內政部以命令定之</b>（<b>全法最後一條</b>）</td><td class="n">§239</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>最容易記混的十組數字</h3>
+<table>
+<thead><tr><th>數字組</th><th>正確歸屬</th></tr></thead>
+<tbody>
+<tr><td class="n"><b>100／150 倍</b></td><td>§194 顯著滅火困難：<b>製造與處理場所是 100 倍</b>、<b>室內儲存場所是 150 倍</b>。§195 一般則是 <b>10～100</b> 與 <b>10～150</b></td></tr>
+<tr><td class="n"><b>1,000／600／500 m²</b></td><td><b>1,000</b>＝§194① 顯著；<b>600</b>＝§195① 一般的下限；<b>500</b>＝§205Ⅰ① 火警自動警報的門檻</td></tr>
+<tr><td class="n"><b>100／150 m²</b></td><td>§199 效能值：<b>製造處理 100</b>（防火構造）、<b>儲存 150</b>（防火構造）。非防火構造各砍半為 50 與 75</td></tr>
+<tr><td class="n"><b>2 支／5 支／4 支</b></td><td>同時使用支數：<b>第三編室內外消防栓都是 2</b>；<b>第四編室內消防栓 5</b>、<b>室外消防栓 4</b>、<b>射水設備 2</b>、<b>補助泡沫消防栓 3</b></td></tr>
+<tr><td class="n"><b>260／450／400 L/min</b></td><td><b>260</b>＝§209 室內消防栓；<b>450</b>＝§210 室外消防栓與 §231 射水設備；<b>400</b>＝§214 補助泡沫消防栓（也是 §220② 移動式泡沫的室外值）</td></tr>
+<tr><td class="n"><b>30 分／45 分／4 小時</b></td><td><b>30</b>＝水源放水時間；<b>45</b>＝§209～§212 緊急電源；<b>4 小時</b>＝§216 儲槽冷卻撒水的水源與緊急電源</td></tr>
+<tr><td class="n"><b>50%／10 個</b></td><td>乾式／預動式追加：<b>第三編 §57Ⅱ 是 50%</b>、<b>第四編 §211Ⅰ④(三) 是 10 個</b></td></tr>
+<tr><td class="n"><b>2／5 L/min·m²</b></td><td><b>2</b>＝§216 儲槽冷卻撒水（第四類油槽）；<b>5</b>＝§229 可燃性高壓氣體冷卻撒水（隔熱被覆得減半為 2.5）</td></tr>
+<tr><td class="n"><b>40℃／70℃</b></td><td><b>40</b>＝§215 泡沫射水槍的閃火點門檻；<b>70</b>＝§216 冷卻撒水的閃火點門檻，也是 §201 室外儲槽「水霧或泡沫二選一」的分界</td></tr>
+<tr><td class="n"><b>15／20／30 m</b></td><td>步行距離：<b>15</b>＝§228④ 高壓氣體儲存場所之滅火器；<b>20</b>＝§225 第五種；<b>30</b>＝§224 第四種，也是 §238 防災中心至屋外出入口。<br>另 <b>15 m</b> 還是 §214① 補助泡沫消防栓距<b>槽壁</b>的最小<b>水平</b>距離——那不是步行距離</td></tr>
+</tbody>
+</table>
+
+<div class="navbar" style="margin-top:32px">
+  <a class="btn go" href="index.html">🏠 回學習首頁</a>
+  <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+  <a class="btn" href="15-%E6%BB%85%E7%81%AB%E5%99%A8%E8%88%87%E5%AE%A4%E5%85%A7%E5%A4%96%E6%B6%88%E9%98%B2%E6%A0%93-%E5%9C%96%E8%A7%A3.html">📐 滅火器與消防栓圖解</a>
+  <a class="btn" href="#scope">↑ 回到最上方</a>
+</div>
+
+<footer>
+  <p>本頁條文取自全國法規資料庫「各類場所消防安全設備設置標準」（pcode D0120029）民國 113 年 4 月 24 日修正版原文，於 2026-08-27 擷取核對。</p>
+  <p><b>§198、§201、§222、§236</b> 四條的表格在法規資料庫網頁版顯示「因條文排版無法完整呈現內容」。
+  本頁已從各該條的「完整條文」PDF 補齊 <b>§201 第 1 項全表</b>、<b>§222 第 1 項第 1 款全表</b>與 <b>§236 附表的十三組設備種類及六註三說明</b>；
+  <b>§198 的 13×31 欄○記號矩陣與 §222 第 3 項的 50 列係數表僅節錄</b>，完整內容請查各該條 PDF。</p>
+  <p>第三編各條的對照數值（§31、§34、§36～§42、§46、§47、§50、§57、§60～§65、§71、§72、§75～§77、§82、§83）取自同一版本原文，用於加嚴對照。</p>
+  <p>實例 7 關於「係數是否連同開口加算一起乘」的兩種算法、圖 2 與圖 3 關於分級與編號邏輯的說明，
+  以及各節「規律」「記法」的歸納，係條文設計邏輯的一般解釋，<b>非條文明文</b>。</p>
+  <p><b>法規以主管機關公布文字為準。</b>本頁為個人學習筆記，不構成法律意見；設計送審前請回查現行條文：
+  <code>https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0120029</code>。
+  另「公共危險物品」之定義、六類分類與管制量定於<b>公共危險物品及可燃性高壓氣體製造儲存處理場所設置標準暨安全管理辦法</b>，不在本標準內。</p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  function target(){
+    var h=(location.hash||'').replace('#','');
+    if(!h){ var m=/[?&]s=([\w-]+)/.exec(location.search||''); h=m?m[1]:''; }
+    return h?document.getElementById(h):null;
+  }
+  function go(smooth){
+    var el=target(); if(!el) return;
+    el.scrollIntoView({behavior:smooth?'smooth':'auto',block:'start'});
+    el.style.transition='background-color .4s';
+    var old=el.style.backgroundColor;
+    el.style.backgroundColor='var(--fill4)';
+    setTimeout(function(){ el.style.backgroundColor=old||''; },1600);
+  }
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){ setTimeout(go,60); });
+  else setTimeout(go,60);
+  window.addEventListener('hashchange',function(){ go(true); });
+})();
+</script>
+</body>
+</html>
