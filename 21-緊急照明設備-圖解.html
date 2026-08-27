@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>緊急照明設備 圖解 — 各類場所消防安全設備設置標準 §175～§179</title>
+<meta name="description" content="緊急照明設備的應設場所與免設處所、地面照度 10／2 lx、緊急電源 30 分鐘與併設 10＋30、§235 耐燃保護與耐熱保護、燈具構造的圖解。">
+<style>
+  :root{
+    --bg:#fbfaf7; --fg:#1c1b19; --muted:#6b6862; --line:#d8d4cb;
+    --card:#ffffff; --accent:#b03a2e; --accent2:#1d6fa5; --accent3:#2e7d4f;
+    --warn:#a86b00; --danger:#8e1b0f;
+    --fill1:#f2e4e1; --fill2:#e0edf6; --fill3:#e3f0e8; --fill4:#f7efd9;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#16161a; --fg:#e8e6e1; --muted:#9b968c; --line:#3a3a40;
+      --card:#1e1e23; --accent:#e8705f; --accent2:#5aa8d8; --accent3:#5fbb87;
+      --warn:#d9a441; --danger:#f08070;
+      --fill1:#3a2622; --fill2:#1e3341; --fill3:#1f3a2c; --fill4:#3a3120;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+    line-height:1.75;-webkit-text-size-adjust:100%}
+  .wrap{max-width:960px;margin:0 auto;padding:32px 20px 80px}
+  header{border-bottom:2px solid var(--fg);padding-bottom:18px;margin-bottom:8px}
+  h1{font-size:clamp(1.4rem,4vw,2rem);margin:0 0 6px;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:.9rem;margin:0}
+  h2{font-size:1.15rem;margin:48px 0 4px;padding-top:14px;border-top:1px solid var(--line);
+    scroll-margin-top:16px}
+  h2 .no{color:var(--accent);font-variant-numeric:tabular-nums;margin-right:.5em}
+  h2:target{background:linear-gradient(transparent 62%,var(--fill4) 62%)}
+  h3{font-size:1rem;margin:26px 0 6px}
+  .lede{color:var(--muted);font-size:.92rem;margin:.2em 0 18px}
+  figure{margin:0 0 10px;background:var(--card);border:1px solid var(--line);
+    border-radius:10px;padding:18px 14px;overflow-x:auto}
+  svg{display:block;margin:0 auto;max-width:100%;height:auto}
+  figcaption{color:var(--muted);font-size:.84rem;margin-top:10px;text-align:center}
+  .note{border-left:3px solid var(--warn);background:var(--fill4);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .note b{color:var(--warn)}
+  .cmp{border-left:3px solid var(--accent2);background:var(--fill2);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .cmp b{color:var(--accent2)}
+  table{border-collapse:collapse;width:100%;font-size:.88rem;margin:14px 0}
+  th,td{border:1px solid var(--line);padding:6px 9px;text-align:left;vertical-align:top}
+  th{background:var(--fill2);font-weight:600}
+  td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+  td.c,th.c{text-align:center}
+  .scroll{overflow-x:auto}
+  .scroll table{min-width:620px}
+  code{background:var(--fill2);padding:1px 5px;border-radius:4px;font-size:.88em}
+  .formula{background:var(--fill3);border:1px solid var(--line);border-radius:8px;
+    padding:12px 16px;margin:14px 0;font-size:1rem;text-align:center}
+  .ex{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent2);
+    border-radius:0 10px 10px 0;padding:14px 18px;margin:18px 0}
+  .ex .t{font-weight:700;margin-bottom:6px;color:var(--accent2)}
+  .ex .given{font-size:.88rem;color:var(--muted);border-left:3px solid var(--line);
+    padding-left:12px;margin-bottom:10px}
+  .ex .step{font-size:.92rem;margin:8px 0}
+  .ex .ans{background:var(--fill3);border-radius:7px;padding:9px 13px;margin-top:10px;
+    font-weight:700;font-size:.94rem}
+  ol.law{font-size:.9rem;padding-left:1.4em}
+  ol.law li{margin:4px 0}
+  footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:.82rem}
+  a{color:var(--accent2)}
+  .navbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+  .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;
+    font-size:.86rem;padding:7px 14px;border-radius:8px;border:1px solid var(--line);
+    background:var(--card);color:var(--fg);transition:.12s}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.go{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+  .btn.go:hover{filter:brightness(1.1);color:#fff}
+  .toc{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 4px}
+  .toc a{font-size:.8rem;text-decoration:none;padding:4px 10px;border-radius:99px;
+    border:1px solid var(--line);background:var(--card);color:var(--muted)}
+  .toc a:hover{border-color:var(--accent);color:var(--accent)}
+  .s-line{stroke:var(--fg);stroke-width:1.4;fill:none}
+  .s-thin{stroke:var(--muted);stroke-width:1;fill:none}
+  .s-txt{fill:var(--fg);font-size:13px;font-family:inherit}
+  .s-sm{fill:var(--muted);font-size:11px;font-family:inherit}
+  .s-key{fill:var(--accent);font-size:13px;font-weight:700;font-family:inherit}
+  .s-dim{stroke:var(--accent2);stroke-width:1;fill:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>緊急照明設備 圖解</h1>
+  <p class="sub">各類場所消防安全設備設置標準 §175～§179（第三編第三章第三節）　|　民國 113 年 4 月 24 日修正版</p>
+  <div class="navbar">
+    <a class="btn go" href="index.html">🏠 回學習首頁</a>
+    <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+    <a class="btn" href="20-%E9%81%BF%E9%9B%A3%E5%99%A8%E5%85%B7%E8%88%87%E6%94%B6%E5%AE%B9%E4%BA%BA%E5%93%A1-%E5%9C%96%E8%A7%A3.html">📐 避難器具與收容人員圖解</a>
+    <a class="btn" href="19-%E6%A8%99%E7%A4%BA%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html">📐 標示設備圖解</a>
+  </div>
+</header>
+
+<nav class="toc" aria-label="章節目錄">
+  <a href="#apply">01 應設場所與免設處所</a>
+  <a href="#lux">02 照度</a>
+  <a href="#power">03 緊急電源</a>
+  <a href="#wire">04 配線與耐燃保護</a>
+  <a href="#lamp">05 燈具構造</a>
+  <a href="#card">06 速查數字卡</a>
+</nav>
+
+<div class="cmp" style="margin-top:24px">
+  <b>緊急照明設備是第三編最短的一節——只有五條。</b>
+  但它是<b>整個避難系統的底層</b>：標示設備要靠它才看得見（§146Ⅰ③④ 兩款免設出口標示燈與避難方向指示燈，都要求「設有緊急照明設備」），
+  §153④ 也要求避難指標「設於易見且<b>採光良好</b>處」。<br>
+  五條各管一件事：<b>燈具怎麼做</b>（§175）→ <b>線怎麼拉</b>（§176）→ <b>電從哪來</b>（§177）→
+  <b>要多亮</b>（§178）→ <b>哪裡可以不設</b>（§179）。應設場所則在第二編的 <b>§24</b>。
+</div>
+
+<!-- ============ 1 ============ -->
+<h2 id="apply"><span class="no">01</span>應設場所與免設處所</h2>
+<p class="lede">§24（第二編）決定哪裡要設，§179 決定哪裡可以不設。兩條的核心變數都是同一個——<b>有沒有自然採光</b>。</p>
+
+<figure>
+<svg viewBox="0 0 900 330" role="img" aria-label="緊急照明設備的應設場所與免設處所對照">
+  <text class="s-txt" x="230" y="28" text-anchor="middle" font-weight="700">§24 應設緊急照明設備之場所</text>
+  <rect x="30" y="44" width="400" height="200" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-sm" x="230" y="68" text-anchor="middle">① 甲類、丙類、戊類所列場所使用之居室</text>
+  <text class="s-sm" x="230" y="90" text-anchor="middle">② 乙類一、二、三目（學校教室除外）、四～六目、</text>
+  <text class="s-sm" x="230" y="110" text-anchor="middle">　七目住宿型精神復健機構、八、九、十二目之居室</text>
+  <text class="s-sm" x="230" y="134" text-anchor="middle">③ 總樓地板面積 ≥1,000 m² 建築物之居室（學校教室除外）</text>
+  <text class="s-key" x="230" y="158" text-anchor="middle" fill="var(--accent2)">④ 有效採光面積未達該居室樓地板面積 5% 者</text>
+  <text class="s-sm" x="230" y="182" text-anchor="middle">⑤ 供前四款使用之場所，自居室通達避難層所須經過之</text>
+  <text class="s-sm" x="230" y="202" text-anchor="middle">　走廊、樓梯間、通道及其他平時依賴人工照明部分</text>
+  <text class="s-sm" x="230" y="228" text-anchor="middle">但經認可為容易避難逃生或具有效採光之場所，得免設</text>
+
+  <text class="s-txt" x="675" y="28" text-anchor="middle" font-weight="700">§179 得免設緊急照明設備之處所</text>
+  <rect x="470" y="44" width="400" height="176" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-sm" x="675" y="68" text-anchor="middle">① 避難層，由居室任一點至通往屋外出口之</text>
+  <text class="s-key" x="675" y="90" text-anchor="middle" fill="var(--accent3)">　步行距離 ≤ 30 m 之居室</text>
+  <text class="s-sm" x="675" y="114" text-anchor="middle">② 具有效採光，且直接面向室外之通道或走廊</text>
+  <text class="s-sm" x="675" y="136" text-anchor="middle">③ 集合住宅之居室</text>
+  <text class="s-sm" x="675" y="158" text-anchor="middle">④ 保齡球館球道以防煙區劃之部分</text>
+  <text class="s-sm" x="675" y="180" text-anchor="middle">⑤ 工作場所中，設有固定機械或裝置之部分</text>
+  <text class="s-sm" x="675" y="202" text-anchor="middle">⑥ 洗手間、浴室、盥洗室、儲藏室或機械室</text>
+
+  <text class="s-key" x="450" y="272" text-anchor="middle">§24④ 與 §179② 是一體兩面：採光不足要設，採光有效可免設</text>
+  <text class="s-sm" x="450" y="298" text-anchor="middle">§24④ 的「有效採光面積未達居室樓地板面積 5%」是全條唯一的量化標準</text>
+  <text class="s-sm" x="450" y="320" text-anchor="middle">§179① 的 30 m 是「步行距離」，且僅限避難層之居室</text>
+</svg>
+<figcaption>圖 1　§24 應設五款與 §179 免設六款。兩條共用同一個判準——自然採光夠不夠</figcaption>
+</figure>
+
+<h3>§24 應設場所（第二編）</h3>
+<ol class="law">
+<li>供 <b>§12①（甲類）、③（丙類）及⑤（戊類）</b>所列場所使用之<b>居室</b></li>
+<li>供 <b>§12②（乙類）第一目、第二目、第三目（<b>學校教室除外</b>）、第四目至第六目、第七目所定<b>住宿型精神復健機構</b>、第八目、第九目及第十二目</b>所列場所使用之居室</li>
+<li><b>總樓地板面積在 1,000 m² 以上</b>建築物之居室（<b>學校教室除外</b>）</li>
+<li><b>有效採光面積未達該居室樓地板面積 5%</b> 者</li>
+<li>供前四款使用之場所，自居室通達避難層所須經過之<b>走廊、樓梯間、通道及其他平時依賴人工照明部分</b></li>
+</ol>
+<p class="lede"><b>§24 第 2 項</b>：經中央主管機關認可為<b>容易避難逃生</b>或<b>具有效採光</b>之場所，得免設緊急照明設備。</p>
+
+<div class="note">
+  <b>「學校教室除外」出現兩次。</b>
+  §24② 的乙類第三目（學校教室、兒童課後照顧服務中心、補習班、訓練班、K 書中心）把<b>學校教室</b>挑出來排除；
+  §24③ 的 1,000 m² 門檻也再排除一次<b>學校教室</b>。<br>
+  理由是教室通常有大面積窗戶、白天採光充足，且使用者對環境熟悉；但補習班、K 書中心多在夜間使用且常無外窗，所以仍要設。
+</div>
+
+<!-- ============ 2 ============ -->
+<h2 id="lux"><span class="no">02</span>照度</h2>
+<p class="lede">§178 只有兩個數字，但要注意<b>量測位置</b>與<b>量測儀器</b>都寫死在條文裡。</p>
+
+<figure>
+<svg viewBox="0 0 900 310" role="img" aria-label="緊急照明燈在地下通道與其他場所的照度要求">
+  <path class="s-thin" d="M450 16 L450 250"/>
+
+  <text class="s-txt" x="235" y="28" text-anchor="middle" font-weight="700">地下建築物之地下通道</text>
+  <rect x="80" y="60" width="310" height="120" fill="var(--fill2)" stroke="var(--line)" stroke-width="1.4"/>
+  <rect x="220" y="60" width="50" height="16" rx="2" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <path class="s-dim" stroke-dasharray="5 4" d="M245 76 L245 174 M239 166 L245 178 L251 166"/>
+  <path class="s-line" d="M80 180 L390 180"/>
+  <path class="s-thin" d="M90 180 L82 190 M120 180 L112 190 M150 180 L142 190 M180 180 L172 190 M210 180 L202 190 M240 180 L232 190 M270 180 L262 190 M300 180 L292 190 M330 180 L322 190 M360 180 L352 190"/>
+  <text class="s-key" x="235" y="216" text-anchor="middle">地板面照度 ≥ 10 lx</text>
+  <text class="s-sm" x="235" y="240" text-anchor="middle">地下通道沒有任何自然光，只能靠它</text>
+
+  <text class="s-txt" x="675" y="28" text-anchor="middle" font-weight="700">其他場所</text>
+  <rect x="510" y="60" width="310" height="120" fill="var(--fill3)" stroke="var(--line)" stroke-width="1.4"/>
+  <rect x="650" y="60" width="50" height="16" rx="2" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <path class="s-dim" stroke-dasharray="5 4" d="M675 76 L675 174 M669 166 L675 178 L681 166"/>
+  <path class="s-line" d="M510 180 L820 180"/>
+  <path class="s-thin" d="M520 180 L512 190 M550 180 L542 190 M580 180 L572 190 M610 180 L602 190 M640 180 L632 190 M670 180 L662 190 M700 180 L692 190 M730 180 L722 190 M760 180 L752 190 M790 180 L782 190"/>
+  <text class="s-key" x="675" y="216" text-anchor="middle" fill="var(--accent3)">地面之水平面照度 ≥ 2 lx</text>
+  <text class="s-sm" x="675" y="240" text-anchor="middle">有窗、有其他光源，門檻低一階</text>
+
+  <text class="s-key" x="450" y="278" text-anchor="middle">但在走廊曲折點處，應增設緊急照明燈</text>
+  <text class="s-sm" x="450" y="302" text-anchor="middle">量測方法：使用「低照度測定用光電管照度計」測得之值</text>
+</svg>
+<figcaption>圖 2　§178 兩級照度。10 lx 只給「地下建築物之地下通道」，其餘一律 2 lx</figcaption>
+</figure>
+
+<div class="cmp">
+  <b>§178 的三個細節常被略過。</b><br>
+  ① <b>量測位置是「在地面之水平面」</b>——不是牆面、不是眼睛高度。<br>
+  ② <b>量測儀器指定為「低照度測定用光電管照度計」</b>——一般照度計在 2 lx 這種極低照度下誤差太大。<br>
+  ③ <b>「走廊曲折點處應增設」</b>是本條唯一的位置規定。轉角是燈光最容易照不到、也最容易迷失方向的地方——與 §146-3Ⅱ① 避難方向指示燈「優先設於轉彎處」是同一個思路。
+</div>
+
+<!-- ============ 3 ============ -->
+<h2 id="power"><span class="no">03</span>緊急電源</h2>
+<p class="lede">§177 給了兩條路：<b>只用蓄電池撐 30 分鐘</b>，或<b>蓄電池 10 分鐘＋發電機 30 分鐘併設</b>。</p>
+
+<figure>
+<svg viewBox="0 0 900 305" role="img" aria-label="緊急照明設備緊急電源的兩種做法">
+  <text class="s-txt" x="450" y="28" text-anchor="middle" font-weight="700">§177 緊急電源：兩種做法</text>
+
+  <rect x="60" y="56" width="340" height="120" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.5"/>
+  <text class="s-txt" x="230" y="84" text-anchor="middle" font-weight="700">原則：僅用蓄電池設備</text>
+  <text class="s-key" x="230" y="118" text-anchor="middle" fill="var(--accent2)">持續動作 ≥ 30 分鐘</text>
+  <text class="s-sm" x="230" y="150" text-anchor="middle">一種電源，一個時間</text>
+
+  <rect x="500" y="56" width="340" height="120" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <text class="s-txt" x="670" y="84" text-anchor="middle" font-weight="700">併設：蓄電池設備＋緊急發電機</text>
+  <text class="s-key" x="670" y="114" text-anchor="middle" fill="var(--warn)">蓄電池 ≥ 10 分鐘</text>
+  <text class="s-key" x="670" y="140" text-anchor="middle" fill="var(--warn)">發電機 ≥ 30 分鐘</text>
+  <text class="s-sm" x="670" y="164" text-anchor="middle">「分別」計算，不是相加成 40 分鐘</text>
+
+  <text class="s-sm" x="450" y="212" text-anchor="middle">併設方式的邏輯：蓄電池撐住發電機啟動前的空窗期（10 分鐘），之後由發電機接手撐滿 30 分鐘。</text>
+  <text class="s-key" x="450" y="248" text-anchor="middle">對照：標示設備（§155）原則 20 分鐘、特定場所主要避難路徑 60 分鐘</text>
+  <text class="s-sm" x="450" y="276" text-anchor="middle">火警自動警報（§128）、緊急廣播（§135Ⅲ）、瓦斯漏氣（§145）則為蓄電池 10 分鐘</text>
+  <text class="s-sm" x="450" y="298" text-anchor="middle">室內外消防栓、自動撒水（§38、§60）為發電機或蓄電池 30 分鐘</text>
+</svg>
+<figcaption>圖 3　§177 的兩條路。併設時兩個容量分別計算，不能把 10 與 30 加起來算</figcaption>
+</figure>
+
+<h3>全法緊急電源時間對照</h3>
+<div class="scroll">
+<table>
+<thead><tr><th>設備</th><th>電源種類</th><th class="c">時間</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td>火警自動警報設備</td><td><b>蓄電池設備</b></td><td class="c"><b>10 分鐘</b></td><td class="n">§128</td></tr>
+<tr><td>緊急廣播設備</td><td><b>蓄電池設備</b>（準用 §128）</td><td class="c"><b>10 分鐘</b></td><td class="n">§135Ⅲ</td></tr>
+<tr><td>瓦斯漏氣火警自動警報設備</td><td><b>蓄電池設備</b></td><td class="c"><b>二回路動作 10 分鐘</b>，其他回路監視 10 分鐘</td><td class="n">§145</td></tr>
+<tr><td>標示設備（出口標示燈、避難方向指示燈）</td><td><b>蓄電池設備</b></td><td class="c"><b>20 分鐘</b>；特定場所主要避難路徑 <b>60 分鐘</b>（得併設發電機）</td><td class="n">§155</td></tr>
+<tr><td><b>緊急照明設備</b></td><td><b>蓄電池設備</b></td><td class="c"><b>30 分鐘</b>；併設時蓄電池 <b>10</b> ＋ 發電機 <b>30</b> 分鐘</td><td class="n">§177</td></tr>
+<tr><td>室內消防栓、室外消防栓、自動撒水</td><td>發電機設備<b>或</b>蓄電池設備</td><td class="c"><b>30 分鐘</b></td><td class="n">§38・§39・§60</td></tr>
+</tbody>
+</table>
+</div>
+<p class="lede">規律：<b>「只是通知你」的設備 10 分鐘、「指引你走」的標示設備 20 分鐘、「讓你看得見路」的緊急照明與「幫你滅火」的水系設備 30 分鐘</b>。<br>
+另注意<b>警報類與標示類都限定「蓄電池設備」，不得單獨用發電機</b>；只有水系設備可以二選一。</p>
+
+<!-- ============ 4 ============ -->
+<h2 id="wire"><span class="no">04</span>配線與耐燃保護</h2>
+<p class="lede">§176 只有兩款，但第 2 款把整個 <b>§235</b>（第四編的緊急供電系統配線）拉了進來——這是本節唯一跨編引用的條文。</p>
+
+<figure>
+<svg viewBox="0 0 900 335" role="img" aria-label="緊急照明設備配線與耐燃保護的三種做法">
+  <text class="s-txt" x="450" y="28" text-anchor="middle" font-weight="700">§176 配線（內置蓄電池式除外）</text>
+
+  <rect x="40" y="46" width="390" height="90" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-sm" x="235" y="76" text-anchor="middle">① 照明器具<tspan font-weight="700">直接連接於分路配線</tspan></text>
+  <text class="s-key" x="235" y="106" text-anchor="middle" fill="var(--accent2)">不得裝置插座或開關等</text>
+
+  <rect x="470" y="46" width="390" height="90" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-sm" x="665" y="72" text-anchor="middle">② 電源回路之配線依 §235 施予</text>
+  <text class="s-key" x="665" y="96" text-anchor="middle" fill="var(--warn)">耐燃保護</text>
+  <text class="s-sm" x="665" y="122" text-anchor="middle">但天花板及其底材使用不燃材料時，得施予耐熱保護</text>
+
+  <text class="s-txt" x="450" y="170" text-anchor="middle" font-weight="700">§235 第 3 款：耐燃保護的三種做法</text>
+
+  <rect x="40" y="186" width="270" height="80" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.3"/>
+  <text class="s-sm" x="175" y="210" text-anchor="middle">電線裝於金屬導線管槽內</text>
+  <text class="s-sm" x="175" y="230" text-anchor="middle">並埋設於防火構造物之混凝土內</text>
+  <text class="s-key" x="175" y="254" text-anchor="middle" fill="var(--accent3)">混凝土保護厚度 ≥ 20 mm</text>
+
+  <rect x="320" y="186" width="270" height="80" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.3"/>
+  <text class="s-sm" x="455" y="216" text-anchor="middle">使用 MI 電纜或耐燃電纜時</text>
+  <text class="s-key" x="455" y="242" text-anchor="middle" fill="var(--accent3)">得按電纜裝設法直接敷設</text>
+
+  <rect x="600" y="186" width="270" height="80" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.3"/>
+  <text class="s-sm" x="735" y="216" text-anchor="middle">其他經中央主管機關</text>
+  <text class="s-key" x="735" y="242" text-anchor="middle" fill="var(--accent3)">指定之耐燃保護裝置</text>
+
+  <text class="s-sm" x="450" y="296" text-anchor="middle">第一種但書：使用不燃材料建造且符合建築技術規則防火區劃規定之管道間，得免埋設。</text>
+  <text class="s-sm" x="450" y="320" text-anchor="middle">耐熱保護（§235④）：電線於金屬導線管槽內裝置／MI 電纜、耐燃電纜或耐熱電線電纜直接敷設／其他指定裝置。</text>
+</svg>
+<figcaption>圖 4　§176 兩款配線規定，以及 §235 耐燃保護的三種做法</figcaption>
+</figure>
+
+<div class="note">
+  <b>「內置蓄電池式除外」是 §176 的大前提。</b>
+  燈具自己內建電池時，電源就在燈裡，沒有「電源回路」要保護，整條 §176 都不適用。
+  這也是實務上絕大多數緊急照明燈採內置電池式的原因——省掉耐燃配線的成本。<br>
+  同樣的「內置蓄電池」豁免也出現在 <b>§156②</b>（標示設備電源回路不得設開關，但<b>燈具內置蓄電池設備者</b>不在此限）。
+</div>
+
+<h3>§235 耐燃保護 vs 耐熱保護</h3>
+<table>
+<thead><tr><th>項目</th><th><b>耐燃保護</b>（§235③）</th><th><b>耐熱保護</b>（§235④）</th></tr></thead>
+<tbody>
+<tr><td>適用回路</td><td><b>電源回路</b></td><td><b>標示燈回路及控制回路</b></td></tr>
+<tr><td>做法一</td><td>電線裝於金屬導線管槽內，<b>並埋設於防火構造物之混凝土內</b>，混凝土保護厚度 <b>20 mm 以上</b></td><td>電線<b>於金屬導線管槽內裝置</b>（不必埋設）</td></tr>
+<tr><td>做法二</td><td>使用 <b>MI 電纜或耐燃電纜</b>時，得按電纜裝設法直接敷設</td><td>使用 <b>MI 電纜、耐燃電纜或耐熱電線電纜</b>時，得按電纜裝設法直接敷設</td></tr>
+<tr><td>做法三</td><td>其他經中央主管機關指定之<b>耐燃保護</b>裝置</td><td>其他經中央主管機關指定之<b>耐熱保護</b>裝置</td></tr>
+</tbody>
+</table>
+<p class="lede">兩者的差別只在<b>要不要埋進混凝土</b>與<b>能不能用耐熱電線電纜</b>——耐燃保護嚴、耐熱保護寬。<br>
+§235 另有兩款共通規定：<b>①</b> 電氣配線應設<b>專用回路</b>，不得與一般電路相接，且開關有<b>消防安全設備別之明顯標示</b>；<b>②</b> 緊急用電源回路及操作回路使用 <b>600 V 耐熱絕緣電線</b>或同等耐熱效果以上之電線。</p>
+
+<!-- ============ 5 ============ -->
+<h2 id="lamp"><span class="no">05</span>燈具構造</h2>
+<p class="lede">§175 五款講同兩件事：<b>耐熱絕緣</b>與<b>瞬時點燈</b>。停電那一刻就要亮，而且要撐得住火場高溫。</p>
+
+<figure>
+<svg viewBox="0 0 900 285" role="img" aria-label="緊急照明燈三種光源的構造要求">
+  <text class="s-txt" x="450" y="28" text-anchor="middle" font-weight="700">§175 緊急照明燈之構造：三種光源＋一個概括條款</text>
+
+  <rect x="30" y="56" width="270" height="130" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-txt" x="165" y="82" text-anchor="middle" font-weight="700">白熾燈</text>
+  <text class="s-key" x="165" y="110" text-anchor="middle" fill="var(--accent2)">雙重繞燈絲燈泡</text>
+  <text class="s-sm" x="165" y="138" text-anchor="middle">燈座：瓷製或與瓷質同等</text>
+  <text class="s-sm" x="165" y="158" text-anchor="middle">以上之耐熱絕緣材料</text>
+
+  <rect x="315" y="56" width="270" height="130" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-txt" x="450" y="82" text-anchor="middle" font-weight="700">日光燈</text>
+  <text class="s-key" x="450" y="110" text-anchor="middle" fill="var(--accent3)">瞬時起動型</text>
+  <text class="s-sm" x="450" y="138" text-anchor="middle">燈座：耐熱絕緣樹脂製成</text>
+
+  <rect x="600" y="56" width="270" height="130" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-txt" x="735" y="82" text-anchor="middle" font-weight="700">水銀燈</text>
+  <text class="s-key" x="735" y="110" text-anchor="middle" fill="var(--warn)">高壓瞬時點燈型</text>
+  <text class="s-sm" x="735" y="138" text-anchor="middle">燈座：瓷製或與瓷質同等</text>
+  <text class="s-sm" x="735" y="158" text-anchor="middle">以上之耐熱絕緣材料</text>
+
+  <text class="s-sm" x="450" y="218" text-anchor="middle">④ 其他光源具有與前三款同等耐熱絕緣性及瞬時點燈之特性，經中央主管機關核准者</text>
+  <text class="s-key" x="450" y="244" text-anchor="middle">⑤ 放電燈之安定器，裝設於耐熱性外箱</text>
+  <text class="s-sm" x="450" y="270" text-anchor="middle">共同關鍵字：耐熱絕緣 ＋ 瞬時點燈——停電瞬間就要亮，而且要耐得住火場高溫</text>
+</svg>
+<figcaption>圖 5　§175 三種光源的構造要求。白熾燈與水銀燈的燈座同為瓷製，日光燈則是耐熱絕緣樹脂</figcaption>
+</figure>
+
+<h3>§175 全條</h3>
+<table>
+<thead><tr><th class="n">款</th><th>光源</th><th>特性要求</th><th>燈座／其他</th></tr></thead>
+<tbody>
+<tr><td class="n">①</td><td><b>白熾燈</b></td><td><b>雙重繞燈絲燈泡</b></td><td><b>瓷製</b>或與瓷質同等以上之耐熱絕緣材料</td></tr>
+<tr><td class="n">②</td><td><b>日光燈</b></td><td><b>瞬時起動型</b></td><td><b>耐熱絕緣樹脂</b>製成</td></tr>
+<tr><td class="n">③</td><td><b>水銀燈</b></td><td><b>高壓瞬時點燈型</b></td><td><b>瓷製</b>或與瓷質同等以上之耐熱絕緣材料</td></tr>
+<tr><td class="n">④</td><td>其他光源</td><td>具有與前三款<b>同等耐熱絕緣性及瞬時點燈</b>之特性</td><td>經<b>中央主管機關核准</b></td></tr>
+<tr><td class="n">⑤</td><td><b>放電燈</b>之安定器</td><td>—</td><td>裝設於<b>耐熱性外箱</b></td></tr>
+</tbody>
+</table>
+
+<!-- ============ 6 ============ -->
+<h2 id="card"><span class="no">06</span>速查數字卡</h2>
+
+<table>
+<thead><tr><th>項目</th><th>數值</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td colspan="3" style="background:var(--fill2);font-weight:700">應設與免設</td></tr>
+<tr><td><b>應設場所</b></td><td>甲、丙、戊類之居室；乙類特定各目之居室；<b>總樓地板面積 ≥1,000 m²</b> 建築物之居室（學校教室除外）</td><td class="n">§24①②③</td></tr>
+<tr><td><b>採光門檻</b></td><td><b>有效採光面積未達該居室樓地板面積 5%</b> 者應設</td><td class="n">§24④</td></tr>
+<tr><td>通道亦應設</td><td>供前四款使用之場所，自居室通達避難層所須經過之<b>走廊、樓梯間、通道及其他平時依賴人工照明部分</b></td><td class="n">§24⑤</td></tr>
+<tr><td>認可免設</td><td>經中央主管機關認可為<b>容易避難逃生</b>或<b>具有效採光</b>之場所</td><td class="n">§24Ⅱ</td></tr>
+<tr><td><b>免設・步行距離</b></td><td><b>避難層</b>，由居室任一點至通往屋外出口之<b>步行距離 ≤ 30 m</b> 之居室</td><td class="n">§179①</td></tr>
+<tr><td>免設・採光</td><td>具有效採光，且<b>直接面向室外</b>之通道或走廊</td><td class="n">§179②</td></tr>
+<tr><td>免設・其他四款</td><td><b>集合住宅之居室</b>／保齡球館球道以<b>防煙區劃</b>之部分／工作場所中設有<b>固定機械或裝置</b>之部分／洗手間、浴室、盥洗室、儲藏室或機械室</td><td class="n">§179③～⑥</td></tr>
+
+<tr><td colspan="3" style="background:var(--fill1);font-weight:700">照度與電源</td></tr>
+<tr><td><b>地下通道照度</b></td><td><b>地下建築物之地下通道</b>，地板面 ≥ <b>10 lx</b></td><td class="n">§178</td></tr>
+<tr><td><b>其他場所照度</b></td><td>地面之水平面 ≥ <b>2 lx</b></td><td class="n">§178</td></tr>
+<tr><td>量測儀器</td><td><b>低照度測定用光電管照度計</b></td><td class="n">§178</td></tr>
+<tr><td><b>曲折點</b></td><td>走廊<b>曲折點處應增設</b>緊急照明燈</td><td class="n">§178 但書</td></tr>
+<tr><td><b>緊急電源</b></td><td><b>蓄電池設備</b>，持續動作 ≥ <b>30 分鐘</b></td><td class="n">§177Ⅱ</td></tr>
+<tr><td><b>併設方式</b></td><td>蓄電池設備與緊急發電機併設時，容量<b>分別</b>為 <b>10 分鐘</b>及 <b>30 分鐘</b>以上</td><td class="n">§177Ⅱ 但書</td></tr>
+
+<tr><td colspan="3" style="background:var(--fill4);font-weight:700">配線與構造</td></tr>
+<tr><td>配線適用範圍</td><td><b>除內置蓄電池式外</b></td><td class="n">§176</td></tr>
+<tr><td>連接方式</td><td>照明器具<b>直接連接於分路配線</b>，<b>不得裝置插座或開關等</b></td><td class="n">§176①</td></tr>
+<tr><td><b>電源回路保護</b></td><td>依 <b>§235</b> 施予<b>耐燃保護</b>；但<b>天花板及其底材使用不燃材料</b>時，得施予<b>耐熱保護</b></td><td class="n">§176②</td></tr>
+<tr><td><b>耐燃保護</b></td><td>金屬導線管槽＋埋設混凝土（保護厚度 ≥ <b>20 mm</b>）／MI 電纜或耐燃電纜直接敷設／指定裝置</td><td class="n">§235③</td></tr>
+<tr><td>耐熱保護</td><td>金屬導線管槽內裝置／MI 電纜、耐燃電纜或<b>耐熱電線電纜</b>直接敷設／指定裝置</td><td class="n">§235④</td></tr>
+<tr><td>電線規格</td><td>緊急用電源回路及操作回路使用 <b>600 V 耐熱絕緣電線</b>或同等以上</td><td class="n">§235②</td></tr>
+<tr><td>回路</td><td>應設<b>專用回路</b>，不得與一般電路相接；開關有<b>消防安全設備別之明顯標示</b></td><td class="n">§235①</td></tr>
+<tr><td><b>白熾燈</b></td><td><b>雙重繞燈絲燈泡</b>；燈座<b>瓷製</b>或同等以上耐熱絕緣材料</td><td class="n">§175①</td></tr>
+<tr><td><b>日光燈</b></td><td><b>瞬時起動型</b>；燈座<b>耐熱絕緣樹脂</b>製成</td><td class="n">§175②</td></tr>
+<tr><td><b>水銀燈</b></td><td><b>高壓瞬時點燈型</b>；燈座<b>瓷製</b>或同等以上耐熱絕緣材料</td><td class="n">§175③</td></tr>
+<tr><td>其他光源</td><td>具同等<b>耐熱絕緣性及瞬時點燈</b>特性，經中央主管機關<b>核准</b></td><td class="n">§175④</td></tr>
+<tr><td><b>放電燈安定器</b></td><td>裝設於<b>耐熱性外箱</b></td><td class="n">§175⑤</td></tr>
+</tbody>
+</table>
+
+<h3>最容易記混的五組數字</h3>
+<table>
+<thead><tr><th>數字組</th><th>正確歸屬</th></tr></thead>
+<tbody>
+<tr><td class="n"><b>10／2 lx</b></td><td>§178 照度：<b>地下建築物之地下通道 10</b>／<b>其他場所 2</b></td></tr>
+<tr><td class="n"><b>30 分鐘</b></td><td>§177 緊急照明的蓄電池容量；<b>標示設備是 20 分鐘</b>（§155）</td></tr>
+<tr><td class="n"><b>10 ＋ 30</b></td><td>§177 但書：併設時<b>分別</b>為蓄電池 10、發電機 30 分鐘，不是相加成 40</td></tr>
+<tr><td class="n"><b>5%</b></td><td>§24④ 有效採光面積未達居室樓地板面積 5% 者應設</td></tr>
+<tr><td class="n"><b>30 m／20 mm</b></td><td>§179① 免設之步行距離（公尺）／§235③ 混凝土保護厚度（毫米）</td></tr>
+</tbody>
+</table>
+
+<div class="navbar" style="margin-top:32px">
+  <a class="btn go" href="index.html">🏠 回學習首頁</a>
+  <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+  <a class="btn" href="20-%E9%81%BF%E9%9B%A3%E5%99%A8%E5%85%B7%E8%88%87%E6%94%B6%E5%AE%B9%E4%BA%BA%E5%93%A1-%E5%9C%96%E8%A7%A3.html">📐 避難器具與收容人員圖解</a>
+  <a class="btn" href="#apply">↑ 回到最上方</a>
+</div>
+
+<footer>
+  <p>本頁數據取自全國法規資料庫「各類場所消防安全設備設置標準」（pcode D0120029）民國 113 年 4 月 24 日修正版原文，於 2026-08-11 擷取核對。</p>
+  <p>§175～§179 各條在法規資料庫網頁版均可完整顯示，本節無須另查完整條文 PDF。應設場所（§24）屬第二編，耐燃／耐熱保護（§235）屬第四編，均一併引錄以利對照。</p>
+  <p>圖 3 關於「蓄電池撐住發電機啟動前的空窗期」之說明，以及各節「規律」的歸納，係條文設計邏輯的一般解釋，非條文明文。</p>
+  <p><b>法規以主管機關公布文字為準。</b>本頁為個人學習筆記，不構成法律意見；設計送審前請回查現行條文：
+  <code>https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0120029</code></p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  function target(){
+    var h=(location.hash||'').replace('#','');
+    if(!h){ var m=/[?&]s=([\w-]+)/.exec(location.search||''); h=m?m[1]:''; }
+    return h?document.getElementById(h):null;
+  }
+  function go(smooth){
+    var el=target(); if(!el) return;
+    el.scrollIntoView({behavior:smooth?'smooth':'auto',block:'start'});
+    el.style.transition='background-color .4s';
+    var old=el.style.backgroundColor;
+    el.style.backgroundColor='var(--fill4)';
+    setTimeout(function(){ el.style.backgroundColor=old||''; },1600);
+  }
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){ setTimeout(go,60); });
+  else setTimeout(go,60);
+  window.addEventListener('hashchange',function(){ go(true); });
+})();
+</script>
+</body>
+</html>
