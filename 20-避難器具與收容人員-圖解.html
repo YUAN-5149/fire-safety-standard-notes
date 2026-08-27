@@ -1,0 +1,765 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>避難器具與收容人員 圖解 — 各類場所消防安全設備設置標準 §157～§174</title>
+<meta name="description" content="避難器具應設數量與樓層可選種類、收容人員計算、減設與免設、開口面積、操作面積與下降空間下降空地（含網頁版省略之 §163～§165 三表）、標示與螺栓固定的圖解。">
+<style>
+  :root{
+    --bg:#fbfaf7; --fg:#1c1b19; --muted:#6b6862; --line:#d8d4cb;
+    --card:#ffffff; --accent:#b03a2e; --accent2:#1d6fa5; --accent3:#2e7d4f;
+    --warn:#a86b00; --danger:#8e1b0f;
+    --fill1:#f2e4e1; --fill2:#e0edf6; --fill3:#e3f0e8; --fill4:#f7efd9;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#16161a; --fg:#e8e6e1; --muted:#9b968c; --line:#3a3a40;
+      --card:#1e1e23; --accent:#e8705f; --accent2:#5aa8d8; --accent3:#5fbb87;
+      --warn:#d9a441; --danger:#f08070;
+      --fill1:#3a2622; --fill2:#1e3341; --fill3:#1f3a2c; --fill4:#3a3120;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+    line-height:1.75;-webkit-text-size-adjust:100%}
+  .wrap{max-width:960px;margin:0 auto;padding:32px 20px 80px}
+  header{border-bottom:2px solid var(--fg);padding-bottom:18px;margin-bottom:8px}
+  h1{font-size:clamp(1.4rem,4vw,2rem);margin:0 0 6px;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:.9rem;margin:0}
+  h2{font-size:1.15rem;margin:48px 0 4px;padding-top:14px;border-top:1px solid var(--line);
+    scroll-margin-top:16px}
+  h2 .no{color:var(--accent);font-variant-numeric:tabular-nums;margin-right:.5em}
+  h2:target{background:linear-gradient(transparent 62%,var(--fill4) 62%)}
+  h3{font-size:1rem;margin:26px 0 6px}
+  .lede{color:var(--muted);font-size:.92rem;margin:.2em 0 18px}
+  figure{margin:0 0 10px;background:var(--card);border:1px solid var(--line);
+    border-radius:10px;padding:18px 14px;overflow-x:auto}
+  svg{display:block;margin:0 auto;max-width:100%;height:auto}
+  figcaption{color:var(--muted);font-size:.84rem;margin-top:10px;text-align:center}
+  .note{border-left:3px solid var(--warn);background:var(--fill4);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .note b{color:var(--warn)}
+  .cmp{border-left:3px solid var(--accent2);background:var(--fill2);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .cmp b{color:var(--accent2)}
+  table{border-collapse:collapse;width:100%;font-size:.88rem;margin:14px 0}
+  th,td{border:1px solid var(--line);padding:6px 9px;text-align:left;vertical-align:top}
+  th{background:var(--fill2);font-weight:600}
+  td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+  td.c,th.c{text-align:center}
+  .scroll{overflow-x:auto}
+  .scroll table{min-width:680px}
+  code{background:var(--fill2);padding:1px 5px;border-radius:4px;font-size:.88em}
+  .formula{background:var(--fill3);border:1px solid var(--line);border-radius:8px;
+    padding:12px 16px;margin:14px 0;font-size:1rem;text-align:center}
+  .ex{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent2);
+    border-radius:0 10px 10px 0;padding:14px 18px;margin:18px 0}
+  .ex .t{font-weight:700;margin-bottom:6px;color:var(--accent2)}
+  .ex .given{font-size:.88rem;color:var(--muted);border-left:3px solid var(--line);
+    padding-left:12px;margin-bottom:10px}
+  .ex .step{font-size:.92rem;margin:8px 0}
+  .ex .ans{background:var(--fill3);border-radius:7px;padding:9px 13px;margin-top:10px;
+    font-weight:700;font-size:.94rem}
+  ol.law{font-size:.9rem;padding-left:1.4em}
+  ol.law li{margin:4px 0}
+  footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:.82rem}
+  a{color:var(--accent2)}
+  .navbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+  .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;
+    font-size:.86rem;padding:7px 14px;border-radius:8px;border:1px solid var(--line);
+    background:var(--card);color:var(--fg);transition:.12s}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.go{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+  .btn.go:hover{filter:brightness(1.1);color:#fff}
+  .toc{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 4px}
+  .toc a{font-size:.8rem;text-decoration:none;padding:4px 10px;border-radius:99px;
+    border:1px solid var(--line);background:var(--card);color:var(--muted)}
+  .toc a:hover{border-color:var(--accent);color:var(--accent)}
+  .s-line{stroke:var(--fg);stroke-width:1.4;fill:none}
+  .s-thin{stroke:var(--muted);stroke-width:1;fill:none}
+  .s-txt{fill:var(--fg);font-size:13px;font-family:inherit}
+  .s-sm{fill:var(--muted);font-size:11px;font-family:inherit}
+  .s-key{fill:var(--accent);font-size:13px;font-weight:700;font-family:inherit}
+  .s-dim{stroke:var(--accent2);stroke-width:1;fill:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>避難器具與收容人員 圖解</h1>
+  <p class="sub">各類場所消防安全設備設置標準 §157～§174（第三編第三章第二節）　|　民國 113 年 4 月 24 日修正版</p>
+  <div class="navbar">
+    <a class="btn go" href="index.html">🏠 回學習首頁</a>
+    <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+    <a class="btn" href="19-%E6%A8%99%E7%A4%BA%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html">📐 標示設備圖解</a>
+    <a class="btn" href="17-%E7%81%AB%E8%AD%A6%E8%87%AA%E5%8B%95%E8%AD%A6%E5%A0%B1%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html">📐 火警自動警報設備圖解</a>
+  </div>
+</header>
+
+<nav class="toc" aria-label="章節目錄">
+  <a href="#apply">01 應設數量與可選種類</a>
+  <a href="#people">02 收容人員計算</a>
+  <a href="#reduce">03 減設與免設</a>
+  <a href="#install">04 裝設與開口面積</a>
+  <a href="#space">05 操作面積・下降空間・下降空地</a>
+  <a href="#sign">06 標示</a>
+  <a href="#each">07 各器具個別規定</a>
+  <a href="#card">08 速查數字卡</a>
+</nav>
+
+<div class="cmp" style="margin-top:24px">
+  <b>避難器具是全法唯一「以人數而非面積」決定數量的設備。</b>
+  流程固定成三步：<b>先算收容人員</b>（§160）→ <b>查 §157 表得應設具數與可選種類</b> →
+  <b>再看能不能減設（§158）或免設（§159）</b>。<br>
+  接著才是硬體：<b>開口部要多大</b>（§162）、<b>器具周圍要留多少空間</b>（§163～§165）、
+  <b>怎麼標示</b>（§166）、<b>各器具的個別規定</b>（§167～§174）。<br>
+  <b>§163、§164、§165 三條的表在法規資料庫網頁版被省略</b>（顯示「因條文排版無法完整呈現內容」），本頁已從各該條完整條文 PDF 補齊。
+</div>
+
+<!-- ============ 1 ============ -->
+<h2 id="apply"><span class="no">01</span>應設數量與可選種類</h2>
+<p class="lede">§157 的表把所有場所歸成<b>五列</b>。每一列給兩件事：<b>從幾人開始要設</b>，以及<b>每增加幾人加一具</b>。</p>
+
+<figure>
+<svg viewBox="0 0 900 380" role="img" aria-label="避難器具五種場所類型的收容人員門檻與增設級距">
+  <text class="s-txt" x="450" y="28" text-anchor="middle" font-weight="700">§157 五種類型的收容人員門檻與增設級距</text>
+
+  <text class="s-sm" x="365" y="52" text-anchor="middle">起算收容人員</text>
+  <text class="s-sm" x="535" y="52" text-anchor="middle">首具</text>
+  <text class="s-sm" x="745" y="52" text-anchor="middle">增設級距</text>
+
+  <text class="s-sm" x="270" y="98" text-anchor="end">1　甲六目・乙十二目（醫院長照・幼兒園）</text>
+  <rect x="280" y="70" width="170" height="48" rx="5" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.4"/>
+  <text class="s-key" x="365" y="99" text-anchor="middle">20 人（或 10 人）</text>
+  <rect x="460" y="70" width="150" height="48" rx="5" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-sm" x="535" y="99" text-anchor="middle">～100 人設 1 具</text>
+  <rect x="620" y="70" width="250" height="48" rx="5" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.2"/>
+  <text class="s-sm" x="745" y="99" text-anchor="middle">超過 100，每增 100 加 1 具</text>
+
+  <text class="s-sm" x="270" y="158" text-anchor="end">2　甲三目・乙七目（旅館・集合住宅）</text>
+  <rect x="280" y="130" width="170" height="48" rx="5" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.4"/>
+  <text class="s-key" x="365" y="159" text-anchor="middle">30 人（或 10 人）</text>
+  <rect x="460" y="130" width="150" height="48" rx="5" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-sm" x="535" y="159" text-anchor="middle">～100 人設 1 具</text>
+  <rect x="620" y="130" width="250" height="48" rx="5" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.2"/>
+  <text class="s-sm" x="745" y="159" text-anchor="middle">超過 100，每增 100 加 1 具</text>
+
+  <text class="s-sm" x="270" y="218" text-anchor="end">3　甲一二四五七目・乙一～五、八、九目</text>
+  <rect x="280" y="190" width="170" height="48" rx="5" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-key" x="365" y="219" text-anchor="middle" fill="var(--accent3)">50 人</text>
+  <rect x="460" y="190" width="150" height="48" rx="5" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-sm" x="535" y="219" text-anchor="middle">～200 人設 1 具</text>
+  <rect x="620" y="190" width="250" height="48" rx="5" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.2"/>
+  <text class="s-sm" x="745" y="219" text-anchor="middle">超過 200，每增 200 加 1 具</text>
+
+  <text class="s-sm" x="270" y="278" text-anchor="end">4　乙六目・乙十目・丁類（辦公室・攝影場・工廠）</text>
+  <rect x="280" y="250" width="170" height="48" rx="5" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-key" x="365" y="279" text-anchor="middle" fill="var(--accent3)">100 人</text>
+  <rect x="460" y="250" width="150" height="48" rx="5" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-sm" x="535" y="279" text-anchor="middle">～300 人設 1 具</text>
+  <rect x="620" y="250" width="250" height="48" rx="5" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.2"/>
+  <text class="s-sm" x="745" y="279" text-anchor="middle">超過 300，每增 300 加 1 具</text>
+
+  <text class="s-sm" x="270" y="338" text-anchor="end">5　直通避難層或地面之樓梯僅一座之樓層</text>
+  <rect x="280" y="310" width="170" height="48" rx="5" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-key" x="365" y="339" text-anchor="middle" fill="var(--warn)">10 人</text>
+  <rect x="460" y="310" width="150" height="48" rx="5" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-sm" x="535" y="339" text-anchor="middle">～100 人設 1 具</text>
+  <rect x="620" y="310" width="250" height="48" rx="5" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.2"/>
+  <text class="s-sm" x="745" y="339" text-anchor="middle">超過 100，每增 100 加 1 具</text>
+</svg>
+<figcaption>圖 1　§157 五列的起算人數（10／20／30／50／100）與增設級距（100／200／300）</figcaption>
+</figure>
+
+<div class="note">
+  <b>第 1、2 列括號裡的「10 人」是下面樓層拉低的結果。</b><br>
+  ・<b>第 1 列</b>（甲六目醫院長照、乙十二目幼兒園）原本 20 人起算，但當<b>其下面樓層</b>供甲一～五目、七目、乙二目、乙六目、乙七目、丙三目或丁類使用時，<b>降為 10 人</b>。<br>
+  ・<b>第 2 列</b>（甲三目旅館、乙七目集合住宅）原本 30 人起算，下面樓層供甲一、二、四、五、七目、乙二目、乙六目、乙七目之住宿型精神復健機構或丁類使用時，<b>降為 10 人</b>。<br>
+  邏輯是：<b>樓下是容易起火的場所，樓上就要提早設避難器具</b>。
+</div>
+
+<h3>§157 全表：應設數量</h3>
+<div class="scroll">
+<table>
+<thead><tr><th class="c">列</th><th>設置場所與應設數量</th></tr></thead>
+<tbody>
+<tr><td class="c"><b>1</b></td><td>第二層以上之樓層或地下層供 <b>§12①六目、②十二目</b>使用，收容人員在 <b>20 人</b>（其下面樓層供 §12①一～五目、七目、②二目、六目、七目、③三目或④所列場所使用時，應為 <b>10 人</b>）以上 <b>100 人</b>以下時設 1 具；超過 100 人時，每增加（含未滿）<b>100 人</b>增設 1 具</td></tr>
+<tr><td class="c"><b>2</b></td><td>第二層以上之樓層或地下層供 <b>§12①三目、②七目</b>使用，收容人員在 <b>30 人</b>（其下面樓層供 §12①一目、二目、四目、五目、七目、②二目、六目、②七目之住宿型精神復健機構或④所列場所使用時，應為 <b>10 人</b>）以上 <b>100 人</b>以下時設 1 具；超過 100 人時，每增加（含未滿）<b>100 人</b>增設 1 具</td></tr>
+<tr><td class="c"><b>3</b></td><td>第二層以上之樓層或地下層供 <b>§12①一目、二目、四目、五目、七目或②一目至五目、八目、九目</b>使用，收容人員在 <b>50 人</b>以上 <b>200 人</b>以下時設 1 具；超過 200 人時，每增加 <b>200 人</b>（含未滿）增設 1 具</td></tr>
+<tr><td class="c"><b>4</b></td><td><b>第三層以上</b>之樓層或地下層供 <b>§12②六目、十目或④</b>所列場所使用，收容人員在 <b>100 人</b>以上 <b>300 人</b>以下時設 1 具；超過 300 人，每增加 <b>300 人</b>（含未滿）增設 1 具</td></tr>
+<tr><td class="c"><b>5</b></td><td>§12 所列各類場所<b>第三層</b>（供 §12①一目至三目使用，或供 §12⑤一目使用之二樓有 §12①一目至三目使用時，應為<b>二樓</b>）以上之樓層，其<b>直通避難層或地面之樓梯僅一座</b>，且收容人員在 <b>10 人</b>以上 <b>100 人</b>以下時應設 1 具；超過 100 人時，每增加（含未滿）<b>100 人</b>增設 1 具</td></tr>
+</tbody>
+</table>
+</div>
+<p class="lede">原表註：設置場所各樓層得選設之器具，除依本表規定外，<b>亦得選設經中央消防主管機關認可之避難器具</b>。</p>
+
+<figure>
+<svg viewBox="0 0 900 360" role="img" aria-label="第一類與第二類場所各樓層可選避難器具的差異">
+  <text class="s-txt" x="450" y="28" text-anchor="middle" font-weight="700">同一個樓層，不同類型可選的器具不一樣</text>
+
+  <text class="s-sm" x="235" y="58" text-anchor="middle">類型 1：甲六目（醫院・長照）、乙十二目（幼兒園）</text>
+  <rect x="30" y="76" width="90" height="56" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.3"/>
+  <text class="s-txt" x="75" y="110" text-anchor="middle">地下層</text>
+  <rect x="120" y="76" width="320" height="56" fill="var(--card)" stroke="var(--line)" stroke-width="1.3"/>
+  <text class="s-sm" x="280" y="110" text-anchor="middle">避難梯</text>
+  <rect x="30" y="140" width="90" height="56" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.3"/>
+  <text class="s-txt" x="75" y="174" text-anchor="middle">第二層</text>
+  <rect x="120" y="140" width="320" height="56" fill="var(--card)" stroke="var(--line)" stroke-width="1.3"/>
+  <text class="s-sm" x="280" y="174" text-anchor="middle">避難梯、避難橋、緩降機、救助袋、滑臺</text>
+  <rect x="30" y="204" width="90" height="56" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.3"/>
+  <text class="s-txt" x="75" y="238" text-anchor="middle">三～五層</text>
+  <rect x="120" y="204" width="320" height="56" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.6"/>
+  <text class="s-key" x="280" y="238" text-anchor="middle" fill="var(--warn)">避難橋、救助袋、滑臺</text>
+  <rect x="30" y="268" width="90" height="56" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.3"/>
+  <text class="s-txt" x="75" y="302" text-anchor="middle">六層以上</text>
+  <rect x="120" y="268" width="320" height="56" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.6"/>
+  <text class="s-key" x="280" y="302" text-anchor="middle" fill="var(--warn)">避難橋、救助袋、滑臺</text>
+
+  <text class="s-sm" x="665" y="58" text-anchor="middle">類型 2：甲三目（旅館）、乙七目（集合住宅）</text>
+  <rect x="460" y="76" width="90" height="56" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.3"/>
+  <text class="s-txt" x="505" y="110" text-anchor="middle">地下層</text>
+  <rect x="550" y="76" width="320" height="56" fill="var(--card)" stroke="var(--line)" stroke-width="1.3"/>
+  <text class="s-sm" x="710" y="110" text-anchor="middle">避難梯</text>
+  <rect x="460" y="140" width="90" height="56" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.3"/>
+  <text class="s-txt" x="505" y="174" text-anchor="middle">第二層</text>
+  <rect x="550" y="140" width="320" height="56" fill="var(--card)" stroke="var(--line)" stroke-width="1.3"/>
+  <text class="s-sm" x="710" y="174" text-anchor="middle">避難梯、避難橋、避難繩索、緩降機、救助袋、滑臺、滑杆</text>
+  <rect x="460" y="204" width="90" height="56" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.3"/>
+  <text class="s-txt" x="505" y="238" text-anchor="middle">三～五層</text>
+  <rect x="550" y="204" width="320" height="56" fill="var(--card)" stroke="var(--line)" stroke-width="1.3"/>
+  <text class="s-sm" x="710" y="238" text-anchor="middle">避難梯、避難橋、緩降機、救助袋、滑臺</text>
+  <rect x="460" y="268" width="90" height="56" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.3"/>
+  <text class="s-txt" x="505" y="302" text-anchor="middle">六層以上</text>
+  <rect x="550" y="268" width="320" height="56" fill="var(--card)" stroke="var(--line)" stroke-width="1.3"/>
+  <text class="s-sm" x="710" y="302" text-anchor="middle">避難梯、避難橋、緩降機、救助袋、滑臺</text>
+
+  <text class="s-key" x="450" y="348" text-anchor="middle">類型 1 在三層以上不得用緩降機與避難梯——使用者行動不便，垂直下降的器具用不了</text>
+</svg>
+<figcaption>圖 2　§157 表右半四欄。地下層一律只有避難梯；醫院長照與幼兒園在三層以上只剩「橋、袋、臺」三種</figcaption>
+</figure>
+
+<div class="cmp">
+  <b>三個讀表的關鍵。</b><br>
+  ① <b>地下層永遠只有避難梯</b>——地下層要往上逃，只有梯子能往上爬。<br>
+  ② <b>類型 1（醫院、長照、幼兒園）在三層以上只剩避難橋、救助袋、滑臺</b>——這三種都是「不需要使用者出力」的器具；緩降機要自己抓繩、避難梯要自己爬，行動不便者做不到。<br>
+  ③ <b>類型 3、4、5 的三～六層欄位寫「同上」，指向第 2 列</b>，即避難梯、避難橋、緩降機、救助袋、滑臺五種。<b>避難繩索與滑杆只出現在第 2 列的「第二層」欄</b>——它們只准用在二樓。
+</div>
+
+<!-- ============ 2 ============ -->
+<h2 id="people"><span class="no">02</span>收容人員計算</h2>
+<p class="lede">§160 的表有 14 列，但真正要記的是<b>那幾個除數</b>。所有面積除法都「未滿 1 之零數不計」，且<b>收容人數以樓層為單位計算</b>。</p>
+
+<figure>
+<svg viewBox="0 0 900 315" role="img" aria-label="收容人員計算的席位換算與面積除數">
+  <path class="s-thin" d="M450 16 L450 305"/>
+
+  <text class="s-txt" x="230" y="28" text-anchor="middle" font-weight="700">連續式席位：座椅正面寬度 ÷</text>
+  <rect x="60" y="52" width="340" height="60" rx="6" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-key" x="230" y="78" text-anchor="middle" fill="var(--accent2)">0.4 m</text>
+  <text class="s-sm" x="230" y="100" text-anchor="middle">第 1 列：電影院、歌廳、集會堂、體育館、活動中心</text>
+  <rect x="60" y="122" width="340" height="60" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-key" x="230" y="148" text-anchor="middle" fill="var(--accent3)">0.5 m</text>
+  <text class="s-sm" x="230" y="170" text-anchor="middle">第 2、3、5 列：遊藝場、舞廳酒吧餐廳、旅館</text>
+  <text class="s-sm" x="230" y="208" text-anchor="middle">固定席位則直接以座椅數計</text>
+  <text class="s-sm" x="230" y="230" text-anchor="middle">視聽歌唱場所之包廂：固定座椅數＋麥克風數</text>
+  <text class="s-sm" x="230" y="252" text-anchor="middle">保齡球館之球場：以附屬於球道之座椅數為準</text>
+  <text class="s-sm" x="230" y="280" text-anchor="middle">沙發、座椅相互連接者、平時固定不易移動者</text>
+  <text class="s-sm" x="230" y="300" text-anchor="middle">均視為「固定席位」</text>
+
+  <text class="s-txt" x="675" y="28" text-anchor="middle" font-weight="700">樓地板面積 ÷（m²）</text>
+  <rect x="500" y="48" width="80" height="30" rx="4" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.3"/>
+  <text class="s-key" x="540" y="69" text-anchor="middle">0.2</text>
+  <text class="s-sm" x="596" y="69">觀眾席之<tspan font-weight="700">立位</tspan>部分</text>
+  <rect x="500" y="88" width="80" height="30" rx="4" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.3"/>
+  <text class="s-key" x="540" y="109" text-anchor="middle">0.5</text>
+  <text class="s-sm" x="596" y="109">觀眾席之<tspan font-weight="700">其他</tspan>部分</text>
+  <rect x="500" y="128" width="80" height="30" rx="4" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.3"/>
+  <text class="s-key" x="540" y="149" text-anchor="middle" fill="var(--warn)">3</text>
+  <text class="s-sm" x="596" y="149">飲食休息、候診室、閱覽室、浴室更衣室、禮拜集會</text>
+  <rect x="500" y="168" width="80" height="30" rx="4" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.3"/>
+  <text class="s-key" x="540" y="189" text-anchor="middle" fill="var(--accent3)">4</text>
+  <text class="s-sm" x="596" y="189">商場、市場、百貨之<tspan font-weight="700">其他</tspan>部分</text>
+  <rect x="500" y="208" width="80" height="30" rx="4" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.3"/>
+  <text class="s-key" x="540" y="229" text-anchor="middle" fill="var(--accent2)">6</text>
+  <text class="s-sm" x="596" y="229">日式客房（以團體為主之宿所為 3 m²）</text>
+  <text class="s-sm" x="675" y="268" text-anchor="middle">未滿 1 之零數不計；走廊、樓梯及廁所</text>
+  <text class="s-sm" x="675" y="288" text-anchor="middle">原則上不列入計算收容人員之樓地板面積</text>
+</svg>
+<figcaption>圖 3　§160 的席位換算（0.4／0.5 m）與面積除數（0.2／0.5／3／4／6 m²）</figcaption>
+</figure>
+
+<h3>§160 各類場所收容人員計算（14 列）</h3>
+<div class="scroll">
+<table>
+<thead><tr><th class="c">列</th><th>各類場所</th><th>計算方式</th></tr></thead>
+<tbody>
+<tr><td class="c">1</td><td>電影片映演場所（戲院、電影院）、歌廳、集會堂、體育館、活動中心</td><td>從業員工數＋觀眾席：固定席位以座椅數（<b>連續式為正面寬度 ÷ 0.4 m</b>）／立位部分 <b>÷ 0.2 m²</b>／其他部分 <b>÷ 0.5 m²</b></td></tr>
+<tr><td class="c">2</td><td>遊藝場所、電子遊戲場、資訊休閒場所</td><td>從業員工數＋遊樂用機械器具能供進行遊樂之人數＋固定席位座椅數（<b>連續式 ÷ 0.5 m</b>）</td></tr>
+<tr><td class="c">3</td><td>舞廳舞場夜總會俱樂部酒家酒吧酒店、理容院指壓按摩、節目錄影帶播映、視聽歌唱、保齡球館、室內溜冰場、撞球場、健身休閒中心、室內螢幕式高爾夫練習場、餐廳飲食店咖啡廳茶藝館等</td><td>從業員工數＋客人座席：固定席位座椅數（<b>連續式 ÷ 0.5 m</b>）／其他部分 <b>÷ 3 m²</b>；<b>保齡球館球場以附屬於球道之座椅數為準</b>；<b>視聽歌唱包廂以固定座椅數＋麥克風數為準</b></td></tr>
+<tr><td class="c">4</td><td>商場、市場、百貨商場、超級市場、零售市場、展覽場</td><td>從業員工數＋供從業人員以外者使用部分：飲食或休息用 <b>÷ 3 m²</b>／其他部分 <b>÷ 4 m²</b>；<b>百貨商場之櫥窗列為其他部分核算</b></td></tr>
+<tr><td class="c">5</td><td>觀光飯店、飯店、旅館、招待所（限有寢室客房者）</td><td>從業員工數＋客房：<b>西式客房之床位數</b>／<b>日式客房 ÷ 6 m²</b>（以團體為主之宿所為 <b>3 m²</b>）＋供集會飲食休息部分：固定席位座椅數（連續式 <b>÷ 0.5 m</b>）／其他 <b>÷ 3 m²</b></td></tr>
+<tr><td class="c">6</td><td><b>集合住宅、寄宿舍</b></td><td>合計其居住人數，<b>每戶以 3 人計算</b></td></tr>
+<tr><td class="c">7</td><td>醫療機構（醫院、診所）、療養院</td><td>從業員工數＋<b>病房內病床數</b>＋候診室樓地板面積和 <b>÷ 3 m²</b>；<b>育嬰室之嬰兒應列為收容人員</b></td></tr>
+<tr><td class="c">8</td><td>長期照護機構、安養機構、老人服務機構、兒童福利設施、幼兒園、托嬰中心、護理之家、產後護理機構</td><td>從業員工數＋<b>老人、幼兒、身體障礙者、精神耗弱者及其他需保護者之人數</b>合計</td></tr>
+<tr><td class="c">9</td><td>學校、啟明啟聰啟智等特殊學校、補習班、訓練班、兒童與少年福利機構、K 書中心、安親（才藝）班</td><td><b>教職員工數＋學生數</b>合計</td></tr>
+<tr><td class="c">10</td><td>圖書館、博物館、美術館、紀念館、史蹟資料館等</td><td>從業員工數＋閱覽室、展示室、展覽室、會議室及休息室面積和 <b>÷ 3 m²</b></td></tr>
+<tr><td class="c">11</td><td>三溫暖、公共浴室</td><td>從業員工數＋浴室、更衣室、按摩室及休息室面積和 <b>÷ 3 m²</b></td></tr>
+<tr><td class="c">12</td><td>寺廟、宗祠、教堂、納骨堂（塔）等</td><td>神職人員及其他從業員工數＋供禮拜、集會或休息用部分面積和 <b>÷ 3 m²</b></td></tr>
+<tr><td class="c">13</td><td>車站、候機室、室內停車場、室內停車空間、電影攝影場、電視播送場、倉庫、傢俱展示販售場等工作場所</td><td><b>從業員工數之合計</b>（不計面積）</td></tr>
+<tr><td class="c">14</td><td>其他場所</td><td>從業員工數＋供從業員以外者所使用部分面積和 <b>÷ 3 m²</b></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>§160 表註：四組容易漏掉的規則</h3>
+<table>
+<thead><tr><th class="n">註</th><th>內容</th></tr></thead>
+<tbody>
+<tr><td class="n">一</td><td>收容人數之計算應<b>以樓層為單位</b></td></tr>
+<tr><td class="n">二</td><td>依「複合用途建築物判斷基準」判定不同用途在管理及使用型態上構成<b>從屬於主用途</b>時，以<b>主用途</b>核算收容人數</td></tr>
+<tr><td class="n">三</td><td><b>從業員工數</b>：不分正式或臨時，以<b>平時最多服勤人數</b>計算（<b>短期、臨時性質者得免計入</b>）；輪班制以<b>服勤人員最多時段</b>計算，交班重複在勤時該重複時段不列入；<b>外勤員工有固定桌椅者應計入</b></td></tr>
+<tr><td class="n">四</td><td>面積除法<b>未滿 1 之零數不計</b>；<b>走廊、樓梯及廁所原則上不列入</b>計算收容人員之樓地板面積</td></tr>
+<tr><td class="n">五</td><td><b>固定席位</b>指構造上固定、或設在一定場所固定使用且不易移動者；<b>沙發等座椅</b>、<b>座椅相互連接者</b>、<b>平時在同一場所固定使用且不易移動之座椅</b>均視為固定席位</td></tr>
+</tbody>
+</table>
+
+<div class="ex">
+  <div class="t">實例 1　電影院某層的收容人員</div>
+  <div class="given">某電影院第 3 層：從業員工 8 人；觀眾席為連續式座椅，正面寬度合計 48 m；立位部分 30 m²；其他部分（大廳等）45 m²。</div>
+  <div class="step">① 從業員工：<b>8 人</b></div>
+  <div class="step">② 連續式席位（§160 第 1 列，除 0.4 m）：<code>48 ÷ 0.4 = 120</code> 人</div>
+  <div class="step">③ 立位部分（除 0.2 m²）：<code>30 ÷ 0.2 = 150</code> 人</div>
+  <div class="step">④ 其他部分（除 0.5 m²）：<code>45 ÷ 0.5 = 90</code> 人</div>
+  <div class="ans">收容人員 = 8 + 120 + 150 + 90 = <b>368 人</b>。<br>
+  三個除數 <b>0.4（線性）／0.2（立位）／0.5（其他）</b>只出現在第 1 列，是全表最密的一組。</div>
+</div>
+
+<div class="ex">
+  <div class="t">實例 2　承上，應設避難器具數</div>
+  <div class="given">電影院屬 §12 第一款第一目 → §157 表<b>第 3 列</b>（甲一、二、四、五、七目及乙一～五、八、九目）。收容人員 368 人，位於第 3 層。</div>
+  <div class="step">① 第 3 列：<b>50 人以上 200 人以下設 1 具</b> → 先得 1 具</div>
+  <div class="step">② 超過 200 人部分：<code>368 − 200 = 168 人</code>；每增加 <b>200 人（含未滿）</b>增設 1 具 → <code>168 ÷ 200 = 0.84 → 1 具</code></div>
+  <div class="step">③ 合計：<code>1 + 1 = 2 具</code></div>
+  <div class="step">④ 可選種類（第 3 列「三～五層」欄寫「同上」，指向第 2 列）：<b>避難梯、避難橋、緩降機、救助袋、滑臺</b></div>
+  <div class="ans">應設避難器具 <b>2 具</b>。<br>
+  「含未滿」是進位——只超過 168 人也要多一具。</div>
+</div>
+
+<div class="ex">
+  <div class="t">實例 3　承上，適用 §158① 減設</div>
+  <div class="given">同一電影院，若建築物主要構造為<b>防火構造</b>，且設有<b>二座以上不同避難方向之安全梯</b>。</div>
+  <div class="step">① §158①：第 3 列的「200 人」得<b>以加倍數值</b>重新核算 → 變成 <b>400 人</b></div>
+  <div class="step">② 收容人員 368 人 ≤ 400 人 → 只需 <b>1 具</b></div>
+  <div class="ans">由 2 具減為 <b>1 具</b>。<br>
+  兩個條件必須<b>同時</b>成立；且<b>剪刀式樓梯視為一座</b>，不能拿來湊「二座以上」。</div>
+</div>
+
+<div class="ex">
+  <div class="t">實例 4　集合住宅的 30 人分界</div>
+  <div class="given">某集合住宅第 5 層有 12 戶。該樓層為防火構造，住戶可直接通往直通樓梯，該樓梯設有隨時可自動關閉之 1 小時防火時效防火門。</div>
+  <div class="step">① 收容人員（§160 第 6 列，每戶 3 人）：<code>12 × 3 = 36 人</code></div>
+  <div class="step">② 集合住宅＝§12②七目 → §157 表<b>第 2 列</b>：30 人以上 100 人以下設 1 具 → <b>36 ≥ 30，應設 1 具</b></div>
+  <div class="step">③ 能否依 §159② 免設？該款要求<b>收容人員未滿 30 人</b>——36 人<b>不符合</b></div>
+  <div class="ans">應設避難器具 <b>1 具</b>，且<b>不得依 §159② 免設</b>。<br>
+  若只有 9 戶（27 人），既低於 §157 第 2 列的 30 人門檻，也符合 §159② 的未滿 30 人——兩條路都通。</div>
+</div>
+
+<!-- ============ 3 ============ -->
+<h2 id="reduce"><span class="no">03</span>減設與免設</h2>
+<p class="lede">§158 是<b>減設</b>（還是要設，只是少幾具），§159 是<b>免設</b>（整層不用設）。兩條的條件都圍繞著「有沒有別的路可以逃」。</p>
+
+<figure>
+<svg viewBox="0 0 900 320" role="img" aria-label="避難器具的減設與免設條件">
+  <path class="s-thin" d="M450 16 L450 310"/>
+
+  <text class="s-txt" x="235" y="28" text-anchor="middle" font-weight="700">§158① 收容人員基數加倍</text>
+  <rect x="40" y="48" width="390" height="82" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.4"/>
+  <text class="s-sm" x="235" y="74" text-anchor="middle">① 建築物主要構造為防火構造</text>
+  <text class="s-sm" x="235" y="96" text-anchor="middle">② 設有二座以上<tspan font-weight="700">不同避難方向</tspan>之安全梯</text>
+  <text class="s-sm" x="235" y="118" text-anchor="middle">（剪刀式樓梯視為一座）</text>
+  <path class="s-line" d="M235 130 L235 152 M229 144 L235 154 L241 144"/>
+  <rect x="40" y="158" width="390" height="86" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.4"/>
+  <text class="s-key" x="235" y="186" text-anchor="middle" fill="var(--accent3)">100 → 200、200 → 400、300 → 600</text>
+  <text class="s-sm" x="235" y="210" text-anchor="middle">以加倍數值重新核算應設避難器具數</text>
+  <text class="s-sm" x="235" y="232" text-anchor="middle">適用 §157 表 1～5 全部五列</text>
+  <text class="s-sm" x="235" y="272" text-anchor="middle">「二座以上不同避難方向」是關鍵——</text>
+  <text class="s-sm" x="235" y="294" text-anchor="middle">剪刀式樓梯只算一座，無法適用本款</text>
+
+  <text class="s-txt" x="675" y="28" text-anchor="middle" font-weight="700">§158②③ 每一座減 2 具</text>
+  <rect x="480" y="48" width="390" height="86" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-sm" x="675" y="74" text-anchor="middle">② 屋頂平臺之<tspan font-weight="700">避難橋</tspan>：直下層每一座減 2 具</text>
+  <text class="s-sm" x="675" y="96" text-anchor="middle">（平臺淨空間 ≥100 m²、半小時防火門窗）</text>
+  <text class="s-sm" x="675" y="122" text-anchor="middle">③ <tspan font-weight="700">架空走廊</tspan>：該樓層每一座減 2 具</text>
+
+  <text class="s-txt" x="675" y="162" text-anchor="middle" font-weight="700">§159 免設（五款擇一）</text>
+  <text class="s-sm" x="675" y="186" text-anchor="middle">① 防火構造＋陽臺等有效避難設施可通地面</text>
+  <text class="s-sm" x="675" y="208" text-anchor="middle">② 防火構造＋可直接通直通樓梯＋1 小時防火門</text>
+  <text class="s-key" x="675" y="230" text-anchor="middle" fill="var(--warn)">　且收容人員未滿 30 人</text>
+  <text class="s-sm" x="675" y="252" text-anchor="middle">③ 乙六目、乙十目、丁類：防火構造＋二座安全梯</text>
+  <text class="s-sm" x="675" y="274" text-anchor="middle">④ 乙一二五八九目：③ 之條件＋自動撒水或內裝合規</text>
+  <text class="s-sm" x="675" y="296" text-anchor="middle">⑤ 甲六目長照類：區劃＋耐燃一級＋火警及撒水</text>
+</svg>
+<figcaption>圖 4　§158 三款減設與 §159 五款免設。§159② 的「未滿 30 人」是全節唯一的人數型免設條件</figcaption>
+</figure>
+
+<h3>§158 減設的三款</h3>
+<table>
+<thead><tr><th class="n">款</th><th>條件</th><th>效果</th></tr></thead>
+<tbody>
+<tr><td class="n">①</td><td>（一）建築物主要構造為<b>防火構造</b>；且（二）設有<b>二座以上不同避難方向之安全梯</b>（<b>剪刀式樓梯視為一座</b>）</td><td>§157 表所列 <b>100／200／300 人</b>得分別以其<b>加倍數值</b>重新核算應設具數</td></tr>
+<tr><td class="n">②</td><td>設有避難橋之屋頂平臺，其<b>直下層設有二座以上安全梯</b>可通達，且屋頂平臺：（一）淨空間面積 ≥ <b>100 m²</b>；（二）臨出入口設具<b>半小時</b>以上防火時效之防火門窗且無避難逃生障礙；（三）通往避難橋必經之出入口具容易開關之構造</td><td>直下層<b>每一座避難橋可減設 2 具</b></td></tr>
+<tr><td class="n">③</td><td>設有架空走廊之樓層，其架空走廊：（一）為<b>防火構造</b>；（二）二側出入口設有能自動關閉之具 <b>1 小時</b>以上防火時效之防火門（<b>不含防火鐵捲門</b>）；（三）不得供避難、通行及搬運以外之用途使用</td><td>該樓層<b>每一座架空走廊可減設 2 具</b></td></tr>
+</tbody>
+</table>
+
+<div class="note">
+  <b>兩個防火時效不一樣，別記反。</b><br>
+  ・§158② <b>屋頂平臺</b>出入口：<b>半小時</b>以上防火門窗<br>
+  ・§158③ <b>架空走廊</b>二側出入口：<b>1 小時</b>以上防火門，且<b>不含防火鐵捲門</b><br>
+  差別在於屋頂平臺本身就是開放空間、煙會散掉；架空走廊是兩棟之間的密閉通道，一旦串煙就沒地方躲。
+</div>
+
+<h3>§159 免設的五款</h3>
+<ol class="law">
+<li>主要構造為<b>防火構造</b>，居室面向戶外部分設有<b>陽臺等有效避難設施</b>，且該設施設有可通往地面之樓梯或通往他棟建築物之設施</li>
+<li>主要構造為<b>防火構造</b>，由居室或住戶<b>可直接通往直通樓梯</b>，且該直通樓梯設有隨時可自動關閉之具 <b>1 小時</b>以上防火時效之防火門（<b>不含防火鐵捲門</b>），<b>且收容人員未滿 30 人</b></li>
+<li>供 <b>§12②六目、十目或④</b>所列場所使用之樓層：（一）主要構造為防火構造；（二）設有<b>二座以上安全梯</b>，且該樓層各部分均有<b>二個以上不同避難逃生路徑</b>能通達安全梯</li>
+<li>供 <b>§12②一目、二目、五目、八目或九目</b>所列場所使用之樓層，除符合前款規定外，且設有<b>自動撒水設備</b>或內部裝修符合建築技術規則建築設計施工編第 88 條規定者</li>
+<li>供 <b>§12①六目</b>之榮譽國民之家、長期照顧服務機構、老人福利機構、兒童及少年福利機構、護理機構、身心障礙福利機構場所使用之樓層：（一）各樓層以具 <b>1 小時</b>以上防火時效之牆壁及防火設備<b>分隔為二個以上區劃</b>，各區劃均以走廊連接安全梯或分別連接不同安全梯；（二）裝修材料以<b>耐燃一級</b>材料裝修；（三）設有<b>火警自動警報設備及自動撒水設備</b>（含同等以上效能之滅火設備）</li>
+</ol>
+
+<!-- ============ 4 ============ -->
+<h2 id="install"><span class="no">04</span>裝設與開口面積</h2>
+<p class="lede">§161 管「裝在哪」，§162 管「洞要開多大」。開口面積四種規格裡，<b>避難橋的 180 cm 是唯一超過 1 m 的高度</b>。</p>
+
+<figure>
+<svg viewBox="0 0 900 315" role="img" aria-label="開口部必要開口面積與上下層交錯配置">
+  <path class="s-thin" d="M450 16 L450 305"/>
+
+  <text class="s-txt" x="235" y="28" text-anchor="middle" font-weight="700">§162 開口部必要開口面積</text>
+  <rect x="40" y="48" width="390" height="56" rx="6" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.3"/>
+  <text class="s-txt" x="235" y="70" text-anchor="middle">緩降機、避難梯、避難繩索及滑杆</text>
+  <text class="s-key" x="235" y="92" text-anchor="middle" fill="var(--accent2)">高 ≥80、寬 ≥50；或高 ≥100、寬 ≥45（cm）</text>
+  <rect x="40" y="112" width="390" height="52" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.3"/>
+  <text class="s-txt" x="235" y="134" text-anchor="middle">救助袋</text>
+  <text class="s-key" x="235" y="156" text-anchor="middle" fill="var(--accent3)">高 ≥60 cm、寬 ≥60 cm</text>
+  <rect x="40" y="172" width="390" height="52" rx="6" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.3"/>
+  <text class="s-txt" x="235" y="194" text-anchor="middle">滑臺</text>
+  <text class="s-key" x="235" y="216" text-anchor="middle" fill="var(--warn)">高 ≥80 cm、寬為滑臺最大寬度以上</text>
+  <rect x="40" y="232" width="390" height="52" rx="6" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.3"/>
+  <text class="s-txt" x="235" y="254" text-anchor="middle">避難橋</text>
+  <text class="s-key" x="235" y="276" text-anchor="middle">高 ≥180 cm、寬為避難橋最大寬度以上</text>
+
+  <text class="s-txt" x="675" y="28" text-anchor="middle" font-weight="700">§161⑤ 開口部上下層交錯配置</text>
+  <rect x="560" y="56" width="230" height="180" fill="var(--fill2)" stroke="var(--line)" stroke-width="1.4"/>
+  <path class="s-thin" d="M560 116 L790 116 M560 176 L790 176"/>
+  <rect x="580" y="96" width="52" height="18" rx="2" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <rect x="718" y="156" width="52" height="18" rx="2" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <rect x="580" y="216" width="52" height="18" rx="2" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <path class="s-thin" stroke-dasharray="4 3" d="M606 96 L606 236 M744 96 L744 236"/>
+  <text class="s-sm" x="812" y="110" text-anchor="start">3F</text>
+  <text class="s-sm" x="812" y="170" text-anchor="start">2F</text>
+  <text class="s-sm" x="812" y="230" text-anchor="start">1F</text>
+  <text class="s-key" x="675" y="264" text-anchor="middle" fill="var(--warn)">上下層應交錯，不得在同一垂直線上</text>
+  <text class="s-sm" x="675" y="290" text-anchor="middle">（滑杆、避難繩索及避難橋除外；避難上無障礙者不在此限）</text>
+</svg>
+<figcaption>圖 5　§162 四種開口面積與 §161⑤ 上下層交錯配置</figcaption>
+</figure>
+
+<h3>§161 裝設的五款</h3>
+<ol class="law">
+<li>設在<b>避難時易於接近</b>處</li>
+<li>與安全梯等避難逃生設施<b>保持適當距離</b></li>
+<li>供避難器具使用之開口部，具有<b>安全之構造</b></li>
+<li>避難器具<b>平時裝設於開口部</b>，或<b>必要時能迅即裝設</b>於該開口部</li>
+<li>設置避難器具（<b>滑杆、避難繩索及避難橋除外</b>）之開口部，<b>上下層應交錯配置，不得在同一垂直線上</b>；但在避難上無障礙者不在此限</li>
+</ol>
+<p class="lede">第 5 款的用意是：<b>上層的人降到下層開口正前方，會擋住下層的人</b>。滑杆與避難繩索緊貼牆面下降、避難橋是水平通行，都不會有這個問題，所以被排除。<br>
+同樣的「交錯」概念也出現在 <b>§171②（二）</b>：第四層以上設固定梯時，<b>逃生孔應上下層交錯配置，不得在同一直線上</b>。</p>
+
+<!-- ============ 5 ============ -->
+<h2 id="space"><span class="no">05</span>操作面積・下降空間・下降空地</h2>
+<p class="lede">§163、§164、§165 是<b>同一具器具由上而下的三個空間</b>，三條的表在網頁版全部被省略。三者<b>缺一不可</b>。</p>
+
+<figure>
+<svg viewBox="0 0 900 390" role="img" aria-label="操作面積下降空間下降空地三個空間的關係">
+  <text class="s-txt" x="450" y="28" text-anchor="middle" font-weight="700">§163～§165 三個空間（以緩降機為例）</text>
+
+  <rect x="60" y="56" width="380" height="90" rx="8" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text class="s-txt" x="250" y="82" text-anchor="middle" font-weight="700">① 操作面積（§163）</text>
+  <text class="s-sm" x="250" y="106" text-anchor="middle">設置周圍無操作障礙</text>
+  <text class="s-key" x="250" y="130" text-anchor="middle">≥ 0.5 m²，且邊長 ≥ 60 cm</text>
+  <path class="s-line" d="M250 146 L250 164 M244 156 L250 166 L256 156"/>
+
+  <rect x="60" y="170" width="380" height="90" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.5"/>
+  <text class="s-txt" x="250" y="196" text-anchor="middle" font-weight="700">② 下降空間（§164）</text>
+  <text class="s-sm" x="250" y="220" text-anchor="middle">開口部與地面之間</text>
+  <text class="s-key" x="250" y="244" text-anchor="middle" fill="var(--accent2)">以器具中心半徑 0.5 m 圓柱形範圍內</text>
+  <path class="s-line" d="M250 260 L250 278 M244 270 L250 280 L256 270"/>
+
+  <rect x="60" y="284" width="380" height="90" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.5"/>
+  <text class="s-txt" x="250" y="310" text-anchor="middle" font-weight="700">③ 下降空地（§165）</text>
+  <text class="s-sm" x="250" y="334" text-anchor="middle">下降空間下方</text>
+  <text class="s-key" x="250" y="358" text-anchor="middle" fill="var(--accent3)">下降空間之投影面積</text>
+
+  <text class="s-txt" x="470" y="70" font-weight="700">三者的關係</text>
+  <text class="s-sm" x="470" y="96">① 在室內：人要有地方站著把器具架起來</text>
+  <text class="s-sm" x="470" y="120">② 在空中：從開口到地面這一段不能有障礙</text>
+  <text class="s-sm" x="470" y="144">③ 在地面：落地點要有淨空</text>
+  <text class="s-key" x="470" y="180">①②③ 缺一不可，且各器具的數值都不同</text>
+  <text class="s-sm" x="470" y="212">避難繩索及滑杆的 ②③ 都只寫「應無避難障礙之空間／空地」</text>
+  <text class="s-sm" x="470" y="234">——沒有具體尺寸，因為它們本來就貼著牆下降</text>
+  <text class="s-sm" x="470" y="266">滑臺與避難橋的 ① 也只寫「依器具大小及形狀留置」</text>
+  <text class="s-sm" x="470" y="288">——這兩種是固定構造物，尺寸由器具本身決定</text>
+  <text class="s-key" x="470" y="326">有明確數字的只有：緩降機、避難梯、救助袋、滑臺</text>
+  <text class="s-sm" x="470" y="358">三條的表在法規資料庫網頁版均被省略，本頁自完整條文 PDF 補齊</text>
+</svg>
+<figcaption>圖 6　§163～§165 是同一具器具由上而下的三段檢查，任一段不合格都不能用</figcaption>
+</figure>
+
+<h3>§163 操作面積（網頁版省略之表）</h3>
+<table>
+<thead><tr><th>種類</th><th>操作面積</th></tr></thead>
+<tbody>
+<tr><td><b>緩降機、避難梯、避難繩索及滑杆</b></td><td><b>0.5 m² 以上</b>（<b>不含</b>避難器具所占面積）。但<b>邊長應為 60 cm 以上</b></td></tr>
+<tr><td><b>救助袋</b></td><td>寬 <b>150 cm 以上</b>，長 <b>150 cm 以上</b>（<b>含</b>器具所占面積）。但無操作障礙，且操作面積在 <b>2.25 m² 以上</b>時，不在此限</td></tr>
+<tr><td>滑臺、避難橋</td><td>依避難器具大小及形狀留置之</td></tr>
+</tbody>
+</table>
+<p class="lede">注意「<b>不含</b>／<b>含</b>」的差別：緩降機那一列的 0.5 m² <b>不含</b>器具本身；救助袋的 150×150 cm <b>含</b>器具所占面積。<br>
+另 <code>1.5 × 1.5 = 2.25 m²</code>——但書的 2.25 m² 正是前段矩形的面積，意思是「形狀可以不是 150×150 的方形，只要面積夠且無障礙即可」。</p>
+
+<h3>§164 下降空間（網頁版省略之表）</h3>
+<div class="scroll">
+<table>
+<thead><tr><th>種類</th><th>下降空間</th></tr></thead>
+<tbody>
+<tr><td><b>緩降機</b></td><td>以器具中心<b>半徑 0.5 m 圓柱形</b>範圍內。但突出物在 <b>10 cm 以內</b>且無避難障礙者，或<b>超過 10 cm</b> 時能採取<b>不損繩索</b>措施者，該突出物得在下降空間範圍內</td></tr>
+<tr><td><b>避難梯</b></td><td>自避難梯<b>二側豎桿中心線向外 20 cm 以上</b>及其<b>前方 65 cm 以上</b>之範圍內</td></tr>
+<tr><td>避難繩索及滑杆</td><td>應無避難障礙之空間</td></tr>
+<tr><td><b>救助袋（斜降式）</b></td><td>救助袋下方及側面，在<b>上端 25 度、下端 35 度</b>方向所圍範圍內。但<b>沿牆面使用時，牆面側不在此限</b></td></tr>
+<tr><td><b>救助袋（直降式）</b></td><td>一、救助袋與牆壁之間隔為 <b>30 cm 以上</b>（但外牆有突出物，且突出物距救助袋支固器具裝設處在 <b>3 m 以上</b>時，應距突出物前端 <b>50 cm 以上</b>）；二、以救助袋中心，<b>半徑 1 m 圓柱形</b>範圍內</td></tr>
+<tr><td><b>滑臺</b></td><td><b>滑面上方 1 m 以上</b>及<b>滑臺兩端向外 20 cm 以上</b>所圍範圍內</td></tr>
+<tr><td><b>避難橋</b></td><td>避難橋之<b>寬度以上</b>及<b>橋面上方 2 m 以上</b>所圍範圍內</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>§165 下降空地（網頁版省略之表）</h3>
+<table>
+<thead><tr><th>種類</th><th>下降空地</th></tr></thead>
+<tbody>
+<tr><td>緩降機</td><td><b>下降空間之投影面積</b></td></tr>
+<tr><td>避難梯</td><td><b>下降空間之投影面積</b></td></tr>
+<tr><td>避難繩索及滑杆</td><td>應無避難障礙之空地</td></tr>
+<tr><td><b>救助袋（斜降式）</b></td><td>救助袋<b>最下端起 2.5 m</b> 及其<b>中心線左右 1 m 以上</b>所圍範圍</td></tr>
+<tr><td>救助袋（直降式）</td><td><b>下降空間之投影面積</b></td></tr>
+<tr><td><b>滑臺</b></td><td>滑臺<b>前端起 1.5 m</b> 及其<b>中心線左右 0.5 m</b> 所圍範圍</td></tr>
+<tr><td>避難橋</td><td>無避難障礙空地</td></tr>
+</tbody>
+</table>
+
+<div class="cmp">
+  <b>只有兩種器具的「下降空地」不等於「下降空間之投影面積」。</b><br>
+  ・<b>救助袋（斜降式）</b>：<b>最下端起 2.5 m × 中心線左右各 1 m</b>——因為人是以一定速度滑出來的，落地後還會往前衝一段。<br>
+  ・<b>滑臺</b>：<b>前端起 1.5 m × 中心線左右各 0.5 m</b>——同樣是滑出後的緩衝距離，但滑臺角度較緩，所需距離比救助袋短。<br>
+  其餘（緩降機、避難梯、救助袋直降式）都是垂直下降，落地點就在正下方，所以直接取投影面積。
+</div>
+
+<!-- ============ 6 ============ -->
+<h2 id="sign"><span class="no">06</span>標示</h2>
+<p class="lede">§166 要標三樣：<b>設置位置</b>、<b>使用方法</b>、<b>避難器具指標</b>。三者都是<b>白底黑字</b>。</p>
+
+<figure>
+<svg viewBox="0 0 900 310" role="img" aria-label="避難器具標示的三種類型與螺栓固定規格">
+  <path class="s-thin" d="M450 16 L450 300"/>
+
+  <text class="s-txt" x="235" y="28" text-anchor="middle" font-weight="700">§166 三種標示</text>
+  <rect x="40" y="48" width="390" height="72" rx="6" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.3"/>
+  <text class="s-txt" x="235" y="70" text-anchor="middle" font-weight="700">設置位置</text>
+  <text class="s-key" x="235" y="92" text-anchor="middle" fill="var(--accent2)">長 ≥36 cm、寬 ≥12 cm</text>
+  <text class="s-sm" x="235" y="112" text-anchor="middle">字樣「避難器具」，每字 ≥5 cm²</text>
+  <rect x="40" y="128" width="390" height="72" rx="6" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.3"/>
+  <text class="s-txt" x="235" y="150" text-anchor="middle" font-weight="700">使用方法</text>
+  <text class="s-key" x="235" y="172" text-anchor="middle" fill="var(--accent3)">長 ≥60 cm、寬 ≥30 cm</text>
+  <text class="s-sm" x="235" y="192" text-anchor="middle">標示易懂之使用方法，每字 ≥1 cm²</text>
+  <rect x="40" y="208" width="390" height="72" rx="6" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.3"/>
+  <text class="s-txt" x="235" y="230" text-anchor="middle" font-weight="700">避難器具指標</text>
+  <text class="s-key" x="235" y="252" text-anchor="middle" fill="var(--warn)">長 ≥36 cm、寬 ≥12 cm</text>
+  <text class="s-sm" x="235" y="272" text-anchor="middle">設於通往設置位置之走廊、通道及居室入口</text>
+
+  <text class="s-txt" x="675" y="28" text-anchor="middle" font-weight="700">§174 錨定螺栓的埋入深度與轉矩值</text>
+  <text class="s-sm" x="540" y="66" text-anchor="middle">螺紋標稱</text>
+  <text class="s-sm" x="670" y="66" text-anchor="middle">埋入深度（mm）</text>
+  <text class="s-sm" x="800" y="66" text-anchor="middle">轉矩值（kgf-cm）</text>
+  <rect x="480" y="76" width="120" height="36" rx="4" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.2"/>
+  <text class="s-txt" x="540" y="99" text-anchor="middle">M10×1.5</text>
+  <rect x="610" y="76" width="120" height="36" rx="4" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-key" x="670" y="99" text-anchor="middle">45 以上</text>
+  <rect x="740" y="76" width="130" height="36" rx="4" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-key" x="805" y="99" text-anchor="middle">150～250</text>
+  <rect x="480" y="118" width="120" height="36" rx="4" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.2"/>
+  <text class="s-txt" x="540" y="141" text-anchor="middle">M12×1.75</text>
+  <rect x="610" y="118" width="120" height="36" rx="4" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-key" x="670" y="141" text-anchor="middle">60 以上</text>
+  <rect x="740" y="118" width="130" height="36" rx="4" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-key" x="805" y="141" text-anchor="middle">300～450</text>
+  <rect x="480" y="160" width="120" height="36" rx="4" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.2"/>
+  <text class="s-txt" x="540" y="183" text-anchor="middle">M16×2</text>
+  <rect x="610" y="160" width="120" height="36" rx="4" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-key" x="670" y="183" text-anchor="middle">70 以上</text>
+  <rect x="740" y="160" width="130" height="36" rx="4" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-key" x="805" y="183" text-anchor="middle">600～850</text>
+  <text class="s-sm" x="675" y="226" text-anchor="middle">埋入深度指埋入混凝土內<tspan font-weight="700">不含灰漿</tspan>部分之深度</text>
+  <text class="s-sm" x="675" y="252" text-anchor="middle">§173 固定架與支固器具材質：CNS 2473、4435 或</text>
+  <text class="s-sm" x="675" y="272" text-anchor="middle">同等以上強度及耐久性，並應施予耐腐蝕加工處理</text>
+  <text class="s-key" x="675" y="296" text-anchor="middle">深度 45／60／70 mm 對應 M10／M12／M16</text>
+</svg>
+<figcaption>圖 7　§166 三種標示的尺寸，與 §174 錨定螺栓的三組規格</figcaption>
+</figure>
+
+<h3>§166 全表</h3>
+<div class="scroll">
+<table>
+<thead><tr><th>標示種類</th><th>設置處所</th><th>尺寸</th><th>顏色</th><th>標示方法</th></tr></thead>
+<tbody>
+<tr><td><b>設置位置</b></td><td rowspan="2">避難器具或其附近明顯易見處</td><td>長 <b>36 cm</b> 以上、寬 <b>12 cm</b> 以上</td><td rowspan="3"><b>白底黑字</b></td><td>字樣為「<b>避難器具</b>」，每字 <b>5 cm²</b> 以上。但<b>避難梯等較普及之用語，得直接使用其名稱</b>為字樣</td></tr>
+<tr><td><b>使用方法</b></td><td>長 <b>60 cm</b> 以上、寬 <b>30 cm</b> 以上</td><td>標示易懂之使用方法，每字 <b>1 cm²</b> 以上</td></tr>
+<tr><td><b>避難器具指標</b></td><td>通往設置位置之<b>走廊、通道及居室之入口</b></td><td>長 <b>36 cm</b> 以上、寬 <b>12 cm</b> 以上</td><td>字樣為「<b>避難器具</b>」，每字 <b>5 cm²</b> 以上</td></tr>
+</tbody>
+</table>
+</div>
+<p class="lede">記法：<b>36×12 是「牌子」（設置位置與指標）、60×30 是「說明書」（使用方法）</b>；每字面積也對應——牌子的字要大（5 cm²），說明書的字可以小（1 cm²）。</p>
+
+<!-- ============ 7 ============ -->
+<h2 id="each"><span class="no">07</span>各器具個別規定</h2>
+<p class="lede">§167～§172 逐一規定六種器具，§173、§174 則管固定架與螺栓。共通句型是「裝置在使用場所之<b>柱、地板、樑或其他構造上較堅固</b>或加強部分」。</p>
+
+<div class="scroll">
+<table>
+<thead><tr><th class="n">條</th><th>器具</th><th>重點規定</th></tr></thead>
+<tbody>
+<tr><td class="n">§167</td><td><b>緩降機</b></td><td>下降時<b>繩子應避免與牆面或突出物接觸</b>；繩子長度以裝置位置至地面或其他下降地點之<b>等距離長度</b>為準；支固器具設在較堅固及容易裝設場所，以<b>螺栓、熔接</b>或其他堅固方法裝置</td></tr>
+<tr><td class="n">§168</td><td><b>滑臺</b></td><td>以<b>螺栓、埋入、熔接</b>或其他堅固方法裝置；設計上無使用障礙且下降時<b>保持一定之安全速度</b>；有<b>防止掉落</b>之適當措施；構造材質強度及標示符合 <b>CNS 13231</b></td></tr>
+<tr><td class="n">§169</td><td><b>避難橋</b></td><td><b>一邊</b>以螺栓、熔接或其他堅固方法裝置；構造材質強度及標示符合 <b>CNS 13231</b></td></tr>
+<tr><td class="n">§170</td><td><b>救助袋</b></td><td>長度應無避難上之障礙，且保持<b>一定之安全下滑速度</b>；支固器具以螺栓、熔接或其他堅固方法裝置</td></tr>
+<tr><td class="n">§171</td><td><b>避難梯</b></td><td><b>固定梯及固定式不銹鋼爬梯</b>：橫桿與牆面保持 <b>10 cm 以上</b>距離。<br><b>第四層以上設避難梯時應設固定梯</b>，並設於陽臺等具安全且容易避難逃生構造處，<b>樓地板面積至少 2 m²</b>，附設能內接<b>直徑 60 cm 以上</b>之逃生孔；<b>逃生孔應上下層交錯配置</b>。<br><b>懸吊型梯</b>：固定架設於較堅固處（能直接懸掛於堅固窗臺等處所時得免設固定架）；橫桿使用時與牆面保持 <b>10 cm 以上</b>距離</td></tr>
+<tr><td class="n">§172</td><td><b>滑杆及避難繩索</b></td><td>長度以裝置位置至地面或其他下降地點之<b>等距離長度</b>為準；<b>滑杆上端與下端應能固定</b>；固定架依 §171③（一）設置</td></tr>
+<tr><td class="n">§173</td><td>固定架與支固器具</td><td>材質符合 <b>CNS 2473、4435</b> 或具同等以上強度及耐久性，並應施予<b>耐腐蝕加工處理</b></td></tr>
+<tr><td class="n">§174</td><td>螺栓固定</td><td>使用<b>錨定螺栓</b>；埋入混凝土內<b>不含灰漿</b>部分之深度與轉矩值：<b>M10×1.5 → 45 mm／150～250 kgf-cm</b>；<b>M12×1.75 → 60 mm／300～450</b>；<b>M16×2 → 70 mm／600～850</b></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note">
+  <b>§171 第 2 款是避難梯唯一的「樓層限制」。</b>
+  第四層以上設避難梯時<b>必須設固定梯</b>（不能用懸吊型），而且要設在<b>陽臺等具安全構造處</b>，
+  面積至少 <b>2 m²</b>、逃生孔能內接<b>直徑 60 cm 以上</b>。<br>
+  這裡的 <b>60 cm</b> 與 §162 救助袋開口的 60 cm、§163 操作面積邊長的 60 cm 是三個不同條文的同一個數字——都是「<b>一個人能通過的最小尺寸</b>」。
+</div>
+
+<!-- ============ 8 ============ -->
+<h2 id="card"><span class="no">08</span>速查數字卡</h2>
+
+<table>
+<thead><tr><th>項目</th><th>數值</th><th class="n">條</th></tr></thead>
+<tbody>
+<tr><td colspan="3" style="background:var(--fill1);font-weight:700">應設數量與收容人員</td></tr>
+<tr><td><b>起算人數</b></td><td>第 1 列 <b>20</b>（或 10）／第 2 列 <b>30</b>（或 10）／第 3 列 <b>50</b>／第 4 列 <b>100</b>／第 5 列 <b>10</b> 人</td><td class="n">§157</td></tr>
+<tr><td><b>增設級距</b></td><td>第 1、2、5 列每 <b>100</b> 人／第 3 列每 <b>200</b> 人／第 4 列每 <b>300</b> 人（均含未滿）</td><td class="n">§157</td></tr>
+<tr><td>地下層可選器具</td><td>五列一律<b>只有避難梯</b></td><td class="n">§157</td></tr>
+<tr><td><b>類型 1 三層以上</b></td><td>只有<b>避難橋、救助袋、滑臺</b>（不得用緩降機、避難梯）</td><td class="n">§157</td></tr>
+<tr><td>避難繩索・滑杆</td><td>僅第 2 列之<b>第二層</b>欄出現——只准用在二樓</td><td class="n">§157</td></tr>
+<tr><td><b>席位換算</b></td><td>連續式席位：第 1 列 <b>÷ 0.4 m</b>；第 2、3、5 列 <b>÷ 0.5 m</b>（未滿 1 不計）</td><td class="n">§160</td></tr>
+<tr><td><b>面積除數</b></td><td>觀眾席立位 <b>0.2</b>／觀眾席其他 <b>0.5</b>／飲食休息候診閱覽浴室禮拜 <b>3</b>／商場其他 <b>4</b>／日式客房 <b>6</b>（團體宿所 3）m²</td><td class="n">§160</td></tr>
+<tr><td><b>集合住宅・寄宿舍</b></td><td><b>每戶 3 人</b></td><td class="n">§160 第 6 列</td></tr>
+<tr><td>醫療機構</td><td>從業員工＋<b>病床數</b>＋候診室 ÷3 m²；<b>育嬰室嬰兒應計入</b></td><td class="n">§160 第 7 列</td></tr>
+<tr><td>車站倉庫等</td><td><b>僅計從業員工數</b>，不計面積</td><td class="n">§160 第 13 列</td></tr>
+<tr><td>計算單位</td><td>收容人數以<b>樓層</b>為單位；<b>走廊、樓梯及廁所</b>原則上不列入面積</td><td class="n">§160 註</td></tr>
+
+<tr><td colspan="3" style="background:var(--fill2);font-weight:700">減設與免設</td></tr>
+<tr><td><b>§158① 加倍</b></td><td>防火構造 <b>且</b> 二座以上<b>不同避難方向</b>安全梯（剪刀式視為一座）→ 100／200／300 <b>加倍</b></td><td class="n">§158①</td></tr>
+<tr><td><b>屋頂平臺避難橋</b></td><td>淨空間 ≥ <b>100 m²</b>、出入口 <b>半小時</b>防火門窗 → 直下層每一座<b>減 2 具</b></td><td class="n">§158②</td></tr>
+<tr><td><b>架空走廊</b></td><td>防火構造、二側 <b>1 小時</b>防火門（<b>不含防火鐵捲門</b>）→ 每一座<b>減 2 具</b></td><td class="n">§158③</td></tr>
+<tr><td><b>§159② 免設</b></td><td>防火構造＋可直接通直通樓梯＋1 小時防火門，<b>且收容人員未滿 30 人</b></td><td class="n">§159②</td></tr>
+<tr><td>§159 其餘四款</td><td>① 陽臺等有效避難設施／③ 乙六、十目及丁類之二座安全梯＋二方向／④ ③＋自動撒水或內裝合規／⑤ 甲六目長照類之區劃＋耐燃一級＋火警及撒水</td><td class="n">§159</td></tr>
+
+<tr><td colspan="3" style="background:var(--fill4);font-weight:700">開口部與三個空間</td></tr>
+<tr><td><b>開口面積</b></td><td>緩降機・避難梯・避難繩索・滑杆：高 <b>80</b>×寬 <b>50</b>，或高 <b>100</b>×寬 <b>45</b> cm</td><td class="n">§162</td></tr>
+<tr><td>開口面積</td><td>救助袋 高 <b>60</b>×寬 <b>60</b> cm／滑臺 高 <b>80</b> cm×滑臺最大寬度／避難橋 高 <b>180</b> cm×避難橋最大寬度</td><td class="n">§162</td></tr>
+<tr><td>開口部配置</td><td>上下層應<b>交錯</b>，不得在同一垂直線上（<b>滑杆、避難繩索、避難橋除外</b>）</td><td class="n">§161⑤</td></tr>
+<tr><td><b>操作面積</b></td><td>緩降機・避難梯・避難繩索・滑杆：≥ <b>0.5 m²</b>（<b>不含</b>器具面積），<b>邊長 ≥ 60 cm</b></td><td class="n">§163</td></tr>
+<tr><td>操作面積</td><td>救助袋：寬 <b>150</b>×長 <b>150</b> cm（<b>含</b>器具面積）；但無障礙且 ≥ <b>2.25 m²</b> 時不在此限</td><td class="n">§163</td></tr>
+<tr><td><b>下降空間</b></td><td>緩降機 半徑 <b>0.5 m</b> 圓柱（突出物 ≤ <b>10 cm</b> 或能不損繩索者得在內）</td><td class="n">§164</td></tr>
+<tr><td>下降空間</td><td>避難梯 豎桿中心線向外 <b>20 cm</b>、前方 <b>65 cm</b>／救助袋斜降式 上端 <b>25 度</b>、下端 <b>35 度</b>／救助袋直降式 與牆 <b>30 cm</b>（突出物距支固器具 ≥3 m 時距其前端 <b>50 cm</b>）、半徑 <b>1 m</b> 圓柱／滑臺 滑面上方 <b>1 m</b>、兩端外 <b>20 cm</b>／避難橋 橋寬以上及橋面上方 <b>2 m</b></td><td class="n">§164</td></tr>
+<tr><td><b>下降空地</b></td><td>緩降機・避難梯・救助袋直降式：<b>下降空間之投影面積</b></td><td class="n">§165</td></tr>
+<tr><td>下降空地</td><td><b>救助袋斜降式</b>：最下端起 <b>2.5 m</b> 及中心線左右 <b>1 m</b>／<b>滑臺</b>：前端起 <b>1.5 m</b> 及中心線左右 <b>0.5 m</b></td><td class="n">§165</td></tr>
+
+<tr><td colspan="3" style="background:var(--fill3);font-weight:700">標示與固定</td></tr>
+<tr><td><b>標示尺寸</b></td><td>設置位置與指標 長 <b>36</b>×寬 <b>12</b> cm；使用方法 長 <b>60</b>×寬 <b>30</b> cm；均<b>白底黑字</b></td><td class="n">§166</td></tr>
+<tr><td>字體大小</td><td>「避難器具」每字 ≥ <b>5 cm²</b>；使用方法每字 ≥ <b>1 cm²</b></td><td class="n">§166</td></tr>
+<tr><td>指標設置處</td><td>通往設置位置之<b>走廊、通道及居室之入口</b></td><td class="n">§166</td></tr>
+<tr><td><b>避難梯橫桿</b></td><td>與牆面保持 <b>10 cm 以上</b>距離（固定梯與懸吊型梯皆同）</td><td class="n">§171①③</td></tr>
+<tr><td><b>第四層以上避難梯</b></td><td>應設<b>固定梯</b>；陽臺等處<b>樓地板面積 ≥ 2 m²</b>；逃生孔能內接<b>直徑 ≥ 60 cm</b>；<b>上下層交錯</b></td><td class="n">§171②</td></tr>
+<tr><td>CNS 標準</td><td>滑臺、避難橋構造 <b>CNS 13231</b>；固定架與支固器具材質 <b>CNS 2473、4435</b></td><td class="n">§168・§169・§173</td></tr>
+<tr><td><b>錨定螺栓</b></td><td>M10×1.5 → <b>45 mm</b>／<b>150～250</b>；M12×1.75 → <b>60 mm</b>／<b>300～450</b>；M16×2 → <b>70 mm</b>／<b>600～850</b> kgf-cm</td><td class="n">§174</td></tr>
+</tbody>
+</table>
+
+<h3>最容易記混的六組數字</h3>
+<table>
+<thead><tr><th>數字組</th><th>正確歸屬</th></tr></thead>
+<tbody>
+<tr><td class="n"><b>10／20／30／50／100</b></td><td>§157 五列的<b>起算收容人員</b></td></tr>
+<tr><td class="n"><b>100／200／300</b></td><td>§157 的<b>增設級距</b>（也是 §158① 加倍的對象）</td></tr>
+<tr><td class="n"><b>0.4／0.5</b></td><td>§160 <b>連續式席位</b>的除數（公尺，線性），不是面積</td></tr>
+<tr><td class="n"><b>0.2／0.5／3／4／6</b></td><td>§160 <b>樓地板面積</b>的除數（m²）</td></tr>
+<tr><td class="n"><b>0.5 m²／2.25 m²</b></td><td>§163 操作面積：一般 0.5（不含器具）／救助袋但書 2.25（含器具）</td></tr>
+<tr><td class="n"><b>2.5／1.5</b></td><td>§165 下降空地的前衝距離：<b>救助袋斜降式 2.5 m</b>／<b>滑臺 1.5 m</b></td></tr>
+</tbody>
+</table>
+
+<div class="navbar" style="margin-top:32px">
+  <a class="btn go" href="index.html">🏠 回學習首頁</a>
+  <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+  <a class="btn" href="19-%E6%A8%99%E7%A4%BA%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html">📐 標示設備圖解</a>
+  <a class="btn" href="#apply">↑ 回到最上方</a>
+</div>
+
+<footer>
+  <p>本頁數據取自全國法規資料庫「各類場所消防安全設備設置標準」（pcode D0120029）民國 113 年 4 月 24 日修正版原文，於 2026-08-11 擷取核對。</p>
+  <p><b>§163、§164、§165 三條之表</b>在法規資料庫網頁版顯示「因條文排版無法完整呈現內容」，本頁三表係自各該條完整條文 PDF（FileId 0000053447、0000053448、0000053449）逐格核對後補齊。原表另附有示意圖，本頁以文字與數值表達其內容。</p>
+  <p>圖 2 關於「類型 1 不得用緩降機與避難梯是因使用者行動不便」、圖 5 關於交錯配置用意、以及 §165 前衝距離之說明，均為條文設計邏輯的一般解釋，非條文明文。</p>
+  <p><b>法規以主管機關公布文字為準。</b>本頁為個人學習筆記，不構成法律意見；設計送審前請回查現行條文：
+  <code>https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0120029</code></p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  function target(){
+    var h=(location.hash||'').replace('#','');
+    if(!h){ var m=/[?&]s=([\w-]+)/.exec(location.search||''); h=m?m[1]:''; }
+    return h?document.getElementById(h):null;
+  }
+  function go(smooth){
+    var el=target(); if(!el) return;
+    el.scrollIntoView({behavior:smooth?'smooth':'auto',block:'start'});
+    el.style.transition='background-color .4s';
+    var old=el.style.backgroundColor;
+    el.style.backgroundColor='var(--fill4)';
+    setTimeout(function(){ el.style.backgroundColor=old||''; },1600);
+  }
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){ setTimeout(go,60); });
+  else setTimeout(go,60);
+  window.addEventListener('hashchange',function(){ go(true); });
+})();
+</script>
+</body>
+</html>
