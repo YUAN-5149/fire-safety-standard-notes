@@ -105,14 +105,15 @@
 <nav class="toc" aria-label="章節目錄">
   <a href="#scope">01 適用範圍與三條界線</a>
   <a href="#space">02 潔淨區空間解剖</a>
-  <a href="#matrix">03 設備×空間對照矩陣</a>
-  <a href="#sprinkler">04 自動撒水設備</a>
-  <a href="#photo">05 黃光微影區預動式</a>
-  <a href="#duct">06 排氣導管內撒水</a>
-  <a href="#alarm">07 火警與吸氣式偵煙</a>
-  <a href="#gas">08 氣體滅火的真實定位</a>
-  <a href="#smoke">09 排煙與公共危險物品</a>
-  <a href="#card">10 速查數字卡</a>
+  <a href="#types">03 要點附圖一～四</a>
+  <a href="#matrix">04 設備×空間對照矩陣</a>
+  <a href="#sprinkler">05 自動撒水設備</a>
+  <a href="#photo">06 黃光微影區預動式</a>
+  <a href="#duct">07 排氣導管內撒水</a>
+  <a href="#alarm">08 火警與吸氣式偵煙</a>
+  <a href="#gas">09 氣體滅火的真實定位</a>
+  <a href="#smoke">10 排煙與公共危險物品</a>
+  <a href="#card">11 速查數字卡</a>
 </nav>
 
 <div class="alert" style="margin-top:24px">
@@ -121,7 +122,7 @@
   但翻遍要點全十一點，潔淨室的滅火主力是<b>密閉濕式自動撒水設備</b>（第六點），
   唯一入法的「氣體」是第四點的<b>二氧化碳滅火器</b>——那是可攜式滅火器，不是固定式氣體滅火設備。
   機臺內建的氣體滅火則被第二點第二項明文推給中央目的事業主管機關，不在本要點管轄內。
-  完整的來龍去脈見 <a href="#gas">08 氣體滅火的真實定位</a>。
+  完整的來龍去脈見 <a href="#gas">09 氣體滅火的真實定位</a>。
 </div>
 
 <!-- ============ 1 ============ -->
@@ -282,7 +283,7 @@
   <text class="s-sm" x="720" y="421" text-anchor="middle" font-weight="700" fill="var(--warn)">自動物料搬運系統 AMHS（第三點⑪）</text>
   <text class="s-sm" x="720" y="439" text-anchor="middle">軌道・升降設備・Stocker／Tower Stocker</text>
 
-  <text class="s-sm" x="20" y="480">※ ISO 14644 等級 1～9 之區域＝潔淨區（第三點①），示意圖詳要點附圖一～四</text>
+  <text class="s-sm" x="20" y="480">※ ISO 14644 等級 1～9 之區域＝潔淨區（第三點①）；三種型式別剖面見下一節附圖一～四</text>
 </svg>
 <figcaption>圖 2　潔淨區垂直剖面——上回風層送風、經 FFU 下吹過潔淨室、穿格子樓板進下回風層、由回風豎井送回上方循環</figcaption>
 </figure>
@@ -295,7 +296,240 @@
 </div>
 
 <!-- ============ 3 ============ -->
-<h2 id="matrix"><span class="no">03</span>設備 × 空間對照矩陣</h2>
+<h2 id="types"><span class="no">03</span>要點附圖一～四：潔淨區的三種型式</h2>
+<p class="lede">要點第三點的用語定義是文字，<b>真正決定「你的廠房有幾層回風」的是附圖一～四</b>。
+這四張圖決定了上一節那張矩陣要套幾次——單層式沒有下回風層、雙層式沒有上回風層、三層式兩層都有。</p>
+
+<div class="alert">
+  <b>以下四張為依官方附圖重繪之示意圖，非原圖。</b>
+  官方檔案（ODT／PDF）請至
+  <a href="https://glrs.moi.gov.tw/LawContent.aspx?id=GL000940" target="_blank" rel="noopener">內政部主管法規共用系統 GL000940</a>
+  頁面下載「附圖一：單層型式潔淨區剖面示意圖」～「附圖五：撒水頭配管設置回彎管圖例」五個附件。
+  <b>送審與爭議時以官方附圖為準。</b>本頁重繪只保留判讀消防設備配置所需的空間關係，
+  已省略原圖的尺寸線、結構細部與設備型號。
+</div>
+
+<figure>
+<svg viewBox="0 0 900 290" role="img" aria-label="單層型式潔淨區剖面示意圖">
+  <text class="s-txt" x="450" y="24" text-anchor="middle" font-weight="700">附圖一　單層型式：只有潔淨室，回風走兩側豎井</text>
+
+  <!-- 屋頂/樓板 -->
+  <rect x="150" y="62" width="600" height="16" fill="var(--fill4)" stroke="var(--fg)" stroke-width="1.2"/>
+  <text class="s-sm" x="450" y="55" text-anchor="middle">樓板／屋頂</text>
+
+  <!-- 潔淨室 -->
+  <rect x="182" y="92" width="536" height="118" fill="var(--fill2)" stroke="var(--fg)" stroke-width="1.3"/>
+  <text class="s-key" x="450" y="150" text-anchor="middle" fill="var(--accent2)">潔淨室（製程機臺／FAB）</text>
+  <text class="s-sm" x="450" y="170" text-anchor="middle">有人空間　→　滅火器・室內消防栓・手動報警・標示設備　全設</text>
+
+  <!-- FFU -->
+  <g>
+    <rect x="230" y="88" width="34" height="9" fill="var(--card)" stroke="var(--fg)" stroke-width="1"/>
+    <rect x="310" y="88" width="34" height="9" fill="var(--card)" stroke="var(--fg)" stroke-width="1"/>
+    <rect x="390" y="88" width="34" height="9" fill="var(--card)" stroke="var(--fg)" stroke-width="1"/>
+    <rect x="470" y="88" width="34" height="9" fill="var(--card)" stroke="var(--fg)" stroke-width="1"/>
+    <rect x="550" y="88" width="34" height="9" fill="var(--card)" stroke="var(--fg)" stroke-width="1"/>
+    <rect x="630" y="88" width="34" height="9" fill="var(--card)" stroke="var(--fg)" stroke-width="1"/>
+  </g>
+  <path class="s-dim" d="M247 99 L247 116 M243 110 L247 118 L251 110 M327 99 L327 116 M323 110 L327 118 L331 110 M407 99 L407 116 M403 110 L407 118 L411 110 M487 99 L487 116 M483 110 L487 118 L491 110 M567 99 L567 116 M563 110 L567 118 L571 110 M647 99 L647 116 M643 110 L647 118 L651 110"/>
+  <text class="s-sm" x="450" y="112" text-anchor="middle">風機過濾組（FFU）</text>
+
+  <!-- 高架地板與格柵 -->
+  <path class="s-line" d="M182 210 L718 210"/>
+  <g stroke="var(--muted)" stroke-width="1">
+    <path d="M200 210 L200 220 M224 210 L224 220 M248 210 L248 220 M272 210 L272 220 M296 210 L296 220 M320 210 L320 220 M344 210 L344 220 M368 210 L368 220 M392 210 L392 220 M416 210 L416 220 M440 210 L440 220 M464 210 L464 220 M488 210 L488 220 M512 210 L512 220 M536 210 L536 220 M560 210 L560 220 M584 210 L584 220 M608 210 L608 220 M632 210 L632 220 M656 210 L656 220 M680 210 L680 220 M704 210 L704 220"/>
+  </g>
+  <text class="s-sm" x="450" y="236" text-anchor="middle">高架地板（格柵）</text>
+
+  <!-- 回風豎井 左右 -->
+  <rect x="144" y="86" width="36" height="128" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="7 5"/>
+  <rect x="720" y="86" width="36" height="128" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="7 5"/>
+  <text class="s-key" x="162" y="130" text-anchor="middle" font-size="10">回風</text>
+  <text class="s-key" x="162" y="146" text-anchor="middle" font-size="10">豎井</text>
+  <text class="s-key" x="738" y="130" text-anchor="middle" font-size="10">回風</text>
+  <text class="s-key" x="738" y="146" text-anchor="middle" font-size="10">豎井</text>
+  <path class="s-dim" d="M162 200 L162 100 M158 110 L162 98 L166 110"/>
+  <path class="s-dim" d="M738 200 L738 100 M734 110 L738 98 L742 110"/>
+  <rect x="152" y="96" width="20" height="26" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1"/>
+  <rect x="728" y="96" width="20" height="26" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1"/>
+  <text class="s-sm" x="806" y="104" text-anchor="middle">冷卻乾盤管</text>
+  <path class="s-thin" d="M760 104 L780 104"/>
+
+  <text class="s-key" x="450" y="264" text-anchor="middle">單層式＝<tspan font-weight="700">沒有上回風層、也沒有下回風層</tspan>；回風完全靠潔淨室兩側的回風豎井</text>
+  <text class="s-sm" x="450" y="282" text-anchor="middle">消防設備只需檢討兩個空間：<tspan font-weight="700">潔淨室（有人）</tspan>與<tspan font-weight="700">回風豎井（無人）</tspan></text>
+</svg>
+<figcaption>要點附圖一　單層型式潔淨區剖面示意圖（依官方附圖重繪，非原圖）</figcaption>
+</figure>
+
+<figure>
+<svg viewBox="0 0 900 300" role="img" aria-label="雙層型式潔淨區剖面示意圖之一">
+  <text class="s-txt" x="450" y="24" text-anchor="middle" font-weight="700">附圖二　雙層型式之一：潔淨室 ＋ 下回風層，豎井在右側</text>
+
+  <!-- 潔淨室 -->
+  <rect x="120" y="60" width="560" height="106" fill="var(--fill2)" stroke="var(--fg)" stroke-width="1.3"/>
+  <text class="s-key" x="380" y="118" text-anchor="middle" fill="var(--accent2)">潔淨室（製程機臺／FAB）</text>
+  <g>
+    <rect x="170" y="76" width="30" height="9" fill="var(--card)" stroke="var(--fg)" stroke-width="1"/>
+    <rect x="250" y="76" width="30" height="9" fill="var(--card)" stroke="var(--fg)" stroke-width="1"/>
+    <rect x="330" y="76" width="30" height="9" fill="var(--card)" stroke="var(--fg)" stroke-width="1"/>
+    <rect x="410" y="76" width="30" height="9" fill="var(--card)" stroke="var(--fg)" stroke-width="1"/>
+    <rect x="490" y="76" width="30" height="9" fill="var(--card)" stroke="var(--fg)" stroke-width="1"/>
+    <rect x="570" y="76" width="30" height="9" fill="var(--card)" stroke="var(--fg)" stroke-width="1"/>
+  </g>
+  <text class="s-sm" x="380" y="98" text-anchor="middle">風機過濾組（FFU）　↓ 下吹</text>
+
+  <!-- 高架地板 -->
+  <path class="s-line" d="M120 166 L680 166"/>
+  <g stroke="var(--muted)" stroke-width="1">
+    <path d="M140 166 L140 178 M170 166 L170 178 M200 166 L200 178 M230 166 L230 178 M260 166 L260 178 M290 166 L290 178 M320 166 L320 178 M350 166 L350 178 M380 166 L380 178 M410 166 L410 178 M440 166 L440 178 M470 166 L470 178 M500 166 L500 178 M530 166 L530 178 M560 166 L560 178 M590 166 L590 178 M620 166 L620 178 M650 166 L650 178"/>
+  </g>
+  <text class="s-sm" x="380" y="192" text-anchor="middle">高架地板（格柵）——氣流由此下穿</text>
+
+  <!-- 下回風層 -->
+  <rect x="120" y="200" width="560" height="66" fill="var(--fill3)" stroke="var(--fg)" stroke-width="1.3"/>
+  <text class="s-key" x="380" y="228" text-anchor="middle" fill="var(--accent3)">下回風層（Sub FAB）</text>
+  <text class="s-sm" x="380" y="248" text-anchor="middle">有人空間（維修動線）　→　與潔淨室同樣四樣全設</text>
+
+  <!-- 回風豎井 右 -->
+  <rect x="686" y="56" width="70" height="212" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="7 5"/>
+  <text class="s-key" x="721" y="110" text-anchor="middle" font-size="11">回</text>
+  <text class="s-key" x="721" y="134" text-anchor="middle" font-size="11">風</text>
+  <text class="s-key" x="721" y="158" text-anchor="middle" font-size="11">豎</text>
+  <text class="s-key" x="721" y="182" text-anchor="middle" font-size="11">井</text>
+  <path class="s-dim" d="M745 250 L745 80 M741 92 L745 76 L749 92"/>
+  <rect x="700" y="236" width="42" height="20" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1"/>
+  <text class="s-sm" x="800" y="250" text-anchor="middle">冷卻乾盤管</text>
+  <path class="s-thin" d="M744 246 L768 246"/>
+  <text class="s-sm" x="800" y="120" text-anchor="middle">格柵</text>
+  <path class="s-thin" d="M758 116 L780 116"/>
+
+  <text class="s-key" x="380" y="290" text-anchor="middle">雙層式＝<tspan font-weight="700">有下回風層、沒有上回風層</tspan>；回風由下回風層經右側豎井送回 FFU 上方</text>
+</svg>
+<figcaption>要點附圖二　雙層型式潔淨區剖面示意圖之一（依官方附圖重繪，非原圖）</figcaption>
+</figure>
+
+<figure>
+<svg viewBox="0 0 900 300" role="img" aria-label="雙層型式潔淨區剖面示意圖之二">
+  <text class="s-txt" x="450" y="24" text-anchor="middle" font-weight="700">附圖三　雙層型式之二：豎井改在左側，下回風層由頂部送風口出風</text>
+
+  <!-- 回風豎井 左 -->
+  <rect x="120" y="56" width="70" height="212" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="7 5"/>
+  <text class="s-key" x="155" y="110" text-anchor="middle" font-size="11">回</text>
+  <text class="s-key" x="155" y="134" text-anchor="middle" font-size="11">風</text>
+  <text class="s-key" x="155" y="158" text-anchor="middle" font-size="11">豎</text>
+  <text class="s-key" x="155" y="182" text-anchor="middle" font-size="11">井</text>
+  <path class="s-dim" d="M133 250 L133 80 M129 92 L133 76 L137 92"/>
+  <rect x="140" y="236" width="42" height="20" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1"/>
+  <text class="s-sm" x="96" y="250" text-anchor="middle">冷卻乾盤管</text>
+  <path class="s-thin" d="M138 246 L118 246"/>
+
+  <!-- 潔淨室 -->
+  <rect x="196" y="60" width="620" height="106" fill="var(--fill2)" stroke="var(--fg)" stroke-width="1.3"/>
+  <text class="s-key" x="506" y="118" text-anchor="middle" fill="var(--accent2)">潔淨室（製程機臺／FAB）</text>
+  <g>
+    <rect x="250" y="76" width="30" height="9" fill="var(--card)" stroke="var(--fg)" stroke-width="1"/>
+    <rect x="340" y="76" width="30" height="9" fill="var(--card)" stroke="var(--fg)" stroke-width="1"/>
+    <rect x="430" y="76" width="30" height="9" fill="var(--card)" stroke="var(--fg)" stroke-width="1"/>
+    <rect x="520" y="76" width="30" height="9" fill="var(--card)" stroke="var(--fg)" stroke-width="1"/>
+    <rect x="610" y="76" width="30" height="9" fill="var(--card)" stroke="var(--fg)" stroke-width="1"/>
+    <rect x="700" y="76" width="30" height="9" fill="var(--card)" stroke="var(--fg)" stroke-width="1"/>
+  </g>
+  <text class="s-sm" x="506" y="98" text-anchor="middle">風機過濾組（FFU）</text>
+
+  <path class="s-line" d="M196 166 L816 166"/>
+  <g stroke="var(--muted)" stroke-width="1">
+    <path d="M216 166 L216 178 M246 166 L246 178 M276 166 L276 178 M306 166 L306 178 M336 166 L336 178 M366 166 L366 178 M396 166 L396 178 M426 166 L426 178 M456 166 L456 178 M486 166 L486 178 M516 166 L516 178 M546 166 L546 178 M576 166 L576 178 M606 166 L606 178 M636 166 L636 178 M666 166 L666 178 M696 166 L696 178 M726 166 L726 178 M756 166 L756 178 M786 166 L786 178"/>
+  </g>
+  <text class="s-sm" x="506" y="192" text-anchor="middle">高架地板（格柵）</text>
+
+  <!-- 送風夾層 + 下回風層 -->
+  <rect x="196" y="200" width="620" height="18" fill="var(--fill4)" stroke="var(--fg)" stroke-width="1.1"/>
+  <text class="s-sm" x="506" y="213" text-anchor="middle">送風夾層</text>
+  <path class="s-dim" d="M290 218 L290 232 M286 226 L290 234 L294 226 M400 218 L400 232 M396 226 L400 234 L404 226 M510 218 L510 232 M506 226 L510 234 L514 226 M620 218 L620 232 M616 226 L620 234 L624 226 M730 218 L730 232 M726 226 L730 234 L734 226"/>
+  <rect x="196" y="240" width="620" height="30" fill="var(--fill3)" stroke="var(--fg)" stroke-width="1.3"/>
+  <text class="s-key" x="506" y="260" text-anchor="middle" fill="var(--accent3)">下回風層（Sub FAB）</text>
+
+  <text class="s-key" x="450" y="292" text-anchor="middle">附圖二與附圖三的差別只在<tspan font-weight="700">豎井左右位置與下回風層的送風方式</tspan>——空間種類完全相同，消防設備檢討也相同</text>
+</svg>
+<figcaption>要點附圖三　雙層型式潔淨區剖面示意圖之二（依官方附圖重繪，非原圖）</figcaption>
+</figure>
+
+<figure>
+<svg viewBox="0 0 900 340" role="img" aria-label="三層型式潔淨區剖面示意圖">
+  <text class="s-txt" x="450" y="24" text-anchor="middle" font-weight="700">附圖四　三層型式：上回風層 ＋ 潔淨室 ＋ 下回風層</text>
+
+  <!-- 空調機房（頂） -->
+  <rect x="380" y="40" width="150" height="30" fill="var(--card)" stroke="var(--fg)" stroke-width="1.2"/>
+  <text class="s-sm" x="455" y="60" text-anchor="middle">空調機房</text>
+  <path class="s-dim" d="M340 55 L376 55 M368 51 L378 55 L368 59"/>
+  <text class="s-sm" x="310" y="58" text-anchor="middle">進氣百葉</text>
+
+  <!-- 上回風層 Air Plenum -->
+  <rect x="196" y="76" width="508" height="66" fill="var(--fill4)" stroke="var(--fg)" stroke-width="1.3"/>
+  <rect x="250" y="88" width="180" height="24" fill="var(--card)" stroke="var(--fg)" stroke-width="1"/>
+  <text class="s-sm" x="340" y="105" text-anchor="middle">空調系統</text>
+  <rect x="470" y="88" width="180" height="24" fill="var(--card)" stroke="var(--fg)" stroke-width="1"/>
+  <text class="s-sm" x="560" y="105" text-anchor="middle">空調系統</text>
+  <text class="s-key" x="450" y="132" text-anchor="middle" fill="var(--warn)">上回風層（Air Plenum）　無人空間　→　只設撒水與偵測</text>
+
+  <!-- 潔淨室 -->
+  <rect x="196" y="152" width="508" height="82" fill="var(--fill2)" stroke="var(--fg)" stroke-width="1.3"/>
+  <g>
+    <rect x="240" y="164" width="28" height="8" fill="var(--card)" stroke="var(--fg)" stroke-width="1"/>
+    <rect x="320" y="164" width="28" height="8" fill="var(--card)" stroke="var(--fg)" stroke-width="1"/>
+    <rect x="400" y="164" width="28" height="8" fill="var(--card)" stroke="var(--fg)" stroke-width="1"/>
+    <rect x="480" y="164" width="28" height="8" fill="var(--card)" stroke="var(--fg)" stroke-width="1"/>
+    <rect x="560" y="164" width="28" height="8" fill="var(--card)" stroke="var(--fg)" stroke-width="1"/>
+    <rect x="640" y="164" width="28" height="8" fill="var(--card)" stroke="var(--fg)" stroke-width="1"/>
+  </g>
+  <text class="s-sm" x="450" y="188" text-anchor="middle">風機過濾組（FFU）</text>
+  <text class="s-key" x="450" y="212" text-anchor="middle" fill="var(--accent2)">潔淨室（製程機臺／FAB）　有人空間　→　四樣全設</text>
+
+  <path class="s-line" d="M196 234 L704 234"/>
+  <g stroke="var(--muted)" stroke-width="1">
+    <path d="M216 234 L216 244 M246 234 L246 244 M276 234 L276 244 M306 234 L306 244 M336 234 L336 244 M366 234 L366 244 M396 234 L396 244 M426 234 L426 244 M456 234 L456 244 M486 234 L486 244 M516 234 L516 244 M546 234 L546 244 M576 234 L576 244 M606 234 L606 244 M636 234 L636 244 M666 234 L666 244"/>
+  </g>
+  <text class="s-sm" x="450" y="258" text-anchor="middle">高架地板（格柵）</text>
+
+  <!-- 下回風層 -->
+  <rect x="196" y="266" width="508" height="42" fill="var(--fill3)" stroke="var(--fg)" stroke-width="1.3"/>
+  <text class="s-key" x="450" y="292" text-anchor="middle" fill="var(--accent3)">下回風層（Sub FAB）　有人空間　→　四樣全設</text>
+
+  <!-- 回風豎井 兩側 -->
+  <rect x="120" y="72" width="70" height="240" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="7 5"/>
+  <rect x="710" y="72" width="70" height="240" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="7 5"/>
+  <text class="s-key" x="155" y="120" text-anchor="middle" font-size="11">回</text>
+  <text class="s-key" x="155" y="150" text-anchor="middle" font-size="11">風</text>
+  <text class="s-key" x="155" y="196" text-anchor="middle" font-size="11">豎</text>
+  <text class="s-key" x="155" y="240" text-anchor="middle" font-size="11">井</text>
+  <text class="s-key" x="745" y="120" text-anchor="middle" font-size="11">回</text>
+  <text class="s-key" x="745" y="150" text-anchor="middle" font-size="11">風</text>
+  <text class="s-key" x="745" y="196" text-anchor="middle" font-size="11">豎</text>
+  <text class="s-key" x="745" y="240" text-anchor="middle" font-size="11">井</text>
+  <path class="s-dim" d="M175 290 L175 100 M171 112 L175 96 L179 112"/>
+  <path class="s-dim" d="M725 290 L725 100 M721 112 L725 96 L729 112"/>
+  <text class="s-sm" x="838" y="176" text-anchor="middle">格柵・冷卻乾盤管</text>
+  <path class="s-thin" d="M784 172 L800 172"/>
+
+  <text class="s-key" x="450" y="330" text-anchor="middle">三層式＝<tspan font-weight="700">上下回風層都有</tspan>；四個空間都要檢討，是要點矩陣套得最完整的一型</text>
+</svg>
+<figcaption>要點附圖四　三層型式潔淨區剖面示意圖（依官方附圖重繪，非原圖）</figcaption>
+</figure>
+
+<h3>三種型式的空間對照</h3>
+<table>
+<thead><tr><th>型式</th><th class="c">上回風層</th><th class="c">潔淨室</th><th class="c">下回風層</th><th class="c">回風豎井</th><th>要檢討幾個空間</th></tr></thead>
+<tbody>
+<tr><td><b>單層型式</b>（附圖一）</td><td class="c">✗</td><td class="c">✓</td><td class="c">✗</td><td class="c">✓（兩側）</td><td class="c"><b>2</b></td></tr>
+<tr><td><b>雙層型式</b>（附圖二、三）</td><td class="c">✗</td><td class="c">✓</td><td class="c">✓</td><td class="c">✓（單側）</td><td class="c"><b>3</b></td></tr>
+<tr><td><b>三層型式</b>（附圖四）</td><td class="c">✓</td><td class="c">✓</td><td class="c">✓</td><td class="c">✓（兩側）</td><td class="c"><b>4</b></td></tr>
+</tbody>
+</table>
+<p class="lede">附圖二與附圖三同為「雙層型式」，差別只在<b>回風豎井在左或在右</b>、以及<b>下回風層的送風方式</b>——
+空間種類與消防設備檢討完全相同，不必當成兩種型式記。<br>
+判別口訣：<b>看 FFU 上方有沒有一整層可以走人的機房</b>——有就是三層式（上回風層），沒有就看地板下有沒有 Sub FAB。</p>
+
+<h2 id="matrix"><span class="no">04</span>設備 × 空間對照矩陣</h2>
 <p class="lede">要點第四點～第八點的全部內容，濃縮成一張圖。<b>這是整份要點最值得背的一張表。</b></p>
 
 <figure>
@@ -421,7 +655,7 @@
 </div>
 
 <!-- ============ 4 ============ -->
-<h2 id="sprinkler"><span class="no">04</span>自動撒水設備——潔淨區的滅火主力</h2>
+<h2 id="sprinkler"><span class="no">05</span>自動撒水設備——潔淨區的滅火主力</h2>
 <p class="lede">要點第六點第一項。<b>密閉濕式</b>，七款規定。這是整份要點最長、最重要的一點。</p>
 
 <figure>
@@ -539,7 +773,7 @@
 </div>
 
 <!-- ============ 5 ============ -->
-<h2 id="photo"><span class="no">05</span>黃光微影區的預動式選項</h2>
+<h2 id="photo"><span class="no">06</span>黃光微影區的預動式選項</h2>
 <p class="lede">要點第六點第二項。<b>「得」設置——這是選項不是義務</b>，但一旦選了，四款附加條件全部綁上。</p>
 
 <figure>
@@ -592,6 +826,55 @@
 <figcaption>圖 5　黃光微影區改採預動式的四款附加條件。第②款的 +50% 是唯一會改變水量的一款</figcaption>
 </figure>
 
+<figure>
+<svg viewBox="0 0 900 300" role="img" aria-label="撒水頭配管設置回彎管圖例">
+  <text class="s-txt" x="450" y="24" text-anchor="middle" font-weight="700">附圖五　撒水頭配管設置回彎管（Return Bend）圖例</text>
+
+  <!-- 天花板 -->
+  <path class="s-line" stroke-width="2" d="M150 62 L520 62"/>
+  <path class="s-thin" d="M250 78 L268 66 M262 66 L268 66 L268 72"/>
+  <text class="s-sm" x="228" y="90" text-anchor="middle">天花板（裝置面）</text>
+
+  <!-- 回彎管：上行 → 橫過 → 下行 -->
+  <g stroke="var(--fg)" stroke-width="2.2" fill="none" stroke-linecap="round">
+    <path d="M300 250 L300 130"/>
+    <path d="M300 130 Q300 108 322 108"/>
+    <path d="M322 108 L368 108"/>
+    <path d="M368 108 Q390 108 390 130"/>
+    <path d="M390 130 L390 160"/>
+  </g>
+  <!-- 接頭環 -->
+  <g stroke="var(--muted)" stroke-width="1.4" fill="var(--card)">
+    <rect x="292" y="176" width="16" height="12"/>
+    <rect x="292" y="214" width="16" height="12"/>
+    <rect x="338" y="100" width="14" height="16"/>
+    <rect x="382" y="140" width="16" height="12"/>
+  </g>
+  <!-- 撒水頭（向下型） -->
+  <path class="s-line" stroke-width="1.6" d="M382 160 L398 160 L398 172 L382 172 Z"/>
+  <path class="s-line" stroke-width="1.6" d="M378 172 L402 172 L390 190 Z"/>
+  <path class="s-line" stroke-width="1.6" d="M376 190 L404 190"/>
+  <text class="s-key" x="466" y="182" text-anchor="middle">撒水頭（向下型）</text>
+  <path class="s-thin" d="M410 180 L432 180"/>
+
+  <text class="s-sm" x="300" y="270" text-anchor="middle">支管上行</text>
+  <text class="s-sm" x="345" y="96" text-anchor="middle">橫過段</text>
+  <text class="s-sm" x="390" y="270" text-anchor="middle">下行接撒水頭</text>
+
+  <!-- 說明 -->
+  <rect x="520" y="70" width="350" height="150" rx="9" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.5"/>
+  <text class="s-key" x="695" y="96" text-anchor="middle" fill="var(--accent3)">回彎管在做什麼</text>
+  <text class="s-sm" x="695" y="122" text-anchor="middle">把配管先<tspan font-weight="700">往上繞一段再下來</tspan>接撒水頭，</text>
+  <text class="s-sm" x="695" y="142" text-anchor="middle">支管內的<tspan font-weight="700">積水與雜質不會滯留在撒水頭側</tspan>，</text>
+  <text class="s-sm" x="695" y="162" text-anchor="middle">也不會因結露倒灌進頭部造成誤動作或腐蝕。</text>
+  <text class="s-key" x="695" y="192" text-anchor="middle" fill="var(--accent3)">要點第六點第二項第四款：</text>
+  <text class="s-sm" x="695" y="212" text-anchor="middle">設回彎管者，<tspan font-weight="700">視為符合設置標準 §55 第 4 款但書</tspan></text>
+
+  <text class="s-key" x="450" y="292" text-anchor="middle">§55④ 原本要求密閉乾式／預動式的撒水頭「使用向上型」——回彎管是潔淨區獲准改用向下型的交換條件</text>
+</svg>
+<figcaption>要點附圖五　撒水頭配管設置回彎管圖例（依官方附圖重繪，非原圖）</figcaption>
+</figure>
+
 <div class="ex">
   <div class="t">實例 3　黃光微影區採預動式的水源容量</div>
   <div class="given">
@@ -611,7 +894,7 @@
 </div>
 
 <!-- ============ 6 ============ -->
-<h2 id="duct"><span class="no">06</span>排氣導管內撒水——最容易被漏掉的一項</h2>
+<h2 id="duct"><span class="no">07</span>排氣導管內撒水——最容易被漏掉的一項</h2>
 <p class="lede">要點第六點第三項、第四項。這是<b>設置標準完全沒有</b>的規定，也是潔淨區獨有的風險：導管本身是塑膠、裡面走的是易燃氣體。</p>
 
 <figure>
@@ -705,7 +988,7 @@
 </div>
 
 <!-- ============ 7 ============ -->
-<h2 id="alarm"><span class="no">07</span>火警與吸氣式偵煙探測系統</h2>
+<h2 id="alarm"><span class="no">08</span>火警與吸氣式偵煙探測系統</h2>
 <p class="lede">要點第七點。潔淨室的氣流是「垂直層流、每分鐘換氣數十次」——傳統偵煙式探測器在這種環境幾乎失效，所以要點大幅引進吸氣式（Aspirating）系統。</p>
 
 <figure>
@@ -807,7 +1090,7 @@
 </div>
 
 <!-- ============ 8 ============ -->
-<h2 id="gas"><span class="no">08</span>氣體滅火在潔淨區的真實定位</h2>
+<h2 id="gas"><span class="no">09</span>氣體滅火在潔淨區的真實定位</h2>
 <p class="lede">這一節專門回答「潔淨室的氣體滅火在哪裡」。答案分四層，而且<b>只有第一層真正寫在要點裡</b>。</p>
 
 <figure>
@@ -916,7 +1199,7 @@
 </div>
 
 <!-- ============ 9 ============ -->
-<h2 id="smoke"><span class="no">09</span>排煙設備與公共危險物品</h2>
+<h2 id="smoke"><span class="no">10</span>排煙設備與公共危險物品</h2>
 <p class="lede">要點第九點、第十點。<b>第九點是全要點唯一寫「潔淨區」而非「潔淨室」的設備條文</b>——範圍涵蓋整個潔淨區。</p>
 
 <figure>
@@ -969,7 +1252,7 @@
 </div>
 
 <!-- ============ 10 ============ -->
-<h2 id="card"><span class="no">10</span>速查數字卡</h2>
+<h2 id="card"><span class="no">11</span>速查數字卡</h2>
 <p class="lede">要點全部數值一次看完。</p>
 
 <h3>撒水設備（第六點）</h3>
@@ -1062,8 +1345,11 @@
   （亦見內政部主管法規共用系統 <code>https://glrs.moi.gov.tw/LawContent.aspx?id=GL000940</code>）。</p>
   <p>本頁引用之各類場所消防安全設備設置標準條文，依民國 113 年 4 月 24 日修正版
   （<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0120029" target="_blank" rel="noopener">全國法規資料庫 pcode D0120029</a>）。</p>
-  <p>要點第三點所稱附圖一～四（潔淨區型式示意圖）及第六點第二項第四款所稱附圖五（回彎管），
-  須至法規頁面下載附件圖表；本頁圖 2 為依用語定義自行繪製之空間關係示意，非要點附圖。</p>
+  <p>要點第三點所稱<b>附圖一～四</b>（潔淨區型式示意圖）與第六點第二項第四款所稱<b>附圖五</b>（回彎管），
+  本頁已於第 03 節與第 06 節<b>依官方附圖重繪</b>（非原圖，已省略尺寸線、結構細部與設備型號）；
+  <b>送審與爭議時以官方附圖為準</b>，原檔（附圖一～四為 ODT、附圖五為 PDF）請自
+  <a href="https://glrs.moi.gov.tw/LawContent.aspx?id=GL000940" target="_blank" rel="noopener">內政部主管法規共用系統 GL000940</a> 下載。
+  本頁圖 2 則為依用語定義自行繪製之空間關係示意，非要點附圖。</p>
   <p><b>法規以主管機關公布文字為準。</b>本頁為個人學習筆記，不構成法律意見；
   實際設計、審查或送審前，請回查現行條文並洽詢主管機關。
   要點第六點的兩處撒水密度換算方式、第七點的探測器組防護面積認可值，均須另行確認。</p>
