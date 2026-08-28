@@ -25,6 +25,17 @@ h1{font-size:clamp(1.25rem,4vw,1.7rem);margin:0 0 4px}
 .sub{color:var(--muted);font-size:.86rem;margin:0}
 h2{font-size:1.05rem;margin:26px 0 10px}
 .hide{display:none!important}
+.resume{border:1.5px solid var(--accent);background:var(--f1);border-radius:12px;
+  padding:14px 16px;margin:0 0 20px}
+.resume .rt{font-weight:700;color:var(--accent)}
+.resume .rd{color:var(--muted);font-size:.87rem;margin:2px 0 10px}
+.resume .rb{display:flex;gap:8px;flex-wrap:wrap}
+.memo{border:1px solid var(--line);background:var(--card);border-radius:12px;
+  padding:12px 16px;margin:18px 0 0}
+.memo .mrow{display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin:5px 0}
+.memo .ml{color:var(--muted);font-size:.82rem;margin-right:6px}
+.memo b{font-variant-numeric:tabular-nums;font-size:1.02rem}
+.memo .ghost{opacity:.7;font-size:.86rem;padding:7px 13px}
 button{font:inherit;cursor:pointer;border-radius:8px;border:1px solid var(--line);
   background:var(--card);color:var(--fg);padding:9px 16px;transition:.12s}
 button:hover{border-color:var(--fg)}
@@ -148,6 +159,15 @@ code{background:var(--f2);padding:1px 5px;border-radius:4px;font-size:.88em}
 
 <!-- ===== SETUP ===== -->
 <section id="setup">
+  <div id="resume" class="resume hide">
+    <div class="rt">上次的練習還沒做完</div>
+    <div class="rd" id="resumetxt"></div>
+    <div class="rb">
+      <button class="primary" id="cont">繼續作答</button>
+      <button id="drop">放棄，重新選範圍</button>
+    </div>
+  </div>
+
   <h2>選擇練習範圍</h2>
   <div class="cats" id="cats"></div>
 
@@ -167,6 +187,20 @@ code{background:var(--f2);padding:1px 5px;border-radius:4px;font-size:.88em}
     <button class="primary" id="start">開始練習</button>
   </div>
   <p class="sub" id="pool"></p>
+
+  <div id="memo" class="memo hide">
+    <div class="mrow">
+      <div><span class="ml">累計作答</span><b id="mdone">0</b> 題</div>
+      <div><span class="ml">累計答對</span><b id="mok">0</b> 題　<span class="ml" id="mpct"></span></div>
+      <div><span class="ml">錯題本</span><b id="mwrong">0</b> 題</div>
+    </div>
+    <div class="mrow">
+      <button id="doWrong">只練錯題本</button>
+      <button id="clearAll" class="ghost">清除所有紀錄</button>
+    </div>
+    <p class="sub" style="margin:8px 0 0">紀錄只存在這台裝置的瀏覽器，不會上傳；換裝置或清除瀏覽器資料就會消失。
+    <b>同一題連續答對兩次會自動移出錯題本。</b></p>
+  </div>
 </section>
 
 <!-- ===== QUIZ ===== -->
@@ -3072,23 +3106,94 @@ const dgLink = (tag, cls) => {
 const $ = id => document.getElementById(id);
 let sel = new Set(CATS.map(c=>c.k)), list = [], i = 0, answered = false, wrong = [], score = 0;
 
-// 建立類別卡
+/* ===== 進度保存 =====
+   全部存在瀏覽器的 localStorage，不上傳任何資料。
+   題目以內容雜湊當識別碼，之後題庫增刪題目時，累計統計與錯題本仍然有效。 */
+const KEY = 'fsn-quiz-v1';
+function hash(s){ let h=5381; for(let k=0;k<s.length;k++) h=((h*33)^s.charCodeAt(k))>>>0; return h.toString(36); }
+const BYID = {};
+Q.forEach(q=>{ q.id = hash(q.c+'|'+q.r+'|'+q.q); BYID[q.id] = q; });
+
+let DB;
+try { DB = JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e){ DB = {}; }
+DB.stat = DB.stat || {done:0, ok:0};
+DB.book = DB.book || {};      // 錯題本：id → 之後連續答對次數
+DB.prefs = DB.prefs || {};
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(DB)); }catch(e){} }
+
+// 建立類別卡（勾選狀態沿用上次）
+if(Array.isArray(DB.prefs.sel) && DB.prefs.sel.length){
+  const valid = DB.prefs.sel.filter(k=>CATS.some(c=>c.k===k));
+  if(valid.length) sel = new Set(valid);
+}
 $('cats').innerHTML = CATS.map(c=>{
   const n = Q.filter(q=>q.c===c.k).length;
-  return `<label class="cat"><input type="checkbox" value="${c.k}" checked>
+  return `<label class="cat"><input type="checkbox" value="${c.k}"${sel.has(c.k)?' checked':''}>
     <span><span class="t">${c.n}　<span style="color:var(--muted);font-weight:400">${n} 題</span></span>
     <span class="d">${c.d}</span></span></label>`;
 }).join('');
 $('cats').addEventListener('change', e=>{
   if(e.target.checked) sel.add(e.target.value); else sel.delete(e.target.value);
+  DB.prefs.sel = [...sel]; save();
   pool();
 });
+if(DB.prefs.cnt!=null) $('cnt').value = DB.prefs.cnt;
+if(DB.prefs.ord!=null) $('ord').value = DB.prefs.ord;
+$('cnt').addEventListener('change', ()=>{ DB.prefs.cnt = $('cnt').value; save(); });
+$('ord').addEventListener('change', ()=>{ DB.prefs.ord = $('ord').value; save(); });
+
+function bookIds(){ return Object.keys(DB.book).filter(id=>BYID[id]); }
+function memo(){
+  const s = DB.stat, b = bookIds().length;
+  $('memo').classList.toggle('hide', s.done===0 && b===0);
+  $('mdone').textContent = s.done;
+  $('mok').textContent = s.ok;
+  $('mpct').textContent = s.done ? '（'+Math.round(s.ok/s.done*100)+'%）' : '';
+  $('mwrong').textContent = b;
+  $('doWrong').disabled = b===0;
+}
 function pool(){
   const n = Q.filter(q=>sel.has(q.c)).length;
   $('pool').textContent = `目前範圍共 ${n} 題`;
   $('start').disabled = n===0;
+  memo();
 }
 pool();
+
+function saveSes(){
+  DB.ses = { ids:list.map(q=>q.id), i, score, answered, wrong:wrong.map(w=>w.q.id), at:Date.now() };
+  save();
+}
+function clearSes(){ delete DB.ses; save(); showResume(); }
+function showResume(){
+  const s = DB.ses;
+  let ok = false;
+  if(s && Array.isArray(s.ids) && s.ids.length){
+    const qs = s.ids.map(id=>BYID[id]);
+    const start = (s.i||0) + (s.answered?1:0);
+    ok = qs.every(Boolean) && start < qs.length;
+  }
+  $('resume').classList.toggle('hide', !ok);
+  if(ok){
+    const start = (s.i||0) + (s.answered?1:0);
+    const d = new Date(s.at||Date.now());
+    const stamp = d.getFullYear()+'/'+(d.getMonth()+1)+'/'+d.getDate()+' '
+      + String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');
+    $('resumetxt').innerHTML = `${stamp}　·　做到第 <b>${start+1}</b> / ${s.ids.length} 題，目前答對 <b>${s.score||0}</b> 題`;
+  }
+}
+function resumeSes(){
+  const s = DB.ses; if(!s) return false;
+  const qs = s.ids.map(id=>BYID[id]);
+  if(!qs.every(Boolean)) return false;
+  const start = (s.i||0) + (s.answered?1:0);
+  if(start >= qs.length) return false;
+  list = qs; i = start; score = s.score||0;
+  wrong = (s.wrong||[]).map(id=>BYID[id]).filter(Boolean).map(q=>({q}));
+  $('setup').classList.add('hide'); $('result').classList.add('hide'); $('quiz').classList.remove('hide');
+  render(); return true;
+}
+showResume();
 
 const shuf = a => { for(let j=a.length-1;j>0;j--){const k=Math.floor(Math.random()*(j+1));[a[j],a[k]]=[a[k],a[j]];} return a; };
 
@@ -3099,9 +3204,9 @@ function begin(src){
     const n = parseInt($('cnt').value,10);
     if(n>0) list = list.slice(0,n);
   }
-  i=0; score=0; wrong=[];
+  i=0; score=0; wrong=[]; answered=false;
   $('setup').classList.add('hide'); $('result').classList.add('hide'); $('quiz').classList.remove('hide');
-  render();
+  render(); saveSes();
 }
 
 function render(){
@@ -3168,6 +3273,18 @@ function check(){
   if(ok) score++;
   else wrong.push({q, given});
 
+  // 累計統計與錯題本
+  DB.stat.done++; if(ok) DB.stat.ok++;
+  if(ok){
+    if(DB.book[q.id]!==undefined){
+      DB.book[q.id]++;
+      if(DB.book[q.id]>=2) delete DB.book[q.id];   // 連續答對兩次就畢業
+    }
+  } else {
+    DB.book[q.id] = 0;
+  }
+  saveSes();
+
   const ansTxt = q.t==='num' ? `${q.a} ${q.u}`
     : q.t==='multi' ? q.a.map(k=>q.o[k]).join('、') : q.o[q.a];
   const fb = $('fb');
@@ -3185,10 +3302,11 @@ function check(){
 }
 
 function next(){
-  if(i < list.length-1){ i++; render(); } else finish();
+  if(i < list.length-1){ i++; render(); saveSes(); } else finish();
 }
 
 function finish(){
+  clearSes(); memo();
   $('quiz').classList.add('hide'); $('result').classList.remove('hide');
   const done = i + (answered?1:0);
   const pct = done? Math.round(score/done*100):0;
@@ -3237,7 +3355,28 @@ $('next').onclick = next;
 $('quit').onclick = finish;
 $('again').onclick = ()=>begin();
 $('redo').onclick = ()=>begin(shuf(wrong.map(w=>w.q)));
-$('home').onclick = ()=>{ $('result').classList.add('hide'); $('setup').classList.remove('hide'); };
+$('home').onclick = ()=>{ $('result').classList.add('hide'); $('setup').classList.remove('hide'); memo(); showResume(); };
+
+$('cont').onclick = ()=>{ if(!resumeSes()){ clearSes(); } };
+$('drop').onclick = ()=>{ clearSes(); };
+$('doWrong').onclick = ()=>{
+  const qs = bookIds().map(id=>BYID[id]);
+  if(qs.length) begin(shuf(qs));
+};
+let armed = false;
+$('clearAll').onclick = function(){
+  if(!armed){
+    armed = true; this.textContent = '再按一次，確定清除';
+    this.classList.add('primary');
+    setTimeout(()=>{ armed=false; this.textContent='清除所有紀錄'; this.classList.remove('primary'); }, 4000);
+    return;
+  }
+  try{ localStorage.removeItem(KEY); }catch(e){}
+  DB = {stat:{done:0,ok:0}, book:{}, prefs:{}};
+  armed = false; this.textContent = '已清除'; this.classList.remove('primary');
+  setTimeout(()=>{ this.textContent='清除所有紀錄'; }, 1600);
+  showResume(); pool();
+};
 
 document.addEventListener('keydown', e=>{
   if($('quiz').classList.contains('hide')) return;
