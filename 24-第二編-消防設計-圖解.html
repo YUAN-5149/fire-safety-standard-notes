@@ -1,0 +1,967 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第一編總則・第二編消防設計 圖解 — 各類場所消防安全設備設置標準 §1～§30-1</title>
+<meta name="description" content="判斷「要不要設」的那一編：§4 用語定義與無開口樓層、§7～§11 設備四大種類、§12 甲乙丙丁戊分類、§14～§30-1 全部應設場所門檻與免設抵免關係的圖解。">
+<style>
+  :root{
+    --bg:#fbfaf7; --fg:#1c1b19; --muted:#6b6862; --line:#d8d4cb;
+    --card:#ffffff; --accent:#b03a2e; --accent2:#1d6fa5; --accent3:#2e7d4f;
+    --warn:#a86b00; --danger:#8e1b0f;
+    --fill1:#f2e4e1; --fill2:#e0edf6; --fill3:#e3f0e8; --fill4:#f7efd9;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#16161a; --fg:#e8e6e1; --muted:#9b968c; --line:#3a3a40;
+      --card:#1e1e23; --accent:#e8705f; --accent2:#5aa8d8; --accent3:#5fbb87;
+      --warn:#d9a441; --danger:#f08070;
+      --fill1:#3a2622; --fill2:#1e3341; --fill3:#1f3a2c; --fill4:#3a3120;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+    line-height:1.75;-webkit-text-size-adjust:100%}
+  .wrap{max-width:960px;margin:0 auto;padding:32px 20px 80px}
+  header{border-bottom:2px solid var(--fg);padding-bottom:18px;margin-bottom:8px}
+  h1{font-size:clamp(1.4rem,4vw,2rem);margin:0 0 6px;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:.9rem;margin:0}
+  h2{font-size:1.15rem;margin:48px 0 4px;padding-top:14px;border-top:1px solid var(--line);
+    scroll-margin-top:16px}
+  h2 .no{color:var(--accent);font-variant-numeric:tabular-nums;margin-right:.5em}
+  h2:target{background:linear-gradient(transparent 62%,var(--fill4) 62%)}
+  h3{font-size:1rem;margin:26px 0 6px}
+  .lede{color:var(--muted);font-size:.92rem;margin:.2em 0 18px}
+  figure{margin:0 0 10px;background:var(--card);border:1px solid var(--line);
+    border-radius:10px;padding:18px 14px;overflow-x:auto}
+  svg{display:block;margin:0 auto;max-width:100%;height:auto}
+  figcaption{color:var(--muted);font-size:.84rem;margin-top:10px;text-align:center}
+  .note{border-left:3px solid var(--warn);background:var(--fill4);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .note b{color:var(--warn)}
+  .cmp{border-left:3px solid var(--accent2);background:var(--fill2);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .cmp b{color:var(--accent2)}
+  .warnbox{border-left:3px solid var(--danger);background:var(--fill1);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:14px 0}
+  .warnbox b{color:var(--danger)}
+  table{border-collapse:collapse;width:100%;font-size:.88rem;margin:14px 0}
+  th,td{border:1px solid var(--line);padding:6px 9px;text-align:left;vertical-align:top}
+  th{background:var(--fill2);font-weight:600}
+  td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+  td.c,th.c{text-align:center}
+  .scroll{overflow-x:auto}
+  .scroll table{min-width:620px}
+  code{background:var(--fill2);padding:1px 5px;border-radius:4px;font-size:.88em}
+  .formula{background:var(--fill3);border:1px solid var(--line);border-radius:8px;
+    padding:12px 16px;margin:14px 0;font-size:1rem;text-align:center}
+  .ex{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent2);
+    border-radius:0 10px 10px 0;padding:14px 18px;margin:18px 0}
+  .ex .t{font-weight:700;margin-bottom:6px;color:var(--accent2)}
+  .ex .given{font-size:.88rem;color:var(--muted);border-left:3px solid var(--line);
+    padding-left:12px;margin-bottom:10px}
+  .ex .step{font-size:.92rem;margin:8px 0}
+  .ex .ans{background:var(--fill3);border-radius:7px;padding:9px 13px;margin-top:10px;
+    font-weight:700;font-size:.94rem}
+  ol.law{font-size:.9rem;padding-left:1.4em}
+  ol.law li{margin:4px 0}
+  footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:.82rem}
+  a{color:var(--accent2)}
+  .navbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+  .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;
+    font-size:.86rem;padding:7px 14px;border-radius:8px;border:1px solid var(--line);
+    background:var(--card);color:var(--fg);transition:.12s}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.go{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+  .btn.go:hover{filter:brightness(1.1);color:#fff}
+  .toc{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 4px}
+  .toc a{font-size:.8rem;text-decoration:none;padding:4px 10px;border-radius:99px;
+    border:1px solid var(--line);background:var(--card);color:var(--muted)}
+  .toc a:hover{border-color:var(--accent);color:var(--accent)}
+  .s-line{stroke:var(--fg);stroke-width:1.4;fill:none}
+  .s-thin{stroke:var(--muted);stroke-width:1;fill:none}
+  .s-txt{fill:var(--fg);font-size:13px;font-family:inherit}
+  .s-sm{fill:var(--muted);font-size:11px;font-family:inherit}
+  .s-key{fill:var(--accent);font-size:13px;font-weight:700;font-family:inherit}
+  .s-dim{stroke:var(--accent2);stroke-width:1;fill:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>第一編總則・第二編消防設計 圖解</h1>
+  <p class="sub">各類場所消防安全設備設置標準 §1～§3（第一編）＋ §4～§30-1（第二編）　|　民國 113 年 4 月 24 日修正版</p>
+  <div class="navbar">
+    <a class="btn go" href="index.html">🏠 回學習首頁</a>
+    <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+    <a class="btn" href="23-%E6%A2%9D%E8%99%9F%E7%B4%A2%E5%BC%95.html">🔍 條號索引</a>
+    <a class="btn" href="15-%E6%BB%85%E7%81%AB%E5%99%A8%E8%88%87%E5%AE%A4%E5%85%A7%E5%A4%96%E6%B6%88%E9%98%B2%E6%A0%93-%E5%9C%96%E8%A7%A3.html">📐 滅火器與消防栓圖解</a>
+  </div>
+</header>
+
+<nav class="toc" aria-label="章節目錄">
+  <a href="#route">01 查法路徑與總則</a>
+  <a href="#terms">02 用語定義</a>
+  <a href="#kinds">03 設備四大種類</a>
+  <a href="#places">04 §12 場所分類</a>
+  <a href="#ext">05 滅火設備應設場所</a>
+  <a href="#alarm">06 警報設備應設場所</a>
+  <a href="#escape">07 避難逃生設備應設場所</a>
+  <a href="#rescue">08 搶救必要設備應設場所</a>
+  <a href="#exempt">09 免設與抵免關係</a>
+  <a href="#card">10 門檻總表與速查卡</a>
+</nav>
+
+<div class="cmp" style="margin-top:24px">
+  <b>第二編只回答一個問題：「這個場所，要不要設這項設備？」</b>
+  它<b>不管怎麼設</b>——水量、壓力、間距全部在第三編。兩者混在一起是初學最常見的卡關點。<br>
+  這一編的結構其實只有三段：<b>§4～§11 先把名詞與設備種類定義好</b> →
+  <b>§12 把所有場所分成甲乙丙丁戊五類</b> → <b>§14～§30-1 用「類別 × 樓層 × 樓地板面積」開出十七道門檻</b>。<br>
+  把 §12 背熟，第二編就完成一半——因為 §14 之後的每一條都在引用它。
+</div>
+
+<!-- ============ 1 ============ -->
+<h2 id="route"><span class="no">01</span>查法路徑與第一編總則（§1～§3、§13）</h2>
+<p class="lede">整部標準只有一條主動線。走熟它，八成的問題都能自己查出來。</p>
+
+<figure>
+<svg viewBox="0 0 900 430" role="img" aria-label="消防安全設備設置標準的查法路徑與第一編總則">
+  <text class="s-txt" x="450" y="24" text-anchor="middle" font-weight="700">查法 SOP：四個問題，四個落點</text>
+
+  <rect x="60" y="44" width="780" height="46" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.5"/>
+  <text class="s-key" x="200" y="66" text-anchor="middle" fill="var(--accent2)">① 這是什麼場所？</text>
+  <text class="s-sm" x="200" y="82" text-anchor="middle">用途分類</text>
+  <text class="s-txt" x="560" y="72" text-anchor="middle">→　<tspan font-weight="700">§12</tspan>　甲類／乙類／丙類／丁類／戊類</text>
+  <path class="s-dim" d="M450 90 L450 112 M444 104 L450 116 L456 104"/>
+
+  <rect x="60" y="116" width="780" height="46" rx="8" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text class="s-key" x="200" y="138" text-anchor="middle">② 要不要設？</text>
+  <text class="s-sm" x="200" y="154" text-anchor="middle">應設場所門檻</text>
+  <text class="s-txt" x="560" y="144" text-anchor="middle">→　<tspan font-weight="700">第二編 §14～§30-1</tspan>　類別 × 樓層 × 樓地板面積</text>
+  <path class="s-dim" d="M450 162 L450 184 M444 176 L450 188 L456 176"/>
+
+  <rect x="60" y="188" width="780" height="46" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.5"/>
+  <text class="s-key" x="200" y="210" text-anchor="middle" fill="var(--accent3)">③ 要怎麼設？</text>
+  <text class="s-sm" x="200" y="226" text-anchor="middle">配置與計算</text>
+  <text class="s-txt" x="560" y="216" text-anchor="middle">→　<tspan font-weight="700">第三編 §31～§192</tspan>　水量、壓力、間距、緊急電源</text>
+  <path class="s-dim" d="M450 234 L450 256 M444 248 L450 260 L456 248"/>
+
+  <rect x="60" y="260" width="780" height="46" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <text class="s-key" x="200" y="282" text-anchor="middle" fill="var(--warn)">④ 是公共危險物品場所嗎？</text>
+  <text class="s-txt" x="560" y="288" text-anchor="middle">→　<tspan font-weight="700">第四編 §193～§233</tspan>　整組規則換一套</text>
+
+  <path class="s-thin" stroke-dasharray="4 3" d="M60 326 L840 326"/>
+  <text class="s-txt" x="450" y="350" text-anchor="middle" font-weight="700">第一編 總則（只有三條）</text>
+  <rect x="60" y="362" width="250" height="52" rx="7" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-key" x="185" y="382" text-anchor="middle">§1　法源</text>
+  <text class="s-sm" x="185" y="400" text-anchor="middle">依<tspan font-weight="700">消防法 §6 第 1 項</tspan>訂定</text>
+
+  <rect x="325" y="362" width="250" height="52" rx="7" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-key" x="450" y="382" text-anchor="middle">§2　（刪除）</text>
+  <text class="s-sm" x="450" y="400" text-anchor="middle">全法唯一被刪除的總則條文</text>
+
+  <rect x="590" y="362" width="250" height="52" rx="7" fill="var(--card)" stroke="var(--line)" stroke-width="1.2"/>
+  <text class="s-key" x="715" y="382" text-anchor="middle">§3　認可</text>
+  <text class="s-sm" x="715" y="400" text-anchor="middle">未定國家標準之設備須經<tspan font-weight="700">認可</tspan></text>
+</svg>
+<figcaption>圖 1　查法路徑與第一編三條。§12 是整條路徑的入口，之後每一條應設條文都在引用它</figcaption>
+</figure>
+
+<div class="note">
+  <b>§3 的兩個主體不一樣，很容易混。</b><br>
+  第 1 項：未定國家標準或國內無法檢驗之設備，應檢附國外標準、國外（內）檢驗報告及試驗合格證明或規格證明，
+  經<b>中央主管機關</b>（內政部）<b>認可</b>後始准使用。<br>
+  第 2 項：應經認可之<b>設備項目及應檢附文件</b>，由<b>中央消防機關</b>（消防署）另定之。<br>
+  全法凡是「另定之」的條文都要留意主體：§97、§97-10 是<b>中央主管機關</b>；§234、§237① 是<b>中央消防機關</b>。
+</div>
+
+<h3>§13　增建、改建與變更用途：從舊或從新</h3>
+<figure>
+<svg viewBox="0 0 900 300" role="img" aria-label="第13條增改建與變更用途時適用新舊標準的判斷">
+  <text class="s-txt" x="450" y="24" text-anchor="middle" font-weight="700">§13　原則從舊，四種例外從新</text>
+
+  <rect x="60" y="44" width="300" height="70" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.5"/>
+  <text class="s-key" x="210" y="70" text-anchor="middle" fill="var(--accent3)">原則：適用「變更前」之標準</text>
+  <text class="s-sm" x="210" y="94" text-anchor="middle">增建、改建或變更用途時，既有設備不必全面翻新</text>
+
+  <rect x="420" y="44" width="420" height="70" rx="8" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text class="s-key" x="630" y="70" text-anchor="middle">例外：下列四款適用「變更後」之標準</text>
+  <text class="s-sm" x="630" y="94" text-anchor="middle">只要落入任一款，該部分就要照新法辦</text>
+
+  <rect x="60" y="132" width="380" height="66" rx="7" fill="var(--card)" stroke="var(--accent)" stroke-width="1.3"/>
+  <text class="s-key" x="250" y="154" text-anchor="middle">① 七種「輕裝備」一律從新</text>
+  <text class="s-sm" x="250" y="174" text-anchor="middle">滅火器・火警自動警報・手動報警・緊急廣播</text>
+  <text class="s-sm" x="250" y="190" text-anchor="middle">標示設備・避難器具・緊急照明設備</text>
+
+  <rect x="460" y="132" width="380" height="66" rx="7" fill="var(--card)" stroke="var(--accent)" stroke-width="1.3"/>
+  <text class="s-key" x="650" y="154" text-anchor="middle">② 規模門檻</text>
+  <text class="s-sm" x="650" y="174" text-anchor="middle">自 <tspan font-weight="700">85 年 7 月 1 日</tspan>修正條文施行日起，增改建部分</text>
+  <text class="s-sm" x="650" y="190" text-anchor="middle">合計逾 <tspan font-weight="700">1,000 m²</tspan> 或占原總樓地板面積 <tspan font-weight="700">1/2 以上</tspan></text>
+
+  <rect x="60" y="212" width="380" height="60" rx="7" fill="var(--card)" stroke="var(--accent)" stroke-width="1.3"/>
+  <text class="s-key" x="250" y="234" text-anchor="middle">③ 變更為甲類場所</text>
+  <text class="s-sm" x="250" y="256" text-anchor="middle">該變更後用途之消防安全設備</text>
+
+  <rect x="460" y="212" width="380" height="60" rx="7" fill="var(--card)" stroke="var(--accent)" stroke-width="1.3"/>
+  <text class="s-key" x="650" y="234" text-anchor="middle">④ 原本就不合格者</text>
+  <text class="s-sm" x="650" y="256" text-anchor="middle">用途變更前，未符合變更前規定之設備</text>
+
+  <text class="s-sm" x="450" y="292" text-anchor="middle">記法：<tspan font-weight="700">「便宜好換的先換」（第①款七種）＋「動得夠大就整棟換」（第②款）＋「變成甲類就換」（第③款）＋「本來就欠的要補」（第④款）</tspan></text>
+</svg>
+<figcaption>圖 2　§13 的一原則四例外。第①款那七種設備的共同點是：不需動到管線與水源，換裝成本低</figcaption>
+</figure>
+
+<!-- ============ 2 ============ -->
+<h2 id="terms"><span class="no">02</span>用語定義（§4～§6）</h2>
+<p class="lede">§4 六款定義裡，<b>無開口樓層</b>與<b>危險工作場所三級</b>是後面每一條門檻都要用到的判準。</p>
+
+<figure>
+<svg viewBox="0 0 900 400" role="img" aria-label="第4條第2款無開口樓層的判定與有效開口四要件">
+  <text class="s-txt" x="450" y="24" text-anchor="middle" font-weight="700">§4 ② 無開口樓層：有效開口面積「未達」下列規定者</text>
+
+  <rect x="50" y="44" width="380" height="150" rx="9" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.6"/>
+  <text class="s-key" x="240" y="70" text-anchor="middle" fill="var(--accent2)">（一）11 層以上之樓層</text>
+  <path class="s-thin" d="M66 82 L414 82"/>
+  <text class="s-sm" x="240" y="106" text-anchor="middle">具可內切直徑 <tspan font-weight="700">50 cm 以上</tspan>圓孔之開口，</text>
+  <text class="s-key" x="240" y="132" text-anchor="middle" fill="var(--accent2)">合計面積 ≥ 該樓地板面積 1/30</text>
+  <text class="s-sm" x="240" y="160" text-anchor="middle">只有這一個條件</text>
+  <text class="s-sm" x="240" y="180" text-anchor="middle">達不到 → 該樓層為「無開口樓層」</text>
+
+  <rect x="470" y="44" width="380" height="150" rx="9" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-key" x="660" y="70" text-anchor="middle">（二）10 層以下之樓層</text>
+  <path class="s-thin" d="M486 82 L834 82"/>
+  <text class="s-sm" x="660" y="102" text-anchor="middle">同樣要「50 cm 圓孔開口合計 ≥ 1/30」，</text>
+  <text class="s-key" x="660" y="128" text-anchor="middle">但另加：至少 2 個</text>
+  <text class="s-sm" x="660" y="150" text-anchor="middle">內切直徑 <tspan font-weight="700">1 m 以上</tspan>圓孔，</text>
+  <text class="s-sm" x="660" y="168" text-anchor="middle">或寬 <tspan font-weight="700">75 cm</tspan> 以上、高 <tspan font-weight="700">120 cm</tspan> 以上之開口</text>
+  <text class="s-sm" x="660" y="186" text-anchor="middle">低樓層是消防隊主要進入面，所以要求更嚴</text>
+
+  <text class="s-txt" x="450" y="228" text-anchor="middle" font-weight="700">§4 第 2 項　「有效開口」四要件（缺一不可）</text>
+
+  <rect x="50" y="242" width="195" height="76" rx="7" fill="var(--card)" stroke="var(--accent3)" stroke-width="1.3"/>
+  <text class="s-key" x="147" y="266" text-anchor="middle" fill="var(--accent3)">① 高度</text>
+  <text class="s-sm" x="147" y="290" text-anchor="middle">開口<tspan font-weight="700">下端</tspan>距樓地板面</text>
+  <text class="s-sm" x="147" y="306" text-anchor="middle"><tspan font-weight="700">120 cm 以內</tspan></text>
+
+  <rect x="255" y="242" width="195" height="76" rx="7" fill="var(--card)" stroke="var(--accent3)" stroke-width="1.3"/>
+  <text class="s-key" x="352" y="266" text-anchor="middle" fill="var(--accent3)">② 面臨</text>
+  <text class="s-sm" x="352" y="290" text-anchor="middle">面臨道路或寬度</text>
+  <text class="s-sm" x="352" y="306" text-anchor="middle"><tspan font-weight="700">1 m 以上</tspan>之通路</text>
+
+  <rect x="460" y="242" width="195" height="76" rx="7" fill="var(--card)" stroke="var(--accent3)" stroke-width="1.3"/>
+  <text class="s-key" x="557" y="266" text-anchor="middle" fill="var(--accent3)">③ 無阻礙</text>
+  <text class="s-sm" x="557" y="290" text-anchor="middle">無柵欄，內部未設妨礙</text>
+  <text class="s-sm" x="557" y="306" text-anchor="middle">避難之構造或阻礙物</text>
+
+  <rect x="665" y="242" width="185" height="76" rx="7" fill="var(--card)" stroke="var(--accent3)" stroke-width="1.3"/>
+  <text class="s-key" x="757" y="266" text-anchor="middle" fill="var(--accent3)">④ 可進入</text>
+  <text class="s-sm" x="757" y="288" text-anchor="middle">可自外面開啟或輕易破壞；</text>
+  <text class="s-sm" x="757" y="306" text-anchor="middle">一般玻璃門窗厚度 <tspan font-weight="700">≤6 mm</tspan></text>
+
+  <rect x="120" y="340" width="660" height="48" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.4"/>
+  <text class="s-key" x="450" y="362" text-anchor="middle" fill="var(--warn)">無開口樓層在 §14③、§15④、§17③、§19④、§28③ 都出現——它是把門檻整個往下拉的關鍵字</text>
+  <text class="s-sm" x="450" y="380" text-anchor="middle">例：§14 一般場所 150 m² 才設滅火器，落到無開口樓層只要 <tspan font-weight="700">50 m²</tspan>；§28③ 無開口樓層 1,000 m² 就要設排煙</text>
+</svg>
+<figcaption>圖 3　無開口樓層的兩級判定與有效開口四要件。11 層以上只看 1/30，10 層以下還要有兩個大開口</figcaption>
+</figure>
+
+<div class="ex">
+  <div class="t">實例 1　§4②　無開口樓層的判定</div>
+  <div class="given">某建築物<b>第 3 層</b>（屬 10 層以下之樓層），樓地板面積 <b>600 m²</b>。
+  外牆設有可內切直徑 50 cm 圓孔之窗戶合計 <b>18 m²</b>，其中包含<b>寬 90 cm × 高 150 cm</b> 的落地窗 <b>1 個</b>；
+  所有開口下端距樓地板面均在 120 cm 以內、面臨 3 m 寬通路、無柵欄、玻璃厚 5 mm。</div>
+  <div class="step">① 面積要件：<code>600 ÷ 30 = 20 m²</code>，實際 18 m² <b>&lt; 20 m²</b> → <b>已經不符合</b></div>
+  <div class="step">② 即使面積過關，10 層以下還要檢查「至少 <b>2 個</b> 內切直徑 1 m 以上圓孔，或寬 ≥75 cm 且高 ≥120 cm 之開口」——本例只有 <b>1 個</b>，同樣不符合</div>
+  <div class="step">③ 四項有效開口要件（下端 ≤120 cm、面臨 ≥1 m 通路、無阻礙、玻璃 ≤6 mm）雖然都符合，但前兩項規模要件任一不過就落入無開口樓層</div>
+  <div class="ans">本層屬 <b>無開口樓層</b><br>
+  <span style="font-weight:400">後果：滅火器門檻由 150 m² 降為 <b>50 m²</b>（§14③）、室內消防栓由 500 m² 降為 <b>150 m²</b>（§15④）、
+  排煙設備門檻 <b>1,000 m²</b>（§28③）也開始適用。<b>「無開口」是把整棟建築物的設備等級往上拉的開關。</b></span></div>
+</div>
+
+<figure>
+<svg viewBox="0 0 900 300" role="img" aria-label="第4條危險工作場所三級的判定">
+  <text class="s-txt" x="450" y="24" text-anchor="middle" font-weight="700">§4 ③④⑤　危險工作場所三級（丁類場所的內涵）</text>
+
+  <rect x="40" y="44" width="270" height="200" rx="9" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.8"/>
+  <text class="s-key" x="175" y="70" text-anchor="middle">③ 高度危險工作場所</text>
+  <path class="s-thin" d="M56 82 L294 82"/>
+  <text class="s-sm" x="175" y="104" text-anchor="middle">一般可燃性固體倉庫</text>
+  <text class="s-key" x="175" y="124" text-anchor="middle">高度 &gt; 5.5 m</text>
+  <text class="s-sm" x="175" y="148" text-anchor="middle">易燃性液體閃火點 <tspan font-weight="700">≤60℃</tspan></text>
+  <text class="s-sm" x="175" y="166" text-anchor="middle">（37.8℃ 時蒸氣壓 ≤2.8 kgf/cm² 或 0.28 MPa）</text>
+  <text class="s-sm" x="175" y="192" text-anchor="middle">可燃性高壓氣體製造儲存處理場所</text>
+  <text class="s-sm" x="175" y="210" text-anchor="middle">石化作業場所・木材加工業</text>
+  <text class="s-sm" x="175" y="228" text-anchor="middle">油漆作業場所等</text>
+
+  <rect x="322" y="44" width="256" height="200" rx="9" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.8"/>
+  <text class="s-key" x="450" y="70" text-anchor="middle" fill="var(--warn)">④ 中度危險工作場所</text>
+  <path class="s-thin" d="M338 82 L562 82"/>
+  <text class="s-sm" x="450" y="110" text-anchor="middle">一般可燃性固體倉庫</text>
+  <text class="s-key" x="450" y="132" text-anchor="middle" fill="var(--warn)">高度 ≤ 5.5 m</text>
+  <text class="s-sm" x="450" y="164" text-anchor="middle">易燃性液體閃火點</text>
+  <text class="s-key" x="450" y="186" text-anchor="middle" fill="var(--warn)">&gt; 60℃ 之作業場所</text>
+  <text class="s-sm" x="450" y="214" text-anchor="middle">或<tspan font-weight="700">輕工業場所</tspan></text>
+
+  <rect x="590" y="44" width="270" height="200" rx="9" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.8"/>
+  <text class="s-key" x="725" y="70" text-anchor="middle" fill="var(--accent3)">⑤ 低度危險工作場所</text>
+  <path class="s-thin" d="M606 82 L844 82"/>
+  <text class="s-sm" x="725" y="112" text-anchor="middle">有可燃性物質存在，但：</text>
+  <text class="s-key" x="725" y="140" text-anchor="middle" fill="var(--accent3)">存量少</text>
+  <text class="s-key" x="725" y="164" text-anchor="middle" fill="var(--accent3)">延燒範圍小</text>
+  <text class="s-key" x="725" y="188" text-anchor="middle" fill="var(--accent3)">延燒速度慢</text>
+  <text class="s-sm" x="725" y="214" text-anchor="middle">僅形成小型火災者</text>
+  <text class="s-sm" x="725" y="232" text-anchor="middle">（純定性描述，無量化門檻）</text>
+
+  <text class="s-key" x="450" y="272" text-anchor="middle">兩把尺：倉庫看「高度 5.5 m」，液體看「閃火點 60℃」——高於 5.5 m 或低於 60℃ 就是高度危險</text>
+  <text class="s-sm" x="450" y="292" text-anchor="middle">這三級直接決定 §16 室外消防栓的 3,000／5,000／10,000 m² 三個門檻，是全法唯一以「危險程度」而非用途分級的地方</text>
+</svg>
+<figcaption>圖 4　危險工作場所三級。§12④（丁類）的三個目就是這三級，判定基準全在 §4③④⑤</figcaption>
+</figure>
+
+<h3>§5　什麼情況下「視為另一場所」</h3>
+<table>
+<thead><tr><th>項</th><th>情形</th><th>條件</th></tr></thead>
+<tbody>
+<tr><td class="n"><b>Ⅰ</b></td><td><b>防火區劃分隔</b></td><td>符合建築技術規則，以<b>無開口且具 1 小時以上防火時效</b>之牆壁、樓地板區劃分隔者，<b>適用本標準各編規定，視為另一場所</b></td></tr>
+<tr><td class="n"><b>Ⅱ</b></td><td><b>建築物間設有過廊</b></td><td>① 過廊<b>僅供通行或搬運</b>用途，且無通行障礙<br>② 過廊<b>有效寬度 ≤6 m</b><br>③ 連接建築物之間距：<b>一樓 &gt;6 m、二樓以上 &gt;10 m</b></td></tr>
+<tr><td class="n"><b>Ⅲ</b></td><td>不受第Ⅱ項第③款間距限制之情形</td><td>① 連接建築物之外牆及屋頂，與過廊連接相距 <b>3 m 以內</b>者為<b>防火構造或不燃材料</b><br>② 該外牆及屋頂<b>未設開口</b>（但開口面積 ≤<b>4 m²</b> 且設具<b>半小時</b>以上防火時效之防火門窗者，不在此限）<br>③ 過廊為<b>開放式</b>，或為防火構造／不燃材料建造、與二側連接處開口 ≤4 m² 並設半小時防火門、且設<b>直接開向室外之開口或機械排煙設備</b>（設有自動撒水設備者得免設）</td></tr>
+<tr><td class="n"><b>Ⅳ</b></td><td>第Ⅲ項③目「直接開向室外之開口或機械排煙設備」之規格</td><td>① 開口面積合計 ≥<b>1 m²</b>：設在屋頂或天花板時，寬度 ≥ 過廊寬度 <b>1/3</b>、長度 ≥<b>1 m</b>；設在外牆時，二側寬度 ≥ 過廊長度 <b>1/3</b>、高度 ≥<b>1 m</b><br>② 機械排煙設備能安全有效排至室外，<b>排煙機連接緊急電源</b></td></tr>
+</tbody>
+</table>
+
+<div class="cmp">
+  <b>§5 與 §6 是一對反向操作。</b><br>
+  <b>§5 是「拆開」</b>：符合防火區劃或過廊條件時，一棟建築物可以被當成兩個場所分別檢討，門檻因此變寬。<br>
+  <b>§6 是「合併」</b>：戊類（複合用途）建築物有分屬其他各款目用途時，<b>以各目為單元</b>，把同一目的樓地板面積<b>合計</b>後<b>視為單一場所</b>——門檻因此變嚴。<br>
+  §6 另明列<b>五處排除</b>不套用這個合併規則：<b>§17Ⅰ④⑤、§19Ⅰ④⑤、§21②、§23①②、§157</b>。
+  §157（避難器具）被排除的理由最直觀——避難器具本來就以「樓層」與「收容人員」為單位，跟用途面積合併無關。
+</div>
+
+<!-- ============ 3 ============ -->
+<h2 id="kinds"><span class="no">03</span>消防安全設備四大種類（§7～§11）</h2>
+<p class="lede">歸屬題是送分題，但四類的<b>數量</b>（11／5／3／6）常被記混。</p>
+
+<figure>
+<svg viewBox="0 0 900 420" role="img" aria-label="消防安全設備四大種類與各自的細項">
+  <text class="s-txt" x="450" y="24" text-anchor="middle" font-weight="700">§7　各類場所消防安全設備如下（五款）</text>
+  <text class="s-sm" x="450" y="44" text-anchor="middle">第①～④款是習慣說的「四大種類」，第⑤款是「其他經中央主管機關認定之消防安全設備」——開放條款</text>
+
+  <rect x="30" y="60" width="200" height="230" rx="9" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.8"/>
+  <text class="s-key" x="130" y="84" text-anchor="middle">§8　滅火設備</text>
+  <text class="s-sm" x="130" y="102" text-anchor="middle">以水或其他滅火藥劑滅火</text>
+  <text class="s-key" x="130" y="124" text-anchor="middle">11 種</text>
+  <path class="s-thin" d="M46 134 L214 134"/>
+  <text class="s-sm" x="130" y="152" text-anchor="middle">① 滅火器、<tspan font-weight="700">消防砂</tspan></text>
+  <text class="s-sm" x="130" y="170" text-anchor="middle">② 室內消防栓　③ 室外消防栓</text>
+  <text class="s-sm" x="130" y="188" text-anchor="middle">④ 自動撒水　⑤ 水霧</text>
+  <text class="s-sm" x="130" y="206" text-anchor="middle">⑥ 泡沫　⑦ 二氧化碳</text>
+  <text class="s-sm" x="130" y="224" text-anchor="middle">⑧ 惰性氣體　⑨ 鹵化烴</text>
+  <text class="s-sm" x="130" y="242" text-anchor="middle">⑩ 乾粉</text>
+  <text class="s-sm" x="130" y="262" text-anchor="middle">⑪ <tspan font-weight="700">簡易自動滅火設備</tspan></text>
+  <text class="s-sm" x="130" y="282" text-anchor="middle">（滅火器與消防砂同列第①款）</text>
+
+  <rect x="242" y="60" width="196" height="230" rx="9" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.8"/>
+  <text class="s-key" x="340" y="84" text-anchor="middle" fill="var(--accent2)">§9　警報設備</text>
+  <text class="s-sm" x="340" y="102" text-anchor="middle">報知火災發生</text>
+  <text class="s-key" x="340" y="124" text-anchor="middle" fill="var(--accent2)">5 種</text>
+  <path class="s-thin" d="M258 134 L422 134"/>
+  <text class="s-sm" x="340" y="158" text-anchor="middle">① 火警自動警報設備</text>
+  <text class="s-sm" x="340" y="180" text-anchor="middle">② 手動報警設備</text>
+  <text class="s-sm" x="340" y="202" text-anchor="middle">③ 緊急廣播設備</text>
+  <text class="s-sm" x="340" y="224" text-anchor="middle">④ 瓦斯漏氣火警自動警報設備</text>
+  <text class="s-key" x="340" y="250" text-anchor="middle" fill="var(--accent2)">⑤ 一一九火災通報裝置</text>
+  <text class="s-sm" x="340" y="272" text-anchor="middle">第⑤款最常被誤歸為搶救設備</text>
+
+  <rect x="450" y="60" width="196" height="230" rx="9" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.8"/>
+  <text class="s-key" x="548" y="84" text-anchor="middle" fill="var(--accent3)">§10　避難逃生設備</text>
+  <text class="s-sm" x="548" y="102" text-anchor="middle">火災發生時為避難而使用</text>
+  <text class="s-key" x="548" y="124" text-anchor="middle" fill="var(--accent3)">3 類</text>
+  <path class="s-thin" d="M466 134 L630 134"/>
+  <text class="s-sm" x="548" y="156" text-anchor="middle">① <tspan font-weight="700">標示設備</tspan>：出口標示燈、</text>
+  <text class="s-sm" x="548" y="174" text-anchor="middle">避難方向指示燈、觀眾席引導燈、</text>
+  <text class="s-sm" x="548" y="192" text-anchor="middle">避難指標（<tspan font-weight="700">四種</tspan>）</text>
+  <text class="s-sm" x="548" y="216" text-anchor="middle">② <tspan font-weight="700">避難器具</tspan>：滑臺、避難梯、</text>
+  <text class="s-sm" x="548" y="234" text-anchor="middle">避難橋、救助袋、緩降機、</text>
+  <text class="s-sm" x="548" y="252" text-anchor="middle">避難繩索、滑杆及其他</text>
+  <text class="s-sm" x="548" y="276" text-anchor="middle">③ <tspan font-weight="700">緊急照明設備</tspan></text>
+
+  <rect x="658" y="60" width="212" height="230" rx="9" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.8"/>
+  <text class="s-key" x="764" y="84" text-anchor="middle" fill="var(--warn)">§11　消防搶救上之必要設備</text>
+  <text class="s-sm" x="764" y="102" text-anchor="middle">消防人員搶救活動上必需</text>
+  <text class="s-key" x="764" y="124" text-anchor="middle" fill="var(--warn)">6 種</text>
+  <path class="s-thin" d="M674 134 L854 134"/>
+  <text class="s-sm" x="764" y="158" text-anchor="middle">① 連結送水管</text>
+  <text class="s-sm" x="764" y="178" text-anchor="middle">② 消防專用蓄水池</text>
+  <text class="s-sm" x="764" y="198" text-anchor="middle">③ 排煙設備（緊急昇降機間、</text>
+  <text class="s-sm" x="764" y="214" text-anchor="middle">特別安全梯間、室內排煙設備）</text>
+  <text class="s-sm" x="764" y="234" text-anchor="middle">④ 緊急電源插座</text>
+  <text class="s-sm" x="764" y="252" text-anchor="middle">⑤ 無線電通信輔助設備</text>
+  <text class="s-key" x="764" y="276" text-anchor="middle" fill="var(--warn)">⑥ 防災監控系統綜合操作裝置</text>
+
+  <rect x="120" y="310" width="660" height="94" rx="8" fill="var(--card)" stroke="var(--line)" stroke-width="1.3"/>
+  <text class="s-key" x="450" y="334" text-anchor="middle">數字記法：滅火 11　·　警報 5　·　避難 3　·　搶救 6</text>
+  <text class="s-sm" x="450" y="358" text-anchor="middle">三個最常錯的歸屬：<tspan font-weight="700">消防砂</tspan>在滅火設備（§8①，與滅火器同列）；</text>
+  <text class="s-sm" x="450" y="376" text-anchor="middle"><tspan font-weight="700">一一九火災通報裝置</tspan>在警報設備（§9⑤，不是搶救設備）；</text>
+  <text class="s-sm" x="450" y="394" text-anchor="middle"><tspan font-weight="700">緊急照明設備</tspan>與標示設備平行（§10③），不是標示設備的一種</text>
+</svg>
+<figcaption>圖 5　四大種類與細項。§8 的 11 種與 §11 的 6 種是最容易數錯的兩組</figcaption>
+</figure>
+
+<div class="note">
+  <b>§11 第 6 款「防災監控系統綜合操作裝置」是後來增訂的。</b>
+  很多舊講義還停在「消防搶救上之必要設備共五種」。現行條文是<b>六種</b>，
+  應設場所在 <b>§30-1</b>（高層建築物、總樓地板面積 ≥50,000 m²、地下建築物 ≥1,000 m²、其他公告場所），
+  設置規定在 <b>§192-1</b>。<br>
+  同樣地，<b>§9 第 5 款「一一九火災通報裝置」</b>也是增訂的，應設場所在 <b>§22-1</b>、設置規定在 <b>§145-1</b>。
+</div>
+
+<!-- ============ 4 ============ -->
+<h2 id="places"><span class="no">04</span>§12 場所用途分類：甲乙丙丁戊</h2>
+<p class="lede">第二編之後每一條都在引用它。<b>不必背順序，但要能認出「這一目屬於哪一類」</b>。</p>
+
+<figure>
+<svg viewBox="0 0 900 330" role="img" aria-label="第12條五類場所的性格與代表用途">
+  <text class="s-txt" x="450" y="24" text-anchor="middle" font-weight="700">§12　五類場所的「性格」</text>
+
+  <rect x="30" y="44" width="164" height="230" rx="9" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.8"/>
+  <text class="s-key" x="112" y="70" text-anchor="middle">甲類（7 目）</text>
+  <text class="s-sm" x="112" y="92" text-anchor="middle">不特定多數人聚集</text>
+  <text class="s-sm" x="112" y="108" text-anchor="middle">＋自力避難困難</text>
+  <path class="s-thin" d="M44 118 L180 118"/>
+  <text class="s-sm" x="112" y="138" text-anchor="middle">① 戲院・KTV・酒店</text>
+  <text class="s-sm" x="112" y="156" text-anchor="middle">② 保齡球館・集會堂</text>
+  <text class="s-sm" x="112" y="174" text-anchor="middle">③ 觀光旅館・飯店・旅館</text>
+  <text class="s-sm" x="112" y="192" text-anchor="middle">④ 商場・市場・百貨</text>
+  <text class="s-sm" x="112" y="210" text-anchor="middle">⑤ 餐廳・飲食店</text>
+  <text class="s-key" x="112" y="230" text-anchor="middle">⑥ 醫院・長照・護理</text>
+  <text class="s-sm" x="112" y="248" text-anchor="middle">⑦ 三溫暖・公共浴室</text>
+  <text class="s-sm" x="112" y="268" text-anchor="middle">門檻最嚴的一類</text>
+
+  <rect x="204" y="44" width="164" height="230" rx="9" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.8"/>
+  <text class="s-key" x="286" y="70" text-anchor="middle" fill="var(--accent2)">乙類（12 目）</text>
+  <text class="s-sm" x="286" y="92" text-anchor="middle">特定多數人使用</text>
+  <text class="s-sm" x="286" y="108" text-anchor="middle">或使用者熟悉環境</text>
+  <path class="s-thin" d="M218 118 L354 118"/>
+  <text class="s-sm" x="286" y="138" text-anchor="middle">① 車站・機場・候船室</text>
+  <text class="s-sm" x="286" y="156" text-anchor="middle">② 證交所・金融機構</text>
+  <text class="s-sm" x="286" y="174" text-anchor="middle">③ 學校教室・補習班</text>
+  <text class="s-sm" x="286" y="192" text-anchor="middle">④⑤ 圖書館・寺廟納骨塔</text>
+  <text class="s-sm" x="286" y="210" text-anchor="middle">⑥⑦ 辦公室・集合住宅</text>
+  <text class="s-sm" x="286" y="228" text-anchor="middle">⑧⑨⑩ 體育館・泳池・攝影場</text>
+  <text class="s-key" x="286" y="248" text-anchor="middle" fill="var(--accent2)">⑪ 倉庫　⑫ 幼兒園</text>
+  <text class="s-sm" x="286" y="268" text-anchor="middle">⑪⑫ 常被單獨拉出來規定</text>
+
+  <rect x="378" y="44" width="150" height="230" rx="9" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.8"/>
+  <text class="s-key" x="453" y="70" text-anchor="middle" fill="var(--accent3)">丙類（3 目）</text>
+  <text class="s-sm" x="453" y="92" text-anchor="middle">設備多、人少</text>
+  <path class="s-thin" d="M392 106 L514 106"/>
+  <text class="s-sm" x="453" y="132" text-anchor="middle">① 電信機器室</text>
+  <text class="s-sm" x="453" y="158" text-anchor="middle">② 汽車修護廠</text>
+  <text class="s-sm" x="453" y="176" text-anchor="middle">　飛機修理廠・飛機庫</text>
+  <text class="s-sm" x="453" y="202" text-anchor="middle">③ 室內停車場</text>
+  <text class="s-sm" x="453" y="220" text-anchor="middle">　依法附設之室內停車空間</text>
+  <text class="s-sm" x="453" y="250" text-anchor="middle">這三目正好是 §18</text>
+  <text class="s-sm" x="453" y="266" text-anchor="middle">附表的主要對象</text>
+
+  <rect x="538" y="44" width="150" height="230" rx="9" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.8"/>
+  <text class="s-key" x="613" y="70" text-anchor="middle" fill="var(--warn)">丁類（3 目）</text>
+  <text class="s-sm" x="613" y="92" text-anchor="middle">以「危險程度」分</text>
+  <path class="s-thin" d="M552 106 L674 106"/>
+  <text class="s-key" x="613" y="140" text-anchor="middle" fill="var(--warn)">① 高度危險工作場所</text>
+  <text class="s-key" x="613" y="176" text-anchor="middle" fill="var(--warn)">② 中度危險工作場所</text>
+  <text class="s-key" x="613" y="212" text-anchor="middle" fill="var(--warn)">③ 低度危險工作場所</text>
+  <text class="s-sm" x="613" y="244" text-anchor="middle">判定基準在 §4③④⑤</text>
+  <text class="s-sm" x="613" y="262" text-anchor="middle">全法唯一不看用途的一類</text>
+
+  <rect x="698" y="44" width="172" height="230" rx="9" fill="var(--card)" stroke="var(--fg)" stroke-width="1.8"/>
+  <text class="s-key" x="784" y="70" text-anchor="middle">戊類（3 目）</text>
+  <text class="s-sm" x="784" y="92" text-anchor="middle">複合用途與地下建築物</text>
+  <path class="s-thin" d="M712 106 L856 106"/>
+  <text class="s-key" x="784" y="136" text-anchor="middle">① 複合用途建築物中</text>
+  <text class="s-key" x="784" y="154" text-anchor="middle">　<tspan font-weight="700">有供甲類用途</tspan>者</text>
+  <text class="s-sm" x="784" y="184" text-anchor="middle">② 前目以外供乙～丁類</text>
+  <text class="s-sm" x="784" y="202" text-anchor="middle">　之複合用途建築物</text>
+  <text class="s-key" x="784" y="232" text-anchor="middle">③ 地下建築物</text>
+  <text class="s-sm" x="784" y="258" text-anchor="middle">①③ 出現頻率極高，</text>
+  <text class="s-sm" x="784" y="274" text-anchor="middle">門檻通常比較嚴</text>
+
+  <text class="s-key" x="450" y="304" text-anchor="middle">第六款：其他經中央主管機關公告之場所</text>
+  <text class="s-sm" x="450" y="324" text-anchor="middle">「複合用途建築物」的定義在 §4①：一棟建築物有甲～丁類用途二種以上，且各用途在管理及使用形態上未構成從屬於其中一主用途者</text>
+</svg>
+<figcaption>圖 6　五類場所的性格。甲類看「人多且難逃」、丁類看「危險程度」、戊類看「混合或地下」</figcaption>
+</figure>
+
+<div class="cmp">
+  <b>三個目要特別盯住，因為它們幾乎每條都出現。</b><br>
+  <b>甲類第六目（醫院・長照・老福・護理・身障機構）</b>是全法出現次數最多的用途——
+  §17①⑨（自動撒水，無面積門檻）、§18Ⅱ（廚房簡易自動滅火）、§19①⑦（火警自動警報，無面積門檻）、§22-1①（一一九通報裝置）都特別點名它。這是多起長照機構火災後的立法回應。<br>
+  <b>乙類第十一目（倉庫、傢俱展示販售場）</b>：§17①⑥ 的高架儲存倉庫規定針對它；§34 更規定它<b>只能設第一種室內消防栓</b>，沒有第二種可選。<br>
+  <b>乙類第十二目（幼兒園）</b>：§14①、§19①、§23①② 都把它拉到與甲類同級。
+</div>
+
+<!-- ============ 5 ============ -->
+<h2 id="ext"><span class="no">05</span>滅火設備應設場所（§14～§18）</h2>
+<p class="lede">五條、五種門檻邏輯。<b>§14 看「有沒有」、§15～§17 看「幾層 × 多大」、§18 看「是什麼房間」</b>。</p>
+
+<figure>
+<svg viewBox="0 0 900 400" role="img" aria-label="第14條至第17條四種滅火設備的門檻階梯">
+  <text class="s-txt" x="450" y="24" text-anchor="middle" font-weight="700">§14～§17　四種設備、四套門檻邏輯</text>
+
+  <rect x="30" y="44" width="840" height="76" rx="8" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text class="s-key" x="110" y="70" text-anchor="middle">§14 滅火器</text>
+  <text class="s-sm" x="110" y="90" text-anchor="middle">「有沒有」型</text>
+  <text class="s-key" x="330" y="66" text-anchor="middle">① 甲類・地下建築物・幼兒園</text>
+  <text class="s-sm" x="330" y="84" text-anchor="middle">無面積門檻</text>
+  <text class="s-sm" x="330" y="106" text-anchor="middle">② 乙丙丁類總樓地板面積 ≥150 m²</text>
+  <text class="s-sm" x="620" y="66" text-anchor="middle">③ 地下層或無開口樓層 ≥<tspan font-weight="700">50 m²</tspan>（各類場所）</text>
+  <text class="s-sm" x="620" y="88" text-anchor="middle">④ 設有放映室、變壓器、配電盤等電氣設備者</text>
+  <text class="s-sm" x="620" y="108" text-anchor="middle">⑤ 設有鍋爐房、廚房等大量使用火源者</text>
+
+  <rect x="30" y="128" width="840" height="76" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.5"/>
+  <text class="s-key" x="110" y="154" text-anchor="middle" fill="var(--accent2)">§15 室內消防栓</text>
+  <text class="s-sm" x="110" y="174" text-anchor="middle">「5 層 / 6 層」分界</text>
+  <text class="s-sm" x="360" y="150" text-anchor="middle">① <tspan font-weight="700">5 層以下</tspan>　甲一目 ≥300　／　其他甲～丁 ≥500　／　學校教室 ≥<tspan font-weight="700">1,400</tspan></text>
+  <text class="s-sm" x="360" y="172" text-anchor="middle">② <tspan font-weight="700">6 層以上</tspan>　甲～丁類任一層 ≥<tspan font-weight="700">150</tspan></text>
+  <text class="s-sm" x="360" y="194" text-anchor="middle">③ 地下建築物總樓地板面積 ≥150</text>
+  <text class="s-sm" x="700" y="160" text-anchor="middle">④ 地下層或無開口樓層</text>
+  <text class="s-sm" x="700" y="180" text-anchor="middle">甲一目 ≥<tspan font-weight="700">100</tspan>／其他 ≥150</text>
+
+  <rect x="30" y="212" width="840" height="76" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.5"/>
+  <text class="s-key" x="110" y="238" text-anchor="middle" fill="var(--accent3)">§16 室外消防栓</text>
+  <text class="s-sm" x="110" y="258" text-anchor="middle">「危險程度」型</text>
+  <text class="s-key" x="400" y="240" text-anchor="middle" fill="var(--accent3)">1F ＋ 2F 樓地板面積合計：高度 3,000　中度 5,000　低度 10,000</text>
+  <text class="s-sm" x="400" y="264" text-anchor="middle">記法 <tspan font-weight="700">3–5–10</tspan>　·　④ 混合時各以「實際／規定」計算比例，<tspan font-weight="700">總和 &gt; 1 即應設</tspan></text>
+  <text class="s-sm" x="740" y="240" text-anchor="middle">⑤ 同基地二棟以上木造／易燃構造</text>
+  <text class="s-sm" x="740" y="258" text-anchor="middle">1F ≤3 m、2F ≤5 m 且</text>
+  <text class="s-sm" x="740" y="276" text-anchor="middle">各棟 1F+2F 合計 ≥3,000</text>
+
+  <rect x="30" y="296" width="840" height="88" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <text class="s-key" x="110" y="322" text-anchor="middle" fill="var(--warn)">§17 自動撒水</text>
+  <text class="s-sm" x="110" y="342" text-anchor="middle">九款，最複雜</text>
+  <text class="s-sm" x="400" y="318" text-anchor="middle">① 10 層以下：甲一目 ≥300／其他甲類及乙一目 ≥<tspan font-weight="700">1,500</tspan>　　② <tspan font-weight="700">11 層以上樓層 ≥100</tspan></text>
+  <text class="s-sm" x="400" y="340" text-anchor="middle">③ 地下層或無開口樓層供甲類 ≥1,000　　⑤ 戊一目中甲類合計 ≥3,000 之樓層</text>
+  <text class="s-sm" x="400" y="362" text-anchor="middle">⑥ 乙十一目高架儲存倉庫：樓層高度 &gt;<tspan font-weight="700">10 m</tspan> 且 ≥<tspan font-weight="700">700 m²</tspan>　　⑦ 地下建築物 ≥1,000</text>
+  <text class="s-key" x="740" y="330" text-anchor="middle" fill="var(--warn)">無面積門檻三款</text>
+  <text class="s-sm" x="740" y="350" text-anchor="middle">④ 11 層以上建築物供甲類或戊一目</text>
+  <text class="s-sm" x="740" y="368" text-anchor="middle">⑧ 高層建築物　⑨ 甲六目機構</text>
+</svg>
+<figcaption>圖 7　§14～§17 的門檻。四條各有一個「主軸變數」：有無、樓層、危險程度、樓層＋用途</figcaption>
+</figure>
+
+<div class="ex">
+  <div class="t">實例 2　§16④　不同危險程度混合時的比例計算</div>
+  <div class="given">某工廠基地內，第 1 層與第 2 層樓地板面積合計如下：
+  <b>高度危險工作場所 1,200 m²</b>、<b>中度危險工作場所 1,500 m²</b>、<b>低度危險工作場所 2,000 m²</b>。
+  三者各自都未達 §16①②③ 的門檻。</div>
+  <div class="step">① §16④：以各款場所之<b>實際面積為分子</b>、<b>各款規定之面積為分母</b>，分別計算後相加</div>
+  <div class="step">② 高度：<code>1,200 ÷ 3,000 = 0.40</code></div>
+  <div class="step">③ 中度：<code>1,500 ÷ 5,000 = 0.30</code></div>
+  <div class="step">④ 低度：<code>2,000 ÷ 10,000 = 0.20</code></div>
+  <div class="step">⑤ 總和：<code>0.40 + 0.30 + 0.20 = 0.90</code></div>
+  <div class="ans">總和 0.90 <b>不大於 1</b> → <b>不必</b>設置室外消防栓設備<br>
+  <span style="font-weight:400">若高度危險部分增為 1,500 m²，則 <code>0.50 + 0.30 + 0.20 = 1.00</code>——條文寫的是「<b>大於一</b>」，
+  等於 1 仍<b>不</b>應設；要超過 1 才應設。這個「大於」與「以上」的差別是本款最容易失分的地方。</span></div>
+</div>
+
+<h3>§18 附表　應設「水霧／泡沫／CO₂或惰性氣體／鹵化烴／乾粉」之場所（網頁版省略之表）</h3>
+<div class="scroll">
+<table>
+<thead><tr><th class="c">項</th><th>應設場所</th><th class="c">水霧</th><th class="c">泡沫</th><th class="c">CO₂ 或<br>惰性氣體</th><th class="c">鹵化烴</th><th class="c">乾粉</th></tr></thead>
+<tbody>
+<tr><td class="c">一</td><td>屋頂直昇機停機場（坪）</td><td class="c">—</td><td class="c"><b>○</b></td><td class="c">—</td><td class="c">—</td><td class="c"><b>○</b></td></tr>
+<tr><td class="c">二</td><td>飛機修理廠、飛機庫，樓地板面積 <b>≥200 m²</b></td><td class="c">—</td><td class="c"><b>○</b></td><td class="c">—</td><td class="c">—</td><td class="c"><b>○</b></td></tr>
+<tr><td class="c">三</td><td><b>汽車修理廠、室內停車空間</b>：第 1 層 <b>≥500 m²</b>；地下層或第 2 層以上 <b>≥200 m²</b>；屋頂停車場 <b>≥300 m²</b></td><td class="c"><b>○</b></td><td class="c"><b>○</b></td><td class="c"><b>○</b></td><td class="c"><b>○</b></td><td class="c"><b>○</b></td></tr>
+<tr><td class="c">四</td><td>昇降機械式停車場，可容納 <b>10 輛以上</b></td><td class="c"><b>○</b></td><td class="c"><b>○</b></td><td class="c"><b>○</b></td><td class="c"><b>○</b></td><td class="c"><b>○</b></td></tr>
+<tr><td class="c">五</td><td>發電機室、變壓器室及其他類似電器設備場所 <b>≥200 m²</b></td><td class="c"><b>○</b></td><td class="c">—</td><td class="c"><b>○</b></td><td class="c"><b>○</b></td><td class="c"><b>○</b></td></tr>
+<tr><td class="c">六</td><td>鍋爐房、廚房等<b>大量使用火源</b>之場所 <b>≥200 m²</b></td><td class="c">—</td><td class="c">—</td><td class="c"><b>○</b></td><td class="c"><b>○</b></td><td class="c"><b>○</b></td></tr>
+<tr><td class="c">七</td><td>電信機械室、電腦室或總機室及其他類似場所 <b>≥200 m²</b></td><td class="c">—</td><td class="c">—</td><td class="c"><b>○</b></td><td class="c"><b>○</b></td><td class="c"><b>○</b></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>§18 附表註記（五點）</h3>
+<ol class="law">
+<li><b>大量使用火源之場所</b>：指最大消費熱量合計在<b>每小時 30 萬千卡</b>以上者。</li>
+<li>廚房如設有<b>自動撒水設備</b>，且排油煙管及煙罩設<b>簡易自動滅火裝置</b>時，得不受本表限制。</li>
+<li>停車空間內車輛採<b>一列停放</b>，並能同時通往室外者，得不受本表限制。</li>
+<li>本表<b>項目三、四</b>得設置<b>自動撒水設備</b>；<b>項目七</b>得設置<b>預動式</b>自動撒水設備，不受本表限制。</li>
+<li>平時有特定或不特定人員使用之<b>中央管理室、防災中心</b>等類似處所，<b>不得設置二氧化碳滅火設備</b>。</li>
+</ol>
+
+<div class="warnbox">
+  <b>§18 第 1 項但書是移動式設備的唯一法源。</b>
+  「外牆開口面積（<b>常時開放</b>部分）達該層樓地板面積 <b>15% 以上</b>者，上列<b>除惰性氣體及鹵化烴外</b>之滅火設備得採<b>移動式</b>設置。」<br>
+  兩個要點：① 是「<b>常時開放</b>」，不是可開啟的窗；② <b>惰性氣體與鹵化烴被排除</b>——它們必須全區放射，開口太大留不住藥劑濃度。<br><br>
+  <b>§18 第 2 項是簡易自動滅火設備的應設場所。</b>
+  樓地板面積 <b>≥300 m²</b> 之<b>餐廳</b>，或甲六目所定長照／老福／護理／身障等機構且樓地板面積合計 <b>≥500 m²</b> 者，
+  其<b>廚房排油煙管及煙罩</b>應設簡易自動滅火設備。但已依前項設有滅火設備者，得免設。
+</div>
+
+<div class="note">
+  <b>§18 附表只到第七項，但 §73 還在引用「第八項」。</b>
+  舊有的第八項（引擎試驗室、石油試驗室、印刷機房）已刪除，
+  但第三編 §73 的高發泡放出口放射量表仍保留「第十八條表第八項之場所」一列（第一種 1.25／第二種 0.31／第三種 0.18）。
+  這是修法後未同步更新的<b>殘留引用</b>，實務上已無對應場所。
+</div>
+
+<!-- ============ 6 ============ -->
+<h2 id="alarm"><span class="no">06</span>警報設備應設場所（§19～§22-1）</h2>
+<p class="lede">四條設備、四種關係：<b>火警自己有門檻、手動報警自己有門檻、緊急廣播跟著前兩者走、一一九通報只看用途</b>。</p>
+
+<figure>
+<svg viewBox="0 0 900 350" role="img" aria-label="警報設備四條的應設門檻與彼此關係">
+  <text class="s-txt" x="450" y="24" text-anchor="middle" font-weight="700">§19～§22-1　警報設備的四道門</text>
+
+  <rect x="30" y="44" width="440" height="180" rx="9" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.7"/>
+  <text class="s-key" x="250" y="68" text-anchor="middle">§19　火警自動警報設備（七款）</text>
+  <path class="s-thin" d="M46 80 L454 80"/>
+  <text class="s-sm" x="250" y="100" text-anchor="middle">① 5 層以下：甲類及乙十二目 ≥<tspan font-weight="700">300</tspan>；乙（除十二目）～丁 ≥<tspan font-weight="700">500</tspan></text>
+  <text class="s-sm" x="250" y="120" text-anchor="middle">② 6～10 層：任一層 ≥<tspan font-weight="700">300</tspan>　　③ <tspan font-weight="700">11 層以上建築物</tspan>（無門檻）</text>
+  <text class="s-sm" x="250" y="140" text-anchor="middle">④ 地下層或無開口樓層：甲一目、甲五目及戊一目（限供該二目者）≥<tspan font-weight="700">100</tspan>；其他 ≥<tspan font-weight="700">300</tspan></text>
+  <text class="s-sm" x="250" y="160" text-anchor="middle">⑤ 戊一目建築物總樓地板面積 ≥500 且其中甲類合計 ≥300</text>
+  <text class="s-sm" x="250" y="180" text-anchor="middle">⑥ 甲類及戊三目（地下建築物）總樓地板面積 ≥300</text>
+  <text class="s-key" x="250" y="204" text-anchor="middle">⑦ 甲六目所定長照／老福／護理／身障機構（無面積門檻）</text>
+
+  <rect x="490" y="44" width="380" height="86" rx="9" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.7"/>
+  <text class="s-key" x="680" y="68" text-anchor="middle" fill="var(--accent2)">§20　手動報警設備（兩款，最短）</text>
+  <path class="s-thin" d="M506 80 L854 80"/>
+  <text class="s-sm" x="680" y="102" text-anchor="middle">① <tspan font-weight="700">3 層以上</tspan>建築物，任何一層 ≥<tspan font-weight="700">200 m²</tspan></text>
+  <text class="s-key" x="680" y="122" text-anchor="middle" fill="var(--accent2)">② 甲類第三目（觀光旅館・飯店・旅館・招待所）</text>
+
+  <rect x="490" y="140" width="380" height="84" rx="9" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.7"/>
+  <text class="s-key" x="680" y="164" text-anchor="middle" fill="var(--accent3)">§21　瓦斯漏氣火警自動警報設備</text>
+  <path class="s-thin" d="M506 176 L854 176"/>
+  <text class="s-sm" x="680" y="196" text-anchor="middle">① 地下層供甲類使用，合計 ≥<tspan font-weight="700">1,000</tspan>　② 戊一目之地下層合計 ≥1,000</text>
+  <text class="s-sm" x="680" y="214" text-anchor="middle">　且其中甲類合計 ≥<tspan font-weight="700">500</tspan>　③ 地下建築物總樓地板面積 ≥1,000</text>
+
+  <rect x="30" y="242" width="440" height="88" rx="9" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.7"/>
+  <text class="s-key" x="250" y="266" text-anchor="middle" fill="var(--warn)">§22　緊急廣播設備：沒有自己的門檻</text>
+  <text class="s-sm" x="250" y="292" text-anchor="middle">依 <tspan font-weight="700">§19 或 §21</tspan> 設有火警自動警報或瓦斯漏氣火警自動警報設備之建築物，</text>
+  <text class="s-key" x="250" y="314" text-anchor="middle" fill="var(--warn)">應設置緊急廣播設備</text>
+
+  <rect x="490" y="242" width="380" height="88" rx="9" fill="var(--card)" stroke="var(--fg)" stroke-width="1.7"/>
+  <text class="s-key" x="680" y="266" text-anchor="middle">§22-1　一一九火災通報裝置</text>
+  <text class="s-sm" x="680" y="292" text-anchor="middle">① 甲六目所定<tspan font-weight="700">醫院、療養院、榮民之家</tspan>及長照／老福／</text>
+  <text class="s-sm" x="680" y="310" text-anchor="middle">護理／身障機構　② 其他經中央主管機關公告之供公眾使用場所</text>
+</svg>
+<figcaption>圖 8　警報四條。§22 是全法唯一「掛在別條上」的應設條文——只要 §19 或 §21 成立，它就跟著成立</figcaption>
+</figure>
+
+<div class="cmp">
+  <b>§19 與 §15／§17 的樓層分界不一樣，這是最容易搞混的地方。</b><br>
+  · <b>§15 室內消防栓</b>：分界在「<b>5 層以下 / 6 層以上</b>」<br>
+  · <b>§17 自動撒水</b>：分界在「<b>10 層以下 / 11 層以上</b>」<br>
+  · <b>§19 火警自動警報</b>：分成<b>三段</b>——「5 層以下 / 6～10 層 / 11 層以上」<br>
+  · <b>§20 手動報警</b>：分界在「<b>3 層以上</b>」，是全法最低的樓層門檻<br>
+  記法：<b>手動報警 3、室內消防栓 6、自動撒水與火警的高段 11</b>。
+</div>
+
+<div class="note">
+  <b>§21 三款全部只發生在「地下」。</b>
+  瓦斯比空氣重的會沉積、比空氣輕的會積在天花板，兩種都需要密閉空間才會累積到爆炸下限——
+  所以 §21 三款分別是「地下層供甲類 ≥1,000」「戊一目之地下層 ≥1,000 且甲類 ≥500」「地下建築物 ≥1,000」，
+  <b>地面層以上完全不在適用範圍</b>。這也解釋了為什麼 §22 把緊急廣播綁在 §19 或 §21——
+  地下場所一旦有瓦斯漏氣，用廣播疏散比警鈴更有效。
+</div>
+
+<!-- ============ 7 ============ -->
+<h2 id="escape"><span class="no">07</span>避難逃生設備應設場所（§23～§25）</h2>
+<p class="lede">三條各管一類：<b>§23 標示設備、§24 緊急照明、§25 避難器具</b>。三條的門檻寫法完全不同。</p>
+
+<figure>
+<svg viewBox="0 0 900 330" role="img" aria-label="標示設備、緊急照明與避難器具的應設場所">
+  <text class="s-txt" x="450" y="24" text-anchor="middle" font-weight="700">§23～§25　三條、三種寫法</text>
+
+  <rect x="30" y="44" width="840" height="94" rx="9" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.6"/>
+  <text class="s-key" x="120" y="70" text-anchor="middle">§23 標示設備</text>
+  <text class="s-sm" x="120" y="90" text-anchor="middle">「哪些場所」型</text>
+  <text class="s-sm" x="500" y="66" text-anchor="middle">①② <tspan font-weight="700">出口標示燈</tspan>與<tspan font-weight="700">避難方向指示燈</tspan>：條件文字完全相同——</text>
+  <text class="s-sm" x="500" y="84" text-anchor="middle">供 §12①、②（十二）、⑤（一）（三）使用之場所，或<tspan font-weight="700">地下層、無開口樓層、11 層以上之樓層</tspan>供其他各款目使用者</text>
+  <text class="s-sm" x="500" y="106" text-anchor="middle">③ <tspan font-weight="700">觀眾席引導燈</tspan>：戲院、電影院、歌廳、集會堂及類似場所（範圍最窄）</text>
+  <text class="s-key" x="500" y="128" text-anchor="middle">④ 避難指標：各類場所<tspan font-weight="700">均應設置</tspan>，但設有避難方向指示燈或出口標示燈時，其有效範圍內得免設</text>
+
+  <rect x="30" y="150" width="840" height="94" rx="9" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.6"/>
+  <text class="s-key" x="120" y="176" text-anchor="middle" fill="var(--accent2)">§24 緊急照明</text>
+  <text class="s-sm" x="120" y="196" text-anchor="middle">「居室」型</text>
+  <text class="s-sm" x="500" y="172" text-anchor="middle">① 甲類、丙類、戊類之<tspan font-weight="700">居室</tspan>　② 乙類特定各目之居室（乙三目<tspan font-weight="700">學校教室除外</tspan>）</text>
+  <text class="s-sm" x="500" y="192" text-anchor="middle">③ 總樓地板面積 ≥<tspan font-weight="700">1,000 m²</tspan> 建築物之居室（<tspan font-weight="700">學校教室除外</tspan>）</text>
+  <text class="s-key" x="500" y="214" text-anchor="middle" fill="var(--accent2)">④ 有效採光面積未達該居室樓地板面積 5% 者</text>
+  <text class="s-sm" x="500" y="234" text-anchor="middle">⑤ 供前四款使用之場所，自居室通達避難層所須經過之走廊、樓梯間、通道及平時依賴人工照明部分</text>
+
+  <rect x="30" y="256" width="840" height="66" rx="9" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.6"/>
+  <text class="s-key" x="120" y="282" text-anchor="middle" fill="var(--accent3)">§25 避難器具</text>
+  <text class="s-sm" x="120" y="302" text-anchor="middle">「排除」型</text>
+  <text class="s-sm" x="500" y="278" text-anchor="middle">建築物<tspan font-weight="700">除 11 層以上樓層及避難層外</tspan>，各樓層應選設滑臺、避難梯、避難橋、救助袋、</text>
+  <text class="s-sm" x="500" y="298" text-anchor="middle">緩降機、避難繩索、滑杆或經中央主管機關認可具同等性能之避難器具</text>
+  <text class="s-sm" x="500" y="316" text-anchor="middle">但書：構造及設施上並無避難逃生障礙，<tspan font-weight="700">經中央主管機關認可</tspan>者，不在此限</text>
+</svg>
+<figcaption>圖 9　§23 用「場所」寫、§24 用「居室」寫、§25 用「排除」寫。§25 是全法唯一以「先全設、再排除」表述的應設條文</figcaption>
+</figure>
+
+<div class="cmp">
+  <b>§25 的「11 層以上樓層及避難層」為什麼被排除？</b>
+  避難層本身就是地面，不需要往下逃；11 層以上的樓層則超出所有避難器具的有效高度（緩降機、救助袋等都有下降距離限制），
+  必須靠<b>特別安全梯與消防搶救</b>。<br>
+  但 §25 只是「應不應該設」，<b>實際的數量與可選種類在 §157 附表</b>——那裡才會依樓層別（2 樓、3 樓、4～5 樓、6～10 樓）限定哪些器具可用。
+  §157 也是 §6「以各目為單元合計」<b>明文排除</b>的五個條文之一。
+</div>
+
+<!-- ============ 8 ============ -->
+<h2 id="rescue"><span class="no">08</span>消防搶救上之必要設備應設場所（§26～§30-1）</h2>
+<p class="lede">六種設備、五條條文。<b>這一組的共同關鍵字是「地下建築物 1,000 m²」——五條裡有四條都出現它</b>。</p>
+
+<figure>
+<svg viewBox="0 0 900 400" role="img" aria-label="消防搶救上之必要設備五條的應設門檻">
+  <text class="s-txt" x="450" y="24" text-anchor="middle" font-weight="700">§26～§30-1　搶救必要設備的門檻</text>
+
+  <rect x="30" y="44" width="840" height="60" rx="8" fill="var(--fill1)" stroke="var(--accent)" stroke-width="1.5"/>
+  <text class="s-key" x="130" y="70" text-anchor="middle">§26 連結送水管</text>
+  <text class="s-sm" x="130" y="90" text-anchor="middle">兩款</text>
+  <text class="s-sm" x="520" y="70" text-anchor="middle">① <tspan font-weight="700">5 層或 6 層</tspan>建築物總樓地板面積 ≥<tspan font-weight="700">6,000 m²</tspan>　及　<tspan font-weight="700">7 層以上</tspan>建築物（無面積門檻）</text>
+  <text class="s-sm" x="520" y="92" text-anchor="middle">② 總樓地板面積 ≥<tspan font-weight="700">1,000 m²</tspan> 之地下建築物</text>
+
+  <rect x="30" y="112" width="840" height="82" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.5"/>
+  <text class="s-key" x="130" y="138" text-anchor="middle" fill="var(--accent2)">§27 消防專用蓄水池</text>
+  <text class="s-sm" x="130" y="158" text-anchor="middle">三款，數字最大</text>
+  <text class="s-sm" x="520" y="134" text-anchor="middle">① <tspan font-weight="700">建築基地面積</tspan> ≥<tspan font-weight="700">20,000 m²</tspan>，且任何一層樓地板面積 ≥<tspan font-weight="700">1,500 m²</tspan></text>
+  <text class="s-sm" x="520" y="156" text-anchor="middle">② 高度 &gt;<tspan font-weight="700">31 m</tspan>，且總樓地板面積 ≥<tspan font-weight="700">25,000 m²</tspan></text>
+  <text class="s-sm" x="520" y="178" text-anchor="middle">③ 同一基地二棟以上，1F ≤3 m、2F ≤5 m，且各棟 1F+2F 合計 ≥<tspan font-weight="700">10,000 m²</tspan></text>
+
+  <rect x="30" y="202" width="840" height="82" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.5"/>
+  <text class="s-key" x="130" y="228" text-anchor="middle" fill="var(--accent3)">§28 排煙設備</text>
+  <text class="s-sm" x="130" y="248" text-anchor="middle">五款，分流兩套規定</text>
+  <text class="s-sm" x="520" y="224" text-anchor="middle">① 甲類及戊三目 合計 ≥<tspan font-weight="700">500</tspan>　② 樓地板面積 ≥<tspan font-weight="700">100 m²</tspan> 之居室，天花板下方 <tspan font-weight="700">80 cm</tspan> 內有效通風面積未達 <tspan font-weight="700">2%</tspan></text>
+  <text class="s-sm" x="520" y="246" text-anchor="middle">③ <tspan font-weight="700">無開口樓層</tspan> ≥<tspan font-weight="700">1,000</tspan>　④ 甲一目及甲二目集會堂之<tspan font-weight="700">舞臺</tspan>部分 ≥<tspan font-weight="700">500</tspan></text>
+  <text class="s-key" x="520" y="270" text-anchor="middle" fill="var(--accent3)">⑤ 依建築技術規則應設之特別安全梯或緊急昇降機間　→ 這一款走 §189，其餘四款走 §188</text>
+
+  <rect x="30" y="292" width="405" height="98" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.5"/>
+  <text class="s-key" x="232" y="316" text-anchor="middle" fill="var(--warn)">§29 緊急電源插座</text>
+  <text class="s-sm" x="232" y="340" text-anchor="middle">① <tspan font-weight="700">11 層以上</tspan>建築物之各樓層</text>
+  <text class="s-sm" x="232" y="360" text-anchor="middle">② 地下建築物 ≥<tspan font-weight="700">1,000 m²</tspan></text>
+  <text class="s-sm" x="232" y="380" text-anchor="middle">③ 依建築技術規則應設之<tspan font-weight="700">緊急昇降機間</tspan></text>
+
+  <rect x="455" y="292" width="415" height="98" rx="8" fill="var(--card)" stroke="var(--fg)" stroke-width="1.5"/>
+  <text class="s-key" x="662" y="316" text-anchor="middle">§30 無線電通信輔助設備　／　§30-1 防災監控裝置</text>
+  <text class="s-sm" x="662" y="338" text-anchor="middle">§30：① 樓高 ≥<tspan font-weight="700">100 m</tspan> 建築物之<tspan font-weight="700">地下層</tspan>　② 地下建築物 ≥1,000</text>
+  <text class="s-sm" x="662" y="356" text-anchor="middle">　　　③ <tspan font-weight="700">地下層 4 層以上</tspan>且地下層合計 ≥<tspan font-weight="700">3,000 m²</tspan> 之地下層</text>
+  <text class="s-sm" x="662" y="378" text-anchor="middle">§30-1：① <tspan font-weight="700">高層建築物</tspan>　② 總樓地板面積 ≥<tspan font-weight="700">50,000 m²</tspan>　③ 地下建築物 ≥1,000　④ 公告場所</text>
+</svg>
+<figcaption>圖 10　搶救必要設備五條。§26②、§29②、§30②、§30-1③ 都是「地下建築物 ≥1,000 m²」——這是最好用的一組共同門檻</figcaption>
+</figure>
+
+<div class="note">
+  <b>§30 三款全部只針對「地下層」，而不是整棟建築物。</b>
+  第 1 款雖然寫「樓高在 100 公尺以上建築物」，但主語是「之<b>地下層</b>」——
+  也就是超高層建築物只有<b>地下層</b>要設無線電通信輔助設備，地上樓層不用。
+  理由是無線電在地下會被鋼筋混凝土完全遮蔽，地上樓層則還有機會直接通聯。<br>
+  對照 <b>§29①</b> 緊急電源插座則是「11 層以上建築物之<b>各樓層</b>」——那是給消防隊的照明與破壞器材供電用，地上樓層同樣需要。
+</div>
+
+<!-- ============ 9 ============ -->
+<h2 id="exempt"><span class="no">09</span>免設與抵免關係</h2>
+<p class="lede">第二編的每一條門檻後面幾乎都掛著一個但書。<b>「已經設了 A，在有效範圍內可以免設 B」</b>——但方向是單向的，不能反著用。</p>
+
+<figure>
+<svg viewBox="0 0 900 380" role="img" aria-label="第二編各設備之間的免設抵免關係">
+  <text class="s-txt" x="450" y="24" text-anchor="middle" font-weight="700">抵免關係：箭頭方向 ＝「設了這個，可以免設那個」</text>
+
+  <rect x="330" y="46" width="240" height="52" rx="8" fill="var(--fill3)" stroke="var(--accent3)" stroke-width="1.6"/>
+  <text class="s-key" x="450" y="68" text-anchor="middle" fill="var(--accent3)">水霧・泡沫・CO₂・惰性氣體</text>
+  <text class="s-key" x="450" y="88" text-anchor="middle" fill="var(--accent3)">鹵化烴・乾粉（§18 六種）</text>
+
+  <path class="s-dim" d="M450 100 L450 132 M444 124 L450 136 L456 124"/>
+  <rect x="330" y="136" width="240" height="44" rx="8" fill="var(--fill4)" stroke="var(--warn)" stroke-width="1.6"/>
+  <text class="s-key" x="450" y="164" text-anchor="middle" fill="var(--warn)">自動撒水設備</text>
+  <text class="s-sm" x="640" y="162" text-anchor="middle">§17Ⅱ：在該有效範圍內得免設自動撒水</text>
+
+  <path class="s-dim" d="M330 158 L250 158 L250 200 M244 192 L250 204 L256 192"/>
+  <path class="s-dim" d="M570 158 L650 158 L650 200 M644 192 L650 204 L656 192"/>
+
+  <rect x="130" y="204" width="240" height="44" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.6"/>
+  <text class="s-key" x="250" y="232" text-anchor="middle" fill="var(--accent2)">室內消防栓（§15Ⅱ）</text>
+
+  <rect x="530" y="204" width="240" height="44" rx="8" fill="var(--fill2)" stroke="var(--accent2)" stroke-width="1.6"/>
+  <text class="s-key" x="650" y="232" text-anchor="middle" fill="var(--accent2)">室外消防栓（§16Ⅱ）</text>
+
+  <path class="s-dim" stroke-dasharray="5 4" d="M530 226 L376 226 M384 220 L372 226 L384 232"/>
+  <text class="s-sm" x="452" y="220" text-anchor="middle">§15Ⅱ 但書：限第 1、2 層</text>
+
+  <text class="s-sm" x="250" y="266" text-anchor="middle">§15Ⅱ：設有室外消防栓、自動撒水（含補助撒水栓）、</text>
+  <text class="s-sm" x="250" y="282" text-anchor="middle">水霧、泡沫、CO₂、惰性氣體、鹵化烴或乾粉者，</text>
+  <text class="s-sm" x="250" y="298" text-anchor="middle">在該有效範圍內得免設室內消防栓</text>
+  <text class="s-key" x="250" y="320" text-anchor="middle" fill="var(--accent2)">但以室外消防栓抵免時：第 1 層水平距離 40 m 以下、</text>
+  <text class="s-key" x="250" y="336" text-anchor="middle" fill="var(--accent2)">第 2 層步行距離 40 m 以下，且僅限第 1、2 層免設</text>
+
+  <text class="s-sm" x="650" y="266" text-anchor="middle">§16Ⅱ：設有自動撒水、水霧、泡沫、CO₂、</text>
+  <text class="s-sm" x="650" y="282" text-anchor="middle">惰性氣體、鹵化烴或乾粉者，</text>
+  <text class="s-sm" x="650" y="298" text-anchor="middle">在該有效範圍內得免設室外消防栓</text>
+  <text class="s-sm" x="650" y="322" text-anchor="middle">注意：§16Ⅱ 的清單<tspan font-weight="700">沒有「室內消防栓」</tspan></text>
+  <text class="s-key" x="650" y="340" text-anchor="middle" fill="var(--accent2)">——不能用室內消防栓抵免室外消防栓</text>
+
+  <text class="s-key" x="450" y="368" text-anchor="middle">抵免一律限於「該有效範圍內」，不是整棟免設</text>
+</svg>
+<figcaption>圖 11　水系與氣體系設備之間的抵免。方向由「強」抵免「弱」，且都限於有效範圍內</figcaption>
+</figure>
+
+<h3>第二編全部免設與抵免條文</h3>
+<div class="scroll">
+<table>
+<thead><tr><th class="n">條</th><th>設了什麼</th><th>可免設什麼</th><th>限制</th></tr></thead>
+<tbody>
+<tr><td class="n"><b>§15Ⅱ</b></td><td>室外消防栓、自動撒水（含補助撒水栓）、水霧、泡沫、CO₂、惰性氣體、鹵化烴或乾粉</td><td><b>室內消防栓</b></td><td>在該<b>有效範圍內</b>；以<b>室外消防栓</b>抵免時，限<b>第 1 層水平距離 40 m 以下、第 2 層步行距離 40 m 以下</b>，且<b>僅第 1、2 層</b>得免設</td></tr>
+<tr><td class="n"><b>§16Ⅱ</b></td><td>自動撒水、水霧、泡沫、CO₂、惰性氣體、鹵化烴或乾粉<br><span style="color:var(--muted)">（清單裡<b>沒有</b>室內消防栓）</span></td><td><b>室外消防栓</b></td><td>在該有效範圍內</td></tr>
+<tr><td class="n"><b>§17Ⅱ</b></td><td>水霧、泡沫、CO₂、惰性氣體、鹵化烴或乾粉<br><span style="color:var(--muted)">（清單裡<b>沒有</b>室內外消防栓）</span></td><td><b>自動撒水</b></td><td>在該有效範圍內</td></tr>
+<tr><td class="n"><b>§17Ⅲ</b></td><td>—</td><td>—</td><td>第 1 項第 9 款（甲六目機構）樓地板面積合計<b>未達 1,000 m²</b> 者，得設<b>水道連結型自動撒水設備</b>或同等以上效能之滅火設備，或採中央主管機關公告之措施</td></tr>
+<tr><td class="n"><b>§18Ⅰ</b>但書</td><td>外牆<b>常時開放</b>開口面積達該層樓地板面積 <b>15% 以上</b></td><td>—（改為<b>移動式</b>設置）</td><td><b>惰性氣體與鹵化烴除外</b></td></tr>
+<tr><td class="n"><b>§18Ⅱ</b>但書</td><td>已依 §18Ⅰ 設有滅火設備</td><td><b>簡易自動滅火設備</b></td><td>—</td></tr>
+<tr><td class="n"><b>§18 表註 2</b></td><td>廚房設有<b>自動撒水設備</b>，且排油煙管及煙罩設簡易自動滅火裝置</td><td>不受 <b>§18 附表</b>限制</td><td>—</td></tr>
+<tr><td class="n"><b>§18 表註 3</b></td><td>停車空間車輛採<b>一列停放</b>並能同時通往室外</td><td>不受 §18 附表限制</td><td>—</td></tr>
+<tr><td class="n"><b>§18 表註 4</b></td><td>—</td><td>—</td><td>附表<b>項目三、四</b>得設<b>自動撒水</b>；<b>項目七</b>得設<b>預動式</b>自動撒水，不受本表限制</td></tr>
+<tr><td class="n"><b>§19Ⅱ</b></td><td>自動撒水、水霧或泡沫滅火設備（<b>限標示溫度 75℃ 以下、動作時間 60 秒以內之密閉型撒水頭</b>）</td><td><b>火警自動警報設備</b></td><td>在該有效範圍內；但<b>甲類場所、地下建築物、高層建築物、應設偵煙式探測器之場所</b>不適用</td></tr>
+<tr><td class="n"><b>§23④</b>但書</td><td>避難方向指示燈或出口標示燈</td><td><b>避難指標</b></td><td>在其有效範圍內</td></tr>
+<tr><td class="n"><b>§24Ⅱ</b></td><td>經中央主管機關認可為<b>容易避難逃生</b>或<b>具有效採光</b></td><td><b>緊急照明設備</b></td><td>—</td></tr>
+<tr><td class="n"><b>§25</b>但書</td><td>構造及設施上並無避難逃生障礙，經中央主管機關<b>認可</b></td><td><b>避難器具</b></td><td>—</td></tr>
+<tr><td class="n"><b>§28Ⅱ</b></td><td>以具 <b>1 小時以上防火時效</b>之牆壁、平時保持關閉之防火門窗等防火設備及各該樓層防火構造樓地板區劃，且防火設備具 <b>1 小時以上阻熱性</b></td><td>—（<b>增建、改建或變更用途部分得分別計算</b>樓地板面積）</td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="warnbox">
+  <b>三張清單的差異，是抵免題的出題點。</b><br>
+  · <b>§15Ⅱ</b>（免室內消防栓）：清單有 <b>8 項</b>——室外消防栓、自動撒水、水霧、泡沫、CO₂、惰性氣體、鹵化烴、乾粉<br>
+  · <b>§16Ⅱ</b>（免室外消防栓）：清單有 <b>7 項</b>——<b>少了室內消防栓</b><br>
+  · <b>§17Ⅱ</b>（免自動撒水）：清單有 <b>6 項</b>——<b>再少了自動撒水本身與室內外消防栓</b><br>
+  也就是說：<b>只能由「更強或更專門的設備」抵免「較基本的設備」，不能反向</b>。
+  §18 那六種（水霧／泡沫／CO₂／惰性氣體／鹵化烴／乾粉）在三張清單裡都在，是抵免鏈的最上游。
+</div>
+
+<div class="ex">
+  <div class="t">實例 3　抵免關係的連鎖判斷</div>
+  <div class="given">某 <b>4 層</b>建築物，第 1 層為<b>室內停車空間 600 m²</b>，第 2～4 層為<b>辦公室（乙六目）各 600 m²</b>。
+  第 1 層已依 §18 附表項目三設置<b>泡沫滅火設備</b>（有效範圍涵蓋整層）。</div>
+  <div class="step">① <b>§14</b> 滅火器：乙、丙類總樓地板面積 <code>600 × 4 = 2,400 m² ≥ 150</code> → <b>應設</b>（滅火器沒有任何抵免條文）</div>
+  <div class="step">② <b>§15</b> 室內消防栓：5 層以下，乙～丁類任一層 ≥500 m² → 各層 600 m² 均 <b>應設</b>。
+  但第 1 層已設泡沫，依 §15Ⅱ 在<b>有效範圍內得免設</b> → <b>第 1 層免設、第 2～4 層仍應設</b></div>
+  <div class="step">③ <b>§16</b> 室外消防栓：本例非丁類危險工作場所，且無同基地二棟以上情形 → <b>不應設</b></div>
+  <div class="step">④ <b>§17</b> 自動撒水：4 層建築物，乙六目（辦公室）不在 §17①「甲一目 300／其他甲類及乙一目 1,500」之列 → <b>不應設</b></div>
+  <div class="step">⑤ <b>§18</b>：第 1 層室內停車空間 600 m² ≥ 500 m²（項目三）→ <b>應設</b>水霧／泡沫／CO₂／惰性氣體／鹵化烴／乾粉之一。本例已設泡沫，符合</div>
+  <div class="step">⑥ <b>§19</b> 火警自動警報：5 層以下、乙類任一層 ≥500 m² → <b>應設</b>。
+  第 1 層雖設泡沫，但 §19Ⅱ 的免設限「自動撒水、水霧或<b>泡沫</b>（限標示溫度 75℃ 以下、動作時間 60 秒以內之<b>密閉型撒水頭</b>）」——
+  <b>泡沫設備若非採密閉型撒水頭者，不符免設要件</b>，仍應設</div>
+  <div class="ans">結論：<b>滅火器（全棟）</b>、<b>室內消防栓（2～4 層）</b>、<b>泡沫（1 層）</b>、<b>火警自動警報（全棟）</b>、<b>緊急廣播（§22，因已設 §19）</b>、
+  <b>手動報警（§20①，3 層以上任一層 ≥200 m²）</b>、<b>標示設備與緊急照明（§23、§24）</b>、<b>避難器具（§25，2～4 層）</b><br>
+  <span style="font-weight:400">要點：抵免<b>只在有效範圍內</b>、<b>只對特定設備</b>，而且 §19Ⅱ 對撒水頭型式另有限定——不能看到「已設泡沫」就一律主張免設。</span></div>
+</div>
+
+<!-- ============ 10 ============ -->
+<h2 id="card"><span class="no">10</span>應設場所門檻總表與速查數字卡</h2>
+
+<h3>十七項設備的應設門檻總表</h3>
+<div class="scroll">
+<table>
+<thead><tr><th>設備</th><th class="n">條</th><th>門檻（擇一符合即應設）</th></tr></thead>
+<tbody>
+<tr><td colspan="3" style="background:var(--fill1);font-weight:700">滅火設備</td></tr>
+<tr><td><b>滅火器</b></td><td class="n">§14</td><td>① 甲類、地下建築物、幼兒園（<b>無面積門檻</b>）／② 乙丙丁類總樓地板面積 ≥<b>150</b>／③ 地下層或無開口樓層 ≥<b>50</b>／④ 放映室、變壓器、配電盤等電氣設備／⑤ 鍋爐房、廚房等大量使用火源</td></tr>
+<tr><td><b>室內消防栓</b></td><td class="n">§15</td><td>① 5 層以下：甲一目 ≥<b>300</b>／其他甲～丁 ≥<b>500</b>／學校教室 ≥<b>1,400</b>　② 6 層以上：任一層 ≥<b>150</b>　③ 地下建築物 ≥<b>150</b>　④ 地下層或無開口樓層：甲一目 ≥<b>100</b>／其他 ≥<b>150</b></td></tr>
+<tr><td><b>室外消防栓</b></td><td class="n">§16</td><td>1F＋2F 合計：高度 ≥<b>3,000</b>／中度 ≥<b>5,000</b>／低度 ≥<b>10,000</b>　④ 混合時比例總和 <b>&gt;1</b>　⑤ 同基地二棟以上木造／易燃構造，1F ≤3 m、2F ≤5 m 且合計 ≥<b>3,000</b></td></tr>
+<tr><td><b>自動撒水</b></td><td class="n">§17</td><td>① 10 層以下：甲一目 ≥<b>300</b>／其他甲類及乙一目 ≥<b>1,500</b>　② 11 層以上樓層 ≥<b>100</b>　③ 地下層或無開口樓層供甲類 ≥<b>1,000</b>　④ 11 層以上建築物供甲類或戊一目（<b>無門檻</b>）　⑤ 戊一目中甲類合計 ≥<b>3,000</b> 之樓層　⑥ 乙十一目高架倉庫 高 &gt;<b>10 m</b> 且 ≥<b>700</b>　⑦ 地下建築物 ≥<b>1,000</b>　⑧ <b>高層建築物</b>（無門檻）　⑨ <b>甲六目機構</b>（無門檻）</td></tr>
+<tr><td><b>水霧／泡沫／CO₂或惰性氣體／鹵化烴／乾粉</b>（擇一）</td><td class="n">§18Ⅰ</td><td>① 屋頂直昇機停機場　② 飛機修理廠、飛機庫 ≥<b>200</b>　③ 汽車修理廠、室內停車空間：1F ≥<b>500</b>／地下層或 2F 以上 ≥<b>200</b>／屋頂停車場 ≥<b>300</b>　④ 昇降機械式停車場 ≥<b>10 輛</b>　⑤ 發電機室、變壓器室 ≥<b>200</b>　⑥ 鍋爐房、廚房 ≥<b>200</b>　⑦ 電信機械室、電腦室、總機室 ≥<b>200</b></td></tr>
+<tr><td><b>簡易自動滅火設備</b></td><td class="n">§18Ⅱ</td><td>≥<b>300 m²</b> 之<b>餐廳</b>，或甲六目機構且樓地板面積合計 ≥<b>500 m²</b> 者，其<b>廚房排油煙管及煙罩</b></td></tr>
+
+<tr><td colspan="3" style="background:var(--fill2);font-weight:700">警報設備</td></tr>
+<tr><td><b>火警自動警報</b></td><td class="n">§19</td><td>① 5 層以下：甲類及乙十二目 ≥<b>300</b>／乙（除十二目）～丁 ≥<b>500</b>　② 6～10 層：任一層 ≥<b>300</b>　③ <b>11 層以上建築物</b>（無門檻）　④ 地下層或無開口樓層：甲一目、甲五目及戊一目（限供該二目者）≥<b>100</b>／其他 ≥<b>300</b>　⑤ 戊一目 ≥<b>500</b> 且甲類合計 ≥<b>300</b>　⑥ 甲類及戊三目 ≥<b>300</b>　⑦ <b>甲六目機構</b>（無門檻）</td></tr>
+<tr><td><b>手動報警</b></td><td class="n">§20</td><td>① <b>3 層以上</b>建築物，任何一層 ≥<b>200</b>　② <b>甲類第三目</b>（觀光旅館、飯店、旅館、招待所）</td></tr>
+<tr><td><b>瓦斯漏氣火警自動警報</b></td><td class="n">§21</td><td>① 地下層供甲類合計 ≥<b>1,000</b>　② 戊一目之地下層合計 ≥<b>1,000</b> 且其中甲類合計 ≥<b>500</b>　③ 地下建築物 ≥<b>1,000</b>　<b>（三款全在地下）</b></td></tr>
+<tr><td><b>緊急廣播</b></td><td class="n">§22</td><td>依 <b>§19 或 §21</b> 設有火警自動警報或瓦斯漏氣火警自動警報設備之建築物（<b>無獨立門檻</b>）</td></tr>
+<tr><td><b>一一九火災通報裝置</b></td><td class="n">§22-1</td><td>① 甲六目所定醫院、療養院、榮民之家及長照／老福／護理／身障機構　② 其他經中央主管機關公告之供公眾使用場所</td></tr>
+
+<tr><td colspan="3" style="background:var(--fill3);font-weight:700">避難逃生設備</td></tr>
+<tr><td><b>出口標示燈<br>避難方向指示燈</b></td><td class="n">§23①②</td><td>供 §12①、②（十二）、⑤（一）（三）使用之場所，或<b>地下層、無開口樓層、11 層以上樓層</b>供其他各款目使用者（兩款條件文字完全相同）</td></tr>
+<tr><td><b>觀眾席引導燈</b></td><td class="n">§23③</td><td>戲院、電影院、歌廳、集會堂及類似場所</td></tr>
+<tr><td><b>避難指標</b></td><td class="n">§23④</td><td><b>各類場所均應設置</b>；但設有避難方向指示燈或出口標示燈時，在其有效範圍內得免設</td></tr>
+<tr><td><b>緊急照明</b></td><td class="n">§24</td><td>① 甲、丙、戊類之<b>居室</b>　② 乙類特定各目之居室（乙三目學校教室除外）　③ 總樓地板面積 ≥<b>1,000</b> 建築物之居室（學校教室除外）　④ <b>有效採光面積未達居室樓地板面積 5%</b>　⑤ 前四款場所通達避難層之走廊、樓梯間、通道等人工照明部分</td></tr>
+<tr><td><b>避難器具</b></td><td class="n">§25</td><td>建築物<b>除 11 層以上樓層及避難層外</b>，各樓層應選設（數量與可選種類見 §157 附表）</td></tr>
+
+<tr><td colspan="3" style="background:var(--fill4);font-weight:700">消防搶救上之必要設備</td></tr>
+<tr><td><b>連結送水管</b></td><td class="n">§26</td><td>① <b>5 層或 6 層</b>總樓地板面積 ≥<b>6,000</b>，及 <b>7 層以上</b>建築物（無門檻）　② 地下建築物 ≥<b>1,000</b></td></tr>
+<tr><td><b>消防專用蓄水池</b></td><td class="n">§27</td><td>① <b>建築基地面積</b> ≥<b>20,000</b> 且任何一層 ≥<b>1,500</b>　② 高度 &gt;<b>31 m</b> 且總樓地板面積 ≥<b>25,000</b>　③ 同基地二棟以上，1F ≤3 m、2F ≤5 m 且合計 ≥<b>10,000</b></td></tr>
+<tr><td><b>排煙設備</b></td><td class="n">§28</td><td>① 甲類及戊三目合計 ≥<b>500</b>　② ≥<b>100 m²</b> 之居室，天花板下方 <b>80 cm</b> 內有效通風面積未達 <b>2%</b>　③ <b>無開口樓層</b> ≥<b>1,000</b>　④ 甲一目及甲二目集會堂之<b>舞臺</b> ≥<b>500</b>　⑤ 應設之特別安全梯或緊急昇降機間</td></tr>
+<tr><td><b>緊急電源插座</b></td><td class="n">§29</td><td>① <b>11 層以上</b>建築物之<b>各樓層</b>　② 地下建築物 ≥<b>1,000</b>　③ 應設之緊急昇降機間</td></tr>
+<tr><td><b>無線電通信輔助設備</b></td><td class="n">§30</td><td>① 樓高 ≥<b>100 m</b> 建築物之<b>地下層</b>　② 地下建築物 ≥<b>1,000</b>　③ <b>地下層 4 層以上</b>且地下層合計 ≥<b>3,000</b> 之地下層</td></tr>
+<tr><td><b>防災監控系統綜合操作裝置</b></td><td class="n">§30-1</td><td>① <b>高層建築物</b>　② 總樓地板面積 ≥<b>50,000</b>　③ 地下建築物 ≥<b>1,000</b>　④ 其他經中央主管機關公告之供公眾使用場所</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>最容易記混的八組數字</h3>
+<table>
+<thead><tr><th>數字組</th><th>正確歸屬</th></tr></thead>
+<tbody>
+<tr><td class="n"><b>3／6／11</b></td><td>樓層分界：<b>§20 手動報警 3 層以上</b>／<b>§15 室內消防栓 6 層以上</b>／<b>§17 自動撒水與 §19 火警的 11 層以上</b>。§19 另有「6～10 層」中段</td></tr>
+<tr><td class="n"><b>3-5-10</b></td><td>§16 室外消防栓：高度 3,000／中度 5,000／低度 10,000 m²（1F＋2F 合計）</td></tr>
+<tr><td class="n"><b>1/30</b></td><td>§4② 無開口樓層的有效開口面積比。10 層以下另需 <b>2 個</b> 1 m 圓孔或 75×120 cm 開口</td></tr>
+<tr><td class="n"><b>5.5 m／60℃</b></td><td>§4③④ 危險工作場所：倉庫高度 <b>5.5 m</b>、易燃性液體閃火點 <b>60℃</b>。高於 5.5 或低於 60 就是高度危險</td></tr>
+<tr><td class="n"><b>1,400 m²</b></td><td>§15① <b>學校教室</b>的室內消防栓門檻——全法最高的單一面積門檻</td></tr>
+<tr><td class="n"><b>700 m² ／ 10 m</b></td><td>§17①⑥ 高架儲存倉庫：樓層高度<b>超過</b> 10 m <b>且</b>樓地板面積 <b>700 m² 以上</b>——兩個條件要同時成立</td></tr>
+<tr><td class="n"><b>15%／2%／5%</b></td><td><b>15%</b>＝§18Ⅰ但書外牆常時開放開口比（可改移動式）；<b>2%</b>＝§28② 天花板下方 80 cm 內有效通風面積比；<b>5%</b>＝§24④ 有效採光面積比</td></tr>
+<tr><td class="n"><b>20,000／25,000／31 m</b></td><td>§27 消防專用蓄水池：<b>建築基地面積</b> 20,000（不是樓地板面積）／高度超過 <b>31 m</b> 且總樓地板面積 25,000</td></tr>
+</tbody>
+</table>
+
+<div class="cmp">
+  <b>「無面積門檻」的六個場所，是最好用的一組快篩。</b><br>
+  · <b>§14①</b> 甲類場所、地下建築物、幼兒園 → 一律應設滅火器<br>
+  · <b>§17①④</b> 11 層以上建築物供甲類或戊一目使用者 → 一律應設自動撒水<br>
+  · <b>§17①⑧</b> 高層建築物 → 一律應設自動撒水<br>
+  · <b>§17①⑨</b> 甲六目所定長照等機構 → 一律應設自動撒水<br>
+  · <b>§19①③</b> 11 層以上建築物 → 一律應設火警自動警報<br>
+  · <b>§19①⑦</b> 甲六目所定長照等機構 → 一律應設火警自動警報<br>
+  另 <b>§20②</b>（甲類第三目）、<b>§22-1</b>（甲六目醫療照護機構）、<b>§23④</b>（各類場所均應設避難指標）、<b>§26①後段</b>（7 層以上建築物）、<b>§30-1①</b>（高層建築物）也都沒有面積門檻。
+</div>
+
+<div class="navbar" style="margin-top:32px">
+  <a class="btn go" href="index.html">🏠 回學習首頁</a>
+  <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+  <a class="btn" href="23-%E6%A2%9D%E8%99%9F%E7%B4%A2%E5%BC%95.html">🔍 條號索引</a>
+  <a class="btn" href="#route">↑ 回到最上方</a>
+</div>
+
+<footer>
+  <p>本頁條文取自全國法規資料庫「各類場所消防安全設備設置標準」（pcode D0120029）民國 113 年 4 月 24 日修正版原文，於 2026-08-28 擷取核對。</p>
+  <p><b>§18 附表</b>在法規資料庫網頁版顯示「因條文排版無法完整呈現內容」，本頁已依該條之「完整條文」PDF 補齊七項全表與五點註記。</p>
+  <p>圖 1～圖 11 中關於「性格」「門檻邏輯」「抵免鏈方向」的歸納，以及各節「記法」，係條文設計邏輯的一般解釋，<b>非條文明文</b>。
+  §12 各目為節省版面採簡稱，正式名稱請回查條文原文。</p>
+  <p><b>法規以主管機關公布文字為準。</b>本頁為個人學習筆記，不構成法律意見；設計送審前請回查現行條文：
+  <code>https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0120029</code></p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  function target(){
+    var h=(location.hash||'').replace('#','');
+    if(!h){ var m=/[?&]s=([\w-]+)/.exec(location.search||''); h=m?m[1]:''; }
+    return h?document.getElementById(h):null;
+  }
+  function go(smooth){
+    var el=target(); if(!el) return;
+    el.scrollIntoView({behavior:smooth?'smooth':'auto',block:'start'});
+    el.style.transition='background-color .4s';
+    var old=el.style.backgroundColor;
+    el.style.backgroundColor='var(--fill4)';
+    setTimeout(function(){ el.style.backgroundColor=old||''; },1600);
+  }
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){ setTimeout(go,60); });
+  else setTimeout(go,60);
+  window.addEventListener('hashchange',function(){ go(true); });
+})();
+</script>
+</body>
+</html>
