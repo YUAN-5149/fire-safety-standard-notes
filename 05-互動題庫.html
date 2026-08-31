@@ -3251,8 +3251,13 @@ function render(){
   } else {
     $('numin').classList.add('hide'); $('opts').classList.remove('hide');
     const type = q.t==='multi'?'checkbox':'radio';
-    $('opts').innerHTML = q.o.map((o,k)=>
-      `<label class="opt" data-k="${k}"><input type="${type}" name="o" value="${k}"><span>${o}</span><span class="mk"></span></label>`).join('');
+    /* 選項顯示順序每次隨機。data-k 與 input value 一律保留原始索引，
+       所以 check()／解析／錯題回顧都不受影響。
+       理由：原始題目的正解位置分布為 A 39%／B 34%／C 22%／D 5%，
+       不打散的話「不選最後一個」就能明顯提高猜對率，違背自我驗收的用途。 */
+    const order = shuf(q.o.map((_,k)=>k));
+    $('opts').innerHTML = order.map(k =>
+      `<label class="opt" data-k="${k}"><input type="${type}" name="o" value="${k}"><span>${q.o[k]}</span><span class="mk"></span></label>`).join('');
     $('opts').querySelectorAll('.opt').forEach(el=>{
       el.addEventListener('click',()=>{ if(answered) return;
         setTimeout(()=>$('opts').querySelectorAll('.opt').forEach(x=>
@@ -3406,7 +3411,9 @@ document.addEventListener('keydown', e=>{
   const n = parseInt(e.key,10);
   if(n>=1 && n<=q.o.length){
     e.preventDefault();
-    const el = $('opts').querySelector(`.opt[data-k="${n-1}"]`), inp = el.querySelector('input');
+    // 數字鍵對應「畫面上第 n 個」，不是原始索引——選項順序已隨機
+    const el = $('opts').children[n-1]; if(!el) return;
+    const inp = el.querySelector('input');
     if(q.t==='multi'){ inp.checked=!inp.checked; el.classList.toggle('sel',inp.checked); }
     else { inp.checked=true; $('opts').querySelectorAll('.opt').forEach(x=>x.classList.toggle('sel',x===el)); check(); }
   }
