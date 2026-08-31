@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>條號索引 — 各類場所消防安全設備設置標準 §1～§239</title>
+<meta name="description" content="全法 266 條的反查索引：輸入條號、關鍵字或設備名稱即時過濾，每一條都連到對應的圖解段落與全國法規資料庫原文，並顯示題庫題數。">
+<style>
+  :root{
+    --bg:#fbfaf7; --fg:#1c1b19; --muted:#6b6862; --line:#d8d4cb;
+    --card:#ffffff; --accent:#b03a2e; --accent2:#1d6fa5; --accent3:#2e7d4f;
+    --warn:#a86b00;
+    --fill1:#f2e4e1; --fill2:#e0edf6; --fill3:#e3f0e8; --fill4:#f7efd9;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#16161a; --fg:#e8e6e1; --muted:#9b968c; --line:#3a3a40;
+      --card:#1e1e23; --accent:#e8705f; --accent2:#5aa8d8; --accent3:#5fbb87;
+      --warn:#d9a441;
+      --fill1:#3a2622; --fill2:#1e3341; --fill3:#1f3a2c; --fill4:#3a3120;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+    line-height:1.7;-webkit-text-size-adjust:100%}
+  .wrap{max-width:1040px;margin:0 auto;padding:28px 18px 72px}
+  header{border-bottom:2px solid var(--fg);padding-bottom:16px}
+  h1{font-size:clamp(1.3rem,4vw,1.9rem);margin:0 0 6px;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:.88rem;margin:0}
+  a{color:var(--accent2)}
+  .navbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+  .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;
+    font-size:.86rem;padding:7px 14px;border-radius:8px;border:1px solid var(--line);
+    background:var(--card);color:var(--fg);transition:.12s}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.go{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+  .btn.go:hover{filter:brightness(1.1);color:#fff}
+
+  .tools{position:sticky;top:0;z-index:20;background:var(--bg);
+    padding:14px 0 10px;border-bottom:1px solid var(--line);margin-bottom:6px}
+  .searchrow{display:flex;gap:8px;align-items:center}
+  #q{flex:1;font:inherit;font-size:1rem;padding:11px 14px;border-radius:10px;
+    border:1.5px solid var(--line);background:var(--card);color:var(--fg)}
+  #q:focus{outline:none;border-color:var(--accent)}
+  #clear{font:inherit;font-size:.85rem;padding:9px 14px;border-radius:9px;cursor:pointer;
+    border:1px solid var(--line);background:var(--card);color:var(--muted)}
+  #clear:hover{border-color:var(--accent);color:var(--accent)}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+  .chip{font:inherit;font-size:.78rem;padding:4px 11px;border-radius:99px;cursor:pointer;
+    border:1px solid var(--line);background:var(--card);color:var(--muted);transition:.12s}
+  .chip:hover{border-color:var(--accent);color:var(--accent)}
+  .chip.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+  .count{color:var(--muted);font-size:.82rem;margin-top:8px}
+  .count b{color:var(--accent)}
+
+  table{border-collapse:collapse;width:100%;font-size:.87rem;margin:10px 0 0}
+  th,td{border-bottom:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+  thead th{position:sticky;top:var(--thtop,118px);z-index:10;background:var(--fill2);
+    border-bottom:1.5px solid var(--line);font-weight:600;font-size:.82rem}
+  tbody tr:hover{background:var(--fill4)}
+  td.no{white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:700}
+  td.no a.law{color:var(--accent);text-decoration:none}
+  td.no a.law:hover{text-decoration:underline}
+  td.grp{color:var(--muted);font-size:.78rem;max-width:190px}
+  td.dg{white-space:nowrap;font-size:.82rem}
+  td.q{text-align:right;font-variant-numeric:tabular-nums;width:3.4em}
+  td.q a.qlink{color:var(--accent2);text-decoration:none;font-weight:700;
+    padding:1px 6px;border-radius:5px;border:1px solid transparent}
+  td.q a.qlink:hover{background:var(--fill2);border-color:var(--accent2)}
+  .none{color:var(--muted);opacity:.6}
+  .via{display:inline-block;margin-left:6px;font-size:.7rem;padding:1px 6px;border-radius:99px;
+    background:var(--fill3);color:var(--accent3);border:1px solid var(--accent3);vertical-align:2px}
+  tr:not(.viahit) .via{display:none}
+  .secs{border:1px solid var(--line);background:var(--card);border-radius:10px;
+    padding:12px 15px;margin:14px 0 0;font-size:.86rem;display:none}
+  .secs.on{display:block}
+  .secs .h{font-weight:700;margin-bottom:6px}
+  .secs a{display:inline-block;margin:3px 10px 3px 0;text-decoration:none;
+    padding:3px 9px;border-radius:7px;border:1px solid var(--line);background:var(--bg)}
+  .secs a:hover{border-color:var(--accent);color:var(--accent)}
+  tr.hide{display:none}
+  .empty{padding:28px 4px;color:var(--muted);text-align:center;display:none}
+  .empty.on{display:block}
+
+  .note{border-left:3px solid var(--warn);background:var(--fill4);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.87rem;margin:16px 0}
+  .note b{color:var(--warn)}
+  footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:.8rem}
+  @media(max-width:640px){
+    td.grp{display:none} thead th:nth-child(2){display:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>條號索引</h1>
+  <p class="sub">各類場所消防安全設備設置標準　§1～§239　共 <!--TOTAL--> 條　|　民國 113 年 4 月 24 日修正版</p>
+  <div class="navbar">
+    <a class="btn go" href="index.html">🏠 回學習首頁</a>
+    <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+    <a class="btn" href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0120029" target="_blank" rel="noopener">📖 全國法規資料庫原文</a>
+  </div>
+</header>
+
+<div class="note">
+  手上有一個條號，不知道該翻哪一頁時用這裡。<b>輸入條號（如 <code>57</code>、<code>146-2</code>）、關鍵字（如 <code>水源</code>、<code>步行距離</code>）或設備名稱都能即時過濾</b>；
+  關鍵字會<b>連圖解內文一起搜</b>——搜「<code>補助撒水栓</code>」「<code>回彎管</code>」這種只寫在內文的詞也找得到，
+  這樣命中的條文會標上 <span class="via" style="display:inline-block">內文</span> 標記並<b>排在直接命中的後面</b>。
+  內文命中是<b>以「段落」為單位</b>，所以同一個圖解段落底下的條文會一起列出來，未必每一條都直接提到該關鍵字。<br>
+  點<b>條號</b>到全國法規資料庫看原文，點<b>段落名</b>跳到對應圖解，點最右邊的<b>題數</b>直接進題庫只練那一條。
+</div>
+
+<div class="tools">
+  <div class="searchrow">
+    <input id="q" type="search" placeholder="輸入條號、關鍵字或設備名稱…　例：57　水源　撒水　§213" autocomplete="off">
+    <button id="clear" type="button">清除</button>
+  </div>
+  <div class="chips" id="chips">
+    <button class="chip on" data-ed="">全部</button>
+    <!--CHIPS-->
+  </div>
+  <div class="count" id="count"></div>
+</div>
+
+<table>
+  <thead><tr><th>條號</th><th>章節</th><th>主旨</th><th>對應圖解段落</th><th class="q">題數</th></tr></thead>
+  <tbody id="tb">
+<!--ROWS-->
+  </tbody>
+</table>
+<div class="secs" id="secs"></div>
+<div class="empty" id="empty">找不到符合的條文。試試只輸入數字，或改用設備名稱。</div>
+
+<footer>
+  <p>主旨欄為本筆記為便於檢索所撰之摘要，<b>非條文標題</b>——現行條文並無標題。實際內容請點條號查閱全國法規資料庫原文。</p>
+  <p>「對應圖解段落」指向本站各設備圖解頁的對應章節；標示「尚無圖解」者目前只有 Markdown 筆記
+  （<a href="https://github.com/YUAN-5149/fire-safety-standard-notes/blob/main/00-%E7%B8%BD%E8%A6%BD%E8%88%87%E6%9F%A5%E6%B3%95SOP.md" target="_blank" rel="noopener">00-總覽與查法SOP</a>、
+  <a href="https://github.com/YUAN-5149/fire-safety-standard-notes/blob/main/01-%E7%AC%AC%E4%BA%8C%E7%B7%A8-%E6%B6%88%E9%98%B2%E8%A8%AD%E8%A8%88-%E6%87%89%E8%A8%AD%E5%A0%B4%E6%89%80%E9%80%9F%E6%9F%A5.md" target="_blank" rel="noopener">01-第二編應設場所速查</a>）。</p>
+  <p>「題數」為互動題庫中以該條為條號依據的題目數。已刪除之條文（§2、§147～§152）仍列出，以便查到舊講義引用時能立刻確認。</p>
+  <p><b>法規以主管機關公布文字為準。</b>本頁為個人學習筆記，不構成法律意見。</p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var q=document.getElementById('q'), tb=document.getElementById('tb'),
+      rows=[].slice.call(tb.rows), cnt=document.getElementById('count'),
+      empty=document.getElementById('empty'), chips=document.getElementById('chips');
+  var ed='', secsBox=document.getElementById('secs');
+
+  /* ===== 圖解內文搜尋 =====
+     search-index.json 依「章節代碼:段落id」存放各圖解段落的純文字（約 19 萬字）。
+     只在第一次輸入非數字關鍵字時才抓，平時不影響開頁速度。 */
+  var SECT=null, SECTstate='idle';   // idle / loading / ready / failed
+  var SECNAME=<!--SECNAME-->;
+  function loadSect(){
+    if(SECTstate!=='idle') return;
+    SECTstate='loading';
+    fetch('search-index.json').then(function(res){
+      if(!res.ok) throw new Error(res.status); return res.json();
+    }).then(function(j){
+      SECT={}; for(var k in j) SECT[k]=norm(j[k]);
+      SECTstate='ready'; apply();
+    }).catch(function(){ SECTstate='failed'; apply(); });
+  }
+  function norm(s){ return (s||'').toLowerCase().replace(/\s+/g,'')
+      .replace(/[§条條第]/g,'').replace(/[－—–]/g,'-'); }
+  function apply(){
+    var raw=q.value.trim(), key=norm(raw), n=0, via=0;
+    var numOnly=/^[0-9]+(-[0-9]+)?$/.test(key);
+    var wantText = key.length>0 && !numOnly;
+    if(wantText) loadSect();
+    var hitSecs={};
+    if(wantText && SECT){
+      for(var k in SECT) if(SECT[k].indexOf(key)>=0) hitSecs[k]=1;
+    }
+    for(var i=0;i<rows.length;i++){
+      var r=rows[i], ok=true, byText=false;
+      if(ed && r.dataset.ed!==ed) ok=false;
+      if(ok && key){
+        if(numOnly){
+          var no=r.cells[0].textContent.replace(/[^0-9-]/g,'');
+          ok = (no===key) || no.indexOf(key+'-')===0;
+        } else {
+          ok = norm(r.dataset.k).indexOf(key)>=0;
+          if(!ok && r.dataset.dg && hitSecs[r.dataset.dg]){ ok=true; byText=true; }
+        }
+      }
+      r.classList.toggle('hide', !ok);
+      r.classList.toggle('viahit', ok && byText);
+      if(ok){ n++; if(byText) via++; }
+    }
+    // 條號／主旨直接命中的排前面，只靠內文命中的排後面；沒有內文命中就回復原順序
+    var want = via ? rows.filter(r=>!r.classList.contains('hide') && !r.classList.contains('viahit'))
+                        .concat(rows.filter(r=>r.classList.contains('viahit')))
+                        .concat(rows.filter(r=>r.classList.contains('hide')))
+                   : rows;
+    if(want.some(function(r,k){ return tb.rows[k]!==r; })){
+      var frag=document.createDocumentFragment();
+      want.forEach(function(r){ frag.appendChild(r); });
+      tb.appendChild(frag);
+    }
+    var msg='顯示 <b>'+n+'</b> 條　/　全法 '+rows.length+' 條';
+    if(via) msg+='　·　其中 <b>'+via+'</b> 條是靠圖解內文命中';
+    if(wantText && SECTstate==='loading') msg+='　·　<span style="opacity:.7">內文索引載入中…</span>';
+    if(wantText && SECTstate==='failed') msg+='　·　<span style="opacity:.7">內文搜尋需以網址開啟本頁（直接開啟本機檔案時瀏覽器會擋下索引）</span>';
+    cnt.innerHTML=msg;
+    empty.classList.toggle('on', n===0);
+
+    // 有命中內文、但該段落在目前結果裡沒有對應條文列者（例如潔淨區要點）
+    var extra=[];
+    if(wantText && SECT){
+      var shown={};
+      for(var i2=0;i2<rows.length;i2++) if(!rows[i2].classList.contains('hide') && rows[i2].dataset.dg) shown[rows[i2].dataset.dg]=1;
+      for(var k2 in hitSecs) if(!shown[k2] && SECNAME[k2]) extra.push(k2);
+    }
+    if(extra.length){
+      secsBox.innerHTML='<div class="h">另有 '+extra.length+' 個圖解段落提到「'+raw.replace(/[<>&]/g,'')+'」</div>'
+        + extra.map(function(k){ return '<a href="'+SECNAME[k].href+'">'+SECNAME[k].name+'</a>'; }).join('');
+      secsBox.classList.add('on');
+    } else secsBox.classList.remove('on');
+  }
+  q.addEventListener('input', apply);
+  document.getElementById('clear').addEventListener('click', function(){
+    q.value=''; ed=''; setChip(''); apply(); q.focus();
+  });
+  function setChip(v){
+    [].forEach.call(chips.querySelectorAll('.chip'), function(c){
+      c.classList.toggle('on', c.dataset.ed===v);
+    });
+  }
+  chips.addEventListener('click', function(e){
+    var c=e.target.closest('.chip'); if(!c) return;
+    ed=c.dataset.ed; setChip(ed); apply();
+  });
+  // 支援從別頁帶條號進來：23-條號索引.html?n=57
+  var m=/[?&]n=([^&]+)/.exec(location.search||'');
+  if(m){ q.value=decodeURIComponent(m[1]); }
+  function sticky(){
+    var tools=document.querySelector('.tools');
+    document.documentElement.style.setProperty('--thtop', tools.offsetHeight+'px');
+  }
+  sticky(); window.addEventListener('resize', sticky);
+  apply();
+  if(!m && window.innerWidth>700) q.focus();
+})();
+</script>
+</body>
+</html>

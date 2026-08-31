@@ -3181,38 +3181,50 @@ function pool(){
 pool();
 
 function saveSes(){
-  DB.ses = { ids:list.map(q=>q.id), i, score, answered, wrong:wrong.map(w=>w.q.id), at:Date.now() };
+  DB.ses = { ids:list.map(q=>q.id), i, score, answered, wrong:wrong.map(w=>w.q.id),
+             at:Date.now(), label:filterLabel };
   save();
 }
 function clearSes(){ delete DB.ses; save(); showResume(); }
+function resumable(s){
+  if(!s || !Array.isArray(s.ids) || !s.ids.length) return false;
+  const qs = s.ids.map(id=>BYID[id]);
+  const start = (s.i||0) + (s.answered?1:0);
+  return qs.every(Boolean) && start < qs.length;
+}
+/* 從條號深連結（?r=）進來時，原本做到一半的那一輪會被暫存在 DB.parked，
+   等這一輪結束回到設定畫面，續做橫幅會再把它提出來。 */
+function pending(){
+  if(resumable(DB.ses)) return {s:DB.ses, parked:false};
+  if(resumable(DB.parked)) return {s:DB.parked, parked:true};
+  return null;
+}
 function showResume(){
-  const s = DB.ses;
-  let ok = false;
-  if(s && Array.isArray(s.ids) && s.ids.length){
-    const qs = s.ids.map(id=>BYID[id]);
-    const start = (s.i||0) + (s.answered?1:0);
-    ok = qs.every(Boolean) && start < qs.length;
-  }
-  $('resume').classList.toggle('hide', !ok);
-  if(ok){
-    const start = (s.i||0) + (s.answered?1:0);
+  const p = pending();
+  $('resume').classList.toggle('hide', !p);
+  if(p){
+    const s = p.s, start = (s.i||0) + (s.answered?1:0);
     const d = new Date(s.at||Date.now());
     const stamp = d.getFullYear()+'/'+(d.getMonth()+1)+'/'+d.getDate()+' '
       + String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');
-    $('resumetxt').innerHTML = `${stamp}　·　做到第 <b>${start+1}</b> / ${s.ids.length} 題，目前答對 <b>${s.score||0}</b> 題`;
+    document.querySelector('#resume .rt').textContent =
+      p.parked ? '剛才被條號練習中斷的那一輪還沒做完' : '上次的練習還沒做完';
+    $('resumetxt').innerHTML = `${stamp}　·　做到第 <b>${start+1}</b> / ${s.ids.length} 題，目前答對 <b>${s.score||0}</b> 題`
+      + (s.label ? `　·　${s.label}` : '');
   }
 }
 function resumeSes(){
-  const s = DB.ses; if(!s) return false;
+  const p = pending(); if(!p) return false;
+  const s = p.s;
+  if(p.parked){ DB.ses = s; delete DB.parked; save(); }
   const qs = s.ids.map(id=>BYID[id]);
-  if(!qs.every(Boolean)) return false;
   const start = (s.i||0) + (s.answered?1:0);
-  if(start >= qs.length) return false;
-  list = qs; i = start; score = s.score||0;
+  list = qs; i = start; score = s.score||0; filterLabel = s.label||'';
   wrong = (s.wrong||[]).map(id=>BYID[id]).filter(Boolean).map(q=>({q}));
   $('setup').classList.add('hide'); $('result').classList.add('hide'); $('quiz').classList.remove('hide');
   render(); return true;
 }
+let filterLabel = '';
 showResume();
 
 const shuf = a => { for(let j=a.length-1;j>0;j--){const k=Math.floor(Math.random()*(j+1));[a[j],a[k]]=[a[k],a[j]];} return a; };
@@ -3233,7 +3245,8 @@ function render(){
   answered=false;
   const q = list[i];
   $('prog').style.width = (i/list.length*100)+'%';
-  $('pos').textContent = `第 ${i+1} / ${list.length} 題　·　${CATS.find(c=>c.k===q.c).n}`;
+  $('pos').textContent = `第 ${i+1} / ${list.length} 題　·　${CATS.find(c=>c.k===q.c).n}`
+    + (filterLabel ? `　·　${filterLabel}` : '');
   $('live').textContent = `答對 ${score}`;
   const tg = $('tag');
   tg.className='tag'+(q.t==='multi'?' multi':q.t==='num'?' num':'');
@@ -3374,19 +3387,19 @@ function finish(){
   }).join('') : '');
 }
 
-$('start').onclick = ()=>begin();
+$('start').onclick = ()=>{ filterLabel=''; begin(); };
 $('submit').onclick = check;
 $('next').onclick = next;
 $('quit').onclick = finish;
-$('again').onclick = ()=>begin();
-$('redo').onclick = ()=>begin(shuf(wrong.map(w=>w.q)));
+$('again').onclick = ()=>{ filterLabel=''; begin(); };
+$('redo').onclick = ()=>{ const w=wrong.map(x=>x.q); filterLabel='錯題重做'; begin(shuf(w)); };
 $('home').onclick = ()=>{ $('result').classList.add('hide'); $('setup').classList.remove('hide'); memo(); showResume(); };
 
 $('cont').onclick = ()=>{ if(!resumeSes()){ clearSes(); } };
 $('drop').onclick = ()=>{ clearSes(); };
 $('doWrong').onclick = ()=>{
   const qs = bookIds().map(id=>BYID[id]);
-  if(qs.length) begin(shuf(qs));
+  if(qs.length){ filterLabel='錯題本'; begin(shuf(qs)); }
 };
 let armed = false;
 $('clearAll').onclick = function(){
@@ -3402,6 +3415,37 @@ $('clearAll').onclick = function(){
   setTimeout(()=>{ this.textContent='清除所有紀錄'; }, 1600);
   showResume(); pool();
 };
+
+/* ===== 從條號索引深連結進來 =====
+   ?r=57      → 直接開始只練 §57 的題（條號比對會避開 §157、§57-1 之類）
+   ?c=U       → 只勾選該章節，停在設定畫面讓使用者自己按開始 */
+(function(){
+  const s = location.search || '';
+  const mc = /[?&]c=([A-Za-z])/.exec(s);
+  if(mc){
+    const k = mc[1].toUpperCase();
+    if(CATS.some(c=>c.k===k)){
+      sel = new Set([k]);
+      $('cats').querySelectorAll('input').forEach(inp=>{ inp.checked = (inp.value===k); });
+      DB.prefs.sel = [...sel]; save(); pool();
+    }
+  }
+  const mr = /[?&]r=(\d+(?:-\d+)?)/.exec(s);
+  if(!mr) return;
+  const art = mr[1];
+  const re = new RegExp('§' + art.replace('-', '\\-') + '(?![0-9]|-[0-9])');
+  const hits = Q.filter(q => re.test(q.r));
+  if(!hits.length){
+    $('pool').innerHTML = `題庫裡沒有以 <b>§${art}</b> 為條號依據的題目——請先在上面選範圍再開始。`;
+    return;
+  }
+  // 原本沒做完的那一輪先暫存，等這一輪結束再由續做橫幅提出來
+  if(resumable(DB.ses) && !resumable(DB.parked)) DB.parked = DB.ses;
+  filterLabel = `§${art} 專練`;
+  begin(shuf([...hits]));
+  // 把 ?r= 從網址移掉，重新整理時不會又被拉回這一輪
+  try{ history.replaceState(null, '', location.pathname); }catch(e){}
+})();
 
 document.addEventListener('keydown', e=>{
   if($('quiz').classList.contains('hide')) return;
