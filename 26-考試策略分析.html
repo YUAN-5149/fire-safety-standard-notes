@@ -154,13 +154,13 @@ function render(){
   h += '<h2>一、考試結構：分數放在哪裡</h2>';
   ['消防設備師','消防設備士'].forEach(function(cat){
     var subs = {}; P.forEach(function(p){ if (p.cat === cat) (subs[p.sub] = subs[p.sub] || []).push(p); });
-    h += '<h3>' + cat + '</h3><div class="scroll"><table><tr><th>科目</th><th>申論題</th><th>選擇題</th><th>可用計算機</th><th>附圖試卷</th></tr>';
+    h += '<h3>' + cat + '</h3><div class="scroll"><table><tr><th>科目</th><th>申論題</th><th>選擇題</th><th>可用計算機</th></tr>';
     Object.keys(subs).forEach(function(s){
       var ps = subs[s], es = ps.reduce(function(a,p){ return a + p.es.length; }, 0) / ps.length,
           mc = ps.reduce(function(a,p){ return a + p.mc.length; }, 0) / ps.length,
-          calc = ps.filter(function(p){ return p.calc; }).length, fig = ps.filter(function(p){ return p.fig; }).length;
+          calc = ps.filter(function(p){ return p.calc; }).length;
       h += '<tr><td>' + esc(s) + '</td><td>平均 ' + es.toFixed(1) + ' 題・' + (mc ? '50 分' : '100 分') + '</td><td>' +
-        (mc ? mc + ' 題 × ' + (50 / mc) + ' 分 = 50 分' : '—') + '</td><td class="n">' + calc + '/' + ps.length + ' 年</td><td class="n">' + fig + '/' + ps.length + ' 年</td></tr>';
+        (mc ? mc + ' 題 × ' + (50 / mc) + ' 分 = 50 分' : '—') + '</td><td class="n">' + calc + '/' + ps.length + ' 年</td></tr>';
     });
     h += '</table></div>';
   });
