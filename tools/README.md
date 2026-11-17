@@ -19,6 +19,8 @@ python tools/gen_search.py   # 3. 掃過所有圖解頁，產生 search-index.js
 | `gen_index.py` | 把 `arts.json` 的每一條對應到「一句話主旨（人工撰寫的 `OV` 表）＋ 圖解頁段落（`RULES`）＋ 題庫題數（掃 `05-互動題庫.html`）」 |
 | `gen_page.py` | 把上一步的結果填進 `index_tpl.html`，輸出 `23-條號索引.html` |
 | `gen_search.py` | 依 `<h2 id>` 把每份圖解切段、抽純文字，輸出 `search-index.json`（約 190,000 字／423 KB，網頁端在第一次輸入關鍵字時才抓） |
+| `gen_icons.py` | 產生 `icons/` 底下的分頁圖示、iOS 主畫面圖示與 PWA 圖示（磚紅底白色「消」字）。改配色或字請改這支的 `BG` / `CHAR` |
+| `add_icons.py` | 把 favicon 與 manifest 宣告掛進所有 `*.html` 的 `<head>`，可重複執行不會重複插入 |
 | `index_tpl.html` | 條號索引的版型與搜尋邏輯；**改版面要改這裡，不要直接改 `23-條號索引.html`**（會被覆蓋） |
 
 ## 三個對應關係要保持同步

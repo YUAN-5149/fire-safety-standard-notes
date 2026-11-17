@@ -1,0 +1,18 @@
+{
+  "name": "各類場所消防安全設備設置標準 — 學習筆記",
+  "short_name": "消防設置標準",
+  "description": "十九套設備圖解、全法 266 條條號索引與 815 題互動題庫。",
+  "lang": "zh-Hant-TW",
+  "dir": "ltr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#fbfaf7",
+  "theme_color": "#b03a2e",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

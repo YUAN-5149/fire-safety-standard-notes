@@ -89,6 +89,13 @@ python tools/gen_page.py
 python tools/gen_search.py
 ```
 
+網站圖示（分頁 favicon、iOS 主畫面、PWA）在 `icons/`，同樣是產生的：
+
+```bash
+python tools/gen_icons.py    # 重畫圖示
+python tools/add_icons.py    # 把宣告補進新頁面
+```
+
 詳見 [tools/README.md](tools/README.md)。
 
 ## 免責
