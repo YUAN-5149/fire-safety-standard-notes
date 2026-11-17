@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- icons -->
+<link rel="icon" href="icons/favicon.ico" sizes="32x32">
+<link rel="icon" href="icons/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#b03a2e">
+<title>歷屆試題 — 消防設備師／士（100～115 年）</title>
+<meta name="description" content="考選部公布的消防設備師、消防設備士歷屆試題（民國100～115年，160 份試卷、3,200 題選擇題、476 題申論題），附官方答案與更正答案、主題分類、相關條文連結，可整份作答、隨機練習與錯題本複習。">
+<style>
+  :root{
+    --bg:#fbfaf7; --fg:#1c1b19; --muted:#6b6862; --line:#d8d4cb;
+    --card:#ffffff; --accent:#b03a2e; --accent2:#1d6fa5; --accent3:#2e7d4f;
+    --warn:#a86b00; --bad:#b3261e;
+    --fill1:#f2e4e1; --fill2:#e0edf6; --fill3:#e3f0e8; --fill4:#f7efd9;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#16161a; --fg:#e8e6e1; --muted:#9b968c; --line:#3a3a40;
+      --card:#1e1e23; --accent:#e8705f; --accent2:#5aa8d8; --accent3:#5fbb87;
+      --warn:#d9a441; --bad:#f2827a;
+      --fill1:#3a2622; --fill2:#1e3341; --fill3:#1f3a2c; --fill4:#3a3120;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+    line-height:1.7;-webkit-text-size-adjust:100%}
+  .wrap{max-width:980px;margin:0 auto;padding:28px 16px 72px}
+  header{border-bottom:2px solid var(--fg);padding-bottom:16px}
+  h1{font-size:clamp(1.3rem,4vw,1.9rem);margin:0 0 6px;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:.88rem;margin:0}
+  a{color:var(--accent2)}
+  .navbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+  .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;cursor:pointer;
+    font:inherit;font-size:.86rem;padding:7px 14px;border-radius:8px;border:1px solid var(--line);
+    background:var(--card);color:var(--fg);transition:.12s}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.go{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+  .btn.go:hover{filter:brightness(1.1);color:#fff}
+  .btn:disabled{opacity:.45;cursor:default}
+
+  .note{border-left:3px solid var(--warn);background:var(--fill4);
+    padding:10px 14px;border-radius:0 6px 6px 0;font-size:.87rem;margin:16px 0}
+  .note b{color:var(--warn)}
+
+  .tabs{display:flex;gap:6px;flex-wrap:wrap;margin:18px 0 0}
+  .tab{font:inherit;font-size:.9rem;padding:8px 16px;border-radius:9px 9px 0 0;cursor:pointer;
+    border:1px solid var(--line);border-bottom:none;background:var(--card);color:var(--muted)}
+  .tab.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700}
+  .panel{border:1px solid var(--line);border-radius:0 10px 10px 10px;background:var(--card);
+    padding:14px 14px 10px}
+  .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
+  .row label{font-size:.8rem;color:var(--muted)}
+  select,input[type=search],input[type=number]{font:inherit;font-size:.9rem;padding:7px 10px;border-radius:8px;
+    border:1px solid var(--line);background:var(--bg);color:var(--fg);max-width:100%}
+  input[type=search]{flex:1;min-width:180px}
+  input[type=number]{width:5.5em}
+  .hint{font-size:.8rem;color:var(--muted)}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin:6px 0 4px}
+  .pp{border:1px solid var(--line);border-radius:9px;padding:8px 10px;cursor:pointer;background:var(--bg);
+    font-size:.82rem;line-height:1.45;text-align:left;font-family:inherit;color:var(--fg)}
+  .pp:hover{border-color:var(--accent)}
+  .pp b{display:block;font-size:.95rem}
+  .pp .m{color:var(--muted);font-size:.74rem}
+  .pp .bar{height:4px;background:var(--line);border-radius:4px;margin-top:6px;overflow:hidden}
+  .pp .bar i{display:block;height:100%;background:var(--accent3)}
+  .yrh{font-weight:700;margin:14px 0 2px;font-size:.92rem}
+
+  .phead{margin:22px 0 10px;padding:12px 14px;border-radius:10px;background:var(--fill2)}
+  .phead h2{margin:0 0 4px;font-size:1.15rem}
+  .phead .meta{font-size:.82rem;color:var(--muted)}
+  .phead .links a{margin-right:12px;font-size:.84rem}
+  .knote{margin-top:6px;font-size:.84rem;color:var(--warn)}
+  h3{font-size:1rem;margin:22px 0 8px;padding-bottom:4px;border-bottom:1px solid var(--line)}
+
+  .es{border:1px solid var(--line);border-radius:10px;padding:10px 13px;margin:8px 0;background:var(--card)}
+  .es .t{white-space:pre-wrap}
+  .tags{margin-top:6px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.76rem}
+  .tag{padding:1px 8px;border-radius:99px;border:1px solid var(--line);color:var(--muted);text-decoration:none;background:var(--bg)}
+  a.tag:hover{border-color:var(--accent);color:var(--accent)}
+  .tag.tp{background:var(--fill3);color:var(--accent3);border-color:var(--accent3)}
+  .tag.law{background:var(--fill1);color:var(--accent);border-color:var(--accent)}
+
+  .q{border:1px solid var(--line);border-radius:10px;padding:10px 13px;margin:9px 0;background:var(--card)}
+  .q .st{font-weight:500}
+  .q .st .n{display:inline-block;min-width:2em;font-weight:800;color:var(--accent)}
+  .q .src{font-size:.74rem;color:var(--muted);margin-bottom:2px}
+  .opts{list-style:none;margin:6px 0 0;padding:0}
+  .opts li{margin:4px 0}
+  .opt{display:flex;gap:8px;width:100%;text-align:left;font:inherit;font-size:.92rem;cursor:pointer;
+    padding:7px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--fg);line-height:1.55}
+  .opt:hover{border-color:var(--accent2)}
+  .opt .L{font-weight:800;color:var(--muted);flex:none}
+  .opt.ok{background:var(--fill3);border-color:var(--accent3)}
+  .opt.ok .L{color:var(--accent3)}
+  .opt.ng{background:var(--fill1);border-color:var(--bad)}
+  .opt.ng .L{color:var(--bad)}
+  .q.done .opt{cursor:default}
+  .exp{display:none;margin-top:8px;font-size:.85rem;border-top:1px dashed var(--line);padding-top:7px}
+  .q.done .exp{display:block}
+  .exp .ans b{color:var(--accent3)}
+  .exp .ans.ng b{color:var(--bad)}
+  .exp .old{color:var(--warn);font-size:.8rem;margin-top:3px}
+  .mark{float:right;font-size:.75rem;padding:1px 8px;border-radius:99px;border:1px solid var(--line);color:var(--muted)}
+  .mark.ng{border-color:var(--bad);color:var(--bad)}
+  .mark.ok{border-color:var(--accent3);color:var(--accent3)}
+
+  .score{position:sticky;bottom:10px;margin-top:16px;padding:10px 14px;border-radius:10px;
+    background:var(--fg);color:var(--bg);display:flex;gap:14px;align-items:center;flex-wrap:wrap;font-size:.9rem;
+    box-shadow:0 4px 16px rgba(0,0,0,.18)}
+  .score b{font-size:1.1rem}
+  .score .btn{background:transparent;color:var(--bg);border-color:var(--bg);padding:4px 10px;font-size:.8rem}
+  .empty{padding:24px 4px;color:var(--muted);text-align:center}
+  .loading{padding:40px 0;text-align:center;color:var(--muted)}
+  footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem}
+  @media(max-width:640px){ .wrap{padding:20px 12px 64px} .grid{grid-template-columns:repeat(2,1fr)} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>歷屆試題</h1>
+  <p class="sub">考選部　專技高普考　消防設備師／消防設備士　民國 100～115 年　<span id="stat"></span></p>
+  <div class="navbar">
+    <a class="btn go" href="index.html">🏠 回學習首頁</a>
+    <a class="btn" href="26-%E8%80%83%E8%A9%A6%E7%AD%96%E7%95%A5%E5%88%86%E6%9E%90.html">📊 考試策略分析</a>
+    <a class="btn" href="05-%E4%BA%92%E5%8B%95%E9%A1%8C%E5%BA%AB.html">✍️ 互動題庫</a>
+    <a class="btn" href="23-%E6%A2%9D%E8%99%9F%E7%B4%A2%E5%BC%95.html">🔍 條號索引</a>
+    <a class="btn" href="https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx" target="_blank" rel="noopener">🏛️ 考選部考畢試題查詢</a>
+  </div>
+</header>
+
+<div class="note">
+  題目與答案取自<b>考選部公布的試題與測驗式試題答案 PDF</b>（依著作權法第 9 條，依法令舉行之考試試題不受著作權保護），由程式自動轉成文字，
+  <b>表格與圖片沒有轉進來</b>，有附圖的題目請點「試題 PDF」看原卷。答案以<b>考選部公告的標準答案</b>為準，有更正者另標示。<br>
+  每題下方的<b>主題</b>與<b>相關條文</b>是程式依關鍵字自動比對的結果，<b>僅供延伸閱讀</b>，不是官方解答依據。
+  <b>112 年以前的題目依當時法規命題</b>，與現行條文（113.4.24 修正版）不同時，以現行條文為準。
+</div>
+
+<div class="tabs" id="tabs">
+  <button class="tab on" data-m="paper">📄 整份試卷</button>
+  <button class="tab" data-m="drill">🎯 隨機練習</button>
+  <button class="tab" data-m="search">🔎 搜尋題目</button>
+  <button class="tab" data-m="wrong">📕 錯題本 <span id="wn"></span></button>
+</div>
+<div class="panel" id="panel"><div class="loading">載入試題中…</div></div>
+
+<div id="out"></div>
+
+<footer>
+  資料來源：考選部「考畢試題查詢平臺」（wwwq.moex.gov.tw）。作答紀錄只存在這台裝置的瀏覽器（localStorage），不上傳任何資料。<br>
+  更新方式見 <code>exams/README.md</code>：重新下載 → <code>parse_papers.py</code> → <code>build_exam_data.py</code>。
+</footer>
+</div>
+
+<script>
+(function(){
+'use strict';
+var D, P = [], BYID = {}, TOP = {};
+var KEY = 'fire-exam-v1';
+var DB = {};
+try { DB = JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e) { DB = {}; }
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(DB)); } catch(e){} }
+
+var $ = function(s, r){ return (r||document).querySelector(s); };
+function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){
+  return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+var SRC = { Q:'試題 PDF', S:'答案 PDF', M:'更正答案 PDF' };
+var mode = 'paper';
+var state = { cat:'消防設備師', sub:'', year:'', tp:'', n:20, kw:'' };
+
+fetch('exams/data/exam.json').then(function(r){ return r.json(); }).then(function(d){
+  D = d; P = d.papers; TOP = d.topics;
+  P.forEach(function(p){ BYID[p.id] = p; });
+  var nm = 0, ne = 0; P.forEach(function(p){ nm += p.mc.length; ne += p.es.length; });
+  $('#stat').textContent = '｜' + P.length + ' 份試卷・選擇 ' + nm + ' 題・申論 ' + ne + ' 題';
+  var m = /[?&]p=([^&]+)/.exec(location.search);
+  if (m && BYID[decodeURIComponent(m[1])]) { var p = BYID[decodeURIComponent(m[1])]; state.cat = p.cat; renderPanel(); openPaper(p.id); }
+  else renderPanel();
+  wn();
+}).catch(function(){
+  $('#panel').innerHTML = '<div class="empty">試題資料載入失敗。若是直接用檔案開啟（file://），請改用本機伺服器或線上版。</div>';
+});
+
+function qid(p, q){ return p.id + '-' + q.no; }
+function okSet(q){ var a = (q.a2 || q.a || ''); return a.indexOf('#') >= 0 ? 'ABCD' : a.replace(/[ＡＢＣＤ]/g, function(c){ return 'ABCD'['ＡＢＣＤ'.indexOf(c)]; }); }
+function wrongList(){
+  var out = [];
+  P.forEach(function(p){ p.mc.forEach(function(q){ var r = DB[qid(p,q)]; if (r && !r.ok) out.push([p,q]); }); });
+  return out;
+}
+function wn(){ var n = wrongList().length; $('#wn').textContent = n ? '(' + n + ')' : ''; }
+function subjects(cat){
+  var s = []; P.forEach(function(p){ if (p.cat === cat && s.indexOf(p.sub) < 0) s.push(p.sub); }); return s;
+}
+function years(){ var y = []; P.forEach(function(p){ if (y.indexOf(p.y) < 0) y.push(p.y); }); return y.sort(function(a,b){ return b-a; }); }
+
+$('#tabs').addEventListener('click', function(e){
+  var t = e.target.closest('.tab'); if (!t || !D) return;
+  mode = t.dataset.m;
+  [].forEach.call(document.querySelectorAll('.tab'), function(x){ x.classList.toggle('on', x === t); });
+  $('#out').innerHTML = ''; renderPanel();
+});
+
+function catSel(){
+  return '<label>類科</label><select id="fcat">' + ['消防設備師','消防設備士'].map(function(c){
+    return '<option' + (c === state.cat ? ' selected' : '') + '>' + c + '</option>'; }).join('') + '</select>';
+}
+function subSel(all){
+  var s = subjects(state.cat); if (state.sub && s.indexOf(state.sub) < 0) state.sub = '';
+  return '<label>科目</label><select id="fsub">' + (all ? '<option value="">全部科目</option>' : '') + s.map(function(x){
+    return '<option' + (x === state.sub ? ' selected' : '') + '>' + esc(x) + '</option>'; }).join('') + '</select>';
+}
+function yearSel(){
+  return '<label>年度</label><select id="fyear"><option value="">全部年度</option>' + years().map(function(y){
+    return '<option value="' + y + '"' + (String(y) === String(state.year) ? ' selected' : '') + '>' + y + ' 年</option>'; }).join('') + '</select>';
+}
+function topicSel(){
+  var cnt = {};
+  P.forEach(function(p){ if (p.cat !== state.cat || (state.sub && p.sub !== state.sub)) return;
+    p.mc.forEach(function(q){ if (q.tp) cnt[q.tp] = (cnt[q.tp]||0) + 1; }); });
+  var ks = Object.keys(cnt).sort(function(a,b){ return cnt[b]-cnt[a]; });
+  if (state.tp && !cnt[state.tp]) state.tp = '';
+  return '<label>主題</label><select id="ftp"><option value="">全部主題</option>' + ks.map(function(k){
+    return '<option value="' + k + '"' + (k === state.tp ? ' selected' : '') + '>' + esc(TOP[k].name) + '（' + cnt[k] + '）</option>'; }).join('') + '</select>';
+}
+function bindSel(){
+  ['fcat','fsub','fyear','ftp'].forEach(function(id){
+    var el = document.getElementById(id); if (!el) return;
+    el.addEventListener('change', function(){
+      var k = {fcat:'cat',fsub:'sub',fyear:'year',ftp:'tp'}[id]; state[k] = el.value;
+      if (id === 'fcat') { state.sub = ''; state.tp = ''; }
+      if (id === 'fsub') state.tp = '';
+      renderPanel();
+      if (mode === 'search') doSearch();
+    });
+  });
+}
+
+function renderPanel(){
+  var h = '';
+  if (mode === 'paper') {
+    h = '<div class="row">' + catSel() + '<span class="hint">點一份試卷開始作答；長條是這份已作答的比例。</span></div>';
+    var ys = years();
+    ys.forEach(function(y){
+      var ps = P.filter(function(p){ return p.y === y && p.cat === state.cat; });
+      if (!ps.length) return;
+      h += '<div class="yrh">' + y + ' 年</div><div class="grid">';
+      ps.forEach(function(p){
+        var done = 0, ok = 0; p.mc.forEach(function(q){ var r = DB[qid(p,q)]; if (r){ done++; if (r.ok) ok++; } });
+        var pct = p.mc.length ? Math.round(done / p.mc.length * 100) : 0;
+        h += '<button class="pp" data-id="' + p.id + '"><b>' + esc(p.sub) + '</b>' +
+          '<span class="m">申論 ' + p.es.length + (p.mc.length ? '・選擇 ' + p.mc.length : '') +
+          (done ? '・答對 ' + ok + '/' + done : '') + '</span>' +
+          (p.mc.length ? '<div class="bar"><i style="width:' + pct + '%"></i></div>' : '') + '</button>';
+      });
+      h += '</div>';
+    });
+  } else if (mode === 'drill') {
+    h = '<div class="row">' + catSel() + subSel(true) + '</div><div class="row">' + yearSel() + topicSel() +
+      '<label>題數</label><input id="fn" type="number" min="5" max="100" value="' + state.n + '">' +
+      '<label><input type="checkbox" id="fnew"> 只抽沒做過的</label>' +
+      '<button class="btn go" id="go">開始抽題</button></div>' +
+      '<div class="hint">申論題不列入隨機練習（請到「整份試卷」看）。火災學、設備科目的選擇題也可以抽。</div>';
+  } else if (mode === 'search') {
+    h = '<div class="row"><input type="search" id="kw" placeholder="關鍵字，例：緩降機、限氧濃度、防焰、§57、第 13 條" value="' + esc(state.kw) + '">' +
+      '<button class="btn go" id="sgo">搜尋</button></div><div class="row">' + catSel() + subSel(true) + '</div>' +
+      '<div class="hint">申論題與選擇題一起搜，最多列出 200 題。</div>';
+  } else {
+    var w = wrongList();
+    h = '<div class="row"><span>錯題 <b>' + w.length + '</b> 題（答錯後再答對就會從這裡移除）</span>' +
+      (w.length ? '<button class="btn" id="wclr">清空全部作答紀錄</button>' : '') + '</div>';
+  }
+  $('#panel').innerHTML = h;
+  bindSel();
+  if (mode === 'paper') {
+    [].forEach.call(document.querySelectorAll('.pp'), function(b){ b.addEventListener('click', function(){ openPaper(b.dataset.id); }); });
+  } else if (mode === 'drill') {
+    $('#go').addEventListener('click', drill);
+    $('#fn').addEventListener('change', function(){ state.n = Math.max(5, Math.min(100, +this.value || 20)); });
+  } else if (mode === 'search') {
+    var kw = $('#kw');
+    $('#sgo').addEventListener('click', doSearch);
+    kw.addEventListener('keydown', function(e){ if (e.key === 'Enter') doSearch(); });
+  } else {
+    var c = $('#wclr'); if (c) c.addEventListener('click', function(){
+      if (!confirm('確定清空所有歷屆試題的作答紀錄？這個動作無法復原。')) return;
+      DB = {}; save(); wn(); renderPanel(); $('#out').innerHTML = '';
+    });
+    renderQs(wrongList(), { src:true, title:'錯題本' });
+  }
+}
+
+function relLinks(rel){
+  return (rel || []).map(function(n){
+    return '<a class="tag law" href="23-%E6%A2%9D%E8%99%9F%E7%B4%A2%E5%BC%95.html?n=' + encodeURIComponent(n) + '" target="_blank" title="設置標準第 ' + n + ' 條（自動比對）">§' + n + '</a>';
+  }).join('');
+}
+function topicLink(tp){
+  if (!tp || !TOP[tp]) return '';
+  var t = TOP[tp];
+  return t.page ? '<a class="tag tp" href="' + encodeURI(t.page) + '" target="_blank">' + esc(t.name) + ' ↗</a>'
+                : '<span class="tag tp">' + esc(t.name) + '</span>';
+}
+
+function openPaper(id){
+  var p = BYID[id];
+  var h = '<div class="phead"><h2>' + p.y + ' 年　' + esc(p.cat) + '　' + esc(p.sub) + '</h2>' +
+    '<div class="meta">考試時間 ' + esc(p.time || '—') + '・' + (p.calc ? '可使用電子計算器' : '不可使用電子計算器') +
+    (p.fig ? '・<b>本卷有附圖，請對照 PDF</b>' : '') + '</div><div class="links">' +
+    Object.keys(SRC).filter(function(k){ return p.src[k]; }).map(function(k){
+      return '<a href="' + esc(p.src[k]) + '" target="_blank" rel="noopener">' + SRC[k] + '</a>'; }).join('') + '</div>' +
+    (p.note ? '<div class="knote">⚠ 答案更正：' + esc(p.note) + '</div>' : '') + '</div>';
+  if (p.es.length) {
+    var tot = p.es.reduce(function(s,e){ return s + (e.pt || 0); }, 0);
+    h += '<h3>甲、申論題' + (tot ? '（' + tot + ' 分）' : '') + '</h3>';
+    p.es.forEach(function(e){
+      h += '<div class="es"><div class="t"><b>' + esc(e.no) + '、</b>' + esc(e.t) + '</div><div class="tags">' +
+        topicLink(e.tp) + relLinks(e.rel) + '</div></div>';
+    });
+  }
+  $('#out').innerHTML = h + '<div id="qs"></div>';
+  if (p.mc.length) renderQs(p.mc.map(function(q){ return [p,q]; }), { into:'#qs', title:(p.es.length ? '乙、測驗題（' + p.mc.length + ' 題，每題 ' + (50 / p.mc.length) + ' 分）' : '測驗題') });
+  $('#out').scrollIntoView({ behavior:'smooth', block:'start' });
+}
+
+function drill(){
+  var pool = [];
+  var onlyNew = $('#fnew').checked;
+  P.forEach(function(p){
+    if (p.cat !== state.cat || (state.sub && p.sub !== state.sub) || (state.year && String(p.y) !== String(state.year))) return;
+    p.mc.forEach(function(q){
+      if (state.tp && q.tp !== state.tp) return;
+      if (onlyNew && DB[qid(p,q)]) return;
+      pool.push([p,q]);
+    });
+  });
+  for (var i = pool.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = pool[i]; pool[i] = pool[j]; pool[j] = t; }
+  renderQs(pool.slice(0, state.n), { src:true, title:'隨機練習（題庫 ' + pool.length + ' 題中抽 ' + Math.min(state.n, pool.length) + ' 題）' });
+}
+
+function norm(s){ return String(s).replace(/\s+/g, '').replace(/§/g, '').toLowerCase(); }
+function doSearch(){
+  var kwEl = $('#kw'); state.kw = kwEl ? kwEl.value.trim() : state.kw;
+  var k = norm(state.kw); if (!k) { $('#out').innerHTML = ''; return; }
+  var hits = [], eh = '';
+  var ne = 0;
+  P.forEach(function(p){
+    if (p.cat !== state.cat || (state.sub && p.sub !== state.sub)) return;
+    p.es.forEach(function(e){
+      if (norm(e.t).indexOf(k) >= 0 || (e.rel||[]).indexOf(state.kw.replace(/[§\s]/g,'')) >= 0) {
+        ne++; if (ne <= 60) eh += '<div class="es"><div class="src hint">' + p.y + ' 年・' + esc(p.sub) + '・申論第' + esc(e.no) + '題</div><div class="t">' + esc(e.t) + '</div><div class="tags">' + topicLink(e.tp) + relLinks(e.rel) + '</div></div>';
+      }
+    });
+    p.mc.forEach(function(q){
+      var txt = norm(q.s + q.o.join(''));
+      if (txt.indexOf(k) >= 0 || (q.rel||[]).indexOf(state.kw.replace(/[§\s]/g,'')) >= 0) hits.push([p,q]);
+    });
+  });
+  $('#out').innerHTML = (ne ? '<h3>申論題 ' + ne + ' 題' + (ne > 60 ? '（列出前 60 題）' : '') + '</h3>' + eh : '') + '<div id="qs"></div>';
+  renderQs(hits.slice(0, 200), { into:'#qs', src:true, title:'選擇題 ' + hits.length + ' 題' + (hits.length > 200 ? '（列出前 200 題）' : '') });
+}
+
+function renderQs(list, opt){
+  var box = opt.into ? $(opt.into) : $('#out');
+  if (!list.length) { box.innerHTML = '<h3>' + esc(opt.title) + '</h3><div class="empty">沒有符合的題目。</div>'; return; }
+  var h = '<h3>' + esc(opt.title) + '</h3>';
+  list.forEach(function(pq, i){
+    var p = pq[0], q = pq[1], id = qid(p,q), r = DB[id];
+    h += '<div class="q" data-id="' + id + '" data-i="' + i + '">' +
+      (opt.src ? '<div class="src">' + p.y + ' 年・' + esc(p.cat) + '・' + esc(p.sub) + '・第 ' + q.no + ' 題　<a href="#" data-open="' + p.id + '">看整份</a></div>' : '') +
+      (r ? '<span class="mark ' + (r.ok ? 'ok' : 'ng') + '">上次' + (r.ok ? '答對' : '答錯') + '</span>' : '') +
+      '<div class="st"><span class="n">' + (opt.src ? (i + 1) + '.' : q.no + '.') + '</span>' + esc(q.s) + '</div><ul class="opts">' +
+      q.o.map(function(o, k){ var L = 'ABCD'[k];
+        return '<li><button class="opt" data-l="' + L + '"><span class="L">(' + L + ')</span><span>' + esc(o) + '</span></button></li>'; }).join('') +
+      '</ul><div class="exp"></div></div>';
+  });
+  h += '<div class="score" id="score"><span>本頁已答 <b id="sc-n">0</b>/' + list.length + '</span><span>答對 <b id="sc-ok">0</b></span>' +
+    '<span id="sc-pt"></span><button class="btn" id="sc-all">全部顯示答案</button><button class="btn" id="sc-re">重做本頁</button></div>';
+  box.innerHTML = h;
+  var sess = { n:0, ok:0, total:list.length, per:(opt.title && /每題 ([\d.]+) 分/.exec(opt.title)) };
+  box.querySelectorAll('.q').forEach(function(el){
+    var pq = list[+el.dataset.i];
+    el.addEventListener('click', function(e){
+      var o = e.target.closest('[data-open]');
+      if (o) { e.preventDefault(); mode = 'paper';
+        [].forEach.call(document.querySelectorAll('.tab'), function(x){ x.classList.toggle('on', x.dataset.m === 'paper'); });
+        state.cat = BYID[o.dataset.open].cat; renderPanel(); openPaper(o.dataset.open); return; }
+      var b = e.target.closest('.opt'); if (!b || el.classList.contains('done')) return;
+      answer(el, pq, b.dataset.l, sess, true);
+    });
+  });
+  $('#sc-all').addEventListener('click', function(){
+    box.querySelectorAll('.q:not(.done)').forEach(function(el){ answer(el, list[+el.dataset.i], null, sess, false); });
+  });
+  $('#sc-re').addEventListener('click', function(){ renderQs(list, opt); });
+}
+
+function answer(el, pq, L, sess, record){
+  var p = pq[0], q = pq[1], good = okSet(q);
+  el.classList.add('done');
+  el.querySelectorAll('.opt').forEach(function(b){
+    var l = b.dataset.l;
+    if (good.indexOf(l) >= 0) b.classList.add('ok');
+    else if (l === L) b.classList.add('ng');
+  });
+  var ok = L ? good.indexOf(L) >= 0 : null;
+  if (record && L) {
+    DB[qid(p,q)] = { c:L, ok:ok, t:Date.now() }; save(); wn();
+    sess.n++; if (ok) sess.ok++;
+    $('#sc-n').textContent = sess.n; $('#sc-ok').textContent = sess.ok;
+    if (sess.per) $('#sc-pt').textContent = '得分 ' + (+(sess.ok * +sess.per[1]).toFixed(2)) + ' / 50';
+  }
+  var a = q.a || '';
+  var h = '<div class="ans' + (ok === false ? ' ng' : '') + '">' + (ok === null ? '' : ok ? '✔ 答對。' : '✘ 答錯。') +
+    '官方答案：<b>' + (a === '#' ? '一律給分' : esc(a)) + '</b>' +
+    (q.a2 ? '　更正答案：<b>' + (q.a2 === '#' ? '一律給分' : esc(q.a2)) + '</b>' : '') + '</div>';
+  if (p.note && new RegExp('第' + q.no + '題').test(p.note)) h += '<div class="old">考選部更正說明：' + esc(p.note) + '</div>';
+  var tags = topicLink(q.tp) + relLinks(q.rel);
+  if (tags) h += '<div class="tags"><span class="hint">延伸閱讀：</span>' + tags + '</div>';
+  if (p.y <= 112 && q.rel && q.rel.length) h += '<div class="old">本題依 ' + p.y + ' 年當時法規命題；設置標準已於 113.4.24 修正，作答依據請以現行條文為準。</div>';
+  el.querySelector('.exp').innerHTML = h;
+}
+})();
+</script>
+</body>
+</html>

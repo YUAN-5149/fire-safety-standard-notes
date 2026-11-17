@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- icons -->
+<link rel="icon" href="icons/favicon.ico" sizes="32x32">
+<link rel="icon" href="icons/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#b03a2e">
+<title>考試策略分析 — 消防設備師／士歷屆試題統計</title>
+<meta name="description" content="用民國100～115年消防設備師、消防設備士歷屆試題統計出題結構、各科主題熱度、近五年趨勢、高頻條文、申論題型與答案分布，並整理讀書與作答策略。">
+<style>
+  :root{
+    --bg:#fbfaf7; --fg:#1c1b19; --muted:#6b6862; --line:#d8d4cb;
+    --card:#ffffff; --accent:#b03a2e; --accent2:#1d6fa5; --accent3:#2e7d4f;
+    --warn:#a86b00; --up:#2e7d4f; --down:#b3261e;
+    --fill1:#f2e4e1; --fill2:#e0edf6; --fill3:#e3f0e8; --fill4:#f7efd9;
+    --heat:176,58,46;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#16161a; --fg:#e8e6e1; --muted:#9b968c; --line:#3a3a40;
+      --card:#1e1e23; --accent:#e8705f; --accent2:#5aa8d8; --accent3:#5fbb87;
+      --warn:#d9a441; --up:#5fbb87; --down:#f2827a;
+      --fill1:#3a2622; --fill2:#1e3341; --fill3:#1f3a2c; --fill4:#3a3120;
+      --heat:232,112,95;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+    line-height:1.7;-webkit-text-size-adjust:100%}
+  .wrap{max-width:1000px;margin:0 auto;padding:28px 16px 72px}
+  header{border-bottom:2px solid var(--fg);padding-bottom:16px}
+  h1{font-size:clamp(1.3rem,4vw,1.9rem);margin:0 0 6px}
+  h2{font-size:1.18rem;margin:34px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
+  h3{font-size:.98rem;margin:18px 0 6px}
+  .sub{color:var(--muted);font-size:.88rem;margin:0}
+  a{color:var(--accent2)}
+  .navbar{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font:inherit;font-size:.86rem;
+    padding:7px 14px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.go{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+  .note{border-left:3px solid var(--warn);background:var(--fill4);padding:10px 14px;border-radius:0 6px 6px 0;font-size:.87rem;margin:16px 0}
+  .note b{color:var(--warn)}
+  .card{border:1px solid var(--line);border-radius:10px;background:var(--card);padding:12px 14px;margin:10px 0}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:14px 0}
+  .kpi{border:1px solid var(--line);border-radius:10px;background:var(--card);padding:10px 12px}
+  .kpi .v{font-size:1.5rem;font-weight:800;font-variant-numeric:tabular-nums}
+  .kpi .l{font-size:.78rem;color:var(--muted)}
+  table{border-collapse:collapse;width:100%;font-size:.85rem}
+  th,td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+  th{background:var(--fill2);font-weight:600;font-size:.8rem}
+  td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .ctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0}
+  select{font:inherit;font-size:.9rem;padding:6px 10px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--fg)}
+  .bars{display:grid;grid-template-columns:minmax(8em,13em) 1fr 3.2em;gap:4px 10px;align-items:center;font-size:.84rem}
+  .bars .lab{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bars .lab a{text-decoration:none;color:inherit}
+  .bars .lab a:hover{color:var(--accent)}
+  .bars .tr{height:14px;background:var(--fill2);border-radius:3px;overflow:hidden}
+  .bars .tr i{display:block;height:100%;background:var(--accent);border-radius:3px}
+  .bars .v{text-align:right;font-variant-numeric:tabular-nums;color:var(--muted)}
+  .heat td,.heat th{padding:3px 4px;text-align:center;font-size:.74rem;border:1px solid var(--bg)}
+  .heat th:first-child,.heat td:first-child{text-align:left;white-space:nowrap;position:sticky;left:0;background:var(--card);z-index:1}
+  .heat td.c{min-width:2.2em;font-variant-numeric:tabular-nums}
+  .up{color:var(--up);font-weight:700}
+  .down{color:var(--down);font-weight:700}
+  .tag{display:inline-block;font-size:.72rem;padding:0 7px;border-radius:99px;background:var(--fill3);color:var(--accent3);border:1px solid var(--accent3);margin-right:4px}
+  details{border:1px solid var(--line);border-radius:9px;background:var(--card);margin:6px 0;padding:6px 12px}
+  summary{cursor:pointer;font-weight:600}
+  details .es{font-size:.85rem;padding:6px 0;border-top:1px dashed var(--line)}
+  details .es:first-of-type{border-top:none}
+  .tips li{margin:6px 0}
+  .tips b{color:var(--accent)}
+  .loading{padding:40px 0;text-align:center;color:var(--muted)}
+  footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem}
+  @media(max-width:640px){ .bars{grid-template-columns:8.5em 1fr 2.6em} .wrap{padding:20px 12px 64px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>考試策略分析</h1>
+  <p class="sub">以民國 100～115 年消防設備師／士歷屆試題（考選部公布）自動統計　<span id="stat"></span></p>
+  <div class="navbar">
+    <a class="btn go" href="index.html">🏠 回學習首頁</a>
+    <a class="btn" href="25-%E6%AD%B7%E5%B1%86%E8%A9%A6%E9%A1%8C.html">📄 歷屆試題</a>
+    <a class="btn" href="23-%E6%A2%9D%E8%99%9F%E7%B4%A2%E5%BC%95.html">🔍 條號索引</a>
+  </div>
+</header>
+
+<div class="note">
+  以下數字全部由試題文字<b>自動統計</b>：「主題」靠關鍵字分類、「高頻條文」靠與設置標準條文的文字相似度比對，
+  個別題目可能歸錯類，但十六年、三千多題累積下來的<b>相對高低</b>可信度不錯。報考資格、及格標準與科目調整請以<b>考選部當年度應考須知</b>為準。
+</div>
+
+<div id="app"><div class="loading">統計中…</div></div>
+
+<footer>統計資料與「歷屆試題」頁共用 <code>exams/data/exam.json</code>，重新產生資料後這頁會自動更新。</footer>
+</div>
+
+<script>
+(function(){
+'use strict';
+function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+var IDX = '23-%E6%A2%9D%E8%99%9F%E7%B4%A2%E5%BC%95.html?n=';
+var EXAM = '25-%E6%AD%B7%E5%B1%86%E8%A9%A6%E9%A1%8C.html';
+var P, T;
+
+fetch('exams/data/exam.json').then(function(r){ return r.json(); })
+  .then(function(d){ P = d.papers; T = d.topics; render(); })
+  .catch(function(){ document.getElementById('app').innerHTML = '<div class="loading">資料載入失敗。請用本機伺服器或線上版開啟。</div>'; });
+
+function cnt(arr, f){ var m = {}; arr.forEach(function(x){ var k = f(x); if (k != null) m[k] = (m[k] || 0) + 1; }); return m; }
+function sortK(m){ return Object.keys(m).sort(function(a,b){ return m[b] - m[a]; }); }
+function years(){ var y = {}; P.forEach(function(p){ y[p.y] = 1; }); return Object.keys(y).map(Number).sort(function(a,b){ return a-b; }); }
+function items(cat, sub, kind){
+  var out = [];
+  P.forEach(function(p){
+    if (cat && p.cat !== cat) return; if (sub && p.sub !== sub) return;
+    if (kind !== 'es') p.mc.forEach(function(q){ out.push({ p:p, q:q, k:'mc' }); });
+    if (kind !== 'mc') p.es.forEach(function(q){ out.push({ p:p, q:q, k:'es' }); });
+  });
+  return out;
+}
+function bars(m, opt){
+  opt = opt || {};
+  var ks = sortK(m).slice(0, opt.top || 99), max = m[ks[0]] || 1;
+  return '<div class="bars">' + ks.map(function(k){
+    var lab = opt.label ? opt.label(k) : esc(k);
+    return '<div class="lab" title="' + esc(opt.title ? opt.title(k) : k) + '">' + lab + '</div><div class="tr"><i style="width:' +
+      (m[k] / max * 100).toFixed(1) + '%"></i></div><div class="v">' + m[k] + '</div>';
+  }).join('') + '</div>';
+}
+function tname(k){ return T[k] ? T[k].name : '未分類'; }
+function tlab(k){ var t = T[k]; return t && t.page ? '<a href="' + encodeURI(t.page) + '">' + esc(t.name) + '</a>' : esc(tname(k)); }
+
+function render(){
+  var app = document.getElementById('app');
+  var nm = 0, ne = 0; P.forEach(function(p){ nm += p.mc.length; ne += p.es.length; });
+  var ys = years();
+  document.getElementById('stat').textContent = '｜' + ys[0] + '～' + ys[ys.length-1] + ' 年・' + P.length + ' 份試卷';
+
+  var h = '<div class="kpis">' +
+    kpi(P.length, '份試卷（師 6 科＋士 4 科 × 16 年）') + kpi(nm, '題選擇題（全部有官方答案）') +
+    kpi(ne, '題申論題') + kpi(P.filter(function(p){ return p.note; }).length, '份試卷有答案更正或送分') + '</div>';
+
+  // 1 結構
+  h += '<h2>一、考試結構：分數放在哪裡</h2>';
+  ['消防設備師','消防設備士'].forEach(function(cat){
+    var subs = {}; P.forEach(function(p){ if (p.cat === cat) (subs[p.sub] = subs[p.sub] || []).push(p); });
+    h += '<h3>' + cat + '</h3><div class="scroll"><table><tr><th>科目</th><th>申論題</th><th>選擇題</th><th>可用計算機</th><th>附圖試卷</th></tr>';
+    Object.keys(subs).forEach(function(s){
+      var ps = subs[s], es = ps.reduce(function(a,p){ return a + p.es.length; }, 0) / ps.length,
+          mc = ps.reduce(function(a,p){ return a + p.mc.length; }, 0) / ps.length,
+          calc = ps.filter(function(p){ return p.calc; }).length, fig = ps.filter(function(p){ return p.fig; }).length;
+      h += '<tr><td>' + esc(s) + '</td><td>平均 ' + es.toFixed(1) + ' 題・' + (mc ? '50 分' : '100 分') + '</td><td>' +
+        (mc ? mc + ' 題 × ' + (50 / mc) + ' 分 = 50 分' : '—') + '</td><td class="n">' + calc + '/' + ps.length + ' 年</td><td class="n">' + fig + '/' + ps.length + ' 年</td></tr>';
+    });
+    h += '</table></div>';
+  });
+  h += '<div class="card">💡 <b>消防設備師</b>只有「消防法規」有選擇題，其餘 5 科全是申論、計算與設計題——<b>寫得出條文與計算過程</b>才拿得到分。' +
+    '<b>消防設備士</b> 4 科都是「申論 50 分＋40 題選擇 50 分」，選擇題佔一半分數，<b>題庫刷熟就是穩定的保底分</b>。</div>';
+
+  // 2 主題熱度
+  h += '<h2>二、各科主題熱度</h2><div class="ctl"><select id="hcat"><option>消防設備士</option><option>消防設備師</option></select>' +
+    '<select id="hsub"></select><select id="hkind"><option value="">選擇＋申論</option><option value="mc">只看選擇題</option><option value="es">只看申論題</option></select></div>' +
+    '<div class="card" id="hbars"></div><h3>主題 × 年度（每格是題數，顏色越深越多）</h3><div class="scroll card" id="heat"></div>';
+
+  // 3 趨勢
+  var last = ys[ys.length-1], cut = last - 4;
+  h += '<h2>三、近五年（' + cut + '～' + last + '）升溫與降溫的主題</h2><div class="ctl"><select id="tcat"><option>消防設備士</option><option>消防設備師</option></select></div><div class="card scroll" id="trend"></div>';
+
+  // 4 高頻條文
+  h += '<h2>四、最常被考到的設置標準條文</h2><div class="ctl"><select id="acat"><option value="">師＋士</option><option>消防設備士</option><option>消防設備師</option></select></div>' +
+    '<div class="card" id="arts"></div>';
+
+  // 5 申論題
+  h += '<h2>五、申論題型總覽</h2><div class="ctl"><select id="ecat"><option>消防設備師</option><option>消防設備士</option></select><select id="esub"></select></div><div id="essays"></div>';
+
+  // 6 答案分布
+  var dist = cnt(items('', '', 'mc'), function(x){ var a = x.q.a; return /^[ABCD]$/.test(a) ? a : null; });
+  var tot = (dist.A||0)+(dist.B||0)+(dist.C||0)+(dist.D||0);
+  var nfix = items('', '', 'mc').filter(function(x){ return x.q.a2 || /[#]|^..+$/.test(x.q.a || ''); }).length;
+  h += '<h2>六、答案分布與更正題</h2><div class="card">' + bars(dist, { label:function(k){ return '答案 (' + k + ')'; } }) +
+    '<p style="font-size:.86rem;margin:10px 0 0">四個選項各約 ' + ['A','B','C','D'].map(function(k){ return k + ' ' + (dist[k]/tot*100).toFixed(1) + '%'; }).join('、') +
+    '，<b>分布很平均，沒有「猜某個選項比較划算」這種事</b>。另有 ' + nfix + ' 題經考選部更正、複選給分或一律給分，' +
+    '多半是題意不清或法規剛修正——作答時看到兩個都對的選項，選<b>最符合條文原文</b>的那一個。</p></div>';
+
+  // 7 策略
+  h += '<h2>七、讀書與作答策略</h2><div class="card"><ol class="tips" id="tips"></ol></div>';
+  app.innerHTML = h;
+
+  var hcat = $('#hcat'), hsub = $('#hsub'), hkind = $('#hkind');
+  function fillSub(sel, cat, all){
+    var s = []; P.forEach(function(p){ if (p.cat === cat && s.indexOf(p.sub) < 0) s.push(p.sub); });
+    sel.innerHTML = (all ? '<option value="">全部科目</option>' : '') + s.map(function(x){ return '<option>' + esc(x) + '</option>'; }).join('');
+  }
+  function drawHeat(){
+    var it = items(hcat.value, hsub.value, hkind.value);
+    var m = cnt(it, function(x){ return x.q.tp || null; });
+    var un = it.filter(function(x){ return !x.q.tp; }).length;
+    $('#hbars').innerHTML = it.length ? bars(m, { label:function(k){ return tlab(k); }, title:tname }) +
+      '<p style="font-size:.8rem;color:var(--muted);margin:8px 0 0">共 ' + it.length + ' 題' + (un ? '（其中 ' + un + ' 題關鍵字無法歸類，未列入）' : '') + '。點主題名稱可到對應圖解頁。</p>' : '沒有資料';
+    var ks = sortK(m).slice(0, 18), yy = years();
+    var mx = 1, grid = {};
+    it.forEach(function(x){ if (!x.q.tp) return; var k = x.q.tp + '|' + x.p.y; grid[k] = (grid[k]||0) + 1; if (grid[k] > mx) mx = grid[k]; });
+    var t = '<table class="heat"><tr><th>主題</th>' + yy.map(function(y){ return '<th>' + y + '</th>'; }).join('') + '</tr>';
+    ks.forEach(function(k){
+      t += '<tr><td>' + esc(tname(k)) + '</td>' + yy.map(function(y){
+        var v = grid[k + '|' + y] || 0;
+        return '<td class="c" style="background:rgba(var(--heat),' + (v ? (0.12 + 0.88 * v / mx).toFixed(2) : 0) + ');' + (v / mx > .55 ? 'color:#fff' : '') + '">' + (v || '') + '</td>';
+      }).join('') + '</tr>';
+    });
+    $('#heat').innerHTML = t + '</table>';
+  }
+  fillSub(hsub, hcat.value, true);
+  hcat.addEventListener('change', function(){ fillSub(hsub, hcat.value, true); drawHeat(); });
+  hsub.addEventListener('change', drawHeat); hkind.addEventListener('change', drawHeat);
+  drawHeat();
+
+  function drawTrend(){
+    var cat = $('#tcat').value, it = items(cat, '', '');
+    var a = it.filter(function(x){ return x.p.y >= cut; }), b = it.filter(function(x){ return x.p.y < cut; });
+    var ma = cnt(a, function(x){ return x.q.tp || '_'; }), mb = cnt(b, function(x){ return x.q.tp || '_'; });
+    var rows = Object.keys(Object.assign({}, ma, mb)).filter(function(k){ return k !== '_'; }).map(function(k){
+      var sa = (ma[k]||0) / a.length * 100, sb = (mb[k]||0) / b.length * 100; return { k:k, sa:sa, sb:sb, d:sa - sb, n:(ma[k]||0) };
+    }).filter(function(r){ return r.sa >= 1 || r.sb >= 1; }).sort(function(x,y){ return y.d - x.d; });
+    var t = '<table><tr><th>主題</th><th class="n">' + cut + '～' + last + ' 佔比</th><th class="n">' + ys[0] + '～' + (cut-1) + ' 佔比</th><th class="n">變化</th></tr>';
+    rows.forEach(function(r){
+      var c = r.d >= 1 ? 'up' : r.d <= -1 ? 'down' : '';
+      t += '<tr><td>' + tlab(r.k) + '</td><td class="n">' + r.sa.toFixed(1) + '%（' + r.n + ' 題）</td><td class="n">' + r.sb.toFixed(1) + '%</td><td class="n ' + c + '">' +
+        (r.d > 0 ? '▲ ' : r.d < 0 ? '▼ ' : '') + Math.abs(r.d).toFixed(1) + '</td></tr>';
+    });
+    $('#trend').innerHTML = t + '</table><p style="font-size:.8rem;margin:8px 0 0">變化 = 近五年佔比 − 之前佔比（百分點）。▲ 綠色是近年考得更多的主題。</p>';
+  }
+  $('#tcat').addEventListener('change', drawTrend); drawTrend();
+
+  function drawArts(){
+    var cat = $('#acat').value, m = {};
+    items(cat, '', '').forEach(function(x){ var r = x.q.rel; if (r && r[0]) m[r[0]] = (m[r[0]]||0) + 1; });
+    $('#arts').innerHTML = bars(m, { top:25, label:function(k){ return '<a href="' + IDX + encodeURIComponent(k) + '">第 ' + esc(k) + ' 條</a>'; } }) +
+      '<p style="font-size:.8rem;margin:8px 0 0">只算每題「最相似」的那一條，火災學不列入。點條號到條號索引看內容與對應圖解。</p>';
+  }
+  $('#acat').addEventListener('change', drawArts); drawArts();
+
+  var ecat = $('#ecat'), esub = $('#esub');
+  function drawEssays(){
+    var ps = P.filter(function(p){ return p.cat === ecat.value && p.sub === esub.value; }).sort(function(a,b){ return b.y - a.y; });
+    var all = []; ps.forEach(function(p){ p.es.forEach(function(e){ all.push(e); }); });
+    var m = cnt(all, function(e){ return e.tp || '_'; });
+    var h = '<div class="card"><b>' + esc(esub.value) + '</b>：' + ps.length + ' 年共 ' + all.length + ' 題申論。最常出：' +
+      sortK(m).filter(function(k){ return k !== '_'; }).slice(0, 6).map(function(k){ return '<span class="tag">' + esc(tname(k)) + ' ' + m[k] + '</span>'; }).join('') + '</div>';
+    ps.forEach(function(p){
+      h += '<details><summary>' + p.y + ' 年（' + p.es.length + ' 題）</summary>' + p.es.map(function(e){
+        return '<div class="es">' + (e.tp ? '<span class="tag">' + esc(tname(e.tp)) + '</span>' : '') + '<b>' + esc(e.no) + '、</b>' + esc(e.t) +
+          (e.rel && e.rel.length ? ' <span style="font-size:.75rem">' + e.rel.map(function(n){ return '<a href="' + IDX + encodeURIComponent(n) + '">§' + esc(n) + '</a>'; }).join(' ') + '</span>' : '') + '</div>';
+      }).join('') + '<div class="es"><a href="' + EXAM + '?p=' + encodeURIComponent(p.id) + '">在歷屆試題頁打開這份 →</a></div></details>';
+    });
+    $('#essays').innerHTML = h;
+  }
+  fillSub(esub, ecat.value, false);
+  ecat.addEventListener('change', function(){ fillSub(esub, ecat.value, false); drawEssays(); });
+  esub.addEventListener('change', drawEssays); drawEssays();
+
+  // 策略（數字由資料帶入）
+  function topN(cat, sub, n){
+    var m = cnt(items(cat, sub, ''), function(x){ return x.q.tp; });
+    return sortK(m).slice(0, n).map(function(k){ return tname(k); }).join('、');
+  }
+  var lawSub = P.filter(function(p){ return p.cat === '消防設備士' && /法規/.test(p.sub); })[0];
+  var tips = [
+    '<b>先拿選擇題的保底分</b>：設備士每科 40 題 × 1.25 分，佔一半分數。用「歷屆試題 → 隨機練習 → 只抽沒做過的」把 ' + ys[0] + '～' + last + ' 年 3,200 題刷過一輪，再用錯題本反覆清。',
+    '<b>法規科照熱度分配時間</b>：設備士「' + (lawSub ? lawSub.sub : '消防法規概要') + '」最常考的是 ' + topN('消防設備士', lawSub ? lawSub.sub : '', 4) +
+      '；設備師「消防法規」最常考的是 ' + topN('消防設備師', '消防法規', 4) + '。這些主題的條文要能<b>默寫數字與門檻</b>。',
+    '<b>設備科目以「設置標準＋計算」為主軸</b>：警報避難類最常考 ' + topN('', '警報與避難系統消防安全設備概要', 4) + '；水與化學類最常考 ' + topN('', '水與化學系統消防安全設備概要', 4) +
+      '。每個主題都對應一頁圖解，先看圖解把數字串起來，再回來做題。',
+    '<b>申論題要寫出「依據＋數字＋結論」</b>：題目幾乎都以「依○○設置標準規定」起頭，答題先寫法源條號，再分點列出數值與條件，計算題寫出公式、代入值與單位。到「五、申論題型總覽」看同一主題歷年怎麼問。',
+    '<b>注意法規修正</b>：設置標準 113.4.24 修正、消防法與施行細則也陸續修正。舊題答案是依當時法規，練習時遇到和現行條文不同的地方，以<b>現行條文</b>為準並特別記下來——這類修正點常是下一年的考點。',
+    '<b>時間分配</b>：每科 2 小時，選擇題建議 30～35 分鐘內寫完（每題約 45 秒），其餘時間留給申論；計算題先寫完再回頭檢查單位與有效位數。附圖題要對照原卷 PDF 練習。',
+    '<b>近五年升溫的主題優先補</b>：看「三、近五年升溫與降溫的主題」綠色 ▲ 的項目，那是出題委員近年偏好的方向。'
+  ];
+  $('#tips').innerHTML = tips.map(function(t){ return '<li>' + t + '</li>'; }).join('');
+}
+function kpi(v, l){ return '<div class="kpi"><div class="v">' + Number(v).toLocaleString() + '</div><div class="l">' + l + '</div></div>'; }
+function $(s){ return document.querySelector(s); }
+})();
+</script>
+</body>
+</html>
