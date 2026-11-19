@@ -1,5 +1,5 @@
 // 由 tools/gen_sw.py 產生，請勿手改
-const CACHE = 'fire-notes-76dfce5433';
+const CACHE = 'fire-notes-2a3f0373f3';
 const PRECACHE = [
 "./",
 "04a-%E6%B3%A1%E6%B2%AB%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html",
@@ -48,6 +48,9 @@ const PRECACHE = [
 "3d/water-mist.html",
 "3d/water-tank.html",
 "exams/data/exam.json",
+"exams/data/explain/111060-0808.json",
+"exams/data/explain/112060-0808.json",
+"exams/data/explain/113050-0808.json",
 "exams/data/explain/114050-0808.json",
 "exams/data/explain/115050-0808.json",
 "icons/apple-touch-icon.png",
