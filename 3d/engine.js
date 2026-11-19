@@ -125,8 +125,8 @@ export function createAnim(cfg) {
     const [bg,bd,fg]=TONES[tone]||TONES.note;
     const c=document.createElement('canvas'); c.width=512; c.height=128;
     const g=c.getContext('2d');
-    g.fillStyle=bg; g.strokeStyle=bd; g.lineWidth=8;
-    g.beginPath(); g.roundRect(6,6,500,116,28); g.fill(); g.stroke();
+    g.globalAlpha=.86; g.fillStyle=bg; g.strokeStyle=bd; g.lineWidth=8;
+    g.beginPath(); g.roundRect(6,6,500,116,28); g.fill(); g.globalAlpha=1; g.stroke();
     g.fillStyle=fg;
     let fs=54; do { g.font=`bold ${fs}px "Noto Sans TC","Microsoft JhengHei",sans-serif`; fs-=2; } while (g.measureText(text).width>450 && fs>20);
     g.textAlign='center'; g.textBaseline='middle'; g.fillText(text,256,68);
@@ -242,7 +242,7 @@ export function createAnim(cfg) {
     it.mats.forEach(m=>{
       m.opacity=m.userData.base*o;
       // 不透明材質淡入完成後改回不透明，避免和半透明層（塗裝、PE 布）排序錯亂
-      if (m.userData.base>=1) { const t = o<1; if (m.transparent!==t) { m.transparent=t; m.needsUpdate=true; } }
+      if (m.userData.base>=1 && !m.isSpriteMaterial) { const t = o<1; if (m.transparent!==t) { m.transparent=t; m.needsUpdate=true; } }
     });
   }
   function setGlow(it,g){
@@ -355,9 +355,9 @@ export function createAnim(cfg) {
       s.parent.updateWorldMatrix(true,false);
       const wb=s.parent.localToWorld(s.userData.base.clone());
       const d=Math.max(.1, wb.clone().sub(camera.position).dot(camera.getWorldDirection(_dir)));
-      const f=Math.min(cfg.labelMax ?? 6, Math.max(0.42, camera.position.distanceTo(wb)/5.5*1.2));
+      const f=Math.min(cfg.labelMax ?? 6, Math.max(0.42, camera.position.distanceTo(wb)/5.5*0.85));
       const k=Hpx/(2*d*tanF);
-      let w=s.userData.labelW*f; if (w*k > Wpx*.94) w=Wpx*.94/k;      // 手機窄畫面：標籤不超過畫面寬
+      let w=s.userData.labelW*f; const maxW=Math.min(Wpx*.94, Math.max(Wpx*.4, 200)); if (w*k > maxW) w=maxW/k;   // 標籤最寬約畫面 40%，避免擋住模型
       const h=w/4; s.scale.set(w, h, 1);
       const ndc=wb.clone().project(camera);
       vis.push({s, d, k, cx:(ndc.x+1)/2*Wpx, cy:(1-ndc.y)/2*Hpx, wp:w*k*.92, hp:h*k*.92});
