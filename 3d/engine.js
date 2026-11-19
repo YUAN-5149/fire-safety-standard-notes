@@ -356,8 +356,10 @@ export function createAnim(cfg) {
       const wb=s.parent.localToWorld(s.userData.base.clone());
       const d=Math.max(.1, wb.clone().sub(camera.position).dot(camera.getWorldDirection(_dir)));
       const f=Math.min(cfg.labelMax ?? 6, Math.max(0.42, camera.position.distanceTo(wb)/5.5*1.2));
-      const w=s.userData.labelW*f, h=w/4; s.scale.set(w, h, 1);
-      const ndc=wb.clone().project(camera); const k=Hpx/(2*d*tanF);
+      const k=Hpx/(2*d*tanF);
+      let w=s.userData.labelW*f; if (w*k > Wpx*.94) w=Wpx*.94/k;      // 手機窄畫面：標籤不超過畫面寬
+      const h=w/4; s.scale.set(w, h, 1);
+      const ndc=wb.clone().project(camera);
       vis.push({s, d, k, cx:(ndc.x+1)/2*Wpx, cy:(1-ndc.y)/2*Hpx, wp:w*k*.92, hp:h*k*.92});
     }
     vis.sort((a,b)=>b.cy-a.cy);
@@ -371,9 +373,14 @@ export function createAnim(cfg) {
       cy=push(-1);                                   // 先往上推開
       if (cy-v.hp/2<2) cy=push(1);                   // 推出畫面上緣就改往下
       placed.push({cx:v.cx, cy, wp:v.wp, hp:v.hp});
-      const target=(v.cy-cy)/v.k; v.s.userData.off+= (target-v.s.userData.off)*.25;
+      const cx=Math.min(Wpx-v.wp/2-2, Math.max(v.wp/2+2, v.cx));       // 左右推回畫面內
+      placed[placed.length-1].cx=cx;
+      const target=(v.cy-cy)/v.k, tx=(cx-v.cx)/v.k;
+      v.s.userData.off += (target-v.s.userData.off)*.25;
+      v.s.userData.offX=(v.s.userData.offX||0)+(tx-(v.s.userData.offX||0))*.25;
       _up.set(0,1,0).applyQuaternion(camera.quaternion);
-      v.s.position.copy(v.s.userData.base).addScaledVector(_up, v.s.userData.off);
+      _dir.set(1,0,0).applyQuaternion(camera.quaternion);
+      v.s.position.copy(v.s.userData.base).addScaledVector(_up, v.s.userData.off).addScaledVector(_dir, v.s.userData.offX);
     }
     renderer.render(scene,camera);
   });
