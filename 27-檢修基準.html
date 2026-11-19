@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- icons -->
+<link rel="icon" href="icons/favicon.ico" sizes="32x32">
+<link rel="icon" href="icons/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#b03a2e">
+<title>檢修基準 — 消防安全設備及必要檢修項目檢修基準（114.1.9）</title>
+<meta name="description" content="內政部消防署「消防安全設備及必要檢修項目檢修基準」114 年 1 月 9 日修正版全文 27 章：分章閱讀、全文搜尋、檢查方法與判定方法標示，並列出各章歷屆考題、對應圖解與 3D 動畫。">
+<style>
+  :root{
+    --bg:#fbfaf7; --fg:#1c1b19; --muted:#6b6862; --line:#d8d4cb;
+    --card:#ffffff; --accent:#b03a2e; --accent2:#1d6fa5; --accent3:#2e7d4f;
+    --warn:#a86b00; --fill1:#f2e4e1; --fill2:#e0edf6; --fill3:#e3f0e8; --fill4:#f7efd9; --mark:#ffe58a;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#16161a; --fg:#e8e6e1; --muted:#9b968c; --line:#3a3a40;
+      --card:#1e1e23; --accent:#e8705f; --accent2:#5aa8d8; --accent3:#5fbb87;
+      --warn:#d9a441; --fill1:#3a2622; --fill2:#1e3341; --fill3:#1f3a2c; --fill4:#3a3120; --mark:#6b5a12;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;line-height:1.75;-webkit-text-size-adjust:100%}
+  .wrap{max-width:1180px;margin:0 auto;padding:24px 16px 72px}
+  header{border-bottom:2px solid var(--fg);padding-bottom:14px}
+  h1{font-size:clamp(1.3rem,4vw,1.85rem);margin:0 0 4px}
+  .sub{color:var(--muted);font-size:.86rem;margin:0}
+  a{color:var(--accent2)}
+  .navbar{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font:inherit;font-size:.85rem;cursor:pointer;
+    padding:7px 13px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--fg)}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.go{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+  .note{border-left:3px solid var(--warn);background:var(--fill4);padding:10px 14px;border-radius:0 6px 6px 0;font-size:.86rem;margin:14px 0}
+  .note b{color:var(--warn)}
+  .tools{position:sticky;top:0;z-index:20;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--line);display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  #q{flex:1;min-width:200px;font:inherit;font-size:1rem;padding:9px 13px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);color:var(--fg)}
+  #q:focus{outline:none;border-color:var(--accent)}
+  #chsel{display:none;font:inherit;font-size:.92rem;padding:8px 10px;border-radius:9px;border:1px solid var(--line);background:var(--card);color:var(--fg);max-width:100%}
+  .count{font-size:.8rem;color:var(--muted);width:100%}
+  .layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:22px;margin-top:14px}
+  nav.toc{position:sticky;top:64px;align-self:start;max-height:calc(100vh - 80px);overflow:auto;font-size:.86rem;border-right:1px solid var(--line);padding-right:10px}
+  nav.toc a{display:flex;gap:6px;align-items:baseline;padding:5px 8px;border-radius:7px;text-decoration:none;color:var(--fg)}
+  nav.toc a:hover{background:var(--fill2)}
+  nav.toc a.on{background:var(--accent);color:#fff}
+  nav.toc .n{flex:0 0 2.2em;color:var(--muted);font-variant-numeric:tabular-nums}
+  nav.toc a.on .n{color:#fff}
+  nav.toc .qn{margin-left:auto;font-size:.7rem;padding:0 6px;border-radius:99px;background:var(--fill1);color:var(--accent)}
+  nav.toc a.on .qn{background:#fff}
+  h2{font-size:1.3rem;margin:0 0 8px}
+  .chhead{border:1px solid var(--line);border-radius:10px;background:var(--card);padding:12px 14px;margin-bottom:14px}
+  .chhead .links{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+  .chhead .links a{font-size:.8rem;padding:3px 10px;border-radius:99px;border:1px solid var(--line);text-decoration:none;color:var(--fg);background:var(--bg)}
+  .chhead .links a:hover{border-color:var(--accent);color:var(--accent)}
+  details.exq{margin-top:8px;font-size:.85rem}
+  details.exq summary{cursor:pointer;color:var(--accent);font-weight:600}
+  details.exq li{margin:4px 0}
+  .doc .b{margin:3px 0;scroll-margin-top:80px}
+  .doc .l1{font-weight:800;font-size:1.08rem;margin:20px 0 6px;padding:4px 10px;border-left:4px solid var(--accent);background:var(--fill1);border-radius:0 6px 6px 0}
+  .doc .l2{font-weight:700;margin:12px 0 4px;color:var(--accent2)}
+  .doc .l3{font-weight:600;margin:8px 0 2px 1em}
+  .doc .l4{margin-left:2em}
+  .doc .l5,.doc .l6,.doc .l7{margin-left:3em;font-size:.95rem}
+  .doc .l0{margin-left:3em;font-size:.88rem;color:var(--muted)}
+  .doc .l9{margin:18px 0 6px;font-weight:700;color:var(--muted);border-top:1px dashed var(--line);padding-top:8px;font-size:.9rem}
+  .doc .tag{display:inline-block;font-size:.72rem;font-weight:700;padding:0 7px;border-radius:5px;margin-right:4px;vertical-align:1px}
+  .tag.chk{background:var(--fill2);color:var(--accent2)}
+  .tag.jdg{background:var(--fill3);color:var(--accent3)}
+  .tag.att{background:var(--fill4);color:var(--warn)}
+  .num{font-weight:700;color:var(--accent)}
+  mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
+  .hit{border:1px solid var(--line);border-radius:9px;padding:8px 11px;margin:6px 0;background:var(--card);cursor:pointer;font-size:.88rem}
+  .hit:hover{border-color:var(--accent)}
+  .hit .w{font-size:.75rem;color:var(--muted)}
+  .flash{animation:fl 2s ease-out}
+  @keyframes fl{0%{background:var(--mark)}100%{background:transparent}}
+  .loading{padding:40px 0;text-align:center;color:var(--muted)}
+  footer{margin-top:44px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem}
+  @media(max-width:860px){ .layout{grid-template-columns:1fr} nav.toc{display:none} #chsel{display:block;flex-basis:100%} .doc .l5,.doc .l6,.doc .l7,.doc .l0{margin-left:1.6em} .doc .l4{margin-left:1em} }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>檢修基準</h1>
+  <p class="sub">消防安全設備及必要檢修項目檢修基準　<span id="ver"></span></p>
+  <div class="navbar">
+    <a class="btn go" href="index.html">🏠 回學習首頁</a>
+    <a class="btn" href="25-%E6%AD%B7%E5%B1%86%E8%A9%A6%E9%A1%8C.html">📄 歷屆試題</a>
+    <a class="btn" href="3d/">🧊 3D 系統動畫</a>
+    <a class="btn" id="pdf" href="#" target="_blank" rel="noopener">📎 消防署原文 PDF</a>
+  </div>
+</header>
+
+<div class="note">
+  全文取自內政部消防署「消防法令查詢系統」公布之 PDF，由程式抽出文字並依「一、（一）１、（１）A.」整理層級。
+  <b>附圖與檢查表格式在抽文字時會走樣</b>，看到亂掉的表格請點「消防署原文 PDF」對照。
+  <span class="tag chk">檢查方法</span><span class="tag jdg">判定方法</span><span class="tag att">注意事項</span> 會自動標色，數字與單位以紅字標出——考題幾乎都出在判定方法的數字上。
+</div>
+
+<div class="tools">
+  <input id="q" type="search" placeholder="搜尋全文…　例：音壓、水壓試驗、檢修環、下降速度、加熱試驗" autocomplete="off">
+  <select id="chsel"></select>
+  <div class="count" id="count"></div>
+</div>
+
+<div class="layout">
+  <nav class="toc" id="toc"></nav>
+  <main id="main"><div class="loading">載入檢修基準…</div></main>
+</div>
+
+<footer>資料：exams/data/kb-web.json，由 exams/tools/fetch_kb.py → build_kb_web.py 產生；基準修正時重跑即可更新。</footer>
+</div>
+
+<script>
+(function(){
+'use strict';
+var D, cur = 1, kw = '';
+var TOPIC = { // 章 → [圖解頁, 3D 動畫]
+  1:['15-滅火器與室內外消防栓-圖解.html','extinguisher.html'], 2:['15-滅火器與室內外消防栓-圖解.html','indoor-hydrant.html'],
+  3:['15-滅火器與室內外消防栓-圖解.html','outdoor-hydrant.html'], 4:['16-自動撒水設備-圖解.html','sprinkler.html'], 5:['16-自動撒水設備-圖解.html',''],
+  6:['09-水霧設備-圖解.html','water-mist.html'], 7:['04a-泡沫設備-圖解.html','foam.html'], 8:['07-乾粉設備-圖解.html','dry-powder.html'],
+  9:['',''], 10:['',''], 11:['06-二氧化碳設備-圖解.html','co2.html'], 12:['08-鹵化烴設備-圖解.html','halon.html'],
+  13:['17-火警自動警報設備-圖解.html','fire-alarm.html'], 14:['18-緊急廣播與瓦斯漏氣-圖解.html','emergency-pa.html'], 15:['18-緊急廣播與瓦斯漏氣-圖解.html','gas-leak.html'],
+  16:['17-火警自動警報設備-圖解.html',''], 17:['19-標示設備-圖解.html','evac-sign.html'], 18:['20-避難器具與收容人員-圖解.html','descender.html'],
+  19:['21-緊急照明設備-圖解.html','evac-sign.html'], 20:['10-連結送水管-圖解.html','standpipe.html'], 21:['11-消防專用蓄水池-圖解.html','water-tank.html'],
+  22:['12-排煙設備-圖解.html','smoke-exhaust.html'], 23:['13-緊急電源插座與無線電-圖解.html','outlet-radio.html'], 24:['13-緊急電源插座與無線電-圖解.html','outlet-radio.html'],
+  25:['22-公共危險物品場所-圖解.html','haz-tank.html'], 26:['22-公共危險物品場所-圖解.html','haz-tank.html'], 27:['','']
+};
+var CN = ['','一','二','三','四','五','六','七','八','九','十'];
+function cn(n){ return n <= 10 ? CN[n] : n < 20 ? '十' + (n % 10 ? CN[n % 10] : '') : CN[Math.floor(n / 10)] + '十' + (n % 10 ? CN[n % 10] : ''); }
+function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+var $ = function(s){ return document.querySelector(s); };
+
+fetch('exams/data/kb-web.json').then(function(r){ return r.json(); }).then(function(d){
+  D = d;
+  $('#ver').textContent = '｜' + d.version + '｜共 ' + d.chapters.length + ' 章';
+  $('#pdf').href = d.pdf;
+  $('#toc').innerHTML = d.chapters.map(function(c){
+    return '<a href="#ch' + c.no + '" data-n="' + c.no + '"><span class="n">' + cn(c.no) + '</span><span>' + esc(c.title) + '</span>' +
+      (c.q.length ? '<span class="qn" title="歷屆考題">' + c.q.length + '</span>' : '') + '</a>';
+  }).join('');
+  $('#chsel').innerHTML = d.chapters.map(function(c){ return '<option value="' + c.no + '">第' + cn(c.no) + '章　' + esc(c.title) + (c.q.length ? '（考 ' + c.q.length + ' 題）' : '') + '</option>'; }).join('');
+  var m = /^#ch(\d+)(?:-(\d+))?/.exec(location.hash), qm = /[?&]q=([^&]+)/.exec(location.search);
+  if (qm) { $('#q').value = decodeURIComponent(qm[1]); search(); }
+  else show(m ? +m[1] : 1, m && m[2] ? +m[2] : null);
+}).catch(function(){ $('#main').innerHTML = '<div class="loading">資料載入失敗。請用本機伺服器或線上版開啟。</div>'; });
+
+$('#toc').addEventListener('click', function(e){ var a = e.target.closest('a'); if (!a) return; e.preventDefault(); $('#q').value = ''; kw = ''; show(+a.dataset.n); });
+$('#chsel').addEventListener('change', function(){ $('#q').value = ''; kw = ''; show(+this.value); });
+var tmr; $('#q').addEventListener('input', function(){ clearTimeout(tmr); tmr = setTimeout(search, 250); });
+
+function fmt(t){
+  var h = esc(t);
+  h = h.replace(/(檢查方法|檢查方式)/g, '<span class="tag chk">$1</span>')
+       .replace(/(判定方法)/g, '<span class="tag jdg">$1</span>')
+       .replace(/(注意事項)/g, '<span class="tag att">$1</span>');
+  h = h.replace(/(\d+(?:\.\d+)?\s*(?:kgf\s*\/\s*cm2|kgf／cm2|MPa|l\s*\/\s*min|L\/min|公升|公尺|公分|cm|mm|m(?![a-z])|秒|分鐘|分貝|dB|%|％|年|個|小時|伏特|V|Ω|勒克斯|lux|度))/g, '<span class="num">$1</span>');
+  if (kw) { var re = new RegExp('(' + kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'g'); h = h.replace(re, '<mark>$1</mark>'); }
+  return h;
+}
+
+function show(n, bi){
+  cur = n; var c = D.chapters[n - 1];
+  [].forEach.call(document.querySelectorAll('#toc a'), function(a){ a.classList.toggle('on', +a.dataset.n === n); });
+  $('#chsel').value = n;
+  var tp = TOPIC[n] || ['',''];
+  var links = (tp[0] ? '<a href="' + encodeURI(tp[0]) + '">📐 圖解</a>' : '') + (tp[1] ? '<a href="3d/' + tp[1] + '">🧊 3D 動畫</a>' : '');
+  var qs = c.q.length ? '<details class="exq"' + (c.q.length <= 6 ? ' open' : '') + '><summary>📄 歷屆考過這一章 ' + c.q.length + ' 題</summary><ul>' + c.q.sort(function(a,b){ return b.y - a.y; }).map(function(q){
+    return '<li><a href="25-%E6%AD%B7%E5%B1%86%E8%A9%A6%E9%A1%8C.html?p=' + q.id + '&n=' + q.no + '">' + q.y + ' 年 ' + esc(q.cat) + '・' + esc(q.sub) + ' 第 ' + q.no + ' 題</a>：' + esc(q.s) + '</li>';
+  }).join('') + '</ul></details>' : '<div style="font-size:.82rem;color:var(--muted);margin-top:6px">100～115 年消防設備師／士試題中尚未出現以「檢修基準」命題的本章題目。</div>';
+  var h = '<div class="chhead"><h2>第' + cn(n) + '章　' + esc(c.title) + '</h2>' + (links ? '<div class="links">' + links + '</div>' : '') + qs + '</div><div class="doc">';
+  c.b.forEach(function(b, i){ h += '<div class="b l' + b.l + '" id="ch' + n + '-' + i + '">' + fmt(b.t) + '</div>'; });
+  $('#main').innerHTML = h + '</div>';
+  $('#count').textContent = '第' + cn(n) + '章：' + c.b.length + ' 段' + (kw ? '' : '');
+  if (bi != null) { var el = document.getElementById('ch' + n + '-' + bi); if (el) { el.scrollIntoView({block:'center'}); el.classList.add('flash'); } }
+  else window.scrollTo({top: 0});
+  try { history.replaceState(null, '', location.pathname + '#ch' + n + (bi != null ? '-' + bi : '')); } catch(e){}
+}
+
+function search(){
+  kw = $('#q').value.trim();
+  if (!kw) { show(cur); return; }
+  var hits = [];
+  D.chapters.forEach(function(c){ c.b.forEach(function(b, i){ var k = b.t.indexOf(kw); if (k >= 0) hits.push({c:c, i:i, t:b.t, k:k}); }); });
+  $('#count').textContent = '「' + kw + '」共 ' + hits.length + ' 處' + (hits.length > 300 ? '（列出前 300 處）' : '');
+  [].forEach.call(document.querySelectorAll('#toc a'), function(a){ a.classList.remove('on'); });
+  $('#main').innerHTML = hits.length ? hits.slice(0, 300).map(function(h){
+    var s = Math.max(0, h.k - 50), snip = (s ? '…' : '') + h.t.slice(s, h.k + 90) + (h.k + 90 < h.t.length ? '…' : '');
+    return '<div class="hit" data-n="' + h.c.no + '" data-i="' + h.i + '"><div class="w">第' + cn(h.c.no) + '章　' + esc(h.c.title) + '</div>' + fmt(snip) + '</div>';
+  }).join('') : '<div class="loading">找不到「' + esc(kw) + '」。試試同義詞，例如「音壓」「水壓」「放水量」。</div>';
+}
+$('#main').addEventListener('click', function(e){ var h = e.target.closest('.hit'); if (h) show(+h.dataset.n, +h.dataset.i); });
+})();
+</script>
+<!-- sw --><script>if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));</script>
+</body>
+</html>

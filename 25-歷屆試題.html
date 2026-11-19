@@ -189,7 +189,12 @@ fetch('exams/data/exam.json').then(function(r){ return r.json(); }).then(functio
   var nm = 0, ne = 0; P.forEach(function(p){ nm += p.mc.length; ne += p.es.length; });
   $('#stat').textContent = '｜' + P.length + ' 份試卷・選擇 ' + nm + ' 題・申論 ' + ne + ' 題';
   var m = /[?&]p=([^&]+)/.exec(location.search);
-  if (m && BYID[decodeURIComponent(m[1])]) { var p = BYID[decodeURIComponent(m[1])]; state.cat = p.cat; renderPanel(); openPaper(p.id); }
+  if (m && BYID[decodeURIComponent(m[1])]) {
+    var p = BYID[decodeURIComponent(m[1])]; state.cat = p.cat; renderPanel(); openPaper(p.id);
+    var qn = /[?&]n=(\d+)/.exec(location.search);
+    if (qn) setTimeout(function(){ var el = document.querySelector('.q[data-id="' + p.id + '-' + qn[1] + '"]');
+      if (el) { el.scrollIntoView({block:'center'}); el.style.boxShadow = '0 0 0 3px var(--accent)'; } }, 400);
+  }
   else renderPanel();
   wn();
 }).catch(function(){

@@ -37,6 +37,7 @@
 | [25-歷屆試題.html](https://yuan-5149.github.io/fire-safety-standard-notes/25-歷屆試題.html) | **考選部消防設備師／士歷屆試題**：160 份試卷、3,200 題選擇題（附官方答案與更正答案）、476 題申論題；整份作答計分、隨機抽題、搜尋、錯題本，每題連主題圖解與相關條文 | 100～115 年 |
 | [26-考試策略分析.html](https://yuan-5149.github.io/fire-safety-standard-notes/26-考試策略分析.html) | **歷屆試題統計**：分數結構、主題熱度與熱點圖、近五年趨勢、高頻條文、申論題型、答案分布與讀書策略 | 100～115 年 |
 | [3d/](https://yuan-5149.github.io/fire-safety-standard-notes/3d/) | **3D 消防系統動畫 19 支**（Three.js）：滅火器、室內外消防栓、自動撒水、水霧、泡沫、二氧化碳、乾粉、鹵化烴、火警、瓦斯漏氣、緊急廣播、標示與緊急照明、緩降機、排煙、連結送水管、消防專用蓄水池、緊急電源插座與無線電、公危儲槽；可旋轉縮放、逐步播放，每步附條號考點 | §31～§216 |
+| [27-檢修基準.html](https://yuan-5149.github.io/fire-safety-standard-notes/27-檢修基準.html) | **消防安全設備及必要檢修項目檢修基準**（消防署 114.1.9）全文 27 章：分章閱讀、全文搜尋、檢查／判定方法標色、各章歷屆考題對應 | 消防署公告 |
 | [06-二氧化碳設備-圖解.html](https://yuan-5149.github.io/fire-safety-standard-notes/06-二氧化碳設備-圖解.html) | **7 張 SVG 圖解 + 5 個計算實例**，含惰性氣體 | §82～§97 |
 | [07-乾粉設備-圖解.html](https://yuan-5149.github.io/fire-safety-standard-notes/07-乾粉設備-圖解.html) | **6 張 SVG 圖解 + 4 個計算實例**，含簡易自動滅火設備 | §98～§111-1 |
 | [08-鹵化烴設備-圖解.html](https://yuan-5149.github.io/fire-safety-standard-notes/08-鹵化烴設備-圖解.html) | **6 張 SVG 圖解 + 3 個計算實例**，海龍替代品 | §97-1～§97-10 |
@@ -103,7 +104,7 @@ python tools/gen_sw.py       # 重產離線快取 sw.js；每次改完網頁都�
 
 詳見 [tools/README.md](tools/README.md)。
 
-歷屆試題的下載、解析與更新流程見 [exams/README.md](exams/README.md)。
+歷屆試題的下載、解析與更新流程見 [exams/README.md](exams/README.md)（含詳解撰寫與法規資料 fetch_laws／fetch_nfa／fetch_kb）。
 
 ## 免責
 

@@ -1,5 +1,5 @@
 // 由 tools/gen_sw.py 產生，請勿手改
-const CACHE = 'fire-notes-2a3f0373f3';
+const CACHE = 'fire-notes-612a2e426d';
 const PRECACHE = [
 "./",
 "04a-%E6%B3%A1%E6%B2%AB%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html",
@@ -25,6 +25,7 @@ const PRECACHE = [
 "24-%E7%AC%AC%E4%BA%8C%E7%B7%A8-%E6%B6%88%E9%98%B2%E8%A8%AD%E8%A8%88-%E5%9C%96%E8%A7%A3.html",
 "25-%E6%AD%B7%E5%B1%86%E8%A9%A6%E9%A1%8C.html",
 "26-%E8%80%83%E8%A9%A6%E7%AD%96%E7%95%A5%E5%88%86%E6%9E%90.html",
+"27-%E6%AA%A2%E4%BF%AE%E5%9F%BA%E6%BA%96.html",
 "3d/anim.css?v=2026111905",
 "3d/co2.html",
 "3d/descender.html",
@@ -53,6 +54,7 @@ const PRECACHE = [
 "exams/data/explain/113050-0808.json",
 "exams/data/explain/114050-0808.json",
 "exams/data/explain/115050-0808.json",
+"exams/data/kb-web.json",
 "icons/apple-touch-icon.png",
 "icons/favicon.ico",
 "icons/icon-16.png",
