@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>緊急電源插座・無線電通信輔助・防災監控｜3D 消防設備動畫</title>
+<meta name="description" content="§191～§192-1 3D 互動動畫：緊急電源插座設於樓梯間 5 m 內・任一處 50 m、110 V 15 A、接地型 1～1.5 m、保護箱 25 × 20 cm、紅色表示燈、專用回路每回路 10 個、不得設漏電斷路器；無線電洩波同軸電纜 150 MHz・50 Ω、接頭 0.8～1.5 m；防災監控綜合操作裝置緊急電源 2 小時。">
+<link rel="icon" href="../icons/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<meta name="theme-color" content="#3b1e1a">
+<link rel="stylesheet" href="anim.css?v=2026111905">
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<script type="module">
+import { createAnim } from './engine.js?v=2026111905';
+
+createAnim({
+  title: '緊急電源插座・無線電通信輔助・防災監控',
+  page: '13-%E7%B7%8A%E6%80%A5%E9%9B%BB%E6%BA%90%E6%8F%92%E5%BA%A7%E8%88%87%E7%84%A1%E7%B7%9A%E9%9B%BB-%E5%9C%96%E8%A7%A3.html',
+  steps: [
+    {t:'給消防隊用的電、訊號與總控台', d:'高樓與地下建築火災時，消防人員要在樓上接電動破壞器材、在地下跟外面通無線電；防災中心則要能統一監控所有消防設備。', tip:'§191 緊急電源插座、§192 無線電通信輔助設備、§192-1 防災監控系統綜合操作裝置。'},
+    {t:'插座位置：樓梯間 5 m 內、任一處 ≤ 50 m', d:'緊急電源插座裝在樓梯間或緊急昇降機間等（含 5 m 內）消防人員易於施行救火處，每一層任何一處至插座的水平距離 50 m 以下。', tip:'§191①。和連結送水管出水口的位置規則一樣：樓梯間 5 m 內、50 m。'},
+    {t:'規格：110 V 15 A、1～1.5 m、紅色表示燈', d:'交流單相 110 V（或 120 V）15 A，約 1.5 kW 以上；接地型，高 1～1.5 m，2 個裝在嵌裝式保護箱（25 × 20 cm 以上、1.6 mm 鋼板），箱上方設紅色表示燈。', tip:'§191②④⑤。箱內有 L 型或 C 型護鉤防插頭脫落；與消防栓箱併設時設於上方、箱蓋能另外開啟。'},
+    {t:'配線：專用回路、每回路 ≤ 10 個', d:'從主配電盤設專用回路，各層至少 2 回路，每回路連接插座 10 個以下；專用回路不得設漏電斷路器，各插座設 110 V 15 A 以上無熔絲斷路器，並接到緊急供電系統。', tip:'§191⑥～⑨。不能裝漏電斷路器：消防射水時跳電，器材就停了。'},
+    {t:'無線電：洩波同軸電纜 150 MHz、50 Ω', d:'地下或大型建築物內，無線電訊號被牆擋住，所以沿通道鋪設洩波同軸電纜，把消防無線電訊號「漏」到整個空間。電纜適合 150 MHz、標稱阻抗 50 Ω、經耐燃處理。', tip:'§192①～⑤：設增輻器時，其緊急電源用蓄電池，30 分鐘以上。'},
+    {t:'無線電接頭：0.8～1.5 m、紅色保護箱', d:'接頭設在地面消防人員便於取用處及值日室，高 0.8～1.5 m，裝在漆紅色、防水防塵的保護箱內，箱內有 2 m 以上射頻電纜，標明「消防隊專用無線電接頭」。', tip:'§192⑥：出入口之間步行距離大於 300 m 時，地面接頭設 2 個以上。'},
+    {t:'防災監控：一個地方看全部', d:'防災監控系統綜合操作裝置設於防災中心、中央管理室或值日室，監控火警、瓦斯漏氣、緊急廣播、連結送水、緊急發電機、滅火設備加壓送水、氣體滅火及排煙設備。', tip:'§192-1：緊急電源準用 §38，供電容量 2 小時以上。'},
+  ],
+  groundY: -3.5, minDist: 2, sun:[6,16,10],
+  views: {
+    def:{dir:[0.5,0.4,0.77], dist:22, target:[0,2.5,0]},
+    1:{dir:[0.3,0.3,0.9], dist:12, target:[3,5,-2.5]},
+    2:{dir:[0.3,0.15,0.94], dist:7, target:[3.6,5.4,-2.8]},
+    3:{dir:[0.5,0.3,0.81], dist:14, target:[-1,1.5,-2]},
+    4:{dir:[0.45,0.35,0.82], dist:14, target:[-1,-1.6,0]},
+    5:{dir:[0.4,0.2,0.89], dist:6, target:[-5.5,1,3]},
+    6:{dir:[0.45,0.25,0.86], dist:8, target:[-4,1.4,-2.5]},
+  },
+  build({THREE, mat, span, pipe, group, label, add, fixed, plate, dim, flow, pulse}) {
+    const M = {
+      slab: mat('#d6d0c7',{roughness:1}), wall: mat('#e7e2da',{roughness:1}), stair: mat('#cbd5e1',{transparent:true,opacity:.4,depthWrite:false}),
+      box: mat('#f1f5f9',{metalness:.4}), red: mat('#c81e1e'), lamp: mat('#ef4444',{emissive:'#ef4444',emissiveIntensity:1.2}),
+      sock: mat('#1f2937'), cable: mat('#111827'), wire: mat('#f59e0b',{emissive:'#f59e0b',emissiveIntensity:.5}),
+      ring: mat('#16a34a',{transparent:true,opacity:.25,depthWrite:false}), wave: mat('#38bdf8',{transparent:true,opacity:.3,depthWrite:false}),
+      sig: mat('#38bdf8',{emissive:'#0ea5e9',emissiveIntensity:1}), panel: mat('#e5e7eb'), screen: mat('#0f172a'), scr: mat('#22c55e',{emissive:'#22c55e',emissiveIntensity:.8}),
+    };
+    const NE={edges:false, shadow:false}, FH=3.5;
+    [-3.4,0,FH].forEach(y=>fixed(span(-7,y-0.15,-4,7,y,4,M.slab)));
+    fixed(span(-7,-3.4,-4.15,7,7,-4,M.wall)); fixed(span(-7.15,-3.4,-4,-7,7,4,M.wall));
+    fixed(span(2.8,-3.4,-4,5.2,7,-1.5,M.stair,NE));
+    fixed(label('B1',-7.7,-1.8,0,.6)); fixed(label('1F',-7.7,1.6,0,.6)); fixed(label('2F',-7.7,5.1,0,.6)); fixed(label('樓梯間',4,7.7,-2.7,.9));
+
+    /* ① 概觀 */
+    add(0, label('插座：消防器材用電',4,8.6,-1,1.5,'good'),{until:0, drop:0, glow:false});
+    add(0, label('無線電：地下也能通話',-2,-0.6,2,1.6,'good'),{until:0, drop:0, glow:false, delay:.2});
+    add(0, label('防災中心：統一監控',-4,2.6,-2,1.5,'good'),{until:0, drop:0, glow:false, delay:.4});
+
+    /* ② 插座位置 */
+    const outlet=(y)=>{ const g=group(span(3.3,y+1.0,-4,3.9,y+1.55,-3.9,M.box)); const p=plate('緊急電源插座',0.55,0.12,{normal:'z',bg:'#f1f5f9',fg:'#b91c1c'}); p.position.set(3.6,y+1.45,-3.89); g.add(p);
+      [3.47,3.73].forEach(x=>g.add(span(x-0.06,y+1.1,-3.9,x+0.06,y+1.3,-3.88,M.sock,{edges:false})));
+      const l=new THREE.Mesh(new THREE.SphereGeometry(.06,12,10),M.lamp.clone()); l.position.set(3.6,y+1.75,-3.92); g.add(pulse(l,1)); return g; };
+    add(1, outlet(FH), {drop:0}); add(1, outlet(0), {drop:0, delay:.2});
+    const r=new THREE.Mesh(new THREE.CircleGeometry(5,40),M.ring.clone()); r.rotation.x=-Math.PI/2; r.position.set(3.6,FH+0.03,-3.5);
+    add(1, r, {until:1, drop:0, glow:false});
+    add(1, label('樓梯間 5 m 內・任一處 ≤ 50 m',1,FH+2.6,-2,1.9,'good'),{until:1, drop:0, glow:false});
+
+    /* ③ 規格 */
+    add(2, dim([4.2,FH,-3.85],[4.2,FH+1.3,-3.85],'1～1.5 m',{w:.6, off:[.4,0,0]}),{until:2, drop:0, glow:false});
+    add(2, label('110 V 15 A・約 1.5 kW・接地型',3.6,FH+2.6,-3.4,1.9,'good'),{until:2, drop:0, glow:false});
+    add(2, label('保護箱 ≥ 25 × 20 cm・1.6 mm 鋼板・紅色表示燈',3.6,FH+3.4,-3.4,2.6),{until:2, drop:0, glow:false, delay:.3});
+
+    /* ④ 配線 */
+    add(3, group(span(-6.6,-3.4,-4,-5.6,-1.6,-3.6,M.panel)), {drop:0});
+    add(3, group(pipe([-6.1,-1.6,-3.8],[-6.1,FH+1.2,-3.8],.04,M.wire), pipe([-6.1,FH+1.2,-3.8],[3.3,FH+1.2,-3.95],.03,M.wire), pipe([-6.1,1.2,-3.8],[3.3,1.2,-3.95],.03,M.wire)), {drop:0});
+    add(3, flow([[-6.1,-1.6,-3.8],[-6.1,FH+1.2,-3.8],[3.3,FH+1.2,-3.95]],M.wire,{n:14,r:.05,speed:4}),{until:3, drop:0, glow:false});
+    add(3, label('主配電盤 → 專用回路（各層 ≥ 2 回路）',-3,-1.0,-3.2,2.3,'good'),{until:3, drop:0, glow:false});
+    add(3, label('每回路 ≤ 10 個・不得設漏電斷路器',-3,-0.1,-3.2,2.2,'bad'),{until:3, drop:0, glow:false, delay:.3});
+
+    /* ⑤ 洩波同軸電纜（B1） */
+    add(4, group(pipe([-6.8,-0.4,3],[6.5,-0.4,3],.04,M.cable), pipe([-6.8,-0.4,3],[-6.8,1.0,3],.04,M.cable)), {drop:0});
+    for(let i=0;i<6;i++){ const w=new THREE.Mesh(new THREE.SphereGeometry(.9,16,10,0,Math.PI*2,0,Math.PI/2),M.wave.clone()); w.rotation.x=Math.PI; w.position.set(-5.5+i*2.2,-0.4,3); add(4,pulse(w,1.2),{until:4,drop:0,glow:false,delay:i*.08}); }
+    add(4, flow([[-6.8,1.0,3],[-6.8,-0.4,3],[6.5,-0.4,3]],M.sig,{n:14,r:.06,speed:4}),{until:5, drop:0, glow:false});
+    add(4, label('洩波同軸電纜：150 MHz・50 Ω・耐燃',0,0.6,3.4,2.3,'good'),{until:4, drop:0, glow:false});
+    add(4, label('增輻器緊急電源：蓄電池 30 分鐘',0,-2.4,3.4,2.0),{until:4, drop:0, glow:false, delay:.3});
+    const jb=group(span(-6.95,0.9,2.6,-6.75,1.5,3.4,M.red)); const jp=plate('消防隊專用無線電接頭',0.75,0.12,{normal:'x',bg:'#c81e1e'}); jp.position.set(-6.74,1.4,3); jb.add(jp);
+    add(4, jb, {drop:0});
+
+    /* ⑥ 接頭 */
+    add(5, dim([-6.7,0,3.6],[-6.7,1.5,3.6],'0.8～1.5 m',{w:.7, off:[0,0,.5]}),{until:5, drop:0, glow:false});
+    add(5, label('地面便於取用處及值日室',-5.6,2.4,3.2,1.6,'good'),{until:5, drop:0, glow:false});
+    add(5, label('紅色防水防塵箱・2 m 射頻電纜',-5.6,3.2,3.2,1.9),{until:5, drop:0, glow:false, delay:.3});
+
+    /* ⑦ 防災監控 */
+    add(6, group(span(-5.6,0,-4,-2.6,1.2,-3.2,M.panel), span(-5.4,1.2,-3.9,-2.8,2.3,-3.8,M.screen)), {drop:.3});
+    for(let i=0;i<8;i++){ const s=span(-5.3+(i%4)*0.62,1.35+Math.floor(i/4)*0.48,-3.79,-4.8+(i%4)*0.62,1.7+Math.floor(i/4)*0.48,-3.78,M.scr,{edges:false}); add(6,s,{drop:0,glow:false,delay:i*.05}); }
+    add(6, label('火警・瓦斯・廣播・送水・發電機・滅火・排煙',-4,3.0,-3.4,2.6,'good'),{until:6, drop:0, glow:false});
+    add(6, label('緊急電源 2 小時以上',-4,3.8,-3.4,1.4,'bad'),{until:6, drop:0, glow:false, delay:.3});
+  },
+});
+</script>
+</body>
+</html>

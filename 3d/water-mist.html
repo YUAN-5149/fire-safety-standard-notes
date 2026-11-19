@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>水霧滅火設備｜3D 消防設備動畫</title>
+<meta name="description" content="§61～§68 水霧滅火設備 3D 互動動畫：噴頭有效半徑 2.1 m、每 m² 20／10 L/min、放射區域 50 m²、一齊開放閥、幫浦 1,200／2,000 L/min・2.7／3.5 kgf/cm²、水源 20／40 m³、與高壓電器離開距離。">
+<link rel="icon" href="../icons/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<meta name="theme-color" content="#3b1e1a">
+<link rel="stylesheet" href="anim.css?v=2026111905">
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<script type="module">
+import { createAnim } from './engine.js?v=2026111905';
+
+createAnim({
+  title: '水霧滅火設備',
+  page: '09-%E6%B0%B4%E9%9C%A7%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html',
+  steps: [
+    {t:'把水打成細霧：冷卻＋窒息', d:'水霧噴頭把水打成細小水滴，大量吸熱冷卻，蒸發的水蒸氣又能稀釋氧氣，適合停車空間、變壓器等場所。', tip:'§61～§68。配管、流水檢知、啟動裝置、一齊開放閥準用撒水 §44、§45、§51～§53（§62）。'},
+    {t:'噴頭：有效半徑 ≤ 2.1 m', d:'防護對象的總面積都要在水霧噴頭有效防護範圍內，每一噴頭有效半徑 2.1 m 以下。', tip:'§61①②。'},
+    {t:'放水量：每 m² 20 或 10 L/min', d:'供停車空間、汽車修理廠等（§18 附表第三、四項）使用，每 m² 每分鐘 20 L 以上；其他場所每分鐘 10 L 以上。', tip:'§61③。噴頭數量依放水角度、放水量及防護面積核算。'},
+    {t:'放射區域：一只一齊開放閥 50 m²', d:'放射區域是一只一齊開放閥啟動放射的區域，每一區域以 50 m² 為原則；兩區以上時主管管徑 100 mm 以上。', tip:'§63。'},
+    {t:'啟動：探測器動作 → 一齊開放閥開', d:'感知撒水頭、探測器或手動啟動開關動作，一齊開放閥打開，該放射區域的全部噴頭同時放水。', tip:'§62 準用 §52、§53：手動啟動開關高 0.8～1.5 m；每一放射區域一個一齊開放閥。'},
+    {t:'幫浦：1,200 L/min、2.7 kgf/cm²', d:'消防幫浦出水量 1,200 L/min 以上（兩個以上放射區域 2,000 L/min）；最末端放射區域全部噴頭放水壓力 2.7 kgf/cm² 以上，防護電氣設備者 3.5 kgf/cm² 以上。', tip:'§65，並連接緊急電源（30 分鐘，準用 §38）。'},
+    {t:'水源：固定 20 m³（兩區 40 m³）', d:'水源容量保持 20 m³ 以上；放射區域兩區域以上者 40 m³ 以上。', tip:'§64。水霧的水源是固定值，不隨面積變動——跟撒水、泡沫最不同的地方。第四編改為最大放射區域 30 分鐘。'},
+    {t:'高壓電器：保持離開距離', d:'水霧噴頭及配管與高壓電器設備應保持離開距離，避免導電。例如 7 kV 以下：最低 150 mm、標準 250 mm。', tip:'§66 表：10 kV 以下 200／300 mm；20 kV 以下 300／400 mm；電壓越高距離越大。'},
+  ],
+  groundY: -0.01, minDist: 2, sun:[6,16,10], maxPolar:.62,
+  views: {
+    def:{dir:[0.45,0.45,0.77], dist:20, target:[0,1.2,0]},
+    1:{dir:[0.25,-0.2,0.95], dist:10, target:[-2,2.6,0]},
+    2:{dir:[0.35,0.3,0.89], dist:10, target:[-2,1.6,0]},
+    3:{dir:[0.1,0.9,0.42], dist:18, target:[-1,1,0]},
+    4:{dir:[0.55,0.25,0.8], dist:9, target:[4.5,1.2,-2]},
+    5:{dir:[0.55,0.3,0.78], dist:10, target:[6,1,-2]},
+    6:{dir:[0.55,0.3,0.78], dist:10, target:[6,1,-2]},
+    7:{dir:[0.4,0.25,0.88], dist:7, target:[3.5,1.6,2]},
+  },
+  build({THREE, mat, span, pipe, group, label, add, fixed, plate, dim, flow, pulse}) {
+    const M = {
+      floor: mat('#a8a29e',{roughness:1}), wall: mat('#e7e2da',{roughness:1}), line: mat('#facc15'),
+      car: mat('#b91c1c',{roughness:.35,metalness:.3}), glass: mat('#334155'),
+      pipe: mat('#dc2626',{metalness:.4,roughness:.4}), head: mat('#d4d4d8',{metalness:.8,roughness:.2}), valve: mat('#ca8a04',{metalness:.7,roughness:.3}),
+      ring: mat('#16a34a',{transparent:true,opacity:.3,depthWrite:false}), zone: mat('#93c5fd',{transparent:true,opacity:.35,depthWrite:false}),
+      mist: mat('#bfdbfe',{transparent:true,opacity:.4,depthWrite:false}), drop: mat('#60a5fa',{emissive:'#2563eb',emissiveIntensity:.5}),
+      fireM: mat('#f97316',{emissive:'#f97316',emissiveIntensity:1}), pump: mat('#b91c1c',{metalness:.5}), motor: mat('#475569',{metalness:.5}),
+      tank: mat('#94a3b8',{metalness:.3}), water: mat('#3b82f6',{transparent:true,opacity:.55,depthWrite:false}),
+      tr: mat('#64748b',{metalness:.5}), ins: mat('#a16207'), det: mat('#f8fafc'), red: mat('#c81e1e'),
+    };
+    const NE={edges:false, shadow:false}, H=3;
+    fixed(span(-8,-0.1,-4,8,0,4,M.floor));
+    fixed(span(-8,0,-4.15,8,H,-4,M.wall)); fixed(span(-8.15,0,-4,-8,H,4,M.wall));
+    [-6,-3,0].forEach(x=>fixed(span(x-0.05,0.001,-3.8,x+0.05,0.01,1,M.line,NE)));
+    fixed(group(span(-5.5,0.3,-3.4,-3.5,1.0,0.6,M.car), span(-5.35,1.0,-2.6,-3.65,1.5,-0.2,M.glass)));
+    const HX=[-6,-3,0], HZ=[-2.5,0.5];
+    fixed(pipe([4,H-0.15,-1],[-7,H-0.15,-1],.06,M.pipe));
+    HX.forEach(x=>{ fixed(pipe([x,H-0.15,-2.5],[x,H-0.15,0.5],.035,M.pipe)); HZ.forEach(z=>fixed(group(pipe([x,H-0.15,z],[x,H-0.4,z],.02,M.pipe), pipe([x,H-0.4,z],[x,H-0.5,z],.07,M.head)))); });
+    fixed(group(pipe([4,H-0.15,-1],[4,0.3,-3],.07,M.pipe)));
+    fixed(group(span(5,0,-3.8,7.6,2.4,-2.2,M.tank))); fixed(label('水源',6.3,2.9,-3,.6));
+
+    /* ① 2.1 m */
+    HX.forEach(x=>HZ.forEach(z=>{ const r=new THREE.Mesh(new THREE.CircleGeometry(2.1,40),M.ring.clone()); r.rotation.x=Math.PI/2; r.position.set(x,H-0.55,z); add(1,r,{until:1,drop:0,glow:false}); }));
+    add(1, dim([-3,H-0.6,0.5],[-0.9,H-0.6,0.5],'有效半徑 ≤ 2.1 m',{w:1.2, off:[0,-.4,0]}),{until:1, drop:0, glow:false});
+
+    /* ② 放水量 */
+    HX.forEach((x,i)=>{ const c=new THREE.Mesh(new THREE.ConeGeometry(1.5,H-0.5,24,1,true),M.mist.clone()); c.position.set(x,(H-0.5)/2,-1); add(2,c,{until:2,drop:0,glow:false,delay:i*.1}); });
+    add(2, label('停車空間・汽車修理廠：≥ 20 L/min·m²',-3,H+1.4,1.2,2.4,'good'),{until:2, drop:0, glow:false});
+    add(2, label('其他場所：≥ 10 L/min·m²',-3,H+0.6,1.2,1.7),{until:2, drop:0, glow:false, delay:.3});
+
+    /* ③ 放射區域 */
+    add(3, span(-7.5,0.02,-3.9,-1.5,0.04,2,M.zone,NE),{until:3, drop:0, glow:false});
+    add(3, label('一只一齊開放閥 → 一個放射區域 50 m²',-4.5,2,-1,2.4,'good'),{until:3, drop:0, glow:false});
+    add(3, label('二區以上：主管 ≥ 100 mm',-4.5,1.1,-1,1.6),{until:3, drop:0, glow:false, delay:.3});
+
+    /* ④ 啟動 */
+    add(4, pulse(span(-4.9,0,0.7,-4,0.6,1.5,M.fireM,NE),3), {until:6, drop:0, glow:false});
+    add(4, group(pipe([4,0.6,-3],[4,1.2,-3],.14,M.valve)), {drop:0});
+    add(4, group(span(4.8,0.8,-3.95,5.2,1.4,-3.85,M.red)), {drop:0});
+    add(4, flow([[-4.4,0.6,1.1],[-4.4,H-0.05,-0.5],[3.5,H-0.05,-3.5],[4,1.2,-3]],mat('#facc15',{emissive:'#f59e0b',emissiveIntensity:1}),{n:14,r:.05,speed:4}),{until:4, drop:0, glow:false});
+    add(4, label('一齊開放閥',4,2.0,-2.4,.9,'bad'),{until:4, drop:0, glow:false});
+    add(4, label('手動啟動開關 0.8～1.5 m',5,1.9,-3.2,1.6),{until:4, drop:0, glow:false, delay:.3});
+
+    /* ⑤ 幫浦 */
+    add(5, group(pipe([5.6,0.5,-1.6],[6.6,0.5,-1.6],.3,M.pump), pipe([6.6,0.5,-1.6],[7.4,0.5,-1.6],.24,M.motor), pipe([5.6,0.5,-1.6],[4,0.5,-3],.07,M.pipe)), {drop:.3});
+    add(5, flow([[6.3,1,-3],[5.6,0.5,-1.6],[4,0.5,-3],[4,H-0.15,-1],[-3,H-0.15,-1],[-3,H-0.15,0.5]],M.drop,{n:30,r:.07,speed:4}),{until:6, drop:0, glow:false});
+    HX.forEach((x,i)=>{ const c=new THREE.Mesh(new THREE.ConeGeometry(1.5,H-0.5,24,1,true),M.mist.clone()); c.position.set(x,(H-0.5)/2,0.5); add(5,c,{until:6,drop:0,glow:false,delay:i*.1}); });
+    add(5, label('出水量 ≥ 1,200 L/min（二區 2,000）',6.3,3.3,-1,2.3,'good'),{until:5, drop:0, glow:false});
+    add(5, label('壓力 ≥ 2.7 kgf/cm²（電氣設備 3.5）',6.3,2.5,-1,2.3),{until:5, drop:0, glow:false, delay:.3});
+
+    /* ⑥ 水源 */
+    add(6, span(5.2,0.05,-3.6,7.4,2.0,-2.4,M.water,NE), {drop:0, glow:false});
+    add(6, label('水源 ≥ 20 m³（二區以上 40 m³）',6.3,3.6,-2,2.1,'good'),{until:6, drop:0, glow:false});
+    add(6, label('固定值，不隨面積變動',6.3,2.8,-2,1.5),{until:6, drop:0, glow:false, delay:.3});
+
+    /* ⑦ 離開距離 */
+    add(7, group(span(2.8,0,1.4,4.2,1.8,2.8,M.tr), pipe([3.2,1.8,2.1],[3.2,2.3,2.1],.08,M.ins), pipe([3.8,1.8,2.1],[3.8,2.3,2.1],.08,M.ins)), {drop:.3});
+    add(7, group(pipe([3.5,H-0.15,-1],[3.5,H-0.15,2.1],.035,M.pipe), pipe([3.5,H-0.15,2.1],[3.5,H-0.4,2.1],.02,M.pipe), pipe([3.5,H-0.4,2.1],[3.5,H-0.5,2.1],.07,M.head)), {drop:0});
+    add(7, dim([4.4,2.3,2.1],[4.4,H-0.5,2.1],'7 kV 以下：最低 150・標準 250 mm',{w:2.2, off:[1.4,0,0]}),{until:7, drop:0, glow:false});
+  },
+});
+</script>
+</body>
+</html>

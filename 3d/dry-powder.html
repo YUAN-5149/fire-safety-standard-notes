@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>乾粉滅火設備（加壓式全區放射）｜3D 消防設備動畫</title>
+<meta name="description" content="§98～§111 乾粉滅火設備 3D 互動動畫：四種乾粉藥劑量 0.6／0.36／0.36／0.24 kg/m³、室內停車空間限第三種、儲存容器置於防護區域外 40°C 以下、加壓用氮氣每 kg 40 L、壓力調整 25 kgf/cm²、定壓動作裝置、30 秒內放射完畢、清洗配管。">
+<link rel="icon" href="../icons/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<meta name="theme-color" content="#3b1e1a">
+<link rel="stylesheet" href="anim.css?v=2026111905">
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<script type="module">
+import { createAnim } from './engine.js?v=2026111905';
+
+createAnim({
+  title: '乾粉滅火設備（加壓式全區放射）',
+  page: '07-%E4%B9%BE%E7%B2%89%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html',
+  steps: [
+    {t:'加壓式：氣體推著粉末走', d:'加壓式乾粉設備平時藥劑不加壓；啟動後由加壓用氣體（氮氣）把乾粉加壓、經配管從噴頭噴出，以化學抑制與窒息滅火。', tip:'§98：放射方式、開口部、選擇閥、啟動裝置、音響警報、遲延、緊急電源等準用二氧化碳 §82、§85、§86、§90～§93、§95、§97。'},
+    {t:'藥劑量：每 m³ 0.6／0.36／0.36／0.24 kg', d:'全區放射所需藥劑量：第一種乾粉（碳酸氫鈉）0.6 kg/m³、第二種（碳酸氫鉀）與第三種（磷酸二氫銨）0.36 kg/m³、第四種（碳酸氫鉀及尿素）0.24 kg/m³。', tip:'§99（另有開口部加算量）。§101：供室內停車空間使用之滅火藥劑，以第三種乾粉為限。'},
+    {t:'儲存容器：防護區域外、40°C 以下', d:'儲存容器置於防護區域外、溫度 40°C 以下且溫度變化較少處，不得有日光曝曬或雨水淋濕。', tip:'§102 充填比：第一種 0.85～1.45；第二、三種 1.05～1.75；第四種 1.5～2.5。'},
+    {t:'加壓用氣體：氮氣每 kg 40 L 以上', d:'加壓用氣體容器設於儲存容器近旁並確實接連。使用氮氣時，每 1 kg 乾粉需氮氣 40 L 以上（35°C、表壓 0）；使用二氧化碳時每 kg 20 g 並加算清洗配管量。', tip:'§103、§104。蓄壓用氮氣每 kg 10 L；加壓或蓄壓用氣體限氮氣或二氧化碳。'},
+    {t:'啟動：警報響、遲延 20 秒', d:'探測器或手動啟動後，音響警報先響、人員撤離，經 20 秒以上遲延才開始加壓放射。', tip:'§98 準用 §91～§93：手動啟動裝置設於防護區域外、0.8～1.5 m、紅色；全區放射採人語發音。'},
+    {t:'壓力調整 ≤ 25 kgf/cm² → 定壓動作開閥', d:'加壓氣體經壓力調整裝置（可調至 25 kgf/cm² 以下）進入儲存容器；容器內壓力達設定值時，定壓動作裝置使放出閥開啟。', tip:'§107、§108：定壓動作裝置設於各儲存容器。蓄壓式則設以綠色表示使用壓力範圍的指示壓力表（§109）。'},
+    {t:'放射：≥ 1 kgf/cm²、30 秒內放完', d:'噴頭放射壓力 1 kgf/cm² 以上，核算之滅火藥劑量須於 30 秒內全部放射完畢，迅速均勻擴散至整個防護區域。', tip:'§100。§106：配管任一部分與彎曲部分的距離應為管徑 20 倍以上，避免粉氣分離。'},
+    {t:'放射後：清洗配管', d:'放射完後，用另外儲存的清洗用氣體把配管內殘留的乾粉吹乾淨，避免結塊堵塞。', tip:'§104④：清洗配管用氣體，另以容器儲存。'},
+  ],
+  groundY: -0.01, minDist: 2, sun:[6,14,9],
+  views: {
+    def:{dir:[0.5,0.5,0.71], dist:17, target:[1,1.2,0]},
+    1:{dir:[0.4,0.4,0.82], dist:12, target:[-1,1.4,0]},
+    2:{dir:[0.6,0.3,0.74], dist:8, target:[5.4,1,-1]},
+    3:{dir:[0.6,0.3,0.74], dist:7, target:[5.4,1,-1]},
+    4:{dir:[0.5,0.35,0.79], dist:11, target:[1,1.4,0]},
+    5:{dir:[0.6,0.3,0.74], dist:7, target:[5.4,1.2,-1]},
+    6:{dir:[0.45,0.4,0.79], dist:12, target:[0,1.5,0]},
+    7:{dir:[0.5,0.4,0.77], dist:13, target:[2,2,-1]},
+  },
+  build({THREE, mat, span, pipe, group, label, add, fixed, plate, dim, flow, pulse}) {
+    const M = {
+      floor: mat('#d6d0c7',{roughness:1}), wall: mat('#e7e2da',{roughness:1}), glass: mat('#cbd5e1',{transparent:true,opacity:.25,depthWrite:false}),
+      mach: mat('#9ca3af',{metalness:.4}), cyl: mat('#dc2626',{metalness:.4,roughness:.35}), n2: mat('#111827',{metalness:.4,roughness:.35}), purge: mat('#4b5563',{metalness:.4}),
+      pipe: mat('#a16207',{metalness:.5,roughness:.4}), gauge: mat('#f8fafc'), red: mat('#c81e1e'), spk: mat('#facc15',{emissive:'#facc15',emissiveIntensity:1}),
+      powder: mat('#fde68a',{transparent:true,opacity:.6,depthWrite:false}), cloud: mat('#fef3c7',{transparent:true,opacity:.4,depthWrite:false}),
+      gas: mat('#a5b4fc',{emissive:'#6366f1',emissiveIntensity:.5}), lamp: mat('#ef4444',{emissive:'#ef4444',emissiveIntensity:1.2}),
+      fireM: mat('#f97316',{emissive:'#f97316',emissiveIntensity:1}), sun: mat('#fde047',{emissive:'#facc15',emissiveIntensity:1}),
+    };
+    const NE={edges:false, shadow:false}, H=3.2;
+    fixed(span(-4.2,-0.1,-2.6,7.4,0,2.6,M.floor));
+    fixed(span(-4.2,0,-2.6,7.4,H,-2.45,M.wall)); fixed(span(-4.35,0,-2.6,-4.2,H,2.6,M.wall));
+    fixed(span(3,0,-2.6,3.15,H,0.6,M.wall)); fixed(span(3,2.2,0.6,3.15,H,1.6,M.wall)); fixed(span(3,0,1.6,3.15,H,2.6,M.wall));
+    fixed(span(-4.2,H,-2.6,3.15,H+0.12,2.6,M.glass,NE));
+    [-3.2,-1.4].forEach(x=>fixed(span(x,0,-2.2,x+1.4,1.6,-1,M.mach)));
+    fixed(label('防護區域',-0.6,H+0.7,0,.9)); fixed(label('容器室',5.3,H+0.7,0,.8));
+    // 容器：乾粉儲存容器（紅）、加壓用氮氣（黑）、清洗用（灰）
+    const D=[5.0,-1.4];
+    fixed(group(pipe([D[0],0,D[1]],[D[0],1.9,D[1]],.45,M.cyl), pipe([D[0],1.9,D[1]],[D[0],2.15,D[1]],.12,M.pipe)));
+    [[6.3,-2],[6.85,-2],[6.3,-1.45]].forEach(([x,z])=>fixed(group(pipe([x,0,z],[x,1.5,z],.18,M.n2), pipe([x,1.5,z],[x,1.65,z],.05,M.pipe))));
+    fixed(group(pipe([6.85,0,-0.7],[6.85,1.2,-0.7],.15,M.purge)));
+    fixed(pipe([D[0],2.15,D[1]],[D[0],H-0.3,D[1]],.06,M.pipe)); fixed(pipe([D[0],H-0.3,D[1]],[-3,H-0.3,D[1]],.06,M.pipe));
+    const NZ=[-2.5,-0.5,1.5];
+    NZ.forEach(x=>fixed(group(pipe([x,H-0.3,D[1]],[x,H-0.3,0],.05,M.pipe), pipe([x,H-0.3,0],[x,H-0.5,0],.07,M.pipe))));
+
+    /* ① 藥劑量 */
+    add(1, label('第一種 0.6 kg/m³',-0.5,H+2.4,1,1.2),{until:1, drop:0, glow:false});
+    add(1, label('第二種・第三種 0.36 kg/m³',-0.5,H+1.6,1,1.7),{until:1, drop:0, glow:false, delay:.2});
+    add(1, label('第四種 0.24 kg/m³',-0.5,H+0.8,1,1.2),{until:1, drop:0, glow:false, delay:.4});
+    add(1, label('室內停車空間：限第三種乾粉',-0.5,1.2,1.6,1.8,'bad'),{until:1, drop:0, glow:false, delay:.6});
+
+    /* ② 儲存容器位置 */
+    add(2, label('置於防護區域外',D[0],2.9,D[1]+1.2,1.1,'good'),{until:2, drop:0, glow:false});
+    add(2, label('40°C 以下・不受日曬雨淋',D[0],2.2,D[1]+1.6,1.6),{until:2, drop:0, glow:false, delay:.2});
+    add(2, label('充填比 第三種 1.05～1.75',D[0]+0.5,0.9,D[1]+2.2,1.6),{until:2, drop:0, glow:false, delay:.4});
+
+    /* ③ 加壓用氣體 */
+    add(3, group(pipe([6.3,1.65,-2],[6.3,1.8,-1.4],.04,M.pipe), pipe([6.3,1.8,-1.4],[D[0]+0.4,1.8,D[1]],.04,M.pipe)), {drop:0});
+    add(3, label('加壓用氮氣：每 kg 乾粉 ≥ 40 L',6.5,2.8,-0.6,2.0,'good'),{until:3, drop:0, glow:false});
+    add(3, label('設於儲存容器近旁',6.5,0.9,-0.4,1.2),{until:3, drop:0, glow:false, delay:.3});
+
+    /* ④ 啟動・警報・遲延 */
+    add(4, pulse(span(-1,0,0.6,0,0.8,1.4,M.fireM,NE),3), {until:6, drop:0, glow:false});
+    add(4, group(span(3.15,0.9,1.8,3.3,1.45,2.25,M.red)), {drop:0});
+    const sp=new THREE.Mesh(new THREE.CylinderGeometry(.18,.18,.08,20),M.spk.clone()); sp.position.set(-1.5,H-0.1,1);
+    add(4, pulse(sp,3), {until:5, drop:0, glow:false});
+    add(4, label('警報響 → 撤離 → 遲延 ≥ 20 秒',0,H+1.2,1,2.0,'bad'),{until:4, drop:0, glow:false});
+    add(4, label('手動啟動：區域外 0.8～1.5 m',3.6,2.2,2.6,1.8),{until:4, drop:0, glow:false, delay:.3});
+
+    /* ⑤ 壓力調整・定壓動作 */
+    add(5, group(span(5.7,1.65,-1.9,5.95,1.95,-1.7,M.gauge)), {drop:0});
+    add(5, flow([[6.3,1.65,-2],[6.3,1.8,-1.4],[D[0]+0.4,1.8,D[1]],[D[0],1.2,D[1]]],M.gas,{n:10,r:.06,speed:1.5}), {until:5, drop:0, glow:false});
+    add(5, label('壓力調整 ≤ 25 kgf/cm²',6.6,2.7,-1.2,1.5,'good'),{until:5, drop:0, glow:false});
+    add(5, label('達設定壓力 → 定壓動作裝置開放出閥',D[0],3.6,D[1]+1,2.3),{until:5, drop:0, glow:false, delay:.3});
+
+    /* ⑥ 放射 */
+    add(6, flow([[D[0],2.15,D[1]],[D[0],H-0.3,D[1]],[-0.5,H-0.3,D[1]],[-0.5,H-0.5,0]],M.powder,{n:24,r:.09,speed:4}), {until:6, drop:0, glow:false});
+    NZ.forEach((x,i)=>{ const c=new THREE.Mesh(new THREE.ConeGeometry(1.5,H-0.5,24,1,true),M.cloud.clone()); c.position.set(x,(H-0.5)/2,0); add(6,c,{until:6,drop:0,glow:false,delay:.15*i}); });
+    add(6, label('放射壓力 ≥ 1 kgf/cm²',-0.5,H+1.6,1,1.4,'good'),{until:6, drop:0, glow:false});
+    add(6, label('30 秒內全部放射完畢',-0.5,H+0.8,1,1.4,'bad'),{until:6, drop:0, glow:false, delay:.3});
+
+    /* ⑦ 清洗配管 */
+    add(7, group(pipe([6.85,1.2,-0.7],[6.85,2.4,-0.7],.04,M.pipe), pipe([6.85,2.4,-0.7],[D[0],2.4,D[1]],.04,M.pipe)), {drop:0});
+    add(7, flow([[6.85,1.2,-0.7],[6.85,2.4,-0.7],[D[0],2.4,D[1]],[D[0],H-0.3,D[1]],[-3,H-0.3,D[1]]],M.gas,{n:20,r:.06,speed:3}), {until:7, drop:0, glow:false});
+    add(7, label('清洗用氣體另以容器儲存',6.85,2.2,0.2,1.6,'good'),{until:7, drop:0, glow:false});
+  },
+});
+</script>
+</body>
+</html>

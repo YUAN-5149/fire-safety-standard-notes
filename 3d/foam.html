@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>泡沫滅火設備（室內停車空間）｜3D 消防設備動畫</title>
+<meta name="description" content="§69～§81 泡沫滅火設備 3D 互動動畫：固定式與移動式、泡沫噴頭每 9 m² 一個・水平距離 2.1 m、放射區域 50～100 m²、原液濃度、放射量 6.5／8／3.7 L/min·m²、1 kgf/cm²、水源 20 分鐘、泡沫消防栓箱。">
+<link rel="icon" href="../icons/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<meta name="theme-color" content="#3b1e1a">
+<link rel="stylesheet" href="anim.css?v=2026111905">
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<script type="module">
+import { createAnim } from './engine.js?v=2026111905';
+
+createAnim({
+  title: '泡沫滅火設備（室內停車空間）',
+  page: '04a-%E6%B3%A1%E6%B2%AB%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html',
+  steps: [
+    {t:'油類火災：用泡沫蓋住液面', d:'室內停車空間的汽油火災，水會讓油浮起來擴散，所以用泡沫覆蓋液面、隔絕空氣並冷卻。系統是「水源＋泡沫原液 → 混合 → 泡沫噴頭」。', tip:'§69～§81。泡沫的配管、試壓、流水檢知、啟動、一齊開放閥準用水霧與撒水（§74）。'},
+    {t:'放射方式：固定式或移動式', d:'固定式依防護對象配置泡沫放出口；移動式則是水帶接頭至防護對象任一點的水平距離在 15 m 以下。', tip:'§69。§70：膨脹比 20 以下（低發泡）用泡沫噴頭或泡水噴頭；80～1,000（高發泡）用高發泡放出口。'},
+    {t:'泡沫噴頭：每 9 m² 一個、≤ 2.1 m', d:'室內停車空間、汽車修理廠使用泡沫噴頭，樓地板面積每 9 m² 設一個；放射區域內任一點至泡沫噴頭水平距離 2.1 m 以下。', tip:'§71：飛機庫用泡水噴頭，每 8 m² 一個；複層式停車設施要延伸配管對下層放射。'},
+    {t:'放射區域：50～100 m²', d:'使用泡沫噴頭時，每一放射區域的樓地板面積在 50 m² 以上 100 m² 以下，由一齊開放閥控制。', tip:'§75：泡水噴頭的放射區域占樓地板面積 1/3 以上且至少 200 m²。'},
+    {t:'原液混合：3%、6%……', d:'泡沫原液與水依比例混合成泡沫水溶液：蛋白質 3% 或 6%、合成界面活性 1% 或 3%、水成膜 3% 或 6%。', tip:'§79、§81：原液槽設液面計或計量棒，置於 40°C 以下、無日光曝曬處，並採防震措施；原液儲存量依水量與濃度比核算（§78）。'},
+    {t:'放射：每 m² 6.5／8／3.7 L/min', d:'泡沫噴頭每 m² 樓地板每分鐘放射量：蛋白質 6.5 L、合成界面活性 8 L、水成膜 3.7 L 以上；最末端放射區域全部噴頭放射壓力 1 kgf/cm² 以上。', tip:'§72、§77。泡水噴頭每個 75 L/min 以上。二區以上時幫浦出水量以最大一區的最低出水量加倍計算。'},
+    {t:'水源：最大一區放射 20 分鐘', d:'使用泡沫頭時，水源為依 §72 核算之最低放射量，在最大一個泡沫放射區域能繼續放射 20 分鐘以上。', tip:'§76。易錯：移動式泡沫是 15 分鐘，室外消防栓是 30 分鐘，其餘水系多為 20 分鐘。'},
+    {t:'移動式：泡沫消防栓箱', d:'水帶接頭 3 m 範圍內設泡沫消防栓箱，箱內有 20 m 以上水帶及泡沫瞄子，箱面 0.8 m² 以上，上方設紅色幫浦啟動表示燈。', tip:'§80：每支瞄子放射量 100 L/min 以上、放射壓力 3.5 kgf/cm² 以上；超過 2 箱以 2 支計；原液限低發泡。'},
+  ],
+  groundY: -0.01, minDist: 2, sun:[6,16,10],
+  views: {
+    def:{dir:[0.45,0.45,0.77], dist:20, target:[0,1.2,0]},
+    1:{dir:[0.45,0.4,0.8], dist:16, target:[0,1,0]},
+    2:{dir:[0.25,-0.25,0.93], dist:10, target:[-2,2.6,0]},
+    3:{dir:[0.1,0.9,0.42], dist:18, target:[0,1,0]},
+    4:{dir:[0.55,0.25,0.8], dist:8, target:[6.5,1.2,-2.5]},
+    5:{dir:[0.35,0.25,0.9], dist:11, target:[-2,1.4,0]},
+    6:{dir:[0.55,0.3,0.78], dist:10, target:[6,1,-2]},
+    7:{dir:[0.35,0.2,0.92], dist:7, target:[4,1.2,2]},
+  },
+  maxPolar:.62,
+  build({THREE, mat, span, pipe, group, label, add, fixed, plate, dim, flow, pulse}) {
+    const M = {
+      floor: mat('#a8a29e',{roughness:1}), wall: mat('#e7e2da',{roughness:1}), line: mat('#facc15'),
+      car: mat('#1d4ed8',{roughness:.35,metalness:.3}), car2: mat('#e5e7eb',{roughness:.35,metalness:.3}), glass: mat('#334155'),
+      pipe: mat('#dc2626',{metalness:.4,roughness:.4}), head: mat('#d4d4d8',{metalness:.8,roughness:.2}),
+      zone: mat('#86efac',{transparent:true,opacity:.35,depthWrite:false}), ring: mat('#16a34a',{transparent:true,opacity:.3,depthWrite:false}),
+      tank: mat('#f59e0b',{metalness:.3}), wtank: mat('#94a3b8',{metalness:.3}), water: mat('#60a5fa',{emissive:'#2563eb',emissiveIntensity:.5}),
+      conc: mat('#fbbf24',{emissive:'#f59e0b',emissiveIntensity:.6}), foamM: mat('#ffffff',{roughness:.9}), fireM: mat('#f97316',{emissive:'#f97316',emissiveIntensity:1}),
+      pump: mat('#b91c1c',{metalness:.5}), motor: mat('#475569',{metalness:.5}), box: mat('#dc2626',{roughness:.45}), lamp: mat('#ef4444',{emissive:'#ef4444',emissiveIntensity:1.2}),
+      spray: mat('#f8fafc',{transparent:true,opacity:.5,depthWrite:false}), hose: mat('#f5f5f4'),
+    };
+    const NE={edges:false, shadow:false}, H=3;
+    fixed(span(-8,-0.1,-4,8,0,4,M.floor));
+    fixed(span(-8,0,-4.15,8,H,-4,M.wall)); fixed(span(-8.15,0,-4,-8,H,4,M.wall));
+    [-6,-3,0].forEach(x=>fixed(span(x-0.05,0.001,-3.8,x+0.05,0.01,1,M.line,NE)));
+    const car=(x,m)=>group(span(x-1.0,0.3,-3.4,x+1.0,1.0,0.6,m), span(x-0.85,1.0,-2.6,x+0.85,1.5,-0.2,M.glass));
+    fixed(car(-4.5,M.car)); fixed(car(-1.5,M.car2));
+    // 泡沫噴頭格點 3 m × 3 m = 9 m²
+    const HX=[-6,-3,0], HZ=[-2.5,0.5];
+    fixed(pipe([4.5,H-0.15,-1],[-7,H-0.15,-1],.06,M.pipe));
+    HX.forEach(x=>{ fixed(pipe([x,H-0.15,-2.5],[x,H-0.15,0.5],.035,M.pipe)); HZ.forEach(z=>fixed(group(pipe([x,H-0.15,z],[x,H-0.4,z],.02,M.pipe), pipe([x,H-0.4,z],[x,H-0.5,z],.06,M.head)))); });
+    // 機房：水箱、原液槽、幫浦
+    fixed(group(span(5.2,0,-3.8,7.6,2.2,-2.2,M.wtank)));
+    fixed(label('水源',6.4,2.7,-3,.6));
+
+    /* ① 固定式／移動式 */
+    add(1, label('固定式：天花板配泡沫噴頭',-3,H+1.2,-1,1.8,'good'),{until:1, drop:0, glow:false});
+    add(1, label('移動式：水帶接頭至任一點 ≤ 15 m',3,H+1.2,2,2.1),{until:1, drop:0, glow:false, delay:.3});
+
+    /* ② 9 m²・2.1 m */
+    HX.forEach(x=>HZ.forEach(z=>{ const r=new THREE.Mesh(new THREE.CircleGeometry(2.1,40),M.ring.clone()); r.rotation.x=Math.PI/2; r.position.set(x,H-0.55,z); add(2,r,{until:2,drop:0,glow:false}); }));
+    add(2, dim([-3,H-0.6,-2.5],[0,H-0.6,-2.5],'3 m × 3 m = 9 m²',{w:1.2, off:[0,-.4,0]}),{until:2, drop:0, glow:false});
+    add(2, label('任一點至泡沫噴頭 ≤ 2.1 m',-3,H+0.8,1.5,1.7,'good'),{until:2, drop:0, glow:false, delay:.3});
+
+    /* ③ 放射區域 */
+    add(3, span(-7.5,0.02,-3.9,0.5,0.04,2.5,M.zone,NE),{until:3, drop:0, glow:false});
+    add(3, label('一個放射區域 50～100 m²',-3.5,2,-0.7,1.7,'good'),{until:3, drop:0, glow:false});
+    add(3, label('由一齊開放閥控制',-3.5,1.1,-0.7,1.3),{until:3, drop:0, glow:false, delay:.3});
+
+    /* ④ 原液與混合 */
+    add(4, group(span(5.4,0,-1.6,6.6,1.6,-0.6,M.tank), pipe([6,1.6,-1.1],[6,2.0,-1.1],.05,M.tank)), {drop:.3});
+    add(4, group(pipe([7.2,0.5,-1.6],[7.2,0.5,-0.4],.12,M.pump), pipe([7.2,0.5,-0.4],[7.2,0.5,0.3],.1,M.motor), pipe([6.4,1.2,-2.2],[4.5,1.2,-1],.06,M.pipe), pipe([4.5,1.2,-1],[4.5,H-0.15,-1],.06,M.pipe)), {drop:0, delay:.2});
+    add(4, label('泡沫原液槽',6,2.5,-0.6,.9),{until:4, drop:0, glow:false});
+    add(4, label('蛋白質 3/6%・合成界面 1/3%・水成膜 3/6%',6,3.5,-0.6,2.5,'good'),{until:4, drop:0, glow:false, delay:.3});
+    add(4, flow([[6.4,1.6,-3],[6.4,1.2,-2.2],[5.5,1.2,-1.6],[4.5,1.2,-1]],M.water,{n:10,r:.07,speed:1.5}),{until:4, drop:0, glow:false});
+    add(4, flow([[6,0.8,-1.1],[5.3,1.2,-1.3],[4.5,1.2,-1]],M.conc,{n:6,r:.07,speed:1.5}),{until:4, drop:0, glow:false});
+
+    /* ⑤ 放射 */
+    add(5, pulse(span(-5.2,0,0.6,-3.8,0.3,1.8,M.fireM,NE),3), {until:5, drop:0, glow:false});
+    HX.forEach((x,i)=>{ const c=new THREE.Mesh(new THREE.ConeGeometry(1.4,H-0.5,24,1,true),M.spray.clone()); c.position.set(x,(H-0.5)/2,0.5); add(5,c,{until:6,drop:0,glow:false,delay:i*.15}); });
+    add(5, span(-7.5,0.01,-0.8,1,0.25,1.8,M.foamM,NE), {until:6, drop:0, glow:false, delay:.6});
+    add(5, flow([[4.5,H-0.15,-1],[0,H-0.15,-1],[-3,H-0.15,-1],[-3,H-0.15,0.5]],M.conc,{n:16,r:.07,speed:3}),{until:6, drop:0, glow:false});
+    add(5, label('每 m² 每分鐘：6.5／8／3.7 L',-3,H+1.2,1.5,1.8,'good'),{until:5, drop:0, glow:false});
+    add(5, label('放射壓力 ≥ 1 kgf/cm²',-3,H+0.4,1.5,1.3),{until:5, drop:0, glow:false, delay:.3});
+
+    /* ⑥ 水源 */
+    add(6, label('最大一個放射區域 × 20 分鐘',6.4,3.6,-2,1.9,'good'),{until:6, drop:0, glow:false});
+    add(6, label('二區以上：幫浦出水量加倍',6.4,2.8,-2,1.7),{until:6, drop:0, glow:false, delay:.3});
+
+    /* ⑦ 移動式 */
+    const bx=group(span(3.4,0.5,3.85,4.4,1.5,4,M.box)); const pl=plate('移動式泡沫',0.8,0.2,{normal:'-z'}); pl.position.set(3.9,1.3,3.84); bx.add(pl);
+    const lp=new THREE.Mesh(new THREE.SphereGeometry(.07,12,10),M.lamp.clone()); lp.position.set(3.9,1.75,3.9); bx.add(pulse(lp,1));
+    add(7, bx, {drop:.3});
+    add(7, pipe([3.9,0.8,3.8],[0,0.1,2.2],.05,M.hose), {until:7, drop:0, delay:.2});
+    add(7, label('箱面 ≥ 0.8 m²・20 m 水帶・紅色啟動表示燈',3.9,2.4,3.4,2.4,'good'),{until:7, drop:0, glow:false});
+    add(7, label('瞄子 ≥ 100 L/min・≥ 3.5 kgf/cm²',1.5,1.4,2.4,1.9),{until:7, drop:0, glow:false, delay:.3});
+  },
+});
+</script>
+</body>
+</html>

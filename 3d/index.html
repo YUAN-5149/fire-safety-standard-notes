@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>3D 消防系統動畫｜消防設備學習</title>
-<meta name="description" content="各類場所消防安全設備設置標準 3D 互動動畫：滅火器、室內外消防栓、自動撒水、二氧化碳、火警自動警報、瓦斯漏氣、標示設備與緊急照明、避難器具、排煙設備、連結送水管。可旋轉縮放，逐步看系統怎麼動作，每一步附條文考點。">
+<meta name="description" content="各類場所消防安全設備設置標準 3D 互動動畫：滅火器、室內外消防栓、自動撒水、水霧、泡沫、二氧化碳、乾粉、鹵化烴、火警自動警報、瓦斯漏氣、緊急廣播、標示設備與緊急照明、避難器具、排煙、連結送水管、消防專用蓄水池、緊急電源插座與無線電、公共危險物品儲槽。可旋轉縮放，逐步看系統怎麼動作，每一步附條文考點。">
 <link rel="icon" href="../icons/favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
 <link rel="manifest" href="../site.webmanifest">
 <meta name="theme-color" content="#3b1e1a">
-<link rel="stylesheet" href="anim.css?v=2026111904">
+<link rel="stylesheet" href="anim.css?v=2026111905">
 <style>
 .intro{max-width:960px;margin:0 auto;padding:18px 16px 0}
 .intro h1{font-size:22px;margin:0 0 4px}
@@ -41,13 +41,14 @@
 <div class="intro">
   <h1>3D 消防系統動畫</h1>
   <p>把各類場所消防安全設備設置標準的系統做成可以轉角度的 3D 模型。「動作流程」一步步看水、煙、藥劑、訊號怎麼走；「設置重點」逐項標出位置與數字。每一步右側都有條號與考點，頂端可直接跳到對應的圖解頁。</p>
-  <div class="legend"><span><i style="background:var(--acc)"></i>動作流程 6 支</span><span><i style="background:#0d9488"></i>設置重點 5 支</span></div>
+  <div class="legend"><span><i style="background:var(--acc)"></i>動作流程 13 支</span><span><i style="background:#0d9488"></i>設置重點 6 支</span></div>
 </div>
 <nav class="nav"><div>
-  <a href="#ext">1. 滅火設備 <b>5</b></a>
-  <a href="#alarm">2. 警報設備 <b>2</b></a>
+  <a href="#ext">1. 滅火設備 <b>9</b></a>
+  <a href="#alarm">2. 警報設備 <b>3</b></a>
   <a href="#evac">3. 避難逃生設備 <b>2</b></a>
-  <a href="#rescue">4. 消防搶救上必要設備 <b>2</b></a>
+  <a href="#rescue">4. 消防搶救上必要設備 <b>4</b></a>
+  <a href="#haz">5. 公共危險物品場所 <b>1</b></a>
 </div></nav>
 
 <section class="cat" id="ext">
@@ -64,17 +65,27 @@
       <div class="steps">配置 2.1／2.3 m → 感熱動作 → 80 L・1 kgf → 流水檢知警報 → 幫浦 H + 10 → 水源 16 m³ → 送水口・末端查驗閥</div></a>
     <a class="item seq" href="co2.html"><div class="ic">🫧</div><h3>二氧化碳全區放射動作時序</h3><p>7 步驟・§82～§95</p>
       <div class="steps">二回路探測 → 區域外手動啟動 → 人語警報撤離 → 遲延 20 秒 → 放射 → 1 小時內排放 → 緊急電源 1 小時</div></a>
+    <a class="item seq" href="foam.html"><div class="ic">🫧</div><h3>泡沫滅火設備（室內停車空間）</h3><p>7 步驟・§69～§81</p>
+      <div class="steps">固定式／移動式 15 m → 每 9 m²・2.1 m → 放射區域 50～100 m² → 原液濃度 → 6.5／8／3.7 L・1 kgf → 20 分鐘 → 泡沫消防栓箱</div></a>
+    <a class="item seq" href="dry-powder.html"><div class="ic">🌫️</div><h3>乾粉滅火設備（加壓式全區放射）</h3><p>7 步驟・§98～§111</p>
+      <div class="steps">0.6／0.36／0.24 kg/m³ → 容器在區域外 40°C → 氮氣 40 L/kg → 警報遲延 20 秒 → 25 kgf 定壓開閥 → 30 秒放完 → 清洗配管</div></a>
+    <a class="item seq" href="halon.html"><div class="ic">💻</div><h3>鹵化烴滅火設備（海龍替代品）</h3><p>7 步驟・§97-1～§97-10</p>
+      <div class="steps">三種藥劑限全區 → 濃度上限 30／10.5／10% → W = (V/S)·C/(100−C) → 準用 CO₂ → 10 秒 95% → 充填比 → 完整性測試 85%</div></a>
+    <a class="item seq" href="water-mist.html"><div class="ic">💧</div><h3>水霧滅火設備</h3><p>7 步驟・§61～§68</p>
+      <div class="steps">半徑 2.1 m → 20／10 L/min·m² → 放射區域 50 m² → 一齊開放閥 → 1,200 L・2.7 kgf → 水源 20／40 m³ → 高壓電器離開距離</div></a>
   </div>
 </section>
 
 <section class="cat" id="alarm">
   <h2><span class="no">2</span>警報設備</h2>
-  <p class="cd">第三編第二章：火警自動警報、手動報警、瓦斯漏氣（§112～§145-1）。</p>
+  <p class="cd">第三編第二章：火警自動警報、瓦斯漏氣、緊急廣播（§112～§145-1）。</p>
   <div class="list">
     <a class="item seq" href="fire-alarm.html"><div class="ic">🔔</div><h3>火警自動警報設備</h3><p>7 步驟・§112～§132</p>
       <div class="steps">分區 600 m²・50 m → 探測器選型 150 m² → 煙到探測器 → 總機蓄積 60 秒 → 分區鳴動 → 發信機 1.2～1.5 m → 蓄電池 10 分</div></a>
     <a class="item notes" href="gas-leak.html"><div class="ic">🔥</div><h3>瓦斯漏氣檢知器：比重決定裝哪裡</h3><p>6 項・§140～§145</p>
       <div class="steps">天然氣上飄 → 8 m・天花板下 30 cm → 液化石油氣下沉 → 4 m・地板上 30 cm → 70 dB 警報 → 蓄電池 10 分</div></a>
+    <a class="item seq" href="emergency-pa.html"><div class="ic">📢</div><h3>緊急廣播設備</h3><p>7 步驟・§133～§139</p>
+      <div class="steps">L／M／S 92／87／84 dB → 依面積選級 → 10 m・樓梯 15 m → 廣播分區 → 啟動 50 m・0.8～1.5 m → 語音選樓層 → 蓄電池 10 分</div></a>
   </div>
 </section>
 
@@ -91,12 +102,25 @@
 
 <section class="cat" id="rescue">
   <h2><span class="no">4</span>消防搶救上必要設備</h2>
-  <p class="cd">第三編第四章：排煙、連結送水管（§180～§190）。</p>
+  <p class="cd">第三編第四章：連結送水管、消防專用蓄水池、排煙、緊急電源插座、無線電、防災監控（§180～§192-1）。</p>
   <div class="list">
     <a class="item seq" href="smoke-exhaust.html"><div class="ic">🌫️</div><h3>排煙設備（§188）</h3><p>7 步驟・§188</p>
       <div class="steps">500 m² 防煙區劃 → 防煙壁 50 cm → 排煙口 80 cm・30 m → 煙層攔住 → 手動開關 80～150 cm → 排煙機 120 m³/min → 緊急電源 30 分</div></a>
     <a class="item seq" href="standpipe.html"><div class="ic">🏢</div><h3>連結送水管：消防車把水送上高樓</h3><p>6 步驟・§180～§184</p>
       <div class="steps">送水口 → 立管 100 mm → 3 層以上出水口 50 m → 11 層以上水帶箱 → 60 m 以上中繼幫浦 → 送水設計壓力 + 60 m</div></a>
+    <a class="item seq" href="water-tank.html"><div class="ic">🛢️</div><h3>消防專用蓄水池</h3><p>7 步驟・§185～§187</p>
+      <div class="steps">7,500 m² → 20 m³ → 100 m → 消防車 2 m → 投入孔 60 cm → 採水口 100 mm → 地面下 4.5 m → 機械引水 H + 15</div></a>
+    <a class="item notes" href="outlet-radio.html"><div class="ic">🔌</div><h3>緊急電源插座・無線電通信輔助・防災監控</h3><p>6 項・§191～§192-1</p>
+      <div class="steps">樓梯間 5 m・50 m → 110 V 15 A・1～1.5 m → 專用回路 ≤ 10 個 → 洩波電纜 150 MHz → 接頭 0.8～1.5 m → 防災監控 2 小時</div></a>
+  </div>
+</section>
+
+<section class="cat" id="haz">
+  <h2><span class="no">5</span>公共危險物品場所（第四編）</h2>
+  <p class="cd">公危場所、加油站、加氣站、儲槽、爆竹煙火（§193～§239），數字全部加嚴。</p>
+  <div class="list">
+    <a class="item seq" href="haz-tank.html"><div class="ic">🏭</div><h3>公共危險物品場所：室外儲槽</h3><p>6 步驟・§193～§216</p>
+      <div class="steps">固定式泡沫放出口 → 補助泡沫消防栓 15 m・75 m → 連結送液口 N = Aq/C → 冷卻撒水 2 L/min·m² → 水源 4 小時 → 第四編 3.5 kgf・45 分</div></a>
   </div>
 </section>
 

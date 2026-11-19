@@ -65,7 +65,8 @@ export function createAnim(cfg) {
   const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 100);
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.enableDamping = true;
-  controls.minDistance = cfg.minDist ?? 2.5; controls.maxDistance = 22;   // 小物件（鉸鍊、磚）可拉更近
+  controls.minDistance = cfg.minDist ?? 2.5;
+  controls.maxDistance = Math.max(22, ...Object.values(cfg.views||{}).map(v=>v.dist*2.2));   // 大場景（儲槽、高樓）要能拉遠   // 小物件（鉸鍊、磚）可拉更近
   controls.maxPolarAngle = Math.PI * (cfg.maxPolar ?? 0.49);   // 天花板類要能從下往上看
   if (cfg.minPolar) controls.minPolarAngle = Math.PI * cfg.minPolar;
 
