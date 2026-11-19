@@ -306,8 +306,9 @@ function relLinks(rel){
 function topicLink(tp){
   if (!tp || !TOP[tp]) return '';
   var t = TOP[tp];
-  return t.page ? '<a class="tag tp" href="' + encodeURI(t.page) + '" target="_blank">' + esc(t.name) + ' ↗</a>'
-                : '<span class="tag tp">' + esc(t.name) + '</span>';
+  return (t.page ? '<a class="tag tp" href="' + encodeURI(t.page) + '" target="_blank">' + esc(t.name) + ' ↗</a>'
+                : '<span class="tag tp">' + esc(t.name) + '</span>') +
+    (t.anim ? '<a class="tag tp" href="3d/' + t.anim + '" target="_blank" title="3D 動畫">🧊 3D</a>' : '');
 }
 
 function openPaper(id){
@@ -430,5 +431,6 @@ function answer(el, pq, L, sess, record){
 }
 })();
 </script>
+<!-- sw --><script>if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));</script>
 </body>
 </html>

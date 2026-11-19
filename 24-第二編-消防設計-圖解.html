@@ -969,5 +969,6 @@
   window.addEventListener('hashchange',function(){ go(true); });
 })();
 </script>
+<!-- sw --><script>if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));</script>
 </body>
 </html>

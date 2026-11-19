@@ -62,6 +62,14 @@ FIRE = [
 ]
 
 
+# 主題 → 3D 動畫（3d/ 目錄）
+ANIM = {'ext': 'extinguisher.html', 'hyd': 'indoor-hydrant.html', 'pump': 'indoor-hydrant.html', 'spr': 'sprinkler.html',
+        'mist': 'water-mist.html', 'foam': 'foam.html', 'co2': 'co2.html', 'dry': 'dry-powder.html', 'halo': 'halon.html',
+        'fa': 'fire-alarm.html', 'gas': 'gas-leak.html', 'pa': 'emergency-pa.html', 'sign': 'evac-sign.html',
+        'elight': 'evac-sign.html', 'evac': 'descender.html', 'stand': 'standpipe.html', 'tank': 'water-tank.html',
+        'smoke': 'smoke-exhaust.html', 'outlet': 'outlet-radio.html', 'haz': 'haz-tank.html'}
+
+
 def topic_of(text, subject):
     pool = FIRE if '火災學' in subject else (LAW + EQUIP if '法規' in subject else EQUIP + LAW)
     best, score = None, 0
@@ -115,7 +123,7 @@ def main():
     arts = json.load(open(os.path.join(ROOT, 'tools', 'arts.json'), encoding='utf-8'))
     arts = [a for a in arts if a['body'].strip() not in ('（刪除）', '(刪除)')]
     idf, vecs = build_index(arts)
-    topics = {c: {'name': n, 'page': p} for c, n, _, p in EQUIP + LAW + FIRE}
+    topics = {c: dict({'name': n, 'page': p}, **({'anim': ANIM[c]} if c in ANIM else {})) for c, n, _, p in EQUIP + LAW + FIRE}
     out = []
     for p in papers:
         rec = {'id': p['id'], 'y': p['year'], 'cat': p['cat'], 'sub': p['subject'],

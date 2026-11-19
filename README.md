@@ -97,6 +97,8 @@ python tools/gen_search.py
 ```bash
 python tools/gen_icons.py    # 重畫圖示
 python tools/add_icons.py    # 把宣告補進新頁面
+python tools/add_3d_links.py # 圖解頁頂端的「🧊 3D 動畫」按鈕（新增 3D 動畫時改 MAP）
+python tools/gen_sw.py       # 重產離線快取 sw.js；每次改完網頁都要跑，版本號會自動更新
 ```
 
 詳見 [tools/README.md](tools/README.md)。

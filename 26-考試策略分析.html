@@ -138,7 +138,8 @@ function bars(m, opt){
   }).join('') + '</div>';
 }
 function tname(k){ return T[k] ? T[k].name : '未分類'; }
-function tlab(k){ var t = T[k]; return t && t.page ? '<a href="' + encodeURI(t.page) + '">' + esc(t.name) + '</a>' : esc(tname(k)); }
+function tlab(k){ var t = T[k]; return (t && t.page ? '<a href="' + encodeURI(t.page) + '">' + esc(t.name) + '</a>' : esc(tname(k))) +
+  (t && t.anim ? ' <a href="3d/' + t.anim + '" title="3D 動畫" style="text-decoration:none">🧊</a>' : ''); }
 
 function render(){
   var app = document.getElementById('app');
@@ -291,5 +292,6 @@ function kpi(v, l){ return '<div class="kpi"><div class="v">' + Number(v).toLoca
 function $(s){ return document.querySelector(s); }
 })();
 </script>
+<!-- sw --><script>if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));</script>
 </body>
 </html>

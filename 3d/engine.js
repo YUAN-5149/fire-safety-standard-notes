@@ -16,6 +16,8 @@ const CIRC = ['','①','②','③','④','⑤','⑥','⑦','⑧','⑨','⑩','�
  * }
  */
 export function createAnim(cfg) {
+  // 離線使用：註冊網站根目錄的 sw.js（由 tools/gen_sw.py 產生）
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register(new URL('../sw.js', import.meta.url)).catch(()=>{});
   const STEPS = cfg.steps;
   const LAST = STEPS.length - 1;
 
