@@ -107,6 +107,13 @@
   .exp .ans b{color:var(--accent3)}
   .exp .ans.ng b{color:var(--bad)}
   .exp .old{color:var(--warn);font-size:.8rem;margin-top:3px}
+  .xp{margin-top:7px;padding:9px 11px;border-radius:8px;background:var(--fill2);white-space:pre-wrap;font-size:.86rem;line-height:1.7}
+  .xp b.h{display:block;color:var(--accent2);margin-bottom:2px}
+  .xp .xr{margin-top:5px;font-size:.76rem;color:var(--muted)}
+  details.ex{margin-top:8px;border-top:1px dashed var(--line);padding-top:6px}
+  details.ex summary{cursor:pointer;color:var(--accent2);font-size:.86rem;font-weight:600}
+  .pp .xb{display:inline-block;margin-left:4px;font-size:.66rem;padding:0 6px;border-radius:99px;background:var(--fill3);color:var(--accent3);border:1px solid var(--accent3);vertical-align:1px}
+  .xbasis{font-size:.78rem;color:var(--muted);margin-top:4px}
   .mark{float:right;font-size:.75rem;padding:1px 8px;border-radius:99px;border:1px solid var(--line);color:var(--muted)}
   .mark.ng{border-color:var(--bad);color:var(--bad)}
   .mark.ok{border-color:var(--accent3);color:var(--accent3)}
@@ -190,7 +197,8 @@ fetch('exams/data/exam.json').then(function(r){ return r.json(); }).then(functio
 });
 
 function qid(p, q){ return p.id + '-' + q.no; }
-function okSet(q){ var a = (q.a2 || q.a || ''); return a.indexOf('#') >= 0 ? 'ABCD' : a.replace(/[ＡＢＣＤ]/g, function(c){ return 'ABCD'['ＡＢＣＤ'.indexOf(c)]; }); }
+function okSet(q){ if (q.ok) return q.ok; var a = (q.a2 || q.a || ''); return a.indexOf('#') >= 0 ? 'ABCD' : a.replace(/[ＡＢＣＤ]/g, function(c){ return 'ABCD'['ＡＢＣＤ'.indexOf(c)]; }); }
+function okText(q){ var o = okSet(q); return o === 'ABCD' ? '一律給分' : o.split('').join(' 或 '); }
 function wrongList(){
   var out = [];
   P.forEach(function(p){ p.mc.forEach(function(q){ var r = DB[qid(p,q)]; if (r && !r.ok) out.push([p,q]); }); });
@@ -256,7 +264,8 @@ function renderPanel(){
       ps.forEach(function(p){
         var done = 0, ok = 0; p.mc.forEach(function(q){ var r = DB[qid(p,q)]; if (r){ done++; if (r.ok) ok++; } });
         var pct = p.mc.length ? Math.round(done / p.mc.length * 100) : 0;
-        h += '<button class="pp" data-id="' + p.id + '"><b>' + esc(p.sub) + '</b>' +
+        var hasX = p.mc.some(function(q){ return q.x; });
+        h += '<button class="pp" data-id="' + p.id + '"><b>' + esc(p.sub) + (hasX ? '<span class="xb">詳解</span>' : '') + '</b>' +
           '<span class="m">申論 ' + p.es.length + (p.mc.length ? '・選擇 ' + p.mc.length : '') +
           (done ? '・答對 ' + ok + '/' + done : '') + '</span>' +
           (p.mc.length ? '<div class="bar"><i style="width:' + pct + '%"></i></div>' : '') + '</button>';
@@ -267,6 +276,7 @@ function renderPanel(){
     h = '<div class="row">' + catSel() + subSel(true) + '</div><div class="row">' + yearSel() + topicSel() +
       '<label>題數</label><input id="fn" type="number" min="5" max="100" value="' + state.n + '">' +
       '<label><input type="checkbox" id="fnew"> 只抽沒做過的</label>' +
+      '<label><input type="checkbox" id="fxp"> 只抽有詳解的</label>' +
       '<button class="btn go" id="go">開始抽題</button></div>' +
       '<div class="hint">申論題不列入隨機練習（請到「整份試卷」看）。火災學、設備科目的選擇題也可以抽。</div>';
   } else if (mode === 'search') {
@@ -318,13 +328,16 @@ function openPaper(id){
     (p.fig ? '・<b>本卷有附圖，請對照 PDF</b>' : '') + '</div><div class="links">' +
     Object.keys(SRC).filter(function(k){ return p.src[k]; }).map(function(k){
       return '<a href="' + esc(p.src[k]) + '" target="_blank" rel="noopener">' + SRC[k] + '</a>'; }).join('') + '</div>' +
-    (p.note ? '<div class="knote">⚠ 答案更正：' + esc(p.note) + '</div>' : '') + '</div>';
+    (p.note ? '<div class="knote">⚠ 答案更正：' + esc(p.note) + '</div>' : '') +
+    (p.xb ? '<div class="xbasis">📝 本卷附詳解：' + esc(p.xb) + '</div>' : '') + '</div>';
   if (p.es.length) {
     var tot = p.es.reduce(function(s,e){ return s + (e.pt || 0); }, 0);
     h += '<h3>甲、申論題' + (tot ? '（' + tot + ' 分）' : '') + '</h3>';
     p.es.forEach(function(e){
       h += '<div class="es"><div class="t"><b>' + esc(e.no) + '、</b>' + esc(e.t) + '</div><div class="tags">' +
-        topicLink(e.tp) + relLinks(e.rel) + '</div></div>';
+        topicLink(e.tp) + relLinks(e.rel) + '</div>' +
+        (e.x ? '<details class="ex"><summary>📝 擬答架構</summary><div class="xp">' + esc(e.x) +
+          (e.xr && e.xr.length ? '<div class="xr">引用：' + e.xr.map(esc).join('、') + '</div>' : '') + '</div></details>' : '') + '</div>';
     });
   }
   $('#out').innerHTML = h + '<div id="qs"></div>';
@@ -334,12 +347,13 @@ function openPaper(id){
 
 function drill(){
   var pool = [];
-  var onlyNew = $('#fnew').checked;
+  var onlyNew = $('#fnew').checked, onlyX = $('#fxp').checked;
   P.forEach(function(p){
     if (p.cat !== state.cat || (state.sub && p.sub !== state.sub) || (state.year && String(p.y) !== String(state.year))) return;
     p.mc.forEach(function(q){
       if (state.tp && q.tp !== state.tp) return;
       if (onlyNew && DB[qid(p,q)]) return;
+      if (onlyX && !q.x) return;
       pool.push([p,q]);
     });
   });
@@ -422,11 +436,13 @@ function answer(el, pq, L, sess, record){
   var a = q.a || '';
   var h = '<div class="ans' + (ok === false ? ' ng' : '') + '">' + (ok === null ? '' : ok ? '✔ 答對。' : '✘ 答錯。') +
     '官方答案：<b>' + (a === '#' ? '一律給分' : esc(a)) + '</b>' +
-    (q.a2 ? '　更正答案：<b>' + (q.a2 === '#' ? '一律給分' : esc(q.a2)) + '</b>' : '') + '</div>';
+    (q.a2 ? '　更正後給分：<b>' + (q.a2 === '#' ? okText(q) : esc(q.a2)) + '</b>' : '') + '</div>';
   if (p.note && new RegExp('第' + q.no + '題').test(p.note)) h += '<div class="old">考選部更正說明：' + esc(p.note) + '</div>';
+  if (q.x) h += '<div class="xp"><b class="h">📝 詳解</b>' + esc(q.x) +
+    (q.xr && q.xr.length ? '<div class="xr">引用：' + q.xr.map(esc).join('、') + '</div>' : '') + '</div>';
   var tags = topicLink(q.tp) + relLinks(q.rel);
   if (tags) h += '<div class="tags"><span class="hint">延伸閱讀：</span>' + tags + '</div>';
-  if (p.y <= 112 && q.rel && q.rel.length) h += '<div class="old">本題依 ' + p.y + ' 年當時法規命題；設置標準已於 113.4.24 修正，作答依據請以現行條文為準。</div>';
+  if (p.y <= 112 && q.rel && q.rel.length && !q.x) h += '<div class="old">本題依 ' + p.y + ' 年當時法規命題；設置標準已於 113.4.24 修正，作答依據請以現行條文為準。</div>';
   el.querySelector('.exp').innerHTML = h;
 }
 })();

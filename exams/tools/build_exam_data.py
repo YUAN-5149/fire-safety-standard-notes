@@ -70,6 +70,21 @@ ANIM = {'ext': 'extinguisher.html', 'hyd': 'indoor-hydrant.html', 'pump': 'indoo
         'smoke': 'smoke-exhaust.html', 'outlet': 'outlet-radio.html', 'haz': 'haz-tank.html'}
 
 
+def note_ok(note):
+    """解析考選部更正說明 → {題號: 可得分的選項}。「答Ｄ給分」只有 D；「一律給分」為全部。"""
+    out = {}
+    for m in re.finditer(r'第(\d+)題(.*?)(?=第\d+題|$)', note or ''):
+        seg = m.group(2)
+        if '一律給分' in seg or '其餘均給分' in seg:
+            out[int(m.group(1))] = 'ABCD'
+        else:
+            seg = seg.translate(str.maketrans('ＡＢＣＤ', 'ABCD'))
+            ls = sorted(set(re.findall(r'[ABCD]', seg)))
+            if ls:
+                out[int(m.group(1))] = ''.join(ls)
+    return out
+
+
 def topic_of(text, subject):
     pool = FIRE if '火災學' in subject else (LAW + EQUIP if '法規' in subject else EQUIP + LAW)
     best, score = None, 0
@@ -123,6 +138,14 @@ def main():
     arts = json.load(open(os.path.join(ROOT, 'tools', 'arts.json'), encoding='utf-8'))
     arts = [a for a in arts if a['body'].strip() not in ('（刪除）', '(刪除)')]
     idf, vecs = build_index(arts)
+    # 詳解（exams/data/explain/<試卷 id>.json，人工撰寫）
+    XP = {}
+    xd = os.path.join(EX, 'data', 'explain')
+    if os.path.isdir(xd):
+        for f in os.listdir(xd):
+            if f.endswith('.json'):
+                d = json.load(open(os.path.join(xd, f), encoding='utf-8'))
+                XP[d['paper']] = d
     topics = {c: dict({'name': n, 'page': p}, **({'anim': ANIM[c]} if c in ANIM else {})) for c, n, _, p in EQUIP + LAW + FIRE}
     out = []
     for p in papers:
@@ -130,10 +153,16 @@ def main():
                'calc': p['header'].get('calculator', False), 'time': p['header'].get('time', ''),
                'note': p['key_note'], 'src': p['sources'], 'fig': p['figures'], 'es': [], 'mc': []}
         fire = '火災學' in p['subject']
+        xp = XP.get(p['id'], {})
+        if xp:
+            rec['xb'] = xp.get('basis', '')
         for e in p['essays']:
             t = e['text']
-            rec['es'].append({'no': e['no'], 't': t, 'pt': e['points'], 'tp': topic_of(t, p['subject']),
-                              'rel': [] if fire else related(t, arts, idf, vecs)})
+            er = {'no': e['no'], 't': t, 'pt': e['points'], 'tp': topic_of(t, p['subject']),
+                  'rel': [] if fire else related(t, arts, idf, vecs)}
+            if e['no'] in xp.get('es', {}):
+                er['x'] = xp['es'][e['no']]['x']; er['xr'] = xp['es'][e['no']].get('ref', [])
+            rec['es'].append(er)
         for q in p['mcq']:
             t = q['stem'] + ' ' + ' '.join(q['options'].values())
             r = {'no': q['no'], 's': q['stem'], 'o': [q['options'].get(k, '') for k in 'ABCD'],
@@ -141,6 +170,11 @@ def main():
                  'rel': [] if fire else related(t, arts, idf, vecs)}
             if q.get('answer_corrected'):
                 r['a2'] = q['answer_corrected']
+            ok = note_ok(p['key_note']).get(q['no'])
+            if ok:
+                r['ok'] = ok
+            if str(q['no']) in xp.get('mc', {}):
+                r['x'] = xp['mc'][str(q['no'])]['x']; r['xr'] = xp['mc'][str(q['no'])].get('ref', [])
             rec['mc'].append(r)
         out.append(rec)
     data = {'topics': topics, 'papers': out,
@@ -151,6 +185,8 @@ def main():
     nr = sum(1 for p in out for q in p['mc'] if q['rel'])
     print('exam.json：%d 份試卷，選擇題 %d 題（有相關條文 %d），未分類 %d' %
           (len(out), sum(len(p['mc']) for p in out), nr, tc[None]))
+    print('詳解：選擇題 %d 題、申論題 %d 題（%d 份試卷）' % (sum(1 for p in out for q in p['mc'] if 'x' in q),
+          sum(1 for p in out for q in p['es'] if 'x' in q), len(XP)))
     for c, n in tc.most_common():
         print(' ', topics.get(c, {}).get('name', c), n)
 
