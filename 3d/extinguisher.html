@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>滅火器設置規定｜3D 消防設備動畫</title>
+<meta name="description" content="§31 滅火器 3D 互動動畫：滅火效能值核算（100／200／25 m²）、步行距離 20 m、上端高度 1.5 m／1 m、紅底白字標識每字 20 cm²、電氣設備處所另設。">
+<link rel="icon" href="../icons/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<meta name="theme-color" content="#3b1e1a">
+<link rel="stylesheet" href="anim.css?v=2026111902">
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<script type="module">
+import { createAnim } from './engine.js?v=2026111902';
+
+createAnim({
+  title: '滅火器設置規定',
+  page: '15-%E6%BB%85%E7%81%AB%E5%99%A8%E8%88%87%E5%AE%A4%E5%85%A7%E5%A4%96%E6%B6%88%E9%98%B2%E6%A0%93-%E5%9C%96%E8%A7%A3.html',
+  kind: 'notes',
+  steps: [
+    {t:'一個樓層要放幾具、放哪裡', d:'滅火器的規定只有四件事：要幾個滅火效能值、放多遠、掛多高、怎麼標示。', tip:'§31。滅火器是全法最基本的滅火設備，學科幾乎每年都考數字。'},
+    {t:'滅火效能值：依用途每 100／200 m²', d:'甲類、戊類每 100 m²（含未滿）要有 1 個滅火效能值；乙、丙、丁類每 200 m²。', tip:'§31：甲、戊 100 m²；乙、丙、丁 200 m²。這一層 20 m × 10 m = 200 m²，若為甲類需 2 個效能值。'},
+    {t:'廚房、鍋爐房：每 25 m² 加算', d:'鍋爐房、廚房等大量使用火源之處所，以每 25 m²（含未滿）有 1 個滅火效能值計。', tip:'§31：大量使用火源處所 25 m²。'},
+    {t:'電氣設備處所：每 100 m² 另設一具', d:'電影片映演場所放映室及電氣設備使用之處所，每 100 m²（含未滿）另設一滅火器。', tip:'§31：注意是「另設一滅火器」，不是加算效能值。'},
+    {t:'步行距離 ≤ 20 m', d:'自樓面居室任一點至滅火器的步行距離在 20 m 以下。', tip:'§31：是「步行距離」不是直線距離——隔間牆擋住就要繞路量。'},
+    {t:'上端高度：< 18 kg ≤ 1.5 m；≥ 18 kg ≤ 1 m', d:'滅火器上端與樓地板面之距離，18 公斤以上者在 1 公尺以下，未滿 18 公斤者在 1.5 公尺以下。', tip:'§31。記法：越重掛越低，才搬得動。'},
+    {t:'標識：紅底白字，每字 ≥ 20 cm²', d:'設置點明顯處標示「滅火器」字樣，紅底白字，每字 20 cm² 以上。', tip:'§31。與室內消防栓箱併設於箱內並於箱面標明者，標識顏色不在此限。'},
+  ],
+  groundY: -0.01, minDist: 2, sun: [6, 12, 8],
+  views: {
+    def:{dir:[0.35,0.75,0.6], dist:24, target:[0,0,0]},
+    2:{dir:[0.45,0.7,0.55], dist:16, target:[-6,0,-2]},
+    3:{dir:[0.45,0.7,0.55], dist:16, target:[6,0,-2]},
+    4:{dir:[0.1,0.95,0.3], dist:26, target:[0,0,0]},
+    5:{dir:[0.2,0.25,0.95], dist:6, target:[2.5,0.8,-4.6]},
+    6:{dir:[0.15,0.15,0.98], dist:4.5, target:[2.5,1.6,-4.9]},
+  },
+  build({THREE, mat, span, pipe, group, label, add, fixed, plate, dim, flow}) {
+    const M = {
+      floor: mat('#e7e2da',{roughness:1}), wall: mat('#cfc8bd',{roughness:1}), part: mat('#b9b0a2',{roughness:1}),
+      red: mat('#c81e1e',{roughness:.4, metalness:.2}), black: mat('#1f2937'), zoneA: mat('#fca5a5',{transparent:true,opacity:.35,depthWrite:false}),
+      zoneK: mat('#fdba74',{transparent:true,opacity:.55,depthWrite:false}), zoneE: mat('#93c5fd',{transparent:true,opacity:.5,depthWrite:false}),
+      path: mat('#16a34a',{emissive:'#16a34a', emissiveIntensity:.6}), stove: mat('#6b7280'), panel: mat('#9ca3af',{metalness:.4}),
+    };
+    const NE={edges:false, shadow:false};
+    // 樓層 20 m × 10 m
+    fixed(span(-10,-0.1,-5,10,0,5,M.floor));
+    fixed(span(-10,0,-5.15,10,3,-5,M.wall)); fixed(span(-10.15,0,-5,-10,3,5,M.wall));
+    fixed(span(-2,0,-5,-1.85,3,1,M.part));           // 隔間牆
+    fixed(span(4,0,-1,10,3,-0.85,M.part));
+    const ext=(x,y,z,h=0.55)=>group(pipe([x,y,z],[x,y+h,z],.09,M.red), pipe([x,y+h,z],[x,y+h+.08,z],.04,M.black), pipe([x+.05,y+h+.05,z],[x+.2,y+h-.1,z+.05],.015,M.black));
+
+    /* ① 效能值 */
+    add(1, span(-10,0.01,-5,10,0.02,5,M.zoneA,NE), {until:1, drop:0, glow:false});
+    add(1, label('20 m × 10 m = 200 m²',0,1.5,0,1.5), {until:1, drop:0, glow:false});
+    add(1, label('甲類：每 100 m² → 2 個效能值',-4,1.5,2,1.5,'good'), {until:1, drop:0, glow:false, delay:.3});
+    add(1, label('乙丙丁類：每 200 m² → 1 個',4,1.5,2,1.5), {until:1, drop:0, glow:false, delay:.5});
+    /* ② 廚房 */
+    add(2, span(-10,0.02,-5,-5,0.03,0,M.zoneK,NE), {until:2, drop:0, glow:false});
+    add(2, group(span(-9.5,0,-4.9,-6,0.9,-4.2,M.stove), span(-9.3,0.9,-4.8,-8.6,0.95,-4.3,M.black)), {drop:0});
+    add(2, label('廚房 25 m² → 每 25 m² 1 個效能值',-7.5,2.4,-2.5,1.5,'bad'), {until:2, drop:0, glow:false});
+    /* ③ 電氣設備處所 */
+    add(3, span(4,0.02,-5,10,0.03,-1,M.zoneE,NE), {until:3, drop:0, glow:false});
+    add(3, group(span(5,0,-4.8,6.2,2,-4.2,M.panel), span(6.6,0,-4.8,7.8,2,-4.2,M.panel)), {drop:0});
+    add(3, label('電氣室 24 m²：每 100 m² 另設 1 具',7,3.2,-3,1.5,'bad'), {until:3, drop:0, glow:false});
+    add(3, ext(8.8,0.1,-1.3), {drop:.5});
+    /* ④ 步行距離（繞過隔間牆） */
+    const P=[[-9,0.15,4],[-5,0.15,4],[-1,0.15,2.2],[1.5,0.15,-2],[2.5,0.15,-4.5]];
+    add(4, group(...P.slice(1).map((p,i)=>pipe(P[i],p,.06,M.path))), {until:4, drop:0, glow:false});
+    add(4, flow(P,M.path,{n:10,r:.13,speed:2.5}), {until:4, drop:0, glow:false});
+    add(4, label('居室任一點 → 滅火器 步行距離 ≤ 20 m',-3,2.5,3,1.5,'good'), {until:4, drop:0, glow:false});
+    add(4, label('隔間牆擋住要繞路量',-1.9,3.6,-1,1.5,'bad'), {until:4, drop:0, glow:false, delay:.3});
+    /* 主角：兩具滅火器（一直留著） */
+    add(4, ext(2.5,1.0,-4.85), {drop:.4});
+    add(4, ext(3.6,0.35,-4.85,0.55), {drop:.4});
+    /* ⑤ 高度 */
+    add(5, dim([2.1,0,-4.7],[2.1,1.63,-4.7],'< 18 kg：上端 ≤ 1.5 m',{w:1.5, off:[-.6,0,0]}), {until:5, drop:0, glow:false});
+    add(5, dim([4.0,0,-4.7],[4.0,0.98,-4.7],'≥ 18 kg：上端 ≤ 1 m',{w:1.4, off:[.7,0,0]}), {until:5, drop:0, glow:false, delay:.3});
+    add(5, label('越重掛越低',3,2.3,-4.6,0.83,'good'), {until:5, drop:0, glow:false, delay:.5});
+    /* ⑥ 標識 */
+    const sg=plate('滅火器',0.75,0.27,{normal:'z'}); sg.position.set(2.5,2.15,-4.98);
+    add(6, sg, {drop:0});
+    add(6, label('紅底白字・每字 ≥ 20 cm²',2.5,2.6,-4.6,1.2,'good'), {until:6, drop:0, glow:false});
+  },
+});
+</script>
+</body>
+</html>

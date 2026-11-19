@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>避難器具：緩降機的開口與配置｜3D 消防設備動畫</title>
+<meta name="description" content="§157～§162 避難器具 3D 互動動畫：收容人員與應設數量、緩降機開口部高 80 cm 寬 50 cm 或高 100 cm 寬 45 cm、上下層開口交錯不得在同一垂直線、易於接近處、緩降過程。">
+<link rel="icon" href="../icons/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<meta name="theme-color" content="#3b1e1a">
+<link rel="stylesheet" href="anim.css?v=2026111902">
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<script type="module">
+import { createAnim } from './engine.js?v=2026111902';
+
+createAnim({
+  title: '避難器具：緩降機的開口與配置',
+  page: '20-%E9%81%BF%E9%9B%A3%E5%99%A8%E5%85%B7%E8%88%87%E6%94%B6%E5%AE%B9%E4%BA%BA%E5%93%A1-%E5%9C%96%E8%A7%A3.html',
+  steps: [
+    {t:'樓梯不能用時的最後出口', d:'避難器具是樓梯被火煙封住時，從窗戶等開口部逃到地面的設備：緩降機、避難梯、救助袋、滑臺、避難橋等。', tip:'§157～§174。判斷順序：先算收容人員（§160）→ 查 §157 表定數量 → 依樓層選種類。'},
+    {t:'應設數量：依收容人員', d:'例如旅館（甲三目）2 層以上，收容人員 30 人以上 100 人以下設 1 具，每增加 100 人增設 1 具。', tip:'§157 第 2 項次：甲三目、乙七目 30 人；甲六目、乙十二目（幼兒園）20 人；直通樓梯僅一座之 3 層以上 10 人。'},
+    {t:'開口部：高 80 cm × 寬 50 cm 以上', d:'緩降機、避難梯、避難繩索、滑杆的開口部，高 80 cm 以上且寬 50 cm 以上，或高 100 cm 以上且寬 45 cm 以上。', tip:'§162：救助袋 60 × 60 cm；滑臺高 80 cm、寬為滑臺最大寬度；避難橋高 180 cm。'},
+    {t:'上下層開口交錯，不得在同一垂直線', d:'設置避難器具的開口部，上下層應交錯配置，不得在同一垂直線上，避免上層的人降到下層正在使用的開口。', tip:'§161⑤：滑杆、避難繩索及避難橋除外；避難上無障礙者不在此限。'},
+    {t:'設在避難時易於接近處', d:'避難器具設在避難時易於接近處，與安全梯等避難逃生設施保持適當距離，平時裝設於開口部或必要時能迅即裝設。', tip:'§161①～④：與安全梯保持距離，才不會兩條路被同一處火煙封住。'},
+    {t:'使用：套上安全帶，等速下降', d:'把緩降機掛上支固器具，安全帶套在腋下，面向牆壁，調速器讓人以一定速度降到地面，另一端的安全帶同時升上來給下一個人用。', tip:'緩降機是往復式：兩端各一條安全帶，一上一下輪流使用。'},
+  ],
+  groundY: -0.01, minDist: 2, sun:[8,16,12],
+  views: {
+    def:{dir:[0.45,0.3,0.84], dist:22, target:[0,5,0]},
+    1:{dir:[0.45,0.3,0.84], dist:22, target:[0,5,0]},
+    2:{dir:[0.2,0.1,0.97], dist:5, target:[-2,7.8,3]},
+    3:{dir:[0.3,0.12,0.95], dist:26, target:[0,8.5,3]},
+    4:{dir:[0.2,0.85,0.48], dist:18, target:[0,7,0]},
+    5:{dir:[0.6,0.2,0.77], dist:14, target:[-2,4,3]},
+  },
+  build({THREE, mat, span, pipe, group, label, add, fixed, plate, dim, flow, pulse}) {
+    const M = {
+      grass: mat('#bbd3a5',{roughness:1}), wall: mat('#e7e2da',{roughness:1}), slab: mat('#d6d0c7'), win: mat('#94a3b8',{transparent:true,opacity:.5}),
+      open: mat('#16a34a',{emissive:'#16a34a',emissiveIntensity:.5}), bad: mat('#dc2626',{emissive:'#dc2626',emissiveIntensity:.5}),
+      arm: mat('#374151',{metalness:.6}), rope: mat('#f59e0b'), person: mat('#2563eb'), stair: mat('#a8a29e'),
+      line: mat('#dc2626',{transparent:true,opacity:.6}), smoke: mat('#6b7280',{transparent:true,opacity:.35,depthWrite:false}),
+    };
+    const NE={edges:false, shadow:false}, FH=3.2, NF=4;
+    fixed(span(-12,-0.1,-6,12,0,12,M.grass,{edges:false}));
+    for(let f=0;f<=NF;f++) fixed(span(-8,f*FH-0.2,-5,8,f*FH,3,M.slab));
+    fixed(span(-8,0,-5,8,NF*FH,-4.85,M.wall));
+    // 立面（z = 3）用分段牆表現開口
+    for(let f=0;f<NF;f++){ const y=f*FH; fixed(span(-8,y,2.85,8,y+0.9,3,M.wall)); fixed(span(-8,y+2.2,2.85,8,y+FH-0.2,3,M.wall)); }
+    for(let f=0;f<NF;f++) fixed(label(`${f+1}F`,-8.8,f*FH+1.5,3,.6));
+    // 樓梯（離開口有段距離）
+    fixed(span(5,0,-4.8,7.8,NF*FH,-2,M.stair));
+    fixed(label('安全梯',6.4,NF*FH+0.8,-3.4,.8));
+
+    /* ① 應設數量 */
+    add(1, label('旅館 2 層以上：收容 30～100 人 → 1 具',0,NF*FH+2.2,3,2.6,'good'),{until:1, drop:0, glow:false});
+    add(1, label('每增加 100 人 → 增設 1 具',0,NF*FH+1.2,3,1.8),{until:1, drop:0, glow:false, delay:.3});
+
+    /* ② 開口部尺寸（3F 開口） */
+    const y3=2*FH;
+    add(2, span(-2.25,y3+0.9,2.98,-1.75,y3+1.7,3.02,M.open,NE), {until:2, drop:0, glow:false});
+    add(2, dim([-2.25,y3+0.85,3.05],[-1.75,y3+0.85,3.05],'寬 ≥ 50 cm',{w:.8, off:[0,-.25,0]}), {until:2, drop:0, glow:false});
+    add(2, dim([-1.65,y3+0.9,3.05],[-1.65,y3+1.7,3.05],'高 ≥ 80 cm',{w:.8, off:[.55,0,0]}), {until:2, drop:0, glow:false, delay:.2});
+    add(2, label('或 高 ≥ 100 cm × 寬 ≥ 45 cm',-2,y3+2.4,3.2,1.6),{until:2, drop:0, glow:false, delay:.4});
+
+    /* ③ 交錯配置 */
+    const opening=(x,f,m)=>span(x-0.3,f*FH+0.9,2.95,x+0.3,f*FH+1.9,3.05,m,NE);
+    add(3, group(opening(2.5,1,M.open), opening(-2,2,M.open), opening(2.5,3,M.open)), {until:3, drop:0, glow:false});
+    add(3, opening(-2,3,M.bad), {until:3, drop:0, glow:false, delay:.3});
+    add(3, pipe([-2,FH*2+0.9,3.2],[-2,FH*3+1.9,3.2],.03,M.line), {until:3, drop:0, glow:false, delay:.3});
+    add(3, label('4F 開在 3F 正上方：✗',-2,FH*4+0.9,3.6,1.5,'bad'),{until:3, drop:0, glow:false, delay:.3});
+    add(3, label('2F・3F・4F 左右交錯：✓',2.5,FH*4+1.9,3.6,1.6,'good'),{until:3, drop:0, glow:false, delay:.5});
+    add(3, label('滑杆、避難繩索、避難橋除外',0,FH*4+2.9,3.6,1.8),{until:3, drop:0, glow:false, delay:.7});
+
+    /* ④ 易於接近、遠離安全梯 */
+    add(4, dim([-2,FH*2+0.3,2.5],[5,FH*2+0.3,-2],'與安全梯保持適當距離',{w:1.6, off:[0,.8,0]}), {until:4, drop:0, glow:false});
+    add(4, label('設在避難時易於接近處',-2,FH*2+2.4,1.5,1.4,'good'),{until:4, drop:0, glow:false, delay:.3});
+
+    /* ⑤ 緩降 */
+    const x0=-2, top=FH*2+1.9;
+    add(5, group(pipe([x0,top,2.6],[x0,top,3.6],.05,M.arm), pipe([x0,top,3.6],[x0,top-0.3,3.6],.03,M.arm)), {drop:0});
+    add(5, group(pipe([x0,top-0.3,3.6],[x0,0.1,3.6],.012,M.rope)), {drop:0, delay:.2});
+    const man=group(pipe([0,0,0],[0,1.1,0],.16,M.person)); const hd=new THREE.Mesh(new THREE.SphereGeometry(.14,12,10),M.person.clone()); hd.position.y=1.3; man.add(hd);
+    const fg=flow([[x0,top-1.6,3.75],[x0,0.1,3.75]],M.person,{n:1,r:.01,speed:1.2});
+    fg.children[0].add(man); man.position.set(0,0,0);
+    add(5, fg, {until:5, drop:0, glow:false, delay:.4});
+    add(5, label('面向牆壁・等速下降',x0+2.6,FH+1.5,3.8,1.4,'good'),{until:5, drop:0, glow:false});
+    add(5, label('另一端安全帶同時升上去給下一個人',x0+2.6,FH*2+2.6,3.8,2.2),{until:5, drop:0, glow:false, delay:.3});
+  },
+});
+</script>
+</body>
+</html>

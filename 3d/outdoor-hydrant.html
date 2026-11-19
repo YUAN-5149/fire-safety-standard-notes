@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>室外消防栓設置規定｜3D 消防設備動畫</title>
+<meta name="description" content="§39～§42 室外消防栓 3D 互動動畫：與建築物一樓外牆水平距離 40 m、口徑 63 mm、開關 0.6～1.5 m、水帶箱 5 m 內 0.8 m²、20 m 水帶 2 條、3 m 淨空、2.5 kgf/cm²・350 L/min、水源 2 具 × 30 分 = 21 m³。">
+<link rel="icon" href="../icons/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<meta name="theme-color" content="#3b1e1a">
+<link rel="stylesheet" href="anim.css?v=2026111902">
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<script type="module">
+import { createAnim } from './engine.js?v=2026111902';
+
+createAnim({
+  title: '室外消防栓設置規定',
+  page: '15-%E6%BB%85%E7%81%AB%E5%99%A8%E8%88%87%E5%AE%A4%E5%85%A7%E5%A4%96%E6%B6%88%E9%98%B2%E6%A0%93-%E5%9C%96%E8%A7%A3.html',
+  kind: 'notes',
+  steps: [
+    {t:'保護建築物的一樓外牆', d:'室外消防栓設在建築物外，用來撲滅一、二樓火災並防止延燒，要求的水量、壓力都比室內消防栓大。', tip:'§39～§42。配管、試壓、緊急電源準用室內消防栓 §32、§33、§38。'},
+    {t:'與一樓外牆水平距離 ≤ 40 m', d:'建築物一樓外牆各部分至室外消防栓的水平距離在 40 m 以下。', tip:'§40。室內消防栓是任一點至接頭 25 m；室外是「一樓外牆各部分」40 m。'},
+    {t:'口徑 63 mm・開關 0.6～1.5 m', d:'室外消防栓口徑 63 mm 以上；開關位置不得高於地面 1.5 m，不得低於地面 0.6 m。', tip:'§40。設於地面下者，水帶接頭位置不得低於地面 0.3 m。'},
+    {t:'水帶箱：5 m 內・箱面 ≥ 0.8 m²', d:'水帶箱設於室外消防栓 5 m 範圍內，箱面表面積 0.8 m² 以上，箱底二側設排水孔。', tip:'§40。箱內：63 mm × 20 m 水帶 2 條、19 mm 以上直線噴霧兩用瞄子 1 具、消防栓閥型開關 1 把。記「室內 0.7、其餘 0.8」。'},
+    {t:'3 m 以內保持空曠', d:'室外消防栓 3 m 以內保持空曠，不得堆放物品或種植花木。', tip:'§40。'},
+    {t:'放水：≥ 2.5 kgf/cm²・≥ 350 L/min', d:'瞄子出水壓力 2.5 kgf/cm² 以上，出水量 350 L/min 以上。', tip:'§40、§42：幫浦全揚程 H = h₁ + h₂ + h₃ + 25 m；每支出水量 400 L/min，以 2 支計。超過 6 kgf/cm² 應減壓。'},
+    {t:'水源：2 具 × 350 L/min × 30 分 = 21 m³', d:'水源容量為 2 具室外消防栓同時放水 30 分鐘的水量。', tip:'§41。易錯：室外是 30 分鐘，室內消防栓是 20 分鐘。'},
+  ],
+  groundY: -0.01, minDist: 2, sun:[10,20,12],
+  views: {
+    def:{dir:[0.45,0.6,0.66], dist:46, target:[0,0,4]},
+    1:{dir:[0.05,0.97,0.25], dist:62, target:[0,0,6]},
+    2:{dir:[0.45,0.2,0.87], dist:5, target:[6,0.9,14]},
+    3:{dir:[0.55,0.3,0.78], dist:10, target:[7,0.8,14]},
+    4:{dir:[0.4,0.6,0.7], dist:14, target:[6,0,14]},
+    5:{dir:[0.35,0.4,0.87], dist:20, target:[3,1,10]},
+  },
+  build({THREE, mat, span, pipe, group, label, add, fixed, plate, dim, flow, pulse}) {
+    const M = {
+      grass: mat('#bbd3a5',{roughness:1}), bld: mat('#e7e2da',{roughness:1}), roof: mat('#a8a29e'), win: mat('#94a3b8'),
+      hyd: mat('#dc2626',{metalness:.3,roughness:.4}), cap: mat('#ca8a04',{metalness:.7,roughness:.3}), box: mat('#dc2626',{roughness:.45}),
+      ring: mat('#16a34a',{transparent:true,opacity:.18,depthWrite:false}), clear: mat('#fde68a',{transparent:true,opacity:.5,depthWrite:false}),
+      hose: mat('#f5f5f4'), flowM: mat('#60a5fa',{emissive:'#2563eb',emissiveIntensity:.6}), fireM: mat('#f97316',{emissive:'#f97316',emissiveIntensity:1}),
+      water: mat('#3b82f6',{transparent:true,opacity:.55,depthWrite:false}), conc: mat('#a8a29e',{roughness:1}),
+    };
+    const NE={edges:false, shadow:false};
+    fixed(span(-40,-0.1,-40,40,0,50,M.grass,{edges:false}));
+    // 建築物 30 × 16 m、兩層
+    fixed(span(-15,0,-8,15,7,8,M.bld)); fixed(span(-15.2,7,-8.2,15.2,7.3,8.2,M.roof));
+    for(let i=-12;i<=12;i+=4){ fixed(span(i-0.8,1.2,8,i+0.8,2.6,8.05,M.win,{edges:false})); fixed(span(i-0.8,4.6,8,i+0.8,6,8.05,M.win,{edges:false})); }
+    const HY=[6,0,14];
+    const hydrant=group(pipe([HY[0],0,HY[2]],[HY[0],0.9,HY[2]],.16,M.hyd), pipe([HY[0],0.9,HY[2]],[HY[0],1.05,HY[2]],.11,M.hyd),
+      pipe([HY[0]-0.25,0.75,HY[2]],[HY[0]+0.25,0.75,HY[2]],.07,M.cap));
+    fixed(hydrant);
+
+    /* ① 40 m */
+    const ring=new THREE.Mesh(new THREE.CircleGeometry(40,64),M.ring.clone()); ring.rotation.x=-Math.PI/2; ring.position.set(HY[0],0.03,HY[2]);
+    add(1, ring, {until:1, drop:0, glow:false});
+    add(1, dim([HY[0],0.2,HY[2]],[-15,0.2,-8],'一樓外牆各部分 ≤ 40 m',{w:1.4}), {until:1, drop:0, glow:false});
+    add(1, label('最遠的外牆角也要在 40 m 內',0,10,14,1.8,'good'),{until:1, drop:0, glow:false, delay:.3});
+
+    /* ② 口徑與開關高度 */
+    add(2, dim([HY[0]+0.45,0,HY[2]],[HY[0]+0.45,0.75,HY[2]],'開關 0.6～1.5 m',{w:1.0, off:[.7,0,0]}), {until:2, drop:0, glow:false});
+    add(2, label('口徑 ≥ 63 mm',HY[0]-0.8,1.5,HY[2],1.0),{until:2, drop:0, glow:false, delay:.3});
+
+    /* ③ 水帶箱 */
+    const bx=group(span(8.5,0.3,13.6,9.5,1.3,14.4,M.box)); const p=plate('水帶箱',0.75,0.25,{normal:'z'}); p.position.set(9,1.05,14.41); bx.add(p);
+    add(3, bx, {drop:.3});
+    add(3, dim([HY[0],0.15,HY[2]+0.6],[8.5,0.15,HY[2]+0.6],'5 m 內',{w:.6}), {until:3, drop:0, glow:false, delay:.2});
+    add(3, label('箱面 ≥ 0.8 m²・63 mm × 20 m 水帶 2 條',9,2.3,14.4,2.2,'good'),{until:3, drop:0, glow:false, delay:.3});
+    add(3, label('瞄子 ≥ 19 mm',9,1.6,15.2,1.0),{until:3, drop:0, glow:false, delay:.5});
+
+    /* ④ 3 m 淨空 */
+    const c3=new THREE.Mesh(new THREE.CircleGeometry(3,40),M.clear.clone()); c3.rotation.x=-Math.PI/2; c3.position.set(HY[0],0.04,HY[2]);
+    add(4, c3, {until:4, drop:0, glow:false});
+    add(4, label('3 m 以內不得堆放物品、種植花木',HY[0],2.6,HY[2]+2,2.1,'bad'),{until:4, drop:0, glow:false});
+
+    /* ⑤ 放水 */
+    add(5, pipe([HY[0]-0.25,0.75,HY[2]],[0,0.1,9.5],.09,M.hose), {until:5, drop:0});
+    add(5, flow([[0,0.4,9.5],[0,3,9],[-2,4.5,8.2]],M.flowM,{n:14,r:.12,speed:4}), {until:5, drop:0, glow:false});
+    add(5, pulse(span(-4,4.4,7.9,-1,6,8.1,M.fireM,NE),3), {until:5, drop:0, glow:false});
+    add(5, label('≥ 2.5 kgf/cm²・≥ 350 L/min',2,6,11,1.8,'good'),{until:5, drop:0, glow:false});
+    add(5, label('幫浦 H = h₁ + h₂ + h₃ + 25 m',2,4.8,11,1.8),{until:5, drop:0, glow:false, delay:.3});
+
+    /* ⑥ 水源 */
+    add(6, group(span(-12,0,12,-4,0.3,18,M.conc), span(-11.6,0.3,12.4,-4.4,2.2,17.6,M.water,NE)), {drop:0});
+    add(6, label('2 具 × 350 L/min × 30 分 = 21 m³',-8,4.5,15,2.2,'good'),{until:6, drop:0, glow:false});
+    add(6, label('室內消防栓是 20 分鐘',-8,3.3,15,1.4,'bad'),{until:6, drop:0, glow:false, delay:.3});
+  },
+});
+</script>
+</body>
+</html>

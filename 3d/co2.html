@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>二氧化碳全區放射動作時序｜3D 消防設備動畫</title>
+<meta name="description" content="§82～§95 二氧化碳滅火設備全區放射 3D 互動動畫：二回路探測器連動、防護區域外手動啟動裝置 0.8～1.5 m、人語警報、20 秒遲延、放射、1 小時內排放（每小時 5 次換氣／開口 10%）、緊急電源 1 小時。">
+<link rel="icon" href="../icons/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<meta name="theme-color" content="#3b1e1a">
+<link rel="stylesheet" href="anim.css?v=2026111902">
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<script type="module">
+import { createAnim } from './engine.js?v=2026111902';
+
+createAnim({
+  title: '二氧化碳全區放射動作時序',
+  page: '06-%E4%BA%8C%E6%B0%A7%E5%8C%96%E7%A2%B3%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html',
+  steps: [
+    {t:'防護區域與鋼瓶室', d:'二氧化碳是窒息式滅火，對人同樣致命。整套條文的主線是「先讓人離開，再放藥劑」。', tip:'§82～§95。§18 附表註五：平時有人使用的中央管理室、防災中心不得設二氧化碳滅火設備。'},
+    {t:'自動啟動：二回路以上探測器連動', d:'自動啟動裝置與二回路以上的火警探測器感應連動，兩個回路都動作才啟動，避免誤放射。', tip:'§91。自動／手動切換須以鑰匙或拉桿操作始能切換，並設自動及手動表示燈。'},
+    {t:'手動啟動：防護區域外、0.8～1.5 m', d:'手動啟動裝置設於能看清區域內部、且操作後能容易退避的防護區域外；操作部距樓地板 0.8 m 以上 1.5 m 以下，外殼漆紅色。', tip:'§91：每一防護區域一套；以電力啟動者裝電源表示燈；操作時同時發出警報。'},
+    {t:'音響警報：人語發音・人員撤離', d:'啟動後音響警報先響，全區放射採人語發音，提醒區內人員立即離開；藥劑未全部放射前不得中斷。', tip:'§92。平時無人駐守者得不採人語發音。開口部應在放射前自動關閉（能補充洩漏量者得免設）。'},
+    {t:'遲延 20 秒以上 → 容器閥開啟', d:'啟動裝置動作到容器閥開啟之間，設 20 秒以上的遲延裝置，這 20 秒是給人逃的。', tip:'§93。藥劑放射前的最後一道保命時間；手動啟動裝置也一樣要經過遲延。'},
+    {t:'放射：藥劑經配管自噴頭噴出', d:'容器閥開啟，二氧化碳經集合管、選擇閥與配管，從防護區域天花板的噴頭全區放射。', tip:'§83 全區放射藥劑量：W = V × q ＋ 開口面積 × k，再與基本需要量取大者。'},
+    {t:'排放：1 小時內排出', d:'放射後的二氧化碳應於 1 小時內排出：機械排放每小時 5 次換氣量，或自然排放開口占樓地板面積 10% 以上。', tip:'§94。自然排放的開口只計面向外氣、樓地板面起高度 2/3 以下的部分。'},
+    {t:'緊急電源 1 小時以上', d:'二氧化碳滅火設備的緊急電源為自用發電設備或蓄電池設備，供電 1 小時以上。', tip:'§95。全法緊急電源中時間最長的之一；水系設備 30 分鐘、火警 10 分鐘。'},
+  ],
+  groundY: -0.01, minDist: 2, sun:[6,14,9],
+  views: {
+    def:{dir:[0.5,0.55,0.67], dist:17, target:[0,1.2,0]},
+    1:{dir:[0.35,0.3,0.88], dist:8, target:[-1,2.4,0]},
+    2:{dir:[0.75,0.15,0.64], dist:6, target:[3.8,1.2,1.2]},
+    3:{dir:[0.5,0.35,0.79], dist:10, target:[0,1.5,0]},
+    4:{dir:[0.6,0.3,0.74], dist:7, target:[5.8,1.2,-1]},
+    5:{dir:[0.5,0.4,0.77], dist:12, target:[1,1.5,0]},
+    6:{dir:[0.4,0.5,0.77], dist:14, target:[0,1.5,0]},
+  },
+  build({THREE, mat, span, pipe, group, label, add, fixed, plate, dim, flow, pulse}) {
+    const M = {
+      floor: mat('#d6d0c7',{roughness:1}), wall: mat('#e7e2da',{roughness:1}), glass: mat('#cbd5e1',{transparent:true,opacity:.25,depthWrite:false}),
+      panel: mat('#9ca3af',{metalness:.4}), cyl: mat('#16a34a',{metalness:.4,roughness:.35}), pipe: mat('#a16207',{metalness:.5,roughness:.4}),
+      det: mat('#f8fafc'), detOn: mat('#ef4444',{emissive:'#ef4444',emissiveIntensity:1.2}), red: mat('#c81e1e',{roughness:.45}),
+      spk: mat('#facc15',{emissive:'#facc15',emissiveIntensity:1}), gas: mat('#e5e7eb',{transparent:true,opacity:.55,depthWrite:false}),
+      fan: mat('#475569',{metalness:.5}), out: mat('#93c5fd',{transparent:true,opacity:.5,depthWrite:false}), person: mat('#2563eb'),
+      fireM: mat('#f97316',{emissive:'#f97316',emissiveIntensity:1}), cloud: mat('#f1f5f9',{transparent:true,opacity:.35,depthWrite:false}),
+    };
+    const NE={edges:false, shadow:false}, H=3.2;
+    // 防護區域（電氣室）x -4～3、鋼瓶室 x 4.2～7
+    fixed(span(-4.2,-0.1,-2.6,7.2,0,2.6,M.floor));
+    fixed(span(-4.2,0,-2.6,7.2,H,-2.45,M.wall)); fixed(span(-4.35,0,-2.6,-4.2,H,2.6,M.wall));
+    fixed(span(3,0,-2.6,3.15,H,0.6,M.wall)); fixed(span(3,2.2,0.6,3.15,H,1.6,M.wall)); fixed(span(3,0,1.6,3.15,H,2.6,M.wall));  // 門洞 z 0.6～1.6
+    fixed(span(-4.2,H,-2.6,3.15,H+0.12,2.6,M.glass,NE));
+    [-3.4,-1.8,-0.2].forEach(x=>fixed(span(x,0,-2.3,x+1.1,2.2,-1.4,M.panel)));
+    fixed(label('防護區域（電氣室）',-0.6,H+0.8,0,1.4)); fixed(label('鋼瓶室',5.6,H+0.8,0,.9));
+    // 鋼瓶
+    const CY=[]; for(let i=0;i<4;i++){ for(let j=0;j<2;j++){ CY.push([4.6+i*0.55,-2.0+j*0.55]); } }
+    CY.forEach(([x,z])=>fixed(group(pipe([x,0,z],[x,1.5,z],.2,M.cyl), pipe([x,1.5,z],[x,1.7,z],.06,M.pipe))));
+    fixed(pipe([4.5,1.85,-1.7],[6.8,1.85,-1.7],.08,M.pipe));
+    // 噴頭配管
+    fixed(pipe([6.8,1.85,-1.7],[6.8,H-0.3,-1.7],.06,M.pipe)); fixed(pipe([6.8,H-0.3,-1.7],[-3,H-0.3,-1.7],.06,M.pipe));
+    const NZ=[[-2.5,0],[0,0],[1.8,0]];
+    NZ.forEach(([x,z])=>fixed(group(pipe([x,H-0.3,-1.7],[x,H-0.3,z],.05,M.pipe), pipe([x,H-0.3,z],[x,H-0.5,z],.07,M.pipe))));
+
+    /* ① 二回路探測器 */
+    add(1, pulse(span(-1.5,0,-1.2,-0.8,0.7,-0.6,M.fireM,NE),3), {until:5, drop:0, glow:false});
+    const det=(x,z)=>{ const g=group(pipe([x,H-0.02,z],[x,H-0.12,z],.12,M.det)); const l=new THREE.Mesh(new THREE.SphereGeometry(.05,10,8),M.detOn.clone()); l.position.set(x,H-0.14,z); g.add(pulse(l,2)); return g; };
+    add(1, det(-2,1), {drop:0, glow:false}); add(1, det(-0.8,1.2), {drop:0, glow:false, delay:.4});
+    add(1, label('回路 A',-2.2,H-0.7,1.3,.7,'bad'),{until:1, drop:0, glow:false}); add(1, label('回路 B',-0.5,H-0.7,1.5,.7,'bad'),{until:1, drop:0, glow:false, delay:.4});
+    add(1, label('二回路以上都動作才啟動',-1.2,H+1.8,1,1.6,'good'),{until:1, drop:0, glow:false, delay:.6});
+
+    /* ② 手動啟動裝置（門外） */
+    add(2, group(span(3.15,0.9,1.8,3.3,1.45,2.25,M.red)), {drop:0});
+    add(2, dim([3.4,0,2.4],[3.4,1.45,2.4],'操作部 0.8～1.5 m',{w:1.1, off:[.4,0,.4]}), {until:2, drop:0, glow:false});
+    add(2, label('設於防護區域外、能看清內部易退避處',3.6,2.6,1.8,2.2,'good'),{until:2, drop:0, glow:false, delay:.3});
+
+    /* ③ 人語警報・撤離 */
+    const spk=new THREE.Mesh(new THREE.CylinderGeometry(.18,.18,.08,20),M.spk.clone()); spk.position.set(-1,H-0.1,-0.5);
+    add(3, pulse(spk,3), {until:5, drop:0, glow:false});
+    add(3, group(pipe([-0.5,0,1.2],[-0.5,1.3,1.2],.17,M.person), new THREE.Mesh(new THREE.SphereGeometry(.15,12,10),M.person.clone()).translateX(-0.5).translateY(1.5).translateZ(1.2)), {until:3, drop:0});
+    add(3, flow([[-0.5,0.1,1.2],[1.5,0.1,1.1],[3.1,0.1,1.1],[4,0.1,1.6]],M.person,{n:8,r:.1,speed:2}), {until:3, drop:0, glow:false});
+    add(3, label('「現在要放射二氧化碳，請立即離開」',-0.8,H+1.4,0.6,2.4,'bad'),{until:3, drop:0, glow:false});
+
+    /* ④ 遲延 20 秒 */
+    add(4, label('遲延 ≥ 20 秒 → 容器閥開啟',5.6,2.6,0.6,1.7,'bad'),{until:4, drop:0, glow:false});
+    add(4, pulse(span(4.4,1.75,-2.3,6.9,1.95,-1.4,M.detOn,NE),1), {until:4, drop:0, glow:false});
+
+    /* ⑤ 放射 */
+    add(5, flow([[4.6,1.85,-1.7],[6.8,1.85,-1.7],[6.8,H-0.3,-1.7],[0,H-0.3,-1.7],[0,H-0.5,0]],M.gas,{n:30,r:.09,speed:4}), {until:5, drop:0, glow:false});
+    NZ.forEach(([x,z],i)=>{ const c=new THREE.Mesh(new THREE.ConeGeometry(1.6,H-0.5,24,1,true),M.cloud.clone()); c.position.set(x,(H-0.5)/2,z); add(5,c,{until:5,drop:0,glow:false,delay:.2*i}); });
+    add(5, span(-4.2,0.01,-2.45,3,1.8,2.6,M.cloud,NE), {until:5, drop:0, glow:false, delay:.6});
+    add(5, label('W = V × q ＋ 開口 × k',-0.6,H+1.6,0.5,1.6,'good'),{until:5, drop:0, glow:false});
+
+    /* ⑥ 排放 */
+    add(6, group(span(-4.35,2.0,-0.6,-4.2,2.7,0.4,M.fan)), {drop:0});
+    add(6, flow([[0,0.6,0.5],[-2,1.6,0.2],[-4.3,2.35,-0.1],[-5.6,2.6,-0.1]],M.out,{n:16,r:.12,speed:1.5}), {until:6, drop:0, glow:false});
+    add(6, label('1 小時內排出',-1,H+1.8,0.6,1.1,'good'),{until:6, drop:0, glow:false});
+    add(6, label('機械：每小時 5 次換氣',-1,H+1.0,0.6,1.5),{until:6, drop:0, glow:false, delay:.2});
+    add(6, label('自然：開口 ≥ 樓地板面積 10%',-1,H+0.2,0.6,1.7),{until:6, drop:0, glow:false, delay:.4});
+
+    /* ⑦ 緊急電源 */
+    add(7, group(span(5.6,0,0.8,6.8,1.3,1.8,M.panel)), {drop:.3});
+    add(7, label('緊急電源 1 小時以上',6.2,2.0,1.4,1.3,'good'),{until:7, drop:0, glow:false});
+  },
+});
+</script>
+</body>
+</html>

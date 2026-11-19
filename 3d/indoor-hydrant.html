@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>室內消防栓系統（第一種）｜3D 消防設備動畫</title>
+<meta name="description" content="§32～§38 室內消防栓 3D 互動動畫：水源 2 支 × 130 L/min × 20 分 = 5.2 m³、消防幫浦全揚程 H = h1+h2+h3+17、立管 63 mm、屋頂水箱 0.5 m³、栓箱 0.7 m²、開關高度 0.3～1.5 m、放水壓力 1.7 kgf/cm²。">
+<link rel="icon" href="../icons/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<meta name="theme-color" content="#3b1e1a">
+<link rel="stylesheet" href="anim.css?v=2026111902">
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<script type="module">
+import { createAnim } from './engine.js?v=2026111902';
+
+createAnim({
+  title: '室內消防栓系統（第一種）',
+  page: '15-%E6%BB%85%E7%81%AB%E5%99%A8%E8%88%87%E5%AE%A4%E5%85%A7%E5%A4%96%E6%B6%88%E9%98%B2%E6%A0%93-%E5%9C%96%E8%A7%A3.html',
+  steps: [
+    {t:'水從哪裡來、怎麼送到瞄子', d:'室內消防栓是「水源 → 加壓送水裝置 → 配管 → 消防栓箱 → 水帶瞄子」一條路。所有水系設備都是這副骨架。', tip:'§32～§38。先記骨架：配管、配置間距、放水量壓力、水源、加壓送水、緊急電源。'},
+    {t:'水源：最多樓層 2 支 × 20 分鐘', d:'水源容量為裝置消防栓最多樓層之全部消防栓繼續放水 20 分鐘之水量，超過 2 支以 2 支計。', tip:'§36。第一種：2 × 130 L/min × 20 min = 5.2 m³；第二種：2 × 80 × 20 = 3.2 m³。'},
+    {t:'消防幫浦：全揚程 H = h₁ + h₂ + h₃ + 17', d:'幫浦全揚程＝水帶摩擦損失＋配管摩擦損失＋落差＋17 m；出水量每支 150 L/min（以 2 支計）。', tip:'§37。常數 17 m 就是放水壓力 1.7 kgf/cm² 換成水頭。加壓送水裝置以 1 小時以上防火時效構造區劃。'},
+    {t:'立管 ≥ 63 mm、屋頂水箱 ≥ 0.5 m³', d:'第一種消防栓立管管徑 63 mm 以上；屋頂水箱水量 0.5 m³ 以上，平時讓配管保持充水。', tip:'§32。第二種：立管 50 mm、屋頂水箱 0.3 m³。凡跟「量」有關的，第一種都比較大。'},
+    {t:'消防栓箱：開關高 0.3～1.5 m，箱面 ≥ 0.7 m²', d:'各層任一點至消防栓接頭水平距離 25 m 以下；開關距樓地板 0.3 m 以上 1.5 m 以下；箱身 1.6 mm 鋼板、箱面 0.7 m² 以上。', tip:'§34、§35。箱面「消防栓」字樣每字 20 cm² 以上；箱上方設紅色啟動表示燈。'},
+    {t:'箱內配置：15 m 水帶 2 條＋13 mm 瞄子', d:'口徑 38 或 50 mm 消防栓 1 個、口徑 38 或 50 mm 長 15 m 水帶 2 條、水帶架、口徑 13 mm 以上直線水霧兩用瞄子 1 具。', tip:'§34。任一點至接頭 15 m 以內時，得改設 10 m 水帶 2 條。第二種：25 mm 栓＋30 m 皮管，一人可操作。'},
+    {t:'放水：≥ 1.7 kgf/cm²、≥ 130 L/min', d:'按下箱內手動啟動裝置 → 幫浦啟動 → 瞄子放水壓力 1.7 kgf/cm² 以上、放水量 130 L/min 以上。', tip:'§34。瞄子放水壓力超過 7 kgf/cm² 時應採取減壓措施；幫浦「停止」僅限手動。'},
+    {t:'屋頂測試出水口・試壓・緊急電源', d:'屋頂設 1 個測試用出水口；竣工以全閉揚程 1.5 倍水壓試驗 2 小時無漏水；緊急電源 30 分鐘以上。', tip:'§33、§34、§38。「1.5 倍」：室內栓與撒水是 2 小時，連結送水管是 30 分鐘。'},
+  ],
+  groundY: -3.35, minDist: 2, maxPolar: .55, sun: [6, 16, 10],
+  views: {
+    def:{dir:[0.45,0.25,0.86], dist:30, target:[0,3.6,0]},
+    1:{dir:[0.4,0.3,0.86], dist:12, target:[-2,-1.6,0]},
+    2:{dir:[0.4,0.3,0.86], dist:10, target:[1.5,-1.8,0]},
+    3:{dir:[0.5,0.25,0.83], dist:24, target:[0,5,0]},
+    4:{dir:[0.25,0.2,0.95], dist:7, target:[2.6,4.6,-1.6]},
+    5:{dir:[0.25,0.2,0.95], dist:5, target:[2.6,4.5,-1.6]},
+    6:{dir:[0.35,0.3,0.88], dist:16, target:[0,3,0]},
+    7:{dir:[0.4,0.45,0.8], dist:12, target:[1.5,10.5,-1]},
+  },
+  build({THREE, mat, span, pipe, group, label, add, fixed, plate, dim, flow, pulse}) {
+    const M = {
+      slab: mat('#d6d0c7',{roughness:1}), wall: mat('#e7e2da',{roughness:1}), soil: mat('#8b7355',{roughness:1}),
+      conc: mat('#a8a29e',{roughness:1}), water: mat('#3b82f6',{transparent:true,opacity:.55,roughness:.2,depthWrite:false}),
+      pipe: mat('#dc2626',{metalness:.4,roughness:.4}), pump: mat('#b91c1c',{metalness:.5,roughness:.35}), motor: mat('#475569',{metalness:.5}),
+      box: mat('#dc2626',{roughness:.45}), hose: mat('#f5f5f4'), brass: mat('#ca8a04',{metalness:.7,roughness:.3}),
+      lamp: mat('#ef4444',{emissive:'#ef4444',emissiveIntensity:1.2}), flowM: mat('#60a5fa',{emissive:'#2563eb',emissiveIntensity:.6}),
+      tank: mat('#94a3b8',{metalness:.3}), fireM: mat('#f97316',{emissive:'#f97316',emissiveIntensity:1}), part: mat('#cbd5e1',{roughness:.9}),
+    };
+    const NE={edges:false, shadow:false};
+    const FL=[0,3.5,7], ROOF=10.5;
+    // 地下：土、水池、機房
+    fixed(span(-5,-3.3,-2.2,5,-3.2,2.2,M.slab));
+    fixed(span(-5,-3.2,-2.2,5,0,-2,M.conc));
+    fixed(span(-4.6,-3.2,-1.95,-1,-3.1,1.95,M.conc));   // 水池底板
+    // 樓板與背牆
+    [...FL, ROOF].forEach(y=>fixed(span(-5,y-0.2,-2.2,5,y,2.2,M.slab)));
+    fixed(span(-5,0,-2.2,5,ROOF,-2,M.wall));
+    FL.forEach((y,i)=>fixed(label(`${i+1}F`,-5.6,y+1.6,0,.8)));
+    fixed(label('B1 機房',-5.6,-1.6,0,.9));
+
+    /* ① 水源 */
+    const pool=span(-4.4,-3.1,-1.7,-1.2,-1.0,1.7,M.water,NE);
+    add(1, pool, {drop:0, glow:false});
+    add(1, label('消防水源（地下水池）',-2.8,-0.6,1.9,1.4),{until:1, drop:0, glow:false});
+    add(1, label('2 支 × 130 L/min × 20 分 = 5.2 m³',-2.8,1.0,1.9,1.7,'good'),{until:1, drop:0, glow:false, delay:.3});
+
+    /* ② 幫浦 */
+    add(2, group(pipe([0.6,-2.6,-1.2],[1.6,-2.6,-1.2],.32,M.pump), pipe([1.6,-2.6,-1.2],[2.5,-2.6,-1.2],.26,M.motor), span(0.4,-3.2,-1.6,2.7,-2.95,-0.8,M.conc)), {drop:.4});
+    add(2, pipe([-1.3,-2.6,-1.2],[0.6,-2.6,-1.2],.06,M.pipe), {drop:0, delay:.2});
+    add(2, span(-0.2,-3.2,-2,-0.05,0,2,M.part,NE), {drop:0, delay:.3});
+    add(2, label('H = h₁ + h₂ + h₃ + 17 m',1.5,-1.2,0.2,1.5,'good'),{until:2, drop:0, glow:false});
+    add(2, label('每支 150 L/min（以 2 支計）',1.5,-0.4,0.2,1.5),{until:2, drop:0, glow:false, delay:.3});
+    add(2, label('1 小時防火時效區劃',0.2,-2,1.6,1.2),{until:2, drop:0, glow:false, delay:.5});
+
+    /* ③ 立管、屋頂水箱 */
+    add(3, group(pipe([1.6,-2.6,-1.2],[3.2,-2.6,-1.6],.06,M.pipe), pipe([3.2,-2.6,-1.6],[3.2,ROOF+0.6,-1.6],.07,M.pipe)), {drop:0});
+    add(3, group(span(-3.2,ROOF,-1.6,-2.0,ROOF+0.8,-0.9,M.tank), pipe([-2.0,ROOF+0.2,-1.3],[3.2,ROOF+0.2,-1.6],.04,M.pipe)), {drop:.4, delay:.3});
+    add(3, label('立管 ≥ 63 mm',3.9,5.5,-1.4,1.0),{until:3, drop:0, glow:false});
+    add(3, label('屋頂水箱 ≥ 0.5 m³',-2.6,ROOF+1.6,-1.2,1.2),{until:3, drop:0, glow:false, delay:.3});
+
+    /* ④ 消防栓箱（各層） */
+    FL.forEach((y,i)=>{
+      const b=group(span(2.2,y+0.5,-2,3.0,y+1.45,-1.8,M.box));
+      const p=plate('消防栓',0.7,0.22,{normal:'z'}); p.position.set(2.6,y+1.25,-1.79); b.add(p);
+      const L=new THREE.Mesh(new THREE.SphereGeometry(.07,12,10), M.lamp.clone()); L.position.set(2.6,y+1.65,-1.9); b.add(pulse(L,1));
+      b.add(pipe([3.0,y+0.8,-1.9],[3.2,y+0.8,-1.6],.04,M.pipe));
+      add(4, b, {drop:.3, delay:i*.15});
+    });
+    add(4, dim([3.15,3.5,-1.75],[3.15,4.6,-1.75],'開關 0.3～1.5 m',{w:1.0, off:[.9,0,.2]}),{until:4, drop:0, glow:false});
+    add(4, label('箱面 ≥ 0.7 m²・鋼板 ≥ 1.6 mm',2.6,5.6,-1.4,1.3),{until:4, drop:0, glow:false, delay:.2});
+    add(4, label('紅色啟動表示燈',1.6,5.3,-1.6,1.0,'bad'),{until:4, drop:0, glow:false, delay:.4});
+    add(4, label('任一點至接頭水平距離 ≤ 25 m',-1.5,4.2,0.8,1.6,'good'),{until:4, drop:0, glow:false, delay:.6});
+
+    /* ⑤ 箱內配置（2F 箱打開） */
+    const y2=3.5;
+    add(5, group(
+      pipe([2.35,y2+0.75,-1.95],[2.85,y2+0.75,-1.95],.09,M.hose), pipe([2.35,y2+0.95,-1.95],[2.85,y2+0.95,-1.95],.09,M.hose),
+      pipe([2.55,y2+1.1,-1.9],[2.8,y2+1.2,-1.9],.03,M.brass), pipe([2.3,y2+0.6,-1.9],[2.3,y2+0.6,-1.75],.05,M.brass)
+    ), {until:5, drop:0});
+    add(5, label('15 m 水帶 × 2 條',1.6,y2+0.85,-1.5,1.0),{until:5, drop:0, glow:false});
+    add(5, label('瞄子 ≥ 13 mm',3.4,y2+1.3,-1.5,.9),{until:5, drop:0, glow:false, delay:.2});
+    add(5, label('消防栓 38／50 mm',3.4,y2+0.45,-1.5,1.0),{until:5, drop:0, glow:false, delay:.4});
+
+    /* ⑥ 放水 */
+    const P=[[-2.5,-2.8,0],[-1.2,-2.6,-1.2],[0.8,-2.6,-1.2],[2.4,-2.6,-1.2],[3.2,-2.6,-1.6],[3.2,1,-1.6],[3.2,y2+0.8,-1.6],[2.6,y2+0.4,-1.0],[1,y2+0.2,0.5],[-1.5,y2+0.2,1.2]];
+    add(6, flow(P,M.flowM,{n:40,r:.09,speed:4}), {until:6, drop:0, glow:false});
+    add(6, group(pipe([2.6,y2+0.3,-1.6],[0,y2+0.15,1.0],.06,M.hose), pipe([0,y2+0.15,1.0],[-1.3,y2+0.4,1.3],.04,M.brass)), {until:6, drop:0});
+    add(6, pulse(span(-3.4,y2,0.8,-2.4,y2+0.9,1.8,M.fireM,NE),3), {until:6, drop:0, glow:false});
+    add(6, label('瞄子 ≥ 1.7 kgf/cm²・≥ 130 L/min',-0.5,y2+2.4,1,1.8,'good'),{until:6, drop:0, glow:false});
+    add(6, label('> 7 kgf/cm² 要減壓',-0.5,y2+1.6,1,1.2,'bad'),{until:6, drop:0, glow:false, delay:.3});
+
+    /* ⑦ 屋頂測試出水口 */
+    add(7, group(pipe([3.2,ROOF+0.6,-1.6],[3.2,ROOF+1.0,-1.6],.07,M.pipe), pipe([3.2,ROOF+1.0,-1.6],[3.2,ROOF+1.0,-1.2],.06,M.brass)), {drop:.3});
+    add(7, label('屋頂測試用出水口 1 個',3.2,ROOF+2.0,-1.2,1.3),{until:7, drop:0, glow:false});
+    add(7, label('試壓：全閉揚程 1.5 倍・2 小時',0,ROOF+3.0,-1.2,1.7,'good'),{until:7, drop:0, glow:false, delay:.3});
+    add(7, label('緊急電源 30 分鐘以上',-2.6,ROOF+2.0,-1.2,1.3),{until:7, drop:0, glow:false, delay:.5});
+  },
+});
+</script>
+</body>
+</html>

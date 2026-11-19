@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>火警自動警報設備｜3D 消防設備動畫</title>
+<meta name="description" content="§112～§132 火警自動警報設備 3D 互動動畫：火警分區 600 m²・邊長 50 m、探測器選用、偵煙式 150 m²、受信總機蓄積時間 60 秒、分區鳴動、手動報警發信機 1.2～1.5 m、標示燈警鈴 2～2.5 m、緊急電源 10 分鐘。">
+<link rel="icon" href="../icons/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<meta name="theme-color" content="#3b1e1a">
+<link rel="stylesheet" href="anim.css?v=2026111902">
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<script type="module">
+import { createAnim } from './engine.js?v=2026111902';
+
+createAnim({
+  title: '火警自動警報設備',
+  page: '17-%E7%81%AB%E8%AD%A6%E8%87%AA%E5%8B%95%E8%AD%A6%E5%A0%B1%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html',
+  steps: [
+    {t:'探測 → 受信 → 鳴動', d:'火警自動警報設備由探測器、受信總機、地區音響裝置與手動報警設備組成：探測器發現火災，總機判斷分區，音響通知全棟。', tip:'§112～§132。這一套是警報設備的骨幹，緊急廣播、瓦斯漏氣、119 通報都會跟它連動。'},
+    {t:'火警分區：≤ 600 m²、邊長 ≤ 50 m', d:'每一火警分區不得超過一樓層，樓地板面積 600 m² 以下，任一邊長 50 m 以下。', tip:'§112：上下二層合計 ≤ 500 m² 得共用一分區；能直接觀察全層者 600 → 1,000 m²；光電式分離型邊長得 100 m；樓梯每垂直 45 m 一分區。'},
+    {t:'探測器：依高度選型，偵煙式 150 m²', d:'裝置面高度未滿 4 m 時各型都可用；偵煙式（一、二種）每 150 m² 一個，走廊每步行 30 m 一個。', tip:'§114、§122。8～15 m 只剩差動式分布型、偵煙式一二種、光電分離型、火焰式；20 m 以上除火焰式外得免設。'},
+    {t:'起火：煙到天花板，探測器動作', d:'煙層上升沿天花板擴散，偵煙式探測器確認煙濃度後動作，確認燈亮起。', tip:'§115、§122：偵煙式下端裝在裝置面下方 60 cm 內、距牆或樑 60 cm 以上；距出風口 1.5 m 以上，排氣口或回風口則要在其周圍 1 m 內。'},
+    {t:'受信總機：顯示分區，蓄積 ≤ 60 秒', d:'訊號經回路傳到受信總機，火警表示燈亮、顯示起火分區。受信總機設於值日室等經常有人之處所。', tip:'§125、§126：總機＋中繼器＋偵煙式探測器之蓄積時間合計 ≤ 60 秒，其他探測器 ≤ 20 秒；壁掛型操作開關 0.8～1.5 m。'},
+    {t:'地區音響裝置鳴動', d:'受信總機使各樓層的地區音響裝置（火警警鈴）鳴動。5 樓以上且總樓地板面積 3,000 m² 以上採分區鳴動。', tip:'§113 分區鳴動：2 樓以上起火 → 該層＋直上 2 層＋直下 1 層；地面層 → 該層＋直上層＋地下各層。'},
+    {t:'手動報警：發信機 1.2～1.5 m', d:'發現火災的人按下手動報警發信機；發信機距地 1.2～1.5 m，標示燈與警鈴 2～2.5 m。', tip:'§130～§132：標示燈與裝置面成 15° 角、10 m 內明顯易見；警鈴 1 m 處 90 dB 以上。'},
+    {t:'緊急電源：蓄電池 10 分鐘', d:'停電時由蓄電池設備供電，能使其有效動作 10 分鐘以上。', tip:'§128。火警、緊急廣播、瓦斯漏氣都是 10 分鐘；水系設備 30 分鐘；二氧化碳 1 小時。'},
+  ],
+  groundY: -0.01, minDist: 2, sun:[6,16,10],
+  views: {
+    def:{dir:[0.5,0.45,0.74], dist:22, target:[0,3,0]},
+    1:{dir:[0.25,0.85,0.45], dist:22, target:[0,3.5,0]},
+    2:{dir:[0.3,0.2,0.93], dist:10, target:[-1,5.5,0]},
+    3:{dir:[0.35,0.2,0.91], dist:8, target:[-2,5.6,0]},
+    4:{dir:[0.45,0.25,0.86], dist:8, target:[3.5,1.4,-1.5]},
+    5:{dir:[0.5,0.3,0.81], dist:18, target:[0,3.5,0]},
+    6:{dir:[0.3,0.15,0.94], dist:6, target:[-4.5,1.6,-2]},
+  },
+  build({THREE, mat, span, pipe, group, label, add, fixed, plate, dim, flow, pulse}) {
+    const M = {
+      slab: mat('#d6d0c7',{roughness:1}), wall: mat('#e7e2da',{roughness:1}),
+      zA: mat('#fca5a5',{transparent:true,opacity:.45,depthWrite:false}), zB: mat('#93c5fd',{transparent:true,opacity:.45,depthWrite:false}),
+      zC: mat('#86efac',{transparent:true,opacity:.45,depthWrite:false}), zD: mat('#fde68a',{transparent:true,opacity:.55,depthWrite:false}),
+      det: mat('#f8fafc'), led: mat('#ef4444',{emissive:'#ef4444',emissiveIntensity:1.2}), smoke: mat('#6b7280',{transparent:true,opacity:.45,depthWrite:false}),
+      fireM: mat('#f97316',{emissive:'#f97316',emissiveIntensity:1}), panel: mat('#e5e7eb'), panelF: mat('#1f2937'),
+      sig: mat('#facc15',{emissive:'#f59e0b',emissiveIntensity:1}), bell: mat('#dc2626',{emissive:'#dc2626',emissiveIntensity:.8}),
+      red: mat('#c81e1e',{roughness:.45}), ring: mat('#16a34a',{transparent:true,opacity:.3,depthWrite:false}),
+    };
+    const NE={edges:false, shadow:false}, FH=3.5, F=[0,3.5];
+    F.forEach(y=>fixed(span(-6,y-0.15,-3,6,y,3,M.slab)));
+    fixed(span(-6,0,-3.15,6,7,-3,M.wall)); fixed(span(-6.15,0,-3,-6,7,3,M.wall));
+    fixed(label('1F',-6.7,1.6,0,.6)); fixed(label('2F',-6.7,5.1,0,.6));
+
+    /* ① 火警分區 */
+    add(1, span(-6,3.52,-3,0,3.54,3,M.zA,NE), {until:1, drop:0, glow:false});
+    add(1, span(0,3.52,-3,6,3.54,3,M.zB,NE), {until:1, drop:0, glow:false, delay:.2});
+    add(1, span(-6,0.02,-3,6,0.04,3,M.zC,NE), {until:1, drop:0, glow:false, delay:.4});
+    add(1, label('分區 2：≤ 600 m²',-3,5.4,0,1.2),{until:1, drop:0, glow:false});
+    add(1, label('分區 3',3,5.4,0,.7),{until:1, drop:0, glow:false, delay:.2});
+    add(1, label('分區 1（每區不跨樓層）',0,1.8,0,1.6),{until:1, drop:0, glow:false, delay:.4});
+    add(1, label('任一邊長 ≤ 50 m',0,8.2,0,1.2,'good'),{until:1, drop:0, glow:false, delay:.6});
+
+    /* ② 探測器 */
+    const D2=[[-4,-1.5],[-4,1.5],[-1.5,0],[1.5,0],[4,-1.5],[4,1.5]];
+    D2.forEach(([x,z])=>{ const g=group(pipe([x,6.98,z],[x,6.86,z],.13,M.det)); add(2,g,{drop:0}); });
+    [[0,-1],[0,1.5]].forEach(([x,z])=>add(2, group(pipe([x+(x?0:-3),3.48,z],[x+(x?0:-3),3.36,z],.13,M.det)),{drop:0}));
+    const ring=new THREE.Mesh(new THREE.CircleGeometry(Math.sqrt(150/Math.PI)/2.2,40),M.ring.clone()); ring.rotation.x=Math.PI/2; ring.position.set(-1.5,6.8,0);
+    add(2, ring, {until:2, drop:0, glow:false});
+    add(2, label('偵煙式一二種：每 150 m² 一個（< 4 m）',-1,8.4,0.5,2.3,'good'),{until:2, drop:0, glow:false});
+    add(2, label('走廊：每步行 30 m 一個',-1,7.6,0.5,1.5),{until:2, drop:0, glow:false, delay:.3});
+
+    /* ③ 起火 */
+    add(3, pulse(span(-3,3.5,-1,-2.2,4.2,-0.2,M.fireM,NE),3), {until:6, drop:0, glow:false});
+    add(3, flow([[-2.6,4.2,-0.6],[-2.6,5.6,-0.4],[-3.2,6.7,0],[-4,6.8,1.5]],M.smoke,{n:16,r:.22,speed:1.3}), {until:5, drop:0, glow:false});
+    const L=new THREE.Mesh(new THREE.SphereGeometry(.06,10,8),M.led.clone()); L.position.set(-4,6.82,1.5);
+    add(3, pulse(L,3), {until:5, drop:0, glow:false, delay:.5});
+    add(3, label('偵煙式探測器動作・確認燈亮',-3.5,6.0,1.9,1.8,'bad'),{until:3, drop:0, glow:false, delay:.5});
+
+    /* ④ 受信總機（1F 值日室） */
+    add(4, group(span(2.8,0.8,-3,4.2,2.0,-2.75,M.panel), span(2.95,1.0,-2.75,4.05,1.85,-2.73,M.panelF,{edges:false})), {drop:0});
+    const pl=new THREE.Mesh(new THREE.SphereGeometry(.07,10,8),M.led.clone()); pl.position.set(3.1,1.75,-2.7);
+    add(4, pulse(pl,3), {until:6, drop:0, glow:false});
+    add(4, flow([[-4,6.85,1.5],[-5.8,6.85,1.5],[-5.8,6.85,-2.9],[-5.8,1.9,-2.9],[3.5,1.9,-2.9]],M.sig,{n:24,r:.06,speed:5}), {until:4, drop:0, glow:false});
+    add(4, label('受信總機：顯示「分區 2 火警」',3.5,2.9,-2.4,1.8,'bad'),{until:4, drop:0, glow:false});
+    add(4, label('蓄積時間（偵煙）合計 ≤ 60 秒',3.5,0.3,-2.2,1.8),{until:4, drop:0, glow:false, delay:.3});
+
+    /* ⑤ 地區音響 */
+    [0.8,4.3].forEach((y,i)=>{ const b=new THREE.Mesh(new THREE.SphereGeometry(.16,14,10),M.bell.clone()); b.position.set(0,y+1.4,-2.9); add(5,pulse(b,5),{until:6,drop:0,glow:false,delay:i*.2}); });
+    add(5, label('地區音響裝置鳴動',0,8.4,0,1.3,'bad'),{until:5, drop:0, glow:false});
+    add(5, label('分區鳴動：該層＋直上 2 層＋直下 1 層',0,7.6,0,2.2),{until:5, drop:0, glow:false, delay:.3});
+
+    /* ⑥ 手動報警 */
+    add(6, group(span(-4.8,1.2,-3,-4.2,1.5,-2.9,M.red), span(-4.7,2.1,-3,-4.3,2.4,-2.9,M.red)), {drop:0});
+    add(6, dim([-5.1,0,-2.9],[-5.1,1.5,-2.9],'發信機 1.2～1.5 m',{w:1.0, off:[-.6,0,0]}), {until:6, drop:0, glow:false});
+    add(6, dim([-3.9,0,-2.9],[-3.9,2.4,-2.9],'標示燈・警鈴 2～2.5 m',{w:1.2, off:[.8,.2,0]}), {until:6, drop:0, glow:false, delay:.3});
+    add(6, label('警鈴 1 m 處 ≥ 90 dB',-4.5,3.0,-2.6,1.2,'good'),{until:6, drop:0, glow:false, delay:.5});
+
+    /* ⑦ 緊急電源 */
+    add(7, group(span(4.4,0,-3,5.4,1.2,-2.6,M.panel)), {drop:.3});
+    add(7, label('蓄電池設備 10 分鐘以上',4.9,2.0,-2.4,1.4,'good'),{until:7, drop:0, glow:false});
+  },
+});
+</script>
+</body>
+</html>

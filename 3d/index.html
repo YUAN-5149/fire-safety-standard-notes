@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3D 消防系統動畫｜消防設備學習</title>
+<meta name="description" content="各類場所消防安全設備設置標準 3D 互動動畫：滅火器、室內外消防栓、自動撒水、二氧化碳、火警自動警報、瓦斯漏氣、標示設備與緊急照明、避難器具、排煙設備、連結送水管。可旋轉縮放，逐步看系統怎麼動作，每一步附條文考點。">
+<link rel="icon" href="../icons/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#3b1e1a">
+<link rel="stylesheet" href="anim.css?v=2026111902">
+<style>
+.intro{max-width:960px;margin:0 auto;padding:18px 16px 0}
+.intro h1{font-size:22px;margin:0 0 4px}
+.intro p{margin:0;color:var(--mut)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;font-size:13px;color:var(--mut)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);margin-top:12px}
+.nav div{max-width:960px;margin:0 auto;padding:10px 16px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:thin}
+.nav a{flex:0 0 auto;font-size:14px;padding:6px 12px;border-radius:99px;background:#fff;border:1px solid var(--line);color:var(--ink);text-decoration:none;white-space:nowrap}
+.nav a b{display:inline-block;min-width:18px;margin-left:4px;padding:0 5px;border-radius:99px;background:var(--acc2);color:var(--acc);font-size:12px;text-align:center}
+.nav a:hover{border-color:var(--acc)}
+.cat{max-width:960px;margin:0 auto;padding:22px 16px 6px;scroll-margin-top:60px}
+.cat h2{font-size:20px;margin:0;display:flex;align-items:center;gap:10px}
+.cat h2 .no{flex:0 0 30px;height:30px;border-radius:99px;background:var(--ink);color:#fff;font-size:15px;text-align:center;line-height:30px}
+.cd{margin:2px 0 10px 40px;color:var(--mut);font-size:14px}
+.list{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.item{display:block;background:#fff;border:1px solid var(--line);border-left:4px solid var(--acc);border-radius:14px;padding:14px 16px;text-decoration:none;color:inherit}
+.item.notes{border-left-color:#0d9488}
+.item:hover{background:#fdf2f0}
+.item .ic{font-size:26px}
+.item h3{font-size:17px;margin:4px 0 4px}
+.item p{margin:0;color:var(--mut);font-size:14px}
+.item .steps{margin-top:8px;font-size:13px;color:var(--ink);line-height:1.8}
+.end{max-width:960px;margin:0 auto;padding:20px 16px 40px;color:var(--mut);font-size:13px}
+</style>
+</head>
+<body>
+<div class="top"><a href="../index.html">← 消防設備學習首頁</a><a href="../25-%E6%AD%B7%E5%B1%86%E8%A9%A6%E9%A1%8C.html">歷屆試題</a><span>3D 系統動畫</span></div>
+<div class="intro">
+  <h1>3D 消防系統動畫</h1>
+  <p>把各類場所消防安全設備設置標準的系統做成可以轉角度的 3D 模型。「動作流程」一步步看水、煙、藥劑、訊號怎麼走；「設置重點」逐項標出位置與數字。每一步右側都有條號與考點，頂端可直接跳到對應的圖解頁。</p>
+  <div class="legend"><span><i style="background:var(--acc)"></i>動作流程 6 支</span><span><i style="background:#0d9488"></i>設置重點 5 支</span></div>
+</div>
+<nav class="nav"><div>
+  <a href="#ext">1. 滅火設備 <b>5</b></a>
+  <a href="#alarm">2. 警報設備 <b>2</b></a>
+  <a href="#evac">3. 避難逃生設備 <b>2</b></a>
+  <a href="#rescue">4. 消防搶救上必要設備 <b>2</b></a>
+</div></nav>
+
+<section class="cat" id="ext">
+  <h2><span class="no">1</span>滅火設備</h2>
+  <p class="cd">第三編第一章：滅火器、消防栓、自動撒水、氣體滅火（§31～§111）。</p>
+  <div class="list">
+    <a class="item notes" href="extinguisher.html"><div class="ic">🧯</div><h3>滅火器設置規定</h3><p>6 項・§31</p>
+      <div class="steps">效能值 100／200 m² → 廚房 25 m² → 電氣室另設 → 步行 20 m → 高度 1.5／1 m → 紅底白字標識</div></a>
+    <a class="item seq" href="indoor-hydrant.html"><div class="ic">🚒</div><h3>室內消防栓系統（第一種）</h3><p>7 步驟・§32～§38</p>
+      <div class="steps">水源 5.2 m³ → 幫浦 H + 17 → 立管 63 mm・水箱 0.5 m³ → 栓箱 0.3～1.5 m → 15 m 水帶 2 條 → 1.7 kgf・130 L → 試壓與緊急電源</div></a>
+    <a class="item notes" href="outdoor-hydrant.html"><div class="ic">🚰</div><h3>室外消防栓設置規定</h3><p>6 項・§39～§42</p>
+      <div class="steps">外牆 40 m → 63 mm・0.6～1.5 m → 水帶箱 5 m・0.8 m² → 3 m 淨空 → 2.5 kgf・350 L → 21 m³（30 分）</div></a>
+    <a class="item seq" href="sprinkler.html"><div class="ic">💦</div><h3>自動撒水設備（密閉濕式）動作流程</h3><p>7 步驟・§43～§60</p>
+      <div class="steps">配置 2.1／2.3 m → 感熱動作 → 80 L・1 kgf → 流水檢知警報 → 幫浦 H + 10 → 水源 16 m³ → 送水口・末端查驗閥</div></a>
+    <a class="item seq" href="co2.html"><div class="ic">🫧</div><h3>二氧化碳全區放射動作時序</h3><p>7 步驟・§82～§95</p>
+      <div class="steps">二回路探測 → 區域外手動啟動 → 人語警報撤離 → 遲延 20 秒 → 放射 → 1 小時內排放 → 緊急電源 1 小時</div></a>
+  </div>
+</section>
+
+<section class="cat" id="alarm">
+  <h2><span class="no">2</span>警報設備</h2>
+  <p class="cd">第三編第二章：火警自動警報、手動報警、瓦斯漏氣（§112～§145-1）。</p>
+  <div class="list">
+    <a class="item seq" href="fire-alarm.html"><div class="ic">🔔</div><h3>火警自動警報設備</h3><p>7 步驟・§112～§132</p>
+      <div class="steps">分區 600 m²・50 m → 探測器選型 150 m² → 煙到探測器 → 總機蓄積 60 秒 → 分區鳴動 → 發信機 1.2～1.5 m → 蓄電池 10 分</div></a>
+    <a class="item notes" href="gas-leak.html"><div class="ic">🔥</div><h3>瓦斯漏氣檢知器：比重決定裝哪裡</h3><p>6 項・§140～§145</p>
+      <div class="steps">天然氣上飄 → 8 m・天花板下 30 cm → 液化石油氣下沉 → 4 m・地板上 30 cm → 70 dB 警報 → 蓄電池 10 分</div></a>
+  </div>
+</section>
+
+<section class="cat" id="evac">
+  <h2><span class="no">3</span>避難逃生設備</h2>
+  <p class="cd">第三編第三章：標示設備、避難器具、緊急照明（§146～§179）。</p>
+  <div class="list">
+    <a class="item notes" href="evac-sign.html"><div class="ic">🚪</div><h3>出口標示燈・避難方向指示燈・緊急照明</h3><p>6 項・§146～§155、§175～§178</p>
+      <div class="steps">出口燈位置 → 方向燈轉彎處 → D = k × h → 避難指標 7.5 m → 停電 20／60 分 → 緊急照明 2 lx・30 分</div></a>
+    <a class="item seq" href="descender.html"><div class="ic">🪢</div><h3>避難器具：緩降機的開口與配置</h3><p>5 步驟・§157～§162</p>
+      <div class="steps">收容人員定數量 → 開口 80 × 50 cm → 上下層交錯 → 易於接近、遠離安全梯 → 等速下降</div></a>
+  </div>
+</section>
+
+<section class="cat" id="rescue">
+  <h2><span class="no">4</span>消防搶救上必要設備</h2>
+  <p class="cd">第三編第四章：排煙、連結送水管（§180～§190）。</p>
+  <div class="list">
+    <a class="item seq" href="smoke-exhaust.html"><div class="ic">🌫️</div><h3>排煙設備（§188）</h3><p>7 步驟・§188</p>
+      <div class="steps">500 m² 防煙區劃 → 防煙壁 50 cm → 排煙口 80 cm・30 m → 煙層攔住 → 手動開關 80～150 cm → 排煙機 120 m³/min → 緊急電源 30 分</div></a>
+    <a class="item seq" href="standpipe.html"><div class="ic">🏢</div><h3>連結送水管：消防車把水送上高樓</h3><p>6 步驟・§180～§184</p>
+      <div class="steps">送水口 → 立管 100 mm → 3 層以上出水口 50 m → 11 層以上水帶箱 → 60 m 以上中繼幫浦 → 送水設計壓力 + 60 m</div></a>
+  </div>
+</section>
+
+<p class="end">操作：拖曳旋轉、滾輪或雙指縮放；鍵盤 ← → 切換步驟，空白鍵播放。模型比例有誇大，條文數字以民國 113 年 4 月 24 日修正版為準。3D 引擎改寫自「室裝乙級學習站」的工法動畫。</p>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>排煙設備（§188）｜3D 消防設備動畫</title>
+<meta name="description" content="§188 排煙設備 3D 互動動畫：每 500 m² 防煙區劃、防煙壁下垂 50 cm、排煙口在天花板下 80 cm 內且水平距離 30 m、手動開關 80～150 cm、自然排煙開口 2%、排煙機 120 m³/min 與面積 × 1／× 2、緊急電源 30 分鐘。">
+<link rel="icon" href="../icons/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<meta name="theme-color" content="#3b1e1a">
+<link rel="stylesheet" href="anim.css?v=2026111902">
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<script type="module">
+import { createAnim } from './engine.js?v=2026111902';
+
+createAnim({
+  title: '排煙設備（§188）',
+  page: '12-%E6%8E%92%E7%85%99%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html',
+  steps: [
+    {t:'把煙關住，再從排煙口抽出去', d:'一層 1,800 m² 的樓層。排煙設備先用防煙壁把煙關在一區，再從該區的排煙口排出。', tip:'§28 第 1～4 款的排煙走 §188（m³/min）；特別安全梯、緊急昇降機間排煙室走 §189（m³/s），兩套數字不同。'},
+    {t:'防煙區劃：每 500 m² 一區', d:'每層樓地板面積每 500 m² 內以防煙壁區劃。1,800 m² ÷ 500 = 3.6，至少 4 個防煙區劃。', tip:'§188①②：地下建築物之地下通道每 300 m²。觀眾席、工廠天花板 ≥ 5 m 且耐燃一級裝修者不在此限。'},
+    {t:'防煙壁：不燃材料、下垂 ≥ 50 cm', d:'防煙壁以不燃材料建造，自天花板下垂 50 cm 以上，攔住沿天花板擴散的煙層。', tip:'§188 第 2 項：地下建築物之地下通道應下垂 80 cm 以上。'},
+    {t:'排煙口：天花板下 80 cm 內、≤ 30 m', d:'防煙區劃內任一位置至排煙口水平距離 30 m 以下；排煙口設於天花板或其下方 80 cm 範圍內，以不燃材料製作，平時保持關閉。', tip:'§188③④⑥。防煙壁下垂未達 80 cm 時，排煙口應設在防煙壁的下垂高度內。'},
+    {t:'起火：煙層被防煙壁攔住', d:'起火區的煙上升、沿天花板擴散，被防煙壁擋在同一防煙區劃內。', tip:'防煙壁的作用不是滅火，而是讓煙集中在一區，排煙口才抽得到。'},
+    {t:'開啟：手動開關 80～150 cm 或探測器連動', d:'排煙口設手動開關裝置及探測器連動自動開關裝置；手動開關操作部分設於牆面距樓地板 80～150 cm。', tip:'§188⑥：裝於天花板時，設操作垂鍊或垂桿在距樓地板 180 cm 之位置。'},
+    {t:'排煙機：≥ 120 m³/min，二區以上 × 2', d:'無法自然排出時設排煙機，隨任一排煙口開啟而動作。排煙量 ≥ 120 m³/min，且一區時每 m² 1 m³/min、二區以上時最大區劃每 m² 2 m³/min。', tip:'§188⑦⑧：自然排煙開口 ≥ 防煙區劃面積 2%。本例最大區劃 450 m² × 2 = 900 m³/min；地下通道總排煙量 ≥ 600 m³/min。'},
+    {t:'緊急電源 30 分鐘', d:'排煙設備連接緊急電源，供電容量能有效動作 30 分鐘以上。', tip:'§188⑨。排煙風管貫穿防火區劃處設防火閘門（§188⑤）。'},
+  ],
+  note: '平面尺寸縮為 1/2 示意（60 × 30 m 的樓層），高度維持原比例；數字以條文為準。',
+  groundY: -0.01, minDist: 2, sun:[8,18,10],
+  views: {
+    def:{dir:[0.4,0.6,0.7], dist:30, target:[0,1,0]},
+    1:{dir:[0.1,0.95,0.3], dist:32, target:[0,1,0]},
+    2:{dir:[0.35,0.15,0.92], dist:12, target:[-4,2.4,0]},
+    3:{dir:[0.35,0.15,0.92], dist:12, target:[-8,2.4,0]},
+    4:{dir:[0.35,0.2,0.92], dist:16, target:[-7,2,0]},
+    5:{dir:[0.4,0.15,0.9], dist:6, target:[-12,1.6,-5]},
+    6:{dir:[0.45,0.35,0.82], dist:20, target:[-7,3,-2]},
+  },
+  build({THREE, mat, span, pipe, group, label, add, fixed, plate, dim, flow, pulse}) {
+    const M = {
+      floor: mat('#d6d0c7',{roughness:1}), wall: mat('#e7e2da',{roughness:1}), ceil: mat('#f8fafc',{transparent:true,opacity:.25,depthWrite:false}),
+      curt: mat('#94a3b8',{transparent:true,opacity:.75}), zone: [mat('#fca5a5',{transparent:true,opacity:.35,depthWrite:false}), mat('#93c5fd',{transparent:true,opacity:.35,depthWrite:false}), mat('#86efac',{transparent:true,opacity:.35,depthWrite:false}), mat('#fde68a',{transparent:true,opacity:.45,depthWrite:false})],
+      vent: mat('#475569',{metalness:.5}), ventO: mat('#16a34a',{emissive:'#16a34a',emissiveIntensity:.6}), duct: mat('#9ca3af',{metalness:.5}),
+      smoke: mat('#4b5563',{transparent:true,opacity:.4,depthWrite:false}), layer: mat('#374151',{transparent:true,opacity:.35,depthWrite:false}),
+      fireM: mat('#f97316',{emissive:'#f97316',emissiveIntensity:1}), red: mat('#c81e1e'), fan: mat('#1f2937',{metalness:.5}), panel: mat('#e5e7eb'),
+    };
+    const NE={edges:false, shadow:false}, H=3.4;
+    // 樓層 60 × 30 m = 1,800 m²，平面縮為 1/2 顯示（30 × 15 單位）；分 4 區
+    const X0=-15, X1=15, Z0=-7.5, Z1=7.5;
+    fixed(span(X0,-0.1,Z0,X1,0,Z1,M.floor));
+    fixed(span(X0,0,Z0-0.15,X1,H,Z0,M.wall)); fixed(span(X0-0.15,0,Z0,X0,H,Z1,M.wall));
+    fixed(span(X0,H,Z0,X1,H+0.1,Z1,M.ceil,NE));
+    const XS=[-15,-7.5,0,7.5,15];
+
+    /* ① 防煙區劃 */
+    for(let i=0;i<4;i++) add(1, span(XS[i],0.02,Z0,XS[i+1],0.04,Z1,M.zone[i],NE), {until:1, drop:0, glow:false, delay:i*.15});
+    for(let i=0;i<4;i++) add(1, label(`區劃 ${i+1}：450 m²`,(XS[i]+XS[i+1])/2,1.2,0,1.1),{until:1, drop:0, glow:false, delay:i*.15});
+    add(1, label('1,800 m² ÷ 500 = 3.6 → 至少 4 區',0,6,0,2.2,'good'),{until:1, drop:0, glow:false, delay:.6});
+
+    /* ② 防煙壁 */
+    [-7.5,0,7.5].forEach((x,i)=>add(2, span(x-0.05,H-0.6,Z0,x+0.05,H,Z1,M.curt), {drop:.3, delay:i*.15}));
+    add(2, dim([-7.4,H,3],[-7.4,H-0.6,3],'下垂 ≥ 50 cm',{w:1.0, off:[1.0,0,0]}), {until:2, drop:0, glow:false});
+    add(2, label('不燃材料（地下通道 ≥ 80 cm）',-4,H+1.2,3,1.8),{until:2, drop:0, glow:false, delay:.3});
+
+    /* ③ 排煙口 */
+    const V=[[-11,-4],[-4,-4],[4,-4],[11,-4]];
+    V.forEach(([x,z],i)=>add(3, span(x-0.6,H-0.05,z-0.4,x+0.6,H,z+0.4,M.vent), {drop:0, delay:i*.1}));
+    add(3, dim([-11,0.15,-4],[-14.5,0.15,6.5],'任一點 ≤ 30 m',{w:1.2, off:[0,.8,0]}), {until:3, drop:0, glow:false});
+    add(3, label('天花板或其下方 80 cm 內',-11,H+1.2,-3,1.6,'good'),{until:3, drop:0, glow:false, delay:.3});
+
+    /* ④ 起火、煙層 */
+    add(4, pulse(span(-10,0,1,-8.8,1,2.2,M.fireM,NE),3), {until:7, drop:0, glow:false});
+    add(4, flow([[-9.4,1,1.6],[-9.4,2.6,1.2],[-10,H-0.3,0],[-13,H-0.3,-4]],M.smoke,{n:16,r:.28,speed:1.4}), {until:5, drop:0, glow:false});
+    add(4, span(-15,H-0.6,Z0,-7.55,H-0.02,Z1,M.layer,NE), {until:5, drop:0, glow:false, delay:.4});
+    add(4, label('煙被防煙壁擋在區劃 1',-11,H+1.2,2,1.6,'bad'),{until:4, drop:0, glow:false});
+
+    /* ⑤ 手動開關 */
+    add(5, group(span(-12.4,0.8,Z0,-11.8,1.5,Z0+0.08,M.red)), {drop:0});
+    add(5, dim([-12.6,0,Z0+0.1],[-12.6,1.5,Z0+0.1],'牆面 80～150 cm',{w:1.1, off:[-.8,0,0]}), {until:5, drop:0, glow:false});
+    add(5, label('或探測器連動自動開啟',-11.5,2.6,Z0+0.5,1.5,'good'),{until:5, drop:0, glow:false, delay:.3});
+
+    /* ⑥ 排煙機 */
+    add(6, span(-11.6,H-0.06,-4.4,-10.4,H+0.01,-3.6,M.ventO,NE), {drop:0, glow:false});
+    add(6, group(pipe([-11,H,-4],[-11,H+0.8,-4],.3,M.duct), pipe([-11,H+0.8,-4],[-11,H+0.8,-7.6],.3,M.duct), span(-11.7,H+0.3,-8.4,-10.3,H+1.4,-7.6,M.fan)), {drop:0});
+    add(6, flow([[-12,H-0.4,-1],[-11,H-0.2,-4],[-11,H+0.8,-4],[-11,H+0.8,-7.6],[-11,H+1.6,-9.5]],M.smoke,{n:18,r:.22,speed:2.2}), {until:6, drop:0, glow:false});
+    add(6, label('排煙量 ≥ max(120, 450 × 2) = 900 m³/min',-8,H+2.6,-4,2.6,'good'),{until:6, drop:0, glow:false});
+    add(6, label('自然排煙：開口 ≥ 區劃面積 2%',-8,H+1.6,-4,1.8),{until:6, drop:0, glow:false, delay:.3});
+
+    /* ⑦ 緊急電源 */
+    add(7, span(12,0,Z0,14,1.6,Z0+0.8,M.panel), {drop:.3});
+    add(7, label('緊急電源 30 分鐘以上',13,2.6,Z0+1,1.4,'good'),{until:7, drop:0, glow:false});
+  },
+});
+</script>
+</body>
+</html>

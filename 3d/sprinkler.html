@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>自動撒水設備（密閉濕式）動作流程｜3D 消防設備動畫</title>
+<meta name="description" content="§43～§60 密閉濕式自動撒水 3D 互動動畫：撒水頭水平距離 2.1／2.3 m、感熱動作、放水 80 L/min・1 kgf/cm²、流水檢知裝置、幫浦 H = h1+h2+10、水源 10 個 × 80 × 20 = 16 m³、送水口與末端查驗閥。">
+<link rel="icon" href="../icons/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<meta name="theme-color" content="#3b1e1a">
+<link rel="stylesheet" href="anim.css?v=2026111902">
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<script type="module">
+import { createAnim } from './engine.js?v=2026111902';
+
+createAnim({
+  title: '自動撒水設備（密閉濕式）動作流程',
+  page: '16-%E8%87%AA%E5%8B%95%E6%92%92%E6%B0%B4%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html',
+  steps: [
+    {t:'平時：管內充滿加壓水', d:'密閉濕式撒水的配管平時貯滿高壓水，撒水頭是封閉的，感熱元件一破就直接出水。', tip:'§43：密閉濕式（管內高壓水）、密閉乾式（高壓空氣）、開放式（無水，靠一齊開放閥）、預動式（低壓空氣＋感知裝置）。'},
+    {t:'撒水頭配置：水平距離 2.1 m／2.3 m', d:'天花板任一點至撒水頭水平距離：一般反應型 2.1 m 以下（防火構造 2.3 m）；快速反應型 2.3 m 以下（防火構造 2.6 m）。', tip:'§46。舞臺、道具室、放映室、易燃物倉庫 1.7 m；停車空間、汽車修理廠 2.1 m。'},
+    {t:'起火：熱氣上升使撒水頭動作', d:'火災熱氣流沿天花板擴散，撒水頭的感熱元件達到標示溫度後破裂，封口打開。', tip:'§48 標示溫度：周圍最高溫 < 39°C 選 < 75°C；39～64°C 選 75～121°C；64～106°C 選 121～162°C；≥ 106°C 選 ≥ 162°C。'},
+    {t:'放水：≥ 80 L/min、≥ 1 kgf/cm²', d:'撒水頭放水量每分鐘 80 L 以上、放水壓力 1 kgf/cm² 以上；迴水板下方 45 cm、水平 30 cm 內不得有障礙物。', tip:'§47、§50。高架倉庫 114 L/min；小區劃型 50 L/min。放水壓力上限 10 kgf/cm²。'},
+    {t:'流水檢知裝置動作 → 發出警報', d:'管內水開始流動，流水檢知裝置（自動警報逆止閥）動作，發出警報並在受信總機顯示。', tip:'§51：各層樓地板面積 3,000 m² 以下裝 1 套，超過裝 2 套；制水閥距樓地板 0.8～1.5 m。'},
+    {t:'壓力下降 → 消防幫浦自動啟動', d:'配管壓力下降，啟動用壓力槽偵測到後自動啟動消防幫浦，持續送水。', tip:'§58：全揚程 H = h₁ + h₂ + 10 m（沒有水帶，少一項）；出水量 = 撒水頭數 × 90 L/min。'},
+    {t:'水源：10 個 × 80 L/min × 20 分 = 16 m³', d:'水源容量依 §57 表列撒水頭數量計算。10 樓以下一般場所、一般反應型為 10 個。', tip:'§57：11 樓以上、地下建築物、甲四目、地下層為 15 個（快速反應型 12 個）；乾式、預動式追加 50%。'},
+    {t:'送水口與末端查驗閥', d:'地面層室外設口徑 63 mm 雙口形送水口，高 0.5～1 m；各層最遠支管末端設末端查驗閥，管徑 25 mm 以上、高 2.1 m 以下。', tip:'§56、§59。送水口每 3,000 m² 設 1 個，最多 3 個；末端查驗閥一次側壓力表、二次側限流孔。'},
+  ],
+  groundY: -3.35, minDist: 2, maxPolar:.62, sun:[6,16,10],
+  views: {
+    def:{dir:[0.45,0.3,0.84], dist:22, target:[0,1,0]},
+    1:{dir:[0.2,-0.3,0.93], dist:9, target:[0,3.0,0]},
+    2:{dir:[0.4,0.15,0.9], dist:8, target:[-1,2.2,0]},
+    3:{dir:[0.4,0.15,0.9], dist:7, target:[-1,1.8,0]},
+    4:{dir:[0.6,0.2,0.77], dist:7, target:[4,0.5,-1.2]},
+    5:{dir:[0.45,0.3,0.84], dist:10, target:[2,-2,0]},
+    6:{dir:[0.45,0.3,0.84], dist:10, target:[-2,-2,0]},
+    7:{dir:[0.7,0.25,0.67], dist:10, target:[5.5,0.5,0]},
+  },
+  build({THREE, mat, span, pipe, group, label, add, fixed, plate, dim, flow, pulse}) {
+    const M = {
+      slab: mat('#d6d0c7',{roughness:1}), wall: mat('#e7e2da',{roughness:1}), conc: mat('#a8a29e',{roughness:1}),
+      ceil: mat('#f1f5f9',{transparent:true,opacity:.35,depthWrite:false}),
+      pipe: mat('#dc2626',{metalness:.4,roughness:.4}), head: mat('#d4d4d8',{metalness:.8,roughness:.2}), bulb: mat('#ef4444',{emissive:'#ef4444',emissiveIntensity:.6}),
+      water: mat('#3b82f6',{transparent:true,opacity:.55,depthWrite:false}), flowM: mat('#60a5fa',{emissive:'#2563eb',emissiveIntensity:.6}),
+      spray: mat('#93c5fd',{transparent:true,opacity:.45,depthWrite:false}), fireM: mat('#f97316',{emissive:'#f97316',emissiveIntensity:1}),
+      heat: mat('#fb923c',{transparent:true,opacity:.5,emissive:'#f97316',emissiveIntensity:.5,depthWrite:false}),
+      pump: mat('#b91c1c',{metalness:.5,roughness:.35}), motor: mat('#475569',{metalness:.5}), valve: mat('#ca8a04',{metalness:.7,roughness:.3}),
+      bell: mat('#facc15',{emissive:'#facc15',emissiveIntensity:1}), ring: mat('#16a34a',{transparent:true,opacity:.35,depthWrite:false}), tank: mat('#94a3b8',{metalness:.3}),
+    };
+    const NE={edges:false, shadow:false}, H=3.4;
+    // 地下機房與 1F 樓層（剖面）
+    fixed(span(-6,-3.3,-2.5,6,-3.2,2.5,M.slab));
+    fixed(span(-6,-0.2,-2.5,6,0,2.5,M.slab));
+    fixed(span(-6,-3.2,-2.5,6,H+0.4,-2.35,M.wall));
+    fixed(span(-6,H+0.2,-2.5,6,H+0.4,2.5,M.slab));
+    fixed(label('1F',-6.6,1.6,0,.7)); fixed(label('B1 機房',-6.6,-1.6,0,.9));
+    // 撒水頭格點（間距 3 m 示意）與支管
+    const HX=[-3,0,3], HZ=[-1.2,1.2], heads=[];
+    fixed(pipe([4.2,H-0.1,0],[-3.5,H-0.1,0],.06,M.pipe));
+    HX.forEach(x=>{ fixed(pipe([x,H-0.1,-1.2],[x,H-0.1,1.2],.035,M.pipe));
+      HZ.forEach(z=>{ const g=group(pipe([x,H-0.1,z],[x,H-0.35,z],.02,M.pipe), pipe([x,H-0.35,z],[x,H-0.42,z],.05,M.head));
+        const b=new THREE.Mesh(new THREE.SphereGeometry(.035,10,8),M.bulb.clone()); b.position.set(x,H-0.47,z); g.add(b); fixed(g); heads.push({x,z,b}); }); });
+    fixed(pipe([4.2,H-0.1,0],[4.2,-2.6,-1.2],.07,M.pipe));
+
+    /* ① 配置 */
+    HX.forEach(x=>HZ.forEach(z=>{ const r=new THREE.Mesh(new THREE.CircleGeometry(2.1,40),M.ring.clone()); r.rotation.x=Math.PI/2; r.position.set(x,H-0.5,z); add(1,r,{until:1,drop:0,glow:false}); }));
+    add(1, dim([0,H-0.55,1.2],[2.1,H-0.55,1.2],'2.1 m',{w:.6}),{until:1, drop:0, glow:false});
+    add(1, label('一般反應型 ≤ 2.1 m（防火構造 2.3 m）',0,H+1.4,2,2.2,'good'),{until:1, drop:0, glow:false});
+    add(1, label('快速反應型 ≤ 2.3 m（防火構造 2.6 m）',0,H+0.6,2,2.2),{until:1, drop:0, glow:false, delay:.3});
+
+    /* ② 起火 */
+    add(2, pulse(span(-1.8,0,-0.8,-0.6,0.8,0.4,M.fireM,NE),3), {until:6, drop:0, glow:false});
+    add(2, flow([[-1.2,0.8,-0.2],[-1.2,2.4,-0.4],[-1.4,H-0.6,-0.8],[0,H-0.5,-1.2]],M.heat,{n:14,r:.16,speed:1.6}), {until:2, drop:0, glow:false});
+    add(2, label('熱氣上升 → 感熱元件破裂',-1,H+0.9,0.5,1.6,'bad'),{until:2, drop:0, glow:false});
+
+    /* ③ 放水 */
+    const spray=(x,z)=>{ const c=new THREE.Mesh(new THREE.ConeGeometry(1.6,H-0.5,24,1,true),M.spray.clone()); c.position.set(x,(H-0.5)/2,z); return c; };
+    add(3, group(spray(0,-1.2)), {until:6, drop:0, glow:false});
+    add(3, flow([[0,H-0.5,-1.2],[0.3,1.8,-1.0],[0.9,0.05,-0.6]],M.flowM,{n:10,r:.05,speed:2.2}), {until:6, drop:0, glow:false});
+    add(3, flow([[0,H-0.5,-1.2],[-0.4,1.8,-1.4],[-1.1,0.05,-1.0]],M.flowM,{n:10,r:.05,speed:2.2}), {until:6, drop:0, glow:false});
+    add(3, label('≥ 80 L/min・≥ 1 kgf/cm²',1.2,H+0.9,0,1.5,'good'),{until:3, drop:0, glow:false});
+    add(3, label('迴水板下 45 cm 淨空',1.2,H-1.2,1.4,1.3),{until:3, drop:0, glow:false, delay:.3});
+
+    /* ④ 流水檢知裝置 */
+    const AV=[4.2,0.9,-1.2];
+    add(4, group(pipe([AV[0],AV[1]-0.3,AV[2]],[AV[0],AV[1]+0.3,AV[2]],.14,M.valve), pipe([AV[0],AV[1]+0.6,AV[2]],[AV[0]+0.3,AV[1]+0.6,AV[2]],.04,M.valve)), {drop:0});
+    const bell=new THREE.Mesh(new THREE.SphereGeometry(.18,16,12),M.bell.clone()); bell.position.set(4.9,2.4,-2.2);
+    add(4, pulse(bell,4), {until:6, drop:0, glow:false});
+    add(4, label('流水檢知裝置動作 → 警報',4.2,2.2,-0.6,1.5,'bad'),{until:4, drop:0, glow:false});
+    add(4, label('每層 ≤ 3,000 m² 設 1 套',4.2,-0.2,-0.6,1.4),{until:4, drop:0, glow:false, delay:.3});
+
+    /* ⑤ 幫浦 */
+    add(5, group(pipe([1.0,-2.6,-1.2],[2.2,-2.6,-1.2],.32,M.pump), pipe([2.2,-2.6,-1.2],[3.0,-2.6,-1.2],.26,M.motor), pipe([1.0,-2.6,-1.2],[4.2,-2.6,-1.2],.07,M.pipe)), {drop:.3});
+    add(5, label('H = h₁ + h₂ + 10 m',2,-1.0,0.6,1.3,'good'),{until:5, drop:0, glow:false});
+    add(5, label('出水量 = 撒水頭數 × 90 L/min',2,-0.2,0.6,1.7),{until:5, drop:0, glow:false, delay:.3});
+    add(5, flow([[-2,-2.8,0],[1.0,-2.6,-1.2],[4.2,-2.6,-1.2],[4.2,H-0.1,0],[0,H-0.1,0],[0,H-0.1,-1.2]],M.flowM,{n:30,r:.08,speed:4}), {until:6, drop:0, glow:false});
+
+    /* ⑥ 水源 */
+    add(6, span(-5.6,-3.1,-2,-0.6,-0.8,2,M.water,NE), {drop:0, glow:false});
+    add(6, label('10 個 × 80 L/min × 20 分 = 16 m³',-3,0.6,1.8,2.0,'good'),{until:6, drop:0, glow:false});
+    add(6, label('11 樓以上：15 個 → 24 m³',-3,-0.3,1.8,1.6),{until:6, drop:0, glow:false, delay:.3});
+
+    /* ⑦ 送水口・末端查驗閥 */
+    add(7, group(span(6,0,-0.3,6.4,1.2,0.3,M.conc), pipe([6.4,0.75,-0.15],[6.7,0.75,-0.15],.07,M.valve), pipe([6.4,0.75,0.15],[6.7,0.75,0.15],.07,M.valve), pipe([6,0.75,0],[4.2,0.75,-1.2],.06,M.pipe)), {drop:.3});
+    add(7, label('送水口 63 mm 雙口形・高 0.5～1 m',6.4,2.0,0.5,2.0,'good'),{until:7, drop:0, glow:false});
+    add(7, group(pipe([-3.5,H-0.1,0],[-4.5,H-0.1,0],.035,M.pipe), pipe([-4.5,H-0.1,0],[-4.5,1.9,0],.035,M.pipe), pipe([-4.6,1.9,0],[-4.4,1.9,0],.07,M.valve)), {drop:0, delay:.3});
+    add(7, label('末端查驗閥 ≥ 25 mm・高 ≤ 2.1 m',-4.5,1.1,0.6,1.9),{until:7, drop:0, glow:false, delay:.5});
+  },
+});
+</script>
+</body>
+</html>
