@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第四編 §209～§212 水系滅火設備加嚴｜3D 消防設備動畫</title>
+<meta name="description" content="第四編公共危險物品場所逐條 3D：§209 室內消防栓（第一種、25 m、3.5 kgf/cm²、260 L/min、5 支 30 分、電源 45 分）；§210 室外消防栓（40 m、2 支以上、450 L/min、4 支 30 分）；§211 自動撒水（1.7 m、開放式 150 m²、30 個 30 分、乾式加 10 個、迴水板下 90 cm 淨空）；§212 水霧（150 m²、20 L/min·m²、3.5 kgf/cm²）。">
+<link rel="icon" href="../icons/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<meta name="theme-color" content="#3b1e1a">
+<link rel="stylesheet" href="anim.css?v=2026111905">
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<script type="module">
+import { createAnim } from './engine.js?v=2026111905';
+import { hazKit } from './haz-kit.js?v=2026112602';
+
+createAnim({
+  title: '第四編③　水系滅火設備加嚴（§209～§212）',
+  page: '22-%E5%85%AC%E5%85%B1%E5%8D%B1%E9%9A%AA%E7%89%A9%E5%93%81%E5%A0%B4%E6%89%80-%E5%9C%96%E8%A7%A3.html',
+  kicker: '各類場所消防安全設備設置標準　第四編　逐條 3D',
+  kind: 'notes',
+  steps: [
+    {t:'第四編的水系設備：數字一律加嚴', d:'室內外消防栓、自動撒水、水霧在公共危險物品場所都比第三編嚴：壓力提高到 3.5 kgf/cm²、放水時間 30 分鐘、緊急電源 45 分鐘。', tip:'對照第三編：第一種室內栓 1.7 kgf/cm²、130 L/min、20 分；室外栓 2.5 kgf/cm²、350 L/min；緊急電源 30 分鐘。'},
+    {t:'§209　室內消防栓設備', d:'限設第一種消防栓。各層任一點至消防栓接頭水平距離 25 m 以下，且各層出入口附近至少 1 支。全部同時使用時瞄子放水壓力 3.5 kgf/cm² 以上、放水量 260 L/min 以上（超過 5 支以 5 支計）；水源為最多樓層全部消防栓放水 30 分鐘（超過 5 支以 5 支計）。', tip:'§209。緊急電源除準用 §38 外，供電容量 45 分鐘以上。水源例：5 支 × 260 L × 30 分 = 39 m³。'},
+    {t:'§210　室外消防栓設備', d:'口徑 63 mm 以上，與防護對象外圍或外牆各部分水平距離 40 m 以下，且設置 2 支以上。全部同時使用時瞄子出水壓力 3.5 kgf/cm² 以上、放水量 450 L/min 以上（超過 4 支以 4 支計），水源為全部室外消防栓放水 30 分鐘。', tip:'§210。出水壓力超過 7 kgf/cm² 要減壓；鑄鐵管標稱壓力 16 kgf/cm² 以上；埋地配管要防腐蝕。電源 45 分鐘。水源例：4 × 450 × 30 = 54 m³。'},
+    {t:'§211　自動撒水設備', d:'防護對象任一點至撒水頭水平距離 1.7 m 以下。開放式每一放水區域 150 m² 以上。水源：密閉式以 30 個撒水頭放水 30 分鐘，開放式以最大放水區域全部撒水頭 30 分鐘；密閉乾式或預動式再追加 10 個。', tip:'§211。存放易燃性物質處所，撒水頭迴水板下方 90 cm 及水平方向 30 cm 以內保持淨空。電源 45 分鐘。'},
+    {t:'§212　水霧滅火設備', d:'每一放射區域 150 m² 以上（防護對象未滿 150 m² 以實際面積）。水源為最大放射區域全部水霧噴頭放水 30 分鐘，每 m² 每分鐘 20 L 以上；各噴頭放射壓力 3.5 kgf/cm² 以上。', tip:'§212。電源 45 分鐘。水源例：150 m² × 20 L × 30 分 = 90 m³。'},
+  ],
+  groundY: -0.01, minDist: 3, sun:[14,26,16], labelMax: 5,
+  views: {
+    def:{dir:[0.5,0.5,0.7], dist:30, target:[0,2.5,0]},
+    2:{dir:[0.35,0.75,0.56], dist:48, target:[0,0,0]},
+    3:{dir:[0.55,0.35,0.76], dist:22, target:[0,2.5,0]},
+  },
+  build(k) {
+    const H = hazKit(k), {S, L, D, M} = H, {THREE} = k;
+    H.ground();
+    S(0, H.bld(0,0,12,8,5)); L(0,'3.5 kgf/cm²・30 分・電源 45 分',0,7.6,0,3,'bad',.2,0);
+
+    /* 1 §209 室內消防栓 */
+    S(1, H.bld(0,0,16,10,5,{open:true,roof:'glass'}),0); S(1, H.drums(-5,-3,4,2),.05);
+    S(1, H.hydIn(-3,.5,-4.7),.1); S(1, H.hydIn(5,.5,-4.7),.1);
+    S(1, H.disc(-3,-4.5,3.5,M.zoneG),.15);
+    D(1,[-3,.3,-4.4],[-3,.3,-1],'≤ 25 m',1,[0,.6,0]);
+    L(1,'限第一種・3.5 kgf/cm²',0,8.4,0,2.4,'bad'); L(1,'260 L/min・5 支 × 30 分',0,7.2,0,2.4);
+    S(1, H.board('出入口',7,2.2,5.05,1.4,.45,{bg:'#15803d'}),.2); L(1,'出入口附近 ≥ 1 支',6.5,3.4,5,1.8,'good');
+
+    /* 2 §210 室外消防栓 */
+    S(2, H.bld(0,0,14,10,6),0);
+    [[-11,-9],[11,9],[11,-9]].forEach(([x,z],i)=>S(2, H.hydOut(x,z),.1+i*.05));
+    S(2, H.ring(-11,-9,0,13,M.zoneG),.2);
+    D(2,[-11,.3,-9],[-7,.3,-5],'≤ 40 m',1,[0,.8,0]);
+    L(2,'外牆各部分 ≤ 40 m・≥ 2 支',0,9,0,2.6,'bad'); L(2,'450 L/min・4 支 × 30 分',0,7.6,0,2.4);
+    S(2, H.flow([[11,1,9],[9,2,7.5],[7.2,1.2,5.3]],M.drop,{n:10,r:.15,speed:2}),.3);
+
+    /* 3 §211 撒水 */
+    S(3, H.bld(0,0,12,8,5,{open:true,roof:'glass'}),0);
+    for(let i=-2;i<=2;i++) for(let j=-1;j<=1;j++) S(3, H.head(i*2,5,j*2),.05);
+    S(3, H.drums(-1.2,-0.6,3,2,M.drumY),.15);
+    S(3, H.span(-1.2,1,-1.1,2.4,4.75,1.1,M.zoneY,{edges:false,shadow:false}),.2); L(3,'迴水板下 90 cm 淨空',0.6,5.8,0,2,'good');
+    D(3,[0,4.6,2.2],[1.7,4.6,2.2],'≤ 1.7 m',1,[0,.5,0]);
+    L(3,'30 個 × 30 分（乾式 +10 個）',0,8.4,0,2.8); L(3,'開放式 放水區域 ≥ 150 m²',0,7.2,0,2.6);
+
+    /* 4 §212 水霧 */
+    S(4, H.pad(-6,-5,6,5,M.zoneB),0); S(4, H.tank(0,0,2.2,3.5),.05);
+    for(let i=-1;i<=1;i++){ S(4, H.pipe([i*2.5,5,-3],[i*2.5,5,3],.08,M.red),.1);
+      for(let j=-1;j<=1;j+=2){ const c=new THREE.Mesh(new THREE.ConeGeometry(1.3,2.6,16,1,true), M.spray.clone()); c.position.set(i*2.5,3.7,j*2); S(4,c,.2,{glow:false}); } }
+    L(4,'放射區域 ≥ 150 m²',0,7.6,0,2,'good'); L(4,'20 L/min・m²・30 分',0,6.4,0,2.2); L(4,'噴頭 3.5 kgf/cm²',4.5,5.4,3,1.8,'bad');
+  },
+});
+</script>
+</body>
+</html>

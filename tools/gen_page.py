@@ -22,6 +22,17 @@ EDITIONS = ['第一編總則', '第二編消防設計', '第三編消防安全�
 
 QUIZ = urllib.parse.quote('05-互動題庫.html')
 
+# 第四編逐條 3D：條號 → (動畫頁, 第幾步)
+D3 = {}
+for page, arts in [('haz-scope', ['193', '194', '194', '195', '196']),
+                   ('haz-classes', ['197', '198', '199', '200', '201', '202', '203', '204', '205', '206', '206-1']),
+                   ('haz-water', ['209', '210', '211', '212']),
+                   ('haz-foam', ['213', '214', '215', '216', '217', '218', '219', '220', '221']),
+                   ('haz-gas', ['222', '222-1', '223', '224', '225', '226', '227']),
+                   ('haz-hpgas', ['207', '208', '228', '229', '230', '231', '232', '233'])]:
+    for i, n in enumerate(arts, 1):
+        D3.setdefault(n, (page, i))
+
 def esc(s):
     return s.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
 
@@ -34,6 +45,8 @@ for r in rows:
         link = '<a href="%s">%s</a>' % (href, esc(SECS[ch][sec]))
     else:
         link = '<span class="none">尚無圖解</span>'
+    if n in D3:
+        link += ' <a class="d3" href="3d/%s.html?step=%d" title="§%s 的 3D 逐條動畫">🧊 3D</a>' % (D3[n][0], D3[n][1], n)
     ed = r['g'].split('／')[0]
     rest = '／'.join(r['g'].split('／')[1:])
     law = 'https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0120029&amp;flno=' + n

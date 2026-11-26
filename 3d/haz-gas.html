@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第四編 §222～§227 氣體乾粉與滅火器配置｜3D 消防設備動畫</title>
+<meta name="description" content="第四編公共危險物品場所逐條 3D：§222 二氧化碳與惰性氣體（依體積核算、開口未自動關閉加算 5 kg/m²、物品係數）；§222-1 鹵化烴；§223 乾粉；§224 第四種滅火設備步行 30 m；§225 第五種步行 20 m、水槽附水桶、砂附鏟子；§226 警報設備；§227 標示設備。">
+<link rel="icon" href="../icons/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<meta name="theme-color" content="#3b1e1a">
+<link rel="stylesheet" href="anim.css?v=2026111905">
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<script type="module">
+import { createAnim } from './engine.js?v=2026111905';
+import { hazKit } from './haz-kit.js?v=2026112602';
+
+createAnim({
+  title: '第四編⑤　氣體、乾粉與滅火器配置（§222～§227）',
+  page: '22-%E5%85%AC%E5%85%B1%E5%8D%B1%E9%9A%AA%E7%89%A9%E5%93%81%E5%A0%B4%E6%89%80-%E5%9C%96%E8%A7%A3.html',
+  kicker: '各類場所消防安全設備設置標準　第四編　逐條 3D',
+  kind: 'notes',
+  steps: [
+    {t:'第三種的氣體與乾粉，加上第四、五種的距離', d:'二氧化碳、惰性氣體、鹵化烴、乾粉大多「準用」第三編，但防護公共危險物品時藥劑量要乘上物品係數；第四、五種滅火設備則規定步行距離。', tip:'§222～§227。'},
+    {t:'§222　二氧化碳與惰性氣體滅火設備', d:'二氧化碳準用第三編 §82～§97，但全區放射方式依防護區域體積及每 m³ 所需藥劑量核算（未達時以表列最低基本量計）；開口部未設自動關閉裝置者，每 m² 開口另加 5 kg。惰性氣體準用 IG-100、IG-55、IG-541 相關規定。', tip:'§222。防護對象為公共危險物品時，全區、局部放射或惰性氣體算出的量，都要再乘以表列「物品係數」；未表列者依中央主管機關認可之設計係數。'},
+    {t:'§222-1　鹵化烴滅火設備', d:'鹵化烴準用第三編 §97-1 之 HFC-23、HFC-227ea 藥劑及 §97-2～§97-10。防護區域內為儲存、處理之公共危險物品時，以 §222 表列係數乘以 §97-3 算出之量。', tip:'§222-1。注意第四編只列 HFC-23、HFC-227ea 兩種（第三編另有 FK-5-1-12）。'},
+    {t:'§223　乾粉滅火設備', d:'乾粉準用第三編 §98～§111。防護區域或防護對象為儲存、處理之公共危險物品時，以 §222 表列係數乘以 §99 算出之量；未表列者依中央主管機關認可之設計係數。', tip:'§223。乾粉儲存容器充填比：第一種 0.85～1.45、第二三種 1.05～1.75、第四種 1.5～2.5（§102）。'},
+    {t:'§224　第四種滅火設備：步行 30 m', d:'第四種滅火設備（大型滅火器）距防護對象任一點之步行距離應在 30 m 以下。但與第一種、第二種或第三種滅火設備併設者，不在此限。', tip:'§224。'},
+    {t:'§225　第五種滅火設備：步行 20 m', d:'第五種滅火設備設於能有效滅火之處所，至防護對象任一點步行距離 20 m 以下（與第一～四種併設者除外）。選設水槽者應備 3 個 1 公升之消防專用水桶；乾燥砂、膨脹蛭石及膨脹珍珠岩應備有鏟子。', tip:'§225。對照一般場所滅火器步行距離也是 20 m（§31③）。'},
+    {t:'§226　警報設備', d:'公共危險物品場所的警報設備，依第三編 §112～§132（火警自動警報設備）之規定設置。', tip:'§226。應設的場所見 §205。'},
+    {t:'§227　標示設備', d:'公共危險物品場所的標示設備，依第三編 §146～§156 之規定設置。', tip:'§227。加油站所在建築物二樓以上供其他用途者應設標示設備（§206）。'},
+  ],
+  groundY: -0.01, minDist: 3, sun:[14,26,16], labelMax: 5,
+  views: {
+    def:{dir:[0.5,0.5,0.7], dist:26, target:[0,2,0]},
+    4:{dir:[0.3,0.8,0.52], dist:44, target:[0,0,0]},
+    5:{dir:[0.3,0.8,0.52], dist:38, target:[0,0,0]},
+  },
+  build(k) {
+    const H = hazKit(k), {S, L, D, M} = H, {THREE} = k;
+    H.ground();
+    S(0, H.cyls(-3,0,6)); S(0, H.ext(3,0,{big:true})); L(0,'準用第三編 × 物品係數',0,4,0,2.4,'good',.2,0);
+
+    /* 1 §222 CO2 */
+    S(1, H.bld(1,0,9,7,4,{open:true,roof:'glass'}),0); S(1, H.drums(-1,-1,4,2),.05);
+    S(1, H.cyls(-8,-2,6,M.cyl),.1); S(1, H.pipe([-8,1.6,-2],[-3,4.2,-2],.08,M.steel),.15);
+    S(1, H.span(-3.4,0,-3.4,5.4,3.8,3.4,M.gasF,{edges:false,shadow:false}),.2,{glow:false});
+    S(1, H.span(5.4,.8,-1,5.5,2.6,1,M.zoneR,{edges:false,shadow:false}),.25); L(1,'開口未自動關閉：+5 kg/m²',7.5,3.2,0,2.6,'bad');
+    L(1,'依體積 × 每 m³ 藥劑量',1,6.4,0,2.4,'good'); L(1,'× 物品係數',1,5.2,0,1.4);
+
+    /* 2 §222-1 鹵化烴 */
+    S(2, H.bld(1,0,8,6,3.6,{open:true,roof:'glass'}),0); S(2, H.cyls(-7,-1,4,mat(H,'#7c3aed')),.1);
+    S(2, H.pipe([-6,1.6,-1],[-2,3.4,-1],.08,M.steel),.15);
+    L(2,'HFC-23、HFC-227ea',1,5.6,0,2.2,'good'); L(2,'× §222 物品係數',1,4.4,0,1.8);
+
+    /* 3 §223 乾粉 */
+    S(3, H.tank(2,0,2,4),0); S(3, H.cyls(-6,0,3,mat(H,'#f8fafc'),1.8),.1);
+    S(3, H.pipe([-5,1.9,0],[0,4.3,0],.08,M.steel),.15);
+    S(3, H.flow([[0,4.3,0],[1,4.6,0],[2,4.2,0]],mat(H,'#fde68a'),{n:10,r:.15,speed:1}),.2);
+    L(3,'準用 §98～§111',0,7,0,1.8,'good'); L(3,'× §222 物品係數',0,5.8,0,1.8);
+
+    /* 4 §224 第四種 30 m */
+    S(4, H.bld(0,0,12,8,4,{roof:'glass'}),0); S(4, H.drums(-3,-1,5,2),.05);
+    S(4, H.ext(-9,9,{big:true}),.1); S(4, H.disc(-9,9,15,M.zoneG),.15);
+    S(4, H.pipe([-9,.1,9],[-4,.1,4],.06,M.green),.2); S(4, H.pipe([-4,.1,4],[2,.1,1],.06,M.green),.2);
+    L(4,'步行 ≤ 30 m',-5,2,6,1.4,'good'); L(4,'與一～三種併設可免',0,6.5,0,2.2);
+
+    /* 5 §225 第五種 20 m */
+    S(5, H.bld(0,0,10,7,3.6,{roof:'glass'}),0); S(5, H.drums(-2,-1,4,2),.05);
+    S(5, H.ext(-7,6),.1); S(5, H.disc(-7,6,10,M.zoneG),.15); L(5,'步行 ≤ 20 m',-7,1.6,6,1.4,'good');
+    S(5, H.trough(5,7),.15); for(let i=0;i<3;i++) S(5, H.bucket(4.3+i*.5,8),.2); L(5,'水槽＋3 個 1 L 水桶',5,2,7.5,2.2);
+    S(5, H.sandBox(8,4),.2); L(5,'砂、蛭石＋鏟子',8,2,4,1.8);
+
+    /* 6 §226 警報 */
+    S(6, H.bld(0,0,10,7,4,{roof:'glass'}),0); for(let i=0;i<3;i++){ const d=new THREE.Mesh(new THREE.CylinderGeometry(.18,.18,.12,14), mat(H,'#f8fafc')); d.position.set(-3+i*3,3.9,0); S(6,d,.1); }
+    S(6, H.span(4.7,1.2,-.3,4.85,1.6,.3,M.red),.15); S(6, pulseRed(H,THREE,4.8,2.2,0),.2);
+    L(6,'準用 §112～§132',0,6.6,0,1.8,'good');
+
+    /* 7 §227 標示 */
+    S(7, H.bld(0,0,10,7,3.6,{roof:'glass'}),0);
+    S(7, H.board('出口',0,2.6,3.55,1.4,.5,{bg:'#15803d',glow:.6}),.1);
+    S(7, H.board('→',-3,.8,3.55,.9,.35,{bg:'#15803d',glow:.6}),.15);
+    L(7,'準用 §146～§156',0,6,0,1.8,'good');
+  },
+});
+function mat(H,c){ return H.mat(c); }
+function pulseRed(H,THREE,x,y,z){ const m=new THREE.Mesh(new THREE.SphereGeometry(.18,14,10), H.mat('#ef4444',{emissive:'#ef4444',emissiveIntensity:1})); m.position.set(x,y,z); return H.pulse(m,2); }
+</script>
+</body>
+</html>

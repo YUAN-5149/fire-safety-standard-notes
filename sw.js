@@ -1,5 +1,5 @@
 // 由 tools/gen_sw.py 產生，請勿手改
-const CACHE = 'fire-notes-b8b37d77c7';
+const CACHE = 'fire-notes-ce994547bb';
 const PRECACHE = [
 "./",
 "04a-%E6%B3%A1%E6%B2%AB%E8%A8%AD%E5%82%99-%E5%9C%96%E8%A7%A3.html",
@@ -38,7 +38,14 @@ const PRECACHE = [
 "3d/foam.html",
 "3d/gas-leak.html",
 "3d/halon.html",
+"3d/haz-classes.html",
+"3d/haz-foam.html",
+"3d/haz-gas.html",
+"3d/haz-hpgas.html",
+"3d/haz-kit.js",
+"3d/haz-scope.html",
 "3d/haz-tank.html",
+"3d/haz-water.html",
 "3d/index.html",
 "3d/indoor-hydrant.html",
 "3d/outdoor-hydrant.html",
@@ -49,6 +56,11 @@ const PRECACHE = [
 "3d/water-mist.html",
 "3d/water-tank.html",
 "exams/data/exam.json",
+"exams/data/explain/106060-0902.json",
+"exams/data/explain/107060-0902.json",
+"exams/data/explain/108060-0902.json",
+"exams/data/explain/109060-0902.json",
+"exams/data/explain/110060-0802.json",
 "exams/data/explain/111060-0802.json",
 "exams/data/explain/111060-0808.json",
 "exams/data/explain/112060-0802.json",

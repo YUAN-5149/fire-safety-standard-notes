@@ -24,7 +24,7 @@ MAP = {
     '19': [('evac-sign.html', '標示設備')],
     '20': [('descender.html', '緩降機')],
     '21': [('evac-sign.html', '緊急照明')],
-    '22': [('haz-tank.html', '公危儲槽')],
+    '22': [('haz-tank.html', '公危儲槽'), ('haz-scope.html', '①適用與分級'), ('haz-classes.html', '②五種設備與效能值'), ('haz-water.html', '③水系加嚴'), ('haz-foam.html', '④泡沫'), ('haz-gas.html', '⑤氣體乾粉與配置'), ('haz-hpgas.html', '⑥高壓氣體')],
 }
 
 n = 0
